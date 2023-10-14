@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class AssetOperator
+    class AssetOperator: User
     {
+        //Level
+        
+
         private int assetOperatorId;
 
         // Property for assetOperatorId
