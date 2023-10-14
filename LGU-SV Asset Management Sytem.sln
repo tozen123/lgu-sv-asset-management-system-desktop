@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LGU-SV Asset Management Sytem", "LGU-SV Asset Management Sytem\LGU-SV Asset Management Sytem.csproj", "{473376E0-9D58-4AD9-AEB2-BBBD8C2EC5EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{473376E0-9D58-4AD9-AEB2-BBBD8C2EC5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473376E0-9D58-4AD9-AEB2-BBBD8C2EC5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473376E0-9D58-4AD9-AEB2-BBBD8C2EC5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473376E0-9D58-4AD9-AEB2-BBBD8C2EC5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4832DFDE-CEE6-4ED6-B66B-BB9717DEE58A}
+	EndGlobalSection
+EndGlobal
