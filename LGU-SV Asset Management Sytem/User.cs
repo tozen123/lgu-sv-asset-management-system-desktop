@@ -9,12 +9,19 @@ namespace LGU_SV_Asset_Management_Sytem
   
     class User
     {
-       public enum AccessLevel
-       {
+        private DatabaseConnection databaseConnection;
+        
+        public User()
+        {
+            databaseConnection = new DatabaseConnection();
+        }
+
+        public enum AccessLevel
+        {
             Operator,
             Manager,
             User
-       }
+        }
 
         public AccessLevel Role;
 
@@ -33,6 +40,9 @@ namespace LGU_SV_Asset_Management_Sytem
             Console.WriteLine("User is "+Role);
             return Role;
         }
-        
+        public void UploadToDatabase(string query, Dictionary<string, object> parameters)
+        {
+            databaseConnection.UploadToDatabase(query, parameters);
+        }
     }
 }

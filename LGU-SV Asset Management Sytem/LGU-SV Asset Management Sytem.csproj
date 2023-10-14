@@ -50,6 +50,8 @@
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetManager.cs" />
     <Compile Include="AssetOperator.cs" />
+    <Compile Include="AssetViewer.cs" />
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
