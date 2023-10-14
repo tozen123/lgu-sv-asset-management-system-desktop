@@ -17,6 +17,7 @@ namespace LGU_SV_Asset_Management_Sytem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
         }
     }
 }

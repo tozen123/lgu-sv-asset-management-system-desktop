@@ -16,5 +16,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             InitializeComponent();
         }
+
+    
     }
 }
