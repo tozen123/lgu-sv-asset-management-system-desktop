@@ -18,6 +18,11 @@ namespace LGU_SV_Asset_Management_Sytem
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
+           
+            
+        }
+        public static void TestDB()
+        {
             AssetManager john = new AssetManager();
             john.AssetManagerID = 123;
             john.AssetManagerFName = "John";

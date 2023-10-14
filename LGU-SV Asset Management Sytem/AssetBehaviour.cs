@@ -9,6 +9,7 @@ namespace LGU_SV_Asset_Management_Sytem
     class AssetBehaviour
     {
         private DatabaseConnection databaseConnection;
+
         public AssetBehaviour()
         {
             databaseConnection = new DatabaseConnection();
