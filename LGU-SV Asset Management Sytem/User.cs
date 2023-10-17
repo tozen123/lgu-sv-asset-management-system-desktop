@@ -20,7 +20,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             Operator,
             Manager,
-            User
+            Viewer
         }
 
         public AccessLevel Role;

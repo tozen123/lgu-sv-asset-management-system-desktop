@@ -37,8 +37,20 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonSignUp = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.LoginPanel = new System.Windows.Forms.Panel();
+            this.RegistrationStartPanel = new System.Windows.Forms.Panel();
+            this.RegistrationStartPanel2 = new System.Windows.Forms.Panel();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
+            this.textBoxRegistrationPassword = new System.Windows.Forms.TextBox();
+            this.textBoxRegistrationID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonManagerRole = new System.Windows.Forms.Button();
+            this.buttonViewerRole = new System.Windows.Forms.Button();
+            this.buttonOperatorRole = new System.Windows.Forms.Button();
+            this.LoginPanel.SuspendLayout();
+            this.RegistrationStartPanel.SuspendLayout();
+            this.RegistrationStartPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -100,32 +112,131 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonSignUp.TabIndex = 7;
             this.buttonSignUp.Text = "Sign Up";
             this.buttonSignUp.UseVisualStyleBackColor = true;
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
-            // panel1
+            // LoginPanel
             // 
-            this.panel1.Controls.Add(this.textBoxEmail);
-            this.panel1.Controls.Add(this.buttonSignUp);
-            this.panel1.Controls.Add(this.textBoxPassword);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.buttonLogin);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(15, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 600);
-            this.panel1.TabIndex = 8;
+            this.LoginPanel.Controls.Add(this.RegistrationStartPanel);
+            this.LoginPanel.Controls.Add(this.textBoxEmail);
+            this.LoginPanel.Controls.Add(this.buttonSignUp);
+            this.LoginPanel.Controls.Add(this.textBoxPassword);
+            this.LoginPanel.Controls.Add(this.label3);
+            this.LoginPanel.Controls.Add(this.buttonLogin);
+            this.LoginPanel.Controls.Add(this.label2);
+            this.LoginPanel.Location = new System.Drawing.Point(15, 42);
+            this.LoginPanel.Name = "LoginPanel";
+            this.LoginPanel.Size = new System.Drawing.Size(1080, 600);
+            this.LoginPanel.TabIndex = 8;
+            // 
+            // RegistrationStartPanel
+            // 
+            this.RegistrationStartPanel.Controls.Add(this.RegistrationStartPanel2);
+            this.RegistrationStartPanel.Controls.Add(this.buttonManagerRole);
+            this.RegistrationStartPanel.Controls.Add(this.buttonViewerRole);
+            this.RegistrationStartPanel.Controls.Add(this.buttonOperatorRole);
+            this.RegistrationStartPanel.Location = new System.Drawing.Point(0, 0);
+            this.RegistrationStartPanel.Name = "RegistrationStartPanel";
+            this.RegistrationStartPanel.Size = new System.Drawing.Size(1080, 600);
+            this.RegistrationStartPanel.TabIndex = 9;
+            // 
+            // RegistrationStartPanel2
+            // 
+            this.RegistrationStartPanel2.Controls.Add(this.labelPassword);
+            this.RegistrationStartPanel2.Controls.Add(this.labelID);
+            this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationPassword);
+            this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationID);
+            this.RegistrationStartPanel2.Controls.Add(this.label4);
+            this.RegistrationStartPanel2.Location = new System.Drawing.Point(0, 0);
+            this.RegistrationStartPanel2.Name = "RegistrationStartPanel2";
+            this.RegistrationStartPanel2.Size = new System.Drawing.Size(1080, 600);
+            this.RegistrationStartPanel2.TabIndex = 9;
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(76, 152);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(53, 13);
+            this.labelPassword.TabIndex = 4;
+            this.labelPassword.Text = "Password";
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(76, 123);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(18, 13);
+            this.labelID.TabIndex = 3;
+            this.labelID.Text = "ID";
+            // 
+            // textBoxRegistrationPassword
+            // 
+            this.textBoxRegistrationPassword.Location = new System.Drawing.Point(135, 149);
+            this.textBoxRegistrationPassword.Name = "textBoxRegistrationPassword";
+            this.textBoxRegistrationPassword.Size = new System.Drawing.Size(364, 20);
+            this.textBoxRegistrationPassword.TabIndex = 2;
+            // 
+            // textBoxRegistrationID
+            // 
+            this.textBoxRegistrationID.Location = new System.Drawing.Point(135, 120);
+            this.textBoxRegistrationID.Name = "textBoxRegistrationID";
+            this.textBoxRegistrationID.Size = new System.Drawing.Size(364, 20);
+            this.textBoxRegistrationID.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Welcome Onboard!";
+            // 
+            // buttonManagerRole
+            // 
+            this.buttonManagerRole.Location = new System.Drawing.Point(16, 70);
+            this.buttonManagerRole.Name = "buttonManagerRole";
+            this.buttonManagerRole.Size = new System.Drawing.Size(75, 23);
+            this.buttonManagerRole.TabIndex = 8;
+            this.buttonManagerRole.Text = "Manager";
+            this.buttonManagerRole.UseVisualStyleBackColor = true;
+            this.buttonManagerRole.Click += new System.EventHandler(this.buttonManagerRole_Click);
+            // 
+            // buttonViewerRole
+            // 
+            this.buttonViewerRole.Location = new System.Drawing.Point(16, 173);
+            this.buttonViewerRole.Name = "buttonViewerRole";
+            this.buttonViewerRole.Size = new System.Drawing.Size(75, 23);
+            this.buttonViewerRole.TabIndex = 7;
+            this.buttonViewerRole.Text = "Viewer";
+            this.buttonViewerRole.UseVisualStyleBackColor = true;
+            this.buttonViewerRole.Click += new System.EventHandler(this.buttonViewerRole_Click);
+            // 
+            // buttonOperatorRole
+            // 
+            this.buttonOperatorRole.Location = new System.Drawing.Point(16, 120);
+            this.buttonOperatorRole.Name = "buttonOperatorRole";
+            this.buttonOperatorRole.Size = new System.Drawing.Size(75, 23);
+            this.buttonOperatorRole.TabIndex = 4;
+            this.buttonOperatorRole.Text = "Operator";
+            this.buttonOperatorRole.UseVisualStyleBackColor = true;
+            this.buttonOperatorRole.Click += new System.EventHandler(this.buttonOperatorRole_Click);
             // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 654);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.LoginPanel.ResumeLayout(false);
+            this.LoginPanel.PerformLayout();
+            this.RegistrationStartPanel.ResumeLayout(false);
+            this.RegistrationStartPanel2.ResumeLayout(false);
+            this.RegistrationStartPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +251,16 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonSignUp;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel LoginPanel;
+        private System.Windows.Forms.Panel RegistrationStartPanel;
+        private System.Windows.Forms.Button buttonViewerRole;
+        private System.Windows.Forms.Button buttonOperatorRole;
+        private System.Windows.Forms.Button buttonManagerRole;
+        private System.Windows.Forms.Panel RegistrationStartPanel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.TextBox textBoxRegistrationPassword;
+        private System.Windows.Forms.TextBox textBoxRegistrationID;
+        private System.Windows.Forms.Label labelPassword;
     }
 }
