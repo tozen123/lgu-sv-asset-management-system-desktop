@@ -116,7 +116,6 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // LoginPanel
             // 
-            this.LoginPanel.Controls.Add(this.RegistrationStartPanel);
             this.LoginPanel.Controls.Add(this.textBoxEmail);
             this.LoginPanel.Controls.Add(this.buttonSignUp);
             this.LoginPanel.Controls.Add(this.textBoxPassword);
@@ -130,11 +129,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationStartPanel
             // 
-            this.RegistrationStartPanel.Controls.Add(this.RegistrationStartPanel2);
             this.RegistrationStartPanel.Controls.Add(this.buttonManagerRole);
             this.RegistrationStartPanel.Controls.Add(this.buttonViewerRole);
             this.RegistrationStartPanel.Controls.Add(this.buttonOperatorRole);
-            this.RegistrationStartPanel.Location = new System.Drawing.Point(0, 0);
+            this.RegistrationStartPanel.Location = new System.Drawing.Point(12, 45);
             this.RegistrationStartPanel.Name = "RegistrationStartPanel";
             this.RegistrationStartPanel.Size = new System.Drawing.Size(1080, 600);
             this.RegistrationStartPanel.TabIndex = 9;
@@ -146,7 +144,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationPassword);
             this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationID);
             this.RegistrationStartPanel2.Controls.Add(this.label4);
-            this.RegistrationStartPanel2.Location = new System.Drawing.Point(0, 0);
+            this.RegistrationStartPanel2.Location = new System.Drawing.Point(18, 39);
             this.RegistrationStartPanel2.Name = "RegistrationStartPanel2";
             this.RegistrationStartPanel2.Size = new System.Drawing.Size(1080, 600);
             this.RegistrationStartPanel2.TabIndex = 9;
@@ -227,6 +225,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 654);
+            this.Controls.Add(this.RegistrationStartPanel);
+            this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
