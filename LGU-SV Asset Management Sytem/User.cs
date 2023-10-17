@@ -10,7 +10,7 @@ namespace LGU_SV_Asset_Management_Sytem
     class User
     {
         private DatabaseConnection databaseConnection;
-        
+
         public User()
         {
             databaseConnection = new DatabaseConnection();
