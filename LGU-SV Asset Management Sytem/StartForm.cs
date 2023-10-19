@@ -18,6 +18,7 @@ namespace LGU_SV_Asset_Management_Sytem
         //Registration Variable
         private enum RegistrationType
         {
+            None,
             Operator,
             Manager,
             Viewer
@@ -34,14 +35,38 @@ namespace LGU_SV_Asset_Management_Sytem
             startFormPanels.Add(LoginPanel);
             startFormPanels.Add(RegistrationStartPanel);
             startFormPanels.Add(RegistrationStartPanel2);
+            startFormPanels.Add(RegistrationAccountSetup1);
+            startFormPanels.Add(RegistrationAccountSetup2);
+           
+
+            registrationType = RegistrationType.None;
+            labelErrorHandler.Visible = false;
 
             ActivatePanel(LoginPanel);
+
+            comboBoxAccSetupDepartment.Items.Add("GSO-General Services Office");
+            comboBoxAccSetupDepartment.Items.Add("MHO-Municipal Health Office");
+            comboBoxAccSetupDepartment.Items.Add("MCR-Municipal Civil Registrar");
+            comboBoxAccSetupDepartment.Items.Add("MEO-Municipal Engineering Office");
+            comboBoxAccSetupDepartment.Items.Add("MBO-Municipal Budget Office");
+            comboBoxAccSetupDepartment.Items.Add("Accounting Office");
         }
 
         private void ActivatePanel(Panel panelToActivate)
         {
+            if (panelToActivate != LoginPanel)
+            {
+                buttonBackToLoginForm.Visible = true;
+            }
+            else
+            {
+                buttonBackToLoginForm.Visible = false;
+            }
+
             foreach (Panel panel in startFormPanels)
             {
+                
+
                 if (panel == panelToActivate)
                 {
                     panel.Visible = true;
@@ -92,6 +117,158 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
-   
+        private void buttonBackToLoginForm_Click(object sender, EventArgs e)
+        {
+            registrationType = RegistrationType.None;
+            ActivatePanel(LoginPanel);
+        }
+
+        private void buttonNextAccountSetup_Click(object sender, EventArgs e)
+        {
+            string id = textBoxRegistrationID.Text; 
+            string pass = textBoxRegistrationPassword.Text;
+
+            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(pass))
+            {
+                labelErrorHandler.Visible = true;
+                labelErrorHandler.Text = "Please enter both ID and Password.";
+            }
+            else
+            {
+ 
+                labelErrorHandler.Visible = false;
+
+               string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
+               "AND (EXISTS (SELECT 1 FROM AssetManager WHERE userID = @UserId) " +
+               "OR EXISTS (SELECT 1 FROM AssetOperator WHERE userID = @UserId) " +
+               "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@UserId", id);
+                parameters.Add("@Password", pass);
+
+
+                DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+                if (resultTable.Rows.Count == 1 && Convert.ToInt32(resultTable.Rows[0][0]) == 1)
+                {
+                    labelErrorHandler.Visible = true;
+                    labelErrorHandler.Text = "The ID is already existing";
+                    return;
+                }
+
+                string query2 = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password";
+                Dictionary<string, object> parameters1 = new Dictionary<string, object>();
+                parameters1.Add("@UserId", id);
+                parameters1.Add("@Password", pass);
+
+                DataTable resultTable1 = databaseConnection.ReadFromDatabase(query2, parameters1);
+
+                if (resultTable1.Rows.Count > 0 && Convert.ToInt32(resultTable1.Rows[0][0]) > 0)
+                {
+                    ActivatePanel(RegistrationAccountSetup1);
+                }
+                else
+                {
+                    labelErrorHandler.Visible = true;
+                    labelErrorHandler.Text = "Invalid ID or Password";
+                }
+
+            }
+
+            
+        }
+
+        private void buttonAccountSetup_Click(object sender, EventArgs e)
+        {
+            string firstname = textBoxAccSetupFirstName.Text;
+
+            if (string.IsNullOrEmpty(firstname))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter your first name";
+                return;
+            }
+
+            string middlename = textBoxAccSetupMiddleName.Text;
+
+            if (string.IsNullOrEmpty(middlename))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter your middle name";
+                return;
+            }
+
+            string lastname = textBoxAccSetupLastName.Text;
+
+            if (string.IsNullOrEmpty(lastname))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter your last name";
+                return;
+            }
+
+            string phonenum = textBoxAccSetupPhoneNum.Text;
+
+            if (string.IsNullOrEmpty(phonenum))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter a valid phone number.";
+                return;
+            }
+
+            string department = comboBoxAccSetupDepartment.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(department))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter your department";
+                return;
+            }
+
+            string address = textBoxAccSetupAddress.Text;
+
+            if (string.IsNullOrEmpty(address))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter your address";
+                return;
+            }
+
+            string email = textBoxAccSetupEmail.Text;
+
+            if (string.IsNullOrEmpty(email))
+            {
+                labelAccountSetupErrorHandler.Text = "Please enter your email";
+                return;
+            }
+
+            labelErrorHandler.Visible = false;
+
+            string id = textBoxRegistrationID.Text;
+
+            switch (registrationType)
+            {
+                case RegistrationType.Manager:
+
+                    string query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, assetManagerEmail, assetManagerAddress) VALUES (@userId, @assetManagerFName, @assetManagerMName, @assetManagerLName, @assetManagerPhoneNumber, @assetManagerEmail, @assetManagerAddress)";
+
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { "@userId", id },
+                        { "@assetManagerFName", firstname },
+                        { "@assetManagerMName", middlename },
+                        { "@assetManagerLName", lastname },
+                        { "@assetManagerPhoneNumber", phonenum },
+                        { "@assetManagerEmail", email },
+                        { "@assetManagerAddress", address }
+                    };
+
+
+                    databaseConnection.UploadToDatabase(query, parameters);
+                    break;
+
+                case RegistrationType.Operator:
+                    break;
+                case RegistrationType.Viewer:
+                    break;
+            }
+        }
+
+        
     }
 }
