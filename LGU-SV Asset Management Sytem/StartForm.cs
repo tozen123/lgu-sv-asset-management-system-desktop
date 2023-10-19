@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Threading;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -55,6 +57,10 @@ namespace LGU_SV_Asset_Management_Sytem
         private void ActivatePanel(Panel panelToActivate)
         {
             if (panelToActivate != LoginPanel)
+            {
+                buttonBackToLoginForm.Visible = true;
+            }
+            else if (panelToActivate == RegistrationAccountSetup2)
             {
                 buttonBackToLoginForm.Visible = true;
             }
@@ -240,35 +246,56 @@ namespace LGU_SV_Asset_Management_Sytem
 
             string id = textBoxRegistrationID.Text;
 
+            string query = string.Empty;
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+
+            {
+                { "@userId", id },
+                { "@firstName", firstname },
+                { "@middleName", middlename },
+                { "@lastName", lastname },
+                { "@phoneNumber", phonenum },
+                { "@email", email },
+                { "@address", address }
+            };
+
             switch (registrationType)
             {
                 case RegistrationType.Manager:
-
-                    string query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, assetManagerEmail, assetManagerAddress) VALUES (@userId, @assetManagerFName, @assetManagerMName, @assetManagerLName, @assetManagerPhoneNumber, @assetManagerEmail, @assetManagerAddress)";
-
-
-                    Dictionary<string, object> parameters = new Dictionary<string, object>
-                    {
-                        { "@userId", id },
-                        { "@assetManagerFName", firstname },
-                        { "@assetManagerMName", middlename },
-                        { "@assetManagerLName", lastname },
-                        { "@assetManagerPhoneNumber", phonenum },
-                        { "@assetManagerEmail", email },
-                        { "@assetManagerAddress", address }
-                    };
-
-
-                    databaseConnection.UploadToDatabase(query, parameters);
+                    query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, assetManagerEmail, assetManagerAddress) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
                     break;
 
                 case RegistrationType.Operator:
+                    query = "INSERT INTO AssetOperator (userId, assetOperatorFName, assetOperatorMName, assetOperatorLName, assetOperatorPhoneNum, assetOperatorEmail, assetOperatorAddress) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
                     break;
+
                 case RegistrationType.Viewer:
+                    query = "INSERT INTO AssetViewer (userId, assetViewerFName, assetViewerMName, assetViewerLName, assetViewerPhoneNum, assetViewerEmail, assetViewerAddress) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
                     break;
             }
+
+            if (!string.IsNullOrEmpty(query))
+            {
+                databaseConnection.UploadToDatabase(query, parameters);
+            }
+
+            ActivatePanel(RegistrationAccountSetup2);
+
         }
 
-        
+        private void buttonBrowseFiles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,6 +51,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxRegistrationID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.RegistrationAccountSetup1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxAccSetupLastName = new System.Windows.Forms.TextBox();
+            this.textBoxAccSetupMiddleName = new System.Windows.Forms.TextBox();
             this.labelAccountSetupErrorHandler = new System.Windows.Forms.Label();
             this.buttonAccountSetup = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,22 +71,23 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label7 = new System.Windows.Forms.Label();
             this.buttonBackToLoginForm = new System.Windows.Forms.Button();
             this.RegistrationAccountSetup2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.buttonBrowseFiles = new System.Windows.Forms.Button();
+            this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxAccSetupMiddleName = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBoxAccSetupLastName = new System.Windows.Forms.TextBox();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
             this.RegistrationAccountSetup1.SuspendLayout();
             this.RegistrationAccountSetup2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -298,6 +303,38 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.Size = new System.Drawing.Size(1080, 556);
             this.RegistrationAccountSetup1.TabIndex = 10;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(623, 146);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Last Name:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(346, 146);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Middle Name:";
+            // 
+            // textBoxAccSetupLastName
+            // 
+            this.textBoxAccSetupLastName.Location = new System.Drawing.Point(690, 143);
+            this.textBoxAccSetupLastName.Name = "textBoxAccSetupLastName";
+            this.textBoxAccSetupLastName.Size = new System.Drawing.Size(193, 20);
+            this.textBoxAccSetupLastName.TabIndex = 18;
+            // 
+            // textBoxAccSetupMiddleName
+            // 
+            this.textBoxAccSetupMiddleName.Location = new System.Drawing.Point(424, 143);
+            this.textBoxAccSetupMiddleName.Name = "textBoxAccSetupMiddleName";
+            this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(193, 20);
+            this.textBoxAccSetupMiddleName.TabIndex = 16;
+            // 
             // labelAccountSetupErrorHandler
             // 
             this.labelAccountSetupErrorHandler.AutoSize = true;
@@ -428,6 +465,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationAccountSetup2
             // 
+            this.RegistrationAccountSetup2.Controls.Add(this.label21);
+            this.RegistrationAccountSetup2.Controls.Add(this.label20);
+            this.RegistrationAccountSetup2.Controls.Add(this.buttonBrowseFiles);
+            this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
             this.RegistrationAccountSetup2.Controls.Add(this.button1);
             this.RegistrationAccountSetup2.Controls.Add(this.label17);
             this.RegistrationAccountSetup2.Controls.Add(this.label16);
@@ -440,10 +481,57 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1086, 580);
             this.RegistrationAccountSetup2.TabIndex = 15;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(465, 391);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(127, 13);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Drag and Drop Files Here";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(329, 282);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(117, 13);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "DIRECTORY_STRING";
+            // 
+            // buttonBrowseFiles
+            // 
+            this.buttonBrowseFiles.Location = new System.Drawing.Point(581, 268);
+            this.buttonBrowseFiles.Name = "buttonBrowseFiles";
+            this.buttonBrowseFiles.Size = new System.Drawing.Size(147, 40);
+            this.buttonBrowseFiles.TabIndex = 14;
+            this.buttonBrowseFiles.Text = "Browse Files";
+            this.buttonBrowseFiles.UseVisualStyleBackColor = true;
+            this.buttonBrowseFiles.Click += new System.EventHandler(this.buttonBrowseFiles_Click);
+            // 
+            // pictureBoxRegistration2
+            // 
+            this.pictureBoxRegistration2.AllowDrop = true;
+            this.pictureBoxRegistration2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBoxRegistration2.Location = new System.Drawing.Point(332, 314);
+            this.pictureBoxRegistration2.Name = "pictureBoxRegistration2";
+            this.pictureBoxRegistration2.Size = new System.Drawing.Size(396, 101);
+            this.pictureBoxRegistration2.TabIndex = 13;
+            this.pictureBoxRegistration2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(468, 513);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 40);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(406, 414);
+            this.label17.Location = new System.Drawing.Point(396, 468);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(97, 13);
             this.label17.TabIndex = 11;
@@ -452,7 +540,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(329, 414);
+            this.label16.Location = new System.Drawing.Point(319, 468);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(76, 13);
             this.label16.TabIndex = 10;
@@ -461,7 +549,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(329, 396);
+            this.label15.Location = new System.Drawing.Point(319, 450);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(399, 13);
             this.label15.TabIndex = 9;
@@ -494,49 +582,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label13.TabIndex = 6;
             this.label13.Text = "Welcome Onboard!";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(468, 513);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 40);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(346, 146);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 13);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "Middle Name:";
-            // 
-            // textBoxAccSetupMiddleName
-            // 
-            this.textBoxAccSetupMiddleName.Location = new System.Drawing.Point(424, 143);
-            this.textBoxAccSetupMiddleName.Name = "textBoxAccSetupMiddleName";
-            this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(193, 20);
-            this.textBoxAccSetupMiddleName.TabIndex = 16;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(623, 146);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(61, 13);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Last Name:";
-            // 
-            // textBoxAccSetupLastName
-            // 
-            this.textBoxAccSetupLastName.Location = new System.Drawing.Point(690, 143);
-            this.textBoxAccSetupLastName.Name = "textBoxAccSetupLastName";
-            this.textBoxAccSetupLastName.Size = new System.Drawing.Size(193, 20);
-            this.textBoxAccSetupLastName.TabIndex = 18;
-            // 
             // StartForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 654);
@@ -550,6 +598,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
+            this.Load += new System.EventHandler(this.StartForm_Load);
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.RegistrationStartPanel.ResumeLayout(false);
@@ -559,6 +608,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.PerformLayout();
             this.RegistrationAccountSetup2.ResumeLayout(false);
             this.RegistrationAccountSetup2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,5 +664,9 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxAccSetupLastName;
         private System.Windows.Forms.TextBox textBoxAccSetupMiddleName;
+        private System.Windows.Forms.PictureBox pictureBoxRegistration2;
+        private System.Windows.Forms.Button buttonBrowseFiles;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }
