@@ -476,7 +476,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup2.Controls.Add(this.label14);
             this.RegistrationAccountSetup2.Controls.Add(this.label12);
             this.RegistrationAccountSetup2.Controls.Add(this.label13);
-            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(12, 25);
+            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(19, 25);
             this.RegistrationAccountSetup2.Name = "RegistrationAccountSetup2";
             this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1086, 580);
             this.RegistrationAccountSetup2.TabIndex = 15;
@@ -588,13 +588,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 654);
-            this.Controls.Add(this.RegistrationAccountSetup2);
-            this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.buttonBackToLoginForm);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.RegistrationAccountSetup2);
+            this.Controls.Add(this.RegistrationAccountSetup1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
@@ -623,7 +623,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonSignUp;
-        private System.Windows.Forms.Panel LoginPanel;
         private System.Windows.Forms.Panel RegistrationStartPanel;
         private System.Windows.Forms.Button buttonViewerRole;
         private System.Windows.Forms.Button buttonOperatorRole;
@@ -668,5 +667,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonBrowseFiles;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel LoginPanel;
     }
 }

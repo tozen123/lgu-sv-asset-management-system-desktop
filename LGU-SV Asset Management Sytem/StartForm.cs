@@ -131,6 +131,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonNextAccountSetup_Click(object sender, EventArgs e)
         {
+            
             string id = textBoxRegistrationID.Text; 
             string pass = textBoxRegistrationPassword.Text;
 
@@ -171,7 +172,40 @@ namespace LGU_SV_Asset_Management_Sytem
 
                 if (resultTable1.Rows.Count > 0 && Convert.ToInt32(resultTable1.Rows[0][0]) > 0)
                 {
-                    ActivatePanel(RegistrationAccountSetup1);
+                    string[] code = id.Split('-');
+
+                    if ((code.Length > 0) == false)
+                    {
+                        labelErrorHandler.Visible = true;
+                        labelErrorHandler.Text = "The inputted ID did not appear in the database";
+                        return;
+                    }
+
+                    string codeTag = code[0];
+                    
+                    
+                    if (registrationType.Equals(RegistrationType.Manager))
+                    {
+                        if(codeTag == "03")
+                        {
+                            ActivatePanel(RegistrationAccountSetup1);
+                        }
+                    } 
+                    else if (registrationType.Equals(RegistrationType.Viewer))
+                    {
+                        if (codeTag == "01")
+                        {
+                            ActivatePanel(RegistrationAccountSetup1);
+                        }
+                    }
+                    else if (registrationType.Equals(RegistrationType.Operator))
+                    {
+                        if (codeTag == "02")
+                        {
+                            ActivatePanel(RegistrationAccountSetup1);
+                        }
+                    }
+
                 }
                 else
                 {
@@ -283,6 +317,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 databaseConnection.UploadToDatabase(query, parameters);
             }
 
+            //  Progress
             ActivatePanel(RegistrationAccountSetup2);
 
         }
