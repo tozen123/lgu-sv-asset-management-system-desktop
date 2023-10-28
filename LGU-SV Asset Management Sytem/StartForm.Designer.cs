@@ -72,10 +72,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonBackToLoginForm = new System.Windows.Forms.Button();
             this.RegistrationAccountSetup2 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.labelDirectoryString = new System.Windows.Forms.Label();
             this.buttonBrowseFiles = new System.Windows.Forms.Button();
             this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -466,10 +466,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // RegistrationAccountSetup2
             // 
             this.RegistrationAccountSetup2.Controls.Add(this.label21);
-            this.RegistrationAccountSetup2.Controls.Add(this.label20);
+            this.RegistrationAccountSetup2.Controls.Add(this.labelDirectoryString);
             this.RegistrationAccountSetup2.Controls.Add(this.buttonBrowseFiles);
             this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
-            this.RegistrationAccountSetup2.Controls.Add(this.button1);
+            this.RegistrationAccountSetup2.Controls.Add(this.buttonRegister);
             this.RegistrationAccountSetup2.Controls.Add(this.label17);
             this.RegistrationAccountSetup2.Controls.Add(this.label16);
             this.RegistrationAccountSetup2.Controls.Add(this.label15);
@@ -490,14 +490,14 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label21.TabIndex = 16;
             this.label21.Text = "Drag and Drop Files Here";
             // 
-            // label20
+            // labelDirectoryString
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(329, 282);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(117, 13);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "DIRECTORY_STRING";
+            this.labelDirectoryString.AutoSize = true;
+            this.labelDirectoryString.Location = new System.Drawing.Point(329, 282);
+            this.labelDirectoryString.Name = "labelDirectoryString";
+            this.labelDirectoryString.Size = new System.Drawing.Size(117, 13);
+            this.labelDirectoryString.TabIndex = 15;
+            this.labelDirectoryString.Text = "DIRECTORY_STRING";
             // 
             // buttonBrowseFiles
             // 
@@ -519,14 +519,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBoxRegistration2.TabIndex = 13;
             this.pictureBoxRegistration2.TabStop = false;
             // 
-            // button1
+            // buttonRegister
             // 
-            this.button1.Location = new System.Drawing.Point(468, 513);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 40);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRegister.Location = new System.Drawing.Point(468, 513);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(128, 40);
+            this.buttonRegister.TabIndex = 12;
+            this.buttonRegister.Text = "Register";
+            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // label17
             // 
@@ -590,11 +591,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.ClientSize = new System.Drawing.Size(1107, 654);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.RegistrationAccountSetup2);
+            this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.RegistrationAccountSetup2);
-            this.Controls.Add(this.RegistrationAccountSetup1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
@@ -658,14 +659,14 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxAccSetupLastName;
         private System.Windows.Forms.TextBox textBoxAccSetupMiddleName;
         private System.Windows.Forms.PictureBox pictureBoxRegistration2;
         private System.Windows.Forms.Button buttonBrowseFiles;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label labelDirectoryString;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel LoginPanel;
     }

@@ -125,14 +125,28 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonBackToLoginForm_Click(object sender, EventArgs e)
         {
+            textBoxAccSetupAddress.Text = "";
+            textBoxAccSetupEmail.Text = "";
+            textBoxAccSetupFirstName.Text = "";
+            textBoxAccSetupLastName.Text = "";
+            textBoxAccSetupMiddleName.Text = "";
+            textBoxAccSetupPhoneNum.Text = "";
+            textBoxEmail.Text = "";
+
+            textBoxPassword.Text = "";
+
+            textBoxRegistrationID.Text = "";
+            textBoxRegistrationPassword.Text = "";
+           
+
             registrationType = RegistrationType.None;
             ActivatePanel(LoginPanel);
         }
 
         private void buttonNextAccountSetup_Click(object sender, EventArgs e)
         {
-            
-            string id = textBoxRegistrationID.Text; 
+
+            string id = textBoxRegistrationID.Text;
             string pass = textBoxRegistrationPassword.Text;
 
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(pass))
@@ -142,13 +156,13 @@ namespace LGU_SV_Asset_Management_Sytem
             }
             else
             {
- 
+
                 labelErrorHandler.Visible = false;
 
-               string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
-               "AND (EXISTS (SELECT 1 FROM AssetManager WHERE userID = @UserId) " +
-               "OR EXISTS (SELECT 1 FROM AssetOperator WHERE userID = @UserId) " +
-               "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
+                string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
+                "AND (EXISTS (SELECT 1 FROM AssetManager WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetOperator WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@UserId", id);
                 parameters.Add("@Password", pass);
@@ -174,50 +188,52 @@ namespace LGU_SV_Asset_Management_Sytem
                 {
                     string[] code = id.Split('-');
 
-                    if ((code.Length > 0) == false)
+                    if (code.Length == 0)
                     {
-                        labelErrorHandler.Visible = true;
-                        labelErrorHandler.Text = "The inputted ID did not appear in the database";
+                        ShowErrorMessage("The inputted ID did not appear in the database");
                         return;
                     }
 
                     string codeTag = code[0];
-                    
-                    
-                    if (registrationType.Equals(RegistrationType.Manager))
+
+                    bool isValidRegistrationType = false;
+
+                    switch (registrationType)
                     {
-                        if(codeTag == "03")
-                        {
-                            ActivatePanel(RegistrationAccountSetup1);
-                        }
-                    } 
-                    else if (registrationType.Equals(RegistrationType.Viewer))
-                    {
-                        if (codeTag == "01")
-                        {
-                            ActivatePanel(RegistrationAccountSetup1);
-                        }
-                    }
-                    else if (registrationType.Equals(RegistrationType.Operator))
-                    {
-                        if (codeTag == "02")
-                        {
-                            ActivatePanel(RegistrationAccountSetup1);
-                        }
+                        case RegistrationType.Manager:
+                            isValidRegistrationType = codeTag == "03";
+                            break;
+                        case RegistrationType.Viewer:
+                            isValidRegistrationType = codeTag == "01";
+                            break;
+                        case RegistrationType.Operator:
+                            isValidRegistrationType = codeTag == "02";
+                            break;
                     }
 
+                    if (isValidRegistrationType)
+                    {
+                        ActivatePanel(RegistrationAccountSetup1);
+                    }
+                    else
+                    {
+                        ShowErrorMessage("Your ID does not correspond with the registration type. Please select the correct one.");
+                    }
                 }
                 else
                 {
-                    labelErrorHandler.Visible = true;
-                    labelErrorHandler.Text = "Invalid ID or Password";
+                    ShowErrorMessage("Invalid ID or Password");
                 }
 
-            }
 
-            
+            }
         }
 
+        private void ShowErrorMessage(string message)
+        {
+            labelErrorHandler.Visible = true;
+            labelErrorHandler.Text = message;
+        }
         private void buttonAccountSetup_Click(object sender, EventArgs e)
         {
             string firstname = textBoxAccSetupFirstName.Text;
@@ -322,15 +338,59 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
+        byte[] ConvertImageToBytes(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public Image ConvertByteArrayToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
         private void buttonBrowseFiles_Click(object sender, EventArgs e)
         {
-
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG Files (*.jpg; *.jpeg)|*.jpg;*.jpeg", Multiselect = false })
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxRegistration2.Image = Image.FromFile(ofd.FileName);
+                    
+                    labelDirectoryString.Text = ofd.FileName;
+                }
+            }
+           
         }
 
 
         private void StartForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE Users SET userImage = @img WHERE userID = @userId";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+
+                    {
+                        { "@userId", textBoxRegistrationID.Text },
+                        { "@img", ConvertImageToBytes(pictureBoxRegistration2.Image) }
+
+                    };
+            databaseConnection.UploadToDatabase(query, parameters);
+
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
+            
         }
     }
 }
