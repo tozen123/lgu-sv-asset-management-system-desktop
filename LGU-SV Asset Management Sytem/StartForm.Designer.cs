@@ -82,6 +82,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
@@ -115,7 +116,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(16, 120);
+            this.buttonLogin.Location = new System.Drawing.Point(15, 169);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 4;
@@ -128,9 +129,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(18, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Email";
+            this.label2.Text = "ID";
             // 
             // label3
             // 
@@ -143,7 +144,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonSignUp
             // 
-            this.buttonSignUp.Location = new System.Drawing.Point(16, 173);
+            this.buttonSignUp.Location = new System.Drawing.Point(15, 222);
             this.buttonSignUp.Name = "buttonSignUp";
             this.buttonSignUp.Size = new System.Drawing.Size(75, 23);
             this.buttonSignUp.TabIndex = 7;
@@ -153,6 +154,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // LoginPanel
             // 
+            this.LoginPanel.Controls.Add(this.Label_ErrorHandler_Login);
             this.LoginPanel.Controls.Add(this.textBoxEmail);
             this.LoginPanel.Controls.Add(this.buttonSignUp);
             this.LoginPanel.Controls.Add(this.textBoxPassword);
@@ -583,6 +585,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label13.TabIndex = 6;
             this.label13.Text = "Welcome Onboard!";
             // 
+            // Label_ErrorHandler_Login
+            // 
+            this.Label_ErrorHandler_Login.AutoSize = true;
+            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(74, 108);
+            this.Label_ErrorHandler_Login.Name = "Label_ErrorHandler_Login";
+            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(72, 13);
+            this.Label_ErrorHandler_Login.TabIndex = 8;
+            this.Label_ErrorHandler_Login.Text = "Error_Handler";
+            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -591,11 +602,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.ClientSize = new System.Drawing.Size(1107, 654);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
-            this.Controls.Add(this.LoginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
@@ -669,5 +680,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label labelDirectoryString;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel LoginPanel;
+        private System.Windows.Forms.Label Label_ErrorHandler_Login;
     }
 }

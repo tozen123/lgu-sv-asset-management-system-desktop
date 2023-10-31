@@ -89,7 +89,34 @@ namespace LGU_SV_Asset_Management_Sytem
             string inputEmail = textBoxEmail.Text;
             string inputPassword = textBoxPassword.Text;
 
-            
+            string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
+                "AND (EXISTS (SELECT 1 FROM AssetManager WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetOperator WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@UserId", inputEmail);
+            parameters.Add("@Password", inputPassword);
+
+
+            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+            if (resultTable.Rows.Count == 1 && Convert.ToInt32(resultTable.Rows[0][0]) == 1)
+            {
+                Label_ErrorHandler_Login.Visible = false;
+                MainForm mainForm = new MainForm();
+                mainForm.SetSessionHandler(inputEmail);
+                mainForm.Show();
+
+
+
+                this.Hide();
+            } 
+            else
+            {
+                Label_ErrorHandler_Login.Visible = true;
+                Label_ErrorHandler_Login.Text = "Wrong Password or ID";
+                return;
+            }
         }
 
         private void buttonSignUp_Click(object sender, EventArgs e)
