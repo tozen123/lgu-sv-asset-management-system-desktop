@@ -1,73 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-
-    class DatabaseConnection
+    class DatabaseConnection : IDisposable
     {
-        string connectionString = "Data Source=TOZEN\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
-        public void UploadToDatabase(string query, Dictionary<string, object> parameters)
+        private SqlConnection connection;
+        private string connectionString = "Data Source=TOZEN\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
+
+        public DatabaseConnection()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            connection = new SqlConnection(connectionString);
+        }
+
+        public void OpenConnection()
+        {
+            if (connection.State != ConnectionState.Open)
             {
-                try
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        foreach (var parameter in parameters)
-                        {
-                            command.Parameters.AddWithValue(parameter.Key, parameter.Value);
-                        }
-
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
- 
-                    Console.WriteLine("Error: " + ex.Message);
-                }
+                connection.Open();
             }
         }
+
+        public void CloseConnection()
+        {
+            if (connection.State != ConnectionState.Closed)
+            {
+                connection.Close();
+            }
+        }
+
+        public void Dispose()
+        {
+            CloseConnection();
+            connection.Dispose();
+        }
+
+        public void UploadToDatabase(string query, Dictionary<string, object> parameters)
+        {
+            OpenConnection();
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.AddWithValue(parameter.Key, parameter.Value);
+                    }
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
         public DataTable ReadFromDatabase(string query, Dictionary<string, object> parameters)
         {
+            OpenConnection();
+
             DataTable dataTable = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    foreach (var parameter in parameters)
                     {
-                        foreach (var parameter in parameters)
-                        {
-                            command.Parameters.AddWithValue(parameter.Key, parameter.Value);
-                        }
+                        command.Parameters.AddWithValue(parameter.Key, parameter.Value);
+                    }
 
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                        {
-                            adapter.Fill(dataTable);
-                        }
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
             }
 
             return dataTable;
         }
     }
-
 }
