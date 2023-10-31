@@ -599,7 +599,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 654);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginPanel);

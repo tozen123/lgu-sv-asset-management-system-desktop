@@ -107,7 +107,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 mainForm.SetSessionHandler(inputEmail);
                 mainForm.Show();
 
-
+                databaseConnection.CloseConnection();
 
                 this.Hide();
             } 
