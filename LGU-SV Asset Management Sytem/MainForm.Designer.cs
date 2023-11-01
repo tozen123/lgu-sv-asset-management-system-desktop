@@ -36,7 +36,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxProfilePosition = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBoxProfileOffice = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxProfilePassword = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -47,7 +46,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfileName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonEditProfile = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,9 +76,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonProfileSave = new System.Windows.Forms.Button();
             this.buttonProfileCancel = new System.Windows.Forms.Button();
+            this.checkBoxButtonProfileShowPassword = new System.Windows.Forms.CheckBox();
+            this.comboBoxProfileDept = new System.Windows.Forms.ComboBox();
             this.panelTabControl.SuspendLayout();
             this.tabProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
             this.tabDashboard.SuspendLayout();
             this.tabAssetRecords.SuspendLayout();
             this.tabArchiveRecords.SuspendLayout();
@@ -92,8 +93,8 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // panelTabControl
             // 
-            this.panelTabControl.Controls.Add(this.tabProfile);
             this.panelTabControl.Controls.Add(this.tabDashboard);
+            this.panelTabControl.Controls.Add(this.tabProfile);
             this.panelTabControl.Controls.Add(this.tabAssetRecords);
             this.panelTabControl.Controls.Add(this.tabArchiveRecords);
             this.panelTabControl.Controls.Add(this.tabGenReport);
@@ -111,13 +112,14 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // tabProfile
             // 
+            this.tabProfile.Controls.Add(this.comboBoxProfileDept);
+            this.tabProfile.Controls.Add(this.checkBoxButtonProfileShowPassword);
             this.tabProfile.Controls.Add(this.buttonProfileCancel);
             this.tabProfile.Controls.Add(this.buttonProfileSave);
             this.tabProfile.Controls.Add(this.textBoxProfileAddress);
             this.tabProfile.Controls.Add(this.label15);
             this.tabProfile.Controls.Add(this.textBoxProfilePosition);
             this.tabProfile.Controls.Add(this.label14);
-            this.tabProfile.Controls.Add(this.textBoxProfileOffice);
             this.tabProfile.Controls.Add(this.label13);
             this.tabProfile.Controls.Add(this.textBoxProfilePassword);
             this.tabProfile.Controls.Add(this.label12);
@@ -128,7 +130,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabProfile.Controls.Add(this.textBoxProfileName);
             this.tabProfile.Controls.Add(this.label9);
             this.tabProfile.Controls.Add(this.buttonEditProfile);
-            this.tabProfile.Controls.Add(this.pictureBox1);
+            this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
             this.tabProfile.Controls.Add(this.label3);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
@@ -160,6 +162,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxProfilePosition
             // 
             this.textBoxProfilePosition.BackColor = System.Drawing.Color.Silver;
+            this.textBoxProfilePosition.Enabled = false;
             this.textBoxProfilePosition.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfilePosition.Location = new System.Drawing.Point(558, 342);
             this.textBoxProfilePosition.Name = "textBoxProfilePosition";
@@ -175,15 +178,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label14.Size = new System.Drawing.Size(76, 28);
             this.label14.TabIndex = 14;
             this.label14.Text = "Position:";
-            // 
-            // textBoxProfileOffice
-            // 
-            this.textBoxProfileOffice.BackColor = System.Drawing.Color.Silver;
-            this.textBoxProfileOffice.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfileOffice.Location = new System.Drawing.Point(558, 291);
-            this.textBoxProfileOffice.Name = "textBoxProfileOffice";
-            this.textBoxProfileOffice.Size = new System.Drawing.Size(378, 31);
-            this.textBoxProfileOffice.TabIndex = 13;
             // 
             // label13
             // 
@@ -201,8 +195,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfilePassword.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfilePassword.Location = new System.Drawing.Point(558, 240);
             this.textBoxProfilePassword.Name = "textBoxProfilePassword";
+            this.textBoxProfilePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxProfilePassword.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfilePassword.TabIndex = 11;
+            this.textBoxProfilePassword.UseSystemPasswordChar = true;
             // 
             // label12
             // 
@@ -281,15 +277,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonEditProfile.UseVisualStyleBackColor = true;
             this.buttonEditProfile.Click += new System.EventHandler(this.buttonEditProfile_Click);
             // 
-            // pictureBox1
+            // pictureBoxProfileImage
             // 
-            this.pictureBox1.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(314, 327);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
+            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(16, 93);
+            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
+            this.pictureBoxProfileImage.TabIndex = 2;
+            this.pictureBoxProfileImage.TabStop = false;
             // 
             // label3
             // 
@@ -509,6 +505,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonLogout.TabIndex = 16;
             this.buttonLogout.Text = "Log Out";
             this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonOthers
             // 
@@ -578,6 +575,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonProfileSave.TabIndex = 18;
             this.buttonProfileSave.Text = "SAVE";
             this.buttonProfileSave.UseVisualStyleBackColor = true;
+            this.buttonProfileSave.Click += new System.EventHandler(this.buttonProfileSave_Click);
             // 
             // buttonProfileCancel
             // 
@@ -587,6 +585,28 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonProfileCancel.TabIndex = 19;
             this.buttonProfileCancel.Text = "CANCEL";
             this.buttonProfileCancel.UseVisualStyleBackColor = true;
+            this.buttonProfileCancel.Click += new System.EventHandler(this.buttonProfileCancel_Click);
+            // 
+            // checkBoxButtonProfileShowPassword
+            // 
+            this.checkBoxButtonProfileShowPassword.AutoSize = true;
+            this.checkBoxButtonProfileShowPassword.Location = new System.Drawing.Point(857, 243);
+            this.checkBoxButtonProfileShowPassword.Name = "checkBoxButtonProfileShowPassword";
+            this.checkBoxButtonProfileShowPassword.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxButtonProfileShowPassword.TabIndex = 20;
+            this.checkBoxButtonProfileShowPassword.Text = "SHOW";
+            this.checkBoxButtonProfileShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxButtonProfileShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxButtonProfileShowPassword_CheckedChanged);
+            // 
+            // comboBoxProfileDept
+            // 
+            this.comboBoxProfileDept.BackColor = System.Drawing.Color.Silver;
+            this.comboBoxProfileDept.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxProfileDept.FormattingEnabled = true;
+            this.comboBoxProfileDept.Location = new System.Drawing.Point(558, 291);
+            this.comboBoxProfileDept.Name = "comboBoxProfileDept";
+            this.comboBoxProfileDept.Size = new System.Drawing.Size(378, 36);
+            this.comboBoxProfileDept.TabIndex = 21;
             // 
             // MainForm
             // 
@@ -601,7 +621,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.ResumeLayout(false);
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
             this.tabDashboard.ResumeLayout(false);
             this.tabDashboard.PerformLayout();
             this.tabAssetRecords.ResumeLayout(false);
@@ -653,13 +673,12 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelUserType;
         private System.Windows.Forms.Label labelUserName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxProfileImage;
         private System.Windows.Forms.Button buttonEditProfile;
         private System.Windows.Forms.TextBox textBoxProfileAddress;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBoxProfilePosition;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxProfileOffice;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxProfilePassword;
         private System.Windows.Forms.Label label12;
@@ -671,5 +690,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonProfileCancel;
         private System.Windows.Forms.Button buttonProfileSave;
+        private System.Windows.Forms.CheckBox checkBoxButtonProfileShowPassword;
+        private System.Windows.Forms.ComboBox comboBoxProfileDept;
     }
 }

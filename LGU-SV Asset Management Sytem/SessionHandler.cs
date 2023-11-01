@@ -15,10 +15,20 @@ namespace LGU_SV_Asset_Management_Sytem
     class SessionHandler
     {
         private string current_user_id;
+        private string current_user_password;
+        private bool isActive;
 
-        public SessionHandler(string user_id)
+        public SessionHandler(string user_id, string password)
         {
             current_user_id = user_id;
+            current_user_password = password;
+
+            isActive = true;
+        }
+
+        public string GetCurrentUserPassword()
+        {
+            return current_user_password;
         }
 
         public string GetCurrentUserID()
@@ -66,6 +76,25 @@ namespace LGU_SV_Asset_Management_Sytem
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
   
             return $"{resultTable.Rows[0][0]} {resultTable.Rows[0][1]}";
+        }
+
+
+        public void OnCurrentSessionSafeChangePassword(string newpassword)
+        {
+            current_user_password = newpassword;
+        }
+
+        public void OnCurrentSessionEnd()
+        {
+            current_user_id = null;
+            current_user_password = null;
+
+            isActive = false;
+        }
+
+        public bool isCurrentSessionActive()
+        {
+            return isActive;
         }
     }
 }

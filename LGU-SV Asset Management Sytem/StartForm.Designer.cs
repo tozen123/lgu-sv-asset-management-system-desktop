@@ -38,6 +38,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3 = new System.Windows.Forms.Label();
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.RegistrationStartPanel = new System.Windows.Forms.Panel();
             this.buttonManagerRole = new System.Windows.Forms.Button();
             this.buttonViewerRole = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
@@ -165,6 +165,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(1080, 577);
             this.LoginPanel.TabIndex = 8;
+            // 
+            // Label_ErrorHandler_Login
+            // 
+            this.Label_ErrorHandler_Login.AutoSize = true;
+            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(74, 108);
+            this.Label_ErrorHandler_Login.Name = "Label_ErrorHandler_Login";
+            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(72, 13);
+            this.Label_ErrorHandler_Login.TabIndex = 8;
+            this.Label_ErrorHandler_Login.Text = "Error_Handler";
             // 
             // RegistrationStartPanel
             // 
@@ -585,15 +594,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label13.TabIndex = 6;
             this.label13.Text = "Welcome Onboard!";
             // 
-            // Label_ErrorHandler_Login
-            // 
-            this.Label_ErrorHandler_Login.AutoSize = true;
-            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(74, 108);
-            this.Label_ErrorHandler_Login.Name = "Label_ErrorHandler_Login";
-            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(72, 13);
-            this.Label_ErrorHandler_Login.TabIndex = 8;
-            this.Label_ErrorHandler_Login.Text = "Error_Handler";
-            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -602,11 +602,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
+            this.Controls.Add(this.LoginPanel);
+            this.Controls.Add(this.RegistrationAccountSetup2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";

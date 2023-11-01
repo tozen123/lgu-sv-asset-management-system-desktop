@@ -104,7 +104,7 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 Label_ErrorHandler_Login.Visible = false;
                 MainForm mainForm = new MainForm();
-                mainForm.SetSessionHandler(inputEmail);
+                mainForm.SetSessionHandler(inputEmail, inputPassword);
                 mainForm.Show();
 
                 databaseConnection.CloseConnection();
@@ -334,24 +334,28 @@ namespace LGU_SV_Asset_Management_Sytem
                 { "@lastName", lastname },
                 { "@phoneNumber", phonenum },
                 { "@email", email },
-                { "@address", address }
+                { "@address", address },
+                { "@office", department }
             };
 
             switch (registrationType)
             {
                 case RegistrationType.Manager:
-                    query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, assetManagerEmail, assetManagerAddress) " +
-                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
+                    query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, " +
+                        "assetManagerEmail, assetManagerAddress, assetManagerOffice) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
                 case RegistrationType.Operator:
-                    query = "INSERT INTO AssetOperator (userId, assetOperatorFName, assetOperatorMName, assetOperatorLName, assetOperatorPhoneNum, assetOperatorEmail, assetOperatorAddress) " +
-                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
+                    query = "INSERT INTO AssetOperator (userId, assetOperatorFName, assetOperatorMName, assetOperatorLName, assetOperatorPhoneNum, " +
+                        "assetOperatorEmail, assetOperatorAddress, assetOperatorOffice) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
                 case RegistrationType.Viewer:
-                    query = "INSERT INTO AssetViewer (userId, assetViewerFName, assetViewerMName, assetViewerLName, assetViewerPhoneNum, assetViewerEmail, assetViewerAddress) " +
-                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
+                    query = "INSERT INTO AssetViewer (userId, assetViewerFName, assetViewerMName, assetViewerLName, assetViewerPhoneNum, " +
+                        "assetViewerEmail, assetViewerAddress, assetViewerOffice) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
             }
 
@@ -389,7 +393,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
                     pictureBoxRegistration2.Image = Image.FromFile(ofd.FileName);
-                    
+                    pictureBoxRegistration2.SizeMode = PictureBoxSizeMode.StretchImage;
                     labelDirectoryString.Text = ofd.FileName;
                 }
             }
@@ -413,11 +417,9 @@ namespace LGU_SV_Asset_Management_Sytem
 
                     };
             databaseConnection.UploadToDatabase(query, parameters);
+            databaseConnection.CloseConnection();
 
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Hide();
-            
+            ActivatePanel(LoginPanel);
         }
     }
 }
