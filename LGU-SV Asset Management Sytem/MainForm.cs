@@ -15,11 +15,19 @@ namespace LGU_SV_Asset_Management_Sytem
         // Reference for SessionHandler
         private SessionHandler sessionHandler;
         private DatabaseConnection databaseConnection;
+
+
+        //Profile Tab
+        List<Control> profileTabControls = new List<Control>();
+
         public MainForm()
         {
             InitializeComponent();
             InitialiazeTabControl();
+
             databaseConnection = new DatabaseConnection();
+
+            InitializeProfileTabControls();
         }
 
         // Start
@@ -50,6 +58,12 @@ namespace LGU_SV_Asset_Management_Sytem
             labelUserType.Text = sessionHandler.GetTypeUser();
         }
 
+        private void ProfileTabPanel()
+        {
+            
+
+        }
+
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabDashboard;
@@ -78,6 +92,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabProfile;
+            ProfileTabPanel();
         }
 
         private void buttonAbout_Click(object sender, EventArgs e)
@@ -88,6 +103,50 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAbout;
+        }
+
+        private void InitializeProfileTabControls()
+        {
+            profileTabControls.Add(buttonEditProfile);
+            profileTabControls.Add(buttonProfileSave);
+            profileTabControls.Add(buttonProfileCancel);
+
+            profileTabControls.Add(textBoxProfileName);
+            profileTabControls.Add(textBoxProfilePhoneNumber);
+            profileTabControls.Add(textBoxProfileEmail);
+            profileTabControls.Add(textBoxProfilePassword);
+            profileTabControls.Add(textBoxProfileOffice);
+            profileTabControls.Add(textBoxProfilePosition);
+            profileTabControls.Add(textBoxProfileAddress);
+
+
+            SetListControlStateTo(profileTabControls, false);
+
+            buttonEditProfile.Enabled = true;
+            buttonProfileSave.Visible = false;
+            buttonProfileCancel.Visible = false;
+
+            //Fetch Data
+        }
+
+        private void SetListControlStateTo(List<Control> controls, bool state)
+        {
+            foreach (Control control in controls)
+            {
+                control.Enabled = state;
+            }
+        }
+
+        private void buttonEditProfile_Click(object sender, EventArgs e)
+        {
+            SetListControlStateTo(profileTabControls, true);
+            buttonEditProfile.Visible = false;
+
+            buttonProfileSave.Visible = true;
+            buttonProfileCancel.Visible = true;
+
+
+
         }
     }
 }
