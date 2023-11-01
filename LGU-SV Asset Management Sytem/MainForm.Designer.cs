@@ -31,7 +31,13 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelTabControl = new System.Windows.Forms.TabControl();
+            this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.comboBoxProfileDept = new System.Windows.Forms.ComboBox();
+            this.checkBoxButtonProfileShowPassword = new System.Windows.Forms.CheckBox();
+            this.buttonProfileCancel = new System.Windows.Forms.Button();
+            this.buttonProfileSave = new System.Windows.Forms.Button();
             this.textBoxProfileAddress = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxProfilePosition = new System.Windows.Forms.TextBox();
@@ -48,8 +54,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
@@ -62,10 +66,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label7 = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelUserName = new System.Windows.Forms.Label();
-            this.labelUserType = new System.Windows.Forms.Label();
+            this.groupBoxSide = new System.Windows.Forms.GroupBox();
+            this.buttonHamburger = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonOthers = new System.Windows.Forms.Button();
@@ -73,26 +77,22 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonArchiveRecords = new System.Windows.Forms.Button();
             this.buttonAssetRecords = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
-            this.buttonProfile = new System.Windows.Forms.Button();
-            this.buttonProfileSave = new System.Windows.Forms.Button();
-            this.buttonProfileCancel = new System.Windows.Forms.Button();
-            this.checkBoxButtonProfileShowPassword = new System.Windows.Forms.CheckBox();
-            this.comboBoxProfileDept = new System.Windows.Forms.ComboBox();
             this.panelTabControl.SuspendLayout();
+            this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
-            this.tabDashboard.SuspendLayout();
             this.tabAssetRecords.SuspendLayout();
             this.tabArchiveRecords.SuspendLayout();
             this.tabGenReport.SuspendLayout();
             this.tabOthers.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tabSettings.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxSide.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTabControl
             // 
+            this.panelTabControl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelTabControl.Controls.Add(this.tabDashboard);
             this.panelTabControl.Controls.Add(this.tabProfile);
             this.panelTabControl.Controls.Add(this.tabAssetRecords);
@@ -102,13 +102,32 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Controls.Add(this.tabAbout);
             this.panelTabControl.Controls.Add(this.tabSettings);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(159, 12);
+            this.panelTabControl.Location = new System.Drawing.Point(99, 12);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1013, 737);
-            this.panelTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.panelTabControl.Size = new System.Drawing.Size(1180, 737);
             this.panelTabControl.TabIndex = 0;
+            // 
+            // tabDashboard
+            // 
+            this.tabDashboard.Controls.Add(this.label1);
+            this.tabDashboard.Location = new System.Drawing.Point(4, 22);
+            this.tabDashboard.Name = "tabDashboard";
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDashboard.Size = new System.Drawing.Size(1172, 711);
+            this.tabDashboard.TabIndex = 1;
+            this.tabDashboard.Text = "tabPage2";
+            this.tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dashboard";
             // 
             // tabProfile
             // 
@@ -135,10 +154,51 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1005, 711);
+            this.tabProfile.Size = new System.Drawing.Size(1172, 711);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "tabPage1";
             this.tabProfile.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxProfileDept
+            // 
+            this.comboBoxProfileDept.BackColor = System.Drawing.Color.Silver;
+            this.comboBoxProfileDept.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxProfileDept.FormattingEnabled = true;
+            this.comboBoxProfileDept.Location = new System.Drawing.Point(558, 291);
+            this.comboBoxProfileDept.Name = "comboBoxProfileDept";
+            this.comboBoxProfileDept.Size = new System.Drawing.Size(378, 36);
+            this.comboBoxProfileDept.TabIndex = 21;
+            // 
+            // checkBoxButtonProfileShowPassword
+            // 
+            this.checkBoxButtonProfileShowPassword.AutoSize = true;
+            this.checkBoxButtonProfileShowPassword.Location = new System.Drawing.Point(857, 243);
+            this.checkBoxButtonProfileShowPassword.Name = "checkBoxButtonProfileShowPassword";
+            this.checkBoxButtonProfileShowPassword.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxButtonProfileShowPassword.TabIndex = 20;
+            this.checkBoxButtonProfileShowPassword.Text = "SHOW";
+            this.checkBoxButtonProfileShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxButtonProfileShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxButtonProfileShowPassword_CheckedChanged);
+            // 
+            // buttonProfileCancel
+            // 
+            this.buttonProfileCancel.Location = new System.Drawing.Point(175, 479);
+            this.buttonProfileCancel.Name = "buttonProfileCancel";
+            this.buttonProfileCancel.Size = new System.Drawing.Size(155, 47);
+            this.buttonProfileCancel.TabIndex = 19;
+            this.buttonProfileCancel.Text = "CANCEL";
+            this.buttonProfileCancel.UseVisualStyleBackColor = true;
+            this.buttonProfileCancel.Click += new System.EventHandler(this.buttonProfileCancel_Click);
+            // 
+            // buttonProfileSave
+            // 
+            this.buttonProfileSave.Location = new System.Drawing.Point(16, 479);
+            this.buttonProfileSave.Name = "buttonProfileSave";
+            this.buttonProfileSave.Size = new System.Drawing.Size(155, 47);
+            this.buttonProfileSave.TabIndex = 18;
+            this.buttonProfileSave.Text = "SAVE";
+            this.buttonProfileSave.UseVisualStyleBackColor = true;
+            this.buttonProfileSave.Click += new System.EventHandler(this.buttonProfileSave_Click);
             // 
             // textBoxProfileAddress
             // 
@@ -297,33 +357,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3.TabIndex = 1;
             this.label3.Text = "Account Profile";
             // 
-            // tabDashboard
-            // 
-            this.tabDashboard.Controls.Add(this.label1);
-            this.tabDashboard.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(1005, 711);
-            this.tabDashboard.TabIndex = 1;
-            this.tabDashboard.Text = "tabPage2";
-            this.tabDashboard.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Dashboard";
-            // 
             // tabAssetRecords
             // 
             this.tabAssetRecords.Controls.Add(this.label2);
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
             this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssetRecords.Size = new System.Drawing.Size(1005, 711);
+            this.tabAssetRecords.Size = new System.Drawing.Size(1172, 711);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
@@ -343,7 +383,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArchiveRecords.Size = new System.Drawing.Size(1005, 711);
+            this.tabArchiveRecords.Size = new System.Drawing.Size(1172, 711);
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
@@ -363,7 +403,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabGenReport.Location = new System.Drawing.Point(4, 22);
             this.tabGenReport.Name = "tabGenReport";
             this.tabGenReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenReport.Size = new System.Drawing.Size(1005, 711);
+            this.tabGenReport.Size = new System.Drawing.Size(1172, 711);
             this.tabGenReport.TabIndex = 4;
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
@@ -383,7 +423,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOthers.Location = new System.Drawing.Point(4, 22);
             this.tabOthers.Name = "tabOthers";
             this.tabOthers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOthers.Size = new System.Drawing.Size(1005, 711);
+            this.tabOthers.Size = new System.Drawing.Size(1172, 711);
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
@@ -403,7 +443,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
             this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAbout.Size = new System.Drawing.Size(1005, 711);
+            this.tabAbout.Size = new System.Drawing.Size(1172, 711);
             this.tabAbout.TabIndex = 6;
             this.tabAbout.Text = "tabPage7";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -423,7 +463,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSettings.Location = new System.Drawing.Point(4, 22);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(1005, 711);
+            this.tabSettings.Size = new System.Drawing.Size(1172, 711);
             this.tabSettings.TabIndex = 7;
             this.tabSettings.Text = "tabPage8";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -437,193 +477,144 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label8.TabIndex = 2;
             this.label8.Text = "Settings";
             // 
-            // groupBox1
+            // groupBoxSide
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.labelUserName);
-            this.groupBox1.Controls.Add(this.labelUserType);
-            this.groupBox1.Controls.Add(this.buttonAbout);
-            this.groupBox1.Controls.Add(this.buttonSettings);
-            this.groupBox1.Controls.Add(this.buttonLogout);
-            this.groupBox1.Controls.Add(this.buttonOthers);
-            this.groupBox1.Controls.Add(this.buttonGenerateReports);
-            this.groupBox1.Controls.Add(this.buttonArchiveRecords);
-            this.groupBox1.Controls.Add(this.buttonAssetRecords);
-            this.groupBox1.Controls.Add(this.buttonDashboard);
-            this.groupBox1.Controls.Add(this.buttonProfile);
-            this.groupBox1.Location = new System.Drawing.Point(13, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(140, 737);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.groupBoxSide.BackColor = System.Drawing.Color.Silver;
+            this.groupBoxSide.Controls.Add(this.buttonHamburger);
+            this.groupBoxSide.Controls.Add(this.buttonAbout);
+            this.groupBoxSide.Controls.Add(this.buttonProfile);
+            this.groupBoxSide.Controls.Add(this.buttonSettings);
+            this.groupBoxSide.Controls.Add(this.buttonLogout);
+            this.groupBoxSide.Controls.Add(this.buttonOthers);
+            this.groupBoxSide.Controls.Add(this.buttonGenerateReports);
+            this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
+            this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
+            this.groupBoxSide.Controls.Add(this.buttonDashboard);
+            this.groupBoxSide.Location = new System.Drawing.Point(13, 12);
+            this.groupBoxSide.Name = "groupBoxSide";
+            this.groupBoxSide.Size = new System.Drawing.Size(80, 737);
+            this.groupBoxSide.TabIndex = 1;
+            this.groupBoxSide.TabStop = false;
             // 
-            // labelUserName
+            // buttonHamburger
             // 
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(43, 55);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(76, 16);
-            this.labelUserName.TabIndex = 20;
-            this.labelUserName.Text = "USER_NAME";
-            // 
-            // labelUserType
-            // 
-            this.labelUserType.AutoSize = true;
-            this.labelUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserType.Location = new System.Drawing.Point(44, 71);
-            this.labelUserType.Name = "labelUserType";
-            this.labelUserType.Size = new System.Drawing.Size(58, 12);
-            this.labelUserType.TabIndex = 19;
-            this.labelUserType.Text = "USER_TYPE";
+            this.buttonHamburger.Location = new System.Drawing.Point(15, 22);
+            this.buttonHamburger.Name = "buttonHamburger";
+            this.buttonHamburger.Size = new System.Drawing.Size(49, 62);
+            this.buttonHamburger.TabIndex = 21;
+            this.buttonHamburger.Text = "-\r\n-\r\n-";
+            this.buttonHamburger.UseVisualStyleBackColor = true;
+            this.buttonHamburger.Click += new System.EventHandler(this.buttonHamburger_Click);
             // 
             // buttonAbout
             // 
-            this.buttonAbout.Location = new System.Drawing.Point(6, 628);
+            this.buttonAbout.Location = new System.Drawing.Point(15, 637);
             this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(126, 28);
+            this.buttonAbout.Size = new System.Drawing.Size(49, 28);
             this.buttonAbout.TabIndex = 18;
-            this.buttonAbout.Text = "About";
+            this.buttonAbout.Text = "AB";
             this.buttonAbout.UseVisualStyleBackColor = true;
             this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Location = new System.Drawing.Point(70, 22);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(64, 62);
+            this.buttonProfile.TabIndex = 10;
+            this.buttonProfile.Text = "-";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Visible = false;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
             // buttonSettings
             // 
-            this.buttonSettings.Location = new System.Drawing.Point(6, 662);
+            this.buttonSettings.Location = new System.Drawing.Point(15, 671);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(126, 28);
+            this.buttonSettings.Size = new System.Drawing.Size(49, 28);
             this.buttonSettings.TabIndex = 17;
-            this.buttonSettings.Text = "Settings";
+            this.buttonSettings.Text = "STT";
             this.buttonSettings.UseVisualStyleBackColor = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(6, 696);
+            this.buttonLogout.Location = new System.Drawing.Point(15, 705);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(126, 28);
+            this.buttonLogout.Size = new System.Drawing.Size(49, 28);
             this.buttonLogout.TabIndex = 16;
-            this.buttonLogout.Text = "Log Out";
+            this.buttonLogout.Text = "LGO";
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonOthers
             // 
-            this.buttonOthers.Location = new System.Drawing.Point(6, 397);
+            this.buttonOthers.Location = new System.Drawing.Point(15, 406);
             this.buttonOthers.Name = "buttonOthers";
-            this.buttonOthers.Size = new System.Drawing.Size(126, 45);
+            this.buttonOthers.Size = new System.Drawing.Size(49, 45);
             this.buttonOthers.TabIndex = 15;
-            this.buttonOthers.Text = "Others";
+            this.buttonOthers.Text = "O";
             this.buttonOthers.UseVisualStyleBackColor = true;
             this.buttonOthers.Click += new System.EventHandler(this.buttonOthers_Click);
             // 
             // buttonGenerateReports
             // 
-            this.buttonGenerateReports.Location = new System.Drawing.Point(6, 337);
+            this.buttonGenerateReports.Location = new System.Drawing.Point(15, 346);
             this.buttonGenerateReports.Name = "buttonGenerateReports";
-            this.buttonGenerateReports.Size = new System.Drawing.Size(126, 45);
+            this.buttonGenerateReports.Size = new System.Drawing.Size(49, 45);
             this.buttonGenerateReports.TabIndex = 14;
-            this.buttonGenerateReports.Text = "Generate Reports";
+            this.buttonGenerateReports.Text = "GR";
             this.buttonGenerateReports.UseVisualStyleBackColor = true;
             this.buttonGenerateReports.Click += new System.EventHandler(this.buttonGenerateReports_Click);
             // 
             // buttonArchiveRecords
             // 
-            this.buttonArchiveRecords.Location = new System.Drawing.Point(6, 274);
+            this.buttonArchiveRecords.Location = new System.Drawing.Point(15, 283);
             this.buttonArchiveRecords.Name = "buttonArchiveRecords";
-            this.buttonArchiveRecords.Size = new System.Drawing.Size(126, 45);
+            this.buttonArchiveRecords.Size = new System.Drawing.Size(49, 45);
             this.buttonArchiveRecords.TabIndex = 13;
-            this.buttonArchiveRecords.Text = "Archive Records";
+            this.buttonArchiveRecords.Text = "ACR";
             this.buttonArchiveRecords.UseVisualStyleBackColor = true;
             this.buttonArchiveRecords.Click += new System.EventHandler(this.buttonArchiveRecords_Click);
             // 
             // buttonAssetRecords
             // 
-            this.buttonAssetRecords.Location = new System.Drawing.Point(6, 212);
+            this.buttonAssetRecords.Location = new System.Drawing.Point(15, 221);
             this.buttonAssetRecords.Name = "buttonAssetRecords";
-            this.buttonAssetRecords.Size = new System.Drawing.Size(126, 45);
+            this.buttonAssetRecords.Size = new System.Drawing.Size(49, 45);
             this.buttonAssetRecords.TabIndex = 12;
-            this.buttonAssetRecords.Text = "Asset Records";
+            this.buttonAssetRecords.Text = "AR";
             this.buttonAssetRecords.UseVisualStyleBackColor = true;
             this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
             // 
             // buttonDashboard
             // 
-            this.buttonDashboard.Location = new System.Drawing.Point(6, 151);
+            this.buttonDashboard.Location = new System.Drawing.Point(15, 160);
             this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(126, 45);
+            this.buttonDashboard.Size = new System.Drawing.Size(49, 45);
             this.buttonDashboard.TabIndex = 11;
-            this.buttonDashboard.Text = "Dashboard";
+            this.buttonDashboard.Text = "D";
             this.buttonDashboard.UseVisualStyleBackColor = true;
             this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.Location = new System.Drawing.Point(11, 22);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(27, 62);
-            this.buttonProfile.TabIndex = 10;
-            this.buttonProfile.Text = "-";
-            this.buttonProfile.UseVisualStyleBackColor = true;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // buttonProfileSave
-            // 
-            this.buttonProfileSave.Location = new System.Drawing.Point(16, 479);
-            this.buttonProfileSave.Name = "buttonProfileSave";
-            this.buttonProfileSave.Size = new System.Drawing.Size(155, 47);
-            this.buttonProfileSave.TabIndex = 18;
-            this.buttonProfileSave.Text = "SAVE";
-            this.buttonProfileSave.UseVisualStyleBackColor = true;
-            this.buttonProfileSave.Click += new System.EventHandler(this.buttonProfileSave_Click);
-            // 
-            // buttonProfileCancel
-            // 
-            this.buttonProfileCancel.Location = new System.Drawing.Point(175, 479);
-            this.buttonProfileCancel.Name = "buttonProfileCancel";
-            this.buttonProfileCancel.Size = new System.Drawing.Size(155, 47);
-            this.buttonProfileCancel.TabIndex = 19;
-            this.buttonProfileCancel.Text = "CANCEL";
-            this.buttonProfileCancel.UseVisualStyleBackColor = true;
-            this.buttonProfileCancel.Click += new System.EventHandler(this.buttonProfileCancel_Click);
-            // 
-            // checkBoxButtonProfileShowPassword
-            // 
-            this.checkBoxButtonProfileShowPassword.AutoSize = true;
-            this.checkBoxButtonProfileShowPassword.Location = new System.Drawing.Point(857, 243);
-            this.checkBoxButtonProfileShowPassword.Name = "checkBoxButtonProfileShowPassword";
-            this.checkBoxButtonProfileShowPassword.Size = new System.Drawing.Size(60, 17);
-            this.checkBoxButtonProfileShowPassword.TabIndex = 20;
-            this.checkBoxButtonProfileShowPassword.Text = "SHOW";
-            this.checkBoxButtonProfileShowPassword.UseVisualStyleBackColor = true;
-            this.checkBoxButtonProfileShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxButtonProfileShowPassword_CheckedChanged);
-            // 
-            // comboBoxProfileDept
-            // 
-            this.comboBoxProfileDept.BackColor = System.Drawing.Color.Silver;
-            this.comboBoxProfileDept.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxProfileDept.FormattingEnabled = true;
-            this.comboBoxProfileDept.Location = new System.Drawing.Point(558, 291);
-            this.comboBoxProfileDept.Name = "comboBoxProfileDept";
-            this.comboBoxProfileDept.Size = new System.Drawing.Size(378, 36);
-            this.comboBoxProfileDept.TabIndex = 21;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1284, 761);
+            this.Controls.Add(this.groupBoxSide);
             this.Controls.Add(this.panelTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
             this.panelTabControl.ResumeLayout(false);
+            this.tabDashboard.ResumeLayout(false);
+            this.tabDashboard.PerformLayout();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
-            this.tabDashboard.ResumeLayout(false);
-            this.tabDashboard.PerformLayout();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
             this.tabArchiveRecords.ResumeLayout(false);
@@ -636,8 +627,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAbout.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxSide.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -653,7 +643,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.TabPage tabOthers;
         private System.Windows.Forms.TabPage tabAbout;
         private System.Windows.Forms.TabPage tabSettings;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxSide;
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonLogout;
@@ -671,8 +661,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelUserType;
-        private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.PictureBox pictureBoxProfileImage;
         private System.Windows.Forms.Button buttonEditProfile;
         private System.Windows.Forms.TextBox textBoxProfileAddress;
@@ -692,5 +680,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonProfileSave;
         private System.Windows.Forms.CheckBox checkBoxButtonProfileShowPassword;
         private System.Windows.Forms.ComboBox comboBoxProfileDept;
+        private System.Windows.Forms.Button buttonHamburger;
     }
 }

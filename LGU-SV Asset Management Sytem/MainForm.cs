@@ -22,8 +22,13 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Session
         string currentSessionUserType;
+
+        //Color
+        Color clickColor = Color.FromArgb(76, 245, 154);
+
         public MainForm()
         {
+ 
             InitializeComponent();
             
 
@@ -69,8 +74,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private void SetUser()
         {
             currentSessionUserType = sessionHandler.GetTypeUser();
-            labelUserName.Text = sessionHandler.GetUserName(databaseConnection);
-            labelUserType.Text = currentSessionUserType;
         }
 
         private void ProfileTabPanel()
@@ -157,11 +160,15 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
+ 
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
+
             panelTabControl.SelectedTab = tabDashboard;
+                
         }
 
+        bool assetRecordsToggle;
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
@@ -169,19 +176,29 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonArchiveRecords_Click(object sender, EventArgs e)
         {
-            panelTabControl.SelectedTab = tabArchiveRecords;
+          
+          panelTabControl.SelectedTab = tabArchiveRecords;
+                
         }
+
 
         private void buttonGenerateReports_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabGenReport;
+    
         }
 
+
         private void buttonOthers_Click(object sender, EventArgs e)
-        {
+        {  
             panelTabControl.SelectedTab = tabOthers;
         }
 
+        private void SetActiveTab()
+        {
+
+        }
+        
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             if (!sessionHandler.isCurrentSessionActive())
@@ -192,6 +209,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
             panelTabControl.SelectedTab = tabProfile;
             ProfileTabPanel();
+
+            buttonProfile.BackColor = clickColor;
         }
 
         private void buttonAbout_Click(object sender, EventArgs e)
@@ -386,6 +405,33 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             sessionHandler.OnCurrentSessionEnd();
+        }
+
+
+        bool hamburgerToggle;
+        private void buttonHamburger_Click(object sender, EventArgs e)
+        {
+            if (hamburgerToggle != true)
+            {
+                groupBoxSide.Size = new Size(140, 737);
+               
+                buttonProfile.Visible = true;
+                buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
+                hamburgerToggle = true;
+
+                buttonHamburger.BackColor = Color.Silver;
+            }
+            else
+            {
+                buttonProfile.Visible = false;
+                groupBoxSide.Size = new Size(80, 737);
+           
+                hamburgerToggle = false;
+
+                buttonHamburger.BackColor = clickColor;
+
+                buttonProfile.BackColor = Color.Silver;
+            }
         }
     }
 }
