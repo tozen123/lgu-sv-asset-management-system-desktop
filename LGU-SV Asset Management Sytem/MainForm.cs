@@ -30,7 +30,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
  
             InitializeComponent();
-            
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             InitialiazeTabControl();
 
@@ -73,6 +73,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void SetUser()
         {
+
             currentSessionUserType = sessionHandler.GetTypeUser();
         }
 
@@ -152,10 +153,14 @@ namespace LGU_SV_Asset_Management_Sytem
             DataTable user_resultTable = databaseConnection.ReadFromDatabase(user_query, user_parameters);
             Console.WriteLine("DataTable content: ");
 
-            byte[] imageByte = user_resultTable.Rows[0].Field<byte[]>(0);
+            if (user_resultTable.Rows.Count > 0 && user_resultTable.Rows[0][0] != DBNull.Value)
+            {
+                byte[] imageByte = user_resultTable.Rows[0].Field<byte[]>(0);
+                pictureBoxProfileImage.Image = utilities.ConvertByteArrayToImage(imageByte);
+                pictureBoxProfileImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            
 
-            pictureBoxProfileImage.Image = utilities.ConvertByteArrayToImage(imageByte);
-            pictureBoxProfileImage.SizeMode = PictureBoxSizeMode.StretchImage;
             databaseConnection.CloseConnection();
 
         }
@@ -168,7 +173,6 @@ namespace LGU_SV_Asset_Management_Sytem
                 
         }
 
-        bool assetRecordsToggle;
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
@@ -201,16 +205,15 @@ namespace LGU_SV_Asset_Management_Sytem
         
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            if (!sessionHandler.isCurrentSessionActive())
+            if (CheckSession())
             {
-                MessageBox.Show("INTERNAL ERROR: YOU SHOULD NOT BE HERE. THE SESSION ALREADY ENDED. NO FUNCTION WILL WORK", "SORRY");
-                return;
+                panelTabControl.SelectedTab = tabProfile;
+                ProfileTabPanel();
+
+                buttonProfile.BackColor = clickColor;
             }
 
-            panelTabControl.SelectedTab = tabProfile;
-            ProfileTabPanel();
-
-            buttonProfile.BackColor = clickColor;
+           
         }
 
         private void buttonAbout_Click(object sender, EventArgs e)
@@ -239,6 +242,7 @@ namespace LGU_SV_Asset_Management_Sytem
             profileTabControls.Add(textBoxProfilePassword);
             profileTabControls.Add(comboBoxProfileDept);
             profileTabControls.Add(textBoxProfileAddress);
+            profileTabControls.Add(buttonProfileUploadImage);
 
             profileTabControls.Add(checkBoxButtonProfileShowPassword);
 
@@ -248,7 +252,7 @@ namespace LGU_SV_Asset_Management_Sytem
             buttonEditProfile.Enabled = true;
             buttonProfileSave.Visible = false;
             buttonProfileCancel.Visible = false;
-
+            buttonProfileUploadImage.Visible = false;
             //Fetch Data
         }
 
@@ -267,7 +271,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             buttonProfileSave.Visible = true;
             buttonProfileCancel.Visible = true;
-
+            buttonProfileUploadImage.Visible = true;
 
 
         }
@@ -289,116 +293,129 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonProfileCancel_Click(object sender, EventArgs e)
         {
             SetListControlStateTo(profileTabControls, false);
-            MessageBox.Show("ANY CHANGES DONE IN THE PROFILE WILL BE DISCARDED.", "CONFIRM CANCEL");
+
+            AlertDialogBox alertDialogBox = new AlertDialogBox();
+            alertDialogBox.SetDialog("CONFIRM CANCEL", "ANY CHANGES DONE IN THE PROFILE WILL BE DISCARDED.");
 
             buttonEditProfile.Enabled = true;
             buttonEditProfile.Visible = true;
             buttonProfileSave.Visible = false;
             buttonProfileCancel.Visible = false;
-
+            buttonProfileUploadImage.Visible = false;
             ProfileTabPanel();
         }
-
+        
         private void buttonProfileSave_Click(object sender, EventArgs e)
         {
-            // Save Data
-            string query = "null";
-
-            switch (currentSessionUserType)
+            if (CheckSession())
             {
-                case "Asset Viewer":
-                    query = 
-                        "UPDATE AssetViewer" +
-                        " SET " +
-                        "assetViewerFName = @firstName, " +
-                        "assetViewerMName = @middleName, " +
-                        "assetViewerLName = @lastName, " +
-                        "assetViewerPhoneNum = @phoneNumber, " +
-                        "assetViewerEmail = @email, " +
-                        "assetViewerAddress = @address, " +
-                        "assetViewerOffice = @office " +
-                        "WHERE userId = @UserId";
+                // Save Data
+                string query = "null";
 
-                    break;
-                case "Asset Operator":
-                    query =
-                        "UPDATE AssetOperator" +
-                        " SET " +
-                        "assetOperatorFName = @firstName, " +
-                        "assetOperatorMName = @middleName, " +
-                        "assetOperatorLName = @lastName, " +
-                        "assetOperatorPhoneNum = @phoneNumber, " +
-                        "assetOperatorEmail = @email, " +
-                        "assetOperatorAddress = @address, " +
-                        "assetOperatorOffice = @office " +
-                        "WHERE userId = @UserId";
-                    break;
-                case "Asset Manager":
-                    query =
-                         "UPDATE AssetManager" +
-                         " SET " +
-                         "assetManagerFName = @firstName, " +
-                         "assetManagerMName = @middleName, " +
-                         "assetManagerLName = @lastName, " +
-                         "assetManagerPhoneNum = @phoneNumber, " +
-                         "assetManagerEmail = @email, " +
-                         "assetManagerAddress = @address, " +
-                         "assetManagerOffice = @office " +
-                         "WHERE userId = @UserId";
-                    break;
-            }
+                switch (currentSessionUserType)
+                {
+                    case "Asset Viewer":
+                        query =
+                            "UPDATE AssetViewer" +
+                            " SET " +
+                            "assetViewerFName = @firstName, " +
+                            "assetViewerMName = @middleName, " +
+                            "assetViewerLName = @lastName, " +
+                            "assetViewerPhoneNum = @phoneNumber, " +
+                            "assetViewerEmail = @email, " +
+                            "assetViewerAddress = @address, " +
+                            "assetViewerOffice = @office " +
+                            "WHERE userId = @UserId";
 
-            Dictionary<string, object> parameters = new Dictionary<string, object>
-            {
-                { "@UserId", sessionHandler.GetCurrentUserID() },
-                { "@firstName", textBoxProfileName.Text.Split(' ')[0] },
-                { "@middleName", textBoxProfileName.Text.Split(' ')[1] },
-                { "@lastName", textBoxProfileName.Text.Split(' ')[2] },
-                { "@phoneNumber", textBoxProfilePhoneNumber.Text },
-                { "@email", textBoxProfileEmail.Text },
-                { "@address", textBoxProfileAddress.Text },
-                { "@office", comboBoxProfileDept.SelectedItem.ToString() }
-            };
+                        break;
+                    case "Asset Operator":
+                        query =
+                            "UPDATE AssetOperator" +
+                            " SET " +
+                            "assetOperatorFName = @firstName, " +
+                            "assetOperatorMName = @middleName, " +
+                            "assetOperatorLName = @lastName, " +
+                            "assetOperatorPhoneNum = @phoneNumber, " +
+                            "assetOperatorEmail = @email, " +
+                            "assetOperatorAddress = @address, " +
+                            "assetOperatorOffice = @office " +
+                            "WHERE userId = @UserId";
+                        break;
+                    case "Asset Manager":
+                        query =
+                             "UPDATE AssetManager" +
+                             " SET " +
+                             "assetManagerFName = @firstName, " +
+                             "assetManagerMName = @middleName, " +
+                             "assetManagerLName = @lastName, " +
+                             "assetManagerPhoneNum = @phoneNumber, " +
+                             "assetManagerEmail = @email, " +
+                             "assetManagerAddress = @address, " +
+                             "assetManagerOffice = @office " +
+                             "WHERE userId = @UserId";
+                        break;
+                }
 
-            databaseConnection.UploadToDatabase(query, parameters);
-            databaseConnection.CloseConnection();
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@UserId", sessionHandler.GetCurrentUserID() },
+                    { "@firstName", textBoxProfileName.Text.Split(' ')[0] },
+                    { "@middleName", textBoxProfileName.Text.Split(' ')[1] },
+                    { "@lastName", textBoxProfileName.Text.Split(' ')[2] },
+                    { "@phoneNumber", textBoxProfilePhoneNumber.Text },
+                    { "@email", textBoxProfileEmail.Text },
+                    { "@address", textBoxProfileAddress.Text },
+                    { "@office", comboBoxProfileDept.SelectedItem.ToString() }
+                };
 
-
-
-            string user_query = "UPDATE Users SET userPassword = @new_pass WHERE userID = @n_pass";
-
-            Dictionary<string, object> user_parameters = new Dictionary<string, object>
-            {
-                { "@n_pass", sessionHandler.GetCurrentUserID() },
-                { "@new_pass ",  textBoxProfilePassword.Text}
-            };
-
-            if (!string.IsNullOrEmpty(textBoxProfilePassword.Text))
-            {
-                databaseConnection.UploadToDatabase(user_query, user_parameters);
-                MessageBox.Show("CHANGES SUCCESS", "YEHEY");
+                databaseConnection.UploadToDatabase(query, parameters);
                 databaseConnection.CloseConnection();
 
-                // Load Data for User
-                string p_user_query = "SELECT userPassword FROM Users WHERE userID = @UserId";
-                Dictionary<string, object> p_user_parameters = new Dictionary<string, object>();
-                p_user_parameters.Add("@UserId", sessionHandler.GetCurrentUserID());
 
-                DataTable p_resultTable = databaseConnection.ReadFromDatabase(p_user_query, p_user_parameters);
-                sessionHandler.OnCurrentSessionSafeChangePassword(p_resultTable.Rows[0][0].ToString());
 
-                SetListControlStateTo(profileTabControls, false);
+                string user_query = "UPDATE Users SET userPassword = @new_pass WHERE userID = @n_pass";
 
-                buttonEditProfile.Enabled = true;
-                buttonEditProfile.Visible = true;
-                buttonProfileSave.Visible = false;
-                buttonProfileCancel.Visible = false;
+                Dictionary<string, object> user_parameters = new Dictionary<string, object>
+                {
+                    { "@n_pass", sessionHandler.GetCurrentUserID() },
+                    { "@new_pass ",  textBoxProfilePassword.Text}
+                };
 
-                ProfileTabPanel();
-            }
-            else
-            {
-                MessageBox.Show("INTERNAL ERROR OCCURED", "OH NO");
+                if (!string.IsNullOrEmpty(textBoxProfilePassword.Text))
+                {
+                    databaseConnection.UploadToDatabase(user_query, user_parameters);
+                    MessageBox.Show("CHANGES SUCCESS", "YEHEY");
+                    databaseConnection.CloseConnection();
+
+                    // Load Data for User
+                    string p_user_query = "SELECT userPassword FROM Users WHERE userID = @UserId";
+                    Dictionary<string, object> p_user_parameters = new Dictionary<string, object>();
+                    p_user_parameters.Add("@UserId", sessionHandler.GetCurrentUserID());
+
+                    DataTable p_resultTable = databaseConnection.ReadFromDatabase(p_user_query, p_user_parameters);
+                    sessionHandler.OnCurrentSessionSafeChangePassword(p_resultTable.Rows[0][0].ToString());
+
+                    SetListControlStateTo(profileTabControls, false);
+
+                    buttonEditProfile.Enabled = true;
+                    buttonEditProfile.Visible = true;
+                    buttonProfileSave.Visible = false;
+                    buttonProfileCancel.Visible = false;
+                    buttonProfileUploadImage.Visible = false;
+
+                    ProfileTabPanel();
+                }
+                else
+                {
+                    using (AlertDialogBox alertDialogBox = new AlertDialogBox())
+                    {
+                        alertDialogBox.SetDialog(ErrorList.Error3()[0], ErrorList.Error3()[1]);
+                        if (alertDialogBox.ShowDialog() == DialogResult.OK)
+                        {
+                            
+                        }
+                    }
+                }
             }
         }
 
@@ -411,27 +428,72 @@ namespace LGU_SV_Asset_Management_Sytem
         bool hamburgerToggle;
         private void buttonHamburger_Click(object sender, EventArgs e)
         {
-            if (hamburgerToggle != true)
+            if (CheckSession())
             {
-                groupBoxSide.Size = new Size(140, 737);
-               
-                buttonProfile.Visible = true;
-                buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
-                hamburgerToggle = true;
+                if (hamburgerToggle != true)
+                {
+                    groupBoxSide.Size = new Size(140, 737);
+                    buttonHamburger.BackColor = Color.Silver;
 
-                buttonHamburger.BackColor = Color.Silver;
+                    // Check the session before updating the UI
+                    if (CheckSession())
+                    {
+                        buttonProfile.Visible = true;
+                        buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
+                        hamburgerToggle = true;
+                    }
+                }
+                else
+                {
+                    buttonProfile.Visible = false;
+                    groupBoxSide.Size = new Size(80, 737);
+
+                    hamburgerToggle = false;
+
+                    buttonHamburger.BackColor = clickColor;
+
+                    buttonProfile.BackColor = Color.Silver;
+                }
             }
-            else
-            {
-                buttonProfile.Visible = false;
-                groupBoxSide.Size = new Size(80, 737);
-           
-                hamburgerToggle = false;
 
-                buttonHamburger.BackColor = clickColor;
-
-                buttonProfile.BackColor = Color.Silver;
-            }
+            
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            groupBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+        }
+
+        private void buttonMasterExit_Click(object sender, EventArgs e)
+        {
+            MasterExit();
+        }
+
+        private void MasterExit()
+        {
+            StartForm form = (StartForm)Application.OpenForms["StartForm"];
+            form.Close();
+        }
+
+        private bool CheckSession()
+        {
+            if (sessionHandler.isCurrentSessionActive() == false)
+            {
+                using (AlertDialogBox alertDialogBox = new AlertDialogBox())
+                {
+                    alertDialogBox.SetDialog(ErrorList.Error1()[0], ErrorList.Error1()[1]);
+                    if (alertDialogBox.ShowDialog() == DialogResult.OK)
+                    {
+                        MasterExit();
+                    }
+                }
+
+                return false; // Return false when the session is not active
+            }
+
+            return true; // Return true when the session is active
+        }
+
+    
     }
 }

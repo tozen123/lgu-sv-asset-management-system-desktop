@@ -31,7 +31,7 @@ namespace LGU_SV_Asset_Management_Sytem
         public StartForm()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
             databaseConnection = new DatabaseConnection();
 
             startFormPanels.Add(LoginPanel);
@@ -403,23 +403,38 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-
+            groupBoxTop.BackColor = Color.FromArgb(45, 77, 46);
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Users SET userImage = @img WHERE userID = @userId";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
+            if(pictureBoxRegistration2.Image != null)
+            {
+                string query = "UPDATE Users SET userImage = @img WHERE userID = @userId";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
 
                     {
                         { "@userId", textBoxRegistrationID.Text },
                         { "@img", ConvertImageToBytes(pictureBoxRegistration2.Image) }
 
                     };
-            databaseConnection.UploadToDatabase(query, parameters);
-            databaseConnection.CloseConnection();
+                databaseConnection.UploadToDatabase(query, parameters);
+                databaseConnection.CloseConnection();
 
-            ActivatePanel(LoginPanel);
+                ActivatePanel(LoginPanel);
+            } 
+            else
+            {
+                ActivatePanel(LoginPanel);
+            }
+           
+
+            
+        }
+
+        private void buttonMasterExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
