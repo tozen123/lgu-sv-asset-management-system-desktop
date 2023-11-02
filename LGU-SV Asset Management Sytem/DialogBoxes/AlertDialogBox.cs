@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LGU_SV_Asset_Management_Sytem
+namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
 {
     public partial class AlertDialogBox : Form
     {
+        
         public AlertDialogBox()
         {
             InitializeComponent();

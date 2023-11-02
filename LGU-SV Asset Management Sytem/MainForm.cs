@@ -26,6 +26,8 @@ namespace LGU_SV_Asset_Management_Sytem
         //Color
         Color clickColor = Color.FromArgb(76, 245, 154);
 
+        //savingprofile
+        private byte[] imagedata;
         public MainForm()
         {
  
@@ -145,7 +147,6 @@ namespace LGU_SV_Asset_Management_Sytem
 
             // Load Image
 
-            Utilities utilities = new Utilities();
             string user_query = "SELECT userImage FROM Users WHERE userID = @n_user_id";
             Dictionary<string, object> user_parameters = new Dictionary<string, object>();
             user_parameters.Add("@n_user_id", sessionHandler.GetCurrentUserID());
@@ -156,7 +157,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (user_resultTable.Rows.Count > 0 && user_resultTable.Rows[0][0] != DBNull.Value)
             {
                 byte[] imageByte = user_resultTable.Rows[0].Field<byte[]>(0);
-                pictureBoxProfileImage.Image = utilities.ConvertByteArrayToImage(imageByte);
+                pictureBoxProfileImage.Image = Utilities.ConvertByteArrayToImage(imageByte);
                 pictureBoxProfileImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             
@@ -294,7 +295,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             SetListControlStateTo(profileTabControls, false);
 
-            AlertDialogBox alertDialogBox = new AlertDialogBox();
+            DialogBoxes.AlertDialogBox alertDialogBox = new DialogBoxes.AlertDialogBox();
             alertDialogBox.SetDialog("CONFIRM CANCEL", "ANY CHANGES DONE IN THE PROFILE WILL BE DISCARDED.");
 
             buttonEditProfile.Enabled = true;
@@ -371,7 +372,23 @@ namespace LGU_SV_Asset_Management_Sytem
                 databaseConnection.UploadToDatabase(query, parameters);
                 databaseConnection.CloseConnection();
 
+                //image upload
+                if (imagedata != null)
+                {
+                    string _query = "UPDATE Users SET userImage = @img WHERE userID = @userId";
+                    Dictionary<string, object> _parameters = new Dictionary<string, object>
 
+                        {
+                            { "@userId", sessionHandler.GetCurrentUserID() },
+                            { "@img", imagedata }
+
+                        };
+
+                    databaseConnection.UploadToDatabase(_query, _parameters);
+                    databaseConnection.CloseConnection();
+
+                    imagedata = null;
+                }
 
                 string user_query = "UPDATE Users SET userPassword = @new_pass WHERE userID = @n_pass";
 
@@ -407,7 +424,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 }
                 else
                 {
-                    using (AlertDialogBox alertDialogBox = new AlertDialogBox())
+                    using (DialogBoxes.AlertDialogBox alertDialogBox = new DialogBoxes.AlertDialogBox())
                     {
                         alertDialogBox.SetDialog(ErrorList.Error3()[0], ErrorList.Error3()[1]);
                         if (alertDialogBox.ShowDialog() == DialogResult.OK)
@@ -416,6 +433,8 @@ namespace LGU_SV_Asset_Management_Sytem
                         }
                     }
                 }
+
+                
             }
         }
 
@@ -479,7 +498,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             if (sessionHandler.isCurrentSessionActive() == false)
             {
-                using (AlertDialogBox alertDialogBox = new AlertDialogBox())
+                using (DialogBoxes.AlertDialogBox alertDialogBox = new DialogBoxes.AlertDialogBox())
                 {
                     alertDialogBox.SetDialog(ErrorList.Error1()[0], ErrorList.Error1()[1]);
                     if (alertDialogBox.ShowDialog() == DialogResult.OK)
@@ -494,6 +513,24 @@ namespace LGU_SV_Asset_Management_Sytem
             return true; // Return true when the session is active
         }
 
-    
+        private void buttonProfileUploadImage_Click(object sender, EventArgs e)
+        {
+            using (DialogBoxes.UploadImageDialogBox uploadImageDialogBox = new DialogBoxes.UploadImageDialogBox())
+            {
+                if (uploadImageDialogBox.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] _imagedata = uploadImageDialogBox.imageByte;
+                    if (_imagedata != null)
+                    {
+                        imagedata = _imagedata;
+                        pictureBoxProfileImage.Image = Utilities.ConvertByteArrayToImage(imagedata);
+                    } 
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
     }
 }

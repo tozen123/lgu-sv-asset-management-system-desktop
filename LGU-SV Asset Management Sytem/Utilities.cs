@@ -9,9 +9,9 @@ using System.Drawing;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    public class Utilities
+    public static class Utilities
     {
-        byte[] ConvertImageToBytes(Image img)
+        public static byte[] ConvertImageToBytes(Image img)
         {
             using (MemoryStream ms = new MemoryStream())
             {
@@ -20,7 +20,7 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
-        public Image ConvertByteArrayToImage(byte[] data)
+        public static Image ConvertByteArrayToImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))
             {

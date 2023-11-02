@@ -1,5 +1,5 @@
 ﻿
-namespace LGU_SV_Asset_Management_Sytem
+namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
 {
     partial class AlertDialogBox
     {
@@ -35,8 +35,8 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // labelMessage
             // 
-            this.labelMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMessage.AutoSize = true;
             this.labelMessage.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

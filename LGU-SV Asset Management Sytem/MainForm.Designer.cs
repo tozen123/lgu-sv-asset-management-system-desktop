@@ -665,6 +665,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonProfileUploadImage.TabIndex = 22;
             this.buttonProfileUploadImage.Text = "N";
             this.buttonProfileUploadImage.UseVisualStyleBackColor = true;
+            this.buttonProfileUploadImage.Click += new System.EventHandler(this.buttonProfileUploadImage_Click);
             // 
             // MainForm
             // 
