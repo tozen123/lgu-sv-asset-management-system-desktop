@@ -38,6 +38,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3 = new System.Windows.Forms.Label();
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.RegistrationStartPanel = new System.Windows.Forms.Panel();
             this.buttonManagerRole = new System.Windows.Forms.Button();
             this.buttonViewerRole = new System.Windows.Forms.Button();
@@ -77,24 +78,30 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
+            this.groupBoxTop = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonMasterExit = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.linkLabel1Policy = new System.Windows.Forms.LinkLabel();
+            this.linkLabelTOR = new System.Windows.Forms.LinkLabel();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
             this.RegistrationAccountSetup1.SuspendLayout();
             this.RegistrationAccountSetup2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
+            this.groupBoxTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(80, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 13);
             this.label1.TabIndex = 1;
@@ -161,17 +168,26 @@ namespace LGU_SV_Asset_Management_Sytem
             this.LoginPanel.Controls.Add(this.label3);
             this.LoginPanel.Controls.Add(this.buttonLogin);
             this.LoginPanel.Controls.Add(this.label2);
-            this.LoginPanel.Location = new System.Drawing.Point(15, 42);
+            this.LoginPanel.Location = new System.Drawing.Point(83, 127);
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(1080, 577);
             this.LoginPanel.TabIndex = 8;
+            // 
+            // Label_ErrorHandler_Login
+            // 
+            this.Label_ErrorHandler_Login.AutoSize = true;
+            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(74, 108);
+            this.Label_ErrorHandler_Login.Name = "Label_ErrorHandler_Login";
+            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(72, 13);
+            this.Label_ErrorHandler_Login.TabIndex = 8;
+            this.Label_ErrorHandler_Login.Text = "Error_Handler";
             // 
             // RegistrationStartPanel
             // 
             this.RegistrationStartPanel.Controls.Add(this.buttonManagerRole);
             this.RegistrationStartPanel.Controls.Add(this.buttonViewerRole);
             this.RegistrationStartPanel.Controls.Add(this.buttonOperatorRole);
-            this.RegistrationStartPanel.Location = new System.Drawing.Point(3, 80);
+            this.RegistrationStartPanel.Location = new System.Drawing.Point(71, 165);
             this.RegistrationStartPanel.Name = "RegistrationStartPanel";
             this.RegistrationStartPanel.Size = new System.Drawing.Size(1080, 512);
             this.RegistrationStartPanel.TabIndex = 9;
@@ -215,7 +231,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationPassword);
             this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationID);
             this.RegistrationStartPanel2.Controls.Add(this.label4);
-            this.RegistrationStartPanel2.Location = new System.Drawing.Point(6, 45);
+            this.RegistrationStartPanel2.Location = new System.Drawing.Point(74, 130);
             this.RegistrationStartPanel2.Name = "RegistrationStartPanel2";
             this.RegistrationStartPanel2.Size = new System.Drawing.Size(1080, 556);
             this.RegistrationStartPanel2.TabIndex = 9;
@@ -300,7 +316,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupPhoneNum);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupFirstName);
             this.RegistrationAccountSetup1.Controls.Add(this.label7);
-            this.RegistrationAccountSetup1.Location = new System.Drawing.Point(6, 33);
+            this.RegistrationAccountSetup1.Location = new System.Drawing.Point(74, 118);
             this.RegistrationAccountSetup1.Name = "RegistrationAccountSetup1";
             this.RegistrationAccountSetup1.Size = new System.Drawing.Size(1080, 556);
             this.RegistrationAccountSetup1.TabIndex = 10;
@@ -457,7 +473,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonBackToLoginForm
             // 
-            this.buttonBackToLoginForm.Location = new System.Drawing.Point(15, 625);
+            this.buttonBackToLoginForm.Location = new System.Drawing.Point(83, 710);
             this.buttonBackToLoginForm.Name = "buttonBackToLoginForm";
             this.buttonBackToLoginForm.Size = new System.Drawing.Size(75, 23);
             this.buttonBackToLoginForm.TabIndex = 14;
@@ -467,18 +483,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationAccountSetup2
             // 
+            this.RegistrationAccountSetup2.Controls.Add(this.linkLabelTOR);
+            this.RegistrationAccountSetup2.Controls.Add(this.linkLabel1Policy);
             this.RegistrationAccountSetup2.Controls.Add(this.label21);
             this.RegistrationAccountSetup2.Controls.Add(this.labelDirectoryString);
             this.RegistrationAccountSetup2.Controls.Add(this.buttonBrowseFiles);
             this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
             this.RegistrationAccountSetup2.Controls.Add(this.buttonRegister);
             this.RegistrationAccountSetup2.Controls.Add(this.label17);
-            this.RegistrationAccountSetup2.Controls.Add(this.label16);
             this.RegistrationAccountSetup2.Controls.Add(this.label15);
             this.RegistrationAccountSetup2.Controls.Add(this.label14);
             this.RegistrationAccountSetup2.Controls.Add(this.label12);
             this.RegistrationAccountSetup2.Controls.Add(this.label13);
-            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(19, 25);
+            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(87, 110);
             this.RegistrationAccountSetup2.Name = "RegistrationAccountSetup2";
             this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1086, 580);
             this.RegistrationAccountSetup2.TabIndex = 15;
@@ -536,18 +553,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(396, 468);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 13);
+            this.label17.Size = new System.Drawing.Size(25, 13);
             this.label17.TabIndex = 11;
-            this.label17.Text = "and Privacy Policy.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(319, 468);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 13);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Terms of  Use ";
+            this.label17.Text = "and";
             // 
             // label15
             // 
@@ -585,28 +593,87 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label13.TabIndex = 6;
             this.label13.Text = "Welcome Onboard!";
             // 
-            // Label_ErrorHandler_Login
+            // groupBoxTop
             // 
-            this.Label_ErrorHandler_Login.AutoSize = true;
-            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(74, 108);
-            this.Label_ErrorHandler_Login.Name = "Label_ErrorHandler_Login";
-            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(72, 13);
-            this.Label_ErrorHandler_Login.TabIndex = 8;
-            this.Label_ErrorHandler_Login.Text = "Error_Handler";
+            this.groupBoxTop.BackColor = System.Drawing.Color.Green;
+            this.groupBoxTop.Controls.Add(this.pictureBox1);
+            this.groupBoxTop.Controls.Add(this.buttonMasterExit);
+            this.groupBoxTop.Controls.Add(this.label20);
+            this.groupBoxTop.Location = new System.Drawing.Point(-6, -8);
+            this.groupBoxTop.Name = "groupBoxTop";
+            this.groupBoxTop.Size = new System.Drawing.Size(1295, 60);
+            this.groupBoxTop.TabIndex = 16;
+            this.groupBoxTop.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonMasterExit
+            // 
+            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 15);
+            this.buttonMasterExit.Name = "buttonMasterExit";
+            this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
+            this.buttonMasterExit.TabIndex = 1;
+            this.buttonMasterExit.Text = "X";
+            this.buttonMasterExit.UseVisualStyleBackColor = true;
+            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(70, 10);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(194, 48);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "LGU-SV AMS";
+            // 
+            // linkLabel1Policy
+            // 
+            this.linkLabel1Policy.AutoSize = true;
+            this.linkLabel1Policy.Location = new System.Drawing.Point(427, 468);
+            this.linkLabel1Policy.Name = "linkLabel1Policy";
+            this.linkLabel1Policy.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel1Policy.TabIndex = 17;
+            this.linkLabel1Policy.TabStop = true;
+            this.linkLabel1Policy.Text = "Privacy Policy.";
+            this.linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked);
+            // 
+            // linkLabelTOR
+            // 
+            this.linkLabelTOR.AutoSize = true;
+            this.linkLabelTOR.Location = new System.Drawing.Point(319, 468);
+            this.linkLabelTOR.Name = "linkLabelTOR";
+            this.linkLabelTOR.Size = new System.Drawing.Size(73, 13);
+            this.linkLabelTOR.TabIndex = 18;
+            this.linkLabelTOR.TabStop = true;
+            this.linkLabelTOR.Text = "Terms of Use ";
+            this.linkLabelTOR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTOR_LinkClicked);
             // 
             // StartForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.ClientSize = new System.Drawing.Size(1280, 800);
+            this.ControlBox = false;
+            this.Controls.Add(this.groupBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
+            this.Controls.Add(this.LoginPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
@@ -621,6 +688,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup2.ResumeLayout(false);
             this.RegistrationAccountSetup2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
+            this.groupBoxTop.ResumeLayout(false);
+            this.groupBoxTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,7 +737,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonRegister;
@@ -681,5 +750,11 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel LoginPanel;
         private System.Windows.Forms.Label Label_ErrorHandler_Login;
+        private System.Windows.Forms.GroupBox groupBoxTop;
+        private System.Windows.Forms.Button buttonMasterExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.LinkLabel linkLabelTOR;
+        private System.Windows.Forms.LinkLabel linkLabel1Policy;
     }
 }

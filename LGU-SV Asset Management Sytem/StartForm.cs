@@ -31,7 +31,7 @@ namespace LGU_SV_Asset_Management_Sytem
         public StartForm()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
             databaseConnection = new DatabaseConnection();
 
             startFormPanels.Add(LoginPanel);
@@ -104,7 +104,7 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 Label_ErrorHandler_Login.Visible = false;
                 MainForm mainForm = new MainForm();
-                mainForm.SetSessionHandler(inputEmail);
+                mainForm.SetSessionHandler(inputEmail, inputPassword);
                 mainForm.Show();
 
                 databaseConnection.CloseConnection();
@@ -334,24 +334,28 @@ namespace LGU_SV_Asset_Management_Sytem
                 { "@lastName", lastname },
                 { "@phoneNumber", phonenum },
                 { "@email", email },
-                { "@address", address }
+                { "@address", address },
+                { "@office", department }
             };
 
             switch (registrationType)
             {
                 case RegistrationType.Manager:
-                    query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, assetManagerEmail, assetManagerAddress) " +
-                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
+                    query = "INSERT INTO AssetManager (userId, assetManagerFName, assetManagerMName, assetManagerLName, assetManagerPhoneNumber, " +
+                        "assetManagerEmail, assetManagerAddress, assetManagerOffice) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
                 case RegistrationType.Operator:
-                    query = "INSERT INTO AssetOperator (userId, assetOperatorFName, assetOperatorMName, assetOperatorLName, assetOperatorPhoneNum, assetOperatorEmail, assetOperatorAddress) " +
-                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
+                    query = "INSERT INTO AssetOperator (userId, assetOperatorFName, assetOperatorMName, assetOperatorLName, assetOperatorPhoneNum, " +
+                        "assetOperatorEmail, assetOperatorAddress, assetOperatorOffice) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
                 case RegistrationType.Viewer:
-                    query = "INSERT INTO AssetViewer (userId, assetViewerFName, assetViewerMName, assetViewerLName, assetViewerPhoneNum, assetViewerEmail, assetViewerAddress) " +
-                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address)";
+                    query = "INSERT INTO AssetViewer (userId, assetViewerFName, assetViewerMName, assetViewerLName, assetViewerPhoneNum, " +
+                        "assetViewerEmail, assetViewerAddress, assetViewerOffice) " +
+                            "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
             }
 
@@ -389,7 +393,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
                     pictureBoxRegistration2.Image = Image.FromFile(ofd.FileName);
-                    
+                    pictureBoxRegistration2.SizeMode = PictureBoxSizeMode.StretchImage;
                     labelDirectoryString.Text = ofd.FileName;
                 }
             }
@@ -399,25 +403,48 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-
+            groupBoxTop.BackColor = Color.FromArgb(45, 77, 46);
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Users SET userImage = @img WHERE userID = @userId";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
+            if(pictureBoxRegistration2.Image != null)
+            {
+                string query = "UPDATE Users SET userImage = @img WHERE userID = @userId";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
 
                     {
                         { "@userId", textBoxRegistrationID.Text },
                         { "@img", ConvertImageToBytes(pictureBoxRegistration2.Image) }
 
                     };
-            databaseConnection.UploadToDatabase(query, parameters);
+                databaseConnection.UploadToDatabase(query, parameters);
+                databaseConnection.CloseConnection();
 
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Hide();
+                ActivatePanel(LoginPanel);
+            } 
+            else
+            {
+                ActivatePanel(LoginPanel);
+            }
+           
+
             
+        }
+
+        private void buttonMasterExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void linkLabelTOR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

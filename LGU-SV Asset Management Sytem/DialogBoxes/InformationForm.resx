@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EmptyProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EmptyProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AppLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AppLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Please read these terms of use carefully before accessing or using LGU - SV Asset Management System. By accessing or using the system, you agree to be bound by these terms of use. If you not agree with these terms  please do not use the system.
+</value>
   </data>
 </root>

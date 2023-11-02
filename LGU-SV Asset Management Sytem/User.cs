@@ -40,6 +40,7 @@ namespace LGU_SV_Asset_Management_Sytem
             Console.WriteLine("User is "+Role);
             return Role;
         }
+
         public void UploadToDatabase(string query, Dictionary<string, object> parameters)
         {
             databaseConnection.UploadToDatabase(query, parameters);
