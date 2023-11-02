@@ -75,25 +75,26 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label21 = new System.Windows.Forms.Label();
             this.labelDirectoryString = new System.Windows.Forms.Label();
             this.buttonBrowseFiles = new System.Windows.Forms.Button();
+            this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBoxTop = new System.Windows.Forms.GroupBox();
-            this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonMasterExit = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
+            this.linkLabel1Policy = new System.Windows.Forms.LinkLabel();
+            this.linkLabelTOR = new System.Windows.Forms.LinkLabel();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
             this.RegistrationAccountSetup1.SuspendLayout();
             this.RegistrationAccountSetup2.SuspendLayout();
-            this.groupBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
+            this.groupBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -482,13 +483,14 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationAccountSetup2
             // 
+            this.RegistrationAccountSetup2.Controls.Add(this.linkLabelTOR);
+            this.RegistrationAccountSetup2.Controls.Add(this.linkLabel1Policy);
             this.RegistrationAccountSetup2.Controls.Add(this.label21);
             this.RegistrationAccountSetup2.Controls.Add(this.labelDirectoryString);
             this.RegistrationAccountSetup2.Controls.Add(this.buttonBrowseFiles);
             this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
             this.RegistrationAccountSetup2.Controls.Add(this.buttonRegister);
             this.RegistrationAccountSetup2.Controls.Add(this.label17);
-            this.RegistrationAccountSetup2.Controls.Add(this.label16);
             this.RegistrationAccountSetup2.Controls.Add(this.label15);
             this.RegistrationAccountSetup2.Controls.Add(this.label14);
             this.RegistrationAccountSetup2.Controls.Add(this.label12);
@@ -526,6 +528,16 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonBrowseFiles.UseVisualStyleBackColor = true;
             this.buttonBrowseFiles.Click += new System.EventHandler(this.buttonBrowseFiles_Click);
             // 
+            // pictureBoxRegistration2
+            // 
+            this.pictureBoxRegistration2.AllowDrop = true;
+            this.pictureBoxRegistration2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBoxRegistration2.Location = new System.Drawing.Point(332, 314);
+            this.pictureBoxRegistration2.Name = "pictureBoxRegistration2";
+            this.pictureBoxRegistration2.Size = new System.Drawing.Size(396, 101);
+            this.pictureBoxRegistration2.TabIndex = 13;
+            this.pictureBoxRegistration2.TabStop = false;
+            // 
             // buttonRegister
             // 
             this.buttonRegister.Location = new System.Drawing.Point(468, 513);
@@ -541,18 +553,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(396, 468);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 13);
+            this.label17.Size = new System.Drawing.Size(25, 13);
             this.label17.TabIndex = 11;
-            this.label17.Text = "and Privacy Policy.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(319, 468);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 13);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Terms of  Use ";
+            this.label17.Text = "and";
             // 
             // label15
             // 
@@ -602,26 +605,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxTop.TabIndex = 16;
             this.groupBoxTop.TabStop = false;
             // 
-            // buttonMasterExit
-            // 
-            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 15);
-            this.buttonMasterExit.Name = "buttonMasterExit";
-            this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
-            this.buttonMasterExit.TabIndex = 1;
-            this.buttonMasterExit.Text = "X";
-            this.buttonMasterExit.UseVisualStyleBackColor = true;
-            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click);
-            // 
-            // pictureBoxRegistration2
-            // 
-            this.pictureBoxRegistration2.AllowDrop = true;
-            this.pictureBoxRegistration2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBoxRegistration2.Location = new System.Drawing.Point(332, 314);
-            this.pictureBoxRegistration2.Name = "pictureBoxRegistration2";
-            this.pictureBoxRegistration2.Size = new System.Drawing.Size(396, 101);
-            this.pictureBoxRegistration2.TabIndex = 13;
-            this.pictureBoxRegistration2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
@@ -631,6 +614,16 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonMasterExit
+            // 
+            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 15);
+            this.buttonMasterExit.Name = "buttonMasterExit";
+            this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
+            this.buttonMasterExit.TabIndex = 1;
+            this.buttonMasterExit.Text = "X";
+            this.buttonMasterExit.UseVisualStyleBackColor = true;
+            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click);
             // 
             // label20
             // 
@@ -643,6 +636,28 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label20.TabIndex = 17;
             this.label20.Text = "LGU-SV AMS";
             // 
+            // linkLabel1Policy
+            // 
+            this.linkLabel1Policy.AutoSize = true;
+            this.linkLabel1Policy.Location = new System.Drawing.Point(427, 468);
+            this.linkLabel1Policy.Name = "linkLabel1Policy";
+            this.linkLabel1Policy.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel1Policy.TabIndex = 17;
+            this.linkLabel1Policy.TabStop = true;
+            this.linkLabel1Policy.Text = "Privacy Policy.";
+            this.linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked);
+            // 
+            // linkLabelTOR
+            // 
+            this.linkLabelTOR.AutoSize = true;
+            this.linkLabelTOR.Location = new System.Drawing.Point(319, 468);
+            this.linkLabelTOR.Name = "linkLabelTOR";
+            this.linkLabelTOR.Size = new System.Drawing.Size(73, 13);
+            this.linkLabelTOR.TabIndex = 18;
+            this.linkLabelTOR.TabStop = true;
+            this.linkLabelTOR.Text = "Terms of Use ";
+            this.linkLabelTOR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTOR_LinkClicked);
+            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -653,11 +668,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Controls.Add(this.groupBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.RegistrationAccountSetup2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
@@ -672,9 +687,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.PerformLayout();
             this.RegistrationAccountSetup2.ResumeLayout(false);
             this.RegistrationAccountSetup2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
             this.groupBoxTop.ResumeLayout(false);
             this.groupBoxTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -722,7 +737,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonRegister;
@@ -740,5 +754,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonMasterExit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.LinkLabel linkLabelTOR;
+        private System.Windows.Forms.LinkLabel linkLabel1Policy;
     }
 }

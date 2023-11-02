@@ -436,5 +436,15 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             this.Close();
         }
+
+        private void linkLabelTOR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
