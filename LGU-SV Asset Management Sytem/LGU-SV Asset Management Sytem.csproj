@@ -58,6 +58,12 @@
     <Compile Include="DialogBoxes\AlertDialogBox.Designer.cs">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\InformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\InformationForm.Designer.cs">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\MessagePromptDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\InformationForm.resx">
+      <DependentUpon>InformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\MessagePromptDialogBox.resx">
       <DependentUpon>MessagePromptDialogBox.cs</DependentUpon>
