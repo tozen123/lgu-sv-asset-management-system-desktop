@@ -401,7 +401,11 @@ namespace LGU_SV_Asset_Management_Sytem
                 if (!string.IsNullOrEmpty(textBoxProfilePassword.Text))
                 {
                     databaseConnection.UploadToDatabase(user_query, user_parameters);
-                    MessageBox.Show("CHANGES SUCCESS", "YEHEY");
+
+                    DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+                    prompt.SetMessage("Account Profile Edited Successfully!");
+                    prompt.Show();
+
                     databaseConnection.CloseConnection();
 
                     // Load Data for User
