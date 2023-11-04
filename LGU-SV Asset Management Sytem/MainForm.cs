@@ -26,21 +26,36 @@ namespace LGU_SV_Asset_Management_Sytem
         //Color
         Color clickColor = Color.FromArgb(76, 245, 154);
 
+        //447145
+        Color mainColor1 = Color.FromArgb(68, 113, 69);
+
         //savingprofile
         private byte[] imagedata;
+
+
+        //Supplier
+        Controllers.MainFormSupplierController supplierController;
         public MainForm()
         {
  
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            InitialiazeTabControl();
+            InitialiazeTabControl(panelTabControl);
+            InitialiazeTabControl(otherTabControl);
 
             databaseConnection = new DatabaseConnection();
 
             InitializeProfileTabControls();
 
             SetData();
+
+            dataGridViewSupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            panelTotalAsset.BackColor = mainColor1;
+
+            //Controller
+            supplierController = new Controllers.MainFormSupplierController(databaseConnection);
         }
 
         private void SetData()
@@ -61,13 +76,13 @@ namespace LGU_SV_Asset_Management_Sytem
             SetUser();
         }
 
-        private void InitialiazeTabControl()
+        private void InitialiazeTabControl(TabControl tabControl)
         {
-            panelTabControl.Appearance = TabAppearance.FlatButtons;
-            panelTabControl.ItemSize = new Size(0, 1);
-            panelTabControl.SizeMode = TabSizeMode.Fixed;
+            tabControl.Appearance = TabAppearance.FlatButtons;
+            tabControl.ItemSize = new Size(0, 1);
+            tabControl.SizeMode = TabSizeMode.Fixed;
 
-            foreach (TabPage tab in panelTabControl.TabPages)
+            foreach (TabPage tab in tabControl.TabPages)
             {
                 tab.Text = "";
             }
@@ -197,6 +212,12 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonOthers_Click(object sender, EventArgs e)
         {  
             panelTabControl.SelectedTab = tabOthers;
+            otherTabControl.SelectedTab = tabSupplier;
+            labelTitleHandler.Text = "Supplier";
+
+            //Load
+            //supplierBindingSource1.Add()
+            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
         }
 
         private void SetActiveTab()
@@ -402,9 +423,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 {
                     databaseConnection.UploadToDatabase(user_query, user_parameters);
 
-                    DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
-                    prompt.SetMessage("Account Profile Edited Successfully!");
-                    prompt.Show();
+                    MessagePrompt("Account Profile Edited Successfully!");
 
                     databaseConnection.CloseConnection();
 
@@ -484,13 +503,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            groupBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
         }
 
-        private void buttonMasterExit_Click(object sender, EventArgs e)
-        {
-            MasterExit();
-        }
+   
 
         private void MasterExit()
         {
@@ -535,6 +551,121 @@ namespace LGU_SV_Asset_Management_Sytem
                     }
                 }
             }
+        }
+
+        private void buttonMasterExit_Click_1(object sender, EventArgs e)
+        {
+            MasterExit();
+        }
+
+        private void buttonSupplier_Click(object sender, EventArgs e)
+        {
+            labelTitleHandler.Text = "Supplier";
+            otherTabControl.SelectedTab = tabSupplier;
+        }
+
+        private void buttonOperators_Click(object sender, EventArgs e)
+        {
+            labelTitleHandler.Text = "Operators";
+            otherTabControl.SelectedTab = tabOperator;
+        }
+
+        private void buttonAssetCategories_Click(object sender, EventArgs e)
+        {
+            labelTitleHandler.Text = "Asset Categories";
+            otherTabControl.SelectedTab = tabAssetCategories;
+        }
+
+        /*
+         * 
+         * Progress Here
+         * 
+         */
+        private void buttonSupplierAdd_Click(object sender, EventArgs e)
+        {
+            string supplierName = textBoxSupplierName.Text;
+            string supplierPhoneNumber = textBoxSupplierPhoneNumber.Text;
+            string supplierAddress = textBoxSupplierAddress.Text;
+
+            if (string.IsNullOrEmpty(supplierName))
+            {
+                MessagePrompt("Please Input Name");
+            }
+            else if (string.IsNullOrEmpty(supplierPhoneNumber))
+            {
+                MessagePrompt("Please Input Phone Number");
+            }
+            else if (string.IsNullOrEmpty(supplierAddress))
+            {
+                MessagePrompt("Please Input Address");
+            }
+            else
+            {
+                var result = supplierController.AddNewSupplier(supplierName, supplierPhoneNumber, supplierAddress);
+
+                if (result.Success)
+                {
+                    MessagePrompt($"Supplier has been successfully added! \nName: {supplierName}\nPhoneNumber: {supplierPhoneNumber}\nAddress: {supplierAddress} ");
+                    textBoxSupplierName.Text = "";
+                    textBoxSupplierPhoneNumber.Text = "";
+                    textBoxSupplierAddress.Text = "";
+
+
+                }
+                else
+                {
+                    MessagePrompt($"Supplier addition failed: {result.ErrorMessage}");
+                }
+            }
+        }
+
+        private void MessagePrompt(string message)
+        {
+            DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+            prompt.SetMessage(message);
+            prompt.Show();
+        }
+
+        private void dataGridViewSupplier_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewSupplier.Rows[e.RowIndex];
+                textBoxSupplierName.Text = row.Cells[1].Value.ToString();
+                textBoxSupplierPhoneNumber.Text = row.Cells[2].Value.ToString();
+                textBoxSupplierAddress.Text = row.Cells[3].Value.ToString();
+
+                buttonSupplierViewSuppliedAssets.Enabled = true;
+                buttonSupplierUpdate.Enabled = true;
+                buttonSupplierDelete.Enabled = true;
+            }
+
+        }
+
+        private void buttonSupplierViewSuppliedAssets_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSupplierClearFields_Click(object sender, EventArgs e)
+        {
+            buttonSupplierViewSuppliedAssets.Enabled = false;
+            buttonSupplierUpdate.Enabled = false;
+            buttonSupplierDelete.Enabled = false;
+
+            textBoxSupplierName.Text = "";
+            textBoxSupplierPhoneNumber.Text = "";
+            textBoxSupplierAddress.Text = "";
+        }
+
+        private void buttonSupplierDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSupplierUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

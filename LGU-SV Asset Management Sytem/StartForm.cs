@@ -403,7 +403,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            groupBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -432,19 +432,24 @@ namespace LGU_SV_Asset_Management_Sytem
             
         }
 
-        private void buttonMasterExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void linkLabelTOR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
+            informationForm.Show();
         }
 
         private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
+            informationForm.Show();
+        }
+
+        private void buttonMasterExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

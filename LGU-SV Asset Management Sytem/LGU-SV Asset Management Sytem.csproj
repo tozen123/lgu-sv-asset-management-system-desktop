@@ -51,6 +51,7 @@
     <Compile Include="AssetManager.cs" />
     <Compile Include="AssetOperator.cs" />
     <Compile Include="AssetViewer.cs" />
+    <Compile Include="Controllers\MainFormSupplierController.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DialogBoxes\AlertDialogBox.cs">
       <SubType>Form</SubType>
@@ -83,6 +84,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Entities\Supplier.cs" />
     <Compile Include="SessionHandler.cs" />
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
@@ -122,6 +124,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\LGU_SV_Asset_Management_Sytem.Objects.Entities.Supplier.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
