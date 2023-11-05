@@ -68,7 +68,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSupplier = new System.Windows.Forms.TabPage();
             this.buttonSupplierClearFields = new System.Windows.Forms.Button();
             this.buttonSupplierViewSuppliedAssets = new System.Windows.Forms.Button();
-            this.buttonSupplierDelete = new System.Windows.Forms.Button();
             this.buttonSupplierUpdate = new System.Windows.Forms.Button();
             this.buttonSupplierAdd = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -79,6 +78,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
             this.tabAssetCategories = new System.Windows.Forms.TabPage();
+            this.buttonAssetCategoryClearFields = new System.Windows.Forms.Button();
+            this.buttonAssetCategoryDelete = new System.Windows.Forms.Button();
+            this.buttonAssetCategoryUpdate = new System.Windows.Forms.Button();
+            this.buttonAssetCategoryAdd = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxAssetCategoryName = new System.Windows.Forms.TextBox();
+            this.richTextBoxAssetCategoryDesc = new System.Windows.Forms.RichTextBox();
+            this.dataGridViewAssetCategories = new System.Windows.Forms.DataGridView();
             this.buttonSupplier = new System.Windows.Forms.Button();
             this.buttonOperators = new System.Windows.Forms.Button();
             this.labelTitleHandler = new System.Windows.Forms.Label();
@@ -102,15 +110,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.dataGridViewAssetCategories = new System.Windows.Forms.DataGridView();
-            this.richTextBoxAssetCategoryDesc = new System.Windows.Forms.RichTextBox();
-            this.textBoxAssetCategoryName = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.buttonAssetCategoryAdd = new System.Windows.Forms.Button();
-            this.buttonAssetCategoryUpdate = new System.Windows.Forms.Button();
-            this.buttonAssetCategoryDelete = new System.Windows.Forms.Button();
-            this.buttonAssetCategoryClearFields = new System.Windows.Forms.Button();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
@@ -123,12 +122,12 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).BeginInit();
             this.tabAssetCategories.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.tabAbout.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.groupBoxSide.SuspendLayout();
             this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTabControl
@@ -521,7 +520,6 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.tabSupplier.Controls.Add(this.buttonSupplierClearFields);
             this.tabSupplier.Controls.Add(this.buttonSupplierViewSuppliedAssets);
-            this.tabSupplier.Controls.Add(this.buttonSupplierDelete);
             this.tabSupplier.Controls.Add(this.buttonSupplierUpdate);
             this.tabSupplier.Controls.Add(this.buttonSupplierAdd);
             this.tabSupplier.Controls.Add(this.label17);
@@ -541,7 +539,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonSupplierClearFields
             // 
-            this.buttonSupplierClearFields.Location = new System.Drawing.Point(588, 540);
+            this.buttonSupplierClearFields.Location = new System.Drawing.Point(719, 540);
             this.buttonSupplierClearFields.Name = "buttonSupplierClearFields";
             this.buttonSupplierClearFields.Size = new System.Drawing.Size(125, 46);
             this.buttonSupplierClearFields.TabIndex = 11;
@@ -559,17 +557,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonSupplierViewSuppliedAssets.Text = "View Supplied Asset";
             this.buttonSupplierViewSuppliedAssets.UseVisualStyleBackColor = true;
             this.buttonSupplierViewSuppliedAssets.Click += new System.EventHandler(this.buttonSupplierViewSuppliedAssets_Click);
-            // 
-            // buttonSupplierDelete
-            // 
-            this.buttonSupplierDelete.Enabled = false;
-            this.buttonSupplierDelete.Location = new System.Drawing.Point(724, 540);
-            this.buttonSupplierDelete.Name = "buttonSupplierDelete";
-            this.buttonSupplierDelete.Size = new System.Drawing.Size(125, 46);
-            this.buttonSupplierDelete.TabIndex = 9;
-            this.buttonSupplierDelete.Text = "Delete";
-            this.buttonSupplierDelete.UseVisualStyleBackColor = true;
-            this.buttonSupplierDelete.Click += new System.EventHandler(this.buttonSupplierDelete_Click);
             // 
             // buttonSupplierUpdate
             // 
@@ -670,6 +657,91 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetCategories.TabIndex = 2;
             this.tabAssetCategories.Text = "tabAssetCategories";
             this.tabAssetCategories.UseVisualStyleBackColor = true;
+            // 
+            // buttonAssetCategoryClearFields
+            // 
+            this.buttonAssetCategoryClearFields.Location = new System.Drawing.Point(402, 542);
+            this.buttonAssetCategoryClearFields.Name = "buttonAssetCategoryClearFields";
+            this.buttonAssetCategoryClearFields.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryClearFields.TabIndex = 8;
+            this.buttonAssetCategoryClearFields.Text = "Clear Fields";
+            this.buttonAssetCategoryClearFields.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryClearFields.Click += new System.EventHandler(this.buttonAssetCategoryClearFields_Click);
+            // 
+            // buttonAssetCategoryDelete
+            // 
+            this.buttonAssetCategoryDelete.Location = new System.Drawing.Point(589, 542);
+            this.buttonAssetCategoryDelete.Name = "buttonAssetCategoryDelete";
+            this.buttonAssetCategoryDelete.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryDelete.TabIndex = 7;
+            this.buttonAssetCategoryDelete.Text = "Delete";
+            this.buttonAssetCategoryDelete.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryDelete.Click += new System.EventHandler(this.buttonAssetCategoryDelete_Click);
+            // 
+            // buttonAssetCategoryUpdate
+            // 
+            this.buttonAssetCategoryUpdate.Location = new System.Drawing.Point(776, 542);
+            this.buttonAssetCategoryUpdate.Name = "buttonAssetCategoryUpdate";
+            this.buttonAssetCategoryUpdate.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryUpdate.TabIndex = 6;
+            this.buttonAssetCategoryUpdate.Text = "Update";
+            this.buttonAssetCategoryUpdate.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryUpdate.Click += new System.EventHandler(this.buttonAssetCategoryUpdate_Click);
+            // 
+            // buttonAssetCategoryAdd
+            // 
+            this.buttonAssetCategoryAdd.Location = new System.Drawing.Point(963, 542);
+            this.buttonAssetCategoryAdd.Name = "buttonAssetCategoryAdd";
+            this.buttonAssetCategoryAdd.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryAdd.TabIndex = 5;
+            this.buttonAssetCategoryAdd.Text = "Add";
+            this.buttonAssetCategoryAdd.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryAdd.Click += new System.EventHandler(this.buttonAssetCategoryAdd_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(57, 422);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Description:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(57, 387);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Name:";
+            // 
+            // textBoxAssetCategoryName
+            // 
+            this.textBoxAssetCategoryName.Location = new System.Drawing.Point(126, 384);
+            this.textBoxAssetCategoryName.Name = "textBoxAssetCategoryName";
+            this.textBoxAssetCategoryName.Size = new System.Drawing.Size(408, 20);
+            this.textBoxAssetCategoryName.TabIndex = 2;
+            // 
+            // richTextBoxAssetCategoryDesc
+            // 
+            this.richTextBoxAssetCategoryDesc.Location = new System.Drawing.Point(126, 422);
+            this.richTextBoxAssetCategoryDesc.Name = "richTextBoxAssetCategoryDesc";
+            this.richTextBoxAssetCategoryDesc.Size = new System.Drawing.Size(408, 106);
+            this.richTextBoxAssetCategoryDesc.TabIndex = 1;
+            this.richTextBoxAssetCategoryDesc.Text = "";
+            // 
+            // dataGridViewAssetCategories
+            // 
+            this.dataGridViewAssetCategories.AllowUserToAddRows = false;
+            this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
+            this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
+            this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
+            this.dataGridViewAssetCategories.ReadOnly = true;
+            this.dataGridViewAssetCategories.Size = new System.Drawing.Size(1136, 349);
+            this.dataGridViewAssetCategories.TabIndex = 0;
+            this.dataGridViewAssetCategories.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetCategories_CellMouseClick);
             // 
             // buttonSupplier
             // 
@@ -916,91 +988,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // dataGridViewAssetCategories
-            // 
-            this.dataGridViewAssetCategories.AllowUserToAddRows = false;
-            this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
-            this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
-            this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
-            this.dataGridViewAssetCategories.ReadOnly = true;
-            this.dataGridViewAssetCategories.Size = new System.Drawing.Size(1136, 349);
-            this.dataGridViewAssetCategories.TabIndex = 0;
-            this.dataGridViewAssetCategories.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetCategories_CellMouseClick);
-            // 
-            // richTextBoxAssetCategoryDesc
-            // 
-            this.richTextBoxAssetCategoryDesc.Location = new System.Drawing.Point(126, 422);
-            this.richTextBoxAssetCategoryDesc.Name = "richTextBoxAssetCategoryDesc";
-            this.richTextBoxAssetCategoryDesc.Size = new System.Drawing.Size(408, 106);
-            this.richTextBoxAssetCategoryDesc.TabIndex = 1;
-            this.richTextBoxAssetCategoryDesc.Text = "";
-            // 
-            // textBoxAssetCategoryName
-            // 
-            this.textBoxAssetCategoryName.Location = new System.Drawing.Point(126, 384);
-            this.textBoxAssetCategoryName.Name = "textBoxAssetCategoryName";
-            this.textBoxAssetCategoryName.Size = new System.Drawing.Size(408, 20);
-            this.textBoxAssetCategoryName.TabIndex = 2;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(57, 387);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 13);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Name:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(57, 422);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 13);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "Description:";
-            // 
-            // buttonAssetCategoryAdd
-            // 
-            this.buttonAssetCategoryAdd.Location = new System.Drawing.Point(963, 542);
-            this.buttonAssetCategoryAdd.Name = "buttonAssetCategoryAdd";
-            this.buttonAssetCategoryAdd.Size = new System.Drawing.Size(171, 39);
-            this.buttonAssetCategoryAdd.TabIndex = 5;
-            this.buttonAssetCategoryAdd.Text = "Add";
-            this.buttonAssetCategoryAdd.UseVisualStyleBackColor = true;
-            this.buttonAssetCategoryAdd.Click += new System.EventHandler(this.buttonAssetCategoryAdd_Click);
-            // 
-            // buttonAssetCategoryUpdate
-            // 
-            this.buttonAssetCategoryUpdate.Location = new System.Drawing.Point(776, 542);
-            this.buttonAssetCategoryUpdate.Name = "buttonAssetCategoryUpdate";
-            this.buttonAssetCategoryUpdate.Size = new System.Drawing.Size(171, 39);
-            this.buttonAssetCategoryUpdate.TabIndex = 6;
-            this.buttonAssetCategoryUpdate.Text = "Update";
-            this.buttonAssetCategoryUpdate.UseVisualStyleBackColor = true;
-            this.buttonAssetCategoryUpdate.Click += new System.EventHandler(this.buttonAssetCategoryUpdate_Click);
-            // 
-            // buttonAssetCategoryDelete
-            // 
-            this.buttonAssetCategoryDelete.Location = new System.Drawing.Point(589, 542);
-            this.buttonAssetCategoryDelete.Name = "buttonAssetCategoryDelete";
-            this.buttonAssetCategoryDelete.Size = new System.Drawing.Size(171, 39);
-            this.buttonAssetCategoryDelete.TabIndex = 7;
-            this.buttonAssetCategoryDelete.Text = "Delete";
-            this.buttonAssetCategoryDelete.UseVisualStyleBackColor = true;
-            this.buttonAssetCategoryDelete.Click += new System.EventHandler(this.buttonAssetCategoryDelete_Click);
-            // 
-            // buttonAssetCategoryClearFields
-            // 
-            this.buttonAssetCategoryClearFields.Location = new System.Drawing.Point(402, 542);
-            this.buttonAssetCategoryClearFields.Name = "buttonAssetCategoryClearFields";
-            this.buttonAssetCategoryClearFields.Size = new System.Drawing.Size(171, 39);
-            this.buttonAssetCategoryClearFields.TabIndex = 8;
-            this.buttonAssetCategoryClearFields.Text = "Clear Fields";
-            this.buttonAssetCategoryClearFields.UseVisualStyleBackColor = true;
-            this.buttonAssetCategoryClearFields.Click += new System.EventHandler(this.buttonAssetCategoryClearFields_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1035,6 +1022,7 @@ namespace LGU_SV_Asset_Management_Sytem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).EndInit();
             this.tabAssetCategories.ResumeLayout(false);
             this.tabAssetCategories.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).EndInit();
             this.tabAbout.ResumeLayout(false);
             this.tabAbout.PerformLayout();
             this.tabSettings.ResumeLayout(false);
@@ -1043,7 +1031,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.ResumeLayout(false);
             this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1118,7 +1105,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxSupplierAddress;
         private System.Windows.Forms.Button buttonSupplierAdd;
-        private System.Windows.Forms.Button buttonSupplierDelete;
         private System.Windows.Forms.Button buttonSupplierUpdate;
         private System.Windows.Forms.Button buttonSupplierViewSuppliedAssets;
         private System.Windows.Forms.Button buttonSupplierClearFields;

@@ -227,9 +227,25 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Load
             //supplierBindingSource1.Add()
-            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+            FetchSupplierDataSource();
+            
         }
 
+            {
+                // Create a new DataGridViewButtonColumn
+                var deleteButtonColumn = new DataGridViewButtonColumn();
+                deleteButtonColumn.HeaderText = "Actions";
+                deleteButtonColumn.Text = "Delete";
+                deleteButtonColumn.Name = "DeleteButtonColumn";
+                deleteButtonColumn.UseColumnTextForButtonValue = true;
+
+                // Add the button column to the DataGridView
+                dataGridViewSupplier.Columns.Add(deleteButtonColumn);
+
+                // Adjust the button column's display index to make it the last column
+                deleteButtonColumn.DisplayIndex = dataGridViewSupplier.Columns.Count - 1;
+            }
+        }
         private void SetActiveTab()
         {
 
@@ -654,14 +670,38 @@ namespace LGU_SV_Asset_Management_Sytem
             {
 
                 DataGridViewRow row = dataGridViewSupplier.Rows[e.RowIndex];
-                currentSelectedSupplier = row.Cells[0].Value.ToString();
+                currentSelectedSupplier = currentSelectedSupplier = row.Cells["supplierId"].Value.ToString();
 
                 textBoxSupplierName.Text = row.Cells[1].Value.ToString();
                 textBoxSupplierPhoneNumber.Text = row.Cells[2].Value.ToString();
                 textBoxSupplierAddress.Text = row.Cells[3].Value.ToString();
 
-                Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate, buttonSupplierDelete };
+                Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
                 Utilities.SetButtonsState(buttoncontrols, true);
+
+                if (e.ColumnIndex == dataGridViewSupplier.Columns["DeleteButtonColumn"].Index)
+                {
+                    currentSelectedSupplier = currentSelectedSupplier = row.Cells["supplierId"].Value.ToString();
+                    Console.WriteLine($"hey {currentSelectedSupplier}");
+                    if (!string.IsNullOrEmpty(currentSelectedSupplier))
+                    {
+                        var result = supplierController.DeleteSupplierEntry(currentSelectedSupplier);
+
+                        if (result.Success)
+                        {
+
+                            MessagePrompt($"Supplier has been successfully deleted");
+                           
+                        }
+                        else
+                        {
+                            MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                        }
+
+                        SupplierReset();
+                        FetchSupplierDataSource();
+                    }
+                }
             }
 
         }
@@ -677,28 +717,6 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
-        private void buttonSupplierDelete_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(currentSelectedSupplier))
-            {
-                var result = supplierController.DeleteSupplierEntry(currentSelectedSupplier);
-
-                if (result.Success)
-                {
-                    MessagePrompt($"Supplier has been successfully deleted");
-                }
-                else
-                {
-                    MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
-                }
-
-                SupplierReset();
-
-                dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
-
-            }
-
-        }
 
         private void buttonSupplierUpdate_Click(object sender, EventArgs e)
         {
@@ -733,14 +751,14 @@ namespace LGU_SV_Asset_Management_Sytem
 
                 SupplierReset();
 
-                dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+                FetchSupplierDataSource();
             }
 
         }
 
         private void SupplierReset()
         {
-            Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate, buttonSupplierDelete };
+            Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
             Utilities.SetButtonsState(buttoncontrols, false);
 
             Control[] fieldcontrols = { textBoxSupplierName, textBoxSupplierPhoneNumber, textBoxSupplierAddress };
@@ -814,6 +832,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 textBoxAssetCategoryName.Text = row.Cells[1].Value.ToString();
                 richTextBoxAssetCategoryDesc.Text = row.Cells[2].Value.ToString();
 
+                
             }
         }
     }

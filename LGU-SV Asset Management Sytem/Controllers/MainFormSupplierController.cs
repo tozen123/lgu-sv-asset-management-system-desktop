@@ -24,6 +24,8 @@ namespace LGU_SV_Asset_Management_Sytem.Controllers
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
             databaseConnection.CloseConnection();
+
+
             return resultTable;
         }
 
