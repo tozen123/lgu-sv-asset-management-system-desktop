@@ -230,7 +230,11 @@ namespace LGU_SV_Asset_Management_Sytem
             FetchSupplierDataSource();
             
         }
+        private void FetchSupplierDataSource()
+        {
+            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
 
+            if (dataGridViewSupplier.Columns["DeleteButtonColumn"] == null)
             {
                 // Create a new DataGridViewButtonColumn
                 var deleteButtonColumn = new DataGridViewButtonColumn();
