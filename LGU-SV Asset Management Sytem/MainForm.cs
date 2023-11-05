@@ -562,18 +562,24 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             labelTitleHandler.Text = "Supplier";
             otherTabControl.SelectedTab = tabSupplier;
+
+            SupplierReset();
         }
 
         private void buttonOperators_Click(object sender, EventArgs e)
         {
             labelTitleHandler.Text = "Operators";
             otherTabControl.SelectedTab = tabOperator;
+
+            SupplierReset();
         }
 
         private void buttonAssetCategories_Click(object sender, EventArgs e)
         {
             labelTitleHandler.Text = "Asset Categories";
             otherTabControl.SelectedTab = tabAssetCategories;
+
+            SupplierReset();
         }
 
         /*
@@ -610,7 +616,9 @@ namespace LGU_SV_Asset_Management_Sytem
                     textBoxSupplierPhoneNumber.Text = "";
                     textBoxSupplierAddress.Text = "";
 
+                    SupplierReset();
 
+                    dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
                 }
                 else
                 {
@@ -626,18 +634,21 @@ namespace LGU_SV_Asset_Management_Sytem
             prompt.Show();
         }
 
+        string currentSelectedSupplier;
         private void dataGridViewSupplier_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
+
                 DataGridViewRow row = dataGridViewSupplier.Rows[e.RowIndex];
+                currentSelectedSupplier = row.Cells[0].Value.ToString();
+
                 textBoxSupplierName.Text = row.Cells[1].Value.ToString();
                 textBoxSupplierPhoneNumber.Text = row.Cells[2].Value.ToString();
                 textBoxSupplierAddress.Text = row.Cells[3].Value.ToString();
 
-                buttonSupplierViewSuppliedAssets.Enabled = true;
-                buttonSupplierUpdate.Enabled = true;
-                buttonSupplierDelete.Enabled = true;
+                Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate, buttonSupplierDelete };
+                Utilities.SetButtonsState(buttoncontrols, true);
             }
 
         }
@@ -649,23 +660,82 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonSupplierClearFields_Click(object sender, EventArgs e)
         {
-            buttonSupplierViewSuppliedAssets.Enabled = false;
-            buttonSupplierUpdate.Enabled = false;
-            buttonSupplierDelete.Enabled = false;
+            SupplierReset();
 
-            textBoxSupplierName.Text = "";
-            textBoxSupplierPhoneNumber.Text = "";
-            textBoxSupplierAddress.Text = "";
         }
 
         private void buttonSupplierDelete_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(currentSelectedSupplier))
+            {
+                var result = supplierController.DeleteSupplierEntry(currentSelectedSupplier);
+
+                if (result.Success)
+                {
+                    MessagePrompt($"Supplier has been successfully deleted");
+                }
+                else
+                {
+                    MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                }
+
+                SupplierReset();
+
+                dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+
+            }
 
         }
 
         private void buttonSupplierUpdate_Click(object sender, EventArgs e)
         {
+            string supplierName = textBoxSupplierName.Text;
+            string supplierPhoneNumber = textBoxSupplierPhoneNumber.Text;
+            string supplierAddress = textBoxSupplierAddress.Text;
 
+            if (string.IsNullOrEmpty(supplierName))
+            {
+                MessagePrompt("Please Input Name");
+            }
+            else if (string.IsNullOrEmpty(supplierPhoneNumber))
+            {
+                MessagePrompt("Please Input Phone Number");
+            }
+            else if (string.IsNullOrEmpty(supplierAddress))
+            {
+                MessagePrompt("Please Input Address");
+            }
+            else
+            {
+                var result = supplierController.UpdateSupplierEntry(currentSelectedSupplier, supplierName, supplierPhoneNumber, supplierAddress);
+
+                if (result.Success)
+                {
+                    MessagePrompt($"Supplier has been successfully updated");
+                }
+                else
+                {
+                    MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                }
+
+                SupplierReset();
+
+                dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+            }
+
+        }
+
+        private void SupplierReset()
+        {
+            Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate, buttonSupplierDelete };
+            Utilities.SetButtonsState(buttoncontrols, false);
+
+            Control[] fieldcontrols = { textBoxSupplierName, textBoxSupplierPhoneNumber, textBoxSupplierAddress };
+            Utilities.ClearTextFieldsHandler(fieldcontrols);
+
+            dataGridViewSupplier.ClearSelection();
+
+            currentSelectedSupplier = "";
         }
     }
 }

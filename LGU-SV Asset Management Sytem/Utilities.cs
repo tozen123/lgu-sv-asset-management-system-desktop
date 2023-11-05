@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
 using System.Drawing;
-
+using System.Windows.Forms;
 namespace LGU_SV_Asset_Management_Sytem
 {
     public static class Utilities
@@ -28,5 +28,20 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
+        public static void ClearTextFieldsHandler(Control[] fields)
+        {
+            foreach (Control control in fields)
+            {
+                control.Text = "";
+            }
+        }
+
+        public static void SetButtonsState(Control[] buttons, bool state)
+        {
+            foreach (Control control in buttons)
+            {
+                control.Enabled = state;
+            }
+        }
     }
 }
