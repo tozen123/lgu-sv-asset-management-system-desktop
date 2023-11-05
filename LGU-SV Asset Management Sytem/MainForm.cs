@@ -35,6 +35,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Supplier
         Controllers.MainFormSupplierController supplierController;
+        Controllers.MainFormAssetCategoriesController assetCategoriesController;
+
+        //Objects Controllers
+        AssetCategoryRepositoryControl assetCategoryRepositoryControl;
         public MainForm()
         {
  
@@ -51,11 +55,17 @@ namespace LGU_SV_Asset_Management_Sytem
             SetData();
 
             dataGridViewSupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewAssetCategories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             panelTotalAsset.BackColor = mainColor1;
 
-            //Controller
+            //Controllers
             supplierController = new Controllers.MainFormSupplierController(databaseConnection);
+            assetCategoriesController = new Controllers.MainFormAssetCategoriesController(databaseConnection);
+
+
+            //Object Controllers
+            assetCategoryRepositoryControl = new AssetCategoryRepositoryControl();
         }
 
         private void SetData()
@@ -580,6 +590,9 @@ namespace LGU_SV_Asset_Management_Sytem
             otherTabControl.SelectedTab = tabAssetCategories;
 
             SupplierReset();
+
+            //load
+            dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
         }
 
         /*
@@ -736,6 +749,72 @@ namespace LGU_SV_Asset_Management_Sytem
             dataGridViewSupplier.ClearSelection();
 
             currentSelectedSupplier = "";
+        }
+
+        private void buttonAssetCategoryAdd_Click(object sender, EventArgs e)
+        {
+            AssetCategory assetCategory = new AssetCategory();
+            
+            string assetCategoryName = textBoxAssetCategoryName.Text;
+            string assetCategoryDescription = richTextBoxAssetCategoryDesc.Text;
+
+
+            if (string.IsNullOrEmpty(assetCategoryName))
+            {
+                MessagePrompt("Please Input Name");
+            }
+            else if (string.IsNullOrEmpty(assetCategoryDescription))
+            {
+                MessagePrompt("Please Input Description");
+            }
+            else
+            {
+                assetCategory.AssetCategoryDescription = assetCategoryDescription;
+                assetCategory.AssetCategoryName = assetCategoryName;
+
+                var result = assetCategoryRepositoryControl.AddToDatabase(assetCategory);
+                if (result.Success)
+                {
+                    MessagePrompt($"Asset Category: {assetCategory.AssetCategoryName} has been successfully updated");
+
+                    dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
+
+                }
+                else
+                {
+                    MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                }
+            }
+
+        }
+
+        private void buttonAssetCategoryUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAssetCategoryDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAssetCategoryClearFields_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        string currentSelectedAssetCategoryId;
+        private void dataGridViewAssetCategories_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewSupplier.Rows[e.RowIndex];
+                currentSelectedAssetCategoryId = row.Cells[0].Value.ToString();
+
+                textBoxAssetCategoryName.Text = row.Cells[1].Value.ToString();
+                richTextBoxAssetCategoryDesc.Text = row.Cells[2].Value.ToString();
+
+            }
         }
     }
 }

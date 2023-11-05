@@ -48,9 +48,11 @@
   <ItemGroup>
     <Compile Include="Asset.cs" />
     <Compile Include="AssetBehaviour.cs" />
-    <Compile Include="AssetManager.cs" />
-    <Compile Include="AssetOperator.cs" />
-    <Compile Include="AssetViewer.cs" />
+    <Compile Include="AssetCategory.cs" />
+    <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="Users\AssetManager.cs" />
+    <Compile Include="Users\AssetOperator.cs" />
+    <Compile Include="Users\AssetViewer.cs" />
     <Compile Include="Controllers\MainFormSupplierController.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DialogBoxes\AlertDialogBox.cs">
@@ -59,6 +61,7 @@
     <Compile Include="DialogBoxes\AlertDialogBox.Designer.cs">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssetMaintenanceLog.cs" />
     <Compile Include="DialogBoxes\InformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
