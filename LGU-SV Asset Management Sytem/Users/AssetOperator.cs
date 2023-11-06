@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -43,10 +44,10 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetOperatorLastName = value; }
         }
 
-        private int assetOperatorPhoneNum;
+        private string assetOperatorPhoneNum;
 
         // Property for assetOperatorPhoneNum
-        public int AssetOperatorPhoneNum
+        public string AssetOperatorPhoneNum
         {
             get { return assetOperatorPhoneNum; }
             set { assetOperatorPhoneNum = value; }
@@ -57,6 +58,90 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             get { return assetOperatorAddress; }
             set { assetOperatorAddress = value; }
+        }
+
+        private string assetOperatorEmail;
+        // Property for assetOperatorEmail
+        public string AssetOperatorEmail
+        {
+            get { return assetOperatorEmail; }
+            set { assetOperatorEmail = value; }
+        }
+
+        private string assetOperatorOffice;
+        // Property for assetOperatorOffice
+        public string AssetOperatorOffice
+        {
+            get { return assetOperatorOffice; }
+            set { assetOperatorOffice = value; }
+        }
+
+        public class AssetOperatorRepositoryControl
+        {
+            private DatabaseConnection databaseConnection;
+
+            public AssetOperatorRepositoryControl()
+            {
+                databaseConnection = new DatabaseConnection();
+            }
+
+            public (bool Success, string ErrorMessage, DataTable resultTable) GetAllOperators()
+            {
+                try
+                {
+                    string query = "SELECT assetOperatorId, assetOperatorFName, assetOperatorMName " +
+                        "assetOperatorLName, assetOperatorPhoneNum, " +
+                        "assetOperatorEmail, assetOperatorAddress, " +
+                        "assetOperatorOffice " +
+                        "From AssetOperator";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>();
+
+                    DataTable table = databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null, table);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message, null);
+                }
+            }
+
+            public (bool Success, string ErrorMessage) AddToDatabase(AssetOperator assetOperator)
+            {
+                try
+                {
+                    string query = "INSERT INTO AssetOperator " +
+                        "(assetOperatorFName, assetOperatorMName, assetOperatorLName, assetOperatorPhoneNum, " +
+                        "assetOperatorEmail, assetOperatorAddress, assetOperatorOffice) " +
+                        "VALUES " +
+                        "(@assetCategoryName, @assetCategoryDescription)";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@assetOperatorFName", assetOperator.assetOperatorFirstName },
+                        {"@assetOperatorMName", assetOperator.assetOperatorMiddleName},
+                        {"@assetOperatorLName", assetOperator.assetOperatorLastName},
+                        {"@assetOperatorPhoneNum", assetOperator.assetOperatorPhoneNum},
+                        {"@assetOperatorEmail", assetOperator.assetOperatorEmail},
+                        {"@assetOperatorAddress", assetOperator.assetOperatorAddress},
+                        {"@assetOperatorOffice", assetOperator.assetOperatorOffice}
+                    };
+
+                    databaseConnection.UploadToDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+
+            }
         }
     }
 }

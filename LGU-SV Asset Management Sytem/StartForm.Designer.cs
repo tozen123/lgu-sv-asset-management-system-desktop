@@ -88,6 +88,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
@@ -161,6 +164,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // LoginPanel
             // 
+            this.LoginPanel.Controls.Add(this.button3);
+            this.LoginPanel.Controls.Add(this.button2);
+            this.LoginPanel.Controls.Add(this.button1);
             this.LoginPanel.Controls.Add(this.Label_ErrorHandler_Login);
             this.LoginPanel.Controls.Add(this.textBoxEmail);
             this.LoginPanel.Controls.Add(this.buttonSignUp);
@@ -657,6 +663,39 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(16, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 44);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "DEBUG_VIEWER_AUTOLOGIN";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(249, 281);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(218, 44);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "DEBUG_OPERATOR_AUTOLOGIN";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.Location = new System.Drawing.Point(473, 281);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(218, 44);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "DEBUG_MANAGER_AUTOLOGIN";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -667,11 +706,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
-            this.Controls.Add(this.LoginPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
@@ -755,5 +794,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button buttonMasterExit;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

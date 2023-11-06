@@ -451,5 +451,38 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.SetSessionHandler("01-1", "703");
+            mainForm.Show();
+
+            databaseConnection.CloseConnection();
+
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.SetSessionHandler("02-6", "1040");
+            mainForm.Show();
+
+            databaseConnection.CloseConnection();
+
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.SetSessionHandler("03-2", "3974");
+            mainForm.Show();
+
+            databaseConnection.CloseConnection();
+
+            this.Hide();
+        }
     }
 }

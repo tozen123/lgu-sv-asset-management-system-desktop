@@ -50,6 +50,12 @@
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetCategory.cs" />
     <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="Panels\OperatorHandledAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\OperatorHandledAssetPanel.Designer.cs">
+      <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\AssetManager.cs" />
     <Compile Include="Users\AssetOperator.cs" />
     <Compile Include="Users\AssetViewer.cs" />
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\OperatorHandledAssetPanel.resx">
+      <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
