@@ -72,6 +72,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label7 = new System.Windows.Forms.Label();
             this.buttonBackToLoginForm = new System.Windows.Forms.Button();
             this.RegistrationAccountSetup2 = new System.Windows.Forms.Panel();
+            this.linkLabelTOR = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1Policy = new System.Windows.Forms.LinkLabel();
             this.label21 = new System.Windows.Forms.Label();
             this.labelDirectoryString = new System.Windows.Forms.Label();
             this.buttonBrowseFiles = new System.Windows.Forms.Button();
@@ -82,19 +84,20 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBoxTop = new System.Windows.Forms.GroupBox();
+            this.panelBoxTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.linkLabel1Policy = new System.Windows.Forms.LinkLabel();
-            this.linkLabelTOR = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
             this.RegistrationAccountSetup1.SuspendLayout();
             this.RegistrationAccountSetup2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
-            this.groupBoxTop.SuspendLayout();
+            this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +164,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // LoginPanel
             // 
+            this.LoginPanel.Controls.Add(this.button3);
+            this.LoginPanel.Controls.Add(this.button2);
+            this.LoginPanel.Controls.Add(this.button1);
             this.LoginPanel.Controls.Add(this.Label_ErrorHandler_Login);
             this.LoginPanel.Controls.Add(this.textBoxEmail);
             this.LoginPanel.Controls.Add(this.buttonSignUp);
@@ -500,6 +506,28 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1086, 580);
             this.RegistrationAccountSetup2.TabIndex = 15;
             // 
+            // linkLabelTOR
+            // 
+            this.linkLabelTOR.AutoSize = true;
+            this.linkLabelTOR.Location = new System.Drawing.Point(319, 468);
+            this.linkLabelTOR.Name = "linkLabelTOR";
+            this.linkLabelTOR.Size = new System.Drawing.Size(73, 13);
+            this.linkLabelTOR.TabIndex = 18;
+            this.linkLabelTOR.TabStop = true;
+            this.linkLabelTOR.Text = "Terms of Use ";
+            this.linkLabelTOR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTOR_LinkClicked);
+            // 
+            // linkLabel1Policy
+            // 
+            this.linkLabel1Policy.AutoSize = true;
+            this.linkLabel1Policy.Location = new System.Drawing.Point(427, 468);
+            this.linkLabel1Policy.Name = "linkLabel1Policy";
+            this.linkLabel1Policy.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel1Policy.TabIndex = 17;
+            this.linkLabel1Policy.TabStop = true;
+            this.linkLabel1Policy.Text = "Privacy Policy.";
+            this.linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -593,70 +621,80 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label13.TabIndex = 6;
             this.label13.Text = "Welcome Onboard!";
             // 
-            // groupBoxTop
+            // panelBoxTop
             // 
-            this.groupBoxTop.BackColor = System.Drawing.Color.Green;
-            this.groupBoxTop.Controls.Add(this.pictureBox1);
-            this.groupBoxTop.Controls.Add(this.buttonMasterExit);
-            this.groupBoxTop.Controls.Add(this.label20);
-            this.groupBoxTop.Location = new System.Drawing.Point(-6, -8);
-            this.groupBoxTop.Name = "groupBoxTop";
-            this.groupBoxTop.Size = new System.Drawing.Size(1295, 60);
-            this.groupBoxTop.TabIndex = 16;
-            this.groupBoxTop.TabStop = false;
+            this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelBoxTop.Controls.Add(this.pictureBox1);
+            this.panelBoxTop.Controls.Add(this.label16);
+            this.panelBoxTop.Controls.Add(this.buttonMasterExit);
+            this.panelBoxTop.Location = new System.Drawing.Point(-6, -6);
+            this.panelBoxTop.Name = "panelBoxTop";
+            this.panelBoxTop.Size = new System.Drawing.Size(1295, 60);
+            this.panelBoxTop.TabIndex = 16;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(70, 7);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(194, 48);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "LGU-SV AMS";
             // 
             // buttonMasterExit
             // 
-            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 15);
+            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 14);
             this.buttonMasterExit.Name = "buttonMasterExit";
             this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
-            this.buttonMasterExit.TabIndex = 1;
+            this.buttonMasterExit.TabIndex = 3;
             this.buttonMasterExit.Text = "X";
             this.buttonMasterExit.UseVisualStyleBackColor = true;
-            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click);
+            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // label20
+            // button1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(70, 10);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(194, 48);
-            this.label20.TabIndex = 17;
-            this.label20.Text = "LGU-SV AMS";
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(16, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 44);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "DEBUG_VIEWER_AUTOLOGIN";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // linkLabel1Policy
+            // button2
             // 
-            this.linkLabel1Policy.AutoSize = true;
-            this.linkLabel1Policy.Location = new System.Drawing.Point(427, 468);
-            this.linkLabel1Policy.Name = "linkLabel1Policy";
-            this.linkLabel1Policy.Size = new System.Drawing.Size(76, 13);
-            this.linkLabel1Policy.TabIndex = 17;
-            this.linkLabel1Policy.TabStop = true;
-            this.linkLabel1Policy.Text = "Privacy Policy.";
-            this.linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked);
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(249, 281);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(218, 44);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "DEBUG_OPERATOR_AUTOLOGIN";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // linkLabelTOR
+            // button3
             // 
-            this.linkLabelTOR.AutoSize = true;
-            this.linkLabelTOR.Location = new System.Drawing.Point(319, 468);
-            this.linkLabelTOR.Name = "linkLabelTOR";
-            this.linkLabelTOR.Size = new System.Drawing.Size(73, 13);
-            this.linkLabelTOR.TabIndex = 18;
-            this.linkLabelTOR.TabStop = true;
-            this.linkLabelTOR.Text = "Terms of Use ";
-            this.linkLabelTOR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTOR_LinkClicked);
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.Location = new System.Drawing.Point(473, 281);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(218, 44);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "DEBUG_MANAGER_AUTOLOGIN";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // StartForm
             // 
@@ -665,14 +703,14 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBoxTop);
+            this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.RegistrationStartPanel);
-            this.Controls.Add(this.LoginPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
@@ -688,8 +726,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup2.ResumeLayout(false);
             this.RegistrationAccountSetup2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
-            this.groupBoxTop.ResumeLayout(false);
-            this.groupBoxTop.PerformLayout();
+            this.panelBoxTop.ResumeLayout(false);
+            this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -750,11 +788,14 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel LoginPanel;
         private System.Windows.Forms.Label Label_ErrorHandler_Login;
-        private System.Windows.Forms.GroupBox groupBoxTop;
-        private System.Windows.Forms.Button buttonMasterExit;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.LinkLabel linkLabelTOR;
         private System.Windows.Forms.LinkLabel linkLabel1Policy;
+        private System.Windows.Forms.Panel panelBoxTop;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button buttonMasterExit;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

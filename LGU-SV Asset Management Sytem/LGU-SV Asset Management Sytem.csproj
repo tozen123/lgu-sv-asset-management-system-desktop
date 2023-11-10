@@ -48,9 +48,18 @@
   <ItemGroup>
     <Compile Include="Asset.cs" />
     <Compile Include="AssetBehaviour.cs" />
-    <Compile Include="AssetManager.cs" />
-    <Compile Include="AssetOperator.cs" />
-    <Compile Include="AssetViewer.cs" />
+    <Compile Include="AssetCategory.cs" />
+    <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="Panels\OperatorHandledAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\OperatorHandledAssetPanel.Designer.cs">
+      <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\AssetSupervisor.cs" />
+    <Compile Include="Users\AssetEmployee.cs" />
+    <Compile Include="Users\AssetViewer.cs" />
+    <Compile Include="Controllers\MainFormSupplierController.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DialogBoxes\AlertDialogBox.cs">
       <SubType>Form</SubType>
@@ -58,6 +67,7 @@
     <Compile Include="DialogBoxes\AlertDialogBox.Designer.cs">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssetMaintenanceLog.cs" />
     <Compile Include="DialogBoxes\InformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +93,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Entities\Supplier.cs" />
     <Compile Include="SessionHandler.cs" />
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
@@ -109,6 +120,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\OperatorHandledAssetPanel.resx">
+      <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +136,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\LGU_SV_Asset_Management_Sytem.Objects.Entities.Supplier.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

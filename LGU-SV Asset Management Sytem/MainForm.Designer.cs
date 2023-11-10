@@ -32,8 +32,10 @@ namespace LGU_SV_Asset_Management_Sytem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelTabControl = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.panelTotalAsset = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.buttonProfileUploadImage = new System.Windows.Forms.Button();
             this.comboBoxProfileDept = new System.Windows.Forms.ComboBox();
             this.checkBoxButtonProfileShowPassword = new System.Windows.Forms.CheckBox();
             this.buttonProfileCancel = new System.Windows.Forms.Button();
@@ -61,7 +63,46 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabGenReport = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.tabOthers = new System.Windows.Forms.TabPage();
+            this.otherTabControl = new System.Windows.Forms.TabControl();
+            this.tabOperator = new System.Windows.Forms.TabPage();
+            this.buttonOperatorClearFields = new System.Windows.Forms.Button();
+            this.richTextBoxOperatorAdress = new System.Windows.Forms.RichTextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxOperatorPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxOperatorLastName = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBoxOperatorMiddleName = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxOperatorFirstName = new System.Windows.Forms.TextBox();
+            this.dataGridViewOtherOperator = new System.Windows.Forms.DataGridView();
+            this.panelOperatorHandler = new System.Windows.Forms.Panel();
+            this.tabSupplier = new System.Windows.Forms.TabPage();
+            this.buttonSupplierClearFields = new System.Windows.Forms.Button();
+            this.buttonSupplierViewSuppliedAssets = new System.Windows.Forms.Button();
+            this.buttonSupplierUpdate = new System.Windows.Forms.Button();
+            this.buttonSupplierAdd = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxSupplierAddress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxSupplierPhoneNumber = new System.Windows.Forms.TextBox();
+            this.labelSupplierName = new System.Windows.Forms.Label();
+            this.textBoxSupplierName = new System.Windows.Forms.TextBox();
+            this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
+            this.tabAssetCategories = new System.Windows.Forms.TabPage();
+            this.buttonAssetCategoryClearFields = new System.Windows.Forms.Button();
+            this.buttonAssetCategoryUpdate = new System.Windows.Forms.Button();
+            this.buttonAssetCategoryAdd = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxAssetCategoryName = new System.Windows.Forms.TextBox();
+            this.richTextBoxAssetCategoryDesc = new System.Windows.Forms.RichTextBox();
+            this.dataGridViewAssetCategories = new System.Windows.Forms.DataGridView();
+            this.buttonSupplier = new System.Windows.Forms.Button();
+            this.buttonOperators = new System.Windows.Forms.Button();
+            this.labelTitleHandler = new System.Windows.Forms.Label();
+            this.buttonAssetCategories = new System.Windows.Forms.Button();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
@@ -77,11 +118,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonArchiveRecords = new System.Windows.Forms.Button();
             this.buttonAssetRecords = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
-            this.groupBoxTop = new System.Windows.Forms.GroupBox();
+            this.panelBoxTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.buttonProfileUploadImage = new System.Windows.Forms.Button();
+            this.buttonTransaction = new System.Windows.Forms.Button();
+            this.tabTransaction = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
@@ -90,11 +133,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabArchiveRecords.SuspendLayout();
             this.tabGenReport.SuspendLayout();
             this.tabOthers.SuspendLayout();
+            this.otherTabControl.SuspendLayout();
+            this.tabOperator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOtherOperator)).BeginInit();
+            this.tabSupplier.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).BeginInit();
+            this.tabAssetCategories.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.tabAbout.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.groupBoxSide.SuspendLayout();
-            this.groupBoxTop.SuspendLayout();
+            this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabTransaction.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTabControl
@@ -108,24 +159,33 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Controls.Add(this.tabOthers);
             this.panelTabControl.Controls.Add(this.tabAbout);
             this.panelTabControl.Controls.Add(this.tabSettings);
+            this.panelTabControl.Controls.Add(this.tabTransaction);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(98, 58);
+            this.panelTabControl.Location = new System.Drawing.Point(82, 58);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1176, 730);
+            this.panelTabControl.Size = new System.Drawing.Size(1192, 730);
             this.panelTabControl.TabIndex = 0;
             // 
             // tabDashboard
             // 
+            this.tabDashboard.Controls.Add(this.panelTotalAsset);
             this.tabDashboard.Controls.Add(this.label1);
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
             this.tabDashboard.Name = "tabDashboard";
             this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(1168, 704);
+            this.tabDashboard.Size = new System.Drawing.Size(1184, 704);
             this.tabDashboard.TabIndex = 1;
             this.tabDashboard.Text = "tabPage2";
             this.tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // panelTotalAsset
+            // 
+            this.panelTotalAsset.Location = new System.Drawing.Point(26, 83);
+            this.panelTotalAsset.Name = "panelTotalAsset";
+            this.panelTotalAsset.Size = new System.Drawing.Size(496, 249);
+            this.panelTotalAsset.TabIndex = 2;
             // 
             // label1
             // 
@@ -163,10 +223,20 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1168, 704);
+            this.tabProfile.Size = new System.Drawing.Size(1184, 704);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "tabPage1";
             this.tabProfile.UseVisualStyleBackColor = true;
+            // 
+            // buttonProfileUploadImage
+            // 
+            this.buttonProfileUploadImage.Location = new System.Drawing.Point(266, 371);
+            this.buttonProfileUploadImage.Name = "buttonProfileUploadImage";
+            this.buttonProfileUploadImage.Size = new System.Drawing.Size(49, 40);
+            this.buttonProfileUploadImage.TabIndex = 22;
+            this.buttonProfileUploadImage.Text = "N";
+            this.buttonProfileUploadImage.UseVisualStyleBackColor = true;
+            this.buttonProfileUploadImage.Click += new System.EventHandler(this.buttonProfileUploadImage_Click);
             // 
             // comboBoxProfileDept
             // 
@@ -372,7 +442,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
             this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssetRecords.Size = new System.Drawing.Size(1168, 704);
+            this.tabAssetRecords.Size = new System.Drawing.Size(1184, 704);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
@@ -393,7 +463,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArchiveRecords.Size = new System.Drawing.Size(1168, 704);
+            this.tabArchiveRecords.Size = new System.Drawing.Size(1184, 704);
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
@@ -414,7 +484,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabGenReport.Location = new System.Drawing.Point(4, 22);
             this.tabGenReport.Name = "tabGenReport";
             this.tabGenReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenReport.Size = new System.Drawing.Size(1168, 704);
+            this.tabGenReport.Size = new System.Drawing.Size(1184, 704);
             this.tabGenReport.TabIndex = 4;
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
@@ -431,24 +501,419 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // tabOthers
             // 
-            this.tabOthers.Controls.Add(this.label6);
+            this.tabOthers.Controls.Add(this.otherTabControl);
+            this.tabOthers.Controls.Add(this.buttonSupplier);
+            this.tabOthers.Controls.Add(this.buttonOperators);
+            this.tabOthers.Controls.Add(this.labelTitleHandler);
+            this.tabOthers.Controls.Add(this.buttonAssetCategories);
             this.tabOthers.Location = new System.Drawing.Point(4, 22);
             this.tabOthers.Name = "tabOthers";
             this.tabOthers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOthers.Size = new System.Drawing.Size(1168, 704);
+            this.tabOthers.Size = new System.Drawing.Size(1184, 704);
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
             // 
+            // otherTabControl
+            // 
+            this.otherTabControl.Controls.Add(this.tabOperator);
+            this.otherTabControl.Controls.Add(this.tabSupplier);
+            this.otherTabControl.Controls.Add(this.tabAssetCategories);
+            this.otherTabControl.Location = new System.Drawing.Point(6, 76);
+            this.otherTabControl.Name = "otherTabControl";
+            this.otherTabControl.SelectedIndex = 0;
+            this.otherTabControl.Size = new System.Drawing.Size(1157, 622);
+            this.otherTabControl.TabIndex = 0;
+            // 
+            // tabOperator
+            // 
+            this.tabOperator.Controls.Add(this.buttonOperatorClearFields);
+            this.tabOperator.Controls.Add(this.richTextBoxOperatorAdress);
+            this.tabOperator.Controls.Add(this.label24);
+            this.tabOperator.Controls.Add(this.label23);
+            this.tabOperator.Controls.Add(this.textBoxOperatorPhoneNumber);
+            this.tabOperator.Controls.Add(this.label22);
+            this.tabOperator.Controls.Add(this.textBoxOperatorLastName);
+            this.tabOperator.Controls.Add(this.label21);
+            this.tabOperator.Controls.Add(this.textBoxOperatorMiddleName);
+            this.tabOperator.Controls.Add(this.label20);
+            this.tabOperator.Controls.Add(this.textBoxOperatorFirstName);
+            this.tabOperator.Controls.Add(this.dataGridViewOtherOperator);
+            this.tabOperator.Controls.Add(this.panelOperatorHandler);
+            this.tabOperator.Location = new System.Drawing.Point(4, 22);
+            this.tabOperator.Name = "tabOperator";
+            this.tabOperator.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOperator.Size = new System.Drawing.Size(1149, 596);
+            this.tabOperator.TabIndex = 1;
+            this.tabOperator.Text = "tabOperator";
+            this.tabOperator.UseVisualStyleBackColor = true;
+            // 
+            // buttonOperatorClearFields
+            // 
+            this.buttonOperatorClearFields.Location = new System.Drawing.Point(737, 545);
+            this.buttonOperatorClearFields.Name = "buttonOperatorClearFields";
+            this.buttonOperatorClearFields.Size = new System.Drawing.Size(148, 29);
+            this.buttonOperatorClearFields.TabIndex = 6;
+            this.buttonOperatorClearFields.Text = "Clear Fields";
+            this.buttonOperatorClearFields.UseVisualStyleBackColor = true;
+            this.buttonOperatorClearFields.Click += new System.EventHandler(this.buttonOperatorClearFields_Click);
+            // 
+            // richTextBoxOperatorAdress
+            // 
+            this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(383, 441);
+            this.richTextBoxOperatorAdress.Name = "richTextBoxOperatorAdress";
+            this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(330, 137);
+            this.richTextBoxOperatorAdress.TabIndex = 11;
+            this.richTextBoxOperatorAdress.Text = "";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(329, 444);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 13);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Address:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 561);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(81, 13);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Phone Number:";
+            // 
+            // textBoxOperatorPhoneNumber
+            // 
+            this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(90, 558);
+            this.textBoxOperatorPhoneNumber.Name = "textBoxOperatorPhoneNumber";
+            this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(187, 20);
+            this.textBoxOperatorPhoneNumber.TabIndex = 7;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 514);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(61, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Last Name:";
+            // 
+            // textBoxOperatorLastName
+            // 
+            this.textBoxOperatorLastName.Location = new System.Drawing.Point(90, 511);
+            this.textBoxOperatorLastName.Name = "textBoxOperatorLastName";
+            this.textBoxOperatorLastName.Size = new System.Drawing.Size(187, 20);
+            this.textBoxOperatorLastName.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 479);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Middle Name:";
+            // 
+            // textBoxOperatorMiddleName
+            // 
+            this.textBoxOperatorMiddleName.Location = new System.Drawing.Point(90, 476);
+            this.textBoxOperatorMiddleName.Name = "textBoxOperatorMiddleName";
+            this.textBoxOperatorMiddleName.Size = new System.Drawing.Size(187, 20);
+            this.textBoxOperatorMiddleName.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 444);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "First Name:";
+            // 
+            // textBoxOperatorFirstName
+            // 
+            this.textBoxOperatorFirstName.Location = new System.Drawing.Point(90, 441);
+            this.textBoxOperatorFirstName.Name = "textBoxOperatorFirstName";
+            this.textBoxOperatorFirstName.Size = new System.Drawing.Size(187, 20);
+            this.textBoxOperatorFirstName.TabIndex = 1;
+            // 
+            // dataGridViewOtherOperator
+            // 
+            this.dataGridViewOtherOperator.AllowUserToAddRows = false;
+            this.dataGridViewOtherOperator.AllowUserToDeleteRows = false;
+            this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOtherOperator.Location = new System.Drawing.Point(7, 9);
+            this.dataGridViewOtherOperator.Name = "dataGridViewOtherOperator";
+            this.dataGridViewOtherOperator.ReadOnly = true;
+            this.dataGridViewOtherOperator.Size = new System.Drawing.Size(1136, 410);
+            this.dataGridViewOtherOperator.TabIndex = 0;
+            this.dataGridViewOtherOperator.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewOtherOperator_CellMouseClick);
+            // 
+            // panelOperatorHandler
+            // 
+            this.panelOperatorHandler.BackColor = System.Drawing.SystemColors.Control;
+            this.panelOperatorHandler.Location = new System.Drawing.Point(4, 7);
+            this.panelOperatorHandler.Name = "panelOperatorHandler";
+            this.panelOperatorHandler.Size = new System.Drawing.Size(1139, 586);
+            this.panelOperatorHandler.TabIndex = 12;
+            // 
+            // tabSupplier
+            // 
+            this.tabSupplier.Controls.Add(this.buttonSupplierClearFields);
+            this.tabSupplier.Controls.Add(this.buttonSupplierViewSuppliedAssets);
+            this.tabSupplier.Controls.Add(this.buttonSupplierUpdate);
+            this.tabSupplier.Controls.Add(this.buttonSupplierAdd);
+            this.tabSupplier.Controls.Add(this.label17);
+            this.tabSupplier.Controls.Add(this.textBoxSupplierAddress);
+            this.tabSupplier.Controls.Add(this.label6);
+            this.tabSupplier.Controls.Add(this.textBoxSupplierPhoneNumber);
+            this.tabSupplier.Controls.Add(this.labelSupplierName);
+            this.tabSupplier.Controls.Add(this.textBoxSupplierName);
+            this.tabSupplier.Controls.Add(this.dataGridViewSupplier);
+            this.tabSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tabSupplier.Name = "tabSupplier";
+            this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSupplier.Size = new System.Drawing.Size(1149, 596);
+            this.tabSupplier.TabIndex = 0;
+            this.tabSupplier.Text = "tabSupplier";
+            this.tabSupplier.UseVisualStyleBackColor = true;
+            // 
+            // buttonSupplierClearFields
+            // 
+            this.buttonSupplierClearFields.Location = new System.Drawing.Point(719, 540);
+            this.buttonSupplierClearFields.Name = "buttonSupplierClearFields";
+            this.buttonSupplierClearFields.Size = new System.Drawing.Size(125, 46);
+            this.buttonSupplierClearFields.TabIndex = 11;
+            this.buttonSupplierClearFields.Text = "Clear Fields";
+            this.buttonSupplierClearFields.UseVisualStyleBackColor = true;
+            this.buttonSupplierClearFields.Click += new System.EventHandler(this.buttonSupplierClearFields_Click);
+            // 
+            // buttonSupplierViewSuppliedAssets
+            // 
+            this.buttonSupplierViewSuppliedAssets.Enabled = false;
+            this.buttonSupplierViewSuppliedAssets.Location = new System.Drawing.Point(9, 540);
+            this.buttonSupplierViewSuppliedAssets.Name = "buttonSupplierViewSuppliedAssets";
+            this.buttonSupplierViewSuppliedAssets.Size = new System.Drawing.Size(234, 46);
+            this.buttonSupplierViewSuppliedAssets.TabIndex = 10;
+            this.buttonSupplierViewSuppliedAssets.Text = "View Supplied Asset";
+            this.buttonSupplierViewSuppliedAssets.UseVisualStyleBackColor = true;
+            this.buttonSupplierViewSuppliedAssets.Click += new System.EventHandler(this.buttonSupplierViewSuppliedAssets_Click);
+            // 
+            // buttonSupplierUpdate
+            // 
+            this.buttonSupplierUpdate.Enabled = false;
+            this.buttonSupplierUpdate.Location = new System.Drawing.Point(865, 541);
+            this.buttonSupplierUpdate.Name = "buttonSupplierUpdate";
+            this.buttonSupplierUpdate.Size = new System.Drawing.Size(125, 46);
+            this.buttonSupplierUpdate.TabIndex = 8;
+            this.buttonSupplierUpdate.Text = "Update";
+            this.buttonSupplierUpdate.UseVisualStyleBackColor = true;
+            this.buttonSupplierUpdate.Click += new System.EventHandler(this.buttonSupplierUpdate_Click);
+            // 
+            // buttonSupplierAdd
+            // 
+            this.buttonSupplierAdd.Location = new System.Drawing.Point(1007, 540);
+            this.buttonSupplierAdd.Name = "buttonSupplierAdd";
+            this.buttonSupplierAdd.Size = new System.Drawing.Size(125, 46);
+            this.buttonSupplierAdd.TabIndex = 7;
+            this.buttonSupplierAdd.Text = "Add";
+            this.buttonSupplierAdd.UseVisualStyleBackColor = true;
+            this.buttonSupplierAdd.Click += new System.EventHandler(this.buttonSupplierAdd_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(585, 354);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(89, 13);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Supplier Address:";
+            // 
+            // textBoxSupplierAddress
+            // 
+            this.textBoxSupplierAddress.Location = new System.Drawing.Point(677, 351);
+            this.textBoxSupplierAddress.Name = "textBoxSupplierAddress";
+            this.textBoxSupplierAddress.Size = new System.Drawing.Size(196, 20);
+            this.textBoxSupplierAddress.TabIndex = 5;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 30);
+            this.label6.Location = new System.Drawing.Point(273, 354);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 62);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Others";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Phone Number:";
+            // 
+            // textBoxSupplierPhoneNumber
+            // 
+            this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(360, 351);
+            this.textBoxSupplierPhoneNumber.Name = "textBoxSupplierPhoneNumber";
+            this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(196, 20);
+            this.textBoxSupplierPhoneNumber.TabIndex = 3;
+            // 
+            // labelSupplierName
+            // 
+            this.labelSupplierName.AutoSize = true;
+            this.labelSupplierName.Location = new System.Drawing.Point(6, 354);
+            this.labelSupplierName.Name = "labelSupplierName";
+            this.labelSupplierName.Size = new System.Drawing.Size(38, 13);
+            this.labelSupplierName.TabIndex = 2;
+            this.labelSupplierName.Text = "Name:";
+            // 
+            // textBoxSupplierName
+            // 
+            this.textBoxSupplierName.Location = new System.Drawing.Point(47, 351);
+            this.textBoxSupplierName.Name = "textBoxSupplierName";
+            this.textBoxSupplierName.Size = new System.Drawing.Size(196, 20);
+            this.textBoxSupplierName.TabIndex = 1;
+            // 
+            // dataGridViewSupplier
+            // 
+            this.dataGridViewSupplier.AllowUserToAddRows = false;
+            this.dataGridViewSupplier.AllowUserToDeleteRows = false;
+            this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSupplier.Location = new System.Drawing.Point(7, 23);
+            this.dataGridViewSupplier.Name = "dataGridViewSupplier";
+            this.dataGridViewSupplier.ReadOnly = true;
+            this.dataGridViewSupplier.Size = new System.Drawing.Size(1136, 318);
+            this.dataGridViewSupplier.TabIndex = 0;
+            this.dataGridViewSupplier.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSupplier_CellMouseClick);
+            // 
+            // tabAssetCategories
+            // 
+            this.tabAssetCategories.Controls.Add(this.buttonAssetCategoryClearFields);
+            this.tabAssetCategories.Controls.Add(this.buttonAssetCategoryUpdate);
+            this.tabAssetCategories.Controls.Add(this.buttonAssetCategoryAdd);
+            this.tabAssetCategories.Controls.Add(this.label19);
+            this.tabAssetCategories.Controls.Add(this.label18);
+            this.tabAssetCategories.Controls.Add(this.textBoxAssetCategoryName);
+            this.tabAssetCategories.Controls.Add(this.richTextBoxAssetCategoryDesc);
+            this.tabAssetCategories.Controls.Add(this.dataGridViewAssetCategories);
+            this.tabAssetCategories.Location = new System.Drawing.Point(4, 22);
+            this.tabAssetCategories.Name = "tabAssetCategories";
+            this.tabAssetCategories.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAssetCategories.Size = new System.Drawing.Size(1149, 596);
+            this.tabAssetCategories.TabIndex = 2;
+            this.tabAssetCategories.Text = "tabAssetCategories";
+            this.tabAssetCategories.UseVisualStyleBackColor = true;
+            // 
+            // buttonAssetCategoryClearFields
+            // 
+            this.buttonAssetCategoryClearFields.Location = new System.Drawing.Point(586, 542);
+            this.buttonAssetCategoryClearFields.Name = "buttonAssetCategoryClearFields";
+            this.buttonAssetCategoryClearFields.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryClearFields.TabIndex = 8;
+            this.buttonAssetCategoryClearFields.Text = "Clear Fields";
+            this.buttonAssetCategoryClearFields.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryClearFields.Click += new System.EventHandler(this.buttonAssetCategoryClearFields_Click);
+            // 
+            // buttonAssetCategoryUpdate
+            // 
+            this.buttonAssetCategoryUpdate.Location = new System.Drawing.Point(776, 542);
+            this.buttonAssetCategoryUpdate.Name = "buttonAssetCategoryUpdate";
+            this.buttonAssetCategoryUpdate.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryUpdate.TabIndex = 6;
+            this.buttonAssetCategoryUpdate.Text = "Update";
+            this.buttonAssetCategoryUpdate.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryUpdate.Click += new System.EventHandler(this.buttonAssetCategoryUpdate_Click);
+            // 
+            // buttonAssetCategoryAdd
+            // 
+            this.buttonAssetCategoryAdd.Location = new System.Drawing.Point(963, 542);
+            this.buttonAssetCategoryAdd.Name = "buttonAssetCategoryAdd";
+            this.buttonAssetCategoryAdd.Size = new System.Drawing.Size(171, 39);
+            this.buttonAssetCategoryAdd.TabIndex = 5;
+            this.buttonAssetCategoryAdd.Text = "Add";
+            this.buttonAssetCategoryAdd.UseVisualStyleBackColor = true;
+            this.buttonAssetCategoryAdd.Click += new System.EventHandler(this.buttonAssetCategoryAdd_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(57, 422);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Description:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(57, 387);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Name:";
+            // 
+            // textBoxAssetCategoryName
+            // 
+            this.textBoxAssetCategoryName.Location = new System.Drawing.Point(126, 384);
+            this.textBoxAssetCategoryName.Name = "textBoxAssetCategoryName";
+            this.textBoxAssetCategoryName.Size = new System.Drawing.Size(408, 20);
+            this.textBoxAssetCategoryName.TabIndex = 2;
+            // 
+            // richTextBoxAssetCategoryDesc
+            // 
+            this.richTextBoxAssetCategoryDesc.Location = new System.Drawing.Point(126, 422);
+            this.richTextBoxAssetCategoryDesc.Name = "richTextBoxAssetCategoryDesc";
+            this.richTextBoxAssetCategoryDesc.Size = new System.Drawing.Size(408, 106);
+            this.richTextBoxAssetCategoryDesc.TabIndex = 1;
+            this.richTextBoxAssetCategoryDesc.Text = "";
+            // 
+            // dataGridViewAssetCategories
+            // 
+            this.dataGridViewAssetCategories.AllowUserToAddRows = false;
+            this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
+            this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
+            this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
+            this.dataGridViewAssetCategories.ReadOnly = true;
+            this.dataGridViewAssetCategories.Size = new System.Drawing.Size(1136, 349);
+            this.dataGridViewAssetCategories.TabIndex = 0;
+            this.dataGridViewAssetCategories.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetCategories_CellMouseClick);
+            // 
+            // buttonSupplier
+            // 
+            this.buttonSupplier.Location = new System.Drawing.Point(889, 41);
+            this.buttonSupplier.Name = "buttonSupplier";
+            this.buttonSupplier.Size = new System.Drawing.Size(125, 29);
+            this.buttonSupplier.TabIndex = 5;
+            this.buttonSupplier.Text = "Supplier";
+            this.buttonSupplier.UseVisualStyleBackColor = true;
+            this.buttonSupplier.Click += new System.EventHandler(this.buttonSupplier_Click);
+            // 
+            // buttonOperators
+            // 
+            this.buttonOperators.Location = new System.Drawing.Point(747, 41);
+            this.buttonOperators.Name = "buttonOperators";
+            this.buttonOperators.Size = new System.Drawing.Size(125, 29);
+            this.buttonOperators.TabIndex = 4;
+            this.buttonOperators.Text = "Operator";
+            this.buttonOperators.UseVisualStyleBackColor = true;
+            this.buttonOperators.Click += new System.EventHandler(this.buttonOperators_Click);
+            // 
+            // labelTitleHandler
+            // 
+            this.labelTitleHandler.AutoSize = true;
+            this.labelTitleHandler.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleHandler.Location = new System.Drawing.Point(6, 20);
+            this.labelTitleHandler.Name = "labelTitleHandler";
+            this.labelTitleHandler.Size = new System.Drawing.Size(244, 62);
+            this.labelTitleHandler.TabIndex = 3;
+            this.labelTitleHandler.Text = "LABEL_TITLE";
+            // 
+            // buttonAssetCategories
+            // 
+            this.buttonAssetCategories.Location = new System.Drawing.Point(1031, 41);
+            this.buttonAssetCategories.Name = "buttonAssetCategories";
+            this.buttonAssetCategories.Size = new System.Drawing.Size(125, 29);
+            this.buttonAssetCategories.TabIndex = 1;
+            this.buttonAssetCategories.Text = "Asset Categories";
+            this.buttonAssetCategories.UseVisualStyleBackColor = true;
+            this.buttonAssetCategories.Click += new System.EventHandler(this.buttonAssetCategories_Click);
             // 
             // tabAbout
             // 
@@ -456,7 +921,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
             this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAbout.Size = new System.Drawing.Size(1168, 704);
+            this.tabAbout.Size = new System.Drawing.Size(1184, 704);
             this.tabAbout.TabIndex = 6;
             this.tabAbout.Text = "tabPage7";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -477,7 +942,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSettings.Location = new System.Drawing.Point(4, 22);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(1168, 704);
+            this.tabSettings.Size = new System.Drawing.Size(1184, 704);
             this.tabSettings.TabIndex = 7;
             this.tabSettings.Text = "tabPage8";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -495,6 +960,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // groupBoxSide
             // 
             this.groupBoxSide.BackColor = System.Drawing.Color.Silver;
+            this.groupBoxSide.Controls.Add(this.buttonTransaction);
             this.groupBoxSide.Controls.Add(this.buttonHamburger);
             this.groupBoxSide.Controls.Add(this.buttonAbout);
             this.groupBoxSide.Controls.Add(this.buttonProfile);
@@ -505,9 +971,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
             this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
-            this.groupBoxSide.Location = new System.Drawing.Point(8, 58);
+            this.groupBoxSide.Location = new System.Drawing.Point(-3, 42);
             this.groupBoxSide.Name = "groupBoxSide";
-            this.groupBoxSide.Size = new System.Drawing.Size(80, 730);
+            this.groupBoxSide.Size = new System.Drawing.Size(79, 746);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
             // 
@@ -565,11 +1031,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonOthers
             // 
-            this.buttonOthers.Location = new System.Drawing.Point(15, 391);
+            this.buttonOthers.Location = new System.Drawing.Point(14, 470);
             this.buttonOthers.Name = "buttonOthers";
             this.buttonOthers.Size = new System.Drawing.Size(49, 45);
             this.buttonOthers.TabIndex = 15;
-            this.buttonOthers.Text = "O";
+            this.buttonOthers.Text = "MISC";
             this.buttonOthers.UseVisualStyleBackColor = true;
             this.buttonOthers.Click += new System.EventHandler(this.buttonOthers_Click);
             // 
@@ -613,27 +1079,25 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonDashboard.UseVisualStyleBackColor = true;
             this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
             // 
-            // groupBoxTop
+            // panelBoxTop
             // 
-            this.groupBoxTop.BackColor = System.Drawing.Color.Green;
-            this.groupBoxTop.Controls.Add(this.pictureBox1);
-            this.groupBoxTop.Controls.Add(this.label16);
-            this.groupBoxTop.Controls.Add(this.buttonMasterExit);
-            this.groupBoxTop.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxTop.Location = new System.Drawing.Point(-6, -8);
-            this.groupBoxTop.Name = "groupBoxTop";
-            this.groupBoxTop.Size = new System.Drawing.Size(1295, 60);
-            this.groupBoxTop.TabIndex = 2;
-            this.groupBoxTop.TabStop = false;
+            this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelBoxTop.Controls.Add(this.pictureBox1);
+            this.panelBoxTop.Controls.Add(this.label16);
+            this.panelBoxTop.Controls.Add(this.buttonMasterExit);
+            this.panelBoxTop.Location = new System.Drawing.Point(-9, -7);
+            this.panelBoxTop.Name = "panelBoxTop";
+            this.panelBoxTop.Size = new System.Drawing.Size(1295, 60);
+            this.panelBoxTop.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // label16
@@ -641,31 +1105,52 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(70, 10);
+            this.label16.Location = new System.Drawing.Point(70, 7);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(194, 48);
-            this.label16.TabIndex = 1;
+            this.label16.TabIndex = 4;
             this.label16.Text = "LGU-SV AMS";
             // 
             // buttonMasterExit
             // 
-            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 17);
+            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 14);
             this.buttonMasterExit.Name = "buttonMasterExit";
             this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
-            this.buttonMasterExit.TabIndex = 0;
+            this.buttonMasterExit.TabIndex = 3;
             this.buttonMasterExit.Text = "X";
             this.buttonMasterExit.UseVisualStyleBackColor = true;
-            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click);
+            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // buttonProfileUploadImage
+            // buttonTransaction
             // 
-            this.buttonProfileUploadImage.Location = new System.Drawing.Point(266, 371);
-            this.buttonProfileUploadImage.Name = "buttonProfileUploadImage";
-            this.buttonProfileUploadImage.Size = new System.Drawing.Size(49, 40);
-            this.buttonProfileUploadImage.TabIndex = 22;
-            this.buttonProfileUploadImage.Text = "N";
-            this.buttonProfileUploadImage.UseVisualStyleBackColor = true;
-            this.buttonProfileUploadImage.Click += new System.EventHandler(this.buttonProfileUploadImage_Click);
+            this.buttonTransaction.Location = new System.Drawing.Point(14, 402);
+            this.buttonTransaction.Name = "buttonTransaction";
+            this.buttonTransaction.Size = new System.Drawing.Size(49, 45);
+            this.buttonTransaction.TabIndex = 22;
+            this.buttonTransaction.Text = "TRNSC";
+            this.buttonTransaction.UseVisualStyleBackColor = true;
+            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
+            // 
+            // tabTransaction
+            // 
+            this.tabTransaction.Controls.Add(this.label25);
+            this.tabTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabTransaction.Name = "tabTransaction";
+            this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTransaction.Size = new System.Drawing.Size(1184, 704);
+            this.tabTransaction.TabIndex = 8;
+            this.tabTransaction.Text = "tabPage1";
+            this.tabTransaction.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(6, 15);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(246, 62);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Transaction";
             // 
             // MainForm
             // 
@@ -673,7 +1158,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBoxTop);
+            this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.groupBoxSide);
             this.Controls.Add(this.panelTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -695,14 +1180,26 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabGenReport.PerformLayout();
             this.tabOthers.ResumeLayout(false);
             this.tabOthers.PerformLayout();
+            this.otherTabControl.ResumeLayout(false);
+            this.tabOperator.ResumeLayout(false);
+            this.tabOperator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOtherOperator)).EndInit();
+            this.tabSupplier.ResumeLayout(false);
+            this.tabSupplier.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).EndInit();
+            this.tabAssetCategories.ResumeLayout(false);
+            this.tabAssetCategories.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).EndInit();
             this.tabAbout.ResumeLayout(false);
             this.tabAbout.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.groupBoxSide.ResumeLayout(false);
-            this.groupBoxTop.ResumeLayout(false);
-            this.groupBoxTop.PerformLayout();
+            this.panelBoxTop.ResumeLayout(false);
+            this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabTransaction.ResumeLayout(false);
+            this.tabTransaction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -733,7 +1230,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBoxProfileImage;
@@ -756,10 +1252,54 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.CheckBox checkBoxButtonProfileShowPassword;
         private System.Windows.Forms.ComboBox comboBoxProfileDept;
         private System.Windows.Forms.Button buttonHamburger;
-        private System.Windows.Forms.GroupBox groupBoxTop;
-        private System.Windows.Forms.Button buttonMasterExit;
+        private System.Windows.Forms.Button buttonProfileUploadImage;
+        private System.Windows.Forms.Panel panelTotalAsset;
+        private System.Windows.Forms.Panel panelBoxTop;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonProfileUploadImage;
+        private System.Windows.Forms.Button buttonMasterExit;
+        private System.Windows.Forms.TabControl otherTabControl;
+        private System.Windows.Forms.TabPage tabSupplier;
+        private System.Windows.Forms.TabPage tabOperator;
+        private System.Windows.Forms.TabPage tabAssetCategories;
+        private System.Windows.Forms.Button buttonAssetCategories;
+        private System.Windows.Forms.Label labelTitleHandler;
+        private System.Windows.Forms.Button buttonOperators;
+        private System.Windows.Forms.Button buttonSupplier;
+        private System.Windows.Forms.DataGridView dataGridViewSupplier;
+        private System.Windows.Forms.TextBox textBoxSupplierName;
+        private System.Windows.Forms.Label labelSupplierName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxSupplierPhoneNumber;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxSupplierAddress;
+        private System.Windows.Forms.Button buttonSupplierAdd;
+        private System.Windows.Forms.Button buttonSupplierUpdate;
+        private System.Windows.Forms.Button buttonSupplierViewSuppliedAssets;
+        private System.Windows.Forms.Button buttonSupplierClearFields;
+        private System.Windows.Forms.DataGridView dataGridViewAssetCategories;
+        private System.Windows.Forms.TextBox textBoxAssetCategoryName;
+        private System.Windows.Forms.RichTextBox richTextBoxAssetCategoryDesc;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button buttonAssetCategoryAdd;
+        private System.Windows.Forms.Button buttonAssetCategoryUpdate;
+        private System.Windows.Forms.Button buttonAssetCategoryClearFields;
+        private System.Windows.Forms.DataGridView dataGridViewOtherOperator;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBoxOperatorFirstName;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBoxOperatorPhoneNumber;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBoxOperatorLastName;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBoxOperatorMiddleName;
+        private System.Windows.Forms.RichTextBox richTextBoxOperatorAdress;
+        private System.Windows.Forms.Button buttonOperatorClearFields;
+        private System.Windows.Forms.Panel panelOperatorHandler;
+        private System.Windows.Forms.Button buttonTransaction;
+        private System.Windows.Forms.TabPage tabTransaction;
+        private System.Windows.Forms.Label label25;
     }
 }

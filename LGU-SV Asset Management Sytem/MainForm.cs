@@ -26,21 +26,79 @@ namespace LGU_SV_Asset_Management_Sytem
         //Color
         Color clickColor = Color.FromArgb(76, 245, 154);
 
+        //447145
+        Color mainColor1 = Color.FromArgb(68, 113, 69);
+
         //savingprofile
         private byte[] imagedata;
+
+
+        //Supplier
+        Controllers.MainFormSupplierController supplierController;
+        Controllers.MainFormAssetCategoriesController assetCategoriesController;
+
+        AssetEmployee.AssetEmployeeRepositoryControl assetOperatorRepositoryControl = new AssetEmployee.AssetEmployeeRepositoryControl();
+
+        //Objects Controllers
+        AssetCategoryRepositoryControl assetCategoryRepositoryControl;
         public MainForm()
         {
  
             InitializeComponent();
+            
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            InitialiazeTabControl();
+            InitialiazeTabControl(panelTabControl);
+            InitialiazeTabControl(otherTabControl);
 
             databaseConnection = new DatabaseConnection();
 
             InitializeProfileTabControls();
 
             SetData();
+
+            //Other Panel DataGridView
+            dataGridViewSupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewAssetCategories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewOtherOperator.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            panelTotalAsset.BackColor = mainColor1;
+
+            //Controllers
+            supplierController = new Controllers.MainFormSupplierController(databaseConnection);
+            assetCategoriesController = new Controllers.MainFormAssetCategoriesController(databaseConnection);
+
+
+            //Object Controllers
+            assetCategoryRepositoryControl = new AssetCategoryRepositoryControl();
+           
+        }
+
+        // Initialize Controls
+
+        private void InitializedAccessControl()
+        {
+            if(sessionHandler == null)
+            {
+                MessagePrompt($"{ErrorList.Error5()[0]} \n{ErrorList.Error5()[1]}");
+                return;
+            }
+
+            switch (currentSessionUserType)
+            {
+                case "Asset Viewer":
+                    buttonOthers.Visible = false;
+                    buttonTransaction.Visible = false;
+
+                    break;
+                case "Asset Employee":
+                    buttonOthers.Visible = false;
+
+                    break;
+                case "Asset Supervisor":
+
+                    break;
+            }
         }
 
         private void SetData()
@@ -59,15 +117,17 @@ namespace LGU_SV_Asset_Management_Sytem
             Console.WriteLine(sessionHandler.GetCurrentUserID());
 
             SetUser();
+
+            InitializedAccessControl();
         }
 
-        private void InitialiazeTabControl()
+        private void InitialiazeTabControl(TabControl tabControl)
         {
-            panelTabControl.Appearance = TabAppearance.FlatButtons;
-            panelTabControl.ItemSize = new Size(0, 1);
-            panelTabControl.SizeMode = TabSizeMode.Fixed;
+            tabControl.Appearance = TabAppearance.FlatButtons;
+            tabControl.ItemSize = new Size(0, 1);
+            tabControl.SizeMode = TabSizeMode.Fixed;
 
-            foreach (TabPage tab in panelTabControl.TabPages)
+            foreach (TabPage tab in tabControl.TabPages)
             {
                 tab.Text = "";
             }
@@ -93,17 +153,17 @@ namespace LGU_SV_Asset_Management_Sytem
                             "assetViewerAddress, assetViewerOffice " +
                             "FROM AssetViewer WHERE userID = @UserId";
                     break;
-                case "Asset Operator":
-                            query = "SELECT assetOperatorFName, assetOperatorMName, assetOperatorLName, " +
-                            "assetOperatorPhoneNum, assetOperatorEmail, " +
-                            "assetOperatorAddress, assetOperatorOffice " +
-                            "FROM AssetOperator WHERE userID = @UserId";
+                case "Asset Employee":
+                            query = "SELECT assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, " +
+                            "assetEmployeePhoneNum, assetEmployeeEmail, " +
+                            "assetEmployeeAddress, assetEmployeeOffice " +
+                            "FROM AssetEmployee WHERE userID = @UserId";
                     break;
-                case "Asset Manager":
-                            query = "SELECT assetManagerFName, assetManagerMName, assetManagerLName, " +
-                            "assetManagerPhoneNumber, assetManagerEmail, " +
-                            "assetManagerAddress, assetManagerOffice " +
-                            "FROM AssetManager WHERE userID = @UserId";
+                case "Asset Supervisor":
+                            query = "SELECT assetSupervisorFName, assetSupervisorMName, assetSupervisorLName, " +
+                            "assetSupervisorPhoneNumber, assetSupervisorEmail, " +
+                            "assetSupervisorAddress, assetSupervisorOffice " +
+                            "FROM AssetSupervisor WHERE userID = @UserId";
                     break;
             }
            
@@ -197,8 +257,33 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonOthers_Click(object sender, EventArgs e)
         {  
             panelTabControl.SelectedTab = tabOthers;
-        }
+            otherTabControl.SelectedTab = tabSupplier;
+            labelTitleHandler.Text = "Supplier";
 
+            //Load
+            FetchSupplierDataSource();
+            
+        }
+        private void FetchSupplierDataSource()
+        {
+            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+
+            if (dataGridViewSupplier.Columns["DeleteButtonColumn"] == null)
+            {
+                // Create a new DataGridViewButtonColumn
+                var deleteButtonColumn = new DataGridViewButtonColumn();
+                deleteButtonColumn.HeaderText = "Actions";
+                deleteButtonColumn.Text = "Delete";
+                deleteButtonColumn.Name = "DeleteButtonColumn";
+                deleteButtonColumn.UseColumnTextForButtonValue = true;
+
+                // Add the button column to the DataGridView
+                dataGridViewSupplier.Columns.Add(deleteButtonColumn);
+
+                // Adjust the button column's display index to make it the last column
+                deleteButtonColumn.DisplayIndex = dataGridViewSupplier.Columns.Count - 1;
+            }
+        }
         private void SetActiveTab()
         {
 
@@ -256,7 +341,10 @@ namespace LGU_SV_Asset_Management_Sytem
             buttonProfileUploadImage.Visible = false;
             //Fetch Data
         }
-
+        private void buttonTransaction_Click(object sender, EventArgs e)
+        {
+            panelTabControl.SelectedTab = tabTransaction;
+        }
         private void SetListControlStateTo(List<Control> controls, bool state)
         {
             foreach (Control control in controls)
@@ -329,32 +417,33 @@ namespace LGU_SV_Asset_Management_Sytem
                             "WHERE userId = @UserId";
 
                         break;
-                    case "Asset Operator":
+                    case "Asset Employee":
                         query =
-                            "UPDATE AssetOperator" +
+                            "UPDATE AssetEmployee" +
                             " SET " +
-                            "assetOperatorFName = @firstName, " +
-                            "assetOperatorMName = @middleName, " +
-                            "assetOperatorLName = @lastName, " +
-                            "assetOperatorPhoneNum = @phoneNumber, " +
-                            "assetOperatorEmail = @email, " +
-                            "assetOperatorAddress = @address, " +
-                            "assetOperatorOffice = @office " +
+                            "assetEmployeeFName = @firstName, " +
+                            "assetEmployeeMName = @middleName, " +
+                            "assetEmployeeLName = @lastName, " +
+                            "assetEmployeePhoneNum = @phoneNumber, " +
+                            "assetEmployeeEmail = @email, " +
+                            "assetEmployeeAddress = @address, " +
+                            "assetEmployeeOffice = @office " +
                             "WHERE userId = @UserId";
                         break;
-                    case "Asset Manager":
+                    case "Asset Supervisor":
                         query =
-                             "UPDATE AssetManager" +
+                             "UPDATE AssetSupervisor" +
                              " SET " +
-                             "assetManagerFName = @firstName, " +
-                             "assetManagerMName = @middleName, " +
-                             "assetManagerLName = @lastName, " +
-                             "assetManagerPhoneNum = @phoneNumber, " +
-                             "assetManagerEmail = @email, " +
-                             "assetManagerAddress = @address, " +
-                             "assetManagerOffice = @office " +
+                             "assetSupervisorFName = @firstName, " +
+                             "assetSupervisorMName = @middleName, " +
+                             "assetSupervisorLName = @lastName, " +
+                             "assetSupervisorPhoneNum = @phoneNumber, " +
+                             "assetSupervisorEmail = @email, " +
+                             "assetSupervisorAddress = @address, " +
+                             "assetSupervisorOffice = @office " +
                              "WHERE userId = @UserId";
                         break;
+
                 }
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -402,9 +491,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 {
                     databaseConnection.UploadToDatabase(user_query, user_parameters);
 
-                    DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
-                    prompt.SetMessage("Account Profile Edited Successfully!");
-                    prompt.Show();
+                    MessagePrompt("Account Profile Edited Successfully!");
 
                     databaseConnection.CloseConnection();
 
@@ -445,6 +532,11 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             sessionHandler.OnCurrentSessionEnd();
+            currentSessionUserType = "";
+            this.Close();
+
+            StartForm startForm = new StartForm();
+            startForm.Show();
         }
 
 
@@ -484,13 +576,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            groupBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
         }
 
-        private void buttonMasterExit_Click(object sender, EventArgs e)
-        {
-            MasterExit();
-        }
+   
 
         private void MasterExit()
         {
@@ -536,5 +625,382 @@ namespace LGU_SV_Asset_Management_Sytem
                 }
             }
         }
+
+        private void buttonMasterExit_Click_1(object sender, EventArgs e)
+        {
+            MasterExit();
+        }
+
+        private void buttonSupplier_Click(object sender, EventArgs e)
+        {
+            labelTitleHandler.Text = "Supplier";
+            otherTabControl.SelectedTab = tabSupplier;
+
+            SupplierReset();
+        }
+
+        private void FetchOperatorDataSource()
+        {
+            dataGridViewOtherOperator.DataSource = assetOperatorRepositoryControl.GetAllOperators().resultTable;
+
+            if (dataGridViewOtherOperator.Columns["ViewButtonColumn"] == null)
+            {
+                // Create a new DataGridViewButtonColumn
+                var viewButtonColumn = new DataGridViewButtonColumn();
+                viewButtonColumn.HeaderText = "Actions";
+                viewButtonColumn.Text = "View Handled Assets";
+                viewButtonColumn.Name = "ViewButtonColumn";
+                viewButtonColumn.UseColumnTextForButtonValue = true;
+
+                // Add the button column to the DataGridView
+                dataGridViewOtherOperator.Columns.Add(viewButtonColumn);
+
+                // Adjust the button column's display index to make it the last column
+                viewButtonColumn.DisplayIndex = dataGridViewOtherOperator.Columns.Count - 1;
+            }
+        }
+        private void buttonOperators_Click(object sender, EventArgs e)
+        {
+            
+            labelTitleHandler.Text = "Operators";
+            otherTabControl.SelectedTab = tabOperator;
+
+            SupplierReset();
+
+            FetchOperatorDataSource();
+        }
+
+        private void FetchAssetCategories()
+        {
+            dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
+            if (dataGridViewAssetCategories.Columns["DeleteButtonColumn"] == null)
+            {
+                // Create a new DataGridViewButtonColumn
+                var deleteButtonColumn = new DataGridViewButtonColumn();
+                deleteButtonColumn.HeaderText = "Actions";
+                deleteButtonColumn.Text = "Delete";
+                deleteButtonColumn.Name = "DeleteButtonColumn";
+                deleteButtonColumn.UseColumnTextForButtonValue = true;
+
+                // Add the button column to the DataGridView
+                dataGridViewAssetCategories.Columns.Add(deleteButtonColumn);
+
+                // Adjust the button column's display index to make it the last column
+                deleteButtonColumn.DisplayIndex = dataGridViewAssetCategories.Columns.Count - 1;
+            }
+        }
+        private void buttonAssetCategories_Click(object sender, EventArgs e)
+        {
+            labelTitleHandler.Text = "Asset Categories";
+            otherTabControl.SelectedTab = tabAssetCategories;
+
+            SupplierReset();
+
+            //load
+            FetchAssetCategories();
+        }
+
+        /*
+         * 
+         * Progress Here
+         * 
+         */
+        private void buttonSupplierAdd_Click(object sender, EventArgs e)
+        {
+            string supplierName = textBoxSupplierName.Text;
+            string supplierPhoneNumber = textBoxSupplierPhoneNumber.Text;
+            string supplierAddress = textBoxSupplierAddress.Text;
+
+            if (string.IsNullOrEmpty(supplierName))
+            {
+                MessagePrompt("Please Input Name");
+            }
+            else if (string.IsNullOrEmpty(supplierPhoneNumber))
+            {
+                MessagePrompt("Please Input Phone Number");
+            }
+            else if (string.IsNullOrEmpty(supplierAddress))
+            {
+                MessagePrompt("Please Input Address");
+            }
+            else
+            {
+                var result = supplierController.AddNewSupplier(supplierName, supplierPhoneNumber, supplierAddress);
+
+                if (result.Success)
+                {
+                    MessagePrompt($"Supplier has been successfully added! \nName: {supplierName}\nPhoneNumber: {supplierPhoneNumber}\nAddress: {supplierAddress} ");
+                    textBoxSupplierName.Text = "";
+                    textBoxSupplierPhoneNumber.Text = "";
+                    textBoxSupplierAddress.Text = "";
+
+                    SupplierReset();
+
+                    dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+                }
+                else
+                {
+                    MessagePrompt($"Supplier addition failed: {result.ErrorMessage}");
+                }
+            }
+        }
+
+        private void MessagePrompt(string message)
+        {
+            DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+            prompt.SetMessage(message);
+            prompt.Show();
+        }
+
+        string currentSelectedSupplier;
+        private void dataGridViewSupplier_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+                DataGridViewRow row = dataGridViewSupplier.Rows[e.RowIndex];
+                currentSelectedSupplier = currentSelectedSupplier = row.Cells["supplierId"].Value.ToString();
+
+                textBoxSupplierName.Text = row.Cells[1].Value.ToString();
+                textBoxSupplierPhoneNumber.Text = row.Cells[2].Value.ToString();
+                textBoxSupplierAddress.Text = row.Cells[3].Value.ToString();
+
+                Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
+                Utilities.SetButtonsState(buttoncontrols, true);
+
+                if (e.ColumnIndex == dataGridViewSupplier.Columns["DeleteButtonColumn"].Index)
+                {
+                    currentSelectedSupplier = currentSelectedSupplier = row.Cells["supplierId"].Value.ToString();
+                    Console.WriteLine($"hey {currentSelectedSupplier}");
+                    if (!string.IsNullOrEmpty(currentSelectedSupplier))
+                    {
+                        var result = supplierController.DeleteSupplierEntry(currentSelectedSupplier);
+
+                        if (result.Success)
+                        {
+
+                            MessagePrompt($"Supplier has been successfully deleted");
+                           
+                        }
+                        else
+                        {
+                            MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                        }
+
+                        SupplierReset();
+                        FetchSupplierDataSource();
+                    }
+                }
+            }
+
+        }
+
+        private void buttonSupplierViewSuppliedAssets_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSupplierClearFields_Click(object sender, EventArgs e)
+        {
+            SupplierReset();
+
+        }
+
+
+        private void buttonSupplierUpdate_Click(object sender, EventArgs e)
+        {
+            string supplierName = textBoxSupplierName.Text;
+            string supplierPhoneNumber = textBoxSupplierPhoneNumber.Text;
+            string supplierAddress = textBoxSupplierAddress.Text;
+
+            if (string.IsNullOrEmpty(supplierName))
+            {
+                MessagePrompt("Please Input Name");
+            }
+            else if (string.IsNullOrEmpty(supplierPhoneNumber))
+            {
+                MessagePrompt("Please Input Phone Number");
+            }
+            else if (string.IsNullOrEmpty(supplierAddress))
+            {
+                MessagePrompt("Please Input Address");
+            }
+            else
+            {
+                var result = supplierController.UpdateSupplierEntry(currentSelectedSupplier, supplierName, supplierPhoneNumber, supplierAddress);
+
+                if (result.Success)
+                {
+                    MessagePrompt($"Supplier has been successfully updated");
+                }
+                else
+                {
+                    MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                }
+
+                SupplierReset();
+
+                FetchSupplierDataSource();
+            }
+
+        }
+
+        private void SupplierReset()
+        {
+            Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
+            Utilities.SetButtonsState(buttoncontrols, false);
+
+            Control[] fieldcontrols = { textBoxSupplierName, textBoxSupplierPhoneNumber, textBoxSupplierAddress };
+            Utilities.ClearTextFieldsHandler(fieldcontrols);
+
+            dataGridViewSupplier.ClearSelection();
+
+            currentSelectedSupplier = "";
+        }
+
+        private void AssetCategoryReset()
+        {
+            Control[] buttoncontrols = {  buttonAssetCategoryUpdate };
+            Utilities.SetButtonsState(buttoncontrols, false);
+
+            Control[] fieldcontrols = { textBoxAssetCategoryName, richTextBoxAssetCategoryDesc };
+            Utilities.ClearTextFieldsHandler(fieldcontrols);
+
+            dataGridViewAssetCategories.ClearSelection();
+
+            currentSelectedAssetCategoryId = "";
+        }
+
+        private void buttonAssetCategoryAdd_Click(object sender, EventArgs e)
+        {
+            AssetCategory assetCategory = new AssetCategory();
+            
+            string assetCategoryName = textBoxAssetCategoryName.Text;
+            string assetCategoryDescription = richTextBoxAssetCategoryDesc.Text;
+
+
+            if (string.IsNullOrEmpty(assetCategoryName))
+            {
+                MessagePrompt("Please Input Name");
+            }
+            else if (string.IsNullOrEmpty(assetCategoryDescription))
+            {
+                MessagePrompt("Please Input Description");
+            }
+            else
+            {
+                assetCategory.AssetCategoryDescription = assetCategoryDescription;
+                assetCategory.AssetCategoryName = assetCategoryName;
+
+                var result = assetCategoryRepositoryControl.AddToDatabase(assetCategory);
+                if (result.Success)
+                {
+                    MessagePrompt($"Asset Category: {assetCategory.AssetCategoryName} has been successfully updated");
+
+                    dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
+                    AssetCategoryReset();
+                }
+                else
+                {
+                    MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                }
+            }
+
+        }
+
+        private void buttonAssetCategoryUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void buttonAssetCategoryClearFields_Click(object sender, EventArgs e)
+        {
+            AssetCategoryReset();
+        }
+
+        string currentSelectedAssetCategoryId;
+        private void dataGridViewAssetCategories_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewAssetCategories.Rows[e.RowIndex];
+                currentSelectedAssetCategoryId = row.Cells[0].Value.ToString();
+
+                textBoxAssetCategoryName.Text = row.Cells[1].Value.ToString();
+                richTextBoxAssetCategoryDesc.Text = row.Cells[2].Value.ToString();
+
+                
+                if (e.ColumnIndex == dataGridViewAssetCategories.Columns["DeleteButtonColumn"].Index)
+                {
+                    currentSelectedAssetCategoryId = row.Cells["assetCategoryId"].Value.ToString();
+
+                    AssetCategory assetCategory = new AssetCategory();
+                    assetCategory.AssetCategoryId = currentSelectedAssetCategoryId;
+                    assetCategory.AssetCategoryDescription = richTextBoxAssetCategoryDesc.Text;
+                    assetCategory.AssetCategoryName = textBoxAssetCategoryName.Text;
+
+
+
+                    Console.WriteLine($"hey {currentSelectedAssetCategoryId}");
+                    if (!string.IsNullOrEmpty(currentSelectedAssetCategoryId))
+                    {
+                        var result = assetCategoryRepositoryControl.DeleteToDatabase(assetCategory);
+
+                        if (result.Success)
+                        {
+
+                            MessagePrompt($"Supplier has been successfully deleted");
+
+                        }
+                        else
+                        {
+                            MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                        }
+
+                        AssetCategoryReset();
+                        FetchAssetCategories();
+                    }
+                }
+
+            }
+        }
+
+        private void dataGridViewOtherOperator_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewOtherOperator.Rows[e.RowIndex];
+                string operator_id = row.Cells["assetEmployeeId"].Value.ToString();
+                string name = row.Cells["assetEmployeeFName"].Value.ToString()  + row.Cells["assetEmployeeLName"].Value.ToString();
+                
+                Console.WriteLine("Heyyyyy: " + operator_id);
+                if (e.ColumnIndex == dataGridViewOtherOperator.Columns["ViewButtonColumn"].Index)
+                {
+                    Control panelControl = new Panels.OperatorHandledAssetPanel(panelOperatorHandler, operator_id, name);
+                    panelOperatorHandler.Controls.Add(panelControl);
+                    panelOperatorHandler.BringToFront();
+                    panelOperatorHandler.Visible = true;
+                }
+            }
+        }
+        private void OtherOperatorReset()
+        {
+            
+
+            Control[] fieldcontrols = { textBoxOperatorFirstName, textBoxOperatorMiddleName,
+                textBoxOperatorLastName, textBoxOperatorPhoneNumber, richTextBoxOperatorAdress };
+            Utilities.ClearTextFieldsHandler(fieldcontrols);
+
+            dataGridViewOtherOperator.ClearSelection();
+
+            
+        }
+        private void buttonOperatorClearFields_Click(object sender, EventArgs e)
+        {
+            OtherOperatorReset();
+        }
+
+        
     }
 }

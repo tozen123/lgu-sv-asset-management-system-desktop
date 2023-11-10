@@ -18,8 +18,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public enum AccessLevel
         {
-            Operator,
-            Manager,
+            Employee,
+            Supervisor,
             Viewer
         }
 

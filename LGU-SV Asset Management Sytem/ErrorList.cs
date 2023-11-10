@@ -9,6 +9,25 @@ namespace LGU_SV_Asset_Management_Sytem
     static class ErrorList
     {
         /*
+         * Error 0: Unknown Error
+         */
+        public static string[] Error0()
+        {
+            string Title()
+            {
+                return "Error 0: Unknown Error";
+            }
+
+            string Message()
+            {
+                return "Unknown Error";
+            }
+
+            string i = Title() + "-" + Message();
+            return i.Split('-');
+        }
+
+        /*
          * Error 1: This error message is for the case that the system user session already ended but the user
          * still inside the system.
          */
@@ -61,6 +80,44 @@ namespace LGU_SV_Asset_Management_Sytem
             string Message()
             {
                 return "INPUT ERROR OCCURED.";
+            }
+
+            string i = Title() + "-" + Message();
+            return i.Split('-');
+        }
+
+        /*
+         * Error 4:  Existing Data
+         */
+        public static string[] Error4()
+        {
+            string Title()
+            {
+                return "Error 3: Data Duplication Error";
+            }
+
+            string Message()
+            {
+                return "INPUT ERROR OCCURED. Existing Data Found.";
+            }
+
+            string i = Title() + "-" + Message();
+            return i.Split('-');
+        }
+
+        /*
+         * Error 5: SQL Server Related Error
+         */
+        public static string[] Error5()
+        {
+            string Title()
+            {
+                return "Error 5: SQL Server Related Error";
+            }
+
+            string Message()
+            {
+                return "Error occured while doing work with SQL Server.";
             }
 
             string i = Title() + "-" + Message();
