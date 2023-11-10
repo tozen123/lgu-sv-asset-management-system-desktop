@@ -107,7 +107,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label7 = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
+            this.tabTransaction = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
+            this.buttonTransaction = new System.Windows.Forms.Button();
             this.buttonHamburger = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
@@ -122,9 +125,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.buttonTransaction = new System.Windows.Forms.Button();
-            this.tabTransaction = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
@@ -142,10 +142,10 @@ namespace LGU_SV_Asset_Management_Sytem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.tabAbout.SuspendLayout();
             this.tabSettings.SuspendLayout();
+            this.tabTransaction.SuspendLayout();
             this.groupBoxSide.SuspendLayout();
             this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabTransaction.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTabControl
@@ -649,6 +649,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewOtherOperator.ReadOnly = true;
             this.dataGridViewOtherOperator.Size = new System.Drawing.Size(1136, 410);
             this.dataGridViewOtherOperator.TabIndex = 0;
+            
             this.dataGridViewOtherOperator.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewOtherOperator_CellMouseClick);
             // 
             // panelOperatorHandler
@@ -957,6 +958,27 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label8.TabIndex = 2;
             this.label8.Text = "Settings";
             // 
+            // tabTransaction
+            // 
+            this.tabTransaction.Controls.Add(this.label25);
+            this.tabTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabTransaction.Name = "tabTransaction";
+            this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTransaction.Size = new System.Drawing.Size(1184, 704);
+            this.tabTransaction.TabIndex = 8;
+            this.tabTransaction.Text = "tabPage1";
+            this.tabTransaction.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(6, 15);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(246, 62);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Transaction";
+            // 
             // groupBoxSide
             // 
             this.groupBoxSide.BackColor = System.Drawing.Color.Silver;
@@ -976,6 +998,16 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Size = new System.Drawing.Size(79, 746);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
+            // 
+            // buttonTransaction
+            // 
+            this.buttonTransaction.Location = new System.Drawing.Point(14, 402);
+            this.buttonTransaction.Name = "buttonTransaction";
+            this.buttonTransaction.Size = new System.Drawing.Size(49, 45);
+            this.buttonTransaction.TabIndex = 22;
+            this.buttonTransaction.Text = "TRNSC";
+            this.buttonTransaction.UseVisualStyleBackColor = true;
+            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
             // 
             // buttonHamburger
             // 
@@ -1121,37 +1153,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // buttonTransaction
-            // 
-            this.buttonTransaction.Location = new System.Drawing.Point(14, 402);
-            this.buttonTransaction.Name = "buttonTransaction";
-            this.buttonTransaction.Size = new System.Drawing.Size(49, 45);
-            this.buttonTransaction.TabIndex = 22;
-            this.buttonTransaction.Text = "TRNSC";
-            this.buttonTransaction.UseVisualStyleBackColor = true;
-            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
-            // 
-            // tabTransaction
-            // 
-            this.tabTransaction.Controls.Add(this.label25);
-            this.tabTransaction.Location = new System.Drawing.Point(4, 22);
-            this.tabTransaction.Name = "tabTransaction";
-            this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTransaction.Size = new System.Drawing.Size(1184, 704);
-            this.tabTransaction.TabIndex = 8;
-            this.tabTransaction.Text = "tabPage1";
-            this.tabTransaction.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(6, 15);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(246, 62);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "Transaction";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1194,12 +1195,12 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAbout.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
+            this.tabTransaction.ResumeLayout(false);
+            this.tabTransaction.PerformLayout();
             this.groupBoxSide.ResumeLayout(false);
             this.panelBoxTop.ResumeLayout(false);
             this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabTransaction.ResumeLayout(false);
-            this.tabTransaction.PerformLayout();
             this.ResumeLayout(false);
 
         }
