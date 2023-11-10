@@ -87,11 +87,11 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonOthers.Visible = false;
 
                     break;
-                case "Asset Operator":
+                case "Asset Employee":
                     buttonOthers.Visible = false;
 
                     break;
-                case "Asset Manager":
+                case "Asset Supervisor":
 
                     break;
             }
@@ -149,17 +149,17 @@ namespace LGU_SV_Asset_Management_Sytem
                             "assetViewerAddress, assetViewerOffice " +
                             "FROM AssetViewer WHERE userID = @UserId";
                     break;
-                case "Asset Operator":
-                            query = "SELECT assetOperatorFName, assetOperatorMName, assetOperatorLName, " +
-                            "assetOperatorPhoneNum, assetOperatorEmail, " +
-                            "assetOperatorAddress, assetOperatorOffice " +
-                            "FROM AssetOperator WHERE userID = @UserId";
+                case "Asset Employee":
+                            query = "SELECT assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, " +
+                            "assetEmployeePhoneNum, assetEmployeeEmail, " +
+                            "assetEmployeeAddress, assetEmployeeOffice " +
+                            "FROM AssetEmployee WHERE userID = @UserId";
                     break;
-                case "Asset Manager":
-                            query = "SELECT assetManagerFName, assetManagerMName, assetManagerLName, " +
-                            "assetManagerPhoneNumber, assetManagerEmail, " +
-                            "assetManagerAddress, assetManagerOffice " +
-                            "FROM AssetManager WHERE userID = @UserId";
+                case "Asset Supervisor":
+                            query = "SELECT assetSupervisorFName, assetSupervisorMName, assetSupervisorLName, " +
+                            "assetSupervisorPhoneNumber, assetSupervisorEmail, " +
+                            "assetSupervisorAddress, assetSupervisorOffice " +
+                            "FROM AssetSupervisor WHERE userID = @UserId";
                     break;
             }
            
@@ -410,32 +410,33 @@ namespace LGU_SV_Asset_Management_Sytem
                             "WHERE userId = @UserId";
 
                         break;
-                    case "Asset Operator":
+                    case "Asset Employee":
                         query =
-                            "UPDATE AssetOperator" +
+                            "UPDATE AssetEmployee" +
                             " SET " +
-                            "assetOperatorFName = @firstName, " +
-                            "assetOperatorMName = @middleName, " +
-                            "assetOperatorLName = @lastName, " +
-                            "assetOperatorPhoneNum = @phoneNumber, " +
-                            "assetOperatorEmail = @email, " +
-                            "assetOperatorAddress = @address, " +
-                            "assetOperatorOffice = @office " +
+                            "assetEmployeeFName = @firstName, " +
+                            "assetEmployeeMName = @middleName, " +
+                            "assetEmployeeLName = @lastName, " +
+                            "assetEmployeePhoneNum = @phoneNumber, " +
+                            "assetEmployeeEmail = @email, " +
+                            "assetEmployeeAddress = @address, " +
+                            "assetEmployeeOffice = @office " +
                             "WHERE userId = @UserId";
                         break;
-                    case "Asset Manager":
+                    case "Asset Supervisor":
                         query =
-                             "UPDATE AssetManager" +
+                             "UPDATE AssetSupervisor" +
                              " SET " +
-                             "assetManagerFName = @firstName, " +
-                             "assetManagerMName = @middleName, " +
-                             "assetManagerLName = @lastName, " +
-                             "assetManagerPhoneNum = @phoneNumber, " +
-                             "assetManagerEmail = @email, " +
-                             "assetManagerAddress = @address, " +
-                             "assetManagerOffice = @office " +
+                             "assetSupervisorFName = @firstName, " +
+                             "assetSupervisorMName = @middleName, " +
+                             "assetSupervisorLName = @lastName, " +
+                             "assetSupervisorPhoneNum = @phoneNumber, " +
+                             "assetSupervisorEmail = @email, " +
+                             "assetSupervisorAddress = @address, " +
+                             "assetSupervisorOffice = @office " +
                              "WHERE userId = @UserId";
                         break;
+
                 }
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -963,8 +964,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridViewOtherOperator.Rows[e.RowIndex];
-                string operator_id = row.Cells["assetOperatorId"].Value.ToString();
-                string name = row.Cells["assetOperatorFName"].Value.ToString()  + row.Cells["assetOperatorLName"].Value.ToString();
+                string operator_id = row.Cells["assetEmployeeId"].Value.ToString();
+                string name = row.Cells["assetEmployeeFName"].Value.ToString()  + row.Cells["assetEmployeeLName"].Value.ToString();
                 
                 Console.WriteLine("Heyyyyy: " + operator_id);
                 if (e.ColumnIndex == dataGridViewOtherOperator.Columns["ViewButtonColumn"].Index)
