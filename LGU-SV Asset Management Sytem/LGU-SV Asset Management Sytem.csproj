@@ -56,8 +56,8 @@
     <Compile Include="Panels\OperatorHandledAssetPanel.Designer.cs">
       <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users\AssetManager.cs" />
-    <Compile Include="Users\AssetOperator.cs" />
+    <Compile Include="Users\AssetSupervisor.cs" />
+    <Compile Include="Users\AssetEmployee.cs" />
     <Compile Include="Users\AssetViewer.cs" />
     <Compile Include="Controllers\MainFormSupplierController.cs" />
     <Compile Include="DatabaseConnection.cs" />

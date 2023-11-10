@@ -37,7 +37,7 @@ namespace LGU_SV_Asset_Management_Sytem
         Controllers.MainFormSupplierController supplierController;
         Controllers.MainFormAssetCategoriesController assetCategoriesController;
 
-        AssetOperator.AssetOperatorRepositoryControl assetOperatorRepositoryControl = new AssetOperator.AssetOperatorRepositoryControl();
+        AssetEmployee.AssetEmployeeRepositoryControl assetOperatorRepositoryControl = new AssetEmployee.AssetEmployeeRepositoryControl();
 
         //Objects Controllers
         AssetCategoryRepositoryControl assetCategoryRepositoryControl;
@@ -73,6 +73,9 @@ namespace LGU_SV_Asset_Management_Sytem
             assetCategoryRepositoryControl = new AssetCategoryRepositoryControl();
            
         }
+
+        // Initialize Controls
+
         private void InitializedAccessControl()
         {
             if(sessionHandler == null)
@@ -85,6 +88,7 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 case "Asset Viewer":
                     buttonOthers.Visible = false;
+                    buttonTransaction.Visible = false;
 
                     break;
                 case "Asset Employee":
@@ -337,7 +341,10 @@ namespace LGU_SV_Asset_Management_Sytem
             buttonProfileUploadImage.Visible = false;
             //Fetch Data
         }
-
+        private void buttonTransaction_Click(object sender, EventArgs e)
+        {
+            panelTabControl.SelectedTab = tabTransaction;
+        }
         private void SetListControlStateTo(List<Control> controls, bool state)
         {
             foreach (Control control in controls)
@@ -993,5 +1000,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             OtherOperatorReset();
         }
+
+        
     }
 }
