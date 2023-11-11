@@ -43,5 +43,21 @@ namespace LGU_SV_Asset_Management_Sytem
                 control.Enabled = state;
             }
         }
+
+        public static void SetControlsVisibilityState(Control[] buttons, bool state)
+        {
+            foreach (Control control in buttons)
+            {
+                control.Visible = state;
+            }
+        }
+
+        public static void PanelChanger(Control panelControl, Control panelToAdd)
+        {
+            panelControl.Controls.Clear();
+            panelControl.Controls.Add(panelToAdd);
+            panelControl.BringToFront();
+            panelControl.Visible = true;
+        }
     }
 }

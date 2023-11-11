@@ -50,11 +50,35 @@
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetCategory.cs" />
     <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="DialogBoxes\OptionDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\OptionDialogBox.Designer.cs">
+      <DependentUpon>OptionDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\AddAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\AddAssetPanel.Designer.cs">
+      <DependentUpon>AddAssetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\RecordsHomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\RecordsHomePanel.Designer.cs">
+      <DependentUpon>RecordsHomePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\OperatorHandledAssetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Panels\OperatorHandledAssetPanel.Designer.cs">
       <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\SupplierSuppliedAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\SupplierSuppliedAssetPanel.Designer.cs">
+      <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\AssetSupervisor.cs" />
     <Compile Include="Users\AssetEmployee.cs" />
@@ -114,14 +138,26 @@
     <EmbeddedResource Include="DialogBoxes\MessagePromptDialogBox.resx">
       <DependentUpon>MessagePromptDialogBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\OptionDialogBox.resx">
+      <DependentUpon>OptionDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\UploadImageDialogBox.resx">
       <DependentUpon>UploadImageDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AssetRecordsTab\AddAssetPanel.resx">
+      <DependentUpon>AddAssetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AssetRecordsTab\RecordsHomePanel.resx">
+      <DependentUpon>RecordsHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\OperatorHandledAssetPanel.resx">
       <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\SupplierSuppliedAssetPanel.resx">
+      <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
