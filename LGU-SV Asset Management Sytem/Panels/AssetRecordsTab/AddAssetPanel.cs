@@ -354,6 +354,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                   
                     asset.AssetImage = Utilities.ConvertImageToBytes(PictureBox_assetImage.Image);
 
+                    /*
+                     * 
+                     * MAIN PROGRESS HERE
+                     * 
+                     */
+
                     //Gen QR
                     //Gen QR Image
                     //Generate Maintanence Logs ID based on the maintainable
