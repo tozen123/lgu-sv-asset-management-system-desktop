@@ -47,6 +47,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.pictureBoxImage.Size = new System.Drawing.Size(291, 280);
             this.pictureBoxImage.TabIndex = 0;
             this.pictureBoxImage.TabStop = false;
+           
             // 
             // label1
             // 

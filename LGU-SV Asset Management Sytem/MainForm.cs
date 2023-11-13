@@ -42,7 +42,9 @@ namespace LGU_SV_Asset_Management_Sytem
         //Objects Controllers
         AssetCategoryRepositoryControl assetCategoryRepositoryControl;
 
-      
+        //User-Role-Id
+        private string RoleBasedID;
+
         public MainForm()
         {
  
@@ -142,6 +144,38 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
             currentSessionUserType = sessionHandler.GetTypeUser();
+
+            // Load Data RoleBasedID
+            string query = "null";
+
+            switch (currentSessionUserType)
+            {
+                case "Asset Viewer":
+                    query = "SELECT assetViewerId FROM AssetViewer WHERE userID = @UserId";
+                    break;
+                case "Asset Employee":
+                    query = "SELECT assetEmployeeId FROM AssetEmployee WHERE userID = @UserId";
+                    break;
+                case "Asset Supervisor":
+                    query = "SELECT assetSupervisorId FROM AssetSupervisor WHERE userID = @UserId";
+                    break;
+            }
+
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@UserId", sessionHandler.GetCurrentUserID());
+
+            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+
+            foreach (DataRow row in resultTable.Rows)
+            {
+                foreach (DataColumn col in resultTable.Columns)
+                {
+                    RoleBasedID = row[col].ToString();
+                }
+            }
+            
         }
 
         private void ProfileTabPanel()
@@ -1038,7 +1072,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsNewAsset_Click(object sender, EventArgs e)
         {
-            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler);
+            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID);
+            Console.WriteLine(RoleBasedID);
             optionDialogBox.Show();
         }
 

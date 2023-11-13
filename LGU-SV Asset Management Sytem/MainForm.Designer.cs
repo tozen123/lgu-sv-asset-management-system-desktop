@@ -56,6 +56,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
+            this.buttonAssetRecordsNewAsset = new System.Windows.Forms.Button();
+            this.buttonAssetRecordsViewRecords = new System.Windows.Forms.Button();
+            this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -91,6 +94,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.labelSupplierName = new System.Windows.Forms.Label();
             this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
+            this.panelViewSuppliedAssetHolder = new System.Windows.Forms.Panel();
             this.tabAssetCategories = new System.Windows.Forms.TabPage();
             this.buttonAssetCategoryClearFields = new System.Windows.Forms.Button();
             this.buttonAssetCategoryUpdate = new System.Windows.Forms.Button();
@@ -131,12 +135,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.panelViewSuppliedAssetHolder = new System.Windows.Forms.Panel();
-            this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
-            this.buttonAssetRecordsViewRecords = new System.Windows.Forms.Button();
-            this.buttonAssetRecordsNewAsset = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
@@ -158,6 +159,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTabControl
@@ -440,6 +442,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // tabAssetRecords
             // 
+            this.tabAssetRecords.Controls.Add(this.pictureBox2);
             this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsNewAsset);
             this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
             this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
@@ -451,6 +454,33 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
+            // 
+            // buttonAssetRecordsNewAsset
+            // 
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(686, 58);
+            this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
+            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(104, 23);
+            this.buttonAssetRecordsNewAsset.TabIndex = 4;
+            this.buttonAssetRecordsNewAsset.Text = "+ Add New";
+            this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = true;
+            this.buttonAssetRecordsNewAsset.Click += new System.EventHandler(this.buttonAssetRecordsNewAsset_Click);
+            // 
+            // buttonAssetRecordsViewRecords
+            // 
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(564, 58);
+            this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
+            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(104, 23);
+            this.buttonAssetRecordsViewRecords.TabIndex = 3;
+            this.buttonAssetRecordsViewRecords.Text = "Records";
+            this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = true;
+            this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
+            // 
+            // panelAssetRecordsHandler
+            // 
+            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(26, 107);
+            this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
+            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1129, 591);
+            this.panelAssetRecordsHandler.TabIndex = 2;
             // 
             // label2
             // 
@@ -805,6 +835,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewSupplier.Size = new System.Drawing.Size(1136, 318);
             this.dataGridViewSupplier.TabIndex = 0;
             this.dataGridViewSupplier.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSupplier_CellMouseClick);
+            // 
+            // panelViewSuppliedAssetHolder
+            // 
+            this.panelViewSuppliedAssetHolder.Location = new System.Drawing.Point(4, 4);
+            this.panelViewSuppliedAssetHolder.Name = "panelViewSuppliedAssetHolder";
+            this.panelViewSuppliedAssetHolder.Size = new System.Drawing.Size(1142, 589);
+            this.panelViewSuppliedAssetHolder.TabIndex = 12;
             // 
             // tabAssetCategories
             // 
@@ -1231,40 +1268,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // panelViewSuppliedAssetHolder
-            // 
-            this.panelViewSuppliedAssetHolder.Location = new System.Drawing.Point(4, 4);
-            this.panelViewSuppliedAssetHolder.Name = "panelViewSuppliedAssetHolder";
-            this.panelViewSuppliedAssetHolder.Size = new System.Drawing.Size(1142, 589);
-            this.panelViewSuppliedAssetHolder.TabIndex = 12;
-            // 
-            // panelAssetRecordsHandler
-            // 
-            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(26, 87);
-            this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
-            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1129, 611);
-            this.panelAssetRecordsHandler.TabIndex = 2;
-            // 
-            // buttonAssetRecordsViewRecords
-            // 
-            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(564, 58);
-            this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
-            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(104, 23);
-            this.buttonAssetRecordsViewRecords.TabIndex = 3;
-            this.buttonAssetRecordsViewRecords.Text = "Records";
-            this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = true;
-            this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
-            // 
-            // buttonAssetRecordsNewAsset
-            // 
-            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(686, 58);
-            this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
-            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(104, 23);
-            this.buttonAssetRecordsNewAsset.TabIndex = 4;
-            this.buttonAssetRecordsNewAsset.Text = "+ Add New";
-            this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = true;
-            this.buttonAssetRecordsNewAsset.Click += new System.EventHandler(this.buttonAssetRecordsNewAsset_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
@@ -1284,6 +1287,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
             this.pictureBoxProfileImage.TabIndex = 2;
             this.pictureBoxProfileImage.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 87);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -1334,6 +1346,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1447,5 +1460,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Panel panelAssetRecordsHandler;
         private System.Windows.Forms.Button buttonAssetRecordsViewRecords;
         private System.Windows.Forms.Button buttonAssetRecordsNewAsset;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

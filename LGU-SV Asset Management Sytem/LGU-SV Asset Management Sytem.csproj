@@ -50,6 +50,12 @@
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetCategory.cs" />
     <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="DialogBoxes\AssetUploadImageDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\AssetUploadImageDialogBox.Designer.cs">
+      <DependentUpon>AssetUploadImageDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\OptionDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\AssetUploadImageDialogBox.resx">
+      <DependentUpon>AssetUploadImageDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>

@@ -13,20 +13,22 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
     public partial class OptionDialogBox : Form
     {
         Control panelHandler;
-        public OptionDialogBox(Control _panelHandler)
+        string supervisor_id;
+        public OptionDialogBox(Control _panelHandler, string _supervisor_id)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             pictureBox1.BackColor = Color.FromArgb(45, 77, 46);
 
+            supervisor_id = _supervisor_id;
             panelHandler = _panelHandler;
-        }
+         }
 
         private void buttonAddExistingAsset_Click(object sender, EventArgs e)
         {
             this.Close();
 
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing);
+            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing, supervisor_id);
             Utilities.PanelChanger(panelHandler, panelControl);
         }
 
@@ -34,7 +36,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         {
             this.Close();
 
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.New);
+            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.New, supervisor_id);
             Utilities.PanelChanger(panelHandler, panelControl);
         }
     }

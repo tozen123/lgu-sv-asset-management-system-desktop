@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class Asset: AssetBehaviour
+    class Asset : AssetBehaviour
     {
         // Integers
-        private int assetId, assetManagerId, currentOperatorId, supplierId, assetCategoryId, assetLastMaintenanceID;
+        private int assetId, assetSupervisorId, currentEmployeeId, supplierId, assetCategoryId, assetLastMaintenanceID;
 
         // Property for assetId
         public int AssetId
@@ -18,18 +18,18 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetId = value; }
         }
 
-        // Property for assetManagerId
-        public int AssetManagerId
+        // Property for assetSupervisorId
+        public int AssetSupervisorId
         {
-            get { return assetManagerId; }
-            set { assetManagerId = value; }
+            get { return assetSupervisorId; }
+            set { assetSupervisorId = value; }
         }
 
-        // Property for currentOperatorId
-        public int CurrentOperatorId
+        // Property for currentEmployeeId
+        public int CurrentEmployeeId
         {
-            get { return currentOperatorId; }
-            set { currentOperatorId = value; }
+            get { return currentEmployeeId; }
+            set { currentEmployeeId = value; }
         }
 
         // Property for supplierId
@@ -53,14 +53,15 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetLastMaintenanceID = value; }
         }
 
-        public STATUS AssetStatus { get; set; }
-        public enum STATUS
+        public Availability AssetAvailability { get; set; }
+        public enum Availability
         {
             USED,
             AVAILABLE
         }
 
-        private string assetName, assetLocation, qrCode;
+        private string assetName, assetLocation, QrCode;
+        private byte[] assetQrCodeImage;
 
         // Property for assetName
         public string AssetName
@@ -79,8 +80,23 @@ namespace LGU_SV_Asset_Management_Sytem
         // Property for qrCode
         public string QRCode
         {
-            get { return qrCode; }
-            set { qrCode = value; }
+            get { return QrCode; }
+            set { QrCode = value; }
+        }
+
+        //Property for QRCodeImage
+        public byte[] AssetQRCodeImage
+        {
+            get { return assetQrCodeImage; }
+            set { assetQrCodeImage = value; }
+        }
+
+        private byte[] assetImage;
+        //Property for Asset IMage
+        public byte[] AssetImage
+        {
+            get { return assetImage; }
+            set { assetImage = value; }
         }
 
         public CONDITION AssetCondition { get; set; }
@@ -90,13 +106,27 @@ namespace LGU_SV_Asset_Management_Sytem
             INOPERABLE
         }
 
-        private Boolean isArchive;
+        private Boolean isArchive, isMissing, isMaintainable;
 
         // Property for isArchive
         public bool IsArchive
         {
             get { return isArchive; }
             set { isArchive = value; }
+        }
+
+        // Property for isMissing
+        public bool IsMissing
+        {
+            get { return isMissing; }
+            set { isMissing = value; }
+        }
+
+        // Property for isMaintainable
+        public bool IsMaintainable
+        {
+            get { return isMaintainable; }
+            set { isMaintainable = value; }
         }
 
         private decimal assetPurchaseAmount;
@@ -125,5 +155,31 @@ namespace LGU_SV_Asset_Management_Sytem
             get { return assetMaintenanceLogsID; }
             set { assetMaintenanceLogsID = value; }
         }
+
+        private int assetQuantity;
+
+        // Property for assetQuantity
+        public int AssetQuantity
+        {
+            get { return assetQuantity; }
+            set { assetQuantity = value; }
+        }
+
+        // Property for assetUnit
+
+        private string assetUnit;
+        public string AssetUnit
+        {
+            get { return assetUnit; }
+            set { assetUnit = value; }
+        }
+
+
+        public class AssetRepositoryControl
+        {
+            
+
+        }
+
     }
 }
