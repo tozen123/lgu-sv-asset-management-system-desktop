@@ -55,8 +55,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label9 = new System.Windows.Forms.Label();
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
+            this.buttonAssetRecordsNewAsset = new System.Windows.Forms.Button();
+            this.buttonAssetRecordsViewRecords = new System.Windows.Forms.Button();
+            this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,11 +68,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.otherTabControl = new System.Windows.Forms.TabControl();
             this.tabOperator = new System.Windows.Forms.TabPage();
             this.buttonOperatorClearFields = new System.Windows.Forms.Button();
-            this.richTextBoxOperatorAdress = new System.Windows.Forms.RichTextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.textBoxOperatorOffice = new System.Windows.Forms.TextBox();
+            this.richTextBoxOperatorAdress = new System.Windows.Forms.RichTextBox();
             this.textBoxOperatorPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.textBoxOperatorLastName = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.textBoxOperatorMiddleName = new System.Windows.Forms.TextBox();
@@ -90,6 +94,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.labelSupplierName = new System.Windows.Forms.Label();
             this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
+            this.panelViewSuppliedAssetHolder = new System.Windows.Forms.Panel();
             this.tabAssetCategories = new System.Windows.Forms.TabPage();
             this.buttonAssetCategoryClearFields = new System.Windows.Forms.Button();
             this.buttonAssetCategoryUpdate = new System.Windows.Forms.Button();
@@ -107,7 +112,16 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label7 = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
+            this.tabTransaction = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
+            this.labelSideBarMisc = new System.Windows.Forms.Label();
+            this.labelSideBarTransc = new System.Windows.Forms.Label();
+            this.labelSideBarGenRep = new System.Windows.Forms.Label();
+            this.labelSideBarArchRec = new System.Windows.Forms.Label();
+            this.labelSideBarAssetRe = new System.Windows.Forms.Label();
+            this.labelSideDashboard = new System.Windows.Forms.Label();
+            this.buttonTransaction = new System.Windows.Forms.Button();
             this.buttonHamburger = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
@@ -119,16 +133,14 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonAssetRecords = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.panelBoxTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.buttonTransaction = new System.Windows.Forms.Button();
-            this.tabTransaction = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
             this.tabAssetRecords.SuspendLayout();
             this.tabArchiveRecords.SuspendLayout();
             this.tabGenReport.SuspendLayout();
@@ -142,10 +154,12 @@ namespace LGU_SV_Asset_Management_Sytem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.tabAbout.SuspendLayout();
             this.tabSettings.SuspendLayout();
+            this.tabTransaction.SuspendLayout();
             this.groupBoxSide.SuspendLayout();
             this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabTransaction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTabControl
@@ -426,18 +440,12 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3.TabIndex = 1;
             this.label3.Text = "Account Profile";
             // 
-            // pictureBoxProfileImage
-            // 
-            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
-            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
-            this.pictureBoxProfileImage.Location = new System.Drawing.Point(16, 93);
-            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
-            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
-            this.pictureBoxProfileImage.TabIndex = 2;
-            this.pictureBoxProfileImage.TabStop = false;
-            // 
             // tabAssetRecords
             // 
+            this.tabAssetRecords.Controls.Add(this.pictureBox2);
+            this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsNewAsset);
+            this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
+            this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.label2);
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
@@ -446,6 +454,33 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
+            // 
+            // buttonAssetRecordsNewAsset
+            // 
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(686, 58);
+            this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
+            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(104, 23);
+            this.buttonAssetRecordsNewAsset.TabIndex = 4;
+            this.buttonAssetRecordsNewAsset.Text = "+ Add New";
+            this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = true;
+            this.buttonAssetRecordsNewAsset.Click += new System.EventHandler(this.buttonAssetRecordsNewAsset_Click);
+            // 
+            // buttonAssetRecordsViewRecords
+            // 
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(564, 58);
+            this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
+            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(104, 23);
+            this.buttonAssetRecordsViewRecords.TabIndex = 3;
+            this.buttonAssetRecordsViewRecords.Text = "Records";
+            this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = true;
+            this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
+            // 
+            // panelAssetRecordsHandler
+            // 
+            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(26, 107);
+            this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
+            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1129, 591);
+            this.panelAssetRecordsHandler.TabIndex = 2;
             // 
             // label2
             // 
@@ -528,11 +563,13 @@ namespace LGU_SV_Asset_Management_Sytem
             // tabOperator
             // 
             this.tabOperator.Controls.Add(this.buttonOperatorClearFields);
-            this.tabOperator.Controls.Add(this.richTextBoxOperatorAdress);
-            this.tabOperator.Controls.Add(this.label24);
             this.tabOperator.Controls.Add(this.label23);
+            this.tabOperator.Controls.Add(this.textBoxOperatorOffice);
+            this.tabOperator.Controls.Add(this.richTextBoxOperatorAdress);
             this.tabOperator.Controls.Add(this.textBoxOperatorPhoneNumber);
+            this.tabOperator.Controls.Add(this.label24);
             this.tabOperator.Controls.Add(this.label22);
+            this.tabOperator.Controls.Add(this.label26);
             this.tabOperator.Controls.Add(this.textBoxOperatorLastName);
             this.tabOperator.Controls.Add(this.label21);
             this.tabOperator.Controls.Add(this.textBoxOperatorMiddleName);
@@ -550,30 +587,13 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonOperatorClearFields
             // 
-            this.buttonOperatorClearFields.Location = new System.Drawing.Point(737, 545);
+            this.buttonOperatorClearFields.Location = new System.Drawing.Point(908, 549);
             this.buttonOperatorClearFields.Name = "buttonOperatorClearFields";
-            this.buttonOperatorClearFields.Size = new System.Drawing.Size(148, 29);
-            this.buttonOperatorClearFields.TabIndex = 6;
+            this.buttonOperatorClearFields.Size = new System.Drawing.Size(223, 29);
+            this.buttonOperatorClearFields.TabIndex = 16;
             this.buttonOperatorClearFields.Text = "Clear Fields";
             this.buttonOperatorClearFields.UseVisualStyleBackColor = true;
-            this.buttonOperatorClearFields.Click += new System.EventHandler(this.buttonOperatorClearFields_Click);
-            // 
-            // richTextBoxOperatorAdress
-            // 
-            this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(383, 441);
-            this.richTextBoxOperatorAdress.Name = "richTextBoxOperatorAdress";
-            this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(330, 137);
-            this.richTextBoxOperatorAdress.TabIndex = 11;
-            this.richTextBoxOperatorAdress.Text = "";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(329, 444);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(48, 13);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "Address:";
+            this.buttonOperatorClearFields.Click += new System.EventHandler(this.buttonOperatorClearFields_Click_1);
             // 
             // label23
             // 
@@ -584,12 +604,36 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label23.TabIndex = 8;
             this.label23.Text = "Phone Number:";
             // 
+            // textBoxOperatorOffice
+            // 
+            this.textBoxOperatorOffice.Location = new System.Drawing.Point(342, 444);
+            this.textBoxOperatorOffice.Name = "textBoxOperatorOffice";
+            this.textBoxOperatorOffice.Size = new System.Drawing.Size(170, 20);
+            this.textBoxOperatorOffice.TabIndex = 13;
+            // 
+            // richTextBoxOperatorAdress
+            // 
+            this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(572, 444);
+            this.richTextBoxOperatorAdress.Name = "richTextBoxOperatorAdress";
+            this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(330, 137);
+            this.richTextBoxOperatorAdress.TabIndex = 11;
+            this.richTextBoxOperatorAdress.Text = "";
+            // 
             // textBoxOperatorPhoneNumber
             // 
             this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(90, 558);
             this.textBoxOperatorPhoneNumber.Name = "textBoxOperatorPhoneNumber";
             this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(187, 20);
             this.textBoxOperatorPhoneNumber.TabIndex = 7;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(518, 447);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 13);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Address:";
             // 
             // label22
             // 
@@ -599,6 +643,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label22.Size = new System.Drawing.Size(61, 13);
             this.label22.TabIndex = 6;
             this.label22.Text = "Last Name:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(298, 447);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(38, 13);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Office:";
             // 
             // textBoxOperatorLastName
             // 
@@ -654,9 +707,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // panelOperatorHandler
             // 
             this.panelOperatorHandler.BackColor = System.Drawing.SystemColors.Control;
-            this.panelOperatorHandler.Location = new System.Drawing.Point(4, 7);
+            this.panelOperatorHandler.Location = new System.Drawing.Point(4, 4);
             this.panelOperatorHandler.Name = "panelOperatorHandler";
-            this.panelOperatorHandler.Size = new System.Drawing.Size(1139, 586);
+            this.panelOperatorHandler.Size = new System.Drawing.Size(1139, 592);
             this.panelOperatorHandler.TabIndex = 12;
             // 
             // tabSupplier
@@ -672,6 +725,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSupplier.Controls.Add(this.labelSupplierName);
             this.tabSupplier.Controls.Add(this.textBoxSupplierName);
             this.tabSupplier.Controls.Add(this.dataGridViewSupplier);
+            this.tabSupplier.Controls.Add(this.panelViewSuppliedAssetHolder);
             this.tabSupplier.Location = new System.Drawing.Point(4, 22);
             this.tabSupplier.Name = "tabSupplier";
             this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
@@ -782,6 +836,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewSupplier.TabIndex = 0;
             this.dataGridViewSupplier.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSupplier_CellMouseClick);
             // 
+            // panelViewSuppliedAssetHolder
+            // 
+            this.panelViewSuppliedAssetHolder.Location = new System.Drawing.Point(4, 4);
+            this.panelViewSuppliedAssetHolder.Name = "panelViewSuppliedAssetHolder";
+            this.panelViewSuppliedAssetHolder.Size = new System.Drawing.Size(1142, 589);
+            this.panelViewSuppliedAssetHolder.TabIndex = 12;
+            // 
             // tabAssetCategories
             // 
             this.tabAssetCategories.Controls.Add(this.buttonAssetCategoryClearFields);
@@ -891,7 +952,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonOperators.Name = "buttonOperators";
             this.buttonOperators.Size = new System.Drawing.Size(125, 29);
             this.buttonOperators.TabIndex = 4;
-            this.buttonOperators.Text = "Operator";
+            this.buttonOperators.Text = "Employees";
             this.buttonOperators.UseVisualStyleBackColor = true;
             this.buttonOperators.Click += new System.EventHandler(this.buttonOperators_Click);
             // 
@@ -957,9 +1018,36 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label8.TabIndex = 2;
             this.label8.Text = "Settings";
             // 
+            // tabTransaction
+            // 
+            this.tabTransaction.Controls.Add(this.label25);
+            this.tabTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabTransaction.Name = "tabTransaction";
+            this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTransaction.Size = new System.Drawing.Size(1184, 704);
+            this.tabTransaction.TabIndex = 8;
+            this.tabTransaction.Text = "tabPage1";
+            this.tabTransaction.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(6, 15);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(246, 62);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Transaction";
+            // 
             // groupBoxSide
             // 
             this.groupBoxSide.BackColor = System.Drawing.Color.Silver;
+            this.groupBoxSide.Controls.Add(this.labelSideBarMisc);
+            this.groupBoxSide.Controls.Add(this.labelSideBarTransc);
+            this.groupBoxSide.Controls.Add(this.labelSideBarGenRep);
+            this.groupBoxSide.Controls.Add(this.labelSideBarArchRec);
+            this.groupBoxSide.Controls.Add(this.labelSideBarAssetRe);
+            this.groupBoxSide.Controls.Add(this.labelSideDashboard);
             this.groupBoxSide.Controls.Add(this.buttonTransaction);
             this.groupBoxSide.Controls.Add(this.buttonHamburger);
             this.groupBoxSide.Controls.Add(this.buttonAbout);
@@ -973,9 +1061,78 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
             this.groupBoxSide.Location = new System.Drawing.Point(-3, 42);
             this.groupBoxSide.Name = "groupBoxSide";
-            this.groupBoxSide.Size = new System.Drawing.Size(79, 746);
+            this.groupBoxSide.Size = new System.Drawing.Size(80, 746);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
+            // 
+            // labelSideBarMisc
+            // 
+            this.labelSideBarMisc.AutoSize = true;
+            this.labelSideBarMisc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarMisc.Location = new System.Drawing.Point(66, 490);
+            this.labelSideBarMisc.Name = "labelSideBarMisc";
+            this.labelSideBarMisc.Size = new System.Drawing.Size(71, 9);
+            this.labelSideBarMisc.TabIndex = 28;
+            this.labelSideBarMisc.Text = "MISCELLANEOUS";
+            // 
+            // labelSideBarTransc
+            // 
+            this.labelSideBarTransc.AutoSize = true;
+            this.labelSideBarTransc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarTransc.Location = new System.Drawing.Point(66, 422);
+            this.labelSideBarTransc.Name = "labelSideBarTransc";
+            this.labelSideBarTransc.Size = new System.Drawing.Size(62, 9);
+            this.labelSideBarTransc.TabIndex = 27;
+            this.labelSideBarTransc.Text = "TRANSACTION";
+            // 
+            // labelSideBarGenRep
+            // 
+            this.labelSideBarGenRep.AutoSize = true;
+            this.labelSideBarGenRep.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarGenRep.Location = new System.Drawing.Point(66, 351);
+            this.labelSideBarGenRep.Name = "labelSideBarGenRep";
+            this.labelSideBarGenRep.Size = new System.Drawing.Size(88, 9);
+            this.labelSideBarGenRep.TabIndex = 26;
+            this.labelSideBarGenRep.Text = "GENERATE REPORTS";
+            // 
+            // labelSideBarArchRec
+            // 
+            this.labelSideBarArchRec.AutoSize = true;
+            this.labelSideBarArchRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarArchRec.Location = new System.Drawing.Point(66, 288);
+            this.labelSideBarArchRec.Name = "labelSideBarArchRec";
+            this.labelSideBarArchRec.Size = new System.Drawing.Size(82, 9);
+            this.labelSideBarArchRec.TabIndex = 25;
+            this.labelSideBarArchRec.Text = "ARCHIVE RECORDS";
+            // 
+            // labelSideBarAssetRe
+            // 
+            this.labelSideBarAssetRe.AutoSize = true;
+            this.labelSideBarAssetRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarAssetRe.Location = new System.Drawing.Point(68, 226);
+            this.labelSideBarAssetRe.Name = "labelSideBarAssetRe";
+            this.labelSideBarAssetRe.Size = new System.Drawing.Size(72, 9);
+            this.labelSideBarAssetRe.TabIndex = 24;
+            this.labelSideBarAssetRe.Text = "ASSET RECORDS";
+            // 
+            // labelSideDashboard
+            // 
+            this.labelSideDashboard.AutoSize = true;
+            this.labelSideDashboard.Location = new System.Drawing.Point(65, 161);
+            this.labelSideDashboard.Name = "labelSideDashboard";
+            this.labelSideDashboard.Size = new System.Drawing.Size(75, 13);
+            this.labelSideDashboard.TabIndex = 23;
+            this.labelSideDashboard.Text = "DASHBOARD";
+            // 
+            // buttonTransaction
+            // 
+            this.buttonTransaction.Location = new System.Drawing.Point(14, 402);
+            this.buttonTransaction.Name = "buttonTransaction";
+            this.buttonTransaction.Size = new System.Drawing.Size(49, 45);
+            this.buttonTransaction.TabIndex = 22;
+            this.buttonTransaction.Text = "TRNSC";
+            this.buttonTransaction.UseVisualStyleBackColor = true;
+            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
             // 
             // buttonHamburger
             // 
@@ -1090,16 +1247,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.Size = new System.Drawing.Size(1295, 60);
             this.panelBoxTop.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -1121,36 +1268,34 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // buttonTransaction
+            // pictureBox1
             // 
-            this.buttonTransaction.Location = new System.Drawing.Point(14, 402);
-            this.buttonTransaction.Name = "buttonTransaction";
-            this.buttonTransaction.Size = new System.Drawing.Size(49, 45);
-            this.buttonTransaction.TabIndex = 22;
-            this.buttonTransaction.Text = "TRNSC";
-            this.buttonTransaction.UseVisualStyleBackColor = true;
-            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
+            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
-            // tabTransaction
+            // pictureBoxProfileImage
             // 
-            this.tabTransaction.Controls.Add(this.label25);
-            this.tabTransaction.Location = new System.Drawing.Point(4, 22);
-            this.tabTransaction.Name = "tabTransaction";
-            this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTransaction.Size = new System.Drawing.Size(1184, 704);
-            this.tabTransaction.TabIndex = 8;
-            this.tabTransaction.Text = "tabPage1";
-            this.tabTransaction.UseVisualStyleBackColor = true;
+            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
+            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(16, 93);
+            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
+            this.pictureBoxProfileImage.TabIndex = 2;
+            this.pictureBoxProfileImage.TabStop = false;
             // 
-            // label25
+            // pictureBox2
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(6, 15);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(246, 62);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "Transaction";
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 87);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -1171,7 +1316,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabDashboard.PerformLayout();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
             this.tabArchiveRecords.ResumeLayout(false);
@@ -1194,12 +1338,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAbout.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
+            this.tabTransaction.ResumeLayout(false);
+            this.tabTransaction.PerformLayout();
             this.groupBoxSide.ResumeLayout(false);
+            this.groupBoxSide.PerformLayout();
             this.panelBoxTop.ResumeLayout(false);
             this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabTransaction.ResumeLayout(false);
-            this.tabTransaction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1296,10 +1443,23 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBoxOperatorMiddleName;
         private System.Windows.Forms.RichTextBox richTextBoxOperatorAdress;
-        private System.Windows.Forms.Button buttonOperatorClearFields;
         private System.Windows.Forms.Panel panelOperatorHandler;
         private System.Windows.Forms.Button buttonTransaction;
         private System.Windows.Forms.TabPage tabTransaction;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBoxOperatorOffice;
+        private System.Windows.Forms.Button buttonOperatorClearFields;
+        private System.Windows.Forms.Label labelSideBarTransc;
+        private System.Windows.Forms.Label labelSideBarGenRep;
+        private System.Windows.Forms.Label labelSideBarArchRec;
+        private System.Windows.Forms.Label labelSideBarAssetRe;
+        private System.Windows.Forms.Label labelSideDashboard;
+        private System.Windows.Forms.Label labelSideBarMisc;
+        private System.Windows.Forms.Panel panelViewSuppliedAssetHolder;
+        private System.Windows.Forms.Panel panelAssetRecordsHandler;
+        private System.Windows.Forms.Button buttonAssetRecordsViewRecords;
+        private System.Windows.Forms.Button buttonAssetRecordsNewAsset;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -10,27 +10,25 @@ using System.Windows.Forms;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels
 {
-    public partial class OperatorHandledAssetPanel : UserControl
+    public partial class SupplierSuppliedAssetPanel : UserControl
     {
         Control panelControl;
-        string operatorId;
+        string supplierId;
         Control[] controls;
-        public OperatorHandledAssetPanel(Control _panelControl, string _operatorId, string name, Control[] _controls)
+        public SupplierSuppliedAssetPanel(Control _panelControl, string _supplierId, string name)
         {
             InitializeComponent();
-            panelControl = _panelControl;
-            operatorId = _operatorId;
 
-            labelOperatorName.Text = name;
-            controls = _controls;
+            panelControl = _panelControl;
+            supplierId = _supplierId;
+
+            labelSupplierName.Text = name;
         }
 
         private void buttonExitPanel_Click(object sender, EventArgs e)
         {
             panelControl.Controls.Clear();
             panelControl.Visible = false;
-
-            Utilities.SetControlsVisibilityState(controls, true);
         }
     }
 }

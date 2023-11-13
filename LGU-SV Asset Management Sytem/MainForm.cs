@@ -41,6 +41,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Objects Controllers
         AssetCategoryRepositoryControl assetCategoryRepositoryControl;
+
+        //User-Role-Id
+        private string RoleBasedID;
+
         public MainForm()
         {
  
@@ -71,7 +75,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Object Controllers
             assetCategoryRepositoryControl = new AssetCategoryRepositoryControl();
-           
+
+            //Side
+            Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
+            Utilities.SetControlsVisibilityState(sideLabels, false);
         }
 
         // Initialize Controls
@@ -137,6 +144,38 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
             currentSessionUserType = sessionHandler.GetTypeUser();
+
+            // Load Data RoleBasedID
+            string query = "null";
+
+            switch (currentSessionUserType)
+            {
+                case "Asset Viewer":
+                    query = "SELECT assetViewerId FROM AssetViewer WHERE userID = @UserId";
+                    break;
+                case "Asset Employee":
+                    query = "SELECT assetEmployeeId FROM AssetEmployee WHERE userID = @UserId";
+                    break;
+                case "Asset Supervisor":
+                    query = "SELECT assetSupervisorId FROM AssetSupervisor WHERE userID = @UserId";
+                    break;
+            }
+
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@UserId", sessionHandler.GetCurrentUserID());
+
+            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+
+            foreach (DataRow row in resultTable.Rows)
+            {
+                foreach (DataColumn col in resultTable.Columns)
+                {
+                    RoleBasedID = row[col].ToString();
+                }
+            }
+            
         }
 
         private void ProfileTabPanel()
@@ -237,6 +276,10 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
+
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel();
+            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+
         }
 
         private void buttonArchiveRecords_Click(object sender, EventArgs e)
@@ -543,12 +586,16 @@ namespace LGU_SV_Asset_Management_Sytem
         bool hamburgerToggle;
         private void buttonHamburger_Click(object sender, EventArgs e)
         {
+            Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
+
             if (CheckSession())
             {
                 if (hamburgerToggle != true)
                 {
                     groupBoxSide.Size = new Size(140, 737);
                     buttonHamburger.BackColor = Color.Silver;
+
+                    Utilities.SetControlsVisibilityState(sideLabels, true);
 
                     // Check the session before updating the UI
                     if (CheckSession())
@@ -568,6 +615,8 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonHamburger.BackColor = clickColor;
 
                     buttonProfile.BackColor = Color.Silver;
+
+                    Utilities.SetControlsVisibilityState(sideLabels, false);
                 }
             }
 
@@ -662,7 +711,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonOperators_Click(object sender, EventArgs e)
         {
             
-            labelTitleHandler.Text = "Operators";
+            labelTitleHandler.Text = "Employees";
             otherTabControl.SelectedTab = tabOperator;
 
             SupplierReset();
@@ -768,6 +817,9 @@ namespace LGU_SV_Asset_Management_Sytem
                 Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
                 Utilities.SetButtonsState(buttoncontrols, true);
 
+                currentlySelectedSupplierId = currentSelectedSupplier;
+                currentlySelectedSupplierName = textBoxSupplierName.Text;
+
                 if (e.ColumnIndex == dataGridViewSupplier.Columns["DeleteButtonColumn"].Index)
                 {
                     currentSelectedSupplier = currentSelectedSupplier = row.Cells["supplierId"].Value.ToString();
@@ -795,9 +847,20 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
+        string currentlySelectedSupplierId, currentlySelectedSupplierName;
         private void buttonSupplierViewSuppliedAssets_Click(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(currentlySelectedSupplierId))
+            {
+                if (!string.IsNullOrEmpty(currentlySelectedSupplierName))
+                {
+                    Control panelControl = new Panels.SupplierSuppliedAssetPanel(panelViewSuppliedAssetHolder, currentlySelectedSupplierId, currentlySelectedSupplierName);
+                    panelViewSuppliedAssetHolder.Controls.Add(panelControl);
+                    panelViewSuppliedAssetHolder.BringToFront();
+                    panelViewSuppliedAssetHolder.Visible = true;
+                }
+            }
+            
         }
 
         private void buttonSupplierClearFields_Click(object sender, EventArgs e)
@@ -975,32 +1038,57 @@ namespace LGU_SV_Asset_Management_Sytem
                 string name = row.Cells["assetEmployeeFName"].Value.ToString()  + row.Cells["assetEmployeeLName"].Value.ToString();
                 
                 Console.WriteLine("Heyyyyy: " + operator_id);
+
+                Control[] fieldcontrols = { textBoxOperatorFirstName, textBoxOperatorMiddleName,
+                    textBoxOperatorLastName, textBoxOperatorPhoneNumber, richTextBoxOperatorAdress, textBoxOperatorOffice };
+
                 if (e.ColumnIndex == dataGridViewOtherOperator.Columns["ViewButtonColumn"].Index)
                 {
-                    Control panelControl = new Panels.OperatorHandledAssetPanel(panelOperatorHandler, operator_id, name);
+                    Control panelControl = new Panels.OperatorHandledAssetPanel(panelOperatorHandler, operator_id, name, fieldcontrols);
                     panelOperatorHandler.Controls.Add(panelControl);
                     panelOperatorHandler.BringToFront();
                     panelOperatorHandler.Visible = true;
+
+                    
+                    Utilities.SetControlsVisibilityState(fieldcontrols, false);
                 }
+
+                textBoxOperatorFirstName.Text = row.Cells["assetEmployeeFName"].Value.ToString();
+                textBoxOperatorLastName.Text = row.Cells["assetEmployeeLName"].Value.ToString();
+                textBoxOperatorMiddleName.Text = row.Cells["assetEmployeeMName"].Value.ToString();
+                textBoxOperatorPhoneNumber.Text = row.Cells["assetEmployeePhoneNum"].Value.ToString();
+                richTextBoxOperatorAdress.Text = row.Cells["assetEmployeeAddress"].Value.ToString();
+                textBoxOperatorOffice.Text = row.Cells["assetEmployeeOffice"].Value.ToString();
             }
         }
         private void OtherOperatorReset()
         {
-            
-
             Control[] fieldcontrols = { textBoxOperatorFirstName, textBoxOperatorMiddleName,
-                textBoxOperatorLastName, textBoxOperatorPhoneNumber, richTextBoxOperatorAdress };
+                textBoxOperatorLastName, textBoxOperatorPhoneNumber, richTextBoxOperatorAdress, textBoxOperatorOffice };
             Utilities.ClearTextFieldsHandler(fieldcontrols);
 
             dataGridViewOtherOperator.ClearSelection();
-
-            
         }
-        private void buttonOperatorClearFields_Click(object sender, EventArgs e)
+
+        private void buttonAssetRecordsNewAsset_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID);
+            Console.WriteLine(RoleBasedID);
+            optionDialogBox.Show();
+        }
+
+        private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
+        {
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel();
+            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+        }
+
+        
+        private void buttonOperatorClearFields_Click_1(object sender, EventArgs e)
         {
             OtherOperatorReset();
         }
 
-        
+
     }
 }

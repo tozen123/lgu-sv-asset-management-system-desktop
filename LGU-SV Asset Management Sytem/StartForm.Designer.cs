@@ -38,6 +38,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3 = new System.Windows.Forms.Label();
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.RegistrationStartPanel = new System.Windows.Forms.Panel();
             this.buttonManagerRole = new System.Windows.Forms.Button();
@@ -88,9 +91,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
@@ -179,6 +179,39 @@ namespace LGU_SV_Asset_Management_Sytem
             this.LoginPanel.Size = new System.Drawing.Size(1080, 577);
             this.LoginPanel.TabIndex = 8;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.Location = new System.Drawing.Point(473, 281);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(218, 44);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "DEBUG_MANAGER_AUTOLOGIN";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(249, 281);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(218, 44);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "DEBUG_OPERATOR_AUTOLOGIN";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(16, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 44);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "DEBUG_VIEWER_AUTOLOGIN";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Label_ErrorHandler_Login
             // 
             this.Label_ErrorHandler_Login.AutoSize = true;
@@ -204,7 +237,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonManagerRole.Name = "buttonManagerRole";
             this.buttonManagerRole.Size = new System.Drawing.Size(75, 23);
             this.buttonManagerRole.TabIndex = 8;
-            this.buttonManagerRole.Text = "Manager";
+            this.buttonManagerRole.Text = "Supervisor";
             this.buttonManagerRole.UseVisualStyleBackColor = true;
             this.buttonManagerRole.Click += new System.EventHandler(this.buttonManagerRole_Click);
             // 
@@ -224,7 +257,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonOperatorRole.Name = "buttonOperatorRole";
             this.buttonOperatorRole.Size = new System.Drawing.Size(75, 23);
             this.buttonOperatorRole.TabIndex = 4;
-            this.buttonOperatorRole.Text = "Operator";
+            this.buttonOperatorRole.Text = "Employee";
             this.buttonOperatorRole.UseVisualStyleBackColor = true;
             this.buttonOperatorRole.Click += new System.EventHandler(this.buttonOperatorRole_Click);
             // 
@@ -663,39 +696,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(16, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 44);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "DEBUG_VIEWER_AUTOLOGIN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(249, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 44);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "DEBUG_OPERATOR_AUTOLOGIN";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(473, 281);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(218, 44);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "DEBUG_MANAGER_AUTOLOGIN";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -706,11 +706,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
-            this.Controls.Add(this.RegistrationStartPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";

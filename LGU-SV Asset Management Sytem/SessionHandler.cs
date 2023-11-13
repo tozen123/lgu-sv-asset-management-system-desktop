@@ -17,16 +17,18 @@ namespace LGU_SV_Asset_Management_Sytem
     {
         private string current_user_id;
         private string current_user_password;
+  
         private bool isActive;
 
         public SessionHandler(string user_id, string password)
         {
             current_user_id = user_id;
             current_user_password = password;
-
+           
             isActive = true;
         }
 
+       
         public string GetCurrentUserPassword()
         {
             return current_user_password;

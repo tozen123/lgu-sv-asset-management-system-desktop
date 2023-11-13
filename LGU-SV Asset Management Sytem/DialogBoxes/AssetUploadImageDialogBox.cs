@@ -10,15 +10,14 @@ using System.Windows.Forms;
 
 namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
 {
-    public partial class UploadImageDialogBox : Form
+    public partial class AssetUploadImageDialogBox : Form
     {
         public byte[] imageByte { get; set; }
-        Image prevImage;
-        public UploadImageDialogBox()
+        public AssetUploadImageDialogBox()
         {
             InitializeComponent();
+
             this.StartPosition = FormStartPosition.CenterScreen;
-            prevImage = pictureBoxImage.Image;
         }
 
         public DialogResult GetResult()
@@ -26,9 +25,8 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             return this.DialogResult;
         }
 
-        private void buttonUploadBrowse_Click(object sender, EventArgs e)
+        private void buttonBrowseImage_Click(object sender, EventArgs e)
         {
-            
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG Files (*.jpg; *.jpeg)|*.jpg;*.jpeg", Multiselect = false })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -40,25 +38,15 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             }
         }
 
-        private void buttonUploadFinish_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            if(prevImage == pictureBoxImage.Image)
-            {
-                imageByte = null;
-            } 
-            else
-            {
-                imageByte = Utilities.ConvertImageToBytes(pictureBoxImage.Image);
-            }
-            
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
+        private void buttonFinish_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            imageByte = Utilities.ConvertImageToBytes(pictureBoxImage.Image);
+        }
     }
 }
