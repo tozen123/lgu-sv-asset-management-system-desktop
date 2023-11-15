@@ -88,7 +88,7 @@ namespace LGU_SV_Asset_Management_Sytem
             return dataTable;
         }
 
-        public int UploadToDatabaseAndGetGeneratedId(string query, Dictionary<string, object> parameters)
+        public int UploadToDatabaseAndGetId(string query, Dictionary<string, object> parameters)
         {
             int generatedId = -1; 
 
@@ -96,7 +96,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             try
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query + "; SELECT SCOPE_IDENTITY() AS IncrementedId", connection))
                 {
                     foreach (var parameter in parameters)
                     {
@@ -104,16 +104,11 @@ namespace LGU_SV_Asset_Management_Sytem
                     }
 
                     
-                    command.ExecuteNonQuery();
-
-                   
-                    command.CommandText = "SELECT SCOPE_IDENTITY()";
                     object result = command.ExecuteScalar();
 
-                  
-                    if (result != null && int.TryParse(result.ToString(), out generatedId))
+                    if (result != DBNull.Value && result != null)
                     {
-                      
+                        generatedId = Convert.ToInt32(result);
                     }
                 }
             }
@@ -121,13 +116,14 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-            finally
-            {
-                CloseConnection();
-            }
 
             return generatedId;
         }
+
+
+
+
+
 
     }
 }

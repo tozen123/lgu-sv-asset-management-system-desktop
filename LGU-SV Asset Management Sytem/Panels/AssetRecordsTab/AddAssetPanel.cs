@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 {
@@ -309,7 +310,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     IsNullOrEmpty(ComboBox_Location) || IsNullOrEmpty(ComboBox_Availability) ||
                     IsNullOrEmpty(ComboBox_Condition) || IsNullOrEmpty(ComboBox_Employee) ||
                     IsNullOrEmpty(ComboBox_Supplier) || IsNullOrEmpty(DateTimePicker_purchaseDate) ||
-                    IsNullOrEmpty(CheckBox_isMaintainable) || IsNullOrEmpty(PictureBox_assetImage))
+                     IsNullOrEmpty(PictureBox_assetImage))
                 {
                     MessagePrompt("HEYYYYYY ! Empty field found!");
                 }
@@ -365,38 +366,41 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                      * MAIN PROGRESS HERE
                      * 
                      */
+                    asset.IsArchive = false;
+                    asset.IsMissing = false;
                     //Gen QR
-                    /*
-                    string query = "INSERT INTO Asset (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetLastMaintenance, assetName," +
-                        " assetCondition, assetAvailability, assetQrCode, assetQr, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+              
+
+                    //maintenance are generated after null in the first creation of asset
+
+                    string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
+                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
                         " assetQuantity, assetUnit, assetImage, assetIsMissing ) VALUES " +
-                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @maintenanceId, @name, @condition, @availability, @qrCode, @qrImage, @location, @isarchive," +
+                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
                         " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing)";
 
                     Dictionary<string, object> parameters = new Dictionary<string, object>()
                     {
-                        { "@supervisorId",  asset.AssetSupervisorId},
-                        { "@employeeId", asset.CurrentEmployeeId},
-                        { "@supplierId",  asset.SupplierId},
-                        { "@categoryId", ComboBox_Category.SelectedItem?.ToString().Split(' ')[2]},
-                        { "@maintenanceId",  },
-                        { "@name",  },
-                        { "@condition",  },
-                        { "@availability", },
-                        { "@qrCode", },
-                        { "@qrImage", },
-                        { "@location", },
-                        { "@isarchive", },
-                        { "@purchasedate", },
-                        { "@purchaseamount", },
-                        { "@quantity", },
-                        { "@unit", },
-                        { "@image", },
-                        { "@ismissing", }
+                        { "@supervisorId",  asset.AssetSupervisorId },
+                        { "@employeeId", asset.CurrentEmployeeId },
+                        { "@supplierId",  asset.SupplierId },
+                        { "@categoryId", ComboBox_Category.SelectedItem?.ToString().Split(' ')[2] },
+                        { "@name",  asset.AssetName },
+                        { "@condition", asset.AssetCondition },
+                        { "@availability", asset.AssetAvailability },
+                        { "@location", asset.AssetLocation },
+                        { "@isarchive", asset.IsArchive },
+                        { "@purchasedate", asset.AssetPurchaseDate },
+                        { "@purchaseamount", asset.AssetPurchaseAmount },
+                        { "@quantity", asset.AssetQuantity },
+                        { "@unit", asset.AssetQuantity },
+                        { "@image", asset.AssetImage},
+                        { "@ismissing", asset.IsMissing}
  
                     };
-                    string qr_asset = databaseConnection.UploadToDatabaseAndGetGeneratedId()
-                    */
+                    int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
+                    Console.WriteLine("Data Uploaded");
+                    Console.WriteLine(qr_asset_gen_id);
 
                     //Gen QR Image
                     //Generate Maintanence Logs ID based on the maintainable
