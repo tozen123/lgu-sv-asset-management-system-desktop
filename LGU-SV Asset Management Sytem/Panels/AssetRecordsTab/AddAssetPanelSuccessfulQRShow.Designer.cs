@@ -108,7 +108,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.pictureBoxQR.Size = new System.Drawing.Size(330, 285);
             this.pictureBoxQR.TabIndex = 35;
             this.pictureBoxQR.TabStop = false;
-            this.pictureBoxQR.Click += new System.EventHandler(this.pictureBoxQR_Click);
+           
             // 
             // buttonExit
             // 
