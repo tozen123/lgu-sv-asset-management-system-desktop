@@ -53,11 +53,11 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetLastMaintenanceID = value; }
         }
 
-        public Availability AssetAvailability { get; set; }
-        public enum Availability
+        private string assetAvailability;
+        public string AssetAvailability 
         {
-            USED,
-            AVAILABLE
+            get { return assetAvailability; }
+            set { assetAvailability = value; }
         }
 
         private string assetName, assetLocation, QrCode;
@@ -99,12 +99,13 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetImage = value; }
         }
 
-        public CONDITION AssetCondition { get; set; }
-        public enum CONDITION
+        private string assetCondition;
+        public string AssetCondition
         {
-            WORKING,
-            INOPERABLE
+            get { return assetCondition; }
+            set { assetCondition = value; }
         }
+
 
         private Boolean isArchive, isMissing, isMaintainable;
 

@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
+using ZXing.QrCode.Internal;
+using ZXing.Rendering;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 {
@@ -21,6 +25,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
 
         string supervisor_id;
+        string supervisor_location;
 
         public enum AssetType
         {
@@ -30,10 +35,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         public AssetType assetType;
 
-        public AddAssetPanel(AssetType _assetType, string id)
+        public AddAssetPanel(AssetType _assetType, string id, string location)
         {
             InitializeComponent();
             supervisor_id = id;
+            supervisor_location = location;
 
             assetType = _assetType;
             databaseConnection = new DatabaseConnection();
@@ -50,11 +56,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             switch (assetType)
             {
                 case AssetType.New:
-                    buttonAdd.Text = "Add New Asset";
+                    buttonSave.Text = "Add New Asset";
 
                     break;
                 case AssetType.Existing:
-                    buttonAdd.Text = "Add Existing Asset";
+                    buttonSave.Text = "Add Existing Asset";
 
                     break;
             }
@@ -72,12 +78,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             comboBoxCondition.Items.Add("WORKING");
             comboBoxCondition.Items.Add("INOPERABLE");
 
-            comboBoxLocation.Items.Add("GSO-General Services Office");
-            comboBoxLocation.Items.Add("MHO-Municipal Health Office");
-            comboBoxLocation.Items.Add("MCR-Municipal Civil Registrar");
-            comboBoxLocation.Items.Add("MEO-Municipal Engineering Office");
-            comboBoxLocation.Items.Add("MBO-Municipal Budget Office");
-            comboBoxLocation.Items.Add("Accounting Office");
 
             comboBoxUnit.Items.Add("SET");
             comboBoxUnit.Items.Add("SINGLE");
@@ -285,7 +285,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 // ComboBox
                 ComboBox ComboBox_Category = tabPage.Controls.Find("comboBoxCategory", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Unit = tabPage.Controls.Find("comboBoxUnit", true).FirstOrDefault() as ComboBox;
-                ComboBox ComboBox_Location = tabPage.Controls.Find("comboBoxLocation", true).FirstOrDefault() as ComboBox;
+        
                 ComboBox ComboBox_Availability = tabPage.Controls.Find("comboBoxAvailability", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Condition = tabPage.Controls.Find("comboBoxCondition", true).FirstOrDefault() as ComboBox;
 
@@ -307,7 +307,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 if (IsNullOrEmpty(TextBox_AssetName) || IsNullOrEmpty(TextBox_Quantity) ||
                     IsNullOrEmpty(TextBox_PurchaseAmount) || IsNullOrEmpty(TextBox_LifeSpan) ||
                     IsNullOrEmpty(ComboBox_Category) || IsNullOrEmpty(ComboBox_Unit) ||
-                    IsNullOrEmpty(ComboBox_Location) || IsNullOrEmpty(ComboBox_Availability) ||
+                    IsNullOrEmpty(ComboBox_Availability) ||
                     IsNullOrEmpty(ComboBox_Condition) || IsNullOrEmpty(ComboBox_Employee) ||
                     IsNullOrEmpty(ComboBox_Supplier) || IsNullOrEmpty(DateTimePicker_purchaseDate) ||
                      IsNullOrEmpty(PictureBox_assetImage))
@@ -342,21 +342,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     {
                         asset.SupplierId = supId;
                     }
-                    
+
                     //last maintenance
 
-                    // kulang ng asset condition
-                    // kulang ng asset availability
-
                     
+                    asset.AssetCondition = ComboBox_Condition.SelectedItem?.ToString();
+
+                    asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
+
                     asset.AssetUnit = ComboBox_Unit.SelectedItem?.ToString();
-                    asset.AssetLocation = ComboBox_Location.SelectedItem?.ToString();
+                    asset.AssetLocation = supervisor_location;
                    
                     asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
 
                   
                     asset.IsMaintainable = CheckBox_isMaintainable.Checked;
 
+                  
                     
                     asset.AssetImage = Utilities.ConvertImageToBytes(PictureBox_assetImage.Image);
 
@@ -372,6 +374,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                     //maintenance are generated after null in the first creation of asset
 
+                    // PRE-UPLOAD LOGIC
                     string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
                         " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
                         " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable) VALUES " +
@@ -399,19 +402,34 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
  
                     };
                     int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
+
                     Console.WriteLine("Data Uploaded");
-                    Console.WriteLine(qr_asset_gen_id);
 
-                    //after adding in the database
-                    //generate qr image
+                    // POST-UPLOAD LOGIC
+                    string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
 
-                    //Gen QR Image
+                    string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
+                        "assetId = @assetId";
+                    Dictionary<string, object> parameters1 = new Dictionary<string, object>()
+                    {
+                        { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
+                        { "@qrDefinition", QRDefinition},
+                        { "@assetId", qr_asset_gen_id}
+                    };
+
+                    databaseConnection.UploadToDatabase(query1, parameters1);
+
+                    databaseConnection.CloseConnection();
+
+                    //pictureBox1.Image = bitmap;
+                    
                     //Generate Maintanence Logs ID based on the maintainable
                     //Transfer History
                     //Borrowed and Return History
-                    //CategoryID
 
-                    //Change Asset Location, base it on the current supervisor location
+                    //Confirm
+
+
                 }
 
             }
@@ -441,6 +459,39 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 Console.WriteLine($"Is Maintainable: {asset.IsMaintainable}");
                 Console.WriteLine("------------------------------------------");
             }
+        }
+        private byte[] GenerateAssetQRImageByte(string QRDefinition)
+        {
+            BarcodeWriter barcodeWriter = new BarcodeWriter();
+            EncodingOptions encodingOptions = new EncodingOptions()
+            {
+                Width = 300,
+                Height = 300,
+                Margin = 1,
+                PureBarcode = false
+            };
+
+            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
+
+            barcodeWriter.Renderer = new BitmapRenderer();
+            barcodeWriter.Options = encodingOptions;
+            barcodeWriter.Format = BarcodeFormat.QR_CODE;
+            Bitmap bitmap = barcodeWriter.Write(QRDefinition);
+
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            Bitmap logo = null;
+            if (mainForm != null)
+            {
+
+                Icon mainFormIcon = mainForm.Icon;
+                logo = mainFormIcon.ToBitmap();
+
+            }
+
+            Graphics g = Graphics.FromImage(bitmap);
+            g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
+
+            return Utilities.ConvertImageToBytes(bitmap);
         }
 
         private bool IsNullOrEmpty(Control control)

@@ -22,6 +22,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Session
         string currentSessionUserType;
+        string currentUserOffice;
 
         //Color
         Color clickColor = Color.FromArgb(76, 245, 154);
@@ -151,13 +152,13 @@ namespace LGU_SV_Asset_Management_Sytem
             switch (currentSessionUserType)
             {
                 case "Asset Viewer":
-                    query = "SELECT assetViewerId FROM AssetViewer WHERE userID = @UserId";
+                    query = "SELECT assetViewerId,assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
                     break;
                 case "Asset Employee":
-                    query = "SELECT assetEmployeeId FROM AssetEmployee WHERE userID = @UserId";
+                    query = "SELECT assetEmployeeId, assetEmployeeOffice FROM AssetEmployee WHERE userID = @UserId";
                     break;
                 case "Asset Supervisor":
-                    query = "SELECT assetSupervisorId FROM AssetSupervisor WHERE userID = @UserId";
+                    query = "SELECT assetSupervisorId, assetSupervisorOffice FROM AssetSupervisor WHERE userID = @UserId";
                     break;
             }
 
@@ -172,7 +173,19 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 foreach (DataColumn col in resultTable.Columns)
                 {
-                    RoleBasedID = row[col].ToString();
+                    switch (col.ColumnName)
+                    {
+                        case "assetViewerId":
+                        case "assetEmployeeId":
+                        case "assetSupervisorId":
+                            RoleBasedID = row[col].ToString();
+                            break;
+                        case "assetViewerOffice":
+                        case "assetEmployeeOffice":
+                        case "assetSupervisorOffice":
+                            currentUserOffice = row[col].ToString();
+                            break;
+                    }
                 }
             }
             
@@ -1072,7 +1085,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsNewAsset_Click(object sender, EventArgs e)
         {
-            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID);
+            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice);
             Console.WriteLine(RoleBasedID);
             optionDialogBox.Show();
         }
