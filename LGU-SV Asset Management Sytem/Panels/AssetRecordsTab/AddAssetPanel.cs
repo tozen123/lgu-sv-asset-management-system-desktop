@@ -341,8 +341,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     {
                         asset.SupplierId = supId;
                     }
-
-
+                    /*
+                     
+                    if (int.TryParse(ComboBox_Category.SelectedItem.ToString().Split(' ')[2], out int supId))
+                    {
+                        asset.SupplierId = supId;
+                    }
+                    */
+                    
                     asset.AssetUnit = ComboBox_Unit.SelectedItem?.ToString();
                     asset.AssetLocation = ComboBox_Location.SelectedItem?.ToString();
                    
@@ -359,8 +365,39 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                      * MAIN PROGRESS HERE
                      * 
                      */
-
                     //Gen QR
+                    /*
+                    string query = "INSERT INTO Asset (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetLastMaintenance, assetName," +
+                        " assetCondition, assetAvailability, assetQrCode, assetQr, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing ) VALUES " +
+                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @maintenanceId, @name, @condition, @availability, @qrCode, @qrImage, @location, @isarchive," +
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing)";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        { "@supervisorId",  asset.AssetSupervisorId},
+                        { "@employeeId", asset.CurrentEmployeeId},
+                        { "@supplierId",  asset.SupplierId},
+                        { "@categoryId", ComboBox_Category.SelectedItem?.ToString().Split(' ')[2]},
+                        { "@maintenanceId",  },
+                        { "@name",  },
+                        { "@condition",  },
+                        { "@availability", },
+                        { "@qrCode", },
+                        { "@qrImage", },
+                        { "@location", },
+                        { "@isarchive", },
+                        { "@purchasedate", },
+                        { "@purchaseamount", },
+                        { "@quantity", },
+                        { "@unit", },
+                        { "@image", },
+                        { "@ismissing", }
+ 
+                    };
+                    string qr_asset = databaseConnection.UploadToDatabaseAndGetGeneratedId()
+                    */
+
                     //Gen QR Image
                     //Generate Maintanence Logs ID based on the maintainable
                     //Transfer History
@@ -371,7 +408,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 }
 
             }
-
+           
             foreach (Asset asset in assetToAdd)
             {
                 Console.WriteLine("------------------------------------------");

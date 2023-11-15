@@ -18,5 +18,14 @@ namespace LGU_SV_Asset_Management_Sytem
         string maintenanceStatus;
 
         decimal maintenanceCost;
+
+        public class AssetMaintenanceLogRepositoryControl
+        {
+            void GenerateEmptyLog()
+            {
+
+            }
+        }
+
     }
 }
