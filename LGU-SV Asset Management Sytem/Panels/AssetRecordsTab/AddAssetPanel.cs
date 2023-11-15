@@ -304,6 +304,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 // QR Generator
 
                 //Validate
+                /*
                 if (IsNullOrEmpty(TextBox_AssetName) || IsNullOrEmpty(TextBox_Quantity) ||
                     IsNullOrEmpty(TextBox_PurchaseAmount) || IsNullOrEmpty(TextBox_LifeSpan) ||
                     IsNullOrEmpty(ComboBox_Category) || IsNullOrEmpty(ComboBox_Unit) ||
@@ -314,66 +315,72 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     MessagePrompt("HEYYYYYY ! Empty field found!");
                 }
-                else
+                */
+
+
+                
                 {
-              
-                    asset.AssetName = TextBox_AssetName.Text;
-                    asset.AssetQuantity = Convert.ToInt32(TextBox_Quantity.Text);
-                    asset.AssetPurchaseAmount = Convert.ToDecimal(TextBox_PurchaseAmount.Text);
+                    // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
+
+                    // Note for programmers who will read this section:
+                    // Dynamically, the following code might not represent the best implementation.
+                    // The code and logic could result in error on database inputs, causing to major errors and evenn potential crashes due to a lack of validation.
+                    // This code was developed for a fast implementation to meet the deadline. :(
 
 
-                    //Supervisor
+                    // Supervisor
                     if (int.TryParse(supervisor_id, out int parsedSupervisorId))
                     {
                         asset.AssetSupervisorId = parsedSupervisorId;
                     }
 
-                    //Employee
-                    
+                    // Employee
+
                     if (int.TryParse(ComboBox_Employee.SelectedItem.ToString().Split(' ')[2], out int empId))
                     {
                         asset.CurrentEmployeeId = empId;
                     }
 
 
-                    ////Supplier
-                    
+                    // Supplier
+
                     if (int.TryParse(ComboBox_Supplier.SelectedItem.ToString().Split(' ')[2], out int supId))
                     {
                         asset.SupplierId = supId;
                     }
 
-                    //last maintenance
+                    // Category
 
+                    if (int.TryParse(ComboBox_Category.SelectedItem?.ToString().Split(' ')[2], out int catId))
+                    {
+                        asset.AssetCategoryId = catId;
+                    }
                     
+                    asset.AssetName = TextBox_AssetName.Text;
                     asset.AssetCondition = ComboBox_Condition.SelectedItem?.ToString();
-
                     asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
-
-                    asset.AssetUnit = ComboBox_Unit.SelectedItem?.ToString();
                     asset.AssetLocation = supervisor_location;
-                   
-                    asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
-
-                  
-                    asset.IsMaintainable = CheckBox_isMaintainable.Checked;
-
-                  
-                    
+                    asset.IsArchive = false;
+                    asset.AssetPurchaseAmount = Convert.ToDecimal(TextBox_PurchaseAmount.Text);
+                    asset.AssetQuantity = Convert.ToInt32(TextBox_Quantity.Text);
+                    asset.AssetUnit = ComboBox_Unit.SelectedItem?.ToString();
                     asset.AssetImage = Utilities.ConvertImageToBytes(PictureBox_assetImage.Image);
+                    asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
+                    asset.IsMaintainable = CheckBox_isMaintainable.Checked;
+                    asset.IsMissing = false;
+
+                    //End Region
+
 
                     /*
                      * 
-                     * MAIN PROGRESS HERE
+                     * Important Notes to Remember:
+                     * Maintenance are generated after null in the first creation of asset
                      * 
                      */
-                    asset.IsArchive = false;
-                    asset.IsMissing = false;
-                    //Gen QR
-              
 
-                    //maintenance are generated after null in the first creation of asset
 
+                    /*
                     // PRE-UPLOAD LOGIC
                     string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
                         " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
@@ -386,7 +393,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         { "@supervisorId",  asset.AssetSupervisorId },
                         { "@employeeId", asset.CurrentEmployeeId },
                         { "@supplierId",  asset.SupplierId },
-                        { "@categoryId", ComboBox_Category.SelectedItem?.ToString().Split(' ')[2] },
+                        { "@categoryId", asset.AssetCategoryId },
                         { "@name",  asset.AssetName },
                         { "@condition", asset.AssetCondition },
                         { "@availability", asset.AssetAvailability },
@@ -422,18 +429,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     databaseConnection.CloseConnection();
 
                     //pictureBox1.Image = bitmap;
-                    
+
                     //Generate Maintanence Logs ID based on the maintainable
                     //Transfer History
                     //Borrowed and Return History
 
-                    //Confirm
+                    //QrShow Confirm Final
+                    
 
-
+                    */
                 }
-
+                
             }
-           
+
+            //Confirmation
+            AddAssetPanelConfirmation addAssetPanelConfirmation = new AddAssetPanelConfirmation(assetToAdd);
+            addAssetPanelConfirmation.ShowDialog();
+
             foreach (Asset asset in assetToAdd)
             {
                 Console.WriteLine("------------------------------------------");

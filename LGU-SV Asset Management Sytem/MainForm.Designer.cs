@@ -115,6 +115,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.tabTransaction = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
             this.labelSideBarMisc = new System.Windows.Forms.Label();
@@ -138,8 +140,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
@@ -1052,6 +1052,24 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabTransaction.Text = "tabPage1";
             this.tabTransaction.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(448, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Borrow Asset Request ";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(258, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Transfer Asset";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1300,24 +1318,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.Text = "X";
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(258, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Transfer Asset";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(448, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Borrow Asset Request ";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class AssetBehaviour
+    public class AssetBehaviour
     {
         private DatabaseConnection databaseConnection;
 

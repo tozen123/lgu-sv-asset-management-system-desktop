@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class Asset : AssetBehaviour
+    public class Asset : AssetBehaviour
     {
         // Integers
         private int assetId, assetSupervisorId, currentEmployeeId, supplierId, assetCategoryId, assetLastMaintenanceID;
