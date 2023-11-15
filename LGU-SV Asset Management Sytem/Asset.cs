@@ -124,6 +124,8 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         // Property for isMaintainable
+
+       
         public bool IsMaintainable
         {
             get { return isMaintainable; }
@@ -175,7 +177,12 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetUnit = value; }
         }
 
-
+        private int assetLifeSpan;
+        public int AssetLifeSpan
+        {
+            get { return assetLifeSpan; }
+            set { assetLifeSpan = value; }
+        }
         public class AssetRepositoryControl
         {
             

@@ -57,12 +57,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
+            this.labelMaintainable = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.labelLifeSpan = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.labelLifeSpan);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.labelMaintainable);
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.labelAssetPurchaseDate);
             this.groupBox1.Controls.Add(this.labelAssetCondition);
             this.groupBox1.Controls.Add(this.labelAssetSupplier);
@@ -92,7 +100,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.groupBox1.Controls.Add(this.buttonConfirm);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 573);
+            this.groupBox1.Size = new System.Drawing.Size(468, 590);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -100,7 +108,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetPurchaseDate.AutoSize = true;
             this.labelAssetPurchaseDate.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetPurchaseDate.Location = new System.Drawing.Point(161, 479);
+            this.labelAssetPurchaseDate.Location = new System.Drawing.Point(161, 509);
             this.labelAssetPurchaseDate.Name = "labelAssetPurchaseDate";
             this.labelAssetPurchaseDate.Size = new System.Drawing.Size(107, 28);
             this.labelAssetPurchaseDate.TabIndex = 56;
@@ -110,7 +118,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetCondition.AutoSize = true;
             this.labelAssetCondition.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetCondition.Location = new System.Drawing.Point(161, 279);
+            this.labelAssetCondition.Location = new System.Drawing.Point(161, 248);
             this.labelAssetCondition.Name = "labelAssetCondition";
             this.labelAssetCondition.Size = new System.Drawing.Size(157, 28);
             this.labelAssetCondition.TabIndex = 55;
@@ -120,7 +128,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetSupplier.AutoSize = true;
             this.labelAssetSupplier.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetSupplier.Location = new System.Drawing.Point(161, 404);
+            this.labelAssetSupplier.Location = new System.Drawing.Point(161, 434);
             this.labelAssetSupplier.Name = "labelAssetSupplier";
             this.labelAssetSupplier.Size = new System.Drawing.Size(138, 28);
             this.labelAssetSupplier.TabIndex = 54;
@@ -130,7 +138,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetEmployee.AutoSize = true;
             this.labelAssetEmployee.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetEmployee.Location = new System.Drawing.Point(161, 364);
+            this.labelAssetEmployee.Location = new System.Drawing.Point(161, 394);
             this.labelAssetEmployee.Name = "labelAssetEmployee";
             this.labelAssetEmployee.Size = new System.Drawing.Size(148, 28);
             this.labelAssetEmployee.TabIndex = 53;
@@ -140,7 +148,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetLocation.AutoSize = true;
             this.labelAssetLocation.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetLocation.Location = new System.Drawing.Point(161, 324);
+            this.labelAssetLocation.Location = new System.Drawing.Point(161, 354);
             this.labelAssetLocation.Name = "labelAssetLocation";
             this.labelAssetLocation.Size = new System.Drawing.Size(148, 28);
             this.labelAssetLocation.TabIndex = 52;
@@ -150,7 +158,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetPurchaseAmount.AutoSize = true;
             this.labelAssetPurchaseAmount.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetPurchaseAmount.Location = new System.Drawing.Point(161, 443);
+            this.labelAssetPurchaseAmount.Location = new System.Drawing.Point(161, 473);
             this.labelAssetPurchaseAmount.Name = "labelAssetPurchaseAmount";
             this.labelAssetPurchaseAmount.Size = new System.Drawing.Size(221, 28);
             this.labelAssetPurchaseAmount.TabIndex = 51;
@@ -160,7 +168,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetAvailability.AutoSize = true;
             this.labelAssetAvailability.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetAvailability.Location = new System.Drawing.Point(161, 241);
+            this.labelAssetAvailability.Location = new System.Drawing.Point(161, 210);
             this.labelAssetAvailability.Name = "labelAssetAvailability";
             this.labelAssetAvailability.Size = new System.Drawing.Size(166, 28);
             this.labelAssetAvailability.TabIndex = 50;
@@ -170,7 +178,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetCategory.AutoSize = true;
             this.labelAssetCategory.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetCategory.Location = new System.Drawing.Point(161, 204);
+            this.labelAssetCategory.Location = new System.Drawing.Point(161, 173);
             this.labelAssetCategory.Name = "labelAssetCategory";
             this.labelAssetCategory.Size = new System.Drawing.Size(153, 28);
             this.labelAssetCategory.TabIndex = 49;
@@ -180,7 +188,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetUnit.AutoSize = true;
             this.labelAssetUnit.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetUnit.Location = new System.Drawing.Point(161, 172);
+            this.labelAssetUnit.Location = new System.Drawing.Point(161, 141);
             this.labelAssetUnit.Name = "labelAssetUnit";
             this.labelAssetUnit.Size = new System.Drawing.Size(103, 28);
             this.labelAssetUnit.TabIndex = 48;
@@ -190,7 +198,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetQuantity.AutoSize = true;
             this.labelAssetQuantity.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetQuantity.Location = new System.Drawing.Point(161, 136);
+            this.labelAssetQuantity.Location = new System.Drawing.Point(161, 105);
             this.labelAssetQuantity.Name = "labelAssetQuantity";
             this.labelAssetQuantity.Size = new System.Drawing.Size(146, 28);
             this.labelAssetQuantity.TabIndex = 47;
@@ -200,7 +208,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.labelAssetName.AutoSize = true;
             this.labelAssetName.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetName.Location = new System.Drawing.Point(161, 104);
+            this.labelAssetName.Location = new System.Drawing.Point(161, 73);
             this.labelAssetName.Name = "labelAssetName";
             this.labelAssetName.Size = new System.Drawing.Size(113, 28);
             this.labelAssetName.TabIndex = 46;
@@ -209,7 +217,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 486);
+            this.label13.Location = new System.Drawing.Point(27, 516);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(101, 13);
             this.label13.TabIndex = 44;
@@ -218,7 +226,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 450);
+            this.label12.Location = new System.Drawing.Point(27, 480);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(119, 13);
             this.label12.TabIndex = 43;
@@ -227,7 +235,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 411);
+            this.label11.Location = new System.Drawing.Point(27, 441);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 13);
             this.label11.TabIndex = 42;
@@ -236,7 +244,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 371);
+            this.label10.Location = new System.Drawing.Point(27, 401);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 13);
             this.label10.TabIndex = 41;
@@ -245,7 +253,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 331);
+            this.label9.Location = new System.Drawing.Point(27, 361);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 40;
@@ -254,7 +262,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 294);
+            this.label8.Location = new System.Drawing.Point(27, 263);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 39;
@@ -263,7 +271,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 256);
+            this.label7.Location = new System.Drawing.Point(27, 225);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 13);
             this.label7.TabIndex = 38;
@@ -272,7 +280,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 219);
+            this.label6.Location = new System.Drawing.Point(27, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 37;
@@ -281,7 +289,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 179);
+            this.label5.Location = new System.Drawing.Point(27, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 36;
@@ -290,7 +298,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 143);
+            this.label4.Location = new System.Drawing.Point(27, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 35;
@@ -299,7 +307,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 111);
+            this.label3.Location = new System.Drawing.Point(27, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 34;
@@ -339,7 +347,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(228, 523);
+            this.buttonCancel.Location = new System.Drawing.Point(243, 548);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(169, 36);
             this.buttonCancel.TabIndex = 29;
@@ -349,7 +357,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(35, 523);
+            this.buttonConfirm.Location = new System.Drawing.Point(50, 548);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(169, 36);
             this.buttonConfirm.TabIndex = 28;
@@ -357,12 +365,50 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonConfirm.UseVisualStyleBackColor = true;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click_1);
             // 
+            // labelMaintainable
+            // 
+            this.labelMaintainable.AutoSize = true;
+            this.labelMaintainable.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaintainable.Location = new System.Drawing.Point(161, 286);
+            this.labelMaintainable.Name = "labelMaintainable";
+            this.labelMaintainable.Size = new System.Drawing.Size(181, 28);
+            this.labelMaintainable.TabIndex = 58;
+            this.labelMaintainable.Text = "DATA_MAINTAINABLE";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(27, 295);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(102, 13);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "IS MAINTAINABLE:";
+            // 
+            // labelLifeSpan
+            // 
+            this.labelLifeSpan.AutoSize = true;
+            this.labelLifeSpan.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLifeSpan.Location = new System.Drawing.Point(161, 318);
+            this.labelLifeSpan.Name = "labelLifeSpan";
+            this.labelLifeSpan.Size = new System.Drawing.Size(138, 28);
+            this.labelLifeSpan.TabIndex = 60;
+            this.labelLifeSpan.Text = "DATA_LIFESPAN";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(27, 327);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "LIFESPAN:";
+            // 
             // AddAssetPanelConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(493, 598);
+            this.ClientSize = new System.Drawing.Size(493, 615);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddAssetPanelConfirmation";
@@ -404,5 +450,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.Label labelMaintainable;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelLifeSpan;
+        private System.Windows.Forms.Label label15;
     }
 }

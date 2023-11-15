@@ -319,12 +319,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
 
                 
-                {
+                
                     // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
 
                     // Note for programmers who will read this section:
-                    // Dynamically, the following code might not represent the best implementation.
-                    // The code and logic could result in error on database inputs, causing to major errors and evenn potential crashes due to a lack of validation.
+                    // The following code might not represent the best implementation.
+                    // The code and logic could result in error on database inputs,
+                    // causing to major errors and evenn potential crashes due to a lack of validation.
                     // This code was developed for a fast implementation to meet the deadline. :(
 
 
@@ -368,83 +369,145 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
                     asset.IsMaintainable = CheckBox_isMaintainable.Checked;
                     asset.IsMissing = false;
-
-                    //End Region
-
-
-                    /*
-                     * 
-                     * Important Notes to Remember:
-                     * Maintenance are generated after null in the first creation of asset
-                     * 
-                     */
-
-
-                    /*
-                    // PRE-UPLOAD LOGIC
-                    string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
-                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
-                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable) VALUES " +
-                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
-                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable)";
-
-                    Dictionary<string, object> parameters = new Dictionary<string, object>()
-                    {
-                        { "@supervisorId",  asset.AssetSupervisorId },
-                        { "@employeeId", asset.CurrentEmployeeId },
-                        { "@supplierId",  asset.SupplierId },
-                        { "@categoryId", asset.AssetCategoryId },
-                        { "@name",  asset.AssetName },
-                        { "@condition", asset.AssetCondition },
-                        { "@availability", asset.AssetAvailability },
-                        { "@location", asset.AssetLocation },
-                        { "@isarchive", asset.IsArchive },
-                        { "@purchasedate", asset.AssetPurchaseDate },
-                        { "@purchaseamount", asset.AssetPurchaseAmount },
-                        { "@quantity", asset.AssetQuantity },
-                        { "@unit", asset.AssetQuantity },
-                        { "@image", asset.AssetImage},
-                        { "@ismissing", asset.IsMissing},
-                        { "@ismaintainable", asset.IsMaintainable}
- 
-                    };
-                    int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
-
-                    Console.WriteLine("Data Uploaded");
-
-                    // POST-UPLOAD LOGIC
-                    string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
-
-                    string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
-                        "assetId = @assetId";
-                    Dictionary<string, object> parameters1 = new Dictionary<string, object>()
-                    {
-                        { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
-                        { "@qrDefinition", QRDefinition},
-                        { "@assetId", qr_asset_gen_id}
-                    };
-
-                    databaseConnection.UploadToDatabase(query1, parameters1);
-
-                    databaseConnection.CloseConnection();
-
-                    //pictureBox1.Image = bitmap;
-
-                    //Generate Maintanence Logs ID based on the maintainable
-                    //Transfer History
-                    //Borrowed and Return History
-
-                    //QrShow Confirm Final
                     
 
-                    */
-                }
-                
+                    // LifeSpan
+
+                    if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
+                    {
+                        asset.AssetLifeSpan = lifespan;
+                    }
+                //End Region
+
+
+                /*
+                 * 
+                 * Important Notes to Remember:
+                 * Maintenance are generated after null in the first creation of asset
+                 * 
+                 */
+
+
+                /*
+                // PRE-UPLOAD LOGIC
+                string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
+                    " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+                    " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
+                    " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
+                    " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>()
+                {
+                    { "@supervisorId",  asset.AssetSupervisorId },
+                    { "@employeeId", asset.CurrentEmployeeId },
+                    { "@supplierId",  asset.SupplierId },
+                    { "@categoryId", asset.AssetCategoryId },
+                    { "@name",  asset.AssetName },
+                    { "@condition", asset.AssetCondition },
+                    { "@availability", asset.AssetAvailability },
+                    { "@location", asset.AssetLocation },
+                    { "@isarchive", asset.IsArchive },
+                    { "@purchasedate", asset.AssetPurchaseDate },
+                    { "@purchaseamount", asset.AssetPurchaseAmount },
+                    { "@quantity", asset.AssetQuantity },
+                    { "@unit", asset.AssetQuantity },
+                    { "@image", asset.AssetImage},
+                    { "@ismissing", asset.IsMissing},
+                    { "@ismaintainable", asset.IsMaintainable},
+                    { "@lifeSpan", asset.AssetLifeSpan}
+
+                };
+                int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
+
+                Console.WriteLine("Data Uploaded");
+
+                // POST-UPLOAD LOGIC
+                string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
+
+                string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
+                    "assetId = @assetId";
+                Dictionary<string, object> parameters1 = new Dictionary<string, object>()
+                {
+                    { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
+                    { "@qrDefinition", QRDefinition},
+                    { "@assetId", qr_asset_gen_id}
+                };
+
+                databaseConnection.UploadToDatabase(query1, parameters1);
+
+                databaseConnection.CloseConnection();
+
+                //pictureBox1.Image = bitmap;
+
+                //Generate Maintanence Logs ID based on the maintainable
+                //Transfer History
+                //Borrowed and Return History
+
+                //QrShow Confirm Final
+
+
+                */
+
+
             }
 
             //Confirmation
-            AddAssetPanelConfirmation addAssetPanelConfirmation = new AddAssetPanelConfirmation(assetToAdd);
-            addAssetPanelConfirmation.ShowDialog();
+           
+            using (AddAssetPanelConfirmation addAssetPanelConfirmation = new AddAssetPanelConfirmation(assetToAdd))
+            {
+                addAssetPanelConfirmation.ShowDialog();
+                if (addAssetPanelConfirmation.GetResult() == DialogResult.OK)
+                {
+                    foreach (Asset asset in assetToAdd)
+                    {
+                        string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
+                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
+                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
+
+                        Dictionary<string, object> parameters = new Dictionary<string, object>()
+                        {
+                            { "@supervisorId",  asset.AssetSupervisorId },
+                            { "@employeeId", asset.CurrentEmployeeId },
+                            { "@supplierId",  asset.SupplierId },
+                            { "@categoryId", asset.AssetCategoryId },
+                            { "@name",  asset.AssetName },
+                            { "@condition", asset.AssetCondition },
+                            { "@availability", asset.AssetAvailability },
+                            { "@location", asset.AssetLocation },
+                            { "@isarchive", asset.IsArchive },
+                            { "@purchasedate", asset.AssetPurchaseDate },
+                            { "@purchaseamount", asset.AssetPurchaseAmount },
+                            { "@quantity", asset.AssetQuantity },
+                            { "@unit", asset.AssetQuantity },
+                            { "@image", asset.AssetImage},
+                            { "@ismissing", asset.IsMissing},
+                            { "@ismaintainable", asset.IsMaintainable},
+                            { "@lifeSpan", asset.AssetLifeSpan}
+
+                        };
+                        int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
+
+                        // POST-UPLOAD LOGIC
+                        string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
+
+                        string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
+                            "assetId = @assetId";
+
+                        Dictionary<string, object> parameters1 = new Dictionary<string, object>()
+                        {
+                            { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
+                            { "@qrDefinition", QRDefinition},
+                            { "@assetId", qr_asset_gen_id}
+                        };
+
+                        databaseConnection.UploadToDatabase(query1, parameters1);
+
+                        databaseConnection.CloseConnection();
+                    }
+                }
+            }
 
             foreach (Asset asset in assetToAdd)
             {
