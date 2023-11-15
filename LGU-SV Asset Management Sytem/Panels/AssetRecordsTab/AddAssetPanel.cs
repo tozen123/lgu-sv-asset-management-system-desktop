@@ -342,13 +342,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     {
                         asset.SupplierId = supId;
                     }
-                    /*
-                     
-                    if (int.TryParse(ComboBox_Category.SelectedItem.ToString().Split(' ')[2], out int supId))
-                    {
-                        asset.SupplierId = supId;
-                    }
-                    */
+                    
+                    //last maintenance
+
+                    // kulang ng asset condition
+                    // kulang ng asset availability
+
                     
                     asset.AssetUnit = ComboBox_Unit.SelectedItem?.ToString();
                     asset.AssetLocation = ComboBox_Location.SelectedItem?.ToString();
@@ -358,7 +357,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                   
                     asset.IsMaintainable = CheckBox_isMaintainable.Checked;
 
-                  
+                    
                     asset.AssetImage = Utilities.ConvertImageToBytes(PictureBox_assetImage.Image);
 
                     /*
@@ -375,9 +374,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                     string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
                         " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
-                        " assetQuantity, assetUnit, assetImage, assetIsMissing ) VALUES " +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable) VALUES " +
                         " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
-                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing)";
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable)";
 
                     Dictionary<string, object> parameters = new Dictionary<string, object>()
                     {
@@ -395,12 +394,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         { "@quantity", asset.AssetQuantity },
                         { "@unit", asset.AssetQuantity },
                         { "@image", asset.AssetImage},
-                        { "@ismissing", asset.IsMissing}
+                        { "@ismissing", asset.IsMissing},
+                        { "@ismaintainable", asset.IsMaintainable}
  
                     };
                     int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
                     Console.WriteLine("Data Uploaded");
                     Console.WriteLine(qr_asset_gen_id);
+
+                    //after adding in the database
+                    //generate qr image
 
                     //Gen QR Image
                     //Generate Maintanence Logs ID based on the maintainable
