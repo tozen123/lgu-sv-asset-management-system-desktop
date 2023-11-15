@@ -31,18 +31,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelAssetName = new System.Windows.Forms.Label();
+            this.labelAssetID = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.buttonSaveAsPng = new System.Windows.Forms.Button();
+            this.buttonContinue = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.pictureBoxQR = new System.Windows.Forms.PictureBox();
             this.buttonForwardList = new System.Windows.Forms.Button();
             this.buttonBackwardList = new System.Windows.Forms.Button();
-            this.pictureBoxQR = new System.Windows.Forms.PictureBox();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonContinue = new System.Windows.Forms.Button();
-            this.buttonSaveAsPng = new System.Windows.Forms.Button();
-            this.buttonPrint = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelAssetID = new System.Windows.Forms.Label();
-            this.labelAssetName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQR)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,106 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // labelAssetName
+            // 
+            this.labelAssetName.AutoSize = true;
+            this.labelAssetName.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAssetName.Location = new System.Drawing.Point(131, 80);
+            this.labelAssetName.Name = "labelAssetName";
+            this.labelAssetName.Size = new System.Drawing.Size(95, 22);
+            this.labelAssetName.TabIndex = 43;
+            this.labelAssetName.Text = "DATA_NAME";
+            // 
+            // labelAssetID
+            // 
+            this.labelAssetID.AutoSize = true;
+            this.labelAssetID.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAssetID.Location = new System.Drawing.Point(131, 53);
+            this.labelAssetID.Name = "labelAssetID";
+            this.labelAssetID.Size = new System.Drawing.Size(71, 22);
+            this.labelAssetID.TabIndex = 42;
+            this.labelAssetID.Text = "DATA_ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(53, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "QR CODE:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(53, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Asset Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(53, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Asset ID:";
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrint.Location = new System.Drawing.Point(310, 424);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(136, 31);
+            this.buttonPrint.TabIndex = 39;
+            this.buttonPrint.Text = "PRINT";
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
+            // buttonSaveAsPng
+            // 
+            this.buttonSaveAsPng.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveAsPng.Location = new System.Drawing.Point(148, 424);
+            this.buttonSaveAsPng.Name = "buttonSaveAsPng";
+            this.buttonSaveAsPng.Size = new System.Drawing.Size(156, 31);
+            this.buttonSaveAsPng.TabIndex = 38;
+            this.buttonSaveAsPng.Text = "SAVE AS PNG";
+            this.buttonSaveAsPng.UseVisualStyleBackColor = true;
+            this.buttonSaveAsPng.Click += new System.EventHandler(this.buttonSaveAsPng_Click);
+            // 
+            // buttonContinue
+            // 
+            this.buttonContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonContinue.Location = new System.Drawing.Point(6, 424);
+            this.buttonContinue.Name = "buttonContinue";
+            this.buttonContinue.Size = new System.Drawing.Size(136, 31);
+            this.buttonContinue.TabIndex = 37;
+            this.buttonContinue.Text = "Continue";
+            this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Location = new System.Drawing.Point(399, 16);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(47, 31);
+            this.buttonExit.TabIndex = 36;
+            this.buttonExit.Text = "X";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // pictureBoxQR
+            // 
+            this.pictureBoxQR.Location = new System.Drawing.Point(62, 122);
+            this.pictureBoxQR.Name = "pictureBoxQR";
+            this.pictureBoxQR.Size = new System.Drawing.Size(330, 296);
+            this.pictureBoxQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxQR.TabIndex = 35;
+            this.pictureBoxQR.TabStop = false;
+            // 
             // buttonForwardList
             // 
             this.buttonForwardList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,106 +200,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonBackwardList.Text = "<";
             this.buttonBackwardList.UseVisualStyleBackColor = true;
             this.buttonBackwardList.Click += new System.EventHandler(this.buttonBackwardList_Click);
-            // 
-            // pictureBoxQR
-            // 
-            this.pictureBoxQR.Location = new System.Drawing.Point(53, 133);
-            this.pictureBoxQR.Name = "pictureBoxQR";
-            this.pictureBoxQR.Size = new System.Drawing.Size(330, 285);
-            this.pictureBoxQR.TabIndex = 35;
-            this.pictureBoxQR.TabStop = false;
-           
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(399, 16);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(47, 31);
-            this.buttonExit.TabIndex = 36;
-            this.buttonExit.Text = "X";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // buttonContinue
-            // 
-            this.buttonContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonContinue.Location = new System.Drawing.Point(6, 424);
-            this.buttonContinue.Name = "buttonContinue";
-            this.buttonContinue.Size = new System.Drawing.Size(136, 31);
-            this.buttonContinue.TabIndex = 37;
-            this.buttonContinue.Text = "Continue";
-            this.buttonContinue.UseVisualStyleBackColor = true;
-            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
-            // 
-            // buttonSaveAsPng
-            // 
-            this.buttonSaveAsPng.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveAsPng.Location = new System.Drawing.Point(148, 424);
-            this.buttonSaveAsPng.Name = "buttonSaveAsPng";
-            this.buttonSaveAsPng.Size = new System.Drawing.Size(156, 31);
-            this.buttonSaveAsPng.TabIndex = 38;
-            this.buttonSaveAsPng.Text = "SAVE AS PNG";
-            this.buttonSaveAsPng.UseVisualStyleBackColor = true;
-            this.buttonSaveAsPng.Click += new System.EventHandler(this.buttonSaveAsPng_Click);
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(310, 424);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(136, 31);
-            this.buttonPrint.TabIndex = 39;
-            this.buttonPrint.Text = "PRINT";
-            this.buttonPrint.UseVisualStyleBackColor = true;
-            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Asset ID:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Asset Name:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "QR CODE:";
-            // 
-            // labelAssetID
-            // 
-            this.labelAssetID.AutoSize = true;
-            this.labelAssetID.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetID.Location = new System.Drawing.Point(131, 53);
-            this.labelAssetID.Name = "labelAssetID";
-            this.labelAssetID.Size = new System.Drawing.Size(71, 22);
-            this.labelAssetID.TabIndex = 42;
-            this.labelAssetID.Text = "DATA_ID";
-            // 
-            // labelAssetName
-            // 
-            this.labelAssetName.AutoSize = true;
-            this.labelAssetName.Font = new System.Drawing.Font("Poppins Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetName.Location = new System.Drawing.Point(131, 80);
-            this.labelAssetName.Name = "labelAssetName";
-            this.labelAssetName.Size = new System.Drawing.Size(95, 22);
-            this.labelAssetName.TabIndex = 43;
-            this.labelAssetName.Text = "DATA_NAME";
             // 
             // AddAssetPanelSuccessfulQRShow
             // 

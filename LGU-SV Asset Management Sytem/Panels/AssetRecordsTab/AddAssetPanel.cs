@@ -492,6 +492,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         // POST-UPLOAD LOGIC
                         string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
 
+                        // Other Attributes Post Update
+                        asset.AssetId = qr_asset_gen_id;
                         asset.AssetQRCodeImage = GenerateAssetQRImageByte(QRDefinition);
                         asset.QRCode = QRDefinition;
 
@@ -509,12 +511,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                         databaseConnection.CloseConnection();
 
-
-                        // Success Panel
-                        SuccessPanel(assetToAdd);
-
-                        addAssetPanelConfirmation.Close();
                     }
+                    // Success Panel
+                    SuccessPanel(assetToAdd);
+
+                    addAssetPanelConfirmation.Close();
                 }
                 else if (addAssetPanelConfirmation.GetResult() == DialogResult.Cancel)
                 {
@@ -553,6 +554,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             using (AddAssetPanelSuccessfulQRShow addAssetPanelSuccessfulQRShow = new AddAssetPanelSuccessfulQRShow(assetSuccessfulList))
             {
+                addAssetPanelSuccessfulQRShow.ShowDialog();
                 if (addAssetPanelSuccessfulQRShow.GetResult() == DialogResult.OK)
                 {
 
