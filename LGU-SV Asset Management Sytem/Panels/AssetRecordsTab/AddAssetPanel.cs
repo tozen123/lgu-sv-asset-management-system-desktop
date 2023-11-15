@@ -492,20 +492,33 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         // POST-UPLOAD LOGIC
                         string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
 
+                        asset.AssetQRCodeImage = GenerateAssetQRImageByte(QRDefinition);
+                        asset.QRCode = QRDefinition;
+
                         string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
                             "assetId = @assetId";
 
                         Dictionary<string, object> parameters1 = new Dictionary<string, object>()
                         {
-                            { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
-                            { "@qrDefinition", QRDefinition},
+                            { "@generatedQrImageByte", asset.AssetQRCodeImage},
+                            { "@qrDefinition", asset.QRCode},
                             { "@assetId", qr_asset_gen_id}
                         };
 
                         databaseConnection.UploadToDatabase(query1, parameters1);
 
                         databaseConnection.CloseConnection();
+
+
+                        // Success Panel
+                        SuccessPanel(assetToAdd);
+
+                        addAssetPanelConfirmation.Close();
                     }
+                }
+                else if (addAssetPanelConfirmation.GetResult() == DialogResult.Cancel)
+                {
+                    addAssetPanelConfirmation.Close();
                 }
             }
 
@@ -535,6 +548,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 Console.WriteLine("------------------------------------------");
             }
         }
+
+        private void SuccessPanel(List<Asset> assetSuccessfulList)
+        {
+            using (AddAssetPanelSuccessfulQRShow addAssetPanelSuccessfulQRShow = new AddAssetPanelSuccessfulQRShow(assetSuccessfulList))
+            {
+                if (addAssetPanelSuccessfulQRShow.GetResult() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
         private byte[] GenerateAssetQRImageByte(string QRDefinition)
         {
             BarcodeWriter barcodeWriter = new BarcodeWriter();

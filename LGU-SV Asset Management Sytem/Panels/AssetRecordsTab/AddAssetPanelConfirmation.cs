@@ -147,6 +147,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private void buttonCancel_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+
         }
 
         private void buttonConfirm_Click_1(object sender, EventArgs e)
