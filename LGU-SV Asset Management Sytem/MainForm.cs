@@ -1083,7 +1083,11 @@ namespace LGU_SV_Asset_Management_Sytem
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
         }
 
-        
+        private void panelBoxTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void buttonOperatorClearFields_Click_1(object sender, EventArgs e)
         {
             OtherOperatorReset();
