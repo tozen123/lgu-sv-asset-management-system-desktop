@@ -55,9 +55,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label9 = new System.Windows.Forms.Label();
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonAssetRecordsNewAsset = new System.Windows.Forms.Button();
             this.buttonAssetRecordsViewRecords = new System.Windows.Forms.Button();
             this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
@@ -135,15 +133,15 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonAssetRecords = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.panelBoxTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
             this.tabAssetRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabArchiveRecords.SuspendLayout();
             this.tabGenReport.SuspendLayout();
             this.tabOthers.SuspendLayout();
@@ -160,6 +158,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.SuspendLayout();
             this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTabControl
@@ -175,43 +175,39 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Controls.Add(this.tabSettings);
             this.panelTabControl.Controls.Add(this.tabTransaction);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(109, 71);
-            this.panelTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTabControl.Location = new System.Drawing.Point(82, 58);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1589, 898);
+            this.panelTabControl.Size = new System.Drawing.Size(1192, 730);
             this.panelTabControl.TabIndex = 0;
             // 
             // tabDashboard
             // 
             this.tabDashboard.Controls.Add(this.panelTotalAsset);
             this.tabDashboard.Controls.Add(this.label1);
-            this.tabDashboard.Location = new System.Drawing.Point(4, 25);
-            this.tabDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDashboard.Location = new System.Drawing.Point(4, 22);
             this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabDashboard.Size = new System.Drawing.Size(1581, 869);
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDashboard.Size = new System.Drawing.Size(1184, 704);
             this.tabDashboard.TabIndex = 1;
             this.tabDashboard.Text = "tabPage2";
             this.tabDashboard.UseVisualStyleBackColor = true;
             // 
             // panelTotalAsset
             // 
-            this.panelTotalAsset.Location = new System.Drawing.Point(35, 102);
-            this.panelTotalAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTotalAsset.Location = new System.Drawing.Point(26, 83);
             this.panelTotalAsset.Name = "panelTotalAsset";
-            this.panelTotalAsset.Size = new System.Drawing.Size(661, 306);
+            this.panelTotalAsset.Size = new System.Drawing.Size(496, 249);
             this.panelTotalAsset.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(15, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 78);
+            this.label1.Size = new System.Drawing.Size(229, 62);
             this.label1.TabIndex = 1;
             this.label1.Text = "Dashboard";
             // 
@@ -238,21 +234,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabProfile.Controls.Add(this.buttonEditProfile);
             this.tabProfile.Controls.Add(this.label3);
             this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
-            this.tabProfile.Location = new System.Drawing.Point(4, 25);
-            this.tabProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabProfile.Size = new System.Drawing.Size(1581, 869);
+            this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProfile.Size = new System.Drawing.Size(1184, 704);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "tabPage1";
             this.tabProfile.UseVisualStyleBackColor = true;
             // 
             // buttonProfileUploadImage
             // 
-            this.buttonProfileUploadImage.Location = new System.Drawing.Point(355, 457);
-            this.buttonProfileUploadImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfileUploadImage.Location = new System.Drawing.Point(266, 371);
             this.buttonProfileUploadImage.Name = "buttonProfileUploadImage";
-            this.buttonProfileUploadImage.Size = new System.Drawing.Size(65, 49);
+            this.buttonProfileUploadImage.Size = new System.Drawing.Size(49, 40);
             this.buttonProfileUploadImage.TabIndex = 22;
             this.buttonProfileUploadImage.Text = "N";
             this.buttonProfileUploadImage.UseVisualStyleBackColor = true;
@@ -261,21 +255,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // comboBoxProfileDept
             // 
             this.comboBoxProfileDept.BackColor = System.Drawing.Color.Silver;
-            this.comboBoxProfileDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxProfileDept.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProfileDept.FormattingEnabled = true;
-            this.comboBoxProfileDept.Location = new System.Drawing.Point(744, 358);
-            this.comboBoxProfileDept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxProfileDept.Location = new System.Drawing.Point(558, 291);
             this.comboBoxProfileDept.Name = "comboBoxProfileDept";
-            this.comboBoxProfileDept.Size = new System.Drawing.Size(503, 33);
+            this.comboBoxProfileDept.Size = new System.Drawing.Size(378, 36);
             this.comboBoxProfileDept.TabIndex = 21;
             // 
             // checkBoxButtonProfileShowPassword
             // 
             this.checkBoxButtonProfileShowPassword.AutoSize = true;
-            this.checkBoxButtonProfileShowPassword.Location = new System.Drawing.Point(1143, 299);
-            this.checkBoxButtonProfileShowPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxButtonProfileShowPassword.Location = new System.Drawing.Point(857, 243);
             this.checkBoxButtonProfileShowPassword.Name = "checkBoxButtonProfileShowPassword";
-            this.checkBoxButtonProfileShowPassword.Size = new System.Drawing.Size(73, 21);
+            this.checkBoxButtonProfileShowPassword.Size = new System.Drawing.Size(60, 17);
             this.checkBoxButtonProfileShowPassword.TabIndex = 20;
             this.checkBoxButtonProfileShowPassword.Text = "SHOW";
             this.checkBoxButtonProfileShowPassword.UseVisualStyleBackColor = true;
@@ -283,10 +275,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonProfileCancel
             // 
-            this.buttonProfileCancel.Location = new System.Drawing.Point(233, 590);
-            this.buttonProfileCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfileCancel.Location = new System.Drawing.Point(175, 479);
             this.buttonProfileCancel.Name = "buttonProfileCancel";
-            this.buttonProfileCancel.Size = new System.Drawing.Size(207, 58);
+            this.buttonProfileCancel.Size = new System.Drawing.Size(155, 47);
             this.buttonProfileCancel.TabIndex = 19;
             this.buttonProfileCancel.Text = "CANCEL";
             this.buttonProfileCancel.UseVisualStyleBackColor = true;
@@ -294,10 +285,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonProfileSave
             // 
-            this.buttonProfileSave.Location = new System.Drawing.Point(21, 590);
-            this.buttonProfileSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfileSave.Location = new System.Drawing.Point(16, 479);
             this.buttonProfileSave.Name = "buttonProfileSave";
-            this.buttonProfileSave.Size = new System.Drawing.Size(207, 58);
+            this.buttonProfileSave.Size = new System.Drawing.Size(155, 47);
             this.buttonProfileSave.TabIndex = 18;
             this.buttonProfileSave.Text = "SAVE";
             this.buttonProfileSave.UseVisualStyleBackColor = true;
@@ -306,21 +296,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxProfileAddress
             // 
             this.textBoxProfileAddress.BackColor = System.Drawing.Color.Silver;
-            this.textBoxProfileAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfileAddress.Location = new System.Drawing.Point(744, 491);
-            this.textBoxProfileAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfileAddress.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfileAddress.Location = new System.Drawing.Point(558, 399);
             this.textBoxProfileAddress.Name = "textBoxProfileAddress";
-            this.textBoxProfileAddress.Size = new System.Drawing.Size(503, 30);
+            this.textBoxProfileAddress.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfileAddress.TabIndex = 17;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(495, 495);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(371, 402);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 36);
+            this.label15.Size = new System.Drawing.Size(80, 28);
             this.label15.TabIndex = 16;
             this.label15.Text = "Address:";
             // 
@@ -328,21 +316,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.textBoxProfilePosition.BackColor = System.Drawing.Color.Silver;
             this.textBoxProfilePosition.Enabled = false;
-            this.textBoxProfilePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfilePosition.Location = new System.Drawing.Point(744, 421);
-            this.textBoxProfilePosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfilePosition.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfilePosition.Location = new System.Drawing.Point(558, 342);
             this.textBoxProfilePosition.Name = "textBoxProfilePosition";
-            this.textBoxProfilePosition.Size = new System.Drawing.Size(503, 30);
+            this.textBoxProfilePosition.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfilePosition.TabIndex = 15;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(495, 425);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(371, 345);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 36);
+            this.label14.Size = new System.Drawing.Size(76, 28);
             this.label14.TabIndex = 14;
             this.label14.Text = "Position:";
             // 
@@ -350,22 +336,20 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(495, 362);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(371, 294);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(209, 36);
+            this.label13.Size = new System.Drawing.Size(167, 28);
             this.label13.TabIndex = 12;
             this.label13.Text = "Office/Department:";
             // 
             // textBoxProfilePassword
             // 
             this.textBoxProfilePassword.BackColor = System.Drawing.Color.Silver;
-            this.textBoxProfilePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfilePassword.Location = new System.Drawing.Point(744, 295);
-            this.textBoxProfilePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfilePassword.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfilePassword.Location = new System.Drawing.Point(558, 240);
             this.textBoxProfilePassword.Name = "textBoxProfilePassword";
             this.textBoxProfilePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxProfilePassword.Size = new System.Drawing.Size(503, 30);
+            this.textBoxProfilePassword.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfilePassword.TabIndex = 11;
             this.textBoxProfilePassword.UseSystemPasswordChar = true;
             // 
@@ -373,82 +357,74 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(495, 299);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(371, 243);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 36);
+            this.label12.Size = new System.Drawing.Size(91, 28);
             this.label12.TabIndex = 10;
             this.label12.Text = "Password:";
             // 
             // textBoxProfileEmail
             // 
             this.textBoxProfileEmail.BackColor = System.Drawing.Color.Silver;
-            this.textBoxProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfileEmail.Location = new System.Drawing.Point(744, 234);
-            this.textBoxProfileEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfileEmail.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfileEmail.Location = new System.Drawing.Point(558, 190);
             this.textBoxProfileEmail.Name = "textBoxProfileEmail";
-            this.textBoxProfileEmail.Size = new System.Drawing.Size(503, 30);
+            this.textBoxProfileEmail.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfileEmail.TabIndex = 9;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(495, 238);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(371, 193);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 36);
+            this.label11.Size = new System.Drawing.Size(67, 28);
             this.label11.TabIndex = 8;
             this.label11.Text = "E-mail:";
             // 
             // textBoxProfilePhoneNumber
             // 
             this.textBoxProfilePhoneNumber.BackColor = System.Drawing.Color.Silver;
-            this.textBoxProfilePhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfilePhoneNumber.Location = new System.Drawing.Point(744, 166);
-            this.textBoxProfilePhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfilePhoneNumber.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfilePhoneNumber.Location = new System.Drawing.Point(558, 135);
             this.textBoxProfilePhoneNumber.Name = "textBoxProfilePhoneNumber";
-            this.textBoxProfilePhoneNumber.Size = new System.Drawing.Size(503, 30);
+            this.textBoxProfilePhoneNumber.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfilePhoneNumber.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(495, 170);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(371, 138);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(169, 36);
+            this.label10.Size = new System.Drawing.Size(132, 28);
             this.label10.TabIndex = 6;
             this.label10.Text = "Phone Number:";
             // 
             // textBoxProfileName
             // 
             this.textBoxProfileName.BackColor = System.Drawing.Color.Silver;
-            this.textBoxProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfileName.Location = new System.Drawing.Point(744, 105);
-            this.textBoxProfileName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfileName.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfileName.Location = new System.Drawing.Point(558, 85);
             this.textBoxProfileName.Name = "textBoxProfileName";
-            this.textBoxProfileName.Size = new System.Drawing.Size(503, 30);
+            this.textBoxProfileName.Size = new System.Drawing.Size(378, 31);
             this.textBoxProfileName.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(495, 108);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(371, 88);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 36);
+            this.label9.Size = new System.Drawing.Size(63, 28);
             this.label9.TabIndex = 4;
             this.label9.Text = "Name:";
             // 
             // buttonEditProfile
             // 
-            this.buttonEditProfile.Location = new System.Drawing.Point(21, 524);
-            this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditProfile.Location = new System.Drawing.Point(16, 426);
             this.buttonEditProfile.Name = "buttonEditProfile";
-            this.buttonEditProfile.Size = new System.Drawing.Size(419, 58);
+            this.buttonEditProfile.Size = new System.Drawing.Size(314, 47);
             this.buttonEditProfile.TabIndex = 3;
             this.buttonEditProfile.Text = "EDIT";
             this.buttonEditProfile.UseVisualStyleBackColor = true;
@@ -458,23 +434,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 37);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(15, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(377, 78);
+            this.label3.Size = new System.Drawing.Size(300, 62);
             this.label3.TabIndex = 1;
             this.label3.Text = "Account Profile";
-            // 
-            // pictureBoxProfileImage
-            // 
-            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
-            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
-            this.pictureBoxProfileImage.Location = new System.Drawing.Point(21, 114);
-            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
-            this.pictureBoxProfileImage.Size = new System.Drawing.Size(419, 402);
-            this.pictureBoxProfileImage.TabIndex = 2;
-            this.pictureBoxProfileImage.TabStop = false;
             // 
             // tabAssetRecords
             // 
@@ -483,31 +447,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
             this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.label2);
-            this.tabAssetRecords.Location = new System.Drawing.Point(4, 25);
-            this.tabAssetRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
-            this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabAssetRecords.Size = new System.Drawing.Size(1581, 869);
+            this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAssetRecords.Size = new System.Drawing.Size(1184, 704);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(35, 107);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1505, 12);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // buttonAssetRecordsNewAsset
             // 
-            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(915, 71);
-            this.buttonAssetRecordsNewAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(686, 58);
             this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
-            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(139, 28);
+            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(104, 23);
             this.buttonAssetRecordsNewAsset.TabIndex = 4;
             this.buttonAssetRecordsNewAsset.Text = "+ Add New";
             this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = true;
@@ -515,10 +467,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonAssetRecordsViewRecords
             // 
-            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(752, 71);
-            this.buttonAssetRecordsViewRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(564, 58);
             this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
-            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(139, 28);
+            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(104, 23);
             this.buttonAssetRecordsViewRecords.TabIndex = 3;
             this.buttonAssetRecordsViewRecords.Text = "Records";
             this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = true;
@@ -526,31 +477,28 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // panelAssetRecordsHandler
             // 
-            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(35, 132);
-            this.panelAssetRecordsHandler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(26, 107);
             this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
-            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1505, 727);
+            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1129, 591);
             this.panelAssetRecordsHandler.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 37);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(15, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(354, 78);
+            this.label2.Size = new System.Drawing.Size(283, 62);
             this.label2.TabIndex = 1;
             this.label2.Text = "Asset Records";
             // 
             // tabArchiveRecords
             // 
             this.tabArchiveRecords.Controls.Add(this.label4);
-            this.tabArchiveRecords.Location = new System.Drawing.Point(4, 25);
-            this.tabArchiveRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
-            this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabArchiveRecords.Size = new System.Drawing.Size(1581, 869);
+            this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
+            this.tabArchiveRecords.Size = new System.Drawing.Size(1184, 704);
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
@@ -559,21 +507,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(15, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(403, 78);
+            this.label4.Size = new System.Drawing.Size(321, 62);
             this.label4.TabIndex = 2;
             this.label4.Text = "Archive Records";
             // 
             // tabGenReport
             // 
             this.tabGenReport.Controls.Add(this.label5);
-            this.tabGenReport.Location = new System.Drawing.Point(4, 25);
-            this.tabGenReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGenReport.Location = new System.Drawing.Point(4, 22);
             this.tabGenReport.Name = "tabGenReport";
-            this.tabGenReport.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabGenReport.Size = new System.Drawing.Size(1581, 869);
+            this.tabGenReport.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGenReport.Size = new System.Drawing.Size(1184, 704);
             this.tabGenReport.TabIndex = 4;
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
@@ -582,10 +528,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 37);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(15, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(405, 78);
+            this.label5.Size = new System.Drawing.Size(324, 62);
             this.label5.TabIndex = 2;
             this.label5.Text = "Generate Report";
             // 
@@ -596,11 +541,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOthers.Controls.Add(this.buttonOperators);
             this.tabOthers.Controls.Add(this.labelTitleHandler);
             this.tabOthers.Controls.Add(this.buttonAssetCategories);
-            this.tabOthers.Location = new System.Drawing.Point(4, 25);
-            this.tabOthers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOthers.Location = new System.Drawing.Point(4, 22);
             this.tabOthers.Name = "tabOthers";
-            this.tabOthers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabOthers.Size = new System.Drawing.Size(1581, 869);
+            this.tabOthers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOthers.Size = new System.Drawing.Size(1184, 704);
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
@@ -610,11 +554,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.otherTabControl.Controls.Add(this.tabOperator);
             this.otherTabControl.Controls.Add(this.tabSupplier);
             this.otherTabControl.Controls.Add(this.tabAssetCategories);
-            this.otherTabControl.Location = new System.Drawing.Point(8, 94);
-            this.otherTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.otherTabControl.Location = new System.Drawing.Point(6, 76);
             this.otherTabControl.Name = "otherTabControl";
             this.otherTabControl.SelectedIndex = 0;
-            this.otherTabControl.Size = new System.Drawing.Size(1543, 766);
+            this.otherTabControl.Size = new System.Drawing.Size(1157, 622);
             this.otherTabControl.TabIndex = 0;
             // 
             // tabOperator
@@ -634,21 +577,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOperator.Controls.Add(this.textBoxOperatorFirstName);
             this.tabOperator.Controls.Add(this.dataGridViewOtherOperator);
             this.tabOperator.Controls.Add(this.panelOperatorHandler);
-            this.tabOperator.Location = new System.Drawing.Point(4, 25);
-            this.tabOperator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOperator.Location = new System.Drawing.Point(4, 22);
             this.tabOperator.Name = "tabOperator";
-            this.tabOperator.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabOperator.Size = new System.Drawing.Size(1535, 737);
+            this.tabOperator.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOperator.Size = new System.Drawing.Size(1149, 596);
             this.tabOperator.TabIndex = 1;
             this.tabOperator.Text = "tabOperator";
             this.tabOperator.UseVisualStyleBackColor = true;
             // 
             // buttonOperatorClearFields
             // 
-            this.buttonOperatorClearFields.Location = new System.Drawing.Point(1211, 676);
-            this.buttonOperatorClearFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOperatorClearFields.Location = new System.Drawing.Point(908, 549);
             this.buttonOperatorClearFields.Name = "buttonOperatorClearFields";
-            this.buttonOperatorClearFields.Size = new System.Drawing.Size(297, 36);
+            this.buttonOperatorClearFields.Size = new System.Drawing.Size(223, 29);
             this.buttonOperatorClearFields.TabIndex = 16;
             this.buttonOperatorClearFields.Text = "Clear Fields";
             this.buttonOperatorClearFields.UseVisualStyleBackColor = true;
@@ -657,110 +598,98 @@ namespace LGU_SV_Asset_Management_Sytem
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 690);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(6, 561);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(107, 17);
+            this.label23.Size = new System.Drawing.Size(81, 13);
             this.label23.TabIndex = 8;
             this.label23.Text = "Phone Number:";
             // 
             // textBoxOperatorOffice
             // 
-            this.textBoxOperatorOffice.Location = new System.Drawing.Point(456, 546);
-            this.textBoxOperatorOffice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorOffice.Location = new System.Drawing.Point(342, 444);
             this.textBoxOperatorOffice.Name = "textBoxOperatorOffice";
-            this.textBoxOperatorOffice.Size = new System.Drawing.Size(225, 22);
+            this.textBoxOperatorOffice.Size = new System.Drawing.Size(170, 20);
             this.textBoxOperatorOffice.TabIndex = 13;
             // 
             // richTextBoxOperatorAdress
             // 
-            this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(763, 546);
-            this.richTextBoxOperatorAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(572, 444);
             this.richTextBoxOperatorAdress.Name = "richTextBoxOperatorAdress";
-            this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(439, 168);
+            this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(330, 137);
             this.richTextBoxOperatorAdress.TabIndex = 11;
             this.richTextBoxOperatorAdress.Text = "";
             // 
             // textBoxOperatorPhoneNumber
             // 
-            this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(120, 687);
-            this.textBoxOperatorPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(90, 558);
             this.textBoxOperatorPhoneNumber.Name = "textBoxOperatorPhoneNumber";
-            this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(248, 22);
+            this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(187, 20);
             this.textBoxOperatorPhoneNumber.TabIndex = 7;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(691, 550);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Location = new System.Drawing.Point(518, 447);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(64, 17);
+            this.label24.Size = new System.Drawing.Size(48, 13);
             this.label24.TabIndex = 10;
             this.label24.Text = "Address:";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(8, 633);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(6, 514);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 17);
+            this.label22.Size = new System.Drawing.Size(61, 13);
             this.label22.TabIndex = 6;
             this.label22.Text = "Last Name:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(397, 550);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Location = new System.Drawing.Point(298, 447);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 17);
+            this.label26.Size = new System.Drawing.Size(38, 13);
             this.label26.TabIndex = 14;
             this.label26.Text = "Office:";
             // 
             // textBoxOperatorLastName
             // 
-            this.textBoxOperatorLastName.Location = new System.Drawing.Point(120, 629);
-            this.textBoxOperatorLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorLastName.Location = new System.Drawing.Point(90, 511);
             this.textBoxOperatorLastName.Name = "textBoxOperatorLastName";
-            this.textBoxOperatorLastName.Size = new System.Drawing.Size(248, 22);
+            this.textBoxOperatorLastName.Size = new System.Drawing.Size(187, 20);
             this.textBoxOperatorLastName.TabIndex = 5;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(8, 590);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(6, 479);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(94, 17);
+            this.label21.Size = new System.Drawing.Size(72, 13);
             this.label21.TabIndex = 4;
             this.label21.Text = "Middle Name:";
             // 
             // textBoxOperatorMiddleName
             // 
-            this.textBoxOperatorMiddleName.Location = new System.Drawing.Point(120, 586);
-            this.textBoxOperatorMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorMiddleName.Location = new System.Drawing.Point(90, 476);
             this.textBoxOperatorMiddleName.Name = "textBoxOperatorMiddleName";
-            this.textBoxOperatorMiddleName.Size = new System.Drawing.Size(248, 22);
+            this.textBoxOperatorMiddleName.Size = new System.Drawing.Size(187, 20);
             this.textBoxOperatorMiddleName.TabIndex = 3;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 546);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(6, 444);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(80, 17);
+            this.label20.Size = new System.Drawing.Size(60, 13);
             this.label20.TabIndex = 2;
             this.label20.Text = "First Name:";
             // 
             // textBoxOperatorFirstName
             // 
-            this.textBoxOperatorFirstName.Location = new System.Drawing.Point(120, 543);
-            this.textBoxOperatorFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorFirstName.Location = new System.Drawing.Point(90, 441);
             this.textBoxOperatorFirstName.Name = "textBoxOperatorFirstName";
-            this.textBoxOperatorFirstName.Size = new System.Drawing.Size(248, 22);
+            this.textBoxOperatorFirstName.Size = new System.Drawing.Size(187, 20);
             this.textBoxOperatorFirstName.TabIndex = 1;
             // 
             // dataGridViewOtherOperator
@@ -768,22 +697,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewOtherOperator.AllowUserToAddRows = false;
             this.dataGridViewOtherOperator.AllowUserToDeleteRows = false;
             this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOtherOperator.Location = new System.Drawing.Point(9, 11);
-            this.dataGridViewOtherOperator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewOtherOperator.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewOtherOperator.Name = "dataGridViewOtherOperator";
             this.dataGridViewOtherOperator.ReadOnly = true;
-            this.dataGridViewOtherOperator.RowHeadersWidth = 51;
-            this.dataGridViewOtherOperator.Size = new System.Drawing.Size(1515, 505);
+            this.dataGridViewOtherOperator.Size = new System.Drawing.Size(1136, 410);
             this.dataGridViewOtherOperator.TabIndex = 0;
             this.dataGridViewOtherOperator.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewOtherOperator_CellMouseClick);
             // 
             // panelOperatorHandler
             // 
             this.panelOperatorHandler.BackColor = System.Drawing.SystemColors.Control;
-            this.panelOperatorHandler.Location = new System.Drawing.Point(5, 5);
-            this.panelOperatorHandler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelOperatorHandler.Location = new System.Drawing.Point(4, 4);
             this.panelOperatorHandler.Name = "panelOperatorHandler";
-            this.panelOperatorHandler.Size = new System.Drawing.Size(1519, 729);
+            this.panelOperatorHandler.Size = new System.Drawing.Size(1139, 592);
             this.panelOperatorHandler.TabIndex = 12;
             // 
             // tabSupplier
@@ -800,21 +726,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSupplier.Controls.Add(this.textBoxSupplierName);
             this.tabSupplier.Controls.Add(this.dataGridViewSupplier);
             this.tabSupplier.Controls.Add(this.panelViewSuppliedAssetHolder);
-            this.tabSupplier.Location = new System.Drawing.Point(4, 25);
-            this.tabSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSupplier.Location = new System.Drawing.Point(4, 22);
             this.tabSupplier.Name = "tabSupplier";
-            this.tabSupplier.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabSupplier.Size = new System.Drawing.Size(1535, 737);
+            this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSupplier.Size = new System.Drawing.Size(1149, 596);
             this.tabSupplier.TabIndex = 0;
             this.tabSupplier.Text = "tabSupplier";
             this.tabSupplier.UseVisualStyleBackColor = true;
             // 
             // buttonSupplierClearFields
             // 
-            this.buttonSupplierClearFields.Location = new System.Drawing.Point(959, 665);
-            this.buttonSupplierClearFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierClearFields.Location = new System.Drawing.Point(719, 540);
             this.buttonSupplierClearFields.Name = "buttonSupplierClearFields";
-            this.buttonSupplierClearFields.Size = new System.Drawing.Size(167, 57);
+            this.buttonSupplierClearFields.Size = new System.Drawing.Size(125, 46);
             this.buttonSupplierClearFields.TabIndex = 11;
             this.buttonSupplierClearFields.Text = "Clear Fields";
             this.buttonSupplierClearFields.UseVisualStyleBackColor = true;
@@ -823,10 +747,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonSupplierViewSuppliedAssets
             // 
             this.buttonSupplierViewSuppliedAssets.Enabled = false;
-            this.buttonSupplierViewSuppliedAssets.Location = new System.Drawing.Point(12, 665);
-            this.buttonSupplierViewSuppliedAssets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierViewSuppliedAssets.Location = new System.Drawing.Point(9, 540);
             this.buttonSupplierViewSuppliedAssets.Name = "buttonSupplierViewSuppliedAssets";
-            this.buttonSupplierViewSuppliedAssets.Size = new System.Drawing.Size(312, 57);
+            this.buttonSupplierViewSuppliedAssets.Size = new System.Drawing.Size(234, 46);
             this.buttonSupplierViewSuppliedAssets.TabIndex = 10;
             this.buttonSupplierViewSuppliedAssets.Text = "View Supplied Asset";
             this.buttonSupplierViewSuppliedAssets.UseVisualStyleBackColor = true;
@@ -835,10 +758,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonSupplierUpdate
             // 
             this.buttonSupplierUpdate.Enabled = false;
-            this.buttonSupplierUpdate.Location = new System.Drawing.Point(1153, 666);
-            this.buttonSupplierUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierUpdate.Location = new System.Drawing.Point(865, 541);
             this.buttonSupplierUpdate.Name = "buttonSupplierUpdate";
-            this.buttonSupplierUpdate.Size = new System.Drawing.Size(167, 57);
+            this.buttonSupplierUpdate.Size = new System.Drawing.Size(125, 46);
             this.buttonSupplierUpdate.TabIndex = 8;
             this.buttonSupplierUpdate.Text = "Update";
             this.buttonSupplierUpdate.UseVisualStyleBackColor = true;
@@ -846,10 +768,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonSupplierAdd
             // 
-            this.buttonSupplierAdd.Location = new System.Drawing.Point(1343, 665);
-            this.buttonSupplierAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierAdd.Location = new System.Drawing.Point(1007, 540);
             this.buttonSupplierAdd.Name = "buttonSupplierAdd";
-            this.buttonSupplierAdd.Size = new System.Drawing.Size(167, 57);
+            this.buttonSupplierAdd.Size = new System.Drawing.Size(125, 46);
             this.buttonSupplierAdd.TabIndex = 7;
             this.buttonSupplierAdd.Text = "Add";
             this.buttonSupplierAdd.UseVisualStyleBackColor = true;
@@ -858,55 +779,49 @@ namespace LGU_SV_Asset_Management_Sytem
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(780, 436);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(585, 354);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(120, 17);
+            this.label17.Size = new System.Drawing.Size(89, 13);
             this.label17.TabIndex = 6;
             this.label17.Text = "Supplier Address:";
             // 
             // textBoxSupplierAddress
             // 
-            this.textBoxSupplierAddress.Location = new System.Drawing.Point(903, 432);
-            this.textBoxSupplierAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierAddress.Location = new System.Drawing.Point(677, 351);
             this.textBoxSupplierAddress.Name = "textBoxSupplierAddress";
-            this.textBoxSupplierAddress.Size = new System.Drawing.Size(260, 22);
+            this.textBoxSupplierAddress.Size = new System.Drawing.Size(196, 20);
             this.textBoxSupplierAddress.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(364, 436);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(273, 354);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 17);
+            this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 4;
             this.label6.Text = "Phone Number:";
             // 
             // textBoxSupplierPhoneNumber
             // 
-            this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(480, 432);
-            this.textBoxSupplierPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(360, 351);
             this.textBoxSupplierPhoneNumber.Name = "textBoxSupplierPhoneNumber";
-            this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(260, 22);
+            this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(196, 20);
             this.textBoxSupplierPhoneNumber.TabIndex = 3;
             // 
             // labelSupplierName
             // 
             this.labelSupplierName.AutoSize = true;
-            this.labelSupplierName.Location = new System.Drawing.Point(8, 436);
-            this.labelSupplierName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierName.Location = new System.Drawing.Point(6, 354);
             this.labelSupplierName.Name = "labelSupplierName";
-            this.labelSupplierName.Size = new System.Drawing.Size(49, 17);
+            this.labelSupplierName.Size = new System.Drawing.Size(38, 13);
             this.labelSupplierName.TabIndex = 2;
             this.labelSupplierName.Text = "Name:";
             // 
             // textBoxSupplierName
             // 
-            this.textBoxSupplierName.Location = new System.Drawing.Point(63, 432);
-            this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierName.Location = new System.Drawing.Point(47, 351);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
-            this.textBoxSupplierName.Size = new System.Drawing.Size(260, 22);
+            this.textBoxSupplierName.Size = new System.Drawing.Size(196, 20);
             this.textBoxSupplierName.TabIndex = 1;
             // 
             // dataGridViewSupplier
@@ -914,21 +829,18 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewSupplier.AllowUserToAddRows = false;
             this.dataGridViewSupplier.AllowUserToDeleteRows = false;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSupplier.Location = new System.Drawing.Point(9, 28);
-            this.dataGridViewSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewSupplier.Location = new System.Drawing.Point(7, 23);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.ReadOnly = true;
-            this.dataGridViewSupplier.RowHeadersWidth = 51;
-            this.dataGridViewSupplier.Size = new System.Drawing.Size(1515, 391);
+            this.dataGridViewSupplier.Size = new System.Drawing.Size(1136, 318);
             this.dataGridViewSupplier.TabIndex = 0;
             this.dataGridViewSupplier.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSupplier_CellMouseClick);
             // 
             // panelViewSuppliedAssetHolder
             // 
-            this.panelViewSuppliedAssetHolder.Location = new System.Drawing.Point(5, 5);
-            this.panelViewSuppliedAssetHolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelViewSuppliedAssetHolder.Location = new System.Drawing.Point(4, 4);
             this.panelViewSuppliedAssetHolder.Name = "panelViewSuppliedAssetHolder";
-            this.panelViewSuppliedAssetHolder.Size = new System.Drawing.Size(1523, 725);
+            this.panelViewSuppliedAssetHolder.Size = new System.Drawing.Size(1142, 589);
             this.panelViewSuppliedAssetHolder.TabIndex = 12;
             // 
             // tabAssetCategories
@@ -941,21 +853,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetCategories.Controls.Add(this.textBoxAssetCategoryName);
             this.tabAssetCategories.Controls.Add(this.richTextBoxAssetCategoryDesc);
             this.tabAssetCategories.Controls.Add(this.dataGridViewAssetCategories);
-            this.tabAssetCategories.Location = new System.Drawing.Point(4, 25);
-            this.tabAssetCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssetCategories.Location = new System.Drawing.Point(4, 22);
             this.tabAssetCategories.Name = "tabAssetCategories";
-            this.tabAssetCategories.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabAssetCategories.Size = new System.Drawing.Size(1535, 737);
+            this.tabAssetCategories.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAssetCategories.Size = new System.Drawing.Size(1149, 596);
             this.tabAssetCategories.TabIndex = 2;
             this.tabAssetCategories.Text = "tabAssetCategories";
             this.tabAssetCategories.UseVisualStyleBackColor = true;
             // 
             // buttonAssetCategoryClearFields
             // 
-            this.buttonAssetCategoryClearFields.Location = new System.Drawing.Point(781, 667);
-            this.buttonAssetCategoryClearFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategoryClearFields.Location = new System.Drawing.Point(586, 542);
             this.buttonAssetCategoryClearFields.Name = "buttonAssetCategoryClearFields";
-            this.buttonAssetCategoryClearFields.Size = new System.Drawing.Size(228, 48);
+            this.buttonAssetCategoryClearFields.Size = new System.Drawing.Size(171, 39);
             this.buttonAssetCategoryClearFields.TabIndex = 8;
             this.buttonAssetCategoryClearFields.Text = "Clear Fields";
             this.buttonAssetCategoryClearFields.UseVisualStyleBackColor = true;
@@ -963,10 +873,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonAssetCategoryUpdate
             // 
-            this.buttonAssetCategoryUpdate.Location = new System.Drawing.Point(1035, 667);
-            this.buttonAssetCategoryUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategoryUpdate.Location = new System.Drawing.Point(776, 542);
             this.buttonAssetCategoryUpdate.Name = "buttonAssetCategoryUpdate";
-            this.buttonAssetCategoryUpdate.Size = new System.Drawing.Size(228, 48);
+            this.buttonAssetCategoryUpdate.Size = new System.Drawing.Size(171, 39);
             this.buttonAssetCategoryUpdate.TabIndex = 6;
             this.buttonAssetCategoryUpdate.Text = "Update";
             this.buttonAssetCategoryUpdate.UseVisualStyleBackColor = true;
@@ -974,10 +883,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonAssetCategoryAdd
             // 
-            this.buttonAssetCategoryAdd.Location = new System.Drawing.Point(1284, 667);
-            this.buttonAssetCategoryAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategoryAdd.Location = new System.Drawing.Point(963, 542);
             this.buttonAssetCategoryAdd.Name = "buttonAssetCategoryAdd";
-            this.buttonAssetCategoryAdd.Size = new System.Drawing.Size(228, 48);
+            this.buttonAssetCategoryAdd.Size = new System.Drawing.Size(171, 39);
             this.buttonAssetCategoryAdd.TabIndex = 5;
             this.buttonAssetCategoryAdd.Text = "Add";
             this.buttonAssetCategoryAdd.UseVisualStyleBackColor = true;
@@ -986,37 +894,33 @@ namespace LGU_SV_Asset_Management_Sytem
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(76, 519);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(57, 422);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 17);
+            this.label19.Size = new System.Drawing.Size(63, 13);
             this.label19.TabIndex = 4;
             this.label19.Text = "Description:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(76, 476);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(57, 387);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(49, 17);
+            this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 3;
             this.label18.Text = "Name:";
             // 
             // textBoxAssetCategoryName
             // 
-            this.textBoxAssetCategoryName.Location = new System.Drawing.Point(168, 473);
-            this.textBoxAssetCategoryName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAssetCategoryName.Location = new System.Drawing.Point(126, 384);
             this.textBoxAssetCategoryName.Name = "textBoxAssetCategoryName";
-            this.textBoxAssetCategoryName.Size = new System.Drawing.Size(543, 22);
+            this.textBoxAssetCategoryName.Size = new System.Drawing.Size(408, 20);
             this.textBoxAssetCategoryName.TabIndex = 2;
             // 
             // richTextBoxAssetCategoryDesc
             // 
-            this.richTextBoxAssetCategoryDesc.Location = new System.Drawing.Point(168, 519);
-            this.richTextBoxAssetCategoryDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBoxAssetCategoryDesc.Location = new System.Drawing.Point(126, 422);
             this.richTextBoxAssetCategoryDesc.Name = "richTextBoxAssetCategoryDesc";
-            this.richTextBoxAssetCategoryDesc.Size = new System.Drawing.Size(543, 130);
+            this.richTextBoxAssetCategoryDesc.Size = new System.Drawing.Size(408, 106);
             this.richTextBoxAssetCategoryDesc.TabIndex = 1;
             this.richTextBoxAssetCategoryDesc.Text = "";
             // 
@@ -1025,21 +929,18 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewAssetCategories.AllowUserToAddRows = false;
             this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
             this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAssetCategories.Location = new System.Drawing.Point(9, 11);
-            this.dataGridViewAssetCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
             this.dataGridViewAssetCategories.ReadOnly = true;
-            this.dataGridViewAssetCategories.RowHeadersWidth = 51;
-            this.dataGridViewAssetCategories.Size = new System.Drawing.Size(1515, 430);
+            this.dataGridViewAssetCategories.Size = new System.Drawing.Size(1136, 349);
             this.dataGridViewAssetCategories.TabIndex = 0;
             this.dataGridViewAssetCategories.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetCategories_CellMouseClick);
             // 
             // buttonSupplier
             // 
-            this.buttonSupplier.Location = new System.Drawing.Point(1185, 50);
-            this.buttonSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplier.Location = new System.Drawing.Point(889, 41);
             this.buttonSupplier.Name = "buttonSupplier";
-            this.buttonSupplier.Size = new System.Drawing.Size(167, 36);
+            this.buttonSupplier.Size = new System.Drawing.Size(125, 29);
             this.buttonSupplier.TabIndex = 5;
             this.buttonSupplier.Text = "Supplier";
             this.buttonSupplier.UseVisualStyleBackColor = true;
@@ -1047,10 +948,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonOperators
             // 
-            this.buttonOperators.Location = new System.Drawing.Point(996, 50);
-            this.buttonOperators.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOperators.Location = new System.Drawing.Point(747, 41);
             this.buttonOperators.Name = "buttonOperators";
-            this.buttonOperators.Size = new System.Drawing.Size(167, 36);
+            this.buttonOperators.Size = new System.Drawing.Size(125, 29);
             this.buttonOperators.TabIndex = 4;
             this.buttonOperators.Text = "Employees";
             this.buttonOperators.UseVisualStyleBackColor = true;
@@ -1060,19 +960,17 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.labelTitleHandler.AutoSize = true;
             this.labelTitleHandler.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleHandler.Location = new System.Drawing.Point(8, 25);
-            this.labelTitleHandler.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitleHandler.Location = new System.Drawing.Point(6, 20);
             this.labelTitleHandler.Name = "labelTitleHandler";
-            this.labelTitleHandler.Size = new System.Drawing.Size(304, 78);
+            this.labelTitleHandler.Size = new System.Drawing.Size(244, 62);
             this.labelTitleHandler.TabIndex = 3;
             this.labelTitleHandler.Text = "LABEL_TITLE";
             // 
             // buttonAssetCategories
             // 
-            this.buttonAssetCategories.Location = new System.Drawing.Point(1375, 50);
-            this.buttonAssetCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategories.Location = new System.Drawing.Point(1031, 41);
             this.buttonAssetCategories.Name = "buttonAssetCategories";
-            this.buttonAssetCategories.Size = new System.Drawing.Size(167, 36);
+            this.buttonAssetCategories.Size = new System.Drawing.Size(125, 29);
             this.buttonAssetCategories.TabIndex = 1;
             this.buttonAssetCategories.Text = "Asset Categories";
             this.buttonAssetCategories.UseVisualStyleBackColor = true;
@@ -1081,11 +979,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // tabAbout
             // 
             this.tabAbout.Controls.Add(this.label7);
-            this.tabAbout.Location = new System.Drawing.Point(4, 25);
-            this.tabAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
-            this.tabAbout.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabAbout.Size = new System.Drawing.Size(1581, 869);
+            this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAbout.Size = new System.Drawing.Size(1184, 704);
             this.tabAbout.TabIndex = 6;
             this.tabAbout.Text = "tabPage7";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -1094,21 +991,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 37);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(15, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 78);
+            this.label7.Size = new System.Drawing.Size(137, 62);
             this.label7.TabIndex = 2;
             this.label7.Text = "About";
             // 
             // tabSettings
             // 
             this.tabSettings.Controls.Add(this.label8);
-            this.tabSettings.Location = new System.Drawing.Point(4, 25);
-            this.tabSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSettings.Location = new System.Drawing.Point(4, 22);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabSettings.Size = new System.Drawing.Size(1581, 869);
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSettings.Size = new System.Drawing.Size(1184, 704);
             this.tabSettings.TabIndex = 7;
             this.tabSettings.Text = "tabPage8";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -1117,21 +1012,19 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 37);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(15, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(221, 78);
+            this.label8.Size = new System.Drawing.Size(177, 62);
             this.label8.TabIndex = 2;
             this.label8.Text = "Settings";
             // 
             // tabTransaction
             // 
             this.tabTransaction.Controls.Add(this.label25);
-            this.tabTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tabTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabTransaction.Name = "tabTransaction";
-            this.tabTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabTransaction.Size = new System.Drawing.Size(1581, 869);
+            this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTransaction.Size = new System.Drawing.Size(1184, 704);
             this.tabTransaction.TabIndex = 8;
             this.tabTransaction.Text = "tabPage1";
             this.tabTransaction.UseVisualStyleBackColor = true;
@@ -1140,10 +1033,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(8, 18);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Location = new System.Drawing.Point(6, 15);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(309, 78);
+            this.label25.Size = new System.Drawing.Size(246, 62);
             this.label25.TabIndex = 3;
             this.label25.Text = "Transaction";
             // 
@@ -1167,11 +1059,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
             this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
-            this.groupBoxSide.Location = new System.Drawing.Point(-4, 52);
-            this.groupBoxSide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSide.Location = new System.Drawing.Point(-3, 42);
             this.groupBoxSide.Name = "groupBoxSide";
-            this.groupBoxSide.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxSide.Size = new System.Drawing.Size(107, 918);
+            this.groupBoxSide.Size = new System.Drawing.Size(80, 746);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
             // 
@@ -1179,10 +1069,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.labelSideBarMisc.AutoSize = true;
             this.labelSideBarMisc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarMisc.Location = new System.Drawing.Point(88, 603);
-            this.labelSideBarMisc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSideBarMisc.Location = new System.Drawing.Point(66, 490);
             this.labelSideBarMisc.Name = "labelSideBarMisc";
-            this.labelSideBarMisc.Size = new System.Drawing.Size(95, 13);
+            this.labelSideBarMisc.Size = new System.Drawing.Size(71, 9);
             this.labelSideBarMisc.TabIndex = 28;
             this.labelSideBarMisc.Text = "MISCELLANEOUS";
             // 
@@ -1190,10 +1079,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.labelSideBarTransc.AutoSize = true;
             this.labelSideBarTransc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarTransc.Location = new System.Drawing.Point(88, 519);
-            this.labelSideBarTransc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSideBarTransc.Location = new System.Drawing.Point(66, 422);
             this.labelSideBarTransc.Name = "labelSideBarTransc";
-            this.labelSideBarTransc.Size = new System.Drawing.Size(77, 13);
+            this.labelSideBarTransc.Size = new System.Drawing.Size(62, 9);
             this.labelSideBarTransc.TabIndex = 27;
             this.labelSideBarTransc.Text = "TRANSACTION";
             // 
@@ -1201,10 +1089,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.labelSideBarGenRep.AutoSize = true;
             this.labelSideBarGenRep.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarGenRep.Location = new System.Drawing.Point(88, 432);
-            this.labelSideBarGenRep.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSideBarGenRep.Location = new System.Drawing.Point(66, 351);
             this.labelSideBarGenRep.Name = "labelSideBarGenRep";
-            this.labelSideBarGenRep.Size = new System.Drawing.Size(113, 13);
+            this.labelSideBarGenRep.Size = new System.Drawing.Size(88, 9);
             this.labelSideBarGenRep.TabIndex = 26;
             this.labelSideBarGenRep.Text = "GENERATE REPORTS";
             // 
@@ -1212,10 +1099,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.labelSideBarArchRec.AutoSize = true;
             this.labelSideBarArchRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarArchRec.Location = new System.Drawing.Point(88, 354);
-            this.labelSideBarArchRec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSideBarArchRec.Location = new System.Drawing.Point(66, 288);
             this.labelSideBarArchRec.Name = "labelSideBarArchRec";
-            this.labelSideBarArchRec.Size = new System.Drawing.Size(106, 13);
+            this.labelSideBarArchRec.Size = new System.Drawing.Size(82, 9);
             this.labelSideBarArchRec.TabIndex = 25;
             this.labelSideBarArchRec.Text = "ARCHIVE RECORDS";
             // 
@@ -1223,29 +1109,26 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.labelSideBarAssetRe.AutoSize = true;
             this.labelSideBarAssetRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarAssetRe.Location = new System.Drawing.Point(91, 278);
-            this.labelSideBarAssetRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSideBarAssetRe.Location = new System.Drawing.Point(68, 226);
             this.labelSideBarAssetRe.Name = "labelSideBarAssetRe";
-            this.labelSideBarAssetRe.Size = new System.Drawing.Size(94, 13);
+            this.labelSideBarAssetRe.Size = new System.Drawing.Size(72, 9);
             this.labelSideBarAssetRe.TabIndex = 24;
             this.labelSideBarAssetRe.Text = "ASSET RECORDS";
             // 
             // labelSideDashboard
             // 
             this.labelSideDashboard.AutoSize = true;
-            this.labelSideDashboard.Location = new System.Drawing.Point(87, 198);
-            this.labelSideDashboard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSideDashboard.Location = new System.Drawing.Point(65, 161);
             this.labelSideDashboard.Name = "labelSideDashboard";
-            this.labelSideDashboard.Size = new System.Drawing.Size(95, 17);
+            this.labelSideDashboard.Size = new System.Drawing.Size(75, 13);
             this.labelSideDashboard.TabIndex = 23;
             this.labelSideDashboard.Text = "DASHBOARD";
             // 
             // buttonTransaction
             // 
-            this.buttonTransaction.Location = new System.Drawing.Point(19, 495);
-            this.buttonTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTransaction.Location = new System.Drawing.Point(14, 402);
             this.buttonTransaction.Name = "buttonTransaction";
-            this.buttonTransaction.Size = new System.Drawing.Size(65, 55);
+            this.buttonTransaction.Size = new System.Drawing.Size(49, 45);
             this.buttonTransaction.TabIndex = 22;
             this.buttonTransaction.Text = "TRNSC";
             this.buttonTransaction.UseVisualStyleBackColor = true;
@@ -1253,10 +1136,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonHamburger
             // 
-            this.buttonHamburger.Location = new System.Drawing.Point(20, 18);
-            this.buttonHamburger.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonHamburger.Location = new System.Drawing.Point(15, 15);
             this.buttonHamburger.Name = "buttonHamburger";
-            this.buttonHamburger.Size = new System.Drawing.Size(65, 76);
+            this.buttonHamburger.Size = new System.Drawing.Size(49, 62);
             this.buttonHamburger.TabIndex = 21;
             this.buttonHamburger.Text = "-\r\n-\r\n-";
             this.buttonHamburger.UseVisualStyleBackColor = true;
@@ -1264,10 +1146,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonAbout
             // 
-            this.buttonAbout.Location = new System.Drawing.Point(20, 770);
-            this.buttonAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAbout.Location = new System.Drawing.Point(15, 626);
             this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(65, 34);
+            this.buttonAbout.Size = new System.Drawing.Size(49, 28);
             this.buttonAbout.TabIndex = 18;
             this.buttonAbout.Text = "AB";
             this.buttonAbout.UseVisualStyleBackColor = true;
@@ -1275,10 +1156,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonProfile
             // 
-            this.buttonProfile.Location = new System.Drawing.Point(93, 18);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfile.Location = new System.Drawing.Point(70, 15);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(85, 76);
+            this.buttonProfile.Size = new System.Drawing.Size(64, 62);
             this.buttonProfile.TabIndex = 10;
             this.buttonProfile.Text = "-";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1288,10 +1168,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonSettings
             // 
-            this.buttonSettings.Location = new System.Drawing.Point(20, 812);
-            this.buttonSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSettings.Location = new System.Drawing.Point(15, 660);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(65, 34);
+            this.buttonSettings.Size = new System.Drawing.Size(49, 28);
             this.buttonSettings.TabIndex = 17;
             this.buttonSettings.Text = "STT";
             this.buttonSettings.UseVisualStyleBackColor = true;
@@ -1299,10 +1178,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(20, 854);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogout.Location = new System.Drawing.Point(15, 694);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(65, 34);
+            this.buttonLogout.Size = new System.Drawing.Size(49, 28);
             this.buttonLogout.TabIndex = 16;
             this.buttonLogout.Text = "LGO";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -1310,10 +1188,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonOthers
             // 
-            this.buttonOthers.Location = new System.Drawing.Point(19, 578);
-            this.buttonOthers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOthers.Location = new System.Drawing.Point(14, 470);
             this.buttonOthers.Name = "buttonOthers";
-            this.buttonOthers.Size = new System.Drawing.Size(65, 55);
+            this.buttonOthers.Size = new System.Drawing.Size(49, 45);
             this.buttonOthers.TabIndex = 15;
             this.buttonOthers.Text = "MISC";
             this.buttonOthers.UseVisualStyleBackColor = true;
@@ -1321,10 +1198,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonGenerateReports
             // 
-            this.buttonGenerateReports.Location = new System.Drawing.Point(20, 407);
-            this.buttonGenerateReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonGenerateReports.Location = new System.Drawing.Point(15, 331);
             this.buttonGenerateReports.Name = "buttonGenerateReports";
-            this.buttonGenerateReports.Size = new System.Drawing.Size(65, 55);
+            this.buttonGenerateReports.Size = new System.Drawing.Size(49, 45);
             this.buttonGenerateReports.TabIndex = 14;
             this.buttonGenerateReports.Text = "GR";
             this.buttonGenerateReports.UseVisualStyleBackColor = true;
@@ -1332,10 +1208,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonArchiveRecords
             // 
-            this.buttonArchiveRecords.Location = new System.Drawing.Point(20, 330);
-            this.buttonArchiveRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonArchiveRecords.Location = new System.Drawing.Point(15, 268);
             this.buttonArchiveRecords.Name = "buttonArchiveRecords";
-            this.buttonArchiveRecords.Size = new System.Drawing.Size(65, 55);
+            this.buttonArchiveRecords.Size = new System.Drawing.Size(49, 45);
             this.buttonArchiveRecords.TabIndex = 13;
             this.buttonArchiveRecords.Text = "ACR";
             this.buttonArchiveRecords.UseVisualStyleBackColor = true;
@@ -1343,10 +1218,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonAssetRecords
             // 
-            this.buttonAssetRecords.Location = new System.Drawing.Point(20, 254);
-            this.buttonAssetRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetRecords.Location = new System.Drawing.Point(15, 206);
             this.buttonAssetRecords.Name = "buttonAssetRecords";
-            this.buttonAssetRecords.Size = new System.Drawing.Size(65, 55);
+            this.buttonAssetRecords.Size = new System.Drawing.Size(49, 45);
             this.buttonAssetRecords.TabIndex = 12;
             this.buttonAssetRecords.Text = "AR";
             this.buttonAssetRecords.UseVisualStyleBackColor = true;
@@ -1354,10 +1228,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonDashboard
             // 
-            this.buttonDashboard.Location = new System.Drawing.Point(20, 178);
-            this.buttonDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDashboard.Location = new System.Drawing.Point(15, 145);
             this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(65, 55);
+            this.buttonDashboard.Size = new System.Drawing.Size(49, 45);
             this.buttonDashboard.TabIndex = 11;
             this.buttonDashboard.Text = "D";
             this.buttonDashboard.UseVisualStyleBackColor = true;
@@ -1365,37 +1238,21 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // panelBoxTop
             // 
-            this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelBoxTop.Controls.Add(this.pictureBox1);
             this.panelBoxTop.Controls.Add(this.label16);
             this.panelBoxTop.Controls.Add(this.buttonMasterExit);
-            this.panelBoxTop.Location = new System.Drawing.Point(-12, -9);
-            this.panelBoxTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBoxTop.Location = new System.Drawing.Point(-9, -7);
             this.panelBoxTop.Name = "panelBoxTop";
-            this.panelBoxTop.Size = new System.Drawing.Size(1727, 74);
+            this.panelBoxTop.Size = new System.Drawing.Size(1295, 60);
             this.panelBoxTop.TabIndex = 3;
-            this.panelBoxTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBoxTop_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 53);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Poppins", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(93, 21);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(70, 7);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(194, 48);
             this.label16.TabIndex = 4;
@@ -1403,32 +1260,54 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // buttonMasterExit
             // 
-            this.buttonMasterExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonMasterExit.FlatAppearance.BorderSize = 0;
-            this.buttonMasterExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMasterExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMasterExit.ForeColor = System.Drawing.Color.White;
-            this.buttonMasterExit.Location = new System.Drawing.Point(1651, 17);
-            this.buttonMasterExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 14);
             this.buttonMasterExit.Name = "buttonMasterExit";
-            this.buttonMasterExit.Size = new System.Drawing.Size(48, 42);
+            this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
             this.buttonMasterExit.TabIndex = 3;
             this.buttonMasterExit.Text = "X";
-            this.buttonMasterExit.UseVisualStyleBackColor = false;
+            this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxProfileImage
+            // 
+            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
+            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(16, 93);
+            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
+            this.pictureBoxProfileImage.TabIndex = 2;
+            this.pictureBoxProfileImage.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 87);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1707, 985);
+            this.ClientSize = new System.Drawing.Size(1280, 800);
             this.ControlBox = false;
             this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.groupBoxSide);
             this.Controls.Add(this.panelTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -1437,10 +1316,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabDashboard.PerformLayout();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabArchiveRecords.ResumeLayout(false);
             this.tabArchiveRecords.PerformLayout();
             this.tabGenReport.ResumeLayout(false);
@@ -1468,6 +1345,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.ResumeLayout(false);
             this.panelBoxTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
