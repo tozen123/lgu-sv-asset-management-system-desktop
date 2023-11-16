@@ -176,7 +176,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Controls.Add(this.tabTransaction);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.panelTabControl.Location = new System.Drawing.Point(109, 71);
-            this.panelTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
@@ -188,9 +188,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabDashboard.Controls.Add(this.panelTotalAsset);
             this.tabDashboard.Controls.Add(this.label1);
             this.tabDashboard.Location = new System.Drawing.Point(4, 25);
-            this.tabDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(4);
             this.tabDashboard.Size = new System.Drawing.Size(1581, 869);
             this.tabDashboard.TabIndex = 1;
             this.tabDashboard.Text = "tabPage2";
@@ -199,7 +199,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // panelTotalAsset
             // 
             this.panelTotalAsset.Location = new System.Drawing.Point(35, 102);
-            this.panelTotalAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTotalAsset.Margin = new System.Windows.Forms.Padding(4);
             this.panelTotalAsset.Name = "panelTotalAsset";
             this.panelTotalAsset.Size = new System.Drawing.Size(661, 306);
             this.panelTotalAsset.TabIndex = 2;
@@ -239,9 +239,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabProfile.Controls.Add(this.label3);
             this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
             this.tabProfile.Location = new System.Drawing.Point(4, 25);
-            this.tabProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProfile.Padding = new System.Windows.Forms.Padding(4);
             this.tabProfile.Size = new System.Drawing.Size(1581, 869);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "tabPage1";
@@ -250,7 +250,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonProfileUploadImage
             // 
             this.buttonProfileUploadImage.Location = new System.Drawing.Point(355, 457);
-            this.buttonProfileUploadImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfileUploadImage.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProfileUploadImage.Name = "buttonProfileUploadImage";
             this.buttonProfileUploadImage.Size = new System.Drawing.Size(65, 49);
             this.buttonProfileUploadImage.TabIndex = 22;
@@ -264,7 +264,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.comboBoxProfileDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProfileDept.FormattingEnabled = true;
             this.comboBoxProfileDept.Location = new System.Drawing.Point(744, 358);
-            this.comboBoxProfileDept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxProfileDept.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProfileDept.Name = "comboBoxProfileDept";
             this.comboBoxProfileDept.Size = new System.Drawing.Size(503, 33);
             this.comboBoxProfileDept.TabIndex = 21;
@@ -273,7 +273,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.checkBoxButtonProfileShowPassword.AutoSize = true;
             this.checkBoxButtonProfileShowPassword.Location = new System.Drawing.Point(1143, 299);
-            this.checkBoxButtonProfileShowPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxButtonProfileShowPassword.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxButtonProfileShowPassword.Name = "checkBoxButtonProfileShowPassword";
             this.checkBoxButtonProfileShowPassword.Size = new System.Drawing.Size(73, 21);
             this.checkBoxButtonProfileShowPassword.TabIndex = 20;
@@ -284,7 +284,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonProfileCancel
             // 
             this.buttonProfileCancel.Location = new System.Drawing.Point(233, 590);
-            this.buttonProfileCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfileCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProfileCancel.Name = "buttonProfileCancel";
             this.buttonProfileCancel.Size = new System.Drawing.Size(207, 58);
             this.buttonProfileCancel.TabIndex = 19;
@@ -295,7 +295,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonProfileSave
             // 
             this.buttonProfileSave.Location = new System.Drawing.Point(21, 590);
-            this.buttonProfileSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfileSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProfileSave.Name = "buttonProfileSave";
             this.buttonProfileSave.Size = new System.Drawing.Size(207, 58);
             this.buttonProfileSave.TabIndex = 18;
@@ -308,7 +308,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfileAddress.BackColor = System.Drawing.Color.Silver;
             this.textBoxProfileAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfileAddress.Location = new System.Drawing.Point(744, 491);
-            this.textBoxProfileAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfileAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProfileAddress.Name = "textBoxProfileAddress";
             this.textBoxProfileAddress.Size = new System.Drawing.Size(503, 30);
             this.textBoxProfileAddress.TabIndex = 17;
@@ -330,7 +330,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfilePosition.Enabled = false;
             this.textBoxProfilePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfilePosition.Location = new System.Drawing.Point(744, 421);
-            this.textBoxProfilePosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfilePosition.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProfilePosition.Name = "textBoxProfilePosition";
             this.textBoxProfilePosition.Size = new System.Drawing.Size(503, 30);
             this.textBoxProfilePosition.TabIndex = 15;
@@ -362,7 +362,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfilePassword.BackColor = System.Drawing.Color.Silver;
             this.textBoxProfilePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfilePassword.Location = new System.Drawing.Point(744, 295);
-            this.textBoxProfilePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfilePassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProfilePassword.Name = "textBoxProfilePassword";
             this.textBoxProfilePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxProfilePassword.Size = new System.Drawing.Size(503, 30);
@@ -385,7 +385,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfileEmail.BackColor = System.Drawing.Color.Silver;
             this.textBoxProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfileEmail.Location = new System.Drawing.Point(744, 234);
-            this.textBoxProfileEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfileEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProfileEmail.Name = "textBoxProfileEmail";
             this.textBoxProfileEmail.Size = new System.Drawing.Size(503, 30);
             this.textBoxProfileEmail.TabIndex = 9;
@@ -406,7 +406,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfilePhoneNumber.BackColor = System.Drawing.Color.Silver;
             this.textBoxProfilePhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfilePhoneNumber.Location = new System.Drawing.Point(744, 166);
-            this.textBoxProfilePhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfilePhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProfilePhoneNumber.Name = "textBoxProfilePhoneNumber";
             this.textBoxProfilePhoneNumber.Size = new System.Drawing.Size(503, 30);
             this.textBoxProfilePhoneNumber.TabIndex = 7;
@@ -427,7 +427,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxProfileName.BackColor = System.Drawing.Color.Silver;
             this.textBoxProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProfileName.Location = new System.Drawing.Point(744, 105);
-            this.textBoxProfileName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProfileName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProfileName.Name = "textBoxProfileName";
             this.textBoxProfileName.Size = new System.Drawing.Size(503, 30);
             this.textBoxProfileName.TabIndex = 5;
@@ -446,7 +446,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonEditProfile
             // 
             this.buttonEditProfile.Location = new System.Drawing.Point(21, 524);
-            this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditProfile.Name = "buttonEditProfile";
             this.buttonEditProfile.Size = new System.Drawing.Size(419, 58);
             this.buttonEditProfile.TabIndex = 3;
@@ -470,7 +470,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
             this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
             this.pictureBoxProfileImage.Location = new System.Drawing.Point(21, 114);
-            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
             this.pictureBoxProfileImage.Size = new System.Drawing.Size(419, 402);
             this.pictureBoxProfileImage.TabIndex = 2;
@@ -484,9 +484,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.label2);
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 25);
-            this.tabAssetRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssetRecords.Margin = new System.Windows.Forms.Padding(4);
             this.tabAssetRecords.Name = "tabAssetRecords";
-            this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(4);
             this.tabAssetRecords.Size = new System.Drawing.Size(1581, 869);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
@@ -496,7 +496,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
             this.pictureBox2.Location = new System.Drawing.Point(35, 107);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1505, 12);
             this.pictureBox2.TabIndex = 5;
@@ -505,7 +505,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetRecordsNewAsset
             // 
             this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(915, 71);
-            this.buttonAssetRecordsNewAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetRecordsNewAsset.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
             this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(139, 28);
             this.buttonAssetRecordsNewAsset.TabIndex = 4;
@@ -516,7 +516,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetRecordsViewRecords
             // 
             this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(752, 71);
-            this.buttonAssetRecordsViewRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetRecordsViewRecords.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
             this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(139, 28);
             this.buttonAssetRecordsViewRecords.TabIndex = 3;
@@ -527,7 +527,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // panelAssetRecordsHandler
             // 
             this.panelAssetRecordsHandler.Location = new System.Drawing.Point(35, 132);
-            this.panelAssetRecordsHandler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAssetRecordsHandler.Margin = new System.Windows.Forms.Padding(4);
             this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
             this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1505, 727);
             this.panelAssetRecordsHandler.TabIndex = 2;
@@ -547,9 +547,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.tabArchiveRecords.Controls.Add(this.label4);
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 25);
-            this.tabArchiveRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabArchiveRecords.Margin = new System.Windows.Forms.Padding(4);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
-            this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(4);
             this.tabArchiveRecords.Size = new System.Drawing.Size(1581, 869);
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
@@ -570,9 +570,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.tabGenReport.Controls.Add(this.label5);
             this.tabGenReport.Location = new System.Drawing.Point(4, 25);
-            this.tabGenReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGenReport.Margin = new System.Windows.Forms.Padding(4);
             this.tabGenReport.Name = "tabGenReport";
-            this.tabGenReport.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGenReport.Padding = new System.Windows.Forms.Padding(4);
             this.tabGenReport.Size = new System.Drawing.Size(1581, 869);
             this.tabGenReport.TabIndex = 4;
             this.tabGenReport.Text = "tabPage5";
@@ -597,9 +597,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOthers.Controls.Add(this.labelTitleHandler);
             this.tabOthers.Controls.Add(this.buttonAssetCategories);
             this.tabOthers.Location = new System.Drawing.Point(4, 25);
-            this.tabOthers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOthers.Margin = new System.Windows.Forms.Padding(4);
             this.tabOthers.Name = "tabOthers";
-            this.tabOthers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOthers.Padding = new System.Windows.Forms.Padding(4);
             this.tabOthers.Size = new System.Drawing.Size(1581, 869);
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
@@ -611,7 +611,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.otherTabControl.Controls.Add(this.tabSupplier);
             this.otherTabControl.Controls.Add(this.tabAssetCategories);
             this.otherTabControl.Location = new System.Drawing.Point(8, 94);
-            this.otherTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.otherTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.otherTabControl.Name = "otherTabControl";
             this.otherTabControl.SelectedIndex = 0;
             this.otherTabControl.Size = new System.Drawing.Size(1543, 766);
@@ -635,9 +635,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOperator.Controls.Add(this.dataGridViewOtherOperator);
             this.tabOperator.Controls.Add(this.panelOperatorHandler);
             this.tabOperator.Location = new System.Drawing.Point(4, 25);
-            this.tabOperator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOperator.Margin = new System.Windows.Forms.Padding(4);
             this.tabOperator.Name = "tabOperator";
-            this.tabOperator.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOperator.Padding = new System.Windows.Forms.Padding(4);
             this.tabOperator.Size = new System.Drawing.Size(1535, 737);
             this.tabOperator.TabIndex = 1;
             this.tabOperator.Text = "tabOperator";
@@ -646,7 +646,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonOperatorClearFields
             // 
             this.buttonOperatorClearFields.Location = new System.Drawing.Point(1211, 676);
-            this.buttonOperatorClearFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOperatorClearFields.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOperatorClearFields.Name = "buttonOperatorClearFields";
             this.buttonOperatorClearFields.Size = new System.Drawing.Size(297, 36);
             this.buttonOperatorClearFields.TabIndex = 16;
@@ -667,7 +667,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxOperatorOffice
             // 
             this.textBoxOperatorOffice.Location = new System.Drawing.Point(456, 546);
-            this.textBoxOperatorOffice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorOffice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOperatorOffice.Name = "textBoxOperatorOffice";
             this.textBoxOperatorOffice.Size = new System.Drawing.Size(225, 22);
             this.textBoxOperatorOffice.TabIndex = 13;
@@ -675,7 +675,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // richTextBoxOperatorAdress
             // 
             this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(763, 546);
-            this.richTextBoxOperatorAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBoxOperatorAdress.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxOperatorAdress.Name = "richTextBoxOperatorAdress";
             this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(439, 168);
             this.richTextBoxOperatorAdress.TabIndex = 11;
@@ -684,7 +684,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxOperatorPhoneNumber
             // 
             this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(120, 687);
-            this.textBoxOperatorPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOperatorPhoneNumber.Name = "textBoxOperatorPhoneNumber";
             this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(248, 22);
             this.textBoxOperatorPhoneNumber.TabIndex = 7;
@@ -722,7 +722,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxOperatorLastName
             // 
             this.textBoxOperatorLastName.Location = new System.Drawing.Point(120, 629);
-            this.textBoxOperatorLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorLastName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOperatorLastName.Name = "textBoxOperatorLastName";
             this.textBoxOperatorLastName.Size = new System.Drawing.Size(248, 22);
             this.textBoxOperatorLastName.TabIndex = 5;
@@ -740,7 +740,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxOperatorMiddleName
             // 
             this.textBoxOperatorMiddleName.Location = new System.Drawing.Point(120, 586);
-            this.textBoxOperatorMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorMiddleName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOperatorMiddleName.Name = "textBoxOperatorMiddleName";
             this.textBoxOperatorMiddleName.Size = new System.Drawing.Size(248, 22);
             this.textBoxOperatorMiddleName.TabIndex = 3;
@@ -758,7 +758,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxOperatorFirstName
             // 
             this.textBoxOperatorFirstName.Location = new System.Drawing.Point(120, 543);
-            this.textBoxOperatorFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOperatorFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOperatorFirstName.Name = "textBoxOperatorFirstName";
             this.textBoxOperatorFirstName.Size = new System.Drawing.Size(248, 22);
             this.textBoxOperatorFirstName.TabIndex = 1;
@@ -769,7 +769,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewOtherOperator.AllowUserToDeleteRows = false;
             this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOtherOperator.Location = new System.Drawing.Point(9, 11);
-            this.dataGridViewOtherOperator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewOtherOperator.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewOtherOperator.Name = "dataGridViewOtherOperator";
             this.dataGridViewOtherOperator.ReadOnly = true;
             this.dataGridViewOtherOperator.RowHeadersWidth = 51;
@@ -781,7 +781,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.panelOperatorHandler.BackColor = System.Drawing.SystemColors.Control;
             this.panelOperatorHandler.Location = new System.Drawing.Point(5, 5);
-            this.panelOperatorHandler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelOperatorHandler.Margin = new System.Windows.Forms.Padding(4);
             this.panelOperatorHandler.Name = "panelOperatorHandler";
             this.panelOperatorHandler.Size = new System.Drawing.Size(1519, 729);
             this.panelOperatorHandler.TabIndex = 12;
@@ -801,9 +801,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSupplier.Controls.Add(this.dataGridViewSupplier);
             this.tabSupplier.Controls.Add(this.panelViewSuppliedAssetHolder);
             this.tabSupplier.Location = new System.Drawing.Point(4, 25);
-            this.tabSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.tabSupplier.Name = "tabSupplier";
-            this.tabSupplier.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSupplier.Padding = new System.Windows.Forms.Padding(4);
             this.tabSupplier.Size = new System.Drawing.Size(1535, 737);
             this.tabSupplier.TabIndex = 0;
             this.tabSupplier.Text = "tabSupplier";
@@ -812,7 +812,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonSupplierClearFields
             // 
             this.buttonSupplierClearFields.Location = new System.Drawing.Point(959, 665);
-            this.buttonSupplierClearFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierClearFields.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSupplierClearFields.Name = "buttonSupplierClearFields";
             this.buttonSupplierClearFields.Size = new System.Drawing.Size(167, 57);
             this.buttonSupplierClearFields.TabIndex = 11;
@@ -824,7 +824,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.buttonSupplierViewSuppliedAssets.Enabled = false;
             this.buttonSupplierViewSuppliedAssets.Location = new System.Drawing.Point(12, 665);
-            this.buttonSupplierViewSuppliedAssets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierViewSuppliedAssets.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSupplierViewSuppliedAssets.Name = "buttonSupplierViewSuppliedAssets";
             this.buttonSupplierViewSuppliedAssets.Size = new System.Drawing.Size(312, 57);
             this.buttonSupplierViewSuppliedAssets.TabIndex = 10;
@@ -836,7 +836,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.buttonSupplierUpdate.Enabled = false;
             this.buttonSupplierUpdate.Location = new System.Drawing.Point(1153, 666);
-            this.buttonSupplierUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSupplierUpdate.Name = "buttonSupplierUpdate";
             this.buttonSupplierUpdate.Size = new System.Drawing.Size(167, 57);
             this.buttonSupplierUpdate.TabIndex = 8;
@@ -847,7 +847,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonSupplierAdd
             // 
             this.buttonSupplierAdd.Location = new System.Drawing.Point(1343, 665);
-            this.buttonSupplierAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplierAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSupplierAdd.Name = "buttonSupplierAdd";
             this.buttonSupplierAdd.Size = new System.Drawing.Size(167, 57);
             this.buttonSupplierAdd.TabIndex = 7;
@@ -868,7 +868,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxSupplierAddress
             // 
             this.textBoxSupplierAddress.Location = new System.Drawing.Point(903, 432);
-            this.textBoxSupplierAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierAddress.Name = "textBoxSupplierAddress";
             this.textBoxSupplierAddress.Size = new System.Drawing.Size(260, 22);
             this.textBoxSupplierAddress.TabIndex = 5;
@@ -886,7 +886,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxSupplierPhoneNumber
             // 
             this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(480, 432);
-            this.textBoxSupplierPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierPhoneNumber.Name = "textBoxSupplierPhoneNumber";
             this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(260, 22);
             this.textBoxSupplierPhoneNumber.TabIndex = 3;
@@ -904,7 +904,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxSupplierName
             // 
             this.textBoxSupplierName.Location = new System.Drawing.Point(63, 432);
-            this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
             this.textBoxSupplierName.Size = new System.Drawing.Size(260, 22);
             this.textBoxSupplierName.TabIndex = 1;
@@ -915,7 +915,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewSupplier.AllowUserToDeleteRows = false;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSupplier.Location = new System.Drawing.Point(9, 28);
-            this.dataGridViewSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.ReadOnly = true;
             this.dataGridViewSupplier.RowHeadersWidth = 51;
@@ -926,7 +926,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // panelViewSuppliedAssetHolder
             // 
             this.panelViewSuppliedAssetHolder.Location = new System.Drawing.Point(5, 5);
-            this.panelViewSuppliedAssetHolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelViewSuppliedAssetHolder.Margin = new System.Windows.Forms.Padding(4);
             this.panelViewSuppliedAssetHolder.Name = "panelViewSuppliedAssetHolder";
             this.panelViewSuppliedAssetHolder.Size = new System.Drawing.Size(1523, 725);
             this.panelViewSuppliedAssetHolder.TabIndex = 12;
@@ -942,9 +942,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetCategories.Controls.Add(this.richTextBoxAssetCategoryDesc);
             this.tabAssetCategories.Controls.Add(this.dataGridViewAssetCategories);
             this.tabAssetCategories.Location = new System.Drawing.Point(4, 25);
-            this.tabAssetCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssetCategories.Margin = new System.Windows.Forms.Padding(4);
             this.tabAssetCategories.Name = "tabAssetCategories";
-            this.tabAssetCategories.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssetCategories.Padding = new System.Windows.Forms.Padding(4);
             this.tabAssetCategories.Size = new System.Drawing.Size(1535, 737);
             this.tabAssetCategories.TabIndex = 2;
             this.tabAssetCategories.Text = "tabAssetCategories";
@@ -953,7 +953,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetCategoryClearFields
             // 
             this.buttonAssetCategoryClearFields.Location = new System.Drawing.Point(781, 667);
-            this.buttonAssetCategoryClearFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategoryClearFields.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetCategoryClearFields.Name = "buttonAssetCategoryClearFields";
             this.buttonAssetCategoryClearFields.Size = new System.Drawing.Size(228, 48);
             this.buttonAssetCategoryClearFields.TabIndex = 8;
@@ -964,7 +964,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetCategoryUpdate
             // 
             this.buttonAssetCategoryUpdate.Location = new System.Drawing.Point(1035, 667);
-            this.buttonAssetCategoryUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategoryUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetCategoryUpdate.Name = "buttonAssetCategoryUpdate";
             this.buttonAssetCategoryUpdate.Size = new System.Drawing.Size(228, 48);
             this.buttonAssetCategoryUpdate.TabIndex = 6;
@@ -975,7 +975,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetCategoryAdd
             // 
             this.buttonAssetCategoryAdd.Location = new System.Drawing.Point(1284, 667);
-            this.buttonAssetCategoryAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategoryAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetCategoryAdd.Name = "buttonAssetCategoryAdd";
             this.buttonAssetCategoryAdd.Size = new System.Drawing.Size(228, 48);
             this.buttonAssetCategoryAdd.TabIndex = 5;
@@ -1006,7 +1006,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // textBoxAssetCategoryName
             // 
             this.textBoxAssetCategoryName.Location = new System.Drawing.Point(168, 473);
-            this.textBoxAssetCategoryName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAssetCategoryName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAssetCategoryName.Name = "textBoxAssetCategoryName";
             this.textBoxAssetCategoryName.Size = new System.Drawing.Size(543, 22);
             this.textBoxAssetCategoryName.TabIndex = 2;
@@ -1014,7 +1014,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // richTextBoxAssetCategoryDesc
             // 
             this.richTextBoxAssetCategoryDesc.Location = new System.Drawing.Point(168, 519);
-            this.richTextBoxAssetCategoryDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBoxAssetCategoryDesc.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxAssetCategoryDesc.Name = "richTextBoxAssetCategoryDesc";
             this.richTextBoxAssetCategoryDesc.Size = new System.Drawing.Size(543, 130);
             this.richTextBoxAssetCategoryDesc.TabIndex = 1;
@@ -1026,7 +1026,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
             this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAssetCategories.Location = new System.Drawing.Point(9, 11);
-            this.dataGridViewAssetCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewAssetCategories.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
             this.dataGridViewAssetCategories.ReadOnly = true;
             this.dataGridViewAssetCategories.RowHeadersWidth = 51;
@@ -1037,7 +1037,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonSupplier
             // 
             this.buttonSupplier.Location = new System.Drawing.Point(1185, 50);
-            this.buttonSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSupplier.Name = "buttonSupplier";
             this.buttonSupplier.Size = new System.Drawing.Size(167, 36);
             this.buttonSupplier.TabIndex = 5;
@@ -1048,7 +1048,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonOperators
             // 
             this.buttonOperators.Location = new System.Drawing.Point(996, 50);
-            this.buttonOperators.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOperators.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOperators.Name = "buttonOperators";
             this.buttonOperators.Size = new System.Drawing.Size(167, 36);
             this.buttonOperators.TabIndex = 4;
@@ -1070,7 +1070,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetCategories
             // 
             this.buttonAssetCategories.Location = new System.Drawing.Point(1375, 50);
-            this.buttonAssetCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetCategories.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetCategories.Name = "buttonAssetCategories";
             this.buttonAssetCategories.Size = new System.Drawing.Size(167, 36);
             this.buttonAssetCategories.TabIndex = 1;
@@ -1082,9 +1082,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.tabAbout.Controls.Add(this.label7);
             this.tabAbout.Location = new System.Drawing.Point(4, 25);
-            this.tabAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAbout.Margin = new System.Windows.Forms.Padding(4);
             this.tabAbout.Name = "tabAbout";
-            this.tabAbout.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAbout.Padding = new System.Windows.Forms.Padding(4);
             this.tabAbout.Size = new System.Drawing.Size(1581, 869);
             this.tabAbout.TabIndex = 6;
             this.tabAbout.Text = "tabPage7";
@@ -1105,9 +1105,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.tabSettings.Controls.Add(this.label8);
             this.tabSettings.Location = new System.Drawing.Point(4, 25);
-            this.tabSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSettings.Margin = new System.Windows.Forms.Padding(4);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(4);
             this.tabSettings.Size = new System.Drawing.Size(1581, 869);
             this.tabSettings.TabIndex = 7;
             this.tabSettings.Text = "tabPage8";
@@ -1128,9 +1128,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.tabTransaction.Controls.Add(this.label25);
             this.tabTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tabTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabTransaction.Name = "tabTransaction";
-            this.tabTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTransaction.Padding = new System.Windows.Forms.Padding(4);
             this.tabTransaction.Size = new System.Drawing.Size(1581, 869);
             this.tabTransaction.TabIndex = 8;
             this.tabTransaction.Text = "tabPage1";
@@ -1168,9 +1168,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
             this.groupBoxSide.Location = new System.Drawing.Point(-4, 52);
-            this.groupBoxSide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSide.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxSide.Name = "groupBoxSide";
-            this.groupBoxSide.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSide.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxSide.Size = new System.Drawing.Size(107, 918);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
@@ -1243,7 +1243,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonTransaction
             // 
             this.buttonTransaction.Location = new System.Drawing.Point(19, 495);
-            this.buttonTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTransaction.Name = "buttonTransaction";
             this.buttonTransaction.Size = new System.Drawing.Size(65, 55);
             this.buttonTransaction.TabIndex = 22;
@@ -1254,7 +1254,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonHamburger
             // 
             this.buttonHamburger.Location = new System.Drawing.Point(20, 18);
-            this.buttonHamburger.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonHamburger.Margin = new System.Windows.Forms.Padding(4);
             this.buttonHamburger.Name = "buttonHamburger";
             this.buttonHamburger.Size = new System.Drawing.Size(65, 76);
             this.buttonHamburger.TabIndex = 21;
@@ -1265,7 +1265,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAbout
             // 
             this.buttonAbout.Location = new System.Drawing.Point(20, 770);
-            this.buttonAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAbout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(65, 34);
             this.buttonAbout.TabIndex = 18;
@@ -1276,7 +1276,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonProfile
             // 
             this.buttonProfile.Location = new System.Drawing.Point(93, 18);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(85, 76);
             this.buttonProfile.TabIndex = 10;
@@ -1289,7 +1289,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonSettings
             // 
             this.buttonSettings.Location = new System.Drawing.Point(20, 812);
-            this.buttonSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSettings.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(65, 34);
             this.buttonSettings.TabIndex = 17;
@@ -1300,7 +1300,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonLogout
             // 
             this.buttonLogout.Location = new System.Drawing.Point(20, 854);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(65, 34);
             this.buttonLogout.TabIndex = 16;
@@ -1311,7 +1311,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonOthers
             // 
             this.buttonOthers.Location = new System.Drawing.Point(19, 578);
-            this.buttonOthers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOthers.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOthers.Name = "buttonOthers";
             this.buttonOthers.Size = new System.Drawing.Size(65, 55);
             this.buttonOthers.TabIndex = 15;
@@ -1322,7 +1322,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonGenerateReports
             // 
             this.buttonGenerateReports.Location = new System.Drawing.Point(20, 407);
-            this.buttonGenerateReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonGenerateReports.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGenerateReports.Name = "buttonGenerateReports";
             this.buttonGenerateReports.Size = new System.Drawing.Size(65, 55);
             this.buttonGenerateReports.TabIndex = 14;
@@ -1333,7 +1333,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonArchiveRecords
             // 
             this.buttonArchiveRecords.Location = new System.Drawing.Point(20, 330);
-            this.buttonArchiveRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonArchiveRecords.Margin = new System.Windows.Forms.Padding(4);
             this.buttonArchiveRecords.Name = "buttonArchiveRecords";
             this.buttonArchiveRecords.Size = new System.Drawing.Size(65, 55);
             this.buttonArchiveRecords.TabIndex = 13;
@@ -1344,7 +1344,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonAssetRecords
             // 
             this.buttonAssetRecords.Location = new System.Drawing.Point(20, 254);
-            this.buttonAssetRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAssetRecords.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAssetRecords.Name = "buttonAssetRecords";
             this.buttonAssetRecords.Size = new System.Drawing.Size(65, 55);
             this.buttonAssetRecords.TabIndex = 12;
@@ -1355,7 +1355,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // buttonDashboard
             // 
             this.buttonDashboard.Location = new System.Drawing.Point(20, 178);
-            this.buttonDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDashboard.Name = "buttonDashboard";
             this.buttonDashboard.Size = new System.Drawing.Size(65, 55);
             this.buttonDashboard.TabIndex = 11;
@@ -1370,7 +1370,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.Controls.Add(this.label16);
             this.panelBoxTop.Controls.Add(this.buttonMasterExit);
             this.panelBoxTop.Location = new System.Drawing.Point(-12, -9);
-            this.panelBoxTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBoxTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelBoxTop.Name = "panelBoxTop";
             this.panelBoxTop.Size = new System.Drawing.Size(1727, 74);
             this.panelBoxTop.TabIndex = 3;
@@ -1382,7 +1382,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
             this.pictureBox1.Location = new System.Drawing.Point(29, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(58, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1400,6 +1400,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label16.Size = new System.Drawing.Size(194, 48);
             this.label16.TabIndex = 4;
             this.label16.Text = "LGU-SV AMS";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // buttonMasterExit
             // 
@@ -1409,7 +1410,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMasterExit.ForeColor = System.Drawing.Color.White;
             this.buttonMasterExit.Location = new System.Drawing.Point(1651, 17);
-            this.buttonMasterExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMasterExit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMasterExit.Name = "buttonMasterExit";
             this.buttonMasterExit.Size = new System.Drawing.Size(48, 42);
             this.buttonMasterExit.TabIndex = 3;
@@ -1428,7 +1429,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Controls.Add(this.panelTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
             this.Load += new System.EventHandler(this.MainForm_Load);
