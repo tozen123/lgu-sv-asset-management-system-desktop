@@ -135,6 +135,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonAssetRecords = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.panelBoxTop = new System.Windows.Forms.Panel();
+            this.minimize = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
@@ -1366,6 +1367,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // panelBoxTop
             // 
             this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panelBoxTop.Controls.Add(this.minimize);
             this.panelBoxTop.Controls.Add(this.pictureBox1);
             this.panelBoxTop.Controls.Add(this.label16);
             this.panelBoxTop.Controls.Add(this.buttonMasterExit);
@@ -1375,6 +1377,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelBoxTop.Size = new System.Drawing.Size(1727, 74);
             this.panelBoxTop.TabIndex = 3;
             this.panelBoxTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBoxTop_Paint);
+            // 
+            // minimize
+            // 
+            this.minimize.BackColor = System.Drawing.Color.Transparent;
+            this.minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimize.Image = ((System.Drawing.Image)(resources.GetObject("minimize.Image")));
+            this.minimize.Location = new System.Drawing.Point(1588, 38);
+            this.minimize.Name = "minimize";
+            this.minimize.Size = new System.Drawing.Size(26, 7);
+            this.minimize.TabIndex = 6;
+            this.minimize.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.minimize.UseVisualStyleBackColor = false;
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
             // 
             // pictureBox1
             // 
@@ -1407,9 +1422,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonMasterExit.FlatAppearance.BorderSize = 0;
             this.buttonMasterExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMasterExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMasterExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMasterExit.ForeColor = System.Drawing.Color.White;
-            this.buttonMasterExit.Location = new System.Drawing.Point(1651, 17);
+            this.buttonMasterExit.Location = new System.Drawing.Point(1653, 19);
             this.buttonMasterExit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMasterExit.Name = "buttonMasterExit";
             this.buttonMasterExit.Size = new System.Drawing.Size(48, 42);
@@ -1583,5 +1598,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonAssetRecordsViewRecords;
         private System.Windows.Forms.Button buttonAssetRecordsNewAsset;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button minimize;
     }
 }

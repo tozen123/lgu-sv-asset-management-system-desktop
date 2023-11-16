@@ -1093,6 +1093,11 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
+        private void minimize_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonOperatorClearFields_Click_1(object sender, EventArgs e)
         {
             OtherOperatorReset();
