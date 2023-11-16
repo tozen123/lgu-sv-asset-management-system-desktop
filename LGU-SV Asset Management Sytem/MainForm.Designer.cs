@@ -177,7 +177,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Controls.Add(this.tabSettings);
             this.panelTabControl.Controls.Add(this.tabTransaction);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(82, 58);
+            this.panelTabControl.Location = new System.Drawing.Point(82, 57);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
@@ -498,6 +498,8 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // panelAssetRecordsHandler
             // 
+            this.panelAssetRecordsHandler.AutoScroll = true;
+            this.panelAssetRecordsHandler.AutoSize = true;
             this.panelAssetRecordsHandler.Location = new System.Drawing.Point(26, 107);
             this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
             this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1129, 591);
@@ -1323,7 +1325,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 800);
+            this.ClientSize = new System.Drawing.Size(1280, 799);
             this.ControlBox = false;
             this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.groupBoxSide);

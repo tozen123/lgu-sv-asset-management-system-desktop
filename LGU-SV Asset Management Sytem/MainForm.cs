@@ -46,6 +46,9 @@ namespace LGU_SV_Asset_Management_Sytem
         //User-Role-Id
         private string RoleBasedID;
 
+        //Worker
+        Worker worker;
+
         public MainForm()
         {
  
@@ -80,6 +83,9 @@ namespace LGU_SV_Asset_Management_Sytem
             //Side
             Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
             Utilities.SetControlsVisibilityState(sideLabels, false);
+
+            //Worker
+            worker = new Worker(this);
         }
 
         // Initialize Controls
@@ -1087,7 +1093,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice);
             Console.WriteLine(RoleBasedID);
-            optionDialogBox.Show();
+            optionDialogBox.ShowDialog();
         }
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
