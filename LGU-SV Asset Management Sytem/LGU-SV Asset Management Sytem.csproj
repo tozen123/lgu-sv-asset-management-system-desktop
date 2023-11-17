@@ -62,6 +62,12 @@
     <Compile Include="DialogBoxes\AssetUploadImageDialogBox.Designer.cs">
       <DependentUpon>AssetUploadImageDialogBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\ConfirmationPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\ConfirmationPrompt.Designer.cs">
+      <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\OptionDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\AssetUploadImageDialogBox.resx">
       <DependentUpon>AssetUploadImageDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\ConfirmationPrompt.resx">
+      <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>

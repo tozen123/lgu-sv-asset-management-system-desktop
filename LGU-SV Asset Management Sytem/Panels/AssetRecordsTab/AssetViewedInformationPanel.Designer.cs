@@ -33,9 +33,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonUpdateInfo = new System.Windows.Forms.Button();
+            this.buttonArchive = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,8 +67,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxEmployee = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonSavePng = new System.Windows.Forms.Button();
+            this.buttonPrintAction = new System.Windows.Forms.Button();
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
@@ -97,32 +97,35 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // button2
+            // buttonUpdateInfo
             // 
-            this.button2.Location = new System.Drawing.Point(638, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonUpdateInfo.Location = new System.Drawing.Point(638, 34);
+            this.buttonUpdateInfo.Name = "buttonUpdateInfo";
+            this.buttonUpdateInfo.Size = new System.Drawing.Size(118, 23);
+            this.buttonUpdateInfo.TabIndex = 3;
+            this.buttonUpdateInfo.Text = "Update";
+            this.buttonUpdateInfo.UseVisualStyleBackColor = true;
+            this.buttonUpdateInfo.Click += new System.EventHandler(this.buttonUpdateInfo_Click);
             // 
-            // button3
+            // buttonArchive
             // 
-            this.button3.Location = new System.Drawing.Point(762, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Archive";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonArchive.Location = new System.Drawing.Point(762, 34);
+            this.buttonArchive.Name = "buttonArchive";
+            this.buttonArchive.Size = new System.Drawing.Size(118, 23);
+            this.buttonArchive.TabIndex = 4;
+            this.buttonArchive.Text = "Archive";
+            this.buttonArchive.UseVisualStyleBackColor = true;
+            this.buttonArchive.Click += new System.EventHandler(this.buttonArchive_Click);
             // 
-            // button4
+            // buttonDelete
             // 
-            this.button4.Location = new System.Drawing.Point(886, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonDelete.Location = new System.Drawing.Point(886, 34);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(118, 23);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // pictureBox1
             // 
@@ -401,23 +404,25 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label15.TabIndex = 35;
             this.label15.Text = "Employee:";
             // 
-            // button1
+            // buttonSavePng
             // 
-            this.button1.Location = new System.Drawing.Point(14, 664);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Save As PNG";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSavePng.Location = new System.Drawing.Point(14, 664);
+            this.buttonSavePng.Name = "buttonSavePng";
+            this.buttonSavePng.Size = new System.Drawing.Size(118, 23);
+            this.buttonSavePng.TabIndex = 37;
+            this.buttonSavePng.Text = "Save As PNG";
+            this.buttonSavePng.UseVisualStyleBackColor = true;
+            this.buttonSavePng.Click += new System.EventHandler(this.buttonSavePng_Click);
             // 
-            // button5
+            // buttonPrintAction
             // 
-            this.button5.Location = new System.Drawing.Point(146, 664);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 23);
-            this.button5.TabIndex = 38;
-            this.button5.Text = "Print";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonPrintAction.Location = new System.Drawing.Point(146, 664);
+            this.buttonPrintAction.Name = "buttonPrintAction";
+            this.buttonPrintAction.Size = new System.Drawing.Size(118, 23);
+            this.buttonPrintAction.TabIndex = 38;
+            this.buttonPrintAction.Text = "Print";
+            this.buttonPrintAction.UseVisualStyleBackColor = true;
+            this.buttonPrintAction.Click += new System.EventHandler(this.buttonPrintAction_Click);
             // 
             // textBoxSupplier
             // 
@@ -452,8 +457,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBoxSupplier);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonPrintAction);
+            this.Controls.Add(this.buttonSavePng);
             this.Controls.Add(this.textBoxEmployee);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBoxLifeSpan);
@@ -485,9 +490,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxAssetImage);
             this.Controls.Add(this.menuButton1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonArchive);
+            this.Controls.Add(this.buttonUpdateInfo);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelAssetIdWithName);
@@ -506,9 +511,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label labelAssetIdWithName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonUpdateInfo;
+        private System.Windows.Forms.Button buttonArchive;
+        private System.Windows.Forms.Button buttonDelete;
         private MenuButton menuButton1;
         private System.Windows.Forms.PictureBox pictureBoxAssetImage;
         private System.Windows.Forms.Label label1;
@@ -540,8 +545,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxEmployee;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonSavePng;
+        private System.Windows.Forms.Button buttonPrintAction;
         private System.Windows.Forms.TextBox textBoxSupplier;
         private System.Windows.Forms.Label label16;
     }
