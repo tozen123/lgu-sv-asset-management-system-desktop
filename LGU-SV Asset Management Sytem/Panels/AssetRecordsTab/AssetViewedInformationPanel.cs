@@ -21,9 +21,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             _panelHandler = panelHandler;
             asset = _asset;
 
+            InitializeAssetInformation();
             SetMenuButton();
         }
-
+        private void InitializeAssetInformation()
+        {
+            labelAssetIdWithName.Text = "Asset ID: " + asset.AssetId + "-" + asset.AssetName;
+        }
         private void SetMenuButton()
         {
             menuButton1.Text = "Logs";
