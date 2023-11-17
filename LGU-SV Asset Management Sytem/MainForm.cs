@@ -1034,9 +1034,6 @@ namespace LGU_SV_Asset_Management_Sytem
                     assetCategory.AssetCategoryDescription = richTextBoxAssetCategoryDesc.Text;
                     assetCategory.AssetCategoryName = textBoxAssetCategoryName.Text;
 
-
-
-                    Console.WriteLine($"hey {currentSelectedAssetCategoryId}");
                     if (!string.IsNullOrEmpty(currentSelectedAssetCategoryId))
                     {
                         var result = assetCategoryRepositoryControl.DeleteToDatabase(assetCategory);

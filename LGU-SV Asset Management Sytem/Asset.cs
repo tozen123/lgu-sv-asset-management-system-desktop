@@ -208,8 +208,33 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public class AssetRepositoryControl
         {
-            
+            private DatabaseConnection databaseConnection;
+            public AssetRepositoryControl()
+            {
+                databaseConnection = new DatabaseConnection();
+            }
+            public (bool Success, string ErrorMessage) DeleteToDatabase(Asset asset)
+            {
+                try
+                {
+                    string query = "DELETE From Assets WHERE assetId = @id";
 
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", asset.AssetId}
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+            }
         }
 
     }

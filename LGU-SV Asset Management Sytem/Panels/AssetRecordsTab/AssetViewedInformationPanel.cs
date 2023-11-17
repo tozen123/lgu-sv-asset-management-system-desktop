@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LGU_SV_Asset_Management_Sytem.Asset;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 {
@@ -15,15 +16,22 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
     {
         Asset asset;
         Control _panelHandler;
+        RecordsHomePanel rcpanel;
 
-        public AssetViewedInformationPanel(Asset _asset, Control panelHandler)
+        AssetRepositoryControl assetRepositoryControl;
+
+       
+
+        public AssetViewedInformationPanel(Asset _asset, RecordsHomePanel _rcpanel, Control panelHandler)
         {
             InitializeComponent();
             _panelHandler = panelHandler;
             asset = _asset;
-
+            rcpanel = _rcpanel;
             InitializeAssetInformation();
             SetMenuButton();
+
+            assetRepositoryControl = new AssetRepositoryControl();
         }
         private void InitializeAssetInformation()
         {
@@ -157,7 +165,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                 if (confirmationPrompt.ShowDialog() == DialogResult.OK)
                 {
-
+                    MessagePrompt("Part not fully implemented. :(");
                 }
             }
         }
@@ -172,9 +180,33 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                 if (confirmationPrompt.ShowDialog() == DialogResult.OK)
                 {
+                    var result = assetRepositoryControl.DeleteToDatabase(asset);
+
+                    if (result.Success)
+                    {
+
+                        MessagePrompt($"Asset has been successfully deleted");
+                        _panelHandler.Controls.Clear();
+                        rcpanel.InitializeRecords();
+                        _panelHandler.SendToBack();
+                    }
+                    else
+                    {
+                        MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                    }
+
+                    
+                    
 
                 }
             }
+        }
+
+        private void MessagePrompt(string message)
+        {
+            DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+            prompt.SetMessage(message);
+            prompt.Show();
         }
     }
 }

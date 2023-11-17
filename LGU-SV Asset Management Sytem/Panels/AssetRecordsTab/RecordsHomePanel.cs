@@ -58,7 +58,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             return resultTable;
         }
 
-        private void InitializeRecords()
+        public void InitializeRecords()
         {
             DataTable dataTable = FetchDataFromDB();
 
@@ -202,12 +202,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     Asset selectedAsset = new Asset();
 
-                    foreach (var item in dataGridViewAssetRecords.Columns)
-                    {
-                        Console.WriteLine(item.ToString());
-                    }
-
-
                     selectedAsset.AssetId = Convert.ToInt32(selectedRow.Cells["assetId"].Value);
 
                     selectedAsset.AssetSupervisorId = Convert.ToInt32(selectedRow.Cells["assetSupervisorFullName"].Value.ToString().Split(';')[1].Trim());
@@ -248,7 +242,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();
                     selectedAsset.AssetLifeSpan = Convert.ToInt32(selectedRow.Cells["assetLifeSpan"].Value);
 
-                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, viewedAssetPanelHandler);
+                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler);
                     viewedAssetPanelHandler.Controls.Add(assetViewerInformationPanel);
                     viewedAssetPanelHandler.BringToFront();
                     viewedAssetPanelHandler.Visible = true;
