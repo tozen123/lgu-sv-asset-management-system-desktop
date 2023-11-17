@@ -43,9 +43,5 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             _panelHandler.SendToBack();
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -37,13 +37,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAssetQrImage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -68,9 +67,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label14 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAssetIdWithName
@@ -129,13 +131,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBoxAssetImage
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(14, 120);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(309, 249);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxAssetImage.Location = new System.Drawing.Point(14, 120);
+            this.pictureBoxAssetImage.Name = "pictureBoxAssetImage";
+            this.pictureBoxAssetImage.Size = new System.Drawing.Size(309, 249);
+            this.pictureBoxAssetImage.TabIndex = 7;
+            this.pictureBoxAssetImage.TabStop = false;
             // 
             // label1
             // 
@@ -149,19 +151,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 397);
+            this.label2.Location = new System.Drawing.Point(11, 381);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Asset QR Image";
             // 
-            // pictureBox3
+            // pictureBoxAssetQrImage
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(14, 413);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(309, 249);
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxAssetQrImage.Location = new System.Drawing.Point(14, 397);
+            this.pictureBoxAssetQrImage.Name = "pictureBoxAssetQrImage";
+            this.pictureBoxAssetQrImage.Size = new System.Drawing.Size(309, 249);
+            this.pictureBoxAssetQrImage.TabIndex = 10;
+            this.pictureBoxAssetQrImage.TabStop = false;
             // 
             // label3
             // 
@@ -179,15 +181,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(197, 25);
             this.textBox1.TabIndex = 12;
-            // 
-            // menuButton1
-            // 
-            this.menuButton1.Location = new System.Drawing.Point(1011, 33);
-            this.menuButton1.Name = "menuButton1";
-            this.menuButton1.Size = new System.Drawing.Size(113, 23);
-            this.menuButton1.TabIndex = 6;
-            this.menuButton1.Text = "menuButton1";
-            this.menuButton1.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -341,7 +334,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 29;
             this.label12.Text = "Condition:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textBox11
             // 
@@ -394,10 +386,39 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label15.TabIndex = 35;
             this.label15.Text = "Operator:";
             // 
+            // menuButton1
+            // 
+            this.menuButton1.Location = new System.Drawing.Point(1011, 33);
+            this.menuButton1.Name = "menuButton1";
+            this.menuButton1.Size = new System.Drawing.Size(113, 23);
+            this.menuButton1.TabIndex = 6;
+            this.menuButton1.Text = "menuButton1";
+            this.menuButton1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(14, 653);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(171, 652);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(151, 23);
+            this.button5.TabIndex = 38;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // AssetViewedInformationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox12);
@@ -424,10 +445,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBoxAssetQrImage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBoxAssetImage);
             this.Controls.Add(this.menuButton1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -438,8 +459,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Name = "AssetViewedInformationPanel";
             this.Size = new System.Drawing.Size(1167, 698);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,10 +475,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private MenuButton menuButton1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxAssetImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxAssetQrImage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -484,5 +505,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
     }
 }
