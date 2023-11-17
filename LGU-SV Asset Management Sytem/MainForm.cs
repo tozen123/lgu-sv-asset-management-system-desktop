@@ -625,7 +625,6 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
         }
 
    
@@ -983,6 +982,9 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         string currentSelectedAssetCategoryId;
+
+        public object Style { get; private set; }
+
         private void dataGridViewAssetCategories_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -1094,6 +1096,11 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         private void minimize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
