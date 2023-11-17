@@ -107,6 +107,18 @@
     <Compile Include="Panels\AssetRecordsTab\RecordsHomePanel.Designer.cs">
       <DependentUpon>RecordsHomePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.Designer.cs">
+      <DependentUpon>AssetBorrowedAndReturnsLogPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\MaintenancePanel\AssetMaintenanceLogPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MaintenancePanel\AssetMaintenanceLogPanel.Designer.cs">
+      <DependentUpon>AssetMaintenanceLogPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\OperatorHandledAssetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     </Compile>
     <Compile Include="Panels\SupplierSuppliedAssetPanel.Designer.cs">
       <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\TransferPanel\AssetTransferLogPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\TransferPanel\AssetTransferLogPanel.Designer.cs">
+      <DependentUpon>AssetTransferLogPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\AssetSupervisor.cs" />
     <Compile Include="Users\AssetEmployee.cs" />
@@ -211,11 +229,20 @@
     <EmbeddedResource Include="Panels\AssetRecordsTab\RecordsHomePanel.resx">
       <DependentUpon>RecordsHomePanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.resx">
+      <DependentUpon>AssetBorrowedAndReturnsLogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MaintenancePanel\AssetMaintenanceLogPanel.resx">
+      <DependentUpon>AssetMaintenanceLogPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\OperatorHandledAssetPanel.resx">
       <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SupplierSuppliedAssetPanel.resx">
       <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\TransferPanel\AssetTransferLogPanel.resx">
+      <DependentUpon>AssetTransferLogPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

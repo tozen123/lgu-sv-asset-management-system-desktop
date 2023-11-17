@@ -35,7 +35,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         }
         private void InitializeAssetInformation()
         {
-            labelAssetIdWithName.Text = "Asset ID: " + asset.AssetId + "-" + asset.AssetName;
+            labelAssetIdWithName.Text = "Asset Records: " + asset.AssetId + "-" + asset.AssetName;
 
             //Images
             SetImage(pictureBoxAssetImage, asset.AssetImage);
@@ -83,9 +83,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             menuButton1.Text = "Logs";
             menuButton1.Menu = new ContextMenuStrip();
-            menuButton1.Menu.Items.Add("Maintenances");
-            menuButton1.Menu.Items.Add("Transfers");
-            menuButton1.Menu.Items.Add("Borrowed And Returns");
+            menuButton1.Menu.Items.Add("Maintenances", null, MenuItem_Click);
+            menuButton1.Menu.Items.Add("Transfers", null, MenuItem_Click);
+            menuButton1.Menu.Items.Add("Borrowed And Returns", null, MenuItem_Click);
+        
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -208,5 +209,41 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             prompt.SetMessage(message);
             prompt.Show();
         }
+
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
+
+            if (clickedItem != null)
+            {       
+                string itemName = clickedItem.Text;
+
+                switch (itemName)
+                {
+                    case "Maintenances":
+                        MaintenancePanel.AssetMaintenanceLogPanel maintenanceLogPanel = new MaintenancePanel.AssetMaintenanceLogPanel(panelLogsHandler, asset);
+                        SwitchLogPanel(maintenanceLogPanel);
+
+                        break;
+                    case "Transfers":
+                        TransferPanel.AssetTransferLogPanel transferLogPanel = new TransferPanel.AssetTransferLogPanel(panelLogsHandler, asset);
+                        SwitchLogPanel(transferLogPanel);
+
+                        break;
+                    case "Borrowed And Returns":
+                        BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset);
+                        SwitchLogPanel(borrowedAndReturnsLogPanel);
+                        break;
+                }
+            }
+        }
+
+        private void SwitchLogPanel(Control panelToSwitch)
+        {
+            panelLogsHandler.Controls.Add(panelToSwitch);
+            panelLogsHandler.BringToFront();
+            panelLogsHandler.Visible = true;
+        }
+
     }
 }

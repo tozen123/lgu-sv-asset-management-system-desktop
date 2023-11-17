@@ -72,6 +72,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
+            this.panelLogsHandler = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
@@ -451,6 +452,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.menuButton1.Text = "menuButton1";
             this.menuButton1.UseVisualStyleBackColor = true;
             // 
+            // panelLogsHandler
+            // 
+            this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
+            this.panelLogsHandler.Name = "panelLogsHandler";
+            this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
+            this.panelLogsHandler.TabIndex = 41;
+            // 
             // AssetViewedInformationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,6 +504,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelAssetIdWithName);
+            this.Controls.Add(this.panelLogsHandler);
             this.Name = "AssetViewedInformationPanel";
             this.Size = new System.Drawing.Size(1167, 698);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -549,5 +558,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Button buttonPrintAction;
         private System.Windows.Forms.TextBox textBoxSupplier;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panelLogsHandler;
     }
 }
