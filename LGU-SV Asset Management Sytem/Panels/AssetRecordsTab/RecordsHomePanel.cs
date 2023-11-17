@@ -14,13 +14,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
     {
         private DatabaseConnection databaseConnection;
         string userLocation;
-        public RecordsHomePanel(string _userLocation)
+        Control viewedAssetPanelHandler;
+        public RecordsHomePanel(string _userLocation, Control _viewedAssetPanelHandler)
         {
             databaseConnection = new DatabaseConnection();
+            viewedAssetPanelHandler = _viewedAssetPanelHandler;
 
             InitializeComponent();
             userLocation = _userLocation;
-
             InitializeRecords();
            
         }
@@ -112,5 +113,24 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             }
         }
 
+        private void dataGridViewAssetRecords_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == dataGridViewAssetRecords.Columns["ViewAsset"].Index)
+                {
+                   
+                    DataGridViewRow selectedRow = dataGridViewAssetRecords.Rows[e.RowIndex];
+                    Asset selectedAsset = new Asset();
+
+                  
+                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, viewedAssetPanelHandler);
+                    viewedAssetPanelHandler.Controls.Add(assetViewerInformationPanel);
+                    viewedAssetPanelHandler.BringToFront();
+                    viewedAssetPanelHandler.Visible = true;
+                }
+            }
+
+        }
     }
 }

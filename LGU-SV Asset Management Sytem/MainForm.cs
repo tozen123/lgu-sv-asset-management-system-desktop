@@ -289,24 +289,29 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
             panelTabControl.SelectedTab = tabDashboard;
-                
+            ResetAssetViewedPanel();
         }
+        private void ResetAssetViewedPanel()
+        {
+            panelViewedAssetHandler.Controls.Clear();
+            panelViewedAssetHandler.SendToBack();
 
+        }
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice);
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
-
+            ResetAssetViewedPanel();
 
 
         }
 
         private void buttonArchiveRecords_Click(object sender, EventArgs e)
         {
-          
-          panelTabControl.SelectedTab = tabArchiveRecords;
+            ResetAssetViewedPanel();
+            panelTabControl.SelectedTab = tabArchiveRecords;
                 
         }
 
@@ -314,12 +319,13 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonGenerateReports_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabGenReport;
-    
+            ResetAssetViewedPanel();
         }
 
 
         private void buttonOthers_Click(object sender, EventArgs e)
-        {  
+        {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabOthers;
             otherTabControl.SelectedTab = tabSupplier;
             labelTitleHandler.Text = "Supplier";
@@ -368,11 +374,13 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAbout_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabAbout;
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabAbout;
         }
 
@@ -407,6 +415,7 @@ namespace LGU_SV_Asset_Management_Sytem
         }
         private void buttonTransaction_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabTransaction;
         }
         private void SetListControlStateTo(List<Control> controls, bool state)
@@ -607,6 +616,7 @@ namespace LGU_SV_Asset_Management_Sytem
         bool hamburgerToggle;
         private void buttonHamburger_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
 
             if (CheckSession())
@@ -1100,7 +1110,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
         {
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice);
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
         }
 

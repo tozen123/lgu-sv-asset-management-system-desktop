@@ -31,6 +31,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             this.dataGridViewAssetRecords = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelViewedAsset = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.dataGridViewAssetRecords.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1123, 568);
             this.dataGridViewAssetRecords.TabIndex = 0;
+            this.dataGridViewAssetRecords.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetRecords_CellMouseClick);
             // 
             // label1
             // 
@@ -56,12 +58,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label1.TabIndex = 1;
             this.label1.Text = "Records";
             // 
+            // panelViewedAsset
+            // 
+            this.panelViewedAsset.Location = new System.Drawing.Point(3, 20);
+            this.panelViewedAsset.Name = "panelViewedAsset";
+            this.panelViewedAsset.Size = new System.Drawing.Size(1123, 568);
+            this.panelViewedAsset.TabIndex = 2;
+            // 
             // RecordsHomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAssetRecords);
+            this.Controls.Add(this.panelViewedAsset);
             this.Name = "RecordsHomePanel";
             this.Size = new System.Drawing.Size(1129, 591);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).EndInit();
@@ -74,5 +84,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private System.Windows.Forms.DataGridView dataGridViewAssetRecords;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelViewedAsset;
     }
 }
