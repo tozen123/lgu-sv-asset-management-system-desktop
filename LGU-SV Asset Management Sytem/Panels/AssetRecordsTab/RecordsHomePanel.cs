@@ -21,6 +21,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             InitializeComponent();
 
             InitializeRecords();
+
+       
         }
 
 
@@ -54,11 +56,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             dataGridViewAssetRecords.DataSource = FetchDataFromDB();
 
-            dataGridViewAssetRecords.ScrollBars = ScrollBars.Horizontal;
-            dataGridViewAssetRecords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewAssetRecords.AutoSize = true;
+  
+            dataGridViewAssetRecords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
            
-
+         
+           
         }
+
+      
     }
 }

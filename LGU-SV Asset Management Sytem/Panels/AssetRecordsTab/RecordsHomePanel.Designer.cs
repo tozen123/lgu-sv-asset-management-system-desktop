@@ -43,7 +43,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.dataGridViewAssetRecords.Location = new System.Drawing.Point(3, 20);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
-            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1459, 526);
+            this.dataGridViewAssetRecords.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1123, 568);
             this.dataGridViewAssetRecords.TabIndex = 0;
             // 
             // label1
@@ -62,7 +63,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAssetRecords);
             this.Name = "RecordsHomePanel";
-            this.Size = new System.Drawing.Size(1476, 611);
+            this.Size = new System.Drawing.Size(1129, 591);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

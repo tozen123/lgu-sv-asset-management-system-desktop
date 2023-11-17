@@ -166,7 +166,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // panelTabControl
             // 
-            this.panelTabControl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTabControl.Controls.Add(this.tabDashboard);
             this.panelTabControl.Controls.Add(this.tabProfile);
             this.panelTabControl.Controls.Add(this.tabAssetRecords);
@@ -181,7 +183,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1192, 730);
+            this.panelTabControl.Size = new System.Drawing.Size(1180, 730);
             this.panelTabControl.TabIndex = 0;
             // 
             // tabDashboard
@@ -462,7 +464,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
             this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssetRecords.Size = new System.Drawing.Size(1184, 704);
+            this.tabAssetRecords.Size = new System.Drawing.Size(1172, 704);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
@@ -502,7 +504,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelAssetRecordsHandler.AutoSize = true;
             this.panelAssetRecordsHandler.Location = new System.Drawing.Point(26, 107);
             this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
-            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1129, 591);
+            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1140, 591);
             this.panelAssetRecordsHandler.TabIndex = 2;
             // 
             // label2
@@ -1325,7 +1327,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 799);
+            this.ClientSize = new System.Drawing.Size(1268, 799);
             this.ControlBox = false;
             this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.groupBoxSide);
