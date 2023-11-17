@@ -107,7 +107,7 @@ namespace LGU_SV_Asset_Management_Sytem
                     break;
                 case "Asset Employee":
                     buttonOthers.Visible = false;
-
+                    buttonAssetRecordsNewAsset.Visible = false;
                     break;
                 case "Asset Supervisor":
 
@@ -298,6 +298,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
             Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+
+
 
         }
 
