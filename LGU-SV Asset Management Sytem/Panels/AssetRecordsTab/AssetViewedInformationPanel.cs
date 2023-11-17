@@ -27,7 +27,49 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private void InitializeAssetInformation()
         {
             labelAssetIdWithName.Text = "Asset ID: " + asset.AssetId + "-" + asset.AssetName;
+
+            //Images
+            SetImage(pictureBoxAssetImage, asset.AssetImage);
+            SetImage(pictureBoxAssetQrImage, asset.AssetQRCodeImage);
+
+            textBoxId.Text = asset.AssetId.ToString();
+            textBoxName.Text = asset.AssetName;
+            textBoxQuantity.Text = asset.AssetQuantity.ToString();
+            textBoxLocation.Text = asset.AssetLocation;
+            textBoxPAmount.Text = asset.AssetPurchaseAmount.ToString();
+            textBoxPDate.Text = asset.AssetPurchaseDate.ToString();
+
+            if (asset.AssetLastMaintenanceID.ToString() == "")
+            {
+                textBoxLMaintenance.Text = "N/A";
+            }
+            else
+            {
+                textBoxLMaintenance.Text = asset.AssetLastMaintenanceID.ToString();
+            }
+
+            textBoxUnit.Text = asset.AssetUnit;
+            textBoxCondition.Text = asset.AssetCondition;
+            textBoxAvailability.Text = asset.AssetAvailability;
+            textBoxLifeSpan.Text = asset.AssetLifeSpan.ToString();
+            
+
+
+
+            //TextBoxes 2
+            textBoxEmployee.Text = asset.EmployeeName;
+            textBoxAssetCategory.Text = asset.AssetCategoryName;
+            textBoxSupplier.Text = asset.SupplierName;
+
+
         }
+
+        private void SetImage(PictureBox pictureBox, byte[] array)
+        {
+            pictureBox.Image = Utilities.ConvertByteArrayToImage(array);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
         private void SetMenuButton()
         {
             menuButton1.Text = "Logs";

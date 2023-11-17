@@ -10,7 +10,7 @@ namespace LGU_SV_Asset_Management_Sytem
     {
         // Integers
         private int assetId, assetSupervisorId, currentEmployeeId, supplierId, assetCategoryId, assetLastMaintenanceID;
-
+          
         // Property for assetId
         public int AssetId
         {
@@ -183,6 +183,29 @@ namespace LGU_SV_Asset_Management_Sytem
             get { return assetLifeSpan; }
             set { assetLifeSpan = value; }
         }
+
+
+        //Oms
+
+        private string supplierName, assetCategoryName, employeeName;
+        public string SupplierName
+        {
+            get { return supplierName; }
+            set { supplierName = value; }
+        }
+
+        public string AssetCategoryName
+        {
+            get { return assetCategoryName; }
+            set { assetCategoryName = value; }
+        }
+
+        public string EmployeeName
+        {
+            get { return employeeName; }
+            set { employeeName = value; }
+        }
+
         public class AssetRepositoryControl
         {
             

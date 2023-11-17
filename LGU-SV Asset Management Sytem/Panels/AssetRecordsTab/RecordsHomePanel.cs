@@ -215,6 +215,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.SupplierId = Convert.ToInt32(selectedRow.Cells["Supplier"].Value.ToString().Split(';')[1].Trim());
                     selectedAsset.AssetCategoryId = Convert.ToInt32(selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[1].Trim());
 
+                    selectedAsset.SupplierName = selectedRow.Cells["Supplier"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.EmployeeName = selectedRow.Cells["currentAssetEmployeeFullName"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.AssetCategoryName =selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[0].Trim();
+
+
                     string assetLastMaintenanceValue = selectedRow.Cells["assetLastMaintenance"].Value.ToString();
                     if (assetLastMaintenanceValue != "")
                     {
