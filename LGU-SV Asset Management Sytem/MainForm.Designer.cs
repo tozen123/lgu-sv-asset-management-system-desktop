@@ -482,7 +482,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(686, 58);
             this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
-            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(104, 23);
+            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(115, 23);
             this.buttonAssetRecordsNewAsset.TabIndex = 4;
             this.buttonAssetRecordsNewAsset.Text = "+ Add New";
             this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = true;
@@ -492,7 +492,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(564, 58);
             this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
-            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(104, 23);
+            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(115, 23);
             this.buttonAssetRecordsViewRecords.TabIndex = 3;
             this.buttonAssetRecordsViewRecords.Text = "Records";
             this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = true;

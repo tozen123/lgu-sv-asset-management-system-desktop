@@ -58,15 +58,59 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void InitializeRecords()
         {
+            DataTable dataTable = FetchDataFromDB();
+
+            dataGridViewAssetRecords.AutoGenerateColumns = false;
+
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.HeaderText = column.ColumnName;
+
+               
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 24;
+
+                dataGridViewAssetRecords.Columns.Add(col);
+            }
+
+
             dataGridViewAssetRecords.DataSource = FetchDataFromDB();
 
-  
-            dataGridViewAssetRecords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-           
-         
-           
+            if (dataGridViewAssetRecords.Columns["ViewAsset"] == null)
+            {
+                var viewButtonColumn = new DataGridViewButtonColumn();
+                viewButtonColumn.HeaderText = "Actions";
+                viewButtonColumn.Text = "View";
+                viewButtonColumn.Name = "ViewAsset";
+                viewButtonColumn.UseColumnTextForButtonValue = true;
+                viewButtonColumn.Width = 50;
+                dataGridViewAssetRecords.Columns.Insert(0, viewButtonColumn);
+
+
+                viewButtonColumn.DisplayIndex = 0;
+            }
+
+
+            AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
+
+
+        }
+        private void AutoResizeColumnsBasedOnHeaders(DataGridView dataGridView)
+        {
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            }
+
+            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.ColumnHeader);
+
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
         }
 
-      
     }
 }
