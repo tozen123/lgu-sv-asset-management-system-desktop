@@ -38,5 +38,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             _panelHandler.Controls.Clear();
             _panelHandler.SendToBack();
         }
+
+
+
     }
 }
