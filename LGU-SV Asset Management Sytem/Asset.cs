@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class Asset : AssetBehaviour
+    public class Asset : AssetBehaviour
     {
         // Integers
         private int assetId, assetSupervisorId, currentEmployeeId, supplierId, assetCategoryId, assetLastMaintenanceID;
-
+          
         // Property for assetId
         public int AssetId
         {
@@ -53,11 +53,11 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetLastMaintenanceID = value; }
         }
 
-        public Availability AssetAvailability { get; set; }
-        public enum Availability
+        private string assetAvailability;
+        public string AssetAvailability 
         {
-            USED,
-            AVAILABLE
+            get { return assetAvailability; }
+            set { assetAvailability = value; }
         }
 
         private string assetName, assetLocation, QrCode;
@@ -99,12 +99,13 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetImage = value; }
         }
 
-        public CONDITION AssetCondition { get; set; }
-        public enum CONDITION
+        private string assetCondition;
+        public string AssetCondition
         {
-            WORKING,
-            INOPERABLE
+            get { return assetCondition; }
+            set { assetCondition = value; }
         }
+
 
         private Boolean isArchive, isMissing, isMaintainable;
 
@@ -123,6 +124,8 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         // Property for isMaintainable
+
+       
         public bool IsMaintainable
         {
             get { return isMaintainable; }
@@ -174,11 +177,64 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetUnit = value; }
         }
 
+        private int assetLifeSpan;
+        public int AssetLifeSpan
+        {
+            get { return assetLifeSpan; }
+            set { assetLifeSpan = value; }
+        }
+
+
+        //Oms
+
+        private string supplierName, assetCategoryName, employeeName;
+        public string SupplierName
+        {
+            get { return supplierName; }
+            set { supplierName = value; }
+        }
+
+        public string AssetCategoryName
+        {
+            get { return assetCategoryName; }
+            set { assetCategoryName = value; }
+        }
+
+        public string EmployeeName
+        {
+            get { return employeeName; }
+            set { employeeName = value; }
+        }
 
         public class AssetRepositoryControl
         {
-            
+            private DatabaseConnection databaseConnection;
+            public AssetRepositoryControl()
+            {
+                databaseConnection = new DatabaseConnection();
+            }
+            public (bool Success, string ErrorMessage) DeleteToDatabase(Asset asset)
+            {
+                try
+                {
+                    string query = "DELETE From Assets WHERE assetId = @id";
 
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", asset.AssetId}
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+            }
         }
 
     }

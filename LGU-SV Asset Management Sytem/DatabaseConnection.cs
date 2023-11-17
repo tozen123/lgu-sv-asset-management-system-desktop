@@ -87,5 +87,43 @@ namespace LGU_SV_Asset_Management_Sytem
 
             return dataTable;
         }
+
+        public int UploadToDatabaseAndGetId(string query, Dictionary<string, object> parameters)
+        {
+            int generatedId = -1; 
+
+            OpenConnection();
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query + "; SELECT SCOPE_IDENTITY() AS IncrementedId", connection))
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.AddWithValue(parameter.Key, parameter.Value);
+                    }
+
+                    
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value && result != null)
+                    {
+                        generatedId = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return generatedId;
+        }
+
+
+
+
+
+
     }
 }

@@ -91,6 +91,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonMasterExit = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.RegistrationStartPanel.SuspendLayout();
             this.RegistrationStartPanel2.SuspendLayout();
@@ -164,6 +166,8 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // LoginPanel
             // 
+            this.LoginPanel.Controls.Add(this.button5);
+            this.LoginPanel.Controls.Add(this.button4);
             this.LoginPanel.Controls.Add(this.button3);
             this.LoginPanel.Controls.Add(this.button2);
             this.LoginPanel.Controls.Add(this.button1);
@@ -696,6 +700,28 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonMasterExit.UseVisualStyleBackColor = true;
             this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.Location = new System.Drawing.Point(473, 343);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(218, 44);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "DEBUG_MANAGER3_AUTOLOGIN";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.Location = new System.Drawing.Point(249, 343);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(218, 44);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "DEBUG_OPERATOR2_AUTOLOGIN";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -703,11 +729,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.ControlBox = false;
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RegistrationStartPanel);
-            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
@@ -797,5 +823,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }

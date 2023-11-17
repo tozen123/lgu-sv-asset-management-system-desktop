@@ -51,11 +51,11 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMessage.AutoSize = true;
-            this.labelMessage.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMessage.Location = new System.Drawing.Point(318, 39);
+            this.labelMessage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessage.Location = new System.Drawing.Point(95, 70);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelMessage.Size = new System.Drawing.Size(40, 19);
+            this.labelMessage.Size = new System.Drawing.Size(46, 23);
             this.labelMessage.TabIndex = 2;
             this.labelMessage.Text = "label1";
             this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

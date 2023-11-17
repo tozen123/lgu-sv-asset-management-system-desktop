@@ -22,6 +22,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Session
         string currentSessionUserType;
+        string currentUserOffice;
 
         //Color
         Color clickColor = Color.FromArgb(76, 245, 154);
@@ -44,6 +45,9 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //User-Role-Id
         private string RoleBasedID;
+
+        //Worker
+        Worker worker;
 
         public MainForm()
         {
@@ -79,6 +83,9 @@ namespace LGU_SV_Asset_Management_Sytem
             //Side
             Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
             Utilities.SetControlsVisibilityState(sideLabels, false);
+
+            //Worker
+            worker = new Worker(this);
         }
 
         // Initialize Controls
@@ -100,7 +107,7 @@ namespace LGU_SV_Asset_Management_Sytem
                     break;
                 case "Asset Employee":
                     buttonOthers.Visible = false;
-
+                    buttonAssetRecordsNewAsset.Visible = false;
                     break;
                 case "Asset Supervisor":
 
@@ -151,13 +158,13 @@ namespace LGU_SV_Asset_Management_Sytem
             switch (currentSessionUserType)
             {
                 case "Asset Viewer":
-                    query = "SELECT assetViewerId FROM AssetViewer WHERE userID = @UserId";
+                    query = "SELECT assetViewerId,assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
                     break;
                 case "Asset Employee":
-                    query = "SELECT assetEmployeeId FROM AssetEmployee WHERE userID = @UserId";
+                    query = "SELECT assetEmployeeId, assetEmployeeOffice FROM AssetEmployee WHERE userID = @UserId";
                     break;
                 case "Asset Supervisor":
-                    query = "SELECT assetSupervisorId FROM AssetSupervisor WHERE userID = @UserId";
+                    query = "SELECT assetSupervisorId, assetSupervisorOffice FROM AssetSupervisor WHERE userID = @UserId";
                     break;
             }
 
@@ -172,7 +179,19 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 foreach (DataColumn col in resultTable.Columns)
                 {
-                    RoleBasedID = row[col].ToString();
+                    switch (col.ColumnName)
+                    {
+                        case "assetViewerId":
+                        case "assetEmployeeId":
+                        case "assetSupervisorId":
+                            RoleBasedID = row[col].ToString();
+                            break;
+                        case "assetViewerOffice":
+                        case "assetEmployeeOffice":
+                        case "assetSupervisorOffice":
+                            currentUserOffice = row[col].ToString();
+                            break;
+                    }
                 }
             }
             
@@ -270,22 +289,29 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
             panelTabControl.SelectedTab = tabDashboard;
-                
+            ResetAssetViewedPanel();
         }
+        private void ResetAssetViewedPanel()
+        {
+            panelViewedAssetHandler.Controls.Clear();
+            panelViewedAssetHandler.SendToBack();
 
+        }
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel();
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+            ResetAssetViewedPanel();
+
 
         }
 
         private void buttonArchiveRecords_Click(object sender, EventArgs e)
         {
-          
-          panelTabControl.SelectedTab = tabArchiveRecords;
+            ResetAssetViewedPanel();
+            panelTabControl.SelectedTab = tabArchiveRecords;
                 
         }
 
@@ -293,12 +319,13 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonGenerateReports_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabGenReport;
-    
+            ResetAssetViewedPanel();
         }
 
 
         private void buttonOthers_Click(object sender, EventArgs e)
-        {  
+        {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabOthers;
             otherTabControl.SelectedTab = tabSupplier;
             labelTitleHandler.Text = "Supplier";
@@ -347,11 +374,13 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAbout_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabAbout;
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabAbout;
         }
 
@@ -386,6 +415,7 @@ namespace LGU_SV_Asset_Management_Sytem
         }
         private void buttonTransaction_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabTransaction;
         }
         private void SetListControlStateTo(List<Control> controls, bool state)
@@ -586,6 +616,7 @@ namespace LGU_SV_Asset_Management_Sytem
         bool hamburgerToggle;
         private void buttonHamburger_Click(object sender, EventArgs e)
         {
+            ResetAssetViewedPanel();
             Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
 
             if (CheckSession())
@@ -1003,9 +1034,6 @@ namespace LGU_SV_Asset_Management_Sytem
                     assetCategory.AssetCategoryDescription = richTextBoxAssetCategoryDesc.Text;
                     assetCategory.AssetCategoryName = textBoxAssetCategoryName.Text;
 
-
-
-                    Console.WriteLine($"hey {currentSelectedAssetCategoryId}");
                     if (!string.IsNullOrEmpty(currentSelectedAssetCategoryId))
                     {
                         var result = assetCategoryRepositoryControl.DeleteToDatabase(assetCategory);
@@ -1072,14 +1100,14 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsNewAsset_Click(object sender, EventArgs e)
         {
-            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID);
+            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice);
             Console.WriteLine(RoleBasedID);
-            optionDialogBox.Show();
+            optionDialogBox.ShowDialog();
         }
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
         {
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel();
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
         }
 

@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
+using ZXing.QrCode.Internal;
+using ZXing.Rendering;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 {
@@ -20,6 +25,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
 
         string supervisor_id;
+        string supervisor_location;
 
         public enum AssetType
         {
@@ -29,10 +35,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         public AssetType assetType;
 
-        public AddAssetPanel(AssetType _assetType, string id)
+        public AddAssetPanel(AssetType _assetType, string id, string location)
         {
             InitializeComponent();
             supervisor_id = id;
+            supervisor_location = location;
 
             assetType = _assetType;
             databaseConnection = new DatabaseConnection();
@@ -49,11 +56,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             switch (assetType)
             {
                 case AssetType.New:
-                    buttonAdd.Text = "Add New Asset";
+                    buttonSave.Text = "Add New Asset";
 
                     break;
                 case AssetType.Existing:
-                    buttonAdd.Text = "Add Existing Asset";
+                    buttonSave.Text = "Add Existing Asset";
 
                     break;
             }
@@ -71,12 +78,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             comboBoxCondition.Items.Add("WORKING");
             comboBoxCondition.Items.Add("INOPERABLE");
 
-            comboBoxLocation.Items.Add("GSO-General Services Office");
-            comboBoxLocation.Items.Add("MHO-Municipal Health Office");
-            comboBoxLocation.Items.Add("MCR-Municipal Civil Registrar");
-            comboBoxLocation.Items.Add("MEO-Municipal Engineering Office");
-            comboBoxLocation.Items.Add("MBO-Municipal Budget Office");
-            comboBoxLocation.Items.Add("Accounting Office");
 
             comboBoxUnit.Items.Add("SET");
             comboBoxUnit.Items.Add("SINGLE");
@@ -284,7 +285,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 // ComboBox
                 ComboBox ComboBox_Category = tabPage.Controls.Find("comboBoxCategory", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Unit = tabPage.Controls.Find("comboBoxUnit", true).FirstOrDefault() as ComboBox;
-                ComboBox ComboBox_Location = tabPage.Controls.Find("comboBoxLocation", true).FirstOrDefault() as ComboBox;
+        
                 ComboBox ComboBox_Availability = tabPage.Controls.Find("comboBoxAvailability", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Condition = tabPage.Controls.Find("comboBoxCondition", true).FirstOrDefault() as ComboBox;
 
@@ -303,73 +304,223 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 // QR Generator
 
                 //Validate
+                /*
                 if (IsNullOrEmpty(TextBox_AssetName) || IsNullOrEmpty(TextBox_Quantity) ||
                     IsNullOrEmpty(TextBox_PurchaseAmount) || IsNullOrEmpty(TextBox_LifeSpan) ||
                     IsNullOrEmpty(ComboBox_Category) || IsNullOrEmpty(ComboBox_Unit) ||
-                    IsNullOrEmpty(ComboBox_Location) || IsNullOrEmpty(ComboBox_Availability) ||
+                    IsNullOrEmpty(ComboBox_Availability) ||
                     IsNullOrEmpty(ComboBox_Condition) || IsNullOrEmpty(ComboBox_Employee) ||
                     IsNullOrEmpty(ComboBox_Supplier) || IsNullOrEmpty(DateTimePicker_purchaseDate) ||
-                    IsNullOrEmpty(CheckBox_isMaintainable) || IsNullOrEmpty(PictureBox_assetImage))
+                     IsNullOrEmpty(PictureBox_assetImage))
                 {
                     MessagePrompt("HEYYYYYY ! Empty field found!");
                 }
-                else
-                {
-              
-                    asset.AssetName = TextBox_AssetName.Text;
-                    asset.AssetQuantity = Convert.ToInt32(TextBox_Quantity.Text);
-                    asset.AssetPurchaseAmount = Convert.ToDecimal(TextBox_PurchaseAmount.Text);
+                */
 
 
-                    //Supervisor
+                
+                
+                    // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
+
+                    // Note for programmers who will read this section:
+                    // The following code might not represent the best implementation.
+                    // The code and logic could result in error on database inputs,
+                    // causing to major errors and evenn potential crashes due to a lack of validation.
+                    // This code was developed for a fast implementation to meet the deadline. :(
+
+
+                    // Supervisor
                     if (int.TryParse(supervisor_id, out int parsedSupervisorId))
                     {
                         asset.AssetSupervisorId = parsedSupervisorId;
                     }
 
-                    //Employee
-                    
+                    // Employee
+
                     if (int.TryParse(ComboBox_Employee.SelectedItem.ToString().Split(' ')[2], out int empId))
                     {
                         asset.CurrentEmployeeId = empId;
                     }
 
 
-                    ////Supplier
-                    
+                    // Supplier
+
                     if (int.TryParse(ComboBox_Supplier.SelectedItem.ToString().Split(' ')[2], out int supId))
                     {
                         asset.SupplierId = supId;
                     }
 
+                    // Category
 
+                    if (int.TryParse(ComboBox_Category.SelectedItem?.ToString().Split(' ')[2], out int catId))
+                    {
+                        asset.AssetCategoryId = catId;
+                    }
+                    
+                    asset.AssetName = TextBox_AssetName.Text;
+                    asset.AssetCondition = ComboBox_Condition.SelectedItem?.ToString();
+                    asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
+                    asset.AssetLocation = supervisor_location;
+                    asset.IsArchive = false;
+                    asset.AssetPurchaseAmount = Convert.ToDecimal(TextBox_PurchaseAmount.Text);
+                    asset.AssetQuantity = Convert.ToInt32(TextBox_Quantity.Text);
                     asset.AssetUnit = ComboBox_Unit.SelectedItem?.ToString();
-                    asset.AssetLocation = ComboBox_Location.SelectedItem?.ToString();
-                   
-                    asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
-
-                  
-                    asset.IsMaintainable = CheckBox_isMaintainable.Checked;
-
-                  
                     asset.AssetImage = Utilities.ConvertImageToBytes(PictureBox_assetImage.Image);
+                    asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
+                    asset.IsMaintainable = CheckBox_isMaintainable.Checked;
+                    asset.IsMissing = false;
+                    
 
-                    /*
-                     * 
-                     * MAIN PROGRESS HERE
-                     * 
-                     */
+                    // LifeSpan
 
-                    //Gen QR
-                    //Gen QR Image
-                    //Generate Maintanence Logs ID based on the maintainable
-                    //Transfer History
-                    //Borrowed and Return History
-                    //CategoryID
+                    if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
+                    {
+                        asset.AssetLifeSpan = lifespan;
+                    }
+                //End Region
 
-                    //Change Asset Location, base it on the current supervisor location
+
+                /*
+                 * 
+                 * Important Notes to Remember:
+                 * Maintenance are generated after null in the first creation of asset
+                 * 
+                 */
+
+
+                /*
+                // PRE-UPLOAD LOGIC
+                string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
+                    " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+                    " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
+                    " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
+                    " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>()
+                {
+                    { "@supervisorId",  asset.AssetSupervisorId },
+                    { "@employeeId", asset.CurrentEmployeeId },
+                    { "@supplierId",  asset.SupplierId },
+                    { "@categoryId", asset.AssetCategoryId },
+                    { "@name",  asset.AssetName },
+                    { "@condition", asset.AssetCondition },
+                    { "@availability", asset.AssetAvailability },
+                    { "@location", asset.AssetLocation },
+                    { "@isarchive", asset.IsArchive },
+                    { "@purchasedate", asset.AssetPurchaseDate },
+                    { "@purchaseamount", asset.AssetPurchaseAmount },
+                    { "@quantity", asset.AssetQuantity },
+                    { "@unit", asset.AssetQuantity },
+                    { "@image", asset.AssetImage},
+                    { "@ismissing", asset.IsMissing},
+                    { "@ismaintainable", asset.IsMaintainable},
+                    { "@lifeSpan", asset.AssetLifeSpan}
+
+                };
+                int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
+
+                Console.WriteLine("Data Uploaded");
+
+                // POST-UPLOAD LOGIC
+                string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
+
+                string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
+                    "assetId = @assetId";
+                Dictionary<string, object> parameters1 = new Dictionary<string, object>()
+                {
+                    { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
+                    { "@qrDefinition", QRDefinition},
+                    { "@assetId", qr_asset_gen_id}
+                };
+
+                databaseConnection.UploadToDatabase(query1, parameters1);
+
+                databaseConnection.CloseConnection();
+
+                //pictureBox1.Image = bitmap;
+
+                //Generate Maintanence Logs ID based on the maintainable
+                //Transfer History
+                //Borrowed and Return History
+
+                //QrShow Confirm Final
+
+
+                */
+
+
+            }
+
+            //Confirmation
+           
+            using (AddAssetPanelConfirmation addAssetPanelConfirmation = new AddAssetPanelConfirmation(assetToAdd))
+            {
+                addAssetPanelConfirmation.ShowDialog();
+                if (addAssetPanelConfirmation.GetResult() == DialogResult.OK)
+                {
+                    foreach (Asset asset in assetToAdd)
+                    {
+                        string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
+                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
+                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
+
+                        Dictionary<string, object> parameters = new Dictionary<string, object>()
+                        {
+                            { "@supervisorId",  asset.AssetSupervisorId },
+                            { "@employeeId", asset.CurrentEmployeeId },
+                            { "@supplierId",  asset.SupplierId },
+                            { "@categoryId", asset.AssetCategoryId },
+                            { "@name",  asset.AssetName },
+                            { "@condition", asset.AssetCondition },
+                            { "@availability", asset.AssetAvailability },
+                            { "@location", asset.AssetLocation },
+                            { "@isarchive", asset.IsArchive },
+                            { "@purchasedate", asset.AssetPurchaseDate },
+                            { "@purchaseamount", asset.AssetPurchaseAmount },
+                            { "@quantity", asset.AssetQuantity },
+                            { "@unit", asset.AssetQuantity },
+                            { "@image", asset.AssetImage},
+                            { "@ismissing", asset.IsMissing},
+                            { "@ismaintainable", asset.IsMaintainable},
+                            { "@lifeSpan", asset.AssetLifeSpan}
+
+                        };
+                        int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
+
+                        // POST-UPLOAD LOGIC
+                        string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
+
+                        // Other Attributes Post Update
+                        asset.AssetId = qr_asset_gen_id;
+                        asset.AssetQRCodeImage = GenerateAssetQRImageByte(QRDefinition);
+                        asset.QRCode = QRDefinition;
+
+                        string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
+                            "assetId = @assetId";
+
+                        Dictionary<string, object> parameters1 = new Dictionary<string, object>()
+                        {
+                            { "@generatedQrImageByte", asset.AssetQRCodeImage},
+                            { "@qrDefinition", asset.QRCode},
+                            { "@assetId", qr_asset_gen_id}
+                        };
+
+                        databaseConnection.UploadToDatabase(query1, parameters1);
+
+                        databaseConnection.CloseConnection();
+
+                    }
+                    // Success Panel
+                    SuccessPanel(assetToAdd);
+
+                    addAssetPanelConfirmation.Close();
                 }
-
+                else if (addAssetPanelConfirmation.GetResult() == DialogResult.Cancel)
+                {
+                    addAssetPanelConfirmation.Close();
+                }
             }
 
             foreach (Asset asset in assetToAdd)
@@ -397,6 +548,52 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 Console.WriteLine($"Is Maintainable: {asset.IsMaintainable}");
                 Console.WriteLine("------------------------------------------");
             }
+        }
+
+        private void SuccessPanel(List<Asset> assetSuccessfulList)
+        {
+            using (AddAssetPanelSuccessfulQRShow addAssetPanelSuccessfulQRShow = new AddAssetPanelSuccessfulQRShow(assetSuccessfulList))
+            {
+                addAssetPanelSuccessfulQRShow.ShowDialog();
+                if (addAssetPanelSuccessfulQRShow.GetResult() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private byte[] GenerateAssetQRImageByte(string QRDefinition)
+        {
+            BarcodeWriter barcodeWriter = new BarcodeWriter();
+            EncodingOptions encodingOptions = new EncodingOptions()
+            {
+                Width = 300,
+                Height = 300,
+                Margin = 1,
+                PureBarcode = false
+            };
+
+            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
+
+            barcodeWriter.Renderer = new BitmapRenderer();
+            barcodeWriter.Options = encodingOptions;
+            barcodeWriter.Format = BarcodeFormat.QR_CODE;
+            Bitmap bitmap = barcodeWriter.Write(QRDefinition);
+
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            Bitmap logo = null;
+            if (mainForm != null)
+            {
+
+                Icon mainFormIcon = mainForm.Icon;
+                logo = mainFormIcon.ToBitmap();
+
+            }
+
+            Graphics g = Graphics.FromImage(bitmap);
+            g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
+
+            return Utilities.ConvertImageToBytes(bitmap);
         }
 
         private bool IsNullOrEmpty(Control control)

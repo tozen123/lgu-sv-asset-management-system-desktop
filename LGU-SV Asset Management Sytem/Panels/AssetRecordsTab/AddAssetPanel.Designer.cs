@@ -30,7 +30,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private void InitializeComponent()
         {
             this.buttonAddMoreAsset = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelAssetCount = new System.Windows.Forms.Label();
             this.groupBoxImage = new System.Windows.Forms.GroupBox();
@@ -55,8 +55,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.dateTimePickerPurchase = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxLocation = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,15 +76,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonAddMoreAsset.UseVisualStyleBackColor = true;
             this.buttonAddMoreAsset.Click += new System.EventHandler(this.buttonAddMoreAsset_Click);
             // 
-            // buttonAdd
+            // buttonSave
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(924, 552);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(193, 36);
-            this.buttonAdd.TabIndex = 28;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonSave.Location = new System.Drawing.Point(924, 552);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(193, 36);
+            this.buttonSave.TabIndex = 28;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // tabPage1
             // 
@@ -111,8 +109,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.tabPage1.Controls.Add(this.dateTimePickerPurchase);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.comboBoxLocation);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.comboBoxCategory);
             this.tabPage1.Controls.Add(this.label2);
@@ -138,24 +134,24 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.groupBoxImage.Controls.Add(this.pictureBoxAssetImage);
             this.groupBoxImage.Controls.Add(this.buttonUploadAssetImage);
-            this.groupBoxImage.Location = new System.Drawing.Point(719, 207);
+            this.groupBoxImage.Location = new System.Drawing.Point(719, 159);
             this.groupBoxImage.Name = "groupBoxImage";
-            this.groupBoxImage.Size = new System.Drawing.Size(308, 249);
+            this.groupBoxImage.Size = new System.Drawing.Size(329, 297);
             this.groupBoxImage.TabIndex = 53;
             this.groupBoxImage.TabStop = false;
             this.groupBoxImage.Text = "Asset Image";
             // 
             // pictureBoxAssetImage
             // 
-            this.pictureBoxAssetImage.Location = new System.Drawing.Point(60, 19);
+            this.pictureBoxAssetImage.Location = new System.Drawing.Point(53, 19);
             this.pictureBoxAssetImage.Name = "pictureBoxAssetImage";
-            this.pictureBoxAssetImage.Size = new System.Drawing.Size(204, 194);
+            this.pictureBoxAssetImage.Size = new System.Drawing.Size(238, 243);
             this.pictureBoxAssetImage.TabIndex = 1;
             this.pictureBoxAssetImage.TabStop = false;
             // 
             // buttonUploadAssetImage
             // 
-            this.buttonUploadAssetImage.Location = new System.Drawing.Point(81, 219);
+            this.buttonUploadAssetImage.Location = new System.Drawing.Point(93, 268);
             this.buttonUploadAssetImage.Name = "buttonUploadAssetImage";
             this.buttonUploadAssetImage.Size = new System.Drawing.Size(160, 23);
             this.buttonUploadAssetImage.TabIndex = 0;
@@ -166,7 +162,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(716, 162);
+            this.label12.Location = new System.Drawing.Point(716, 116);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 13);
             this.label12.TabIndex = 52;
@@ -175,7 +171,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // comboBoxEmployee
             // 
             this.comboBoxEmployee.FormattingEnabled = true;
-            this.comboBoxEmployee.Location = new System.Drawing.Point(830, 159);
+            this.comboBoxEmployee.Location = new System.Drawing.Point(830, 113);
             this.comboBoxEmployee.Name = "comboBoxEmployee";
             this.comboBoxEmployee.Size = new System.Drawing.Size(197, 21);
             this.comboBoxEmployee.TabIndex = 51;
@@ -183,7 +179,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(716, 124);
+            this.label11.Location = new System.Drawing.Point(716, 78);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 50;
@@ -192,7 +188,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // comboBoxSupplier
             // 
             this.comboBoxSupplier.FormattingEnabled = true;
-            this.comboBoxSupplier.Location = new System.Drawing.Point(830, 121);
+            this.comboBoxSupplier.Location = new System.Drawing.Point(830, 75);
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(197, 21);
             this.comboBoxSupplier.TabIndex = 49;
@@ -200,7 +196,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // checkBoxIsMaintanable
             // 
             this.checkBoxIsMaintanable.AutoSize = true;
-            this.checkBoxIsMaintanable.Location = new System.Drawing.Point(719, 77);
+            this.checkBoxIsMaintanable.Location = new System.Drawing.Point(385, 254);
             this.checkBoxIsMaintanable.Name = "checkBoxIsMaintanable";
             this.checkBoxIsMaintanable.Size = new System.Drawing.Size(130, 17);
             this.checkBoxIsMaintanable.TabIndex = 48;
@@ -216,7 +212,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // textBoxPurchaseAmount
             // 
-            this.textBoxPurchaseAmount.Location = new System.Drawing.Point(150, 253);
+            this.textBoxPurchaseAmount.Location = new System.Drawing.Point(150, 206);
             this.textBoxPurchaseAmount.Name = "textBoxPurchaseAmount";
             this.textBoxPurchaseAmount.Size = new System.Drawing.Size(197, 20);
             this.textBoxPurchaseAmount.TabIndex = 37;
@@ -297,7 +293,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // dateTimePickerPurchase
             // 
-            this.dateTimePickerPurchase.Location = new System.Drawing.Point(496, 253);
+            this.dateTimePickerPurchase.Location = new System.Drawing.Point(150, 251);
             this.dateTimePickerPurchase.Name = "dateTimePickerPurchase";
             this.dateTimePickerPurchase.Size = new System.Drawing.Size(197, 20);
             this.dateTimePickerPurchase.TabIndex = 39;
@@ -305,7 +301,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(382, 260);
+            this.label6.Location = new System.Drawing.Point(36, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 38;
@@ -314,28 +310,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 256);
+            this.label5.Location = new System.Drawing.Point(36, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 36;
             this.label5.Text = "Purchase Amount:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Location:";
-            // 
-            // comboBoxLocation
-            // 
-            this.comboBoxLocation.FormattingEnabled = true;
-            this.comboBoxLocation.Location = new System.Drawing.Point(150, 207);
-            this.comboBoxLocation.Name = "comboBoxLocation";
-            this.comboBoxLocation.Size = new System.Drawing.Size(197, 21);
-            this.comboBoxLocation.TabIndex = 34;
             // 
             // label3
             // 
@@ -386,7 +365,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabAddingAsset);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonAddMoreAsset);
             this.Name = "AddAssetPanel";
             this.Size = new System.Drawing.Size(1129, 591);
@@ -402,7 +381,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         #endregion
 
         private System.Windows.Forms.Button buttonAddMoreAsset;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBoxImage;
         private System.Windows.Forms.PictureBox pictureBoxAssetImage;
@@ -426,8 +405,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.DateTimePicker dateTimePickerPurchase;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxLocation;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label label2;
