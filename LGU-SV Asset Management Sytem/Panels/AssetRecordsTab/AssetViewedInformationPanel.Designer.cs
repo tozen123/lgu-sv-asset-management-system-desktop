@@ -62,6 +62,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label11 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -322,7 +328,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(839, 208);
+            this.textBox10.Location = new System.Drawing.Point(839, 202);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(197, 25);
             this.textBox10.TabIndex = 30;
@@ -330,16 +336,74 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(720, 214);
+            this.label12.Location = new System.Drawing.Point(720, 208);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 13);
+            this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 29;
-            this.label12.Text = "Availability:";
+            this.label12.Text = "Condition:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(839, 253);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(197, 25);
+            this.textBox11.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(720, 259);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Category:";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(839, 303);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(197, 25);
+            this.textBox12.TabIndex = 34;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(720, 309);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "LifeSpan:";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(839, 354);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(197, 25);
+            this.textBox13.TabIndex = 36;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(720, 360);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 13);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "Operator:";
             // 
             // AssetViewedInformationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox9);
@@ -414,5 +478,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label15;
     }
 }
