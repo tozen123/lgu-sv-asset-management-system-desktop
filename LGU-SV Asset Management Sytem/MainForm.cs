@@ -296,7 +296,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel();
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
 
         }
@@ -1098,7 +1098,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
         {
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel();
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
         }
 

@@ -13,16 +13,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
     public partial class RecordsHomePanel : UserControl
     {
         private DatabaseConnection databaseConnection;
-
-        public RecordsHomePanel()
+        string userLocation;
+        public RecordsHomePanel(string _userLocation)
         {
             databaseConnection = new DatabaseConnection();
 
             InitializeComponent();
+            userLocation = _userLocation;
 
             InitializeRecords();
-
-       
+           
         }
 
 
@@ -40,10 +40,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                    "LEFT JOIN AssetSupervisor ASupervisor ON A.assetSupervisorID = ASupervisor.assetSupervisorID " +
                    "LEFT JOIN AssetEmployee AEmployee ON A.currentAssetEmployeeID = AEmployee.assetEmployeeID " +
                    "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
-                   "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID";
+                   "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                   "WHERE A.assetLocation = @uLocation";
 
 
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                {"@uLocation", userLocation}
+            };
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
