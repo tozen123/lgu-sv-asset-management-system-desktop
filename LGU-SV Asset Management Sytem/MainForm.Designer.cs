@@ -48,10 +48,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonArchiveRecords = new System.Windows.Forms.Button();
             this.buttonAssetRecords = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
-            this.panelBoxTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.buttonMasterExit = new System.Windows.Forms.Button();
             this.tabTransaction = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -142,8 +138,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label1 = new System.Windows.Forms.Label();
             this.panelTabControl = new System.Windows.Forms.TabControl();
             this.groupBoxSide.SuspendLayout();
-            this.panelBoxTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabTransaction.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
@@ -167,6 +161,8 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // groupBoxSide
             // 
+            this.groupBoxSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxSide.BackColor = System.Drawing.Color.Silver;
             this.groupBoxSide.Controls.Add(this.labelSideBarMisc);
             this.groupBoxSide.Controls.Add(this.labelSideBarTransc);
@@ -185,9 +181,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
             this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
-            this.groupBoxSide.Location = new System.Drawing.Point(-3, 42);
+            this.groupBoxSide.Location = new System.Drawing.Point(-3, -9);
             this.groupBoxSide.Name = "groupBoxSide";
-            this.groupBoxSide.Size = new System.Drawing.Size(80, 746);
+            this.groupBoxSide.Size = new System.Drawing.Size(80, 820);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
             // 
@@ -361,48 +357,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonDashboard.Text = "D";
             this.buttonDashboard.UseVisualStyleBackColor = true;
             this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            // 
-            // panelBoxTop
-            // 
-            this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panelBoxTop.Controls.Add(this.pictureBox1);
-            this.panelBoxTop.Controls.Add(this.label16);
-            this.panelBoxTop.Controls.Add(this.buttonMasterExit);
-            this.panelBoxTop.Location = new System.Drawing.Point(-9, -7);
-            this.panelBoxTop.Name = "panelBoxTop";
-            this.panelBoxTop.Size = new System.Drawing.Size(1295, 60);
-            this.panelBoxTop.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(70, 7);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 48);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "LGU-SV AMS";
-            // 
-            // buttonMasterExit
-            // 
-            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 14);
-            this.buttonMasterExit.Name = "buttonMasterExit";
-            this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
-            this.buttonMasterExit.TabIndex = 3;
-            this.buttonMasterExit.Text = "X";
-            this.buttonMasterExit.UseVisualStyleBackColor = true;
-            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
             // 
             // tabTransaction
             // 
@@ -1288,7 +1242,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
             this.tabDashboard.Name = "tabDashboard";
             this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(1172, 704);
+            this.tabDashboard.Size = new System.Drawing.Size(1172, 765);
             this.tabDashboard.TabIndex = 1;
             this.tabDashboard.Text = "tabPage2";
             this.tabDashboard.UseVisualStyleBackColor = true;
@@ -1325,20 +1279,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Controls.Add(this.tabSettings);
             this.panelTabControl.Controls.Add(this.tabTransaction);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(82, 57);
+            this.panelTabControl.Location = new System.Drawing.Point(82, 6);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1180, 730);
+            this.panelTabControl.Size = new System.Drawing.Size(1180, 791);
             this.panelTabControl.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1268, 799);
-            this.ControlBox = false;
-            this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.groupBoxSide);
             this.Controls.Add(this.panelTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1348,9 +1301,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBoxSide.ResumeLayout(false);
             this.groupBoxSide.PerformLayout();
-            this.panelBoxTop.ResumeLayout(false);
-            this.panelBoxTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabTransaction.ResumeLayout(false);
             this.tabTransaction.PerformLayout();
             this.tabSettings.ResumeLayout(false);
@@ -1398,10 +1348,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button buttonHamburger;
-        private System.Windows.Forms.Panel panelBoxTop;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonMasterExit;
         private System.Windows.Forms.Button buttonTransaction;
         private System.Windows.Forms.Label labelSideBarTransc;
         private System.Windows.Forms.Label labelSideBarGenRep;

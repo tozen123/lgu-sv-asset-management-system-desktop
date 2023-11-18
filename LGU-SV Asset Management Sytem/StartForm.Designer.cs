@@ -425,6 +425,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationStartPanel2
             // 
+            this.RegistrationStartPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RegistrationStartPanel2.Controls.Add(this.label28);
             this.RegistrationStartPanel2.Controls.Add(this.label4);
             this.RegistrationStartPanel2.Controls.Add(this.pictureBox4);
@@ -563,6 +566,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationAccountSetup1
             // 
+            this.RegistrationAccountSetup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RegistrationAccountSetup1.Controls.Add(this.rbuttonAccountSetup);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupAddress1);
             this.RegistrationAccountSetup1.Controls.Add(this.pictureBox3);
@@ -789,6 +795,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // RegistrationAccountSetup2
             // 
+            this.RegistrationAccountSetup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RegistrationAccountSetup2.Controls.Add(this.rbuttonRegister);
             this.RegistrationAccountSetup2.Controls.Add(this.rbuttonBrowseFiles);
             this.RegistrationAccountSetup2.Controls.Add(this.label13);
@@ -994,11 +1003,12 @@ namespace LGU_SV_Asset_Management_Sytem
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.buttonBackToLoginForm);
+            this.Controls.Add(this.LoginPanel);
+            this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
-            this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.RegistrationStartPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";

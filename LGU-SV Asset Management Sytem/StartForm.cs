@@ -107,6 +107,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 Label_ErrorHandler_Login.Visible = false;
                 MainForm mainForm = new MainForm();
                 mainForm.SetSessionHandler(inputEmail, inputPassword);
+                mainForm.FormClosed += (s, args) => this.Close();
                 mainForm.Show();
 
                 databaseConnection.CloseConnection();
@@ -458,6 +459,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("01-1", "703");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -469,6 +471,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("02-10", "3336");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -480,6 +483,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("03-2", "3974");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -491,6 +495,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("03-9", "fire");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -503,6 +508,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("02-8", "jane");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -510,6 +516,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Hide();
         }
 
-      
+        private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // If the form is closed by the user, exit the application
+                Application.Exit();
+            }
+        }
     }
 }
