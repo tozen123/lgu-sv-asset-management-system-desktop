@@ -11,6 +11,14 @@ namespace LGU_SV_Asset_Management_Sytem
     {
         private DatabaseConnection databaseConnection;
 
+        private string userRoleBasedID;
+
+        public string UserRoleBasedID
+        {
+            get { return userRoleBasedID; }
+            set { userRoleBasedID = value; }
+        }
+
         public User()
         {
             databaseConnection = new DatabaseConnection();

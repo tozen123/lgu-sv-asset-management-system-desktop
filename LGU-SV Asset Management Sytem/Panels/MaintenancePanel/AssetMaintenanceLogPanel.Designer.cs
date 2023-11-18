@@ -88,7 +88,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.dataGridViewMaintenanceLogs.AllowUserToDeleteRows = false;
             this.dataGridViewMaintenanceLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMaintenanceLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaintenanceLogs.Location = new System.Drawing.Point(6, 83);
+            this.dataGridViewMaintenanceLogs.Location = new System.Drawing.Point(5, 82);
             this.dataGridViewMaintenanceLogs.Name = "dataGridViewMaintenanceLogs";
             this.dataGridViewMaintenanceLogs.ReadOnly = true;
             this.dataGridViewMaintenanceLogs.Size = new System.Drawing.Size(1155, 611);

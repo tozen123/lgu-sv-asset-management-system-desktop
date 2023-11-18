@@ -10,13 +10,14 @@ namespace LGU_SV_Asset_Management_Sytem
     {
        
         private string _maintenanceLogId;
-        private string _assetId;
-        private string _assetOperatorId;
+        private int _assetId;
+        private string _assetEmployeeId;
 
         private DateTime _maintenanceDate;
 
         private string _maintenanceDescription;
         private string _maintenanceStatus;
+        private string _maintenanceCategory;
 
         private decimal _maintenanceCost;
 
@@ -28,17 +29,17 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         // Property for AssetId
-        public string AssetId
+        public int AssetId
         {
             get { return _assetId; }
             set { _assetId = value; }
         }
 
         // Property for AssetOperatorId
-        public string AssetOperatorId
+        public string AssetEmployeeId
         {
-            get { return _assetOperatorId; }
-            set { _assetOperatorId = value; }
+            get { return _assetEmployeeId; }
+            set { _assetEmployeeId = value; }
         }
 
         // Property for MaintenanceDate
@@ -62,6 +63,13 @@ namespace LGU_SV_Asset_Management_Sytem
             set { _maintenanceStatus = value; }
         }
 
+        // Property for MaintenanceCategory
+        public string MaintenanceCategory
+        {
+            get { return _maintenanceCategory; }
+            set { _maintenanceCategory = value; }
+        }
+
         // Property for MaintenanceCost
         public decimal MaintenanceCost
         {
@@ -70,27 +78,57 @@ namespace LGU_SV_Asset_Management_Sytem
         }
         public class AssetMaintenanceLogRepositoryControl
         {
-            void ViewLog()
+            private DatabaseConnection databaseConnection;
+
+            public AssetMaintenanceLogRepositoryControl()
+            {
+                databaseConnection = new DatabaseConnection();
+            }
+
+            public (bool Success, string ErrorMessage) AddToDatabase(AssetMaintenanceLog _assetMaintenanceLog)
+            {
+                try
+                {
+                    string query = "INSERT INTO MaintenanceLog (assetId, assetEmployeeId, maintenanceDate, maintenanceDescription, " +
+                        "maintenanceStatus, maintenanceCost, maintenanceCategory) VALUES (@assetId, @assetEmpId, @mDate, @mDesc, @mStatus, @mCost, " +
+                        "@mCategory)";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@assetId", _assetMaintenanceLog.AssetId},
+                        {"@assetEmpId", _assetMaintenanceLog.AssetEmployeeId},
+                        {"@mDate", _assetMaintenanceLog.MaintenanceDate},
+                        {"@mDesc", _assetMaintenanceLog.MaintenanceDescription},
+                        {"@mStatus", _assetMaintenanceLog.MaintenanceStatus},
+                        {"@mCost", _assetMaintenanceLog._maintenanceCost},
+                        {"@mCategory", _assetMaintenanceLog._maintenanceCategory}
+                        
+                    };
+
+                    databaseConnection.UploadToDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+
+            }
+
+            public void DeleteLog()
             {
 
             }
 
-            void SetLogs()
+            public void UpdateLog()
             {
 
             }
 
-            void AddNewLog()
-            {
-
-            }
-
-            void DeleteLog()
-            {
-
-            }
-
-            void UpdateLog()
+            public void UpdateLogStatus()
             {
 
             }

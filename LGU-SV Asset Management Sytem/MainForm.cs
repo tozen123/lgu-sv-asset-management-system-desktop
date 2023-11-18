@@ -198,7 +198,10 @@ namespace LGU_SV_Asset_Management_Sytem
                     }
                 }
             }
-            
+
+            // Set User
+
+            currentUser.UserRoleBasedID = RoleBasedID;
         }
 
         private void ProfileTabPanel()

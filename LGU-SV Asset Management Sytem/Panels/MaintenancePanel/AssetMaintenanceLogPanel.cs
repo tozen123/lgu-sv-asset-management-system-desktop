@@ -26,14 +26,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             currentUser = _currentUser;
 
             Console.WriteLine("AssetMaintenanceLogPanel: " + currentUser.GetStringAccessLevel());
+            Console.WriteLine("AssetMaintenanceLogPanel: " + asset.AssetId);
 
             databaseConnection = new DatabaseConnection();
 
-            InitializeRecords();
+            
             SetData();
 
-            SetAccessLevel(); 
-
+            SetAccessLevel();
+            InitializeRecords();
         }
 
         // Only Employee can create new MaintenanceLogs
@@ -56,8 +57,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 
         public void InitializeRecords()
         {
-            DataTable dataTable = FetchDataFromDB();
+            
+            dataGridViewMaintenanceLogs.DataSource = null;
+            dataGridViewMaintenanceLogs.Columns.Clear();
 
+            DataTable dataTable = FetchDataFromDB();
+            dataGridViewMaintenanceLogs.AutoGenerateColumns = false;
             foreach (DataColumn column in dataTable.Columns)
             {
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
@@ -95,20 +100,26 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
                         break;
                 }
 
-                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewMaintenanceLogs.Font).Width + 24;
-
+                //col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewMaintenanceLogs.Font).Width + 35;
+                
                 dataGridViewMaintenanceLogs.Columns.Add(col);
             }
 
-            Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewMaintenanceLogs);
+            dataGridViewMaintenanceLogs.DataSource = FetchDataFromDB();
+           
+
+            //Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewMaintenanceLogs);
         }
 
         private DataTable FetchDataFromDB()
         {
             string query = "SELECT maintenanceLogId, assetId, assetEmployeeId, maintenanceDate, maintenanceDescription, " +
-                "maintenanceStatus, maintenanceCost, maintenanceCategory FROM MaintenanceLog";
+                "maintenanceStatus, maintenanceCost, maintenanceCategory FROM MaintenanceLog WHERE assetId = @selectedAssetId";
 
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                {"@selectedAssetId", asset.AssetId}
+            };
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
@@ -148,7 +159,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 
         private void buttonNewLog_Click(object sender, EventArgs e)
         {
-            AddNewMaintenanceLogPanel addNewMaintenanceLogPanel = new AddNewMaintenanceLogPanel(panelLogMiniHandler, asset);
+            AddNewMaintenanceLogPanel addNewMaintenanceLogPanel = new AddNewMaintenanceLogPanel(panelLogMiniHandler, asset, currentUser, this);
             SwitchMiniPanelHandler(addNewMaintenanceLogPanel);
         }
 
@@ -162,5 +173,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         {
 
         }
+
     }
 }
