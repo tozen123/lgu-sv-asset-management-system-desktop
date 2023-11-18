@@ -303,5 +303,20 @@
   <ItemGroup>
     <None Include="Resources\AppLogo2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonHamburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonArchiveRecords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonAssetRecords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonDashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonGenerateReports.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

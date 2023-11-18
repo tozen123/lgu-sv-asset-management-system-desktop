@@ -19,6 +19,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private Color borderColor = Color.PaleVioletRed;
 
         //Properties
+        private Color _onHoverButtonColor = Color.FromArgb(48, 77, 46);
+
         [Category("Rounded Button Size")]
         public int BorderSize
         {
@@ -152,6 +154,16 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             if (borderRadius > this.Height)
                 borderRadius = this.Height;
+        }
+
+        public Color OnHoverButtonColor
+        {
+            get => _onHoverButtonColor;
+            set
+            {
+                _onHoverButtonColor = value;
+                Invalidate();
+            }
         }
     }
 }

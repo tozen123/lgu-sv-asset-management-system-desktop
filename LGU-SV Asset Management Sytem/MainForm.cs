@@ -87,6 +87,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Worker
             worker = new Worker(this);
+
+        
         }
 
         // Initialize Controls
@@ -633,9 +635,8 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 if (hamburgerToggle != true)
                 {
-                    groupBoxSide.Size = new Size(140, 737);
-                    buttonHamburger.BackColor = Color.Silver;
-
+                    groupBoxSide.Size = new Size(200, 820);
+                    buttonHamburger.BackColor = Color.FromArgb(68, 113, 68);
                     Utilities.SetControlsVisibilityState(sideLabels, true);
 
                     // Check the session before updating the UI
@@ -649,11 +650,11 @@ namespace LGU_SV_Asset_Management_Sytem
                 else
                 {
                     buttonProfile.Visible = false;
-                    groupBoxSide.Size = new Size(80, 737);
+                    groupBoxSide.Size = new Size(80, 820);
 
                     hamburgerToggle = false;
 
-                    buttonHamburger.BackColor = clickColor;
+                    buttonHamburger.BackColor = Color.FromArgb(225, 232, 225);
 
                     buttonProfile.BackColor = Color.Silver;
 
@@ -1126,6 +1127,23 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             OtherOperatorReset();
         }
+
+        private void ButtonMouseHover(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(68, 113, 68);
+            }
+        }
+        private void ButtonMouseEnd(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(225, 232, 225);
+
+            }
+        }
+
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

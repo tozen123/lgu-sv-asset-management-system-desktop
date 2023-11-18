@@ -31,6 +31,9 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
+            this.buttonAssetRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonDashboard = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonHamburger = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.labelSideBarMisc = new System.Windows.Forms.Label();
             this.labelSideBarTransc = new System.Windows.Forms.Label();
             this.labelSideBarGenRep = new System.Windows.Forms.Label();
@@ -38,7 +41,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.labelSideBarAssetRe = new System.Windows.Forms.Label();
             this.labelSideDashboard = new System.Windows.Forms.Label();
             this.buttonTransaction = new System.Windows.Forms.Button();
-            this.buttonHamburger = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
@@ -46,8 +48,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonOthers = new System.Windows.Forms.Button();
             this.buttonGenerateReports = new System.Windows.Forms.Button();
             this.buttonArchiveRecords = new System.Windows.Forms.Button();
-            this.buttonAssetRecords = new System.Windows.Forms.Button();
-            this.buttonDashboard = new System.Windows.Forms.Button();
             this.tabTransaction = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -163,7 +163,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.groupBoxSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBoxSide.BackColor = System.Drawing.Color.Silver;
+            this.groupBoxSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(225)))));
+            this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
+            this.groupBoxSide.Controls.Add(this.buttonDashboard);
+            this.groupBoxSide.Controls.Add(this.buttonHamburger);
             this.groupBoxSide.Controls.Add(this.labelSideBarMisc);
             this.groupBoxSide.Controls.Add(this.labelSideBarTransc);
             this.groupBoxSide.Controls.Add(this.labelSideBarGenRep);
@@ -171,7 +174,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.labelSideBarAssetRe);
             this.groupBoxSide.Controls.Add(this.labelSideDashboard);
             this.groupBoxSide.Controls.Add(this.buttonTransaction);
-            this.groupBoxSide.Controls.Add(this.buttonHamburger);
             this.groupBoxSide.Controls.Add(this.buttonAbout);
             this.groupBoxSide.Controls.Add(this.buttonProfile);
             this.groupBoxSide.Controls.Add(this.buttonSettings);
@@ -179,70 +181,141 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonOthers);
             this.groupBoxSide.Controls.Add(this.buttonGenerateReports);
             this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
-            this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
-            this.groupBoxSide.Controls.Add(this.buttonDashboard);
             this.groupBoxSide.Location = new System.Drawing.Point(-3, -9);
             this.groupBoxSide.Name = "groupBoxSide";
             this.groupBoxSide.Size = new System.Drawing.Size(80, 820);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
             // 
+            // buttonAssetRecords
+            // 
+            this.buttonAssetRecords.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAssetRecords.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonAssetRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.BorderRadius = 15;
+            this.buttonAssetRecords.BorderSize = 0;
+            this.buttonAssetRecords.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAssetRecords.ForeColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonAssetRecords;
+            this.buttonAssetRecords.Location = new System.Drawing.Point(12, 197);
+            this.buttonAssetRecords.Name = "buttonAssetRecords";
+            this.buttonAssetRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecords.Size = new System.Drawing.Size(50, 50);
+            this.buttonAssetRecords.TabIndex = 31;
+            this.buttonAssetRecords.TextColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.UseVisualStyleBackColor = false;
+            this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
+            this.buttonAssetRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonAssetRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonDashboard
+            // 
+            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonDashboard.BorderColor = System.Drawing.Color.White;
+            this.buttonDashboard.BorderRadius = 15;
+            this.buttonDashboard.BorderSize = 0;
+            this.buttonDashboard.FlatAppearance.BorderSize = 0;
+            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDashboard.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDashboard.ForeColor = System.Drawing.Color.White;
+            this.buttonDashboard.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonDashboard;
+            this.buttonDashboard.Location = new System.Drawing.Point(13, 141);
+            this.buttonDashboard.Name = "buttonDashboard";
+            this.buttonDashboard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonDashboard.Size = new System.Drawing.Size(50, 50);
+            this.buttonDashboard.TabIndex = 30;
+            this.buttonDashboard.TextColor = System.Drawing.Color.White;
+            this.buttonDashboard.UseVisualStyleBackColor = false;
+            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            this.buttonDashboard.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonDashboard.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonHamburger
+            // 
+            this.buttonHamburger.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHamburger.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonHamburger.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonHamburger;
+            this.buttonHamburger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonHamburger.BorderColor = System.Drawing.Color.White;
+            this.buttonHamburger.BorderRadius = 15;
+            this.buttonHamburger.BorderSize = 0;
+            this.buttonHamburger.FlatAppearance.BorderSize = 0;
+            this.buttonHamburger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHamburger.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHamburger.ForeColor = System.Drawing.Color.White;
+            this.buttonHamburger.Location = new System.Drawing.Point(13, 21);
+            this.buttonHamburger.Name = "buttonHamburger";
+            this.buttonHamburger.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonHamburger.Size = new System.Drawing.Size(50, 50);
+            this.buttonHamburger.TabIndex = 29;
+            this.buttonHamburger.TextColor = System.Drawing.Color.White;
+            this.buttonHamburger.UseVisualStyleBackColor = false;
+            this.buttonHamburger.Click += new System.EventHandler(this.buttonHamburger_Click);
+            this.buttonHamburger.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonHamburger.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
             // labelSideBarMisc
             // 
             this.labelSideBarMisc.AutoSize = true;
-            this.labelSideBarMisc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarMisc.Location = new System.Drawing.Point(66, 490);
+            this.labelSideBarMisc.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarMisc.Location = new System.Drawing.Point(66, 485);
             this.labelSideBarMisc.Name = "labelSideBarMisc";
-            this.labelSideBarMisc.Size = new System.Drawing.Size(71, 9);
+            this.labelSideBarMisc.Size = new System.Drawing.Size(99, 19);
             this.labelSideBarMisc.TabIndex = 28;
             this.labelSideBarMisc.Text = "MISCELLANEOUS";
             // 
             // labelSideBarTransc
             // 
             this.labelSideBarTransc.AutoSize = true;
-            this.labelSideBarTransc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarTransc.Location = new System.Drawing.Point(66, 422);
+            this.labelSideBarTransc.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarTransc.Location = new System.Drawing.Point(66, 417);
             this.labelSideBarTransc.Name = "labelSideBarTransc";
-            this.labelSideBarTransc.Size = new System.Drawing.Size(62, 9);
+            this.labelSideBarTransc.Size = new System.Drawing.Size(89, 19);
             this.labelSideBarTransc.TabIndex = 27;
             this.labelSideBarTransc.Text = "TRANSACTION";
             // 
             // labelSideBarGenRep
             // 
             this.labelSideBarGenRep.AutoSize = true;
-            this.labelSideBarGenRep.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarGenRep.Location = new System.Drawing.Point(66, 351);
+            this.labelSideBarGenRep.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarGenRep.Location = new System.Drawing.Point(66, 346);
             this.labelSideBarGenRep.Name = "labelSideBarGenRep";
-            this.labelSideBarGenRep.Size = new System.Drawing.Size(88, 9);
+            this.labelSideBarGenRep.Size = new System.Drawing.Size(117, 19);
             this.labelSideBarGenRep.TabIndex = 26;
             this.labelSideBarGenRep.Text = "GENERATE REPORTS";
             // 
             // labelSideBarArchRec
             // 
             this.labelSideBarArchRec.AutoSize = true;
-            this.labelSideBarArchRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarArchRec.Location = new System.Drawing.Point(66, 288);
+            this.labelSideBarArchRec.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarArchRec.Location = new System.Drawing.Point(66, 283);
             this.labelSideBarArchRec.Name = "labelSideBarArchRec";
-            this.labelSideBarArchRec.Size = new System.Drawing.Size(82, 9);
+            this.labelSideBarArchRec.Size = new System.Drawing.Size(111, 19);
             this.labelSideBarArchRec.TabIndex = 25;
             this.labelSideBarArchRec.Text = "ARCHIVE RECORDS";
             // 
             // labelSideBarAssetRe
             // 
             this.labelSideBarAssetRe.AutoSize = true;
-            this.labelSideBarAssetRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSideBarAssetRe.Location = new System.Drawing.Point(68, 226);
+            this.labelSideBarAssetRe.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideBarAssetRe.Location = new System.Drawing.Point(68, 221);
             this.labelSideBarAssetRe.Name = "labelSideBarAssetRe";
-            this.labelSideBarAssetRe.Size = new System.Drawing.Size(72, 9);
+            this.labelSideBarAssetRe.Size = new System.Drawing.Size(98, 19);
             this.labelSideBarAssetRe.TabIndex = 24;
             this.labelSideBarAssetRe.Text = "ASSET RECORDS";
             // 
             // labelSideDashboard
             // 
             this.labelSideDashboard.AutoSize = true;
-            this.labelSideDashboard.Location = new System.Drawing.Point(65, 161);
+            this.labelSideDashboard.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSideDashboard.Location = new System.Drawing.Point(66, 160);
             this.labelSideDashboard.Name = "labelSideDashboard";
-            this.labelSideDashboard.Size = new System.Drawing.Size(75, 13);
+            this.labelSideDashboard.Size = new System.Drawing.Size(79, 19);
             this.labelSideDashboard.TabIndex = 23;
             this.labelSideDashboard.Text = "DASHBOARD";
             // 
@@ -255,16 +328,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonTransaction.Text = "TRNSC";
             this.buttonTransaction.UseVisualStyleBackColor = true;
             this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
-            // 
-            // buttonHamburger
-            // 
-            this.buttonHamburger.Location = new System.Drawing.Point(15, 15);
-            this.buttonHamburger.Name = "buttonHamburger";
-            this.buttonHamburger.Size = new System.Drawing.Size(49, 62);
-            this.buttonHamburger.TabIndex = 21;
-            this.buttonHamburger.Text = "-\r\n-\r\n-";
-            this.buttonHamburger.UseVisualStyleBackColor = true;
-            this.buttonHamburger.Click += new System.EventHandler(this.buttonHamburger_Click);
             // 
             // buttonAbout
             // 
@@ -338,26 +401,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonArchiveRecords.UseVisualStyleBackColor = true;
             this.buttonArchiveRecords.Click += new System.EventHandler(this.buttonArchiveRecords_Click);
             // 
-            // buttonAssetRecords
-            // 
-            this.buttonAssetRecords.Location = new System.Drawing.Point(15, 206);
-            this.buttonAssetRecords.Name = "buttonAssetRecords";
-            this.buttonAssetRecords.Size = new System.Drawing.Size(49, 45);
-            this.buttonAssetRecords.TabIndex = 12;
-            this.buttonAssetRecords.Text = "AR";
-            this.buttonAssetRecords.UseVisualStyleBackColor = true;
-            this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.Location = new System.Drawing.Point(15, 145);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(49, 45);
-            this.buttonDashboard.TabIndex = 11;
-            this.buttonDashboard.Text = "D";
-            this.buttonDashboard.UseVisualStyleBackColor = true;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            // 
             // tabTransaction
             // 
             this.tabTransaction.Controls.Add(this.button2);
@@ -366,7 +409,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabTransaction.Name = "tabTransaction";
             this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTransaction.Size = new System.Drawing.Size(1172, 704);
+            this.tabTransaction.Size = new System.Drawing.Size(1172, 765);
             this.tabTransaction.TabIndex = 8;
             this.tabTransaction.Text = "tabPage1";
             this.tabTransaction.UseVisualStyleBackColor = true;
@@ -405,7 +448,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabSettings.Location = new System.Drawing.Point(4, 22);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(1172, 704);
+            this.tabSettings.Size = new System.Drawing.Size(1172, 765);
             this.tabSettings.TabIndex = 7;
             this.tabSettings.Text = "tabPage8";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -426,7 +469,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
             this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAbout.Size = new System.Drawing.Size(1172, 704);
+            this.tabAbout.Size = new System.Drawing.Size(1172, 765);
             this.tabAbout.TabIndex = 6;
             this.tabAbout.Text = "tabPage7";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -451,7 +494,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOthers.Location = new System.Drawing.Point(4, 22);
             this.tabOthers.Name = "tabOthers";
             this.tabOthers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOthers.Size = new System.Drawing.Size(1172, 704);
+            this.tabOthers.Size = new System.Drawing.Size(1172, 765);
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
@@ -889,7 +932,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabGenReport.Location = new System.Drawing.Point(4, 22);
             this.tabGenReport.Name = "tabGenReport";
             this.tabGenReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenReport.Size = new System.Drawing.Size(1172, 704);
+            this.tabGenReport.Size = new System.Drawing.Size(1172, 765);
             this.tabGenReport.TabIndex = 4;
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
@@ -910,7 +953,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArchiveRecords.Size = new System.Drawing.Size(1172, 704);
+            this.tabArchiveRecords.Size = new System.Drawing.Size(1172, 765);
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
@@ -936,7 +979,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
             this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssetRecords.Size = new System.Drawing.Size(1172, 704);
+            this.tabAssetRecords.Size = new System.Drawing.Size(1172, 765);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
@@ -1022,7 +1065,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1172, 704);
+            this.tabProfile.Size = new System.Drawing.Size(1172, 765);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "tabPage1";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -1344,10 +1387,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonOthers;
         private System.Windows.Forms.Button buttonGenerateReports;
         private System.Windows.Forms.Button buttonArchiveRecords;
-        private System.Windows.Forms.Button buttonAssetRecords;
-        private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.Button buttonHamburger;
         private System.Windows.Forms.Button buttonTransaction;
         private System.Windows.Forms.Label labelSideBarTransc;
         private System.Windows.Forms.Label labelSideBarGenRep;
@@ -1444,5 +1484,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl panelTabControl;
         private System.Windows.Forms.Panel panelViewedAssetHandler;
+        private RoundedButton buttonHamburger;
+        private RoundedButton buttonDashboard;
+        private RoundedButton buttonAssetRecords;
     }
 }
