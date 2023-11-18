@@ -176,24 +176,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             }
 
 
-            AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
+            Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
 
 
         }
-        private void AutoResizeColumnsBasedOnHeaders(DataGridView dataGridView)
-        {
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            }
-
-            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.ColumnHeader);
-
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            }
-        }
+       
 
         private void dataGridViewAssetRecords_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

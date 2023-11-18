@@ -35,7 +35,31 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             SetMenuButton();
 
             assetRepositoryControl = new AssetRepositoryControl();
+            SetAccessLevel();
         }
+
+        // Only Employee can create new MaintenanceLogs
+
+        private void SetAccessLevel()
+        {
+            switch (currentUser.GetStringAccessLevel())
+            {
+                case "Asset Viewer":
+                    buttonDelete.Enabled = false;
+                    buttonArchive.Enabled = false;
+                    buttonUpdateInfo.Enabled = false;
+                    break;
+                case "Asset Employee":
+                    buttonDelete.Enabled = false;
+                    buttonArchive.Enabled = false;
+                    buttonUpdateInfo.Enabled = false;
+                    break;
+                case "Asset Supervisor":
+                    
+                    break;
+            }
+        }
+
         private void InitializeAssetInformation()
         {
             labelAssetIdWithName.Text = "Asset Records: " + asset.AssetId + "-" + asset.AssetName;

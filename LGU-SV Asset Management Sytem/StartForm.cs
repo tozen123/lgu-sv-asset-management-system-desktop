@@ -466,7 +466,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void button2_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("02-6", "1040");
+            mainForm.SetSessionHandler("02-10", "3336");
             mainForm.Show();
 
             databaseConnection.CloseConnection();

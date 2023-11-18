@@ -42,13 +42,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(574, 494);
+            this.groupBox1.Size = new System.Drawing.Size(479, 494);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(526, 22);
+            this.buttonClose.Location = new System.Drawing.Point(431, 16);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(42, 33);
             this.buttonClose.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.groupBox1);
             this.Name = "AddAssetSchedulePanel";
-            this.Size = new System.Drawing.Size(580, 500);
+            this.Size = new System.Drawing.Size(485, 500);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

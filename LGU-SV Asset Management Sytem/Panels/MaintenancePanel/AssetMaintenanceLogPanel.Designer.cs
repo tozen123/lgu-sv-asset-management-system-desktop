@@ -33,12 +33,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
             this.buttonNewLog = new System.Windows.Forms.Button();
             this.buttonSchedule = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMaintenanceLogs = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panelLogMiniHandler = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaintenanceLogs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,16 +82,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.buttonSchedule.UseVisualStyleBackColor = true;
             this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
             // 
-            // dataGridView1
+            // dataGridViewMaintenanceLogs
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1155, 611);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridViewMaintenanceLogs.AllowUserToAddRows = false;
+            this.dataGridViewMaintenanceLogs.AllowUserToDeleteRows = false;
+            this.dataGridViewMaintenanceLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMaintenanceLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMaintenanceLogs.Location = new System.Drawing.Point(6, 83);
+            this.dataGridViewMaintenanceLogs.Name = "dataGridViewMaintenanceLogs";
+            this.dataGridViewMaintenanceLogs.ReadOnly = true;
+            this.dataGridViewMaintenanceLogs.Size = new System.Drawing.Size(1155, 611);
+            this.dataGridViewMaintenanceLogs.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -122,7 +123,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             this.panelLogMiniHandler.Location = new System.Drawing.Point(577, 67);
             this.panelLogMiniHandler.Name = "panelLogMiniHandler";
-            this.panelLogMiniHandler.Size = new System.Drawing.Size(584, 500);
+            this.panelLogMiniHandler.Size = new System.Drawing.Size(485, 500);
             this.panelLogMiniHandler.TabIndex = 10;
             // 
             // AssetMaintenanceLogPanel
@@ -131,7 +132,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewMaintenanceLogs);
             this.Controls.Add(this.buttonSchedule);
             this.Controls.Add(this.buttonNewLog);
             this.Controls.Add(this.buttonBack);
@@ -140,7 +141,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.Controls.Add(this.panelLogMiniHandler);
             this.Name = "AssetMaintenanceLogPanel";
             this.Size = new System.Drawing.Size(1167, 698);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.AssetMaintenanceLogPanel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaintenanceLogs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,7 +155,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         private System.Windows.Forms.Label labelAssetIdWithName;
         private System.Windows.Forms.Button buttonNewLog;
         private System.Windows.Forms.Button buttonSchedule;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMaintenanceLogs;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panelLogMiniHandler;
