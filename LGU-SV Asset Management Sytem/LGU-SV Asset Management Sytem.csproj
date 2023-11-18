@@ -77,6 +77,10 @@
     <Compile Include="Other Tools\MenuButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Other Tools\RoundedButton.cs">
+      <SubType>Component</SubType>
+      <Generator>True</Generator>
+    </Compile>
     <Compile Include="Panels\AssetRecordsTab\AddAssetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Other Tools\MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other Tools\RoundedButton.resx">
+      <DependentUpon>RoundedButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\AssetRecordsTab\AddAssetPanel.resx">
       <DependentUpon>AddAssetPanel.cs</DependentUpon>

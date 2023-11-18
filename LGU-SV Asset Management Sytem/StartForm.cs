@@ -31,6 +31,8 @@ namespace LGU_SV_Asset_Management_Sytem
         public StartForm()
         {
             InitializeComponent();
+
+
             this.StartPosition = FormStartPosition.CenterScreen;
             databaseConnection = new DatabaseConnection();
 
@@ -152,7 +154,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonBackToLoginForm_Click(object sender, EventArgs e)
         {
-            textBoxAccSetupAddress.Text = "";
+            textBoxAccSetupAddress1.Text = "";
             textBoxAccSetupEmail.Text = "";
             textBoxAccSetupFirstName.Text = "";
             textBoxAccSetupLastName.Text = "";
@@ -303,7 +305,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 return;
             }
 
-            string address = textBoxAccSetupAddress.Text;
+            string address = textBoxAccSetupAddress1.Text;
 
             if (string.IsNullOrEmpty(address))
             {
@@ -403,7 +405,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+           
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -437,14 +439,14 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
-            informationForm.Show();
+            informationForm.ShowDialog();
         }
 
         private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
-            informationForm.Show();
+            informationForm.ShowDialog();
         }
 
         private void buttonMasterExit_Click_1(object sender, EventArgs e)
@@ -507,5 +509,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             this.Hide();
         }
+
+      
     }
 }
