@@ -13,6 +13,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.BorrowedAndReturns
     public partial class AssetBorrowedAndReturnsLogPanel : UserControl
     {
         Asset asset;
+        Panel panelHandlerParent;
         public AssetBorrowedAndReturnsLogPanel(Panel _panelHandler, Asset _asset)
         {
             InitializeComponent();
@@ -22,6 +23,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.BorrowedAndReturns
         private void SetData()
         {
             labelAssetIdWithName.Text = "Borrowed And Return Logs: " + asset.AssetId + "-" + asset.AssetName;
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+
+            panelHandlerParent.Controls.Clear();
+            panelHandlerParent.SendToBack();
+            panelHandlerParent.Visible = false;
         }
     }
 }
