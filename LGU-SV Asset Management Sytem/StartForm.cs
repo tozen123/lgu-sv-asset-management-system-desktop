@@ -31,6 +31,8 @@ namespace LGU_SV_Asset_Management_Sytem
         public StartForm()
         {
             InitializeComponent();
+
+
             this.StartPosition = FormStartPosition.CenterScreen;
             databaseConnection = new DatabaseConnection();
 
@@ -105,6 +107,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 Label_ErrorHandler_Login.Visible = false;
                 MainForm mainForm = new MainForm();
                 mainForm.SetSessionHandler(inputEmail, inputPassword);
+                mainForm.FormClosed += (s, args) => this.Close();
                 mainForm.Show();
 
                 databaseConnection.CloseConnection();
@@ -152,7 +155,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonBackToLoginForm_Click(object sender, EventArgs e)
         {
-            textBoxAccSetupAddress.Text = "";
+            textBoxAccSetupAddress1.Text = "";
             textBoxAccSetupEmail.Text = "";
             textBoxAccSetupFirstName.Text = "";
             textBoxAccSetupLastName.Text = "";
@@ -303,7 +306,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 return;
             }
 
-            string address = textBoxAccSetupAddress.Text;
+            string address = textBoxAccSetupAddress1.Text;
 
             if (string.IsNullOrEmpty(address))
             {
@@ -403,7 +406,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+           
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -437,14 +440,14 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
-            informationForm.Show();
+            informationForm.ShowDialog();
         }
 
         private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
-            informationForm.Show();
+            informationForm.ShowDialog();
         }
 
         private void buttonMasterExit_Click_1(object sender, EventArgs e)
@@ -456,6 +459,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("01-1", "703");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -467,6 +471,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("02-10", "3336");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -478,6 +483,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("03-2", "3974");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -489,6 +495,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("03-9", "fire");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -501,11 +508,21 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             MainForm mainForm = new MainForm();
             mainForm.SetSessionHandler("02-8", "jane");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
 
             this.Hide();
+        }
+
+        private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // If the form is closed by the user, exit the application
+                Application.Exit();
+            }
         }
     }
 }

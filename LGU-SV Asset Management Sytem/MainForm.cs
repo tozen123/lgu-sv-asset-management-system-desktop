@@ -52,7 +52,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public MainForm()
         {
- 
+            
             InitializeComponent();
             
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -613,10 +613,13 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             sessionHandler.OnCurrentSessionEnd();
             currentSessionUserType = "";
-            this.Close();
+            
 
             StartForm startForm = new StartForm();
+            startForm.FormClosed += (s, args) => this.Close();
             startForm.Show();
+
+            this.Hide();
         }
 
 
@@ -663,7 +666,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+          
         }
 
    
@@ -1124,6 +1127,13 @@ namespace LGU_SV_Asset_Management_Sytem
             OtherOperatorReset();
         }
 
-
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // If the form is closed by the user, exit the application
+                Application.Exit();
+            }
+        }
     }
 }

@@ -33,38 +33,51 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.buttonLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonSignUp = new System.Windows.Forms.Button();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.linkLabelSignUpButton = new System.Windows.Forms.LinkLabel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.buttonLogin = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.RegistrationStartPanel = new System.Windows.Forms.Panel();
-            this.buttonManagerRole = new System.Windows.Forms.Button();
-            this.buttonViewerRole = new System.Windows.Forms.Button();
-            this.buttonOperatorRole = new System.Windows.Forms.Button();
+            this.rbuttonViewerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonOperatorRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonManagerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.RegistrationStartPanel2 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.rbuttonNextAccountSetup = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.labelErrorHandler = new System.Windows.Forms.Label();
-            this.buttonNextAccountSetup = new System.Windows.Forms.Button();
-            this.labelPassword = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             this.textBoxRegistrationPassword = new System.Windows.Forms.TextBox();
             this.textBoxRegistrationID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.RegistrationAccountSetup1 = new System.Windows.Forms.Panel();
+            this.rbuttonAccountSetup = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.textBoxAccSetupAddress1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBoxAccSetupLastName = new System.Windows.Forms.TextBox();
             this.textBoxAccSetupMiddleName = new System.Windows.Forms.TextBox();
             this.labelAccountSetupErrorHandler = new System.Windows.Forms.Label();
-            this.buttonAccountSetup = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxAccSetupEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxAccSetupAddress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxAccSetupDepartment = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,99 +86,90 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxAccSetupPhoneNum = new System.Windows.Forms.TextBox();
             this.textBoxAccSetupFirstName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.buttonBackToLoginForm = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
             this.RegistrationAccountSetup2 = new System.Windows.Forms.Panel();
+            this.rbuttonRegister = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonBrowseFiles = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.linkLabelTOR = new System.Windows.Forms.LinkLabel();
             this.linkLabel1Policy = new System.Windows.Forms.LinkLabel();
-            this.label21 = new System.Windows.Forms.Label();
             this.labelDirectoryString = new System.Windows.Forms.Label();
-            this.buttonBrowseFiles = new System.Windows.Forms.Button();
             this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
-            this.buttonRegister = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panelBoxTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.buttonMasterExit = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonBackToLoginForm = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.LoginPanel.SuspendLayout();
-            this.RegistrationStartPanel.SuspendLayout();
-            this.RegistrationStartPanel2.SuspendLayout();
-            this.RegistrationAccountSetup1.SuspendLayout();
-            this.RegistrationAccountSetup2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
-            this.panelBoxTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.RegistrationStartPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.RegistrationStartPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.RegistrationAccountSetup1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.RegistrationAccountSetup2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 94);
+            this.label1.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label1.Location = new System.Drawing.Point(198, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 13);
+            this.label1.Size = new System.Drawing.Size(898, 65);
             this.label1.TabIndex = 1;
             this.label1.Text = "LGU - San Vicente Asset Management System";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(72, 30);
+            this.textBoxEmail.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.textBoxEmail.Location = new System.Drawing.Point(486, 325);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(332, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(332, 30);
             this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(72, 72);
+            this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.textBoxPassword.Location = new System.Drawing.Point(486, 384);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(332, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(332, 30);
             this.textBoxPassword.TabIndex = 3;
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Location = new System.Drawing.Point(15, 169);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
-            this.buttonLogin.TabIndex = 4;
-            this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 33);
+            this.label2.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.label2.Location = new System.Drawing.Point(393, 329);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.Size = new System.Drawing.Size(27, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 75);
+            this.label3.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.label3.Location = new System.Drawing.Point(392, 387);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(85, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
             // 
-            // buttonSignUp
-            // 
-            this.buttonSignUp.Location = new System.Drawing.Point(15, 222);
-            this.buttonSignUp.Name = "buttonSignUp";
-            this.buttonSignUp.Size = new System.Drawing.Size(75, 23);
-            this.buttonSignUp.TabIndex = 7;
-            this.buttonSignUp.Text = "Sign Up";
-            this.buttonSignUp.UseVisualStyleBackColor = true;
-            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
-            // 
             // LoginPanel
             // 
+            this.LoginPanel.BackColor = System.Drawing.Color.White;
+            this.LoginPanel.Controls.Add(this.pictureBox1);
+            this.LoginPanel.Controls.Add(this.label16);
+            this.LoginPanel.Controls.Add(this.linkLabelSignUpButton);
+            this.LoginPanel.Controls.Add(this.label20);
+            this.LoginPanel.Controls.Add(this.buttonLogin);
             this.LoginPanel.Controls.Add(this.button5);
             this.LoginPanel.Controls.Add(this.button4);
             this.LoginPanel.Controls.Add(this.button3);
@@ -173,20 +177,106 @@ namespace LGU_SV_Asset_Management_Sytem
             this.LoginPanel.Controls.Add(this.button1);
             this.LoginPanel.Controls.Add(this.Label_ErrorHandler_Login);
             this.LoginPanel.Controls.Add(this.textBoxEmail);
-            this.LoginPanel.Controls.Add(this.buttonSignUp);
             this.LoginPanel.Controls.Add(this.textBoxPassword);
             this.LoginPanel.Controls.Add(this.label3);
-            this.LoginPanel.Controls.Add(this.buttonLogin);
             this.LoginPanel.Controls.Add(this.label2);
-            this.LoginPanel.Location = new System.Drawing.Point(83, 127);
+            this.LoginPanel.Location = new System.Drawing.Point(12, 12);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(1080, 577);
+            this.LoginPanel.Size = new System.Drawing.Size(1256, 759);
             this.LoginPanel.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox1.Location = new System.Drawing.Point(258, 122);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label16.Location = new System.Drawing.Point(414, 135);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(554, 130);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "LGU - San Vicente \r\nAsset Management System";
+            // 
+            // linkLabelSignUpButton
+            // 
+            this.linkLabelSignUpButton.AutoSize = true;
+            this.linkLabelSignUpButton.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelSignUpButton.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelSignUpButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(69)))));
+            this.linkLabelSignUpButton.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(69)))));
+            this.linkLabelSignUpButton.Location = new System.Drawing.Point(674, 590);
+            this.linkLabelSignUpButton.Name = "linkLabelSignUpButton";
+            this.linkLabelSignUpButton.Size = new System.Drawing.Size(72, 26);
+            this.linkLabelSignUpButton.TabIndex = 15;
+            this.linkLabelSignUpButton.TabStop = true;
+            this.linkLabelSignUpButton.Text = " Sign Up";
+            this.linkLabelSignUpButton.Click += new System.EventHandler(this.buttonSignUp_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(481, 590);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(191, 26);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "Don’t have an account?";
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonLogin.BorderRadius = 15;
+            this.buttonLogin.BorderSize = 0;
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
+            this.buttonLogin.Location = new System.Drawing.Point(452, 520);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(341, 67);
+            this.buttonLogin.TabIndex = 8;
+            this.buttonLogin.Text = "LOGIN";
+            this.buttonLogin.TextColor = System.Drawing.Color.White;
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.Location = new System.Drawing.Point(528, 698);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(218, 44);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "DEBUG_OPERATOR2_AUTOLOGIN";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.Location = new System.Drawing.Point(1005, 696);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(218, 44);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "DEBUG_MANAGER3_AUTOLOGIN";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(473, 281);
+            this.button3.Location = new System.Drawing.Point(1005, 634);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(218, 44);
             this.button3.TabIndex = 11;
@@ -197,7 +287,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(249, 281);
+            this.button2.Location = new System.Drawing.Point(762, 698);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(218, 44);
             this.button2.TabIndex = 10;
@@ -208,7 +298,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(16, 281);
+            this.button1.Location = new System.Drawing.Point(290, 698);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 44);
             this.button1.TabIndex = 9;
@@ -219,138 +309,277 @@ namespace LGU_SV_Asset_Management_Sytem
             // Label_ErrorHandler_Login
             // 
             this.Label_ErrorHandler_Login.AutoSize = true;
-            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(74, 108);
+            this.Label_ErrorHandler_Login.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.Label_ErrorHandler_Login.Location = new System.Drawing.Point(460, 489);
             this.Label_ErrorHandler_Login.Name = "Label_ErrorHandler_Login";
-            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(72, 13);
+            this.Label_ErrorHandler_Login.Size = new System.Drawing.Size(118, 26);
             this.Label_ErrorHandler_Login.TabIndex = 8;
             this.Label_ErrorHandler_Login.Text = "Error_Handler";
+            this.Label_ErrorHandler_Login.Visible = false;
             // 
             // RegistrationStartPanel
             // 
-            this.RegistrationStartPanel.Controls.Add(this.buttonManagerRole);
-            this.RegistrationStartPanel.Controls.Add(this.buttonViewerRole);
-            this.RegistrationStartPanel.Controls.Add(this.buttonOperatorRole);
-            this.RegistrationStartPanel.Location = new System.Drawing.Point(71, 165);
+            this.RegistrationStartPanel.Controls.Add(this.rbuttonViewerRole);
+            this.RegistrationStartPanel.Controls.Add(this.rbuttonOperatorRole);
+            this.RegistrationStartPanel.Controls.Add(this.rbuttonManagerRole);
+            this.RegistrationStartPanel.Controls.Add(this.label23);
+            this.RegistrationStartPanel.Controls.Add(this.pictureBox2);
+            this.RegistrationStartPanel.Controls.Add(this.label22);
+            this.RegistrationStartPanel.Controls.Add(this.label1);
+            this.RegistrationStartPanel.Location = new System.Drawing.Point(15, 15);
             this.RegistrationStartPanel.Name = "RegistrationStartPanel";
-            this.RegistrationStartPanel.Size = new System.Drawing.Size(1080, 512);
+            this.RegistrationStartPanel.Size = new System.Drawing.Size(1250, 756);
             this.RegistrationStartPanel.TabIndex = 9;
             // 
-            // buttonManagerRole
+            // rbuttonViewerRole
             // 
-            this.buttonManagerRole.Location = new System.Drawing.Point(16, 70);
-            this.buttonManagerRole.Name = "buttonManagerRole";
-            this.buttonManagerRole.Size = new System.Drawing.Size(75, 23);
-            this.buttonManagerRole.TabIndex = 8;
-            this.buttonManagerRole.Text = "Supervisor";
-            this.buttonManagerRole.UseVisualStyleBackColor = true;
-            this.buttonManagerRole.Click += new System.EventHandler(this.buttonManagerRole_Click);
+            this.rbuttonViewerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonViewerRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonViewerRole.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonViewerRole.BorderRadius = 15;
+            this.rbuttonViewerRole.BorderSize = 0;
+            this.rbuttonViewerRole.FlatAppearance.BorderSize = 0;
+            this.rbuttonViewerRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonViewerRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonViewerRole.ForeColor = System.Drawing.Color.White;
+            this.rbuttonViewerRole.Location = new System.Drawing.Point(489, 615);
+            this.rbuttonViewerRole.Name = "rbuttonViewerRole";
+            this.rbuttonViewerRole.Size = new System.Drawing.Size(326, 67);
+            this.rbuttonViewerRole.TabIndex = 14;
+            this.rbuttonViewerRole.Text = "VIEWER";
+            this.rbuttonViewerRole.TextColor = System.Drawing.Color.White;
+            this.rbuttonViewerRole.UseVisualStyleBackColor = false;
+            this.rbuttonViewerRole.Click += new System.EventHandler(this.buttonViewerRole_Click);
             // 
-            // buttonViewerRole
+            // rbuttonOperatorRole
             // 
-            this.buttonViewerRole.Location = new System.Drawing.Point(16, 173);
-            this.buttonViewerRole.Name = "buttonViewerRole";
-            this.buttonViewerRole.Size = new System.Drawing.Size(75, 23);
-            this.buttonViewerRole.TabIndex = 7;
-            this.buttonViewerRole.Text = "Viewer";
-            this.buttonViewerRole.UseVisualStyleBackColor = true;
-            this.buttonViewerRole.Click += new System.EventHandler(this.buttonViewerRole_Click);
+            this.rbuttonOperatorRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorRole.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonOperatorRole.BorderRadius = 15;
+            this.rbuttonOperatorRole.BorderSize = 0;
+            this.rbuttonOperatorRole.FlatAppearance.BorderSize = 0;
+            this.rbuttonOperatorRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonOperatorRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonOperatorRole.ForeColor = System.Drawing.Color.White;
+            this.rbuttonOperatorRole.Location = new System.Drawing.Point(489, 531);
+            this.rbuttonOperatorRole.Name = "rbuttonOperatorRole";
+            this.rbuttonOperatorRole.Size = new System.Drawing.Size(326, 67);
+            this.rbuttonOperatorRole.TabIndex = 13;
+            this.rbuttonOperatorRole.Text = "EMPLOYEE";
+            this.rbuttonOperatorRole.TextColor = System.Drawing.Color.White;
+            this.rbuttonOperatorRole.UseVisualStyleBackColor = false;
+            this.rbuttonOperatorRole.Click += new System.EventHandler(this.buttonOperatorRole_Click);
             // 
-            // buttonOperatorRole
+            // rbuttonManagerRole
             // 
-            this.buttonOperatorRole.Location = new System.Drawing.Point(16, 120);
-            this.buttonOperatorRole.Name = "buttonOperatorRole";
-            this.buttonOperatorRole.Size = new System.Drawing.Size(75, 23);
-            this.buttonOperatorRole.TabIndex = 4;
-            this.buttonOperatorRole.Text = "Employee";
-            this.buttonOperatorRole.UseVisualStyleBackColor = true;
-            this.buttonOperatorRole.Click += new System.EventHandler(this.buttonOperatorRole_Click);
+            this.rbuttonManagerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonManagerRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonManagerRole.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonManagerRole.BorderRadius = 15;
+            this.rbuttonManagerRole.BorderSize = 0;
+            this.rbuttonManagerRole.FlatAppearance.BorderSize = 0;
+            this.rbuttonManagerRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonManagerRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonManagerRole.ForeColor = System.Drawing.Color.White;
+            this.rbuttonManagerRole.Location = new System.Drawing.Point(489, 443);
+            this.rbuttonManagerRole.Name = "rbuttonManagerRole";
+            this.rbuttonManagerRole.Size = new System.Drawing.Size(326, 67);
+            this.rbuttonManagerRole.TabIndex = 12;
+            this.rbuttonManagerRole.Text = "SUPERVISOR";
+            this.rbuttonManagerRole.TextColor = System.Drawing.Color.White;
+            this.rbuttonManagerRole.UseVisualStyleBackColor = false;
+            this.rbuttonManagerRole.Click += new System.EventHandler(this.buttonManagerRole_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label23.Location = new System.Drawing.Point(539, 381);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(204, 26);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Select your assigned role.";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(543, 117);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label22.Location = new System.Drawing.Point(485, 339);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(315, 51);
+            this.label22.TabIndex = 9;
+            this.label22.Text = "Welcome Onboard!";
             // 
             // RegistrationStartPanel2
             // 
+            this.RegistrationStartPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegistrationStartPanel2.Controls.Add(this.label28);
+            this.RegistrationStartPanel2.Controls.Add(this.label4);
+            this.RegistrationStartPanel2.Controls.Add(this.pictureBox4);
+            this.RegistrationStartPanel2.Controls.Add(this.label25);
+            this.RegistrationStartPanel2.Controls.Add(this.label26);
+            this.RegistrationStartPanel2.Controls.Add(this.rbuttonNextAccountSetup);
             this.RegistrationStartPanel2.Controls.Add(this.labelErrorHandler);
-            this.RegistrationStartPanel2.Controls.Add(this.buttonNextAccountSetup);
-            this.RegistrationStartPanel2.Controls.Add(this.labelPassword);
+            this.RegistrationStartPanel2.Controls.Add(this.label27);
             this.RegistrationStartPanel2.Controls.Add(this.labelID);
             this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationPassword);
             this.RegistrationStartPanel2.Controls.Add(this.textBoxRegistrationID);
-            this.RegistrationStartPanel2.Controls.Add(this.label4);
-            this.RegistrationStartPanel2.Location = new System.Drawing.Point(74, 130);
+            this.RegistrationStartPanel2.Location = new System.Drawing.Point(12, 12);
             this.RegistrationStartPanel2.Name = "RegistrationStartPanel2";
-            this.RegistrationStartPanel2.Size = new System.Drawing.Size(1080, 556);
+            this.RegistrationStartPanel2.Size = new System.Drawing.Size(1256, 759);
             this.RegistrationStartPanel2.TabIndex = 9;
             // 
-            // labelErrorHandler
+            // label28
             // 
-            this.labelErrorHandler.AutoSize = true;
-            this.labelErrorHandler.Location = new System.Drawing.Point(47, 192);
-            this.labelErrorHandler.Name = "labelErrorHandler";
-            this.labelErrorHandler.Size = new System.Drawing.Size(82, 13);
-            this.labelErrorHandler.TabIndex = 14;
-            this.labelErrorHandler.Text = "ERROR LABEL";
-            // 
-            // buttonNextAccountSetup
-            // 
-            this.buttonNextAccountSetup.Location = new System.Drawing.Point(49, 207);
-            this.buttonNextAccountSetup.Name = "buttonNextAccountSetup";
-            this.buttonNextAccountSetup.Size = new System.Drawing.Size(75, 23);
-            this.buttonNextAccountSetup.TabIndex = 13;
-            this.buttonNextAccountSetup.Text = "Next";
-            this.buttonNextAccountSetup.UseVisualStyleBackColor = true;
-            this.buttonNextAccountSetup.Click += new System.EventHandler(this.buttonNextAccountSetup_Click);
-            // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(46, 147);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(53, 13);
-            this.labelPassword.TabIndex = 4;
-            this.labelPassword.Text = "Password";
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(46, 120);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(18, 13);
-            this.labelID.TabIndex = 3;
-            this.labelID.Text = "ID";
-            // 
-            // textBoxRegistrationPassword
-            // 
-            this.textBoxRegistrationPassword.Location = new System.Drawing.Point(135, 149);
-            this.textBoxRegistrationPassword.Name = "textBoxRegistrationPassword";
-            this.textBoxRegistrationPassword.Size = new System.Drawing.Size(364, 20);
-            this.textBoxRegistrationPassword.TabIndex = 2;
-            // 
-            // textBoxRegistrationID
-            // 
-            this.textBoxRegistrationID.Location = new System.Drawing.Point(135, 120);
-            this.textBoxRegistrationID.Name = "textBoxRegistrationID";
-            this.textBoxRegistrationID.Size = new System.Drawing.Size(364, 20);
-            this.textBoxRegistrationID.TabIndex = 1;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(334, 502);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(687, 69);
+            this.label28.TabIndex = 26;
+            this.label28.Text = resources.GetString("label28.Text");
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 92);
+            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label4.Location = new System.Drawing.Point(543, 292);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Welcome Onboard!";
+            this.label4.Size = new System.Drawing.Size(211, 23);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Let us confirm your registration.";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox4.Location = new System.Drawing.Point(584, 98);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(125, 125);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label25.Location = new System.Drawing.Point(525, 250);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(257, 42);
+            this.label25.TabIndex = 22;
+            this.label25.Text = "Welcome Onboard!";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label26.Location = new System.Drawing.Point(186, 35);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(898, 65);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "LGU - San Vicente Asset Management System";
+            // 
+            // rbuttonNextAccountSetup
+            // 
+            this.rbuttonNextAccountSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonNextAccountSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonNextAccountSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonNextAccountSetup.BorderRadius = 15;
+            this.rbuttonNextAccountSetup.BorderSize = 0;
+            this.rbuttonNextAccountSetup.FlatAppearance.BorderSize = 0;
+            this.rbuttonNextAccountSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonNextAccountSetup.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonNextAccountSetup.ForeColor = System.Drawing.Color.White;
+            this.rbuttonNextAccountSetup.Location = new System.Drawing.Point(497, 657);
+            this.rbuttonNextAccountSetup.Name = "rbuttonNextAccountSetup";
+            this.rbuttonNextAccountSetup.Size = new System.Drawing.Size(341, 67);
+            this.rbuttonNextAccountSetup.TabIndex = 18;
+            this.rbuttonNextAccountSetup.Text = "NEXT";
+            this.rbuttonNextAccountSetup.TextColor = System.Drawing.Color.White;
+            this.rbuttonNextAccountSetup.UseVisualStyleBackColor = false;
+            this.rbuttonNextAccountSetup.Click += new System.EventHandler(this.buttonNextAccountSetup_Click);
+            // 
+            // labelErrorHandler
+            // 
+            this.labelErrorHandler.AutoSize = true;
+            this.labelErrorHandler.Location = new System.Drawing.Point(502, 634);
+            this.labelErrorHandler.Name = "labelErrorHandler";
+            this.labelErrorHandler.Size = new System.Drawing.Size(82, 13);
+            this.labelErrorHandler.TabIndex = 14;
+            this.labelErrorHandler.Text = "ERROR LABEL";
+            this.labelErrorHandler.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(403, 422);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(88, 26);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Password:";
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelID.Location = new System.Drawing.Point(402, 366);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(30, 26);
+            this.labelID.TabIndex = 3;
+            this.labelID.Text = "ID:";
+            // 
+            // textBoxRegistrationPassword
+            // 
+            this.textBoxRegistrationPassword.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.textBoxRegistrationPassword.Location = new System.Drawing.Point(562, 422);
+            this.textBoxRegistrationPassword.Name = "textBoxRegistrationPassword";
+            this.textBoxRegistrationPassword.Size = new System.Drawing.Size(364, 30);
+            this.textBoxRegistrationPassword.TabIndex = 2;
+            // 
+            // textBoxRegistrationID
+            // 
+            this.textBoxRegistrationID.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.textBoxRegistrationID.Location = new System.Drawing.Point(562, 363);
+            this.textBoxRegistrationID.Name = "textBoxRegistrationID";
+            this.textBoxRegistrationID.Size = new System.Drawing.Size(364, 30);
+            this.textBoxRegistrationID.TabIndex = 1;
             // 
             // RegistrationAccountSetup1
             // 
+            this.RegistrationAccountSetup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegistrationAccountSetup1.Controls.Add(this.rbuttonAccountSetup);
+            this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupAddress1);
+            this.RegistrationAccountSetup1.Controls.Add(this.pictureBox3);
             this.RegistrationAccountSetup1.Controls.Add(this.label19);
             this.RegistrationAccountSetup1.Controls.Add(this.label18);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupLastName);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupMiddleName);
             this.RegistrationAccountSetup1.Controls.Add(this.labelAccountSetupErrorHandler);
-            this.RegistrationAccountSetup1.Controls.Add(this.buttonAccountSetup);
             this.RegistrationAccountSetup1.Controls.Add(this.label11);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupEmail);
             this.RegistrationAccountSetup1.Controls.Add(this.label10);
-            this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupAddress);
             this.RegistrationAccountSetup1.Controls.Add(this.label9);
             this.RegistrationAccountSetup1.Controls.Add(this.comboBoxAccSetupDepartment);
             this.RegistrationAccountSetup1.Controls.Add(this.label8);
@@ -359,196 +588,324 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupPhoneNum);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupFirstName);
             this.RegistrationAccountSetup1.Controls.Add(this.label7);
-            this.RegistrationAccountSetup1.Location = new System.Drawing.Point(74, 118);
+            this.RegistrationAccountSetup1.Controls.Add(this.label24);
+            this.RegistrationAccountSetup1.Location = new System.Drawing.Point(12, 12);
             this.RegistrationAccountSetup1.Name = "RegistrationAccountSetup1";
-            this.RegistrationAccountSetup1.Size = new System.Drawing.Size(1080, 556);
+            this.RegistrationAccountSetup1.Size = new System.Drawing.Size(1256, 759);
             this.RegistrationAccountSetup1.TabIndex = 10;
+            // 
+            // rbuttonAccountSetup
+            // 
+            this.rbuttonAccountSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonAccountSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonAccountSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonAccountSetup.BorderRadius = 15;
+            this.rbuttonAccountSetup.BorderSize = 0;
+            this.rbuttonAccountSetup.FlatAppearance.BorderSize = 0;
+            this.rbuttonAccountSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonAccountSetup.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonAccountSetup.ForeColor = System.Drawing.Color.White;
+            this.rbuttonAccountSetup.Location = new System.Drawing.Point(532, 680);
+            this.rbuttonAccountSetup.Name = "rbuttonAccountSetup";
+            this.rbuttonAccountSetup.Size = new System.Drawing.Size(263, 58);
+            this.rbuttonAccountSetup.TabIndex = 23;
+            this.rbuttonAccountSetup.Text = "NEXT";
+            this.rbuttonAccountSetup.TextColor = System.Drawing.Color.White;
+            this.rbuttonAccountSetup.UseVisualStyleBackColor = false;
+            this.rbuttonAccountSetup.Click += new System.EventHandler(this.buttonAccountSetup_Click);
+            // 
+            // textBoxAccSetupAddress1
+            // 
+            this.textBoxAccSetupAddress1.Location = new System.Drawing.Point(272, 473);
+            this.textBoxAccSetupAddress1.Name = "textBoxAccSetupAddress1";
+            this.textBoxAccSetupAddress1.Size = new System.Drawing.Size(394, 129);
+            this.textBoxAccSetupAddress1.TabIndex = 22;
+            this.textBoxAccSetupAddress1.Text = "";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox3.Location = new System.Drawing.Point(584, 101);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(125, 125);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabStop = false;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(623, 146);
+            this.label19.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(148, 423);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(61, 13);
+            this.label19.Size = new System.Drawing.Size(93, 26);
             this.label19.TabIndex = 19;
             this.label19.Text = "Last Name:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(346, 146);
+            this.label18.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(148, 374);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 13);
+            this.label18.Size = new System.Drawing.Size(114, 26);
             this.label18.TabIndex = 17;
             this.label18.Text = "Middle Name:";
             // 
             // textBoxAccSetupLastName
             // 
-            this.textBoxAccSetupLastName.Location = new System.Drawing.Point(690, 143);
+            this.textBoxAccSetupLastName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccSetupLastName.Location = new System.Drawing.Point(272, 420);
             this.textBoxAccSetupLastName.Name = "textBoxAccSetupLastName";
-            this.textBoxAccSetupLastName.Size = new System.Drawing.Size(193, 20);
+            this.textBoxAccSetupLastName.Size = new System.Drawing.Size(306, 30);
             this.textBoxAccSetupLastName.TabIndex = 18;
             // 
             // textBoxAccSetupMiddleName
             // 
-            this.textBoxAccSetupMiddleName.Location = new System.Drawing.Point(424, 143);
+            this.textBoxAccSetupMiddleName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccSetupMiddleName.Location = new System.Drawing.Point(272, 371);
             this.textBoxAccSetupMiddleName.Name = "textBoxAccSetupMiddleName";
-            this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(193, 20);
+            this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(306, 30);
             this.textBoxAccSetupMiddleName.TabIndex = 16;
             // 
             // labelAccountSetupErrorHandler
             // 
             this.labelAccountSetupErrorHandler.AutoSize = true;
-            this.labelAccountSetupErrorHandler.Location = new System.Drawing.Point(71, 383);
+            this.labelAccountSetupErrorHandler.Location = new System.Drawing.Point(540, 654);
             this.labelAccountSetupErrorHandler.Name = "labelAccountSetupErrorHandler";
             this.labelAccountSetupErrorHandler.Size = new System.Drawing.Size(82, 13);
             this.labelAccountSetupErrorHandler.TabIndex = 13;
             this.labelAccountSetupErrorHandler.Text = "ERROR LABEL";
-            // 
-            // buttonAccountSetup
-            // 
-            this.buttonAccountSetup.Location = new System.Drawing.Point(74, 399);
-            this.buttonAccountSetup.Name = "buttonAccountSetup";
-            this.buttonAccountSetup.Size = new System.Drawing.Size(75, 23);
-            this.buttonAccountSetup.TabIndex = 12;
-            this.buttonAccountSetup.Text = "Next";
-            this.buttonAccountSetup.UseVisualStyleBackColor = true;
-            this.buttonAccountSetup.Click += new System.EventHandler(this.buttonAccountSetup_Click);
+            this.labelAccountSetupErrorHandler.Visible = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(71, 317);
+            this.label11.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(621, 424);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.Size = new System.Drawing.Size(56, 26);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Email";
+            this.label11.Text = "Email:";
             // 
             // textBoxAccSetupEmail
             // 
-            this.textBoxAccSetupEmail.Location = new System.Drawing.Point(166, 314);
+            this.textBoxAccSetupEmail.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccSetupEmail.Location = new System.Drawing.Point(750, 421);
             this.textBoxAccSetupEmail.Name = "textBoxAccSetupEmail";
-            this.textBoxAccSetupEmail.Size = new System.Drawing.Size(364, 20);
+            this.textBoxAccSetupEmail.Size = new System.Drawing.Size(371, 30);
             this.textBoxAccSetupEmail.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(71, 274);
+            this.label10.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(148, 473);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.Size = new System.Drawing.Size(76, 26);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Address";
-            // 
-            // textBoxAccSetupAddress
-            // 
-            this.textBoxAccSetupAddress.Location = new System.Drawing.Point(166, 271);
-            this.textBoxAccSetupAddress.Name = "textBoxAccSetupAddress";
-            this.textBoxAccSetupAddress.Size = new System.Drawing.Size(364, 20);
-            this.textBoxAccSetupAddress.TabIndex = 8;
+            this.label10.Text = "Address:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(71, 201);
+            this.label9.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(621, 375);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.Size = new System.Drawing.Size(105, 26);
             this.label9.TabIndex = 7;
-            this.label9.Text = "Department";
+            this.label9.Text = "Department:";
             // 
             // comboBoxAccSetupDepartment
             // 
+            this.comboBoxAccSetupDepartment.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccSetupDepartment.FormattingEnabled = true;
-            this.comboBoxAccSetupDepartment.Location = new System.Drawing.Point(166, 201);
+            this.comboBoxAccSetupDepartment.Location = new System.Drawing.Point(750, 368);
             this.comboBoxAccSetupDepartment.Name = "comboBoxAccSetupDepartment";
-            this.comboBoxAccSetupDepartment.Size = new System.Drawing.Size(310, 21);
+            this.comboBoxAccSetupDepartment.Size = new System.Drawing.Size(371, 34);
             this.comboBoxAccSetupDepartment.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 92);
+            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(558, 278);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 13);
+            this.label8.Size = new System.Drawing.Size(192, 23);
             this.label8.TabIndex = 5;
             this.label8.Text = "Let us know more about you.";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(71, 175);
+            this.label5.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(621, 321);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(128, 26);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Phone Number";
+            this.label5.Text = "Phone Number:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(71, 146);
+            this.label6.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(148, 325);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(95, 26);
             this.label6.TabIndex = 3;
             this.label6.Text = "First Name:";
             // 
             // textBoxAccSetupPhoneNum
             // 
-            this.textBoxAccSetupPhoneNum.Location = new System.Drawing.Point(166, 172);
+            this.textBoxAccSetupPhoneNum.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccSetupPhoneNum.Location = new System.Drawing.Point(752, 318);
             this.textBoxAccSetupPhoneNum.Name = "textBoxAccSetupPhoneNum";
-            this.textBoxAccSetupPhoneNum.Size = new System.Drawing.Size(364, 20);
+            this.textBoxAccSetupPhoneNum.Size = new System.Drawing.Size(369, 30);
             this.textBoxAccSetupPhoneNum.TabIndex = 2;
             // 
             // textBoxAccSetupFirstName
             // 
-            this.textBoxAccSetupFirstName.Location = new System.Drawing.Point(137, 143);
+            this.textBoxAccSetupFirstName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccSetupFirstName.Location = new System.Drawing.Point(272, 321);
             this.textBoxAccSetupFirstName.Name = "textBoxAccSetupFirstName";
-            this.textBoxAccSetupFirstName.Size = new System.Drawing.Size(193, 20);
+            this.textBoxAccSetupFirstName.Size = new System.Drawing.Size(306, 30);
             this.textBoxAccSetupFirstName.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 70);
+            this.label7.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label7.Location = new System.Drawing.Point(525, 239);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 13);
+            this.label7.Size = new System.Drawing.Size(257, 42);
             this.label7.TabIndex = 0;
             this.label7.Text = "Welcome Onboard!";
             // 
-            // buttonBackToLoginForm
+            // label24
             // 
-            this.buttonBackToLoginForm.Location = new System.Drawing.Point(83, 710);
-            this.buttonBackToLoginForm.Name = "buttonBackToLoginForm";
-            this.buttonBackToLoginForm.Size = new System.Drawing.Size(75, 23);
-            this.buttonBackToLoginForm.TabIndex = 14;
-            this.buttonBackToLoginForm.Text = "Log In";
-            this.buttonBackToLoginForm.UseVisualStyleBackColor = true;
-            this.buttonBackToLoginForm.Click += new System.EventHandler(this.buttonBackToLoginForm_Click);
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label24.Location = new System.Drawing.Point(186, 38);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(898, 65);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "LGU - San Vicente Asset Management System";
             // 
             // RegistrationAccountSetup2
             // 
+            this.RegistrationAccountSetup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegistrationAccountSetup2.Controls.Add(this.rbuttonRegister);
+            this.RegistrationAccountSetup2.Controls.Add(this.rbuttonBrowseFiles);
+            this.RegistrationAccountSetup2.Controls.Add(this.label13);
+            this.RegistrationAccountSetup2.Controls.Add(this.pictureBox5);
+            this.RegistrationAccountSetup2.Controls.Add(this.label29);
+            this.RegistrationAccountSetup2.Controls.Add(this.label30);
             this.RegistrationAccountSetup2.Controls.Add(this.linkLabelTOR);
             this.RegistrationAccountSetup2.Controls.Add(this.linkLabel1Policy);
-            this.RegistrationAccountSetup2.Controls.Add(this.label21);
             this.RegistrationAccountSetup2.Controls.Add(this.labelDirectoryString);
-            this.RegistrationAccountSetup2.Controls.Add(this.buttonBrowseFiles);
             this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
-            this.RegistrationAccountSetup2.Controls.Add(this.buttonRegister);
             this.RegistrationAccountSetup2.Controls.Add(this.label17);
             this.RegistrationAccountSetup2.Controls.Add(this.label15);
             this.RegistrationAccountSetup2.Controls.Add(this.label14);
-            this.RegistrationAccountSetup2.Controls.Add(this.label12);
-            this.RegistrationAccountSetup2.Controls.Add(this.label13);
-            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(87, 110);
+            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(12, 12);
             this.RegistrationAccountSetup2.Name = "RegistrationAccountSetup2";
-            this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1086, 580);
+            this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1256, 759);
             this.RegistrationAccountSetup2.TabIndex = 15;
+            // 
+            // rbuttonRegister
+            // 
+            this.rbuttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonRegister.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonRegister.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonRegister.BorderRadius = 12;
+            this.rbuttonRegister.BorderSize = 0;
+            this.rbuttonRegister.FlatAppearance.BorderSize = 0;
+            this.rbuttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonRegister.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonRegister.ForeColor = System.Drawing.Color.White;
+            this.rbuttonRegister.Location = new System.Drawing.Point(547, 690);
+            this.rbuttonRegister.Name = "rbuttonRegister";
+            this.rbuttonRegister.Size = new System.Drawing.Size(228, 52);
+            this.rbuttonRegister.TabIndex = 27;
+            this.rbuttonRegister.Text = "REGISTER";
+            this.rbuttonRegister.TextColor = System.Drawing.Color.White;
+            this.rbuttonRegister.UseVisualStyleBackColor = false;
+            this.rbuttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
+            // rbuttonBrowseFiles
+            // 
+            this.rbuttonBrowseFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonBrowseFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonBrowseFiles.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonBrowseFiles.BorderRadius = 5;
+            this.rbuttonBrowseFiles.BorderSize = 0;
+            this.rbuttonBrowseFiles.FlatAppearance.BorderSize = 0;
+            this.rbuttonBrowseFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonBrowseFiles.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonBrowseFiles.ForeColor = System.Drawing.Color.White;
+            this.rbuttonBrowseFiles.Location = new System.Drawing.Point(486, 568);
+            this.rbuttonBrowseFiles.Name = "rbuttonBrowseFiles";
+            this.rbuttonBrowseFiles.Size = new System.Drawing.Size(338, 33);
+            this.rbuttonBrowseFiles.TabIndex = 26;
+            this.rbuttonBrowseFiles.Text = "Browse Files";
+            this.rbuttonBrowseFiles.TextColor = System.Drawing.Color.White;
+            this.rbuttonBrowseFiles.UseVisualStyleBackColor = false;
+            this.rbuttonBrowseFiles.Click += new System.EventHandler(this.buttonBrowseFiles_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(554, 255);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(192, 23);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Let us know more about you.";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox5.Location = new System.Drawing.Point(584, 85);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(125, 125);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 24;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label29.Location = new System.Drawing.Point(521, 223);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(257, 42);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Welcome Onboard!";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label30.Location = new System.Drawing.Point(186, 30);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(898, 65);
+            this.label30.TabIndex = 23;
+            this.label30.Text = "LGU - San Vicente Asset Management System";
             // 
             // linkLabelTOR
             // 
             this.linkLabelTOR.AutoSize = true;
-            this.linkLabelTOR.Location = new System.Drawing.Point(319, 468);
+            this.linkLabelTOR.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.linkLabelTOR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.linkLabelTOR.Location = new System.Drawing.Point(404, 644);
             this.linkLabelTOR.Name = "linkLabelTOR";
-            this.linkLabelTOR.Size = new System.Drawing.Size(73, 13);
+            this.linkLabelTOR.Size = new System.Drawing.Size(95, 23);
             this.linkLabelTOR.TabIndex = 18;
             this.linkLabelTOR.TabStop = true;
             this.linkLabelTOR.Text = "Terms of Use ";
@@ -557,182 +914,96 @@ namespace LGU_SV_Asset_Management_Sytem
             // linkLabel1Policy
             // 
             this.linkLabel1Policy.AutoSize = true;
-            this.linkLabel1Policy.Location = new System.Drawing.Point(427, 468);
+            this.linkLabel1Policy.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.linkLabel1Policy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.linkLabel1Policy.Location = new System.Drawing.Point(534, 644);
             this.linkLabel1Policy.Name = "linkLabel1Policy";
-            this.linkLabel1Policy.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel1Policy.Size = new System.Drawing.Size(100, 23);
             this.linkLabel1Policy.TabIndex = 17;
             this.linkLabel1Policy.TabStop = true;
             this.linkLabel1Policy.Text = "Privacy Policy.";
             this.linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked);
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(465, 391);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(127, 13);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Drag and Drop Files Here";
-            // 
             // labelDirectoryString
             // 
             this.labelDirectoryString.AutoSize = true;
-            this.labelDirectoryString.Location = new System.Drawing.Point(329, 282);
+            this.labelDirectoryString.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.labelDirectoryString.Location = new System.Drawing.Point(482, 548);
             this.labelDirectoryString.Name = "labelDirectoryString";
-            this.labelDirectoryString.Size = new System.Drawing.Size(117, 13);
+            this.labelDirectoryString.Size = new System.Drawing.Size(135, 23);
             this.labelDirectoryString.TabIndex = 15;
             this.labelDirectoryString.Text = "DIRECTORY_STRING";
-            // 
-            // buttonBrowseFiles
-            // 
-            this.buttonBrowseFiles.Location = new System.Drawing.Point(581, 268);
-            this.buttonBrowseFiles.Name = "buttonBrowseFiles";
-            this.buttonBrowseFiles.Size = new System.Drawing.Size(147, 40);
-            this.buttonBrowseFiles.TabIndex = 14;
-            this.buttonBrowseFiles.Text = "Browse Files";
-            this.buttonBrowseFiles.UseVisualStyleBackColor = true;
-            this.buttonBrowseFiles.Click += new System.EventHandler(this.buttonBrowseFiles_Click);
             // 
             // pictureBoxRegistration2
             // 
             this.pictureBoxRegistration2.AllowDrop = true;
-            this.pictureBoxRegistration2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBoxRegistration2.Location = new System.Drawing.Point(332, 314);
+            this.pictureBoxRegistration2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pictureBoxRegistration2.Location = new System.Drawing.Point(486, 292);
             this.pictureBoxRegistration2.Name = "pictureBoxRegistration2";
-            this.pictureBoxRegistration2.Size = new System.Drawing.Size(396, 101);
+            this.pictureBoxRegistration2.Size = new System.Drawing.Size(338, 250);
+            this.pictureBoxRegistration2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxRegistration2.TabIndex = 13;
             this.pictureBoxRegistration2.TabStop = false;
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.Location = new System.Drawing.Point(468, 513);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(128, 40);
-            this.buttonRegister.TabIndex = 12;
-            this.buttonRegister.Text = "Register";
-            this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(396, 468);
+            this.label17.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.label17.Location = new System.Drawing.Point(498, 644);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(25, 13);
+            this.label17.Size = new System.Drawing.Size(36, 23);
             this.label17.TabIndex = 11;
             this.label17.Text = "and";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(319, 450);
+            this.label15.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.label15.Location = new System.Drawing.Point(403, 611);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(399, 13);
+            this.label15.Size = new System.Drawing.Size(535, 23);
             this.label15.TabIndex = 9;
             this.label15.Text = "By clicking Register, you are agreeing to the LGU-SV Asset Management System’s ";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(329, 252);
+            this.label14.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.label14.Location = new System.Drawing.Point(337, 295);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 13);
+            this.label14.Size = new System.Drawing.Size(151, 23);
             this.label14.TabIndex = 8;
-            this.label14.Text = "User Profile";
+            this.label14.Text = "User Profile (Optional)";
             // 
-            // label12
+            // buttonBackToLoginForm
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(465, 222);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(144, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Let us know more about you.";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(488, 198);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 13);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Welcome Onboard!";
-            // 
-            // panelBoxTop
-            // 
-            this.panelBoxTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panelBoxTop.Controls.Add(this.pictureBox1);
-            this.panelBoxTop.Controls.Add(this.label16);
-            this.panelBoxTop.Controls.Add(this.buttonMasterExit);
-            this.panelBoxTop.Location = new System.Drawing.Point(-6, -6);
-            this.panelBoxTop.Name = "panelBoxTop";
-            this.panelBoxTop.Size = new System.Drawing.Size(1295, 60);
-            this.panelBoxTop.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(70, 7);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 48);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "LGU-SV AMS";
-            // 
-            // buttonMasterExit
-            // 
-            this.buttonMasterExit.Location = new System.Drawing.Point(1238, 14);
-            this.buttonMasterExit.Name = "buttonMasterExit";
-            this.buttonMasterExit.Size = new System.Drawing.Size(36, 34);
-            this.buttonMasterExit.TabIndex = 3;
-            this.buttonMasterExit.Text = "X";
-            this.buttonMasterExit.UseVisualStyleBackColor = true;
-            this.buttonMasterExit.Click += new System.EventHandler(this.buttonMasterExit_Click_1);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Location = new System.Drawing.Point(473, 343);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(218, 44);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "DEBUG_MANAGER3_AUTOLOGIN";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Location = new System.Drawing.Point(249, 343);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(218, 44);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "DEBUG_OPERATOR2_AUTOLOGIN";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonBackToLoginForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBackToLoginForm.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBackToLoginForm.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonBackToLoginForm.BorderRadius = 12;
+            this.buttonBackToLoginForm.BorderSize = 0;
+            this.buttonBackToLoginForm.FlatAppearance.BorderSize = 0;
+            this.buttonBackToLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackToLoginForm.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackToLoginForm.ForeColor = System.Drawing.Color.White;
+            this.buttonBackToLoginForm.Location = new System.Drawing.Point(12, 755);
+            this.buttonBackToLoginForm.Name = "buttonBackToLoginForm";
+            this.buttonBackToLoginForm.Size = new System.Drawing.Size(212, 40);
+            this.buttonBackToLoginForm.TabIndex = 28;
+            this.buttonBackToLoginForm.Text = "BACK TO LOGIN";
+            this.buttonBackToLoginForm.TextColor = System.Drawing.Color.White;
+            this.buttonBackToLoginForm.UseVisualStyleBackColor = false;
+            this.buttonBackToLoginForm.Click += new System.EventHandler(this.buttonBackToLoginForm_Click);
             // 
             // StartForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 800);
-            this.ControlBox = false;
-            this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.panelBoxTop);
             this.Controls.Add(this.buttonBackToLoginForm);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
@@ -744,19 +1015,21 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Load += new System.EventHandler(this.StartForm_Load);
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.RegistrationStartPanel.ResumeLayout(false);
+            this.RegistrationStartPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.RegistrationStartPanel2.ResumeLayout(false);
             this.RegistrationStartPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.RegistrationAccountSetup1.ResumeLayout(false);
             this.RegistrationAccountSetup1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.RegistrationAccountSetup2.ResumeLayout(false);
             this.RegistrationAccountSetup2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
-            this.panelBoxTop.ResumeLayout(false);
-            this.panelBoxTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -765,20 +1038,13 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonSignUp;
         private System.Windows.Forms.Panel RegistrationStartPanel;
-        private System.Windows.Forms.Button buttonViewerRole;
-        private System.Windows.Forms.Button buttonOperatorRole;
-        private System.Windows.Forms.Button buttonManagerRole;
         private System.Windows.Forms.Panel RegistrationStartPanel2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.TextBox textBoxRegistrationPassword;
         private System.Windows.Forms.TextBox textBoxRegistrationID;
-        private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Panel RegistrationAccountSetup1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -788,42 +1054,58 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxAccSetupEmail;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxAccSetupAddress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxAccSetupDepartment;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button buttonAccountSetup;
-        private System.Windows.Forms.Button buttonNextAccountSetup;
-        private System.Windows.Forms.Button buttonBackToLoginForm;
         private System.Windows.Forms.Label labelErrorHandler;
         private System.Windows.Forms.Label labelAccountSetupErrorHandler;
         private System.Windows.Forms.Panel RegistrationAccountSetup2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxAccSetupLastName;
         private System.Windows.Forms.TextBox textBoxAccSetupMiddleName;
         private System.Windows.Forms.PictureBox pictureBoxRegistration2;
-        private System.Windows.Forms.Button buttonBrowseFiles;
         private System.Windows.Forms.Label labelDirectoryString;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel LoginPanel;
         private System.Windows.Forms.Label Label_ErrorHandler_Login;
         private System.Windows.Forms.LinkLabel linkLabelTOR;
         private System.Windows.Forms.LinkLabel linkLabel1Policy;
-        private System.Windows.Forms.Panel panelBoxTop;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonMasterExit;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private RoundedButton buttonLogin;
+        private System.Windows.Forms.LinkLabel linkLabelSignUpButton;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label23;
+        private RoundedButton rbuttonManagerRole;
+        private RoundedButton rbuttonViewerRole;
+        private RoundedButton rbuttonOperatorRole;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.RichTextBox textBoxAccSetupAddress1;
+        private RoundedButton rbuttonAccountSetup;
+        private RoundedButton rbuttonNextAccountSetup;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label13;
+        private RoundedButton rbuttonBrowseFiles;
+        private RoundedButton rbuttonRegister;
+        private RoundedButton buttonBackToLoginForm;
     }
 }
