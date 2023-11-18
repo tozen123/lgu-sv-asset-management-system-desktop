@@ -113,6 +113,18 @@
     <Compile Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.Designer.cs">
       <DependentUpon>AssetBorrowedAndReturnsLogPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\MaintenancePanel\AddAssetSchedulePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MaintenancePanel\AddAssetSchedulePanel.Designer.cs">
+      <DependentUpon>AddAssetSchedulePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\MaintenancePanel\AddNewMaintenanceLogPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MaintenancePanel\AddNewMaintenanceLogPanel.Designer.cs">
+      <DependentUpon>AddNewMaintenanceLogPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\MaintenancePanel\AssetMaintenanceLogPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.resx">
       <DependentUpon>AssetBorrowedAndReturnsLogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MaintenancePanel\AddAssetSchedulePanel.resx">
+      <DependentUpon>AddAssetSchedulePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MaintenancePanel\AddNewMaintenanceLogPanel.resx">
+      <DependentUpon>AddNewMaintenanceLogPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\MaintenancePanel\AssetMaintenanceLogPanel.resx">
       <DependentUpon>AssetMaintenanceLogPanel.cs</DependentUpon>

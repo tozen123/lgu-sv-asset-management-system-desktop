@@ -15,10 +15,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private DatabaseConnection databaseConnection;
         string userLocation;
         Control viewedAssetPanelHandler;
-        public RecordsHomePanel(string _userLocation, Control _viewedAssetPanelHandler)
+
+        User currentUser;
+        public RecordsHomePanel(string _userLocation, Control _viewedAssetPanelHandler, User _currentUser)
         {
             databaseConnection = new DatabaseConnection();
             viewedAssetPanelHandler = _viewedAssetPanelHandler;
+            currentUser = _currentUser;
 
             InitializeComponent();
             userLocation = _userLocation;
@@ -242,7 +245,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();
                     selectedAsset.AssetLifeSpan = Convert.ToInt32(selectedRow.Cells["assetLifeSpan"].Value);
 
-                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler);
+                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler, currentUser);
                     viewedAssetPanelHandler.Controls.Add(assetViewerInformationPanel);
                     viewedAssetPanelHandler.BringToFront();
                     viewedAssetPanelHandler.Visible = true;

@@ -14,10 +14,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.BorrowedAndReturns
     {
         Asset asset;
         Panel panelHandlerParent;
-        public AssetBorrowedAndReturnsLogPanel(Panel _panelHandler, Asset _asset)
+        User currentUser;
+        public AssetBorrowedAndReturnsLogPanel(Panel _panelHandler, Asset _asset, User _currentUser)
         {
             InitializeComponent();
             asset = _asset;
+            panelHandlerParent = _panelHandler;
+            currentUser = _currentUser;
+
+            Console.WriteLine("AssetBorrowedAndReturnsLogPanel: " + currentUser.GetStringAccessLevel());
+
             SetData();
         }
         private void SetData()

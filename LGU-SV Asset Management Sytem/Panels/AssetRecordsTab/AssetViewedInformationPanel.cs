@@ -20,14 +20,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         AssetRepositoryControl assetRepositoryControl;
 
-       
+        User currentUser;
 
-        public AssetViewedInformationPanel(Asset _asset, RecordsHomePanel _rcpanel, Control panelHandler)
+        public AssetViewedInformationPanel(Asset _asset, RecordsHomePanel _rcpanel, Control panelHandler, User _currentUser)
         {
             InitializeComponent();
             _panelHandler = panelHandler;
             asset = _asset;
             rcpanel = _rcpanel;
+
+            currentUser = _currentUser;
+
             InitializeAssetInformation();
             SetMenuButton();
 
@@ -221,17 +224,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 switch (itemName)
                 {
                     case "Maintenances":
-                        MaintenancePanel.AssetMaintenanceLogPanel maintenanceLogPanel = new MaintenancePanel.AssetMaintenanceLogPanel(panelLogsHandler, asset);
+                        MaintenancePanel.AssetMaintenanceLogPanel maintenanceLogPanel = new MaintenancePanel.AssetMaintenanceLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(maintenanceLogPanel);
 
                         break;
                     case "Transfers":
-                        TransferPanel.AssetTransferLogPanel transferLogPanel = new TransferPanel.AssetTransferLogPanel(panelLogsHandler, asset);
+                        TransferPanel.AssetTransferLogPanel transferLogPanel = new TransferPanel.AssetTransferLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(transferLogPanel);
 
                         break;
                     case "Borrowed And Returns":
-                        BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset);
+                        BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(borrowedAndReturnsLogPanel);
                         break;
                 }

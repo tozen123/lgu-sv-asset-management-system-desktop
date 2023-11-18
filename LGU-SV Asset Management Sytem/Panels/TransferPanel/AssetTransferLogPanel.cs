@@ -14,10 +14,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
     {
         Panel panelHandlerParent;
         Asset asset;
-        public AssetTransferLogPanel(Panel _panelHandler, Asset _asset)
+        User currentUser;
+        public AssetTransferLogPanel(Panel _panelHandler, Asset _asset, User _currentUser)
         {
             InitializeComponent();
             asset = _asset;
+            panelHandlerParent = _panelHandler;
+            currentUser = _currentUser;
+            Console.WriteLine("AssetTransferLogPanel: " + currentUser.GetStringAccessLevel());
 
             SetData();
         }

@@ -21,6 +21,7 @@ namespace LGU_SV_Asset_Management_Sytem
         List<Control> profileTabControls = new List<Control>();
 
         //Session
+        User currentUser = new User();
         string currentSessionUserType;
         string currentUserOffice;
 
@@ -159,12 +160,15 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 case "Asset Viewer":
                     query = "SELECT assetViewerId,assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Viewer);
                     break;
                 case "Asset Employee":
                     query = "SELECT assetEmployeeId, assetEmployeeOffice FROM AssetEmployee WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Employee);
                     break;
                 case "Asset Supervisor":
                     query = "SELECT assetSupervisorId, assetSupervisorOffice FROM AssetSupervisor WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Supervisor);
                     break;
             }
 
@@ -301,7 +305,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
             ResetAssetViewedPanel();
 
@@ -1107,7 +1111,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
         {
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
         }
 

@@ -31,12 +31,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         {
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonNewLog = new System.Windows.Forms.Button();
+            this.buttonSchedule = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.panelLogMiniHandler = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,23 +62,25 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.labelAssetIdWithName.TabIndex = 3;
             this.labelAssetIdWithName.Text = "ASSET_ID_NAME";
             // 
-            // button1
+            // buttonNewLog
             // 
-            this.button1.Location = new System.Drawing.Point(577, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "New Log";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonNewLog.Location = new System.Drawing.Point(577, 39);
+            this.buttonNewLog.Name = "buttonNewLog";
+            this.buttonNewLog.Size = new System.Drawing.Size(123, 23);
+            this.buttonNewLog.TabIndex = 5;
+            this.buttonNewLog.Text = "New Log";
+            this.buttonNewLog.UseVisualStyleBackColor = true;
+            this.buttonNewLog.Click += new System.EventHandler(this.buttonNewLog_Click);
             // 
-            // button2
+            // buttonSchedule
             // 
-            this.button2.Location = new System.Drawing.Point(706, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Schedule";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonSchedule.Location = new System.Drawing.Point(706, 39);
+            this.buttonSchedule.Name = "buttonSchedule";
+            this.buttonSchedule.Size = new System.Drawing.Size(123, 23);
+            this.buttonSchedule.TabIndex = 6;
+            this.buttonSchedule.Text = "Schedule";
+            this.buttonSchedule.UseVisualStyleBackColor = true;
+            this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
             // 
             // dataGridView1
             // 
@@ -115,6 +118,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.button3.Text = "SRCH";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // panelLogMiniHandler
+            // 
+            this.panelLogMiniHandler.Location = new System.Drawing.Point(577, 67);
+            this.panelLogMiniHandler.Name = "panelLogMiniHandler";
+            this.panelLogMiniHandler.Size = new System.Drawing.Size(584, 500);
+            this.panelLogMiniHandler.TabIndex = 10;
+            // 
             // AssetMaintenanceLogPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,11 +132,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSchedule);
+            this.Controls.Add(this.buttonNewLog);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelAssetIdWithName);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelLogMiniHandler);
             this.Name = "AssetMaintenanceLogPanel";
             this.Size = new System.Drawing.Size(1167, 698);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -140,10 +151,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelAssetIdWithName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonNewLog;
+        private System.Windows.Forms.Button buttonSchedule;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panelLogMiniHandler;
     }
 }

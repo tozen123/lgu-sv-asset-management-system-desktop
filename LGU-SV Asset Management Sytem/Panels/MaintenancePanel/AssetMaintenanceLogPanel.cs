@@ -14,12 +14,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
     {
         Panel panelHandlerParent;
         Asset asset;
-
-        public AssetMaintenanceLogPanel(Panel _panelHandler, Asset _asset)
+        User currentUser;
+        public AssetMaintenanceLogPanel(Panel _panelHandler, Asset _asset, User _currentUser)
         {
             InitializeComponent();
             panelHandlerParent = _panelHandler;
             asset = _asset;
+            currentUser = _currentUser;
+
+            Console.WriteLine("AssetMaintenanceLogPanel: " + currentUser.GetStringAccessLevel());
 
             InitializeRecords();
             SetData();
@@ -37,10 +40,38 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            panelHandlerParent.Controls.Clear();
-            panelHandlerParent.SendToBack();
-            panelHandlerParent.Visible = false;
+            ClearPanel(panelHandlerParent);
         }
 
+        private void ClearPanel(Panel panelToClear)
+        {
+            panelToClear.Controls.Clear();
+            panelToClear.SendToBack();
+            panelToClear.Visible = false;
+        }
+
+        private void SwitchMiniPanelHandler(Control panelToSwitch)
+        {
+            if(panelLogMiniHandler.Controls.Count > 0)
+            {
+                ClearPanel(panelLogMiniHandler);
+            }
+
+            panelLogMiniHandler.Controls.Add(panelToSwitch);
+            panelLogMiniHandler.BringToFront();
+            panelLogMiniHandler.Visible = true;
+        }
+
+        private void buttonNewLog_Click(object sender, EventArgs e)
+        {
+            AddNewMaintenanceLogPanel addNewMaintenanceLogPanel = new AddNewMaintenanceLogPanel(panelLogMiniHandler, asset);
+            SwitchMiniPanelHandler(addNewMaintenanceLogPanel);
+        }
+
+        private void buttonSchedule_Click(object sender, EventArgs e)
+        {
+            AddAssetSchedulePanel addAssetSchedulePanel = new AddAssetSchedulePanel(panelLogMiniHandler, asset);
+            SwitchMiniPanelHandler(addAssetSchedulePanel);
+        }
     }
 }
