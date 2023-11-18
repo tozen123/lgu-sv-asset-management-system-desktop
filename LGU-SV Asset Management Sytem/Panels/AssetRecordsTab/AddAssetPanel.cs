@@ -460,6 +460,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     foreach (Asset asset in assetToAdd)
                     {
+                        
                         string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
                         " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
                         " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
@@ -510,8 +511,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         databaseConnection.UploadToDatabase(query1, parameters1);
 
                         databaseConnection.CloseConnection();
-
+                        
                     }
+
+
                     // Success Panel
                     SuccessPanel(assetToAdd);
 
@@ -523,31 +526,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 }
             }
 
-            foreach (Asset asset in assetToAdd)
-            {
-                Console.WriteLine("------------------------------------------");
-                Console.WriteLine($"Asset Supervisor ID: {asset.AssetSupervisorId}");
-                Console.WriteLine($"Current Employee ID: {asset.CurrentEmployeeId}");
-                Console.WriteLine($"Supplier ID: {asset.SupplierId}");
-                Console.WriteLine($"Asset Category ID: {asset.AssetCategoryId}");
-                Console.WriteLine($"Asset Last Maintenance ID: {asset.AssetLastMaintenanceID}");
-                Console.WriteLine($"Asset Name: {asset.AssetName}");
-                Console.WriteLine($"Asset Location: {asset.AssetLocation}");
-                Console.WriteLine($"QR Code: {asset.QRCode}");
-                Console.WriteLine($"QR Code Image: ");
-                Console.WriteLine($"Asset Image: {asset.AssetImage}");
-                Console.WriteLine($"Asset Availability: {asset.AssetAvailability}");
-                Console.WriteLine($"Asset Condition: {asset.AssetCondition}");
-                Console.WriteLine($"Is Archive: {asset.IsArchive}");
-                Console.WriteLine($"Is Missing: {asset.IsMissing}");
-                Console.WriteLine($"Asset Purchase Amount: {asset.AssetPurchaseAmount}");
-                Console.WriteLine($"Asset Purchase Date: {asset.AssetPurchaseDate}");
-                Console.WriteLine($"Asset Maintenance Logs ID: {asset.AssetMaintenanceLogsID}");
-                Console.WriteLine($"Asset Quantity: {asset.AssetQuantity}");
-                Console.WriteLine($"Asset Unit: {asset.AssetUnit}");
-                Console.WriteLine($"Is Maintainable: {asset.IsMaintainable}");
-                Console.WriteLine("------------------------------------------");
-            }
+            
         }
 
         private void SuccessPanel(List<Asset> assetSuccessfulList)

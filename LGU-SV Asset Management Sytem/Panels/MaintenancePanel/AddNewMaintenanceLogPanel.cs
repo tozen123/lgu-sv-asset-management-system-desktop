@@ -110,7 +110,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         {
             DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
             prompt.SetMessage(message);
-            prompt.Show();
+            prompt.ShowDialog();
         }
 
     }

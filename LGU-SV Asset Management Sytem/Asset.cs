@@ -213,6 +213,9 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 databaseConnection = new DatabaseConnection();
             }
+
+        
+
             public (bool Success, string ErrorMessage) DeleteToDatabase(Asset asset)
             {
                 try
