@@ -31,9 +31,6 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
-            this.buttonAssetRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonDashboard = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonHamburger = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.labelSideBarMisc = new System.Windows.Forms.Label();
             this.labelSideBarTransc = new System.Windows.Forms.Label();
             this.labelSideBarGenRep = new System.Windows.Forms.Label();
@@ -46,8 +43,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonOthers = new System.Windows.Forms.Button();
-            this.buttonGenerateReports = new System.Windows.Forms.Button();
-            this.buttonArchiveRecords = new System.Windows.Forms.Button();
             this.tabTransaction = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -105,7 +100,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonAssetRecordsNewAsset = new System.Windows.Forms.Button();
             this.buttonAssetRecordsViewRecords = new System.Windows.Forms.Button();
             this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
@@ -132,11 +126,21 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label9 = new System.Windows.Forms.Label();
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.panelTotalAsset = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTabControl = new System.Windows.Forms.TabControl();
+            this.roundedButton1 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButton2 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButton3 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonGenerateReports = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonArchiveRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonAssetRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonDashboard = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonHamburger = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButton4 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBoxSide.SuspendLayout();
             this.tabTransaction.SuspendLayout();
             this.tabSettings.SuspendLayout();
@@ -152,11 +156,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabGenReport.SuspendLayout();
             this.tabArchiveRecords.SuspendLayout();
             this.tabAssetRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
             this.tabDashboard.SuspendLayout();
             this.panelTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSide
@@ -164,6 +168,8 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(225)))));
+            this.groupBoxSide.Controls.Add(this.buttonGenerateReports);
+            this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
             this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
             this.groupBoxSide.Controls.Add(this.buttonHamburger);
@@ -179,85 +185,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.groupBoxSide.Controls.Add(this.buttonSettings);
             this.groupBoxSide.Controls.Add(this.buttonLogout);
             this.groupBoxSide.Controls.Add(this.buttonOthers);
-            this.groupBoxSide.Controls.Add(this.buttonGenerateReports);
-            this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
             this.groupBoxSide.Location = new System.Drawing.Point(-3, -9);
             this.groupBoxSide.Name = "groupBoxSide";
             this.groupBoxSide.Size = new System.Drawing.Size(80, 820);
             this.groupBoxSide.TabIndex = 1;
             this.groupBoxSide.TabStop = false;
-            // 
-            // buttonAssetRecords
-            // 
-            this.buttonAssetRecords.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAssetRecords.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonAssetRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAssetRecords.BorderColor = System.Drawing.Color.White;
-            this.buttonAssetRecords.BorderRadius = 15;
-            this.buttonAssetRecords.BorderSize = 0;
-            this.buttonAssetRecords.FlatAppearance.BorderSize = 0;
-            this.buttonAssetRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAssetRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAssetRecords.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonAssetRecords;
-            this.buttonAssetRecords.Location = new System.Drawing.Point(12, 197);
-            this.buttonAssetRecords.Name = "buttonAssetRecords";
-            this.buttonAssetRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecords.Size = new System.Drawing.Size(50, 50);
-            this.buttonAssetRecords.TabIndex = 31;
-            this.buttonAssetRecords.TextColor = System.Drawing.Color.White;
-            this.buttonAssetRecords.UseVisualStyleBackColor = false;
-            this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
-            this.buttonAssetRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonAssetRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonDashboard.BorderColor = System.Drawing.Color.White;
-            this.buttonDashboard.BorderRadius = 15;
-            this.buttonDashboard.BorderSize = 0;
-            this.buttonDashboard.FlatAppearance.BorderSize = 0;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDashboard.ForeColor = System.Drawing.Color.White;
-            this.buttonDashboard.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonDashboard;
-            this.buttonDashboard.Location = new System.Drawing.Point(13, 141);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonDashboard.Size = new System.Drawing.Size(50, 50);
-            this.buttonDashboard.TabIndex = 30;
-            this.buttonDashboard.TextColor = System.Drawing.Color.White;
-            this.buttonDashboard.UseVisualStyleBackColor = false;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            this.buttonDashboard.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonDashboard.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonHamburger
-            // 
-            this.buttonHamburger.BackColor = System.Drawing.Color.Transparent;
-            this.buttonHamburger.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonHamburger.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonHamburger;
-            this.buttonHamburger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonHamburger.BorderColor = System.Drawing.Color.White;
-            this.buttonHamburger.BorderRadius = 15;
-            this.buttonHamburger.BorderSize = 0;
-            this.buttonHamburger.FlatAppearance.BorderSize = 0;
-            this.buttonHamburger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHamburger.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHamburger.ForeColor = System.Drawing.Color.White;
-            this.buttonHamburger.Location = new System.Drawing.Point(13, 21);
-            this.buttonHamburger.Name = "buttonHamburger";
-            this.buttonHamburger.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonHamburger.Size = new System.Drawing.Size(50, 50);
-            this.buttonHamburger.TabIndex = 29;
-            this.buttonHamburger.TextColor = System.Drawing.Color.White;
-            this.buttonHamburger.UseVisualStyleBackColor = false;
-            this.buttonHamburger.Click += new System.EventHandler(this.buttonHamburger_Click);
-            this.buttonHamburger.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonHamburger.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
             // 
             // labelSideBarMisc
             // 
@@ -380,26 +312,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonOthers.Text = "MISC";
             this.buttonOthers.UseVisualStyleBackColor = true;
             this.buttonOthers.Click += new System.EventHandler(this.buttonOthers_Click);
-            // 
-            // buttonGenerateReports
-            // 
-            this.buttonGenerateReports.Location = new System.Drawing.Point(15, 331);
-            this.buttonGenerateReports.Name = "buttonGenerateReports";
-            this.buttonGenerateReports.Size = new System.Drawing.Size(49, 45);
-            this.buttonGenerateReports.TabIndex = 14;
-            this.buttonGenerateReports.Text = "GR";
-            this.buttonGenerateReports.UseVisualStyleBackColor = true;
-            this.buttonGenerateReports.Click += new System.EventHandler(this.buttonGenerateReports_Click);
-            // 
-            // buttonArchiveRecords
-            // 
-            this.buttonArchiveRecords.Location = new System.Drawing.Point(15, 268);
-            this.buttonArchiveRecords.Name = "buttonArchiveRecords";
-            this.buttonArchiveRecords.Size = new System.Drawing.Size(49, 45);
-            this.buttonArchiveRecords.TabIndex = 13;
-            this.buttonArchiveRecords.Text = "ACR";
-            this.buttonArchiveRecords.UseVisualStyleBackColor = true;
-            this.buttonArchiveRecords.Click += new System.EventHandler(this.buttonArchiveRecords_Click);
             // 
             // tabTransaction
             // 
@@ -984,15 +896,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(26, 91);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // buttonAssetRecordsNewAsset
             // 
             this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(686, 58);
@@ -1041,6 +944,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // tabProfile
             // 
+            this.tabProfile.Controls.Add(this.roundedButton4);
+            this.tabProfile.Controls.Add(this.roundedButton3);
+            this.tabProfile.Controls.Add(this.roundedButton2);
+            this.tabProfile.Controls.Add(this.roundedButton1);
             this.tabProfile.Controls.Add(this.buttonProfileUploadImage);
             this.tabProfile.Controls.Add(this.comboBoxProfileDept);
             this.tabProfile.Controls.Add(this.checkBoxButtonProfileShowPassword);
@@ -1268,16 +1175,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3.TabIndex = 1;
             this.label3.Text = "Account Profile";
             // 
-            // pictureBoxProfileImage
-            // 
-            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
-            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
-            this.pictureBoxProfileImage.Location = new System.Drawing.Point(16, 93);
-            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
-            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
-            this.pictureBoxProfileImage.TabIndex = 2;
-            this.pictureBoxProfileImage.TabStop = false;
-            // 
             // tabDashboard
             // 
             this.tabDashboard.Controls.Add(this.panelTotalAsset);
@@ -1329,6 +1226,228 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.Size = new System.Drawing.Size(1180, 791);
             this.panelTabControl.TabIndex = 0;
             // 
+            // roundedButton1
+            // 
+            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.roundedButton1.BorderColor = System.Drawing.Color.White;
+            this.roundedButton1.BorderRadius = 8;
+            this.roundedButton1.BorderSize = 0;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.Location = new System.Drawing.Point(16, 542);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.Size = new System.Drawing.Size(155, 46);
+            this.roundedButton1.TabIndex = 34;
+            this.roundedButton1.Text = "Save";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            // 
+            // roundedButton2
+            // 
+            this.roundedButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.roundedButton2.BorderColor = System.Drawing.Color.White;
+            this.roundedButton2.BorderRadius = 8;
+            this.roundedButton2.BorderSize = 0;
+            this.roundedButton2.FlatAppearance.BorderSize = 0;
+            this.roundedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton2.ForeColor = System.Drawing.Color.White;
+            this.roundedButton2.Location = new System.Drawing.Point(177, 542);
+            this.roundedButton2.Name = "roundedButton2";
+            this.roundedButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton2.Size = new System.Drawing.Size(155, 46);
+            this.roundedButton2.TabIndex = 35;
+            this.roundedButton2.Text = "CANCEL";
+            this.roundedButton2.TextColor = System.Drawing.Color.White;
+            this.roundedButton2.UseVisualStyleBackColor = false;
+            // 
+            // roundedButton3
+            // 
+            this.roundedButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.roundedButton3.BorderColor = System.Drawing.Color.White;
+            this.roundedButton3.BorderRadius = 16;
+            this.roundedButton3.BorderSize = 0;
+            this.roundedButton3.FlatAppearance.BorderSize = 0;
+            this.roundedButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton3.ForeColor = System.Drawing.Color.White;
+            this.roundedButton3.Location = new System.Drawing.Point(338, 542);
+            this.roundedButton3.Name = "roundedButton3";
+            this.roundedButton3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton3.Size = new System.Drawing.Size(316, 46);
+            this.roundedButton3.TabIndex = 36;
+            this.roundedButton3.Text = "EDIT";
+            this.roundedButton3.TextColor = System.Drawing.Color.White;
+            this.roundedButton3.UseVisualStyleBackColor = false;
+            // 
+            // buttonGenerateReports
+            // 
+            this.buttonGenerateReports.BackColor = System.Drawing.Color.Transparent;
+            this.buttonGenerateReports.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonGenerateReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonGenerateReports.BorderColor = System.Drawing.Color.White;
+            this.buttonGenerateReports.BorderRadius = 15;
+            this.buttonGenerateReports.BorderSize = 0;
+            this.buttonGenerateReports.FlatAppearance.BorderSize = 0;
+            this.buttonGenerateReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGenerateReports.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGenerateReports.ForeColor = System.Drawing.Color.White;
+            this.buttonGenerateReports.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonGenerateReports;
+            this.buttonGenerateReports.Location = new System.Drawing.Point(13, 329);
+            this.buttonGenerateReports.Name = "buttonGenerateReports";
+            this.buttonGenerateReports.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonGenerateReports.Size = new System.Drawing.Size(50, 46);
+            this.buttonGenerateReports.TabIndex = 33;
+            this.buttonGenerateReports.TextColor = System.Drawing.Color.White;
+            this.buttonGenerateReports.UseVisualStyleBackColor = false;
+            this.buttonGenerateReports.Click += new System.EventHandler(this.buttonGenerateReports_Click);
+            this.buttonGenerateReports.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonGenerateReports.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonArchiveRecords
+            // 
+            this.buttonArchiveRecords.BackColor = System.Drawing.Color.Transparent;
+            this.buttonArchiveRecords.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonArchiveRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonArchiveRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonArchiveRecords.BorderRadius = 15;
+            this.buttonArchiveRecords.BorderSize = 0;
+            this.buttonArchiveRecords.FlatAppearance.BorderSize = 0;
+            this.buttonArchiveRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonArchiveRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonArchiveRecords.ForeColor = System.Drawing.Color.White;
+            this.buttonArchiveRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonArchiveRecords;
+            this.buttonArchiveRecords.Location = new System.Drawing.Point(13, 266);
+            this.buttonArchiveRecords.Name = "buttonArchiveRecords";
+            this.buttonArchiveRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonArchiveRecords.Size = new System.Drawing.Size(50, 46);
+            this.buttonArchiveRecords.TabIndex = 32;
+            this.buttonArchiveRecords.TextColor = System.Drawing.Color.White;
+            this.buttonArchiveRecords.UseVisualStyleBackColor = false;
+            this.buttonArchiveRecords.Click += new System.EventHandler(this.buttonArchiveRecords_Click);
+            this.buttonArchiveRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonArchiveRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonAssetRecords
+            // 
+            this.buttonAssetRecords.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAssetRecords.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonAssetRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.BorderRadius = 15;
+            this.buttonAssetRecords.BorderSize = 0;
+            this.buttonAssetRecords.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAssetRecords.ForeColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonAssetRecords;
+            this.buttonAssetRecords.Location = new System.Drawing.Point(12, 202);
+            this.buttonAssetRecords.Name = "buttonAssetRecords";
+            this.buttonAssetRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecords.Size = new System.Drawing.Size(50, 50);
+            this.buttonAssetRecords.TabIndex = 31;
+            this.buttonAssetRecords.TextColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.UseVisualStyleBackColor = false;
+            this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
+            this.buttonAssetRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonAssetRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonDashboard
+            // 
+            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonDashboard.BorderColor = System.Drawing.Color.White;
+            this.buttonDashboard.BorderRadius = 15;
+            this.buttonDashboard.BorderSize = 0;
+            this.buttonDashboard.FlatAppearance.BorderSize = 0;
+            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDashboard.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDashboard.ForeColor = System.Drawing.Color.White;
+            this.buttonDashboard.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonDashboard;
+            this.buttonDashboard.Location = new System.Drawing.Point(13, 141);
+            this.buttonDashboard.Name = "buttonDashboard";
+            this.buttonDashboard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonDashboard.Size = new System.Drawing.Size(50, 50);
+            this.buttonDashboard.TabIndex = 30;
+            this.buttonDashboard.TextColor = System.Drawing.Color.White;
+            this.buttonDashboard.UseVisualStyleBackColor = false;
+            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            this.buttonDashboard.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonDashboard.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonHamburger
+            // 
+            this.buttonHamburger.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHamburger.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonHamburger.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonHamburger;
+            this.buttonHamburger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonHamburger.BorderColor = System.Drawing.Color.White;
+            this.buttonHamburger.BorderRadius = 15;
+            this.buttonHamburger.BorderSize = 0;
+            this.buttonHamburger.FlatAppearance.BorderSize = 0;
+            this.buttonHamburger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHamburger.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHamburger.ForeColor = System.Drawing.Color.White;
+            this.buttonHamburger.Location = new System.Drawing.Point(13, 21);
+            this.buttonHamburger.Name = "buttonHamburger";
+            this.buttonHamburger.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonHamburger.Size = new System.Drawing.Size(50, 50);
+            this.buttonHamburger.TabIndex = 29;
+            this.buttonHamburger.TextColor = System.Drawing.Color.White;
+            this.buttonHamburger.UseVisualStyleBackColor = false;
+            this.buttonHamburger.Click += new System.EventHandler(this.buttonHamburger_Click);
+            this.buttonHamburger.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonHamburger.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // roundedButton4
+            // 
+            this.roundedButton4.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.BackgroundColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.BorderColor = System.Drawing.Color.White;
+            this.roundedButton4.BorderRadius = 16;
+            this.roundedButton4.BorderSize = 0;
+            this.roundedButton4.FlatAppearance.BorderSize = 0;
+            this.roundedButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton4.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton4.ForeColor = System.Drawing.Color.White;
+            this.roundedButton4.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonEdit;
+            this.roundedButton4.Location = new System.Drawing.Point(660, 542);
+            this.roundedButton4.Name = "roundedButton4";
+            this.roundedButton4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton4.Size = new System.Drawing.Size(121, 133);
+            this.roundedButton4.TabIndex = 37;
+            this.roundedButton4.TextColor = System.Drawing.Color.White;
+            this.roundedButton4.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxProfileImage
+            // 
+            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
+            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(16, 93);
+            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
+            this.pictureBoxProfileImage.TabIndex = 2;
+            this.pictureBoxProfileImage.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 91);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1368,13 +1487,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabArchiveRecords.PerformLayout();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
             this.tabDashboard.ResumeLayout(false);
             this.tabDashboard.PerformLayout();
             this.panelTabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1385,8 +1504,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonOthers;
-        private System.Windows.Forms.Button buttonGenerateReports;
-        private System.Windows.Forms.Button buttonArchiveRecords;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button buttonTransaction;
         private System.Windows.Forms.Label labelSideBarTransc;
@@ -1487,5 +1604,11 @@ namespace LGU_SV_Asset_Management_Sytem
         private RoundedButton buttonHamburger;
         private RoundedButton buttonDashboard;
         private RoundedButton buttonAssetRecords;
+        private RoundedButton buttonArchiveRecords;
+        private RoundedButton buttonGenerateReports;
+        private RoundedButton roundedButton2;
+        private RoundedButton roundedButton1;
+        private RoundedButton roundedButton3;
+        private RoundedButton roundedButton4;
     }
 }

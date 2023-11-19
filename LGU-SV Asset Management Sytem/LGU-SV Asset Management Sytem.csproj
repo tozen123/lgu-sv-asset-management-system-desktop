@@ -318,5 +318,8 @@
   <ItemGroup>
     <None Include="Resources\buttonGenerateReports.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonEdit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
