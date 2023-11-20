@@ -354,5 +354,8 @@
   <ItemGroup>
     <None Include="Resources\buttonSearch.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonBack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

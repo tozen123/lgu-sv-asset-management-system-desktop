@@ -41,11 +41,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.linkLabelSignUpButton = new System.Windows.Forms.LinkLabel();
             this.label20 = new System.Windows.Forms.Label();
             this.buttonLogin = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.RegistrationStartPanel = new System.Windows.Forms.Panel();
             this.rbuttonViewerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -172,11 +167,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.LoginPanel.Controls.Add(this.linkLabelSignUpButton);
             this.LoginPanel.Controls.Add(this.label20);
             this.LoginPanel.Controls.Add(this.buttonLogin);
-            this.LoginPanel.Controls.Add(this.button5);
-            this.LoginPanel.Controls.Add(this.button4);
-            this.LoginPanel.Controls.Add(this.button3);
-            this.LoginPanel.Controls.Add(this.button2);
-            this.LoginPanel.Controls.Add(this.button1);
             this.LoginPanel.Controls.Add(this.Label_ErrorHandler_Login);
             this.LoginPanel.Controls.Add(this.textBoxEmail);
             this.LoginPanel.Controls.Add(this.textBoxPassword);
@@ -253,61 +243,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonLogin.TextColor = System.Drawing.Color.White;
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Location = new System.Drawing.Point(528, 698);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(218, 44);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "DEBUG_OPERATOR2_AUTOLOGIN";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Location = new System.Drawing.Point(1005, 696);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(218, 44);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "DEBUG_MANAGER3_AUTOLOGIN";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(1005, 634);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(218, 44);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "DEBUG_MANAGER_AUTOLOGIN";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(762, 698);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 44);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "DEBUG_OPERATOR_AUTOLOGIN";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(290, 698);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 44);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "DEBUG_VIEWER_AUTOLOGIN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Label_ErrorHandler_Login
             // 
@@ -1093,11 +1028,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.Label Label_ErrorHandler_Login;
         private System.Windows.Forms.LinkLabel linkLabelTOR;
         private System.Windows.Forms.LinkLabel linkLabel1Policy;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private RoundedButton buttonLogin;
         private System.Windows.Forms.LinkLabel linkLabelSignUpButton;
         private System.Windows.Forms.Label label20;

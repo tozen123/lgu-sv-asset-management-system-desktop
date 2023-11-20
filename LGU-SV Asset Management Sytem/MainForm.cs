@@ -772,7 +772,47 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void FetchOperatorDataSource()
         {
-            dataGridViewOtherOperator.DataSource = assetOperatorRepositoryControl.GetAllOperators().resultTable;
+            DataTable dataTable = assetOperatorRepositoryControl.GetAllOperators().resultTable;
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+                   
+                    case "assetEmployeeFName":
+                        col.HeaderText = "Employee First Name";
+                        break;
+                    case "assetEmployeeMName":
+                        col.HeaderText = "Employee Middle Name";
+                        break;
+                    case "assetEmployeeLName":
+                        col.HeaderText = "Employee Last Name Name";
+                        break;
+                    case "assetEmployeePhoneNum":
+                        col.HeaderText = "Employee Phone Number";
+                        break;
+                    case "assetEmployeeEmail":
+                        col.HeaderText = "Employee Email";
+                        break;
+                    case "assetEmployeeAddress":
+                        col.HeaderText = "Employee Address";
+                        break;
+                    case "assetEmployeeOffice":
+                        col.HeaderText = "Employee Office";
+                        break;
+               
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewOtherOperator.Font).Width + 90;
+
+                dataGridViewOtherOperator.Columns.Add(col);
+            }
 
             if (dataGridViewOtherOperator.Columns["ViewButtonColumn"] == null)
             {
@@ -789,6 +829,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 // Adjust the button column's display index to make it the last column
                 viewButtonColumn.DisplayIndex = dataGridViewOtherOperator.Columns.Count - 1;
             }
+
+            dataGridViewOtherOperator.DataSource = assetOperatorRepositoryControl.GetAllOperators().resultTable;
         }
         private void buttonOperators_Click(object sender, EventArgs e)
         {

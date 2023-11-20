@@ -31,7 +31,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonBack = new System.Windows.Forms.Button();
             this.buttonUpdateInfo = new System.Windows.Forms.Button();
             this.buttonArchive = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -79,49 +78,55 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
+            this.buttonBack = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonBack
-            // 
-            this.buttonBack.Location = new System.Drawing.Point(14, 14);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(54, 43);
-            this.buttonBack.TabIndex = 2;
-            this.buttonBack.Text = "<";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
             // buttonUpdateInfo
             // 
-            this.buttonUpdateInfo.Location = new System.Drawing.Point(638, 34);
+            this.buttonUpdateInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonUpdateInfo.FlatAppearance.BorderSize = 0;
+            this.buttonUpdateInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateInfo.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateInfo.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdateInfo.Location = new System.Drawing.Point(601, 29);
             this.buttonUpdateInfo.Name = "buttonUpdateInfo";
-            this.buttonUpdateInfo.Size = new System.Drawing.Size(118, 23);
+            this.buttonUpdateInfo.Size = new System.Drawing.Size(134, 28);
             this.buttonUpdateInfo.TabIndex = 3;
             this.buttonUpdateInfo.Text = "Update";
-            this.buttonUpdateInfo.UseVisualStyleBackColor = true;
+            this.buttonUpdateInfo.UseVisualStyleBackColor = false;
             this.buttonUpdateInfo.Click += new System.EventHandler(this.buttonUpdateInfo_Click);
             // 
             // buttonArchive
             // 
-            this.buttonArchive.Location = new System.Drawing.Point(762, 34);
+            this.buttonArchive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonArchive.FlatAppearance.BorderSize = 0;
+            this.buttonArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonArchive.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonArchive.ForeColor = System.Drawing.Color.White;
+            this.buttonArchive.Location = new System.Drawing.Point(741, 29);
             this.buttonArchive.Name = "buttonArchive";
-            this.buttonArchive.Size = new System.Drawing.Size(118, 23);
+            this.buttonArchive.Size = new System.Drawing.Size(134, 28);
             this.buttonArchive.TabIndex = 4;
             this.buttonArchive.Text = "Archive";
-            this.buttonArchive.UseVisualStyleBackColor = true;
+            this.buttonArchive.UseVisualStyleBackColor = false;
             this.buttonArchive.Click += new System.EventHandler(this.buttonArchive_Click);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(886, 34);
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(881, 29);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(118, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(134, 28);
             this.buttonDelete.TabIndex = 5;
             this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // pictureBox1
@@ -478,12 +483,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // menuButton1
             // 
-            this.menuButton1.Location = new System.Drawing.Point(1011, 33);
+            this.menuButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.menuButton1.FlatAppearance.BorderSize = 0;
+            this.menuButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton1.ForeColor = System.Drawing.Color.White;
+            this.menuButton1.Location = new System.Drawing.Point(1021, 29);
             this.menuButton1.Name = "menuButton1";
-            this.menuButton1.Size = new System.Drawing.Size(113, 23);
+            this.menuButton1.Size = new System.Drawing.Size(134, 28);
             this.menuButton1.TabIndex = 6;
             this.menuButton1.Text = "menuButton1";
-            this.menuButton1.UseVisualStyleBackColor = true;
+            this.menuButton1.UseVisualStyleBackColor = false;
             // 
             // richTextBoxPurpose
             // 
@@ -558,10 +568,32 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.labelAssetIdWithName.TabIndex = 56;
             this.labelAssetIdWithName.Text = "ASSET_ID_NAME";
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBack.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonBack.BorderRadius = 15;
+            this.buttonBack.BorderSize = 0;
+            this.buttonBack.FlatAppearance.BorderSize = 0;
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
+            this.buttonBack.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonBack;
+            this.buttonBack.Location = new System.Drawing.Point(14, 8);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonBack.Size = new System.Drawing.Size(54, 49);
+            this.buttonBack.TabIndex = 57;
+            this.buttonBack.TextColor = System.Drawing.Color.White;
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // AssetViewedInformationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelAssetIdWithName);
             this.Controls.Add(this.richTextBoxPurpose);
             this.Controls.Add(this.richTextBoxDescription);
@@ -607,7 +639,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonArchive);
             this.Controls.Add(this.buttonUpdateInfo);
-            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelLogsHandler);
             this.Name = "AssetViewedInformationPanel";
@@ -622,7 +653,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonUpdateInfo;
         private System.Windows.Forms.Button buttonArchive;
         private System.Windows.Forms.Button buttonDelete;
@@ -669,5 +699,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label labelAssetIdWithName;
+        private RoundedButton buttonBack;
     }
 }
