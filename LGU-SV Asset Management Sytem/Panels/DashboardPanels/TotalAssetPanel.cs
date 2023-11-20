@@ -15,19 +15,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
 
         private DatabaseConnection databaseConnection;
 
-        public TotalAssetPanel()
+        string office;
+        public TotalAssetPanel(string _office)
         {
             InitializeComponent();
             databaseConnection = new DatabaseConnection();
-
+            office = _office;
             CountAssets();
         }
 
         private void CountAssets()
         {
-            string query = "SELECT COUNT(*) FROM Assets";
+            string query = "SELECT COUNT(*) FROM Assets WHERE assetLocation = @loc";
 
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                {"@loc", office}
+            };
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 

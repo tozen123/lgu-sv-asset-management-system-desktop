@@ -37,7 +37,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             // 
             // buttonContinue
             // 
-            this.buttonContinue.Location = new System.Drawing.Point(262, 155);
+            this.buttonContinue.Location = new System.Drawing.Point(265, 155);
             this.buttonContinue.Name = "buttonContinue";
             this.buttonContinue.Size = new System.Drawing.Size(189, 34);
             this.buttonContinue.TabIndex = 1;
@@ -52,7 +52,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMessage.AutoSize = true;
             this.labelMessage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMessage.Location = new System.Drawing.Point(95, 70);
+            this.labelMessage.Location = new System.Drawing.Point(330, 38);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelMessage.Size = new System.Drawing.Size(46, 23);

@@ -13,11 +13,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
     public partial class AssetByCategoryPanel : UserControl
     {
         private DatabaseConnection databaseConnection;
-        public AssetByCategoryPanel()
+        string office;
+        public AssetByCategoryPanel(string _office)
         {
             InitializeComponent();
             databaseConnection = new DatabaseConnection();
 
+            office = _office;
             CategoryAssetCount();
         }
 
@@ -29,12 +31,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
         private void CategoryAssetCount()
         {
             string query = "SELECT AC.assetCategoryName, COUNT(A.assetId) AS AssetCount " +
-                           "FROM [LGU_AMS_DB].[dbo].[AssetCategory] AC " +
-                           "LEFT JOIN [LGU_AMS_DB].[dbo].[Assets] A ON AC.assetCategoryId = A.assetCategoryID " +
-                           "GROUP BY AC.assetCategoryId, AC.assetCategoryName " +
-                           "ORDER BY AC.assetCategoryId;";
+               "FROM [LGU_AMS_DB].[dbo].[AssetCategory] AC " +
+               "LEFT JOIN [LGU_AMS_DB].[dbo].[Assets] A ON AC.assetCategoryId = A.assetCategoryID " +
+               "WHERE A.assetLocation = @loc " +
+               "GROUP BY AC.assetCategoryId, AC.assetCategoryName " +
+               "ORDER BY AC.assetCategoryId";
 
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                {"@loc", office}
+            };
+
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 

@@ -130,7 +130,7 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxProfileDept.Items.Add("MBO-Municipal Budget Office");
             comboBoxProfileDept.Items.Add("Accounting Office");
 
-            DashboardLoad();
+            
         }
         // Start
         public void SetSessionHandler(string user_id, string password)
@@ -212,14 +212,15 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Set
             labelOffice.Text = currentUserOffice;
+            DashboardLoad();
         }
 
         private void DashboardLoad()
         {
-            Panels.DashboardPanels.TotalAssetPanel totalAssetPanel = new Panels.DashboardPanels.TotalAssetPanel();
+            Panels.DashboardPanels.TotalAssetPanel totalAssetPanel = new Panels.DashboardPanels.TotalAssetPanel(currentUserOffice);
             roundedPanelTotalAsset.Controls.Add(totalAssetPanel);
 
-            Panels.DashboardPanels.AssetByCategoryPanel assetByCategoryPanel = new Panels.DashboardPanels.AssetByCategoryPanel();
+            Panels.DashboardPanels.AssetByCategoryPanel assetByCategoryPanel = new Panels.DashboardPanels.AssetByCategoryPanel(currentUserOffice);
             roundedPanelCategoryCount.Controls.Add(assetByCategoryPanel);
 
             menuButtonSortByYear.Menu = new ContextMenuStrip();
@@ -324,7 +325,7 @@ namespace LGU_SV_Asset_Management_Sytem
  
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
-
+            DashboardLoad();
             panelTabControl.SelectedTab = tabDashboard;
             ResetAssetViewedPanel();
         }
