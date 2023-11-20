@@ -30,7 +30,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         {
             this.Close();
 
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing, supervisor_id, supervisor_location);
+            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing, supervisor_id, supervisor_location, panelHandler);
             Utilities.PanelChanger(panelHandler, panelControl);
         }
 
@@ -38,7 +38,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         {
             this.Close();
 
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.New, supervisor_id, supervisor_location);
+            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.New, supervisor_id, supervisor_location, panelHandler);
             Utilities.PanelChanger(panelHandler, panelControl);
         }
     }

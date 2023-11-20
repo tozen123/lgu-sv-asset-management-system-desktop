@@ -30,7 +30,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private void InitializeComponent()
         {
             this.dataGridViewAssetRecords = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelViewedAsset = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).BeginInit();
             this.SuspendLayout();
@@ -41,22 +40,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.dataGridViewAssetRecords.AllowUserToDeleteRows = false;
             this.dataGridViewAssetRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAssetRecords.Location = new System.Drawing.Point(3, 20);
+            this.dataGridViewAssetRecords.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
             this.dataGridViewAssetRecords.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1123, 568);
+            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1123, 664);
             this.dataGridViewAssetRecords.TabIndex = 0;
             this.dataGridViewAssetRecords.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetRecords_CellMouseClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Records";
             // 
             // panelViewedAsset
             // 
@@ -69,21 +59,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAssetRecords);
             this.Controls.Add(this.panelViewedAsset);
             this.Name = "RecordsHomePanel";
-            this.Size = new System.Drawing.Size(1129, 591);
+            this.Size = new System.Drawing.Size(1129, 670);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewAssetRecords;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelViewedAsset;
     }
 }

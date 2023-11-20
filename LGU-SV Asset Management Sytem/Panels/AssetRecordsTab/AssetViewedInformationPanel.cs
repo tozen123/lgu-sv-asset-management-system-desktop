@@ -97,6 +97,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             textBoxAssetCategory.Text = asset.AssetCategoryName;
             textBoxSupplier.Text = asset.SupplierName;
 
+            //New
+
+            richTextBoxDescription.Text = asset.AssetDescription;
+            richTextBoxPurpose.Text = asset.AssetPurpose;
+
+            textBoxPropertyName.Text = asset.AssetPropertyNumber.ToString();
 
         }
 
@@ -272,5 +278,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             panelLogsHandler.Visible = true;
         }
 
+    
     }
 }

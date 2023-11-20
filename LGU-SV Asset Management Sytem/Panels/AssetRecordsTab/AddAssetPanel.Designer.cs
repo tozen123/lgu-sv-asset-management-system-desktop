@@ -60,6 +60,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabAddingAsset = new System.Windows.Forms.TabControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxDesc = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxPNumber = new System.Windows.Forms.TextBox();
             this.tabPage1.SuspendLayout();
             this.groupBoxImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
@@ -88,6 +94,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBoxPNumber);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.richTextBoxDesc);
+            this.tabPage1.Controls.Add(this.richTextBoxPurpose);
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.labelAssetCount);
             this.tabPage1.Controls.Add(this.groupBoxImage);
             this.tabPage1.Controls.Add(this.label12);
@@ -164,9 +176,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(716, 116);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.Size = new System.Drawing.Size(108, 13);
             this.label12.TabIndex = 52;
-            this.label12.Text = "Employee:";
+            this.label12.Text = "Employee/Custodian:";
             // 
             // comboBoxEmployee
             // 
@@ -196,7 +208,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // checkBoxIsMaintanable
             // 
             this.checkBoxIsMaintanable.AutoSize = true;
-            this.checkBoxIsMaintanable.Location = new System.Drawing.Point(385, 254);
+            this.checkBoxIsMaintanable.Location = new System.Drawing.Point(39, 427);
             this.checkBoxIsMaintanable.Name = "checkBoxIsMaintanable";
             this.checkBoxIsMaintanable.Size = new System.Drawing.Size(130, 17);
             this.checkBoxIsMaintanable.TabIndex = 48;
@@ -205,7 +217,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // textBoxLifespan
             // 
-            this.textBoxLifespan.Location = new System.Drawing.Point(496, 210);
+            this.textBoxLifespan.Location = new System.Drawing.Point(150, 295);
             this.textBoxLifespan.Name = "textBoxLifespan";
             this.textBoxLifespan.Size = new System.Drawing.Size(197, 20);
             this.textBoxLifespan.TabIndex = 47;
@@ -234,7 +246,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(382, 213);
+            this.label10.Location = new System.Drawing.Point(36, 298);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 46;
@@ -243,7 +255,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(382, 165);
+            this.label9.Location = new System.Drawing.Point(36, 340);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 45;
@@ -252,7 +264,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // comboBoxCondition
             // 
             this.comboBoxCondition.FormattingEnabled = true;
-            this.comboBoxCondition.Location = new System.Drawing.Point(496, 162);
+            this.comboBoxCondition.Location = new System.Drawing.Point(150, 337);
             this.comboBoxCondition.Name = "comboBoxCondition";
             this.comboBoxCondition.Size = new System.Drawing.Size(197, 21);
             this.comboBoxCondition.TabIndex = 44;
@@ -260,7 +272,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(382, 117);
+            this.label8.Location = new System.Drawing.Point(36, 380);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 43;
@@ -269,7 +281,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // comboBoxAvailability
             // 
             this.comboBoxAvailability.FormattingEnabled = true;
-            this.comboBoxAvailability.Location = new System.Drawing.Point(496, 114);
+            this.comboBoxAvailability.Location = new System.Drawing.Point(150, 377);
             this.comboBoxAvailability.Name = "comboBoxAvailability";
             this.comboBoxAvailability.Size = new System.Drawing.Size(197, 21);
             this.comboBoxAvailability.TabIndex = 42;
@@ -301,20 +313,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 258);
+            this.label6.Location = new System.Drawing.Point(36, 255);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 38;
-            this.label6.Text = "Purchase Date:";
+            this.label6.Text = "Acknowledge Date:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(36, 209);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 36;
-            this.label5.Text = "Purchase Amount:";
+            this.label5.Text = "Price:";
             // 
             // label3
             // 
@@ -359,6 +371,56 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.tabAddingAsset.SelectedIndex = 0;
             this.tabAddingAsset.Size = new System.Drawing.Size(1113, 513);
             this.tabAddingAsset.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(382, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Purpose:";
+            // 
+            // richTextBoxPurpose
+            // 
+            this.richTextBoxPurpose.Location = new System.Drawing.Point(496, 121);
+            this.richTextBoxPurpose.Name = "richTextBoxPurpose";
+            this.richTextBoxPurpose.Size = new System.Drawing.Size(197, 105);
+            this.richTextBoxPurpose.TabIndex = 56;
+            this.richTextBoxPurpose.Text = "";
+            // 
+            // richTextBoxDesc
+            // 
+            this.richTextBoxDesc.Location = new System.Drawing.Point(496, 248);
+            this.richTextBoxDesc.Name = "richTextBoxDesc";
+            this.richTextBoxDesc.Size = new System.Drawing.Size(197, 110);
+            this.richTextBoxDesc.TabIndex = 57;
+            this.richTextBoxDesc.Text = "";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(382, 251);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 13);
+            this.label13.TabIndex = 58;
+            this.label13.Text = "Description:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(382, 383);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 13);
+            this.label14.TabIndex = 59;
+            this.label14.Text = "Property Number:";
+            // 
+            // textBoxPNumber
+            // 
+            this.textBoxPNumber.Location = new System.Drawing.Point(496, 380);
+            this.textBoxPNumber.Name = "textBoxPNumber";
+            this.textBoxPNumber.Size = new System.Drawing.Size(197, 20);
+            this.textBoxPNumber.TabIndex = 60;
             // 
             // AddAssetPanel
             // 
@@ -411,5 +473,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabAddingAsset;
         private System.Windows.Forms.Label labelAssetCount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxPNumber;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RichTextBox richTextBoxDesc;
+        private System.Windows.Forms.RichTextBox richTextBoxPurpose;
     }
 }

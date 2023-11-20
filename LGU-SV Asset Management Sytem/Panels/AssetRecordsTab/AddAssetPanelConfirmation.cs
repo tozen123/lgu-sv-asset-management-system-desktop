@@ -64,6 +64,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             labelAssetPurchaseAmount.Text = list[indexLoad].AssetPurchaseAmount.ToString();
             labelAssetPurchaseDate.Text = list[indexLoad].AssetPurchaseDate.ToString();
 
+            //New Fetch
+            labelPNumber.Text = list[indexLoad].AssetPropertyNumber.ToString();
+
             if (list[indexLoad].IsMaintainable)
             {
                 labelMaintainable.Text = "YES";

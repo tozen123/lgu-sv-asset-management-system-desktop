@@ -206,6 +206,26 @@ namespace LGU_SV_Asset_Management_Sytem
             set { employeeName = value; }
         }
 
+        private string assetPurpose, assetDescription;
+        public string AssetPurpose
+        {
+            get { return assetPurpose; }
+            set { assetPurpose = value; }
+        }
+
+        public string AssetDescription
+        {
+            get { return assetDescription; }
+            set { assetDescription = value; }
+        }
+
+        private int assetPropertyNumber;
+        public int AssetPropertyNumber
+        {
+            get { return assetPropertyNumber; }
+            set { assetPropertyNumber = value; }
+        }
+
         public class AssetRepositoryControl
         {
             private DatabaseConnection databaseConnection;

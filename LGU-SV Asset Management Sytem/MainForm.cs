@@ -26,7 +26,7 @@ namespace LGU_SV_Asset_Management_Sytem
         string currentUserOffice;
 
         //Color
-        Color clickColor = Color.FromArgb(76, 245, 154);
+        Color clickColor = Color.FromArgb(48, 77, 46);
 
         //447145
         Color mainColor1 = Color.FromArgb(68, 113, 69);
@@ -113,7 +113,7 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonAssetRecordsNewAsset.Visible = false;
                     break;
                 case "Asset Supervisor":
-
+                    buttonAssetRecordsNewAsset.Visible = true;
                     break;
             }
         }
@@ -126,6 +126,8 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxProfileDept.Items.Add("MEO-Municipal Engineering Office");
             comboBoxProfileDept.Items.Add("MBO-Municipal Budget Office");
             comboBoxProfileDept.Items.Add("Accounting Office");
+
+            
         }
         // Start
         public void SetSessionHandler(string user_id, string password)
@@ -143,7 +145,7 @@ namespace LGU_SV_Asset_Management_Sytem
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.ItemSize = new Size(0, 1);
             tabControl.SizeMode = TabSizeMode.Fixed;
-
+        
             foreach (TabPage tab in tabControl.TabPages)
             {
                 tab.Text = "";
@@ -305,13 +307,16 @@ namespace LGU_SV_Asset_Management_Sytem
             panelViewedAssetHandler.Controls.Clear();
             panelViewedAssetHandler.SendToBack();
 
+            panelAssetRecordsHandler.Controls.Clear();
+            panelAssetRecordsHandler.SendToBack();
+
         }
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
-            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+            //Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
+            //Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
             ResetAssetViewedPanel();
 
 
@@ -650,13 +655,13 @@ namespace LGU_SV_Asset_Management_Sytem
                 else
                 {
                     buttonProfile.Visible = false;
-                    groupBoxSide.Size = new Size(80, 820);
+                    groupBoxSide.Size = new Size(70, 820);
 
                     hamburgerToggle = false;
 
                     buttonHamburger.BackColor = Color.FromArgb(225, 232, 225);
 
-                    buttonProfile.BackColor = Color.Silver;
+                    buttonProfile.BackColor = Color.FromArgb(128, 200, 128);
 
                     Utilities.SetControlsVisibilityState(sideLabels, false);
                 }
@@ -664,6 +669,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             
         }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -1133,6 +1139,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (sender is Button button)
             {
                 button.BackColor = Color.FromArgb(68, 113, 68);
+                
             }
         }
         private void ButtonMouseEnd(object sender, EventArgs e)
@@ -1144,6 +1151,12 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
+        private void Set(object sender, EventArgs e)
+        {
+
+        }
+
+  
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

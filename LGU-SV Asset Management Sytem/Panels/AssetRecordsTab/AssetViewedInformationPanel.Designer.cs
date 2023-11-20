@@ -71,11 +71,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonPrintAction = new System.Windows.Forms.Button();
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.panelLogsHandler = new System.Windows.Forms.Panel();
+            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
+            this.textBoxPropertyName = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
+            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
+            this.panelLogsHandler.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelAssetIdWithName
@@ -303,7 +310,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxUnit.Location = new System.Drawing.Point(822, 103);
             this.textBoxUnit.Name = "textBoxUnit";
             this.textBoxUnit.ReadOnly = true;
-            this.textBoxUnit.Size = new System.Drawing.Size(197, 25);
+            this.textBoxUnit.Size = new System.Drawing.Size(260, 25);
             this.textBoxUnit.TabIndex = 26;
             // 
             // label10
@@ -321,7 +328,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxAvailability.Location = new System.Drawing.Point(822, 146);
             this.textBoxAvailability.Name = "textBoxAvailability";
             this.textBoxAvailability.ReadOnly = true;
-            this.textBoxAvailability.Size = new System.Drawing.Size(197, 25);
+            this.textBoxAvailability.Size = new System.Drawing.Size(260, 25);
             this.textBoxAvailability.TabIndex = 28;
             // 
             // label11
@@ -339,7 +346,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxCondition.Location = new System.Drawing.Point(822, 191);
             this.textBoxCondition.Name = "textBoxCondition";
             this.textBoxCondition.ReadOnly = true;
-            this.textBoxCondition.Size = new System.Drawing.Size(197, 25);
+            this.textBoxCondition.Size = new System.Drawing.Size(260, 25);
             this.textBoxCondition.TabIndex = 30;
             // 
             // label12
@@ -357,7 +364,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxAssetCategory.Location = new System.Drawing.Point(822, 242);
             this.textBoxAssetCategory.Name = "textBoxAssetCategory";
             this.textBoxAssetCategory.ReadOnly = true;
-            this.textBoxAssetCategory.Size = new System.Drawing.Size(197, 25);
+            this.textBoxAssetCategory.Size = new System.Drawing.Size(260, 25);
             this.textBoxAssetCategory.TabIndex = 32;
             // 
             // label13
@@ -375,7 +382,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxLifeSpan.Location = new System.Drawing.Point(822, 292);
             this.textBoxLifeSpan.Name = "textBoxLifeSpan";
             this.textBoxLifeSpan.ReadOnly = true;
-            this.textBoxLifeSpan.Size = new System.Drawing.Size(197, 25);
+            this.textBoxLifeSpan.Size = new System.Drawing.Size(260, 25);
             this.textBoxLifeSpan.TabIndex = 34;
             // 
             // label14
@@ -393,7 +400,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxEmployee.Location = new System.Drawing.Point(822, 343);
             this.textBoxEmployee.Name = "textBoxEmployee";
             this.textBoxEmployee.ReadOnly = true;
-            this.textBoxEmployee.Size = new System.Drawing.Size(197, 25);
+            this.textBoxEmployee.Size = new System.Drawing.Size(260, 25);
             this.textBoxEmployee.TabIndex = 36;
             // 
             // label15
@@ -431,7 +438,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxSupplier.Location = new System.Drawing.Point(822, 386);
             this.textBoxSupplier.Name = "textBoxSupplier";
             this.textBoxSupplier.ReadOnly = true;
-            this.textBoxSupplier.Size = new System.Drawing.Size(197, 25);
+            this.textBoxSupplier.Size = new System.Drawing.Size(260, 25);
             this.textBoxSupplier.TabIndex = 40;
             // 
             // label16
@@ -443,6 +450,75 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label16.TabIndex = 39;
             this.label16.Text = "Supplier:";
             // 
+            // panelLogsHandler
+            // 
+            this.panelLogsHandler.Controls.Add(this.richTextBoxPurpose);
+            this.panelLogsHandler.Controls.Add(this.richTextBoxDescription);
+            this.panelLogsHandler.Controls.Add(this.textBoxPropertyName);
+            this.panelLogsHandler.Controls.Add(this.label17);
+            this.panelLogsHandler.Controls.Add(this.label19);
+            this.panelLogsHandler.Controls.Add(this.label18);
+            this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
+            this.panelLogsHandler.Name = "panelLogsHandler";
+            this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
+            this.panelLogsHandler.TabIndex = 41;
+            // 
+            // richTextBoxDescription
+            // 
+            this.richTextBoxDescription.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxDescription.Location = new System.Drawing.Point(822, 442);
+            this.richTextBoxDescription.Name = "richTextBoxDescription";
+            this.richTextBoxDescription.ReadOnly = true;
+            this.richTextBoxDescription.Size = new System.Drawing.Size(260, 153);
+            this.richTextBoxDescription.TabIndex = 48;
+            this.richTextBoxDescription.Text = "";
+            // 
+            // textBoxPropertyName
+            // 
+            this.textBoxPropertyName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPropertyName.Location = new System.Drawing.Point(822, 613);
+            this.textBoxPropertyName.Name = "textBoxPropertyName";
+            this.textBoxPropertyName.ReadOnly = true;
+            this.textBoxPropertyName.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPropertyName.TabIndex = 47;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(703, 619);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(89, 13);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Property Number:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(703, 442);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 13);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "Description";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(333, 436);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(49, 13);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "Purpose:";
+            // 
+            // richTextBoxPurpose
+            // 
+            this.richTextBoxPurpose.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxPurpose.Location = new System.Drawing.Point(452, 436);
+            this.richTextBoxPurpose.Name = "richTextBoxPurpose";
+            this.richTextBoxPurpose.ReadOnly = true;
+            this.richTextBoxPurpose.Size = new System.Drawing.Size(197, 159);
+            this.richTextBoxPurpose.TabIndex = 49;
+            this.richTextBoxPurpose.Text = "";
+            // 
             // menuButton1
             // 
             this.menuButton1.Location = new System.Drawing.Point(1011, 33);
@@ -451,13 +527,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.menuButton1.TabIndex = 6;
             this.menuButton1.Text = "menuButton1";
             this.menuButton1.UseVisualStyleBackColor = true;
-            // 
-            // panelLogsHandler
-            // 
-            this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
-            this.panelLogsHandler.Name = "panelLogsHandler";
-            this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
-            this.panelLogsHandler.TabIndex = 41;
             // 
             // AssetViewedInformationPanel
             // 
@@ -510,6 +579,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).EndInit();
+            this.panelLogsHandler.ResumeLayout(false);
+            this.panelLogsHandler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,5 +630,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.TextBox textBoxSupplier;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panelLogsHandler;
+        private System.Windows.Forms.RichTextBox richTextBoxDescription;
+        private System.Windows.Forms.TextBox textBoxPropertyName;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.RichTextBox richTextBoxPurpose;
     }
 }

@@ -40,10 +40,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                    "       A.assetName, A.assetCondition, A.assetAvailability, " +
                    "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetPurchaseDate, A.assetPurchaseAmount, " +
                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetLastMaintenance, A.assetIsMaintainable," +
-                   "       A.assetIsMissing, A.assetLifeSpan " +
+                   "       A.assetIsMissing, A.assetLifeSpan, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
                    "FROM Assets A " +
                    "LEFT JOIN AssetSupervisor ASupervisor ON A.assetSupervisorID = ASupervisor.assetSupervisorID " +
-                   "LEFT JOIN AssetEmployee AEmployee ON A.currentAssetEmployeeID = AEmployee.assetEmployeeID " +
+                   "LEFT JOIN AssetEmployee AEmployee ON A.currentCustodianAssetEmployeeID = AEmployee.assetEmployeeID " +
                    "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                    "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
                    "WHERE A.assetLocation = @uLocation";
@@ -83,7 +83,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         col.HeaderText = "Supervisor Name";
                         break;
                     case "currentAssetEmployeeFullName":
-                        col.HeaderText = "Current Employee Name";
+                        col.HeaderText = "Current Custodian Name";
                         break;
                     case "Supplier":
                         col.HeaderText = "Supplier Name";
@@ -147,6 +147,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         break;
                     case "assetLifeSpan":
                         col.HeaderText = "Asset Life Span (Years)";
+                        break;
+                    case "assetPurpose":
+                        col.HeaderText = "Asset Purpose";
+                        break;
+                    case "assetDescription":
+                        col.HeaderText = "Asset Description";
+                        break;
+                    case "assetPropertyNumber":
+                        col.HeaderText = "Asset PropertyNumber";
                         break;
                     default:
                         col.HeaderText = column.ColumnName;
@@ -231,6 +240,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.AssetQuantity = Convert.ToInt32(selectedRow.Cells["assetQuantity"].Value);
                     selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();
                     selectedAsset.AssetLifeSpan = Convert.ToInt32(selectedRow.Cells["assetLifeSpan"].Value);
+
+                    //added
+                    selectedAsset.AssetPurpose = selectedRow.Cells["assetPurpose"].Value.ToString();
+                    selectedAsset.AssetDescription = selectedRow.Cells["assetDescription"].Value.ToString();
+                    selectedAsset.AssetPropertyNumber = Convert.ToInt32(selectedRow.Cells["assetPropertyNumber"].Value);
 
                     AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler, currentUser);
                     viewedAssetPanelHandler.Controls.Add(assetViewerInformationPanel);

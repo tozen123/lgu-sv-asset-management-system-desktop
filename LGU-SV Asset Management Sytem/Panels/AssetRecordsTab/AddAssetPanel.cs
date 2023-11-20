@@ -26,7 +26,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         string supervisor_id;
         string supervisor_location;
-
+        Control pHandler;
         public enum AssetType
         {
             New,
@@ -35,11 +35,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         public AssetType assetType;
 
-        public AddAssetPanel(AssetType _assetType, string id, string location)
+        public AddAssetPanel(AssetType _assetType, string id, string location, Control _panelHandler)
         {
             InitializeComponent();
             supervisor_id = id;
             supervisor_location = location;
+
+            pHandler = _panelHandler;
 
             assetType = _assetType;
             databaseConnection = new DatabaseConnection();
@@ -301,6 +303,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 // Image
                 PictureBox PictureBox_assetImage = tabPage.Controls.Find("pictureBoxAssetImage", true).FirstOrDefault() as PictureBox;
 
+
+
+                //New Attrib
+
+                RichTextBox richTextBox_Purpose = tabPage.Controls.Find("richTextBoxPurpose", true).FirstOrDefault() as RichTextBox;
+                RichTextBox richTextBox_description = tabPage.Controls.Find("richTextBoxDesc", true).FirstOrDefault() as RichTextBox;
+                TextBox textBox_pnumber = tabPage.Controls.Find("textBoxPNumber", true).FirstOrDefault() as TextBox;
+
+
+
+
                 // QR Generator
 
                 //Validate
@@ -318,19 +331,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 */
 
 
-                
-                
-                    // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
-
-                    // Note for programmers who will read this section:
-                    // The following code might not represent the best implementation.
-                    // The code and logic could result in error on database inputs,
-                    // causing to major errors and evenn potential crashes due to a lack of validation.
-                    // This code was developed for a fast implementation to meet the deadline. :(
 
 
-                    // Supervisor
-                    if (int.TryParse(supervisor_id, out int parsedSupervisorId))
+                // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
+
+                // Note for programmers who will read this section:
+                // The following code might not represent the best implementation.
+                // The code and logic could result in error on database inputs,
+                // causing to major errors and evenn potential crashes due to a lack of validation.
+                // This code was developed for a fast implementation to meet the deadline. :(
+
+
+                // Supervisor
+                if (int.TryParse(supervisor_id, out int parsedSupervisorId))
                     {
                         asset.AssetSupervisorId = parsedSupervisorId;
                     }
@@ -369,11 +382,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
                     asset.IsMaintainable = CheckBox_isMaintainable.Checked;
                     asset.IsMissing = false;
-                    
+
+                    asset.AssetPurpose = richTextBox_Purpose.Text;
+                    asset.AssetDescription = richTextBox_description.Text;
+
+                    asset.AssetPropertyNumber = Convert.ToInt32(textBox_pnumber.Text); 
 
                     // LifeSpan
 
-                    if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
+                if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
                     {
                         asset.AssetLifeSpan = lifespan;
                     }
@@ -461,11 +478,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     foreach (Asset asset in assetToAdd)
                     {
                         
-                        string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
+                        string query = "INSERT INTO Assets (assetSupervisorID, currentCustodianAssetEmployeeID, supplierID, assetCategoryID, assetName," +
                         " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
-                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan, assetPurpose, assetDescription, assetPropertyNumber) VALUES " +
                         " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
-                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan, @purpose, @description, @propertynumber)";
 
                         Dictionary<string, object> parameters = new Dictionary<string, object>()
                         {
@@ -485,7 +502,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                             { "@image", asset.AssetImage},
                             { "@ismissing", asset.IsMissing},
                             { "@ismaintainable", asset.IsMaintainable},
-                            { "@lifeSpan", asset.AssetLifeSpan}
+                            { "@lifeSpan", asset.AssetLifeSpan},
+                            { "@purpose", asset.AssetPurpose},
+                            { "@description", asset.AssetDescription},
+                            { "@propertynumber", asset.AssetPropertyNumber}
 
                         };
                         int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
@@ -536,7 +556,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 addAssetPanelSuccessfulQRShow.ShowDialog();
                 if (addAssetPanelSuccessfulQRShow.GetResult() == DialogResult.OK)
                 {
-
+                    pHandler.Controls.Clear();
+                    pHandler.SendToBack();
+                    pHandler.Visible = false;
                 }
             }
         }
