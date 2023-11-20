@@ -244,6 +244,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
             this.buttonLogin.Location = new System.Drawing.Point(452, 520);
             this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonLogin.Size = new System.Drawing.Size(341, 67);
             this.buttonLogin.TabIndex = 8;
             this.buttonLogin.Text = "LOGIN";
@@ -344,6 +345,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonViewerRole.ForeColor = System.Drawing.Color.White;
             this.rbuttonViewerRole.Location = new System.Drawing.Point(489, 615);
             this.rbuttonViewerRole.Name = "rbuttonViewerRole";
+            this.rbuttonViewerRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonViewerRole.Size = new System.Drawing.Size(326, 67);
             this.rbuttonViewerRole.TabIndex = 14;
             this.rbuttonViewerRole.Text = "VIEWER";
@@ -364,6 +366,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonOperatorRole.ForeColor = System.Drawing.Color.White;
             this.rbuttonOperatorRole.Location = new System.Drawing.Point(489, 531);
             this.rbuttonOperatorRole.Name = "rbuttonOperatorRole";
+            this.rbuttonOperatorRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonOperatorRole.Size = new System.Drawing.Size(326, 67);
             this.rbuttonOperatorRole.TabIndex = 13;
             this.rbuttonOperatorRole.Text = "EMPLOYEE";
@@ -384,6 +387,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonManagerRole.ForeColor = System.Drawing.Color.White;
             this.rbuttonManagerRole.Location = new System.Drawing.Point(489, 443);
             this.rbuttonManagerRole.Name = "rbuttonManagerRole";
+            this.rbuttonManagerRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonManagerRole.Size = new System.Drawing.Size(326, 67);
             this.rbuttonManagerRole.TabIndex = 12;
             this.rbuttonManagerRole.Text = "SUPERVISOR";
@@ -511,6 +515,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonNextAccountSetup.ForeColor = System.Drawing.Color.White;
             this.rbuttonNextAccountSetup.Location = new System.Drawing.Point(497, 657);
             this.rbuttonNextAccountSetup.Name = "rbuttonNextAccountSetup";
+            this.rbuttonNextAccountSetup.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonNextAccountSetup.Size = new System.Drawing.Size(341, 67);
             this.rbuttonNextAccountSetup.TabIndex = 18;
             this.rbuttonNextAccountSetup.Text = "NEXT";
@@ -607,6 +612,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonAccountSetup.ForeColor = System.Drawing.Color.White;
             this.rbuttonAccountSetup.Location = new System.Drawing.Point(532, 680);
             this.rbuttonAccountSetup.Name = "rbuttonAccountSetup";
+            this.rbuttonAccountSetup.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonAccountSetup.Size = new System.Drawing.Size(263, 58);
             this.rbuttonAccountSetup.TabIndex = 23;
             this.rbuttonAccountSetup.Text = "NEXT";
@@ -829,6 +835,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonRegister.ForeColor = System.Drawing.Color.White;
             this.rbuttonRegister.Location = new System.Drawing.Point(547, 690);
             this.rbuttonRegister.Name = "rbuttonRegister";
+            this.rbuttonRegister.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonRegister.Size = new System.Drawing.Size(228, 52);
             this.rbuttonRegister.TabIndex = 27;
             this.rbuttonRegister.Text = "REGISTER";
@@ -849,6 +856,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.rbuttonBrowseFiles.ForeColor = System.Drawing.Color.White;
             this.rbuttonBrowseFiles.Location = new System.Drawing.Point(486, 568);
             this.rbuttonBrowseFiles.Name = "rbuttonBrowseFiles";
+            this.rbuttonBrowseFiles.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.rbuttonBrowseFiles.Size = new System.Drawing.Size(338, 33);
             this.rbuttonBrowseFiles.TabIndex = 26;
             this.rbuttonBrowseFiles.Text = "Browse Files";
@@ -988,6 +996,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonBackToLoginForm.ForeColor = System.Drawing.Color.White;
             this.buttonBackToLoginForm.Location = new System.Drawing.Point(12, 755);
             this.buttonBackToLoginForm.Name = "buttonBackToLoginForm";
+            this.buttonBackToLoginForm.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonBackToLoginForm.Size = new System.Drawing.Size(212, 40);
             this.buttonBackToLoginForm.TabIndex = 28;
             this.buttonBackToLoginForm.Text = "BACK TO LOGIN";

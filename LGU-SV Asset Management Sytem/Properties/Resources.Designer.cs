@@ -93,6 +93,16 @@ namespace LGU_SV_Asset_Management_Sytem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buttonClose {
+            get {
+                object obj = ResourceManager.GetObject("buttonClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buttonDashboard {
             get {
                 object obj = ResourceManager.GetObject("buttonDashboard", resourceCulture);
@@ -136,6 +146,16 @@ namespace LGU_SV_Asset_Management_Sytem.Properties {
         internal static System.Drawing.Bitmap buttonMisc {
             get {
                 object obj = ResourceManager.GetObject("buttonMisc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonSearch {
+            get {
+                object obj = ResourceManager.GetObject("buttonSearch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

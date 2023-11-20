@@ -27,6 +27,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         string supervisor_id;
         string supervisor_location;
         Control pHandler;
+        MainForm mainForm;
         public enum AssetType
         {
             New,
@@ -35,12 +36,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         public AssetType assetType;
 
-        public AddAssetPanel(AssetType _assetType, string id, string location, Control _panelHandler)
+        public AddAssetPanel(AssetType _assetType, string id, string location, Control _panelHandler, MainForm _mf)
         {
             InitializeComponent();
             supervisor_id = id;
             supervisor_location = location;
-
+            mainForm = _mf;
             pHandler = _panelHandler;
 
             assetType = _assetType;
@@ -556,9 +557,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 addAssetPanelSuccessfulQRShow.ShowDialog();
                 if (addAssetPanelSuccessfulQRShow.GetResult() == DialogResult.OK)
                 {
+
                     pHandler.Controls.Clear();
                     pHandler.SendToBack();
                     pHandler.Visible = false;
+
+                    mainForm.LoadAssets();
                 }
             }
         }

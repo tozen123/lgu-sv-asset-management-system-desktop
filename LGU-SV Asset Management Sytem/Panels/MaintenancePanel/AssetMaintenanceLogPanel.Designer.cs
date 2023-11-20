@@ -30,7 +30,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         private void InitializeComponent()
         {
             this.buttonBack = new System.Windows.Forms.Button();
-            this.labelAssetIdWithName = new System.Windows.Forms.Label();
             this.buttonNewLog = new System.Windows.Forms.Button();
             this.buttonSchedule = new System.Windows.Forms.Button();
             this.dataGridViewMaintenanceLogs = new System.Windows.Forms.DataGridView();
@@ -38,13 +37,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panelLogMiniHandler = new System.Windows.Forms.Panel();
+            this.labelAssetIdWithName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaintenanceLogs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(9, 22);
+            this.buttonBack.Location = new System.Drawing.Point(14, 14);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(54, 43);
             this.buttonBack.TabIndex = 4;
@@ -52,19 +52,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // labelAssetIdWithName
-            // 
-            this.labelAssetIdWithName.AutoSize = true;
-            this.labelAssetIdWithName.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetIdWithName.Location = new System.Drawing.Point(69, 31);
-            this.labelAssetIdWithName.Name = "labelAssetIdWithName";
-            this.labelAssetIdWithName.Size = new System.Drawing.Size(179, 34);
-            this.labelAssetIdWithName.TabIndex = 3;
-            this.labelAssetIdWithName.Text = "ASSET_ID_NAME";
-            // 
             // buttonNewLog
             // 
-            this.buttonNewLog.Location = new System.Drawing.Point(577, 39);
+            this.buttonNewLog.Location = new System.Drawing.Point(577, 31);
             this.buttonNewLog.Name = "buttonNewLog";
             this.buttonNewLog.Size = new System.Drawing.Size(123, 23);
             this.buttonNewLog.TabIndex = 5;
@@ -74,7 +64,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // buttonSchedule
             // 
-            this.buttonSchedule.Location = new System.Drawing.Point(706, 39);
+            this.buttonSchedule.Location = new System.Drawing.Point(706, 31);
             this.buttonSchedule.Name = "buttonSchedule";
             this.buttonSchedule.Size = new System.Drawing.Size(123, 23);
             this.buttonSchedule.TabIndex = 6;
@@ -96,8 +86,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 68);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox1.Location = new System.Drawing.Point(-14, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1200, 10);
             this.pictureBox1.TabIndex = 2;
@@ -105,14 +95,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(835, 41);
+            this.textBox1.Location = new System.Drawing.Point(835, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(281, 20);
             this.textBox1.TabIndex = 8;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1122, 39);
+            this.button3.Location = new System.Drawing.Point(1122, 31);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 23);
             this.button3.TabIndex = 9;
@@ -125,6 +115,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.panelLogMiniHandler.Name = "panelLogMiniHandler";
             this.panelLogMiniHandler.Size = new System.Drawing.Size(485, 500);
             this.panelLogMiniHandler.TabIndex = 10;
+            // 
+            // labelAssetIdWithName
+            // 
+            this.labelAssetIdWithName.AutoSize = true;
+            this.labelAssetIdWithName.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold);
+            this.labelAssetIdWithName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.labelAssetIdWithName.Location = new System.Drawing.Point(74, 15);
+            this.labelAssetIdWithName.Name = "labelAssetIdWithName";
+            this.labelAssetIdWithName.Size = new System.Drawing.Size(226, 42);
+            this.labelAssetIdWithName.TabIndex = 3;
+            this.labelAssetIdWithName.Text = "ASSET_ID_NAME";
             // 
             // AssetMaintenanceLogPanel
             // 
@@ -152,12 +153,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Label labelAssetIdWithName;
         private System.Windows.Forms.Button buttonNewLog;
         private System.Windows.Forms.Button buttonSchedule;
         private System.Windows.Forms.DataGridView dataGridViewMaintenanceLogs;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panelLogMiniHandler;
+        private System.Windows.Forms.Label labelAssetIdWithName;
     }
 }

@@ -178,18 +178,29 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 viewButtonColumn.Name = "ViewAsset";
                 viewButtonColumn.UseColumnTextForButtonValue = true;
                 viewButtonColumn.Width = 50;
+
                 dataGridViewAssetRecords.Columns.Insert(0, viewButtonColumn);
 
 
                 viewButtonColumn.DisplayIndex = 0;
             }
 
+            dataGridViewAssetRecords.CellFormatting += Records_CellFormatting;
 
             Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
 
 
         }
-       
+
+        private void Records_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+          
+            if (e.ColumnIndex == dataGridViewAssetRecords.Columns["ViewAsset"].Index)
+            {
+                
+                e.CellStyle.BackColor = Color.FromArgb(48, 77, 46);
+            }
+        }
 
         private void dataGridViewAssetRecords_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

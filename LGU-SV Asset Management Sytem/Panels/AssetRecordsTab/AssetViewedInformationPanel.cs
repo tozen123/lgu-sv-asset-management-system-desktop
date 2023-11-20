@@ -219,10 +219,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     if (result.Success)
                     {
 
-                        MessagePrompt($"Asset has been successfully deleted");
+                       
                         _panelHandler.Controls.Clear();
                         rcpanel.InitializeRecords();
                         _panelHandler.SendToBack();
+
+                        MessagePrompt($"Asset has been successfully deleted");
                     }
                     else
                     {

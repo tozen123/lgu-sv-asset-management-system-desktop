@@ -71,7 +71,7 @@ namespace LGU_SV_Asset_Management_Sytem
             dataGridViewAssetCategories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewOtherOperator.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            panelTotalAsset.BackColor = mainColor1;
+ 
 
             //Controllers
             supplierController = new Controllers.MainFormSupplierController(databaseConnection);
@@ -309,17 +309,25 @@ namespace LGU_SV_Asset_Management_Sytem
 
             panelAssetRecordsHandler.Controls.Clear();
             panelAssetRecordsHandler.SendToBack();
+            buttonSearch.Enabled = false;
 
         }
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            //Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
-            //Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+           
             ResetAssetViewedPanel();
 
+            LoadAssets();
+        }
+        public void LoadAssets()
+        {
 
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
+            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+            buttonSearch.Enabled = true;
+            textBoxSearchFilter.Enabled = true;
         }
 
         private void buttonArchiveRecords_Click(object sender, EventArgs e)
@@ -1117,15 +1125,15 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsNewAsset_Click(object sender, EventArgs e)
         {
-            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice);
+            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice, this);
             Console.WriteLine(RoleBasedID);
             optionDialogBox.ShowDialog();
+            
         }
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
         {
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
-            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+            LoadAssets();
         }
 
         

@@ -39,6 +39,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.dataGridViewAssetRecords.AllowUserToAddRows = false;
             this.dataGridViewAssetRecords.AllowUserToDeleteRows = false;
             this.dataGridViewAssetRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAssetRecords.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAssetRecords.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
