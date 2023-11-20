@@ -120,6 +120,18 @@
     <Compile Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.Designer.cs">
       <DependentUpon>AssetBorrowedAndReturnsLogPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\DashboardPanels\AssetByCategoryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\DashboardPanels\AssetByCategoryPanel.Designer.cs">
+      <DependentUpon>AssetByCategoryPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\DashboardPanels\TotalAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\DashboardPanels\TotalAssetPanel.Designer.cs">
+      <DependentUpon>TotalAssetPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\MaintenancePanel\AddAssetSchedulePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +265,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\BorrowedAndReturns\AssetBorrowedAndReturnsLogPanel.resx">
       <DependentUpon>AssetBorrowedAndReturnsLogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\DashboardPanels\AssetByCategoryPanel.resx">
+      <DependentUpon>AssetByCategoryPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\DashboardPanels\TotalAssetPanel.resx">
+      <DependentUpon>TotalAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\MaintenancePanel\AddAssetSchedulePanel.resx">
       <DependentUpon>AddAssetSchedulePanel.cs</DependentUpon>

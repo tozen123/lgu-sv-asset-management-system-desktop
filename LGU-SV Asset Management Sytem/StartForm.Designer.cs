@@ -118,28 +118,30 @@ namespace LGU_SV_Asset_Management_Sytem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(198, 35);
+            this.label1.Location = new System.Drawing.Point(42, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(898, 65);
+            this.label1.Size = new System.Drawing.Size(1163, 84);
             this.label1.TabIndex = 1;
             this.label1.Text = "LGU - San Vicente Asset Management System";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.textBoxEmail.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(486, 325);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(332, 30);
+            this.textBoxEmail.Size = new System.Drawing.Size(332, 31);
             this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(486, 384);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(332, 30);
+            this.textBoxPassword.Size = new System.Drawing.Size(332, 31);
             this.textBoxPassword.TabIndex = 3;
             // 
             // label2
@@ -148,9 +150,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label2.Font = new System.Drawing.Font("Poppins", 11.25F);
             this.label2.Location = new System.Drawing.Point(393, 329);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 26);
+            this.label2.Size = new System.Drawing.Size(30, 26);
             this.label2.TabIndex = 5;
-            this.label2.Text = "ID";
+            this.label2.Text = "ID:";
             // 
             // label3
             // 
@@ -158,9 +160,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label3.Font = new System.Drawing.Font("Poppins", 11.25F);
             this.label3.Location = new System.Drawing.Point(392, 387);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 26);
+            this.label3.Size = new System.Drawing.Size(88, 26);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Password";
+            this.label3.Text = "Password:";
             // 
             // LoginPanel
             // 
@@ -198,11 +200,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label16.Location = new System.Drawing.Point(414, 135);
+            this.label16.Location = new System.Drawing.Point(414, 113);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(554, 130);
+            this.label16.Size = new System.Drawing.Size(717, 168);
             this.label16.TabIndex = 16;
             this.label16.Text = "LGU - San Vicente \r\nAsset Management System";
             // 
@@ -398,18 +400,18 @@ namespace LGU_SV_Asset_Management_Sytem
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label23.Location = new System.Drawing.Point(539, 381);
+            this.label23.Location = new System.Drawing.Point(519, 371);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(204, 26);
+            this.label23.Size = new System.Drawing.Size(259, 34);
             this.label23.TabIndex = 11;
             this.label23.Text = "Select your assigned role.";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(543, 117);
+            this.pictureBox2.Location = new System.Drawing.Point(551, 115);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 200);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -419,11 +421,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label22.Location = new System.Drawing.Point(485, 339);
+            this.label22.Location = new System.Drawing.Point(451, 324);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(315, 51);
+            this.label22.Size = new System.Drawing.Size(401, 65);
             this.label22.TabIndex = 9;
             this.label22.Text = "Welcome Onboard!";
             // 
@@ -555,6 +557,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxRegistrationPassword
             // 
+            this.textBoxRegistrationPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxRegistrationPassword.Font = new System.Drawing.Font("Poppins", 11.25F);
             this.textBoxRegistrationPassword.Location = new System.Drawing.Point(562, 422);
             this.textBoxRegistrationPassword.Name = "textBoxRegistrationPassword";
@@ -563,6 +566,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxRegistrationID
             // 
+            this.textBoxRegistrationID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxRegistrationID.Font = new System.Drawing.Font("Poppins", 11.25F);
             this.textBoxRegistrationID.Location = new System.Drawing.Point(562, 363);
             this.textBoxRegistrationID.Name = "textBoxRegistrationID";
@@ -622,16 +626,17 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxAccSetupAddress1
             // 
-            this.textBoxAccSetupAddress1.Location = new System.Drawing.Point(272, 473);
+            this.textBoxAccSetupAddress1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.textBoxAccSetupAddress1.Location = new System.Drawing.Point(231, 468);
             this.textBoxAccSetupAddress1.Name = "textBoxAccSetupAddress1";
-            this.textBoxAccSetupAddress1.Size = new System.Drawing.Size(394, 129);
+            this.textBoxAccSetupAddress1.Size = new System.Drawing.Size(391, 129);
             this.textBoxAccSetupAddress1.TabIndex = 22;
             this.textBoxAccSetupAddress1.Text = "";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox3.Location = new System.Drawing.Point(584, 101);
+            this.pictureBox3.Location = new System.Drawing.Point(594, 98);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(125, 125);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -642,7 +647,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(148, 423);
+            this.label19.Location = new System.Drawing.Point(107, 398);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(93, 26);
             this.label19.TabIndex = 19;
@@ -652,7 +657,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(148, 374);
+            this.label18.Location = new System.Drawing.Point(107, 349);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(114, 26);
             this.label18.TabIndex = 17;
@@ -660,24 +665,26 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxAccSetupLastName
             // 
+            this.textBoxAccSetupLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxAccSetupLastName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccSetupLastName.Location = new System.Drawing.Point(272, 420);
+            this.textBoxAccSetupLastName.Location = new System.Drawing.Point(231, 395);
             this.textBoxAccSetupLastName.Name = "textBoxAccSetupLastName";
-            this.textBoxAccSetupLastName.Size = new System.Drawing.Size(306, 30);
+            this.textBoxAccSetupLastName.Size = new System.Drawing.Size(386, 30);
             this.textBoxAccSetupLastName.TabIndex = 18;
             // 
             // textBoxAccSetupMiddleName
             // 
+            this.textBoxAccSetupMiddleName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxAccSetupMiddleName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccSetupMiddleName.Location = new System.Drawing.Point(272, 371);
+            this.textBoxAccSetupMiddleName.Location = new System.Drawing.Point(231, 346);
             this.textBoxAccSetupMiddleName.Name = "textBoxAccSetupMiddleName";
-            this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(306, 30);
+            this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(386, 30);
             this.textBoxAccSetupMiddleName.TabIndex = 16;
             // 
             // labelAccountSetupErrorHandler
             // 
             this.labelAccountSetupErrorHandler.AutoSize = true;
-            this.labelAccountSetupErrorHandler.Location = new System.Drawing.Point(540, 654);
+            this.labelAccountSetupErrorHandler.Location = new System.Drawing.Point(535, 663);
             this.labelAccountSetupErrorHandler.Name = "labelAccountSetupErrorHandler";
             this.labelAccountSetupErrorHandler.Size = new System.Drawing.Size(82, 13);
             this.labelAccountSetupErrorHandler.TabIndex = 13;
@@ -688,7 +695,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(621, 424);
+            this.label11.Location = new System.Drawing.Point(663, 403);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 26);
             this.label11.TabIndex = 11;
@@ -696,8 +703,9 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxAccSetupEmail
             // 
+            this.textBoxAccSetupEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxAccSetupEmail.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccSetupEmail.Location = new System.Drawing.Point(750, 421);
+            this.textBoxAccSetupEmail.Location = new System.Drawing.Point(824, 399);
             this.textBoxAccSetupEmail.Name = "textBoxAccSetupEmail";
             this.textBoxAccSetupEmail.Size = new System.Drawing.Size(371, 30);
             this.textBoxAccSetupEmail.TabIndex = 10;
@@ -706,7 +714,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(148, 473);
+            this.label10.Location = new System.Drawing.Point(107, 468);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 26);
             this.label10.TabIndex = 9;
@@ -716,7 +724,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(621, 375);
+            this.label9.Location = new System.Drawing.Point(663, 354);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 26);
             this.label9.TabIndex = 7;
@@ -724,9 +732,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // comboBoxAccSetupDepartment
             // 
+            this.comboBoxAccSetupDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.comboBoxAccSetupDepartment.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccSetupDepartment.FormattingEnabled = true;
-            this.comboBoxAccSetupDepartment.Location = new System.Drawing.Point(750, 368);
+            this.comboBoxAccSetupDepartment.Location = new System.Drawing.Point(824, 346);
             this.comboBoxAccSetupDepartment.Name = "comboBoxAccSetupDepartment";
             this.comboBoxAccSetupDepartment.Size = new System.Drawing.Size(371, 34);
             this.comboBoxAccSetupDepartment.TabIndex = 6;
@@ -734,10 +743,10 @@ namespace LGU_SV_Asset_Management_Sytem
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(558, 278);
+            this.label8.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(542, 253);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 23);
+            this.label8.Size = new System.Drawing.Size(226, 26);
             this.label8.TabIndex = 5;
             this.label8.Text = "Let us know more about you.";
             // 
@@ -745,7 +754,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(621, 321);
+            this.label5.Location = new System.Drawing.Point(663, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 26);
             this.label5.TabIndex = 4;
@@ -755,7 +764,7 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(148, 325);
+            this.label6.Location = new System.Drawing.Point(107, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 26);
             this.label6.TabIndex = 3;
@@ -763,28 +772,30 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxAccSetupPhoneNum
             // 
+            this.textBoxAccSetupPhoneNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxAccSetupPhoneNum.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccSetupPhoneNum.Location = new System.Drawing.Point(752, 318);
+            this.textBoxAccSetupPhoneNum.Location = new System.Drawing.Point(826, 296);
             this.textBoxAccSetupPhoneNum.Name = "textBoxAccSetupPhoneNum";
             this.textBoxAccSetupPhoneNum.Size = new System.Drawing.Size(369, 30);
             this.textBoxAccSetupPhoneNum.TabIndex = 2;
             // 
             // textBoxAccSetupFirstName
             // 
+            this.textBoxAccSetupFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.textBoxAccSetupFirstName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccSetupFirstName.Location = new System.Drawing.Point(272, 321);
+            this.textBoxAccSetupFirstName.Location = new System.Drawing.Point(231, 296);
             this.textBoxAccSetupFirstName.Name = "textBoxAccSetupFirstName";
-            this.textBoxAccSetupFirstName.Size = new System.Drawing.Size(306, 30);
+            this.textBoxAccSetupFirstName.Size = new System.Drawing.Size(386, 30);
             this.textBoxAccSetupFirstName.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label7.Location = new System.Drawing.Point(525, 239);
+            this.label7.Location = new System.Drawing.Point(496, 214);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(257, 42);
+            this.label7.Size = new System.Drawing.Size(315, 51);
             this.label7.TabIndex = 0;
             this.label7.Text = "Welcome Onboard!";
             // 
@@ -867,17 +878,17 @@ namespace LGU_SV_Asset_Management_Sytem
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(554, 255);
+            this.label13.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(533, 253);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(192, 23);
+            this.label13.Size = new System.Drawing.Size(236, 28);
             this.label13.TabIndex = 25;
             this.label13.Text = "Let us know more about you.";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox5.Location = new System.Drawing.Point(584, 85);
+            this.pictureBox5.Location = new System.Drawing.Point(601, 98);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(125, 125);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -887,11 +898,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label29.Location = new System.Drawing.Point(521, 223);
+            this.label29.Location = new System.Drawing.Point(496, 213);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(257, 42);
+            this.label29.Size = new System.Drawing.Size(315, 51);
             this.label29.TabIndex = 22;
             this.label29.Text = "Welcome Onboard!";
             // 
@@ -900,7 +911,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold);
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label30.Location = new System.Drawing.Point(186, 30);
+            this.label30.Location = new System.Drawing.Point(207, 30);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(898, 65);
             this.label30.TabIndex = 23;
@@ -909,11 +920,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // linkLabelTOR
             // 
             this.linkLabelTOR.AutoSize = true;
-            this.linkLabelTOR.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.linkLabelTOR.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelTOR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.linkLabelTOR.Location = new System.Drawing.Point(404, 644);
+            this.linkLabelTOR.Location = new System.Drawing.Point(334, 649);
             this.linkLabelTOR.Name = "linkLabelTOR";
-            this.linkLabelTOR.Size = new System.Drawing.Size(95, 23);
+            this.linkLabelTOR.Size = new System.Drawing.Size(117, 28);
             this.linkLabelTOR.TabIndex = 18;
             this.linkLabelTOR.TabStop = true;
             this.linkLabelTOR.Text = "Terms of Use ";
@@ -922,11 +933,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // linkLabel1Policy
             // 
             this.linkLabel1Policy.AutoSize = true;
-            this.linkLabel1Policy.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.linkLabel1Policy.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1Policy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.linkLabel1Policy.Location = new System.Drawing.Point(534, 644);
+            this.linkLabel1Policy.Location = new System.Drawing.Point(488, 648);
             this.linkLabel1Policy.Name = "linkLabel1Policy";
-            this.linkLabel1Policy.Size = new System.Drawing.Size(100, 23);
+            this.linkLabel1Policy.Size = new System.Drawing.Size(123, 28);
             this.linkLabel1Policy.TabIndex = 17;
             this.linkLabel1Policy.TabStop = true;
             this.linkLabel1Policy.Text = "Privacy Policy.";
@@ -956,20 +967,20 @@ namespace LGU_SV_Asset_Management_Sytem
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Poppins", 9.75F);
-            this.label17.Location = new System.Drawing.Point(498, 644);
+            this.label17.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(447, 649);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(36, 23);
+            this.label17.Size = new System.Drawing.Size(44, 28);
             this.label17.TabIndex = 11;
             this.label17.Text = "and";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Poppins", 9.75F);
-            this.label15.Location = new System.Drawing.Point(403, 611);
+            this.label15.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(333, 616);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(535, 23);
+            this.label15.Size = new System.Drawing.Size(660, 28);
             this.label15.TabIndex = 9;
             this.label15.Text = "By clicking Register, you are agreeing to the LGU-SV Asset Management System’s ";
             // 

@@ -38,7 +38,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                    "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
                    "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
                    "       A.assetName, A.assetCondition, A.assetAvailability, " +
-                   "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetPurchaseDate, A.assetPurchaseAmount, " +
+                   "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetLastMaintenance, A.assetIsMaintainable," +
                    "       A.assetIsMissing, A.assetLifeSpan, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
                    "FROM Assets A " +
@@ -87,6 +87,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         break;
                     case "Supplier":
                         col.HeaderText = "Supplier Name";
+                       
                         break;
                     case "Asset Category":
                         col.HeaderText = "Asset Category";
@@ -115,8 +116,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     case "assetLocation":
                         col.HeaderText = "Asset Location";
                         break;
-                    case "assetPurchaseDate":
-                        col.HeaderText = "Purchase Date";
+                    case "assetAcknowledgeDate":
+                        col.HeaderText = "Acknowledge Date";
                         break;
                     case "assetPurchaseAmount":
                         col.HeaderText = "Purchase Amount";
@@ -162,7 +163,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         break;
                 }
 
-                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 24;
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 90;
 
                 dataGridViewAssetRecords.Columns.Add(col);
             }
@@ -177,7 +178,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 viewButtonColumn.Text = "View";
                 viewButtonColumn.Name = "ViewAsset";
                 viewButtonColumn.UseColumnTextForButtonValue = true;
-                viewButtonColumn.Width = 50;
+                viewButtonColumn.Width = 65;
 
                 dataGridViewAssetRecords.Columns.Insert(0, viewButtonColumn);
 
@@ -246,7 +247,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.IsMaintainable = Convert.ToBoolean(selectedRow.Cells["assetIsMaintainable"].Value);
 
                     selectedAsset.AssetPurchaseAmount = Convert.ToDecimal(selectedRow.Cells["assetPurchaseAmount"].Value);
-                    selectedAsset.AssetPurchaseDate = Convert.ToDateTime(selectedRow.Cells["assetPurchaseDate"].Value);
+                    selectedAsset.AssetPurchaseDate = Convert.ToDateTime(selectedRow.Cells["assetAcknowledgeDate"].Value);
                     //selectedAsset.AssetMaintenanceLogsID = selectedRow.Cells["assetMaintenanceLogsID"].Value.ToString();
                     selectedAsset.AssetQuantity = Convert.ToInt32(selectedRow.Cells["assetQuantity"].Value);
                     selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();

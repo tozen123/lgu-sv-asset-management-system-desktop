@@ -131,7 +131,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonManagerRole_Click(object sender, EventArgs e)
         {
             registrationType = RegistrationType.Supervisor;
-            labelID.Text = RegistrationType.Supervisor + " ID";
+            labelID.Text = RegistrationType.Supervisor + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
         }
@@ -139,7 +139,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonOperatorRole_Click(object sender, EventArgs e)
         {
             registrationType = RegistrationType.Employee;
-            labelID.Text = RegistrationType.Employee + " ID";
+            labelID.Text = RegistrationType.Employee + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
         }
@@ -147,7 +147,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonViewerRole_Click(object sender, EventArgs e)
         {
             registrationType = RegistrationType.Viewer;
-            labelID.Text = RegistrationType.Viewer + " ID";
+            labelID.Text = RegistrationType.Viewer + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
 
@@ -524,5 +524,6 @@ namespace LGU_SV_Asset_Management_Sytem
                 Application.Exit();
             }
         }
+
     }
 }

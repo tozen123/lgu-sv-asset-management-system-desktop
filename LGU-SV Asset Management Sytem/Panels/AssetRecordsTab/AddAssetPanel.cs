@@ -480,7 +480,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     {
                         
                         string query = "INSERT INTO Assets (assetSupervisorID, currentCustodianAssetEmployeeID, supplierID, assetCategoryID, assetName," +
-                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
+                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetAcknowledgeDate, assetPurchaseAmount," +
                         " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan, assetPurpose, assetDescription, assetPropertyNumber) VALUES " +
                         " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
                         " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan, @purpose, @description, @propertynumber)";

@@ -88,7 +88,9 @@ namespace LGU_SV_Asset_Management_Sytem
             //Worker
             worker = new Worker(this);
 
-        
+            
+
+
         }
 
         // Initialize Controls
@@ -116,6 +118,7 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonAssetRecordsNewAsset.Visible = true;
                     break;
             }
+
         }
 
         private void SetData()
@@ -127,7 +130,7 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxProfileDept.Items.Add("MBO-Municipal Budget Office");
             comboBoxProfileDept.Items.Add("Accounting Office");
 
-            
+            DashboardLoad();
         }
         // Start
         public void SetSessionHandler(string user_id, string password)
@@ -206,8 +209,31 @@ namespace LGU_SV_Asset_Management_Sytem
             // Set User
 
             currentUser.UserRoleBasedID = RoleBasedID;
+
+            //Set
+            labelOffice.Text = currentUserOffice;
         }
 
+        private void DashboardLoad()
+        {
+            Panels.DashboardPanels.TotalAssetPanel totalAssetPanel = new Panels.DashboardPanels.TotalAssetPanel();
+            roundedPanelTotalAsset.Controls.Add(totalAssetPanel);
+
+            Panels.DashboardPanels.AssetByCategoryPanel assetByCategoryPanel = new Panels.DashboardPanels.AssetByCategoryPanel();
+            roundedPanelCategoryCount.Controls.Add(assetByCategoryPanel);
+
+            menuButtonSortByYear.Menu = new ContextMenuStrip();
+            menuButtonSortByYear.Menu.Items.Add("2023", null);
+            menuButtonSortByYear.Menu.Items.Add("2022", null);
+            menuButtonSortByYear.Menu.Items.Add("2021", null);
+            menuButtonSortByYear.Menu.Items.Add("2020", null);
+            menuButtonSortByYear.Menu.Items.Add("2019", null);
+            menuButtonSortByYear.Menu.Items.Add("2018", null);
+            menuButtonSortByYear.Menu.Items.Add("2017", null);
+            menuButtonSortByYear.Menu.Items.Add("2016", null);
+            menuButtonSortByYear.Menu.Items.Add("2015", null);
+
+        }
         private void ProfileTabPanel()
         {
 
