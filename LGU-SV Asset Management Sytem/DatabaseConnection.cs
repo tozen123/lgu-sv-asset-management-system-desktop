@@ -8,7 +8,7 @@ namespace LGU_SV_Asset_Management_Sytem
     class DatabaseConnection : IDisposable
     {
         private SqlConnection connection;
-        private string connectionString = "Data Source=TOZEN\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
+        private string connectionString = "Data Source=KIRBYANND\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
 
         public DatabaseConnection()
         {
