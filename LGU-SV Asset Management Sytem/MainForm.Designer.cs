@@ -68,7 +68,10 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.otherTabControl = new System.Windows.Forms.TabControl();
             this.tabOperator = new System.Windows.Forms.TabPage();
+<<<<<<< Updated upstream
             this.rbuttonOperatorClearFields = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+=======
+>>>>>>> Stashed changes
             this.label23 = new System.Windows.Forms.Label();
             this.textBoxOperatorMiddleName = new System.Windows.Forms.TextBox();
             this.textBoxOperatorFirstName = new System.Windows.Forms.TextBox();
@@ -148,6 +151,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonProfileCancel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileUploadImage = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+<<<<<<< Updated upstream
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.menuButtonSortByYear = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.labelOffice = new System.Windows.Forms.Label();
@@ -158,6 +162,14 @@ namespace LGU_SV_Asset_Management_Sytem
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTabControl = new System.Windows.Forms.TabControl();
+=======
+            this.buttonAssetRecordsNewAsset = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonAssetRecordsViewRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonSearch = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonOperatorClearFields = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButton2 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButton1 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+>>>>>>> Stashed changes
             this.groupBoxSide.SuspendLayout();
             this.tabTransaction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -691,6 +703,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.tabOperator.Text = "tabOperator";
             this.tabOperator.UseVisualStyleBackColor = true;
             // 
+<<<<<<< Updated upstream
             // rbuttonOperatorClearFields
             // 
             this.rbuttonOperatorClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
@@ -718,54 +731,102 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label23.Location = new System.Drawing.Point(347, 476);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(94, 15);
+=======
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(347, 476);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(101, 22);
+>>>>>>> Stashed changes
             this.label23.TabIndex = 24;
             this.label23.Text = "Phone Number:";
             // 
             // textBoxOperatorMiddleName
             // 
+<<<<<<< Updated upstream
             this.textBoxOperatorMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxOperatorMiddleName.Location = new System.Drawing.Point(137, 476);
             this.textBoxOperatorMiddleName.Name = "textBoxOperatorMiddleName";
             this.textBoxOperatorMiddleName.Size = new System.Drawing.Size(187, 21);
+=======
+            this.textBoxOperatorMiddleName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOperatorMiddleName.Location = new System.Drawing.Point(137, 476);
+            this.textBoxOperatorMiddleName.Name = "textBoxOperatorMiddleName";
+            this.textBoxOperatorMiddleName.Size = new System.Drawing.Size(187, 25);
+>>>>>>> Stashed changes
             this.textBoxOperatorMiddleName.TabIndex = 19;
             // 
             // textBoxOperatorFirstName
             // 
+<<<<<<< Updated upstream
             this.textBoxOperatorFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxOperatorFirstName.Location = new System.Drawing.Point(137, 441);
             this.textBoxOperatorFirstName.Name = "textBoxOperatorFirstName";
             this.textBoxOperatorFirstName.Size = new System.Drawing.Size(187, 21);
+=======
+            this.textBoxOperatorFirstName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOperatorFirstName.Location = new System.Drawing.Point(137, 441);
+            this.textBoxOperatorFirstName.Name = "textBoxOperatorFirstName";
+            this.textBoxOperatorFirstName.Size = new System.Drawing.Size(187, 25);
+>>>>>>> Stashed changes
             this.textBoxOperatorFirstName.TabIndex = 17;
             // 
             // textBoxOperatorPhoneNumber
             // 
+<<<<<<< Updated upstream
             this.textBoxOperatorPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(472, 476);
             this.textBoxOperatorPhoneNumber.Name = "textBoxOperatorPhoneNumber";
             this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(298, 21);
+=======
+            this.textBoxOperatorPhoneNumber.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOperatorPhoneNumber.Location = new System.Drawing.Point(472, 476);
+            this.textBoxOperatorPhoneNumber.Name = "textBoxOperatorPhoneNumber";
+            this.textBoxOperatorPhoneNumber.Size = new System.Drawing.Size(298, 25);
+>>>>>>> Stashed changes
             this.textBoxOperatorPhoneNumber.TabIndex = 23;
             // 
             // textBoxOperatorOffice
             // 
+<<<<<<< Updated upstream
             this.textBoxOperatorOffice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxOperatorOffice.Location = new System.Drawing.Point(472, 441);
             this.textBoxOperatorOffice.Name = "textBoxOperatorOffice";
             this.textBoxOperatorOffice.Size = new System.Drawing.Size(298, 21);
+=======
+            this.textBoxOperatorOffice.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOperatorOffice.Location = new System.Drawing.Point(472, 441);
+            this.textBoxOperatorOffice.Name = "textBoxOperatorOffice";
+            this.textBoxOperatorOffice.Size = new System.Drawing.Size(298, 25);
+>>>>>>> Stashed changes
             this.textBoxOperatorOffice.TabIndex = 27;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
+<<<<<<< Updated upstream
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(15, 517);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(70, 15);
+=======
+            this.label22.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(15, 517);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(74, 22);
+>>>>>>> Stashed changes
             this.label22.TabIndex = 22;
             this.label22.Text = "Last Name:";
             // 
             // richTextBoxOperatorAdress
             // 
+<<<<<<< Updated upstream
             this.richTextBoxOperatorAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.richTextBoxOperatorAdress.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.richTextBoxOperatorAdress.Location = new System.Drawing.Point(472, 514);
             this.richTextBoxOperatorAdress.Name = "richTextBoxOperatorAdress";
             this.richTextBoxOperatorAdress.Size = new System.Drawing.Size(298, 127);
@@ -774,49 +835,84 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxOperatorLastName
             // 
+<<<<<<< Updated upstream
             this.textBoxOperatorLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxOperatorLastName.Location = new System.Drawing.Point(137, 514);
             this.textBoxOperatorLastName.Name = "textBoxOperatorLastName";
             this.textBoxOperatorLastName.Size = new System.Drawing.Size(187, 21);
+=======
+            this.textBoxOperatorLastName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOperatorLastName.Location = new System.Drawing.Point(137, 514);
+            this.textBoxOperatorLastName.Name = "textBoxOperatorLastName";
+            this.textBoxOperatorLastName.Size = new System.Drawing.Size(187, 25);
+>>>>>>> Stashed changes
             this.textBoxOperatorLastName.TabIndex = 21;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
+<<<<<<< Updated upstream
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(347, 441);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(41, 15);
+=======
+            this.label26.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(347, 441);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 22);
+>>>>>>> Stashed changes
             this.label26.TabIndex = 28;
             this.label26.Text = "Office:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
+<<<<<<< Updated upstream
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(347, 514);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(54, 15);
+=======
+            this.label24.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(347, 514);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(60, 22);
+>>>>>>> Stashed changes
             this.label24.TabIndex = 25;
             this.label24.Text = "Address:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
+<<<<<<< Updated upstream
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(15, 476);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(85, 15);
+=======
+            this.label21.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(15, 476);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 22);
+>>>>>>> Stashed changes
             this.label21.TabIndex = 20;
             this.label21.Text = "Middle Name:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
+<<<<<<< Updated upstream
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(15, 441);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(70, 15);
+=======
+            this.label20.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(15, 441);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(74, 22);
+>>>>>>> Stashed changes
             this.label20.TabIndex = 18;
             this.label20.Text = "First Name:";
             // 
@@ -827,7 +923,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewOtherOperator.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+<<<<<<< Updated upstream
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -836,7 +936,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+<<<<<<< Updated upstream
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -912,7 +1016,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxSupplierAddress
             // 
+<<<<<<< Updated upstream
             this.textBoxSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.textBoxSupplierAddress.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.textBoxSupplierAddress.Location = new System.Drawing.Point(685, 390);
             this.textBoxSupplierAddress.Name = "textBoxSupplierAddress";
             this.textBoxSupplierAddress.Size = new System.Drawing.Size(413, 165);
@@ -932,48 +1040,83 @@ namespace LGU_SV_Asset_Management_Sytem
             // 
             // textBoxSupplierName
             // 
+<<<<<<< Updated upstream
             this.textBoxSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSupplierName.Location = new System.Drawing.Point(163, 390);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
             this.textBoxSupplierName.Size = new System.Drawing.Size(359, 21);
+=======
+            this.textBoxSupplierName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSupplierName.Location = new System.Drawing.Point(163, 390);
+            this.textBoxSupplierName.Name = "textBoxSupplierName";
+            this.textBoxSupplierName.Size = new System.Drawing.Size(359, 25);
+>>>>>>> Stashed changes
             this.textBoxSupplierName.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+<<<<<<< Updated upstream
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(34, 429);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 15);
+=======
+            this.label6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(34, 429);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 22);
+>>>>>>> Stashed changes
             this.label6.TabIndex = 17;
             this.label6.Text = "Phone Number:";
             // 
             // labelSupplierName
             // 
             this.labelSupplierName.AutoSize = true;
+<<<<<<< Updated upstream
             this.labelSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSupplierName.Location = new System.Drawing.Point(36, 390);
             this.labelSupplierName.Name = "labelSupplierName";
             this.labelSupplierName.Size = new System.Drawing.Size(44, 15);
+=======
+            this.labelSupplierName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSupplierName.Location = new System.Drawing.Point(36, 390);
+            this.labelSupplierName.Name = "labelSupplierName";
+            this.labelSupplierName.Size = new System.Drawing.Size(48, 22);
+>>>>>>> Stashed changes
             this.labelSupplierName.TabIndex = 15;
             this.labelSupplierName.Text = "Name:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
+<<<<<<< Updated upstream
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(568, 390);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(103, 15);
+=======
+            this.label17.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(568, 390);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 22);
+>>>>>>> Stashed changes
             this.label17.TabIndex = 18;
             this.label17.Text = "Supplier Address:";
             // 
             // textBoxSupplierPhoneNumber
             // 
+<<<<<<< Updated upstream
             this.textBoxSupplierPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(163, 429);
             this.textBoxSupplierPhoneNumber.Name = "textBoxSupplierPhoneNumber";
             this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(359, 21);
+=======
+            this.textBoxSupplierPhoneNumber.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(163, 429);
+            this.textBoxSupplierPhoneNumber.Name = "textBoxSupplierPhoneNumber";
+            this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(359, 25);
+>>>>>>> Stashed changes
             this.textBoxSupplierPhoneNumber.TabIndex = 16;
             // 
             // dataGridViewSupplier
@@ -982,7 +1125,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewSupplier.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+<<<<<<< Updated upstream
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -991,7 +1138,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+<<<<<<< Updated upstream
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1102,7 +1253,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+<<<<<<< Updated upstream
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1111,7 +1266,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+<<<<<<< Updated upstream
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1781,6 +1940,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.roundedPanelCategoryCount.TabIndex = 42;
             this.roundedPanelCategoryCount.UnderlinedStyle = false;
             // 
+<<<<<<< Updated upstream
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
@@ -1822,6 +1982,223 @@ namespace LGU_SV_Asset_Management_Sytem
             this.panelTabControl.SelectedIndex = 0;
             this.panelTabControl.Size = new System.Drawing.Size(1180, 789);
             this.panelTabControl.TabIndex = 0;
+=======
+            // buttonEditProfile
+            // 
+            this.buttonEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonEditProfile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonEditProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonEditProfile.BorderColor = System.Drawing.Color.White;
+            this.buttonEditProfile.BorderRadius = 16;
+            this.buttonEditProfile.BorderSize = 0;
+            this.buttonEditProfile.FlatAppearance.BorderSize = 0;
+            this.buttonEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditProfile.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditProfile.ForeColor = System.Drawing.Color.White;
+            this.buttonEditProfile.Location = new System.Drawing.Point(31, 466);
+            this.buttonEditProfile.Name = "buttonEditProfile";
+            this.buttonEditProfile.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonEditProfile.Size = new System.Drawing.Size(316, 46);
+            this.buttonEditProfile.TabIndex = 36;
+            this.buttonEditProfile.Text = "EDIT";
+            this.buttonEditProfile.TextColor = System.Drawing.Color.White;
+            this.buttonEditProfile.UseVisualStyleBackColor = false;
+            this.buttonEditProfile.Click += new System.EventHandler(this.buttonEditProfile_Click);
+            // 
+            // buttonProfileCancel
+            // 
+            this.buttonProfileCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonProfileCancel.BorderColor = System.Drawing.Color.White;
+            this.buttonProfileCancel.BorderRadius = 8;
+            this.buttonProfileCancel.BorderSize = 0;
+            this.buttonProfileCancel.FlatAppearance.BorderSize = 0;
+            this.buttonProfileCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfileCancel.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfileCancel.ForeColor = System.Drawing.Color.White;
+            this.buttonProfileCancel.Location = new System.Drawing.Point(192, 518);
+            this.buttonProfileCancel.Name = "buttonProfileCancel";
+            this.buttonProfileCancel.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileCancel.Size = new System.Drawing.Size(155, 46);
+            this.buttonProfileCancel.TabIndex = 35;
+            this.buttonProfileCancel.Text = "CANCEL";
+            this.buttonProfileCancel.TextColor = System.Drawing.Color.White;
+            this.buttonProfileCancel.UseVisualStyleBackColor = false;
+            this.buttonProfileCancel.Click += new System.EventHandler(this.buttonProfileCancel_Click);
+            // 
+            // buttonProfileSave
+            // 
+            this.buttonProfileSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonProfileSave.BorderColor = System.Drawing.Color.White;
+            this.buttonProfileSave.BorderRadius = 8;
+            this.buttonProfileSave.BorderSize = 0;
+            this.buttonProfileSave.FlatAppearance.BorderSize = 0;
+            this.buttonProfileSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfileSave.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfileSave.ForeColor = System.Drawing.Color.White;
+            this.buttonProfileSave.Location = new System.Drawing.Point(31, 518);
+            this.buttonProfileSave.Name = "buttonProfileSave";
+            this.buttonProfileSave.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileSave.Size = new System.Drawing.Size(155, 46);
+            this.buttonProfileSave.TabIndex = 34;
+            this.buttonProfileSave.Text = "Save";
+            this.buttonProfileSave.TextColor = System.Drawing.Color.White;
+            this.buttonProfileSave.UseVisualStyleBackColor = false;
+            this.buttonProfileSave.Click += new System.EventHandler(this.buttonProfileSave_Click);
+            // 
+            // buttonProfileUploadImage
+            // 
+            this.buttonProfileUploadImage.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProfileUploadImage.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonProfileUploadImage.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonProfileUploadImage.BorderRadius = 16;
+            this.buttonProfileUploadImage.BorderSize = 0;
+            this.buttonProfileUploadImage.FlatAppearance.BorderSize = 0;
+            this.buttonProfileUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfileUploadImage.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfileUploadImage.ForeColor = System.Drawing.Color.White;
+            this.buttonProfileUploadImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonEdit;
+            this.buttonProfileUploadImage.Location = new System.Drawing.Point(295, 402);
+            this.buttonProfileUploadImage.Name = "buttonProfileUploadImage";
+            this.buttonProfileUploadImage.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfileUploadImage.Size = new System.Drawing.Size(45, 52);
+            this.buttonProfileUploadImage.TabIndex = 37;
+            this.buttonProfileUploadImage.TextColor = System.Drawing.Color.White;
+            this.buttonProfileUploadImage.UseVisualStyleBackColor = false;
+            this.buttonProfileUploadImage.Click += new System.EventHandler(this.buttonProfileUploadImage_Click);
+            // 
+            // buttonAssetRecordsNewAsset
+            // 
+            this.buttonAssetRecordsNewAsset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsNewAsset.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsNewAsset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecordsNewAsset.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsNewAsset.BorderRadius = 0;
+            this.buttonAssetRecordsNewAsset.BorderSize = 0;
+            this.buttonAssetRecordsNewAsset.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecordsNewAsset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecordsNewAsset.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAssetRecordsNewAsset.ForeColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(723, 27);
+            this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
+            this.buttonAssetRecordsNewAsset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(94, 31);
+            this.buttonAssetRecordsNewAsset.TabIndex = 39;
+            this.buttonAssetRecordsNewAsset.Text = "+ ASSET";
+            this.buttonAssetRecordsNewAsset.TextColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = false;
+            this.buttonAssetRecordsNewAsset.Visible = false;
+            this.buttonAssetRecordsNewAsset.Click += new System.EventHandler(this.buttonAssetRecordsNewAsset_Click);
+            // 
+            // buttonAssetRecordsViewRecords
+            // 
+            this.buttonAssetRecordsViewRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsViewRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsViewRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecordsViewRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsViewRecords.BorderRadius = 0;
+            this.buttonAssetRecordsViewRecords.BorderSize = 0;
+            this.buttonAssetRecordsViewRecords.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecordsViewRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecordsViewRecords.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAssetRecordsViewRecords.ForeColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(586, 27);
+            this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
+            this.buttonAssetRecordsViewRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(131, 31);
+            this.buttonAssetRecordsViewRecords.TabIndex = 38;
+            this.buttonAssetRecordsViewRecords.Text = "Load Records";
+            this.buttonAssetRecordsViewRecords.TextColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = false;
+            this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSearch.BorderColor = System.Drawing.Color.White;
+            this.buttonSearch.BorderRadius = 0;
+            this.buttonSearch.BorderSize = 0;
+            this.buttonSearch.Enabled = false;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.buttonSearch.Location = new System.Drawing.Point(1121, 27);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.Size = new System.Drawing.Size(36, 31);
+            this.buttonSearch.TabIndex = 37;
+            this.buttonSearch.TextColor = System.Drawing.Color.White;
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            // 
+            // rbuttonOperatorClearFields
+            // 
+            this.rbuttonOperatorClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorClearFields.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorClearFields.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonOperatorClearFields.BorderRadius = 15;
+            this.rbuttonOperatorClearFields.BorderSize = 0;
+            this.rbuttonOperatorClearFields.FlatAppearance.BorderSize = 0;
+            this.rbuttonOperatorClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonOperatorClearFields.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonOperatorClearFields.ForeColor = System.Drawing.Color.White;
+            this.rbuttonOperatorClearFields.Location = new System.Drawing.Point(776, 441);
+            this.rbuttonOperatorClearFields.Name = "rbuttonOperatorClearFields";
+            this.rbuttonOperatorClearFields.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonOperatorClearFields.Size = new System.Drawing.Size(358, 43);
+            this.rbuttonOperatorClearFields.TabIndex = 29;
+            this.rbuttonOperatorClearFields.Text = "CLEAR ALL FIELDS";
+            this.rbuttonOperatorClearFields.TextColor = System.Drawing.Color.White;
+            this.rbuttonOperatorClearFields.UseVisualStyleBackColor = false;
+            // 
+            // roundedButton2
+            // 
+            this.roundedButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButton2.BorderColor = System.Drawing.Color.White;
+            this.roundedButton2.BorderRadius = 0;
+            this.roundedButton2.BorderSize = 0;
+            this.roundedButton2.FlatAppearance.BorderSize = 0;
+            this.roundedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton2.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton2.ForeColor = System.Drawing.Color.White;
+            this.roundedButton2.Location = new System.Drawing.Point(895, 25);
+            this.roundedButton2.Name = "roundedButton2";
+            this.roundedButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton2.Size = new System.Drawing.Size(262, 31);
+            this.roundedButton2.TabIndex = 40;
+            this.roundedButton2.Text = "Borrow Asset Request ";
+            this.roundedButton2.TextColor = System.Drawing.Color.White;
+            this.roundedButton2.UseVisualStyleBackColor = false;
+            // 
+            // roundedButton1
+            // 
+            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButton1.BorderColor = System.Drawing.Color.White;
+            this.roundedButton1.BorderRadius = 0;
+            this.roundedButton1.BorderSize = 0;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.Location = new System.Drawing.Point(758, 25);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.Size = new System.Drawing.Size(131, 31);
+            this.roundedButton1.TabIndex = 39;
+            this.roundedButton1.Text = "Transfer Asset";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+>>>>>>> Stashed changes
             // 
             // MainForm
             // 
@@ -1835,6 +2212,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "LGU-SAN VICENTE Asset Management System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBoxSide.ResumeLayout(false);
             this.groupBoxSide.PerformLayout();
