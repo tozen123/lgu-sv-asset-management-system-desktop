@@ -783,6 +783,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void FetchOperatorDataSource()
         {
+            dataGridViewOtherOperator.DataSource = null;
+
             DataTable dataTable = assetOperatorRepositoryControl.GetAllOperators().resultTable;
             foreach (DataColumn column in dataTable.Columns)
             {
@@ -849,7 +851,7 @@ namespace LGU_SV_Asset_Management_Sytem
             labelTitleHandler.Text = "Employees";
             otherTabControl.SelectedTab = tabOperator;
 
-            SupplierReset();
+            OtherOperatorReset();
 
             FetchOperatorDataSource();
         }

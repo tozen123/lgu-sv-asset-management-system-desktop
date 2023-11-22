@@ -70,7 +70,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panelLogsHandler = new System.Windows.Forms.Panel();
-            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.textBoxPropertyName = new System.Windows.Forms.TextBox();
@@ -79,6 +78,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label18 = new System.Windows.Forms.Label();
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
             this.buttonBack = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
@@ -328,6 +328,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxUnit.ReadOnly = true;
             this.textBoxUnit.Size = new System.Drawing.Size(260, 25);
             this.textBoxUnit.TabIndex = 26;
+            this.textBoxUnit.TextChanged += new System.EventHandler(this.textBoxUnit_TextChanged);
             // 
             // label10
             // 
@@ -348,6 +349,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxAvailability.ReadOnly = true;
             this.textBoxAvailability.Size = new System.Drawing.Size(260, 25);
             this.textBoxAvailability.TabIndex = 28;
+            this.textBoxAvailability.TextChanged += new System.EventHandler(this.textBoxAvailability_TextChanged);
             // 
             // label11
             // 
@@ -358,6 +360,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label11.Size = new System.Drawing.Size(83, 23);
             this.label11.TabIndex = 27;
             this.label11.Text = "Availability:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // textBoxCondition
             // 
@@ -368,6 +371,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxCondition.ReadOnly = true;
             this.textBoxCondition.Size = new System.Drawing.Size(260, 25);
             this.textBoxCondition.TabIndex = 30;
+            this.textBoxCondition.TextChanged += new System.EventHandler(this.textBoxCondition_TextChanged);
             // 
             // label12
             // 
@@ -378,6 +382,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label12.Size = new System.Drawing.Size(75, 23);
             this.label12.TabIndex = 29;
             this.label12.Text = "Condition:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textBoxAssetCategory
             // 
@@ -388,6 +393,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxAssetCategory.ReadOnly = true;
             this.textBoxAssetCategory.Size = new System.Drawing.Size(260, 25);
             this.textBoxAssetCategory.TabIndex = 32;
+            this.textBoxAssetCategory.TextChanged += new System.EventHandler(this.textBoxAssetCategory_TextChanged);
             // 
             // label13
             // 
@@ -398,6 +404,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label13.Size = new System.Drawing.Size(74, 23);
             this.label13.TabIndex = 31;
             this.label13.Text = "Category:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textBoxLifeSpan
             // 
@@ -408,6 +415,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxLifeSpan.ReadOnly = true;
             this.textBoxLifeSpan.Size = new System.Drawing.Size(260, 25);
             this.textBoxLifeSpan.TabIndex = 34;
+            this.textBoxLifeSpan.TextChanged += new System.EventHandler(this.textBoxLifeSpan_TextChanged);
             // 
             // label14
             // 
@@ -418,6 +426,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label14.Size = new System.Drawing.Size(68, 23);
             this.label14.TabIndex = 33;
             this.label14.Text = "LifeSpan:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBoxEmployee
             // 
@@ -428,6 +437,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxEmployee.ReadOnly = true;
             this.textBoxEmployee.Size = new System.Drawing.Size(260, 25);
             this.textBoxEmployee.TabIndex = 36;
+            this.textBoxEmployee.TextChanged += new System.EventHandler(this.textBoxEmployee_TextChanged);
             // 
             // label15
             // 
@@ -468,6 +478,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxSupplier.ReadOnly = true;
             this.textBoxSupplier.Size = new System.Drawing.Size(260, 25);
             this.textBoxSupplier.TabIndex = 40;
+            this.textBoxSupplier.TextChanged += new System.EventHandler(this.textBoxSupplier_TextChanged);
             // 
             // label16
             // 
@@ -478,28 +489,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label16.Size = new System.Drawing.Size(66, 23);
             this.label16.TabIndex = 39;
             this.label16.Text = "Supplier:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // panelLogsHandler
             // 
+            this.panelLogsHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
             this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
             this.panelLogsHandler.TabIndex = 41;
-            // 
-            // menuButton1
-            // 
-            this.menuButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.menuButton1.FlatAppearance.BorderSize = 0;
-            this.menuButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButton1.ForeColor = System.Drawing.Color.White;
-            this.menuButton1.Location = new System.Drawing.Point(1021, 29);
-            this.menuButton1.Name = "menuButton1";
-            this.menuButton1.Size = new System.Drawing.Size(134, 28);
-            this.menuButton1.TabIndex = 6;
-            this.menuButton1.Text = "menuButton1";
-            this.menuButton1.UseVisualStyleBackColor = false;
+            this.panelLogsHandler.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogsHandler_Paint);
             // 
             // richTextBoxPurpose
             // 
@@ -594,6 +595,21 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonBack.TextColor = System.Drawing.Color.White;
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // menuButton1
+            // 
+            this.menuButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.menuButton1.FlatAppearance.BorderSize = 0;
+            this.menuButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton1.ForeColor = System.Drawing.Color.White;
+            this.menuButton1.Location = new System.Drawing.Point(1021, 29);
+            this.menuButton1.Name = "menuButton1";
+            this.menuButton1.Size = new System.Drawing.Size(134, 28);
+            this.menuButton1.TabIndex = 6;
+            this.menuButton1.Text = "menuButton1";
+            this.menuButton1.UseVisualStyleBackColor = false;
             // 
             // AssetViewedInformationPanel
             // 
