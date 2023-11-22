@@ -26,9 +26,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             InitializeComponent();
             userLocation = _userLocation;
             InitializeRecords();
-           
-        }
 
+         
+
+        }
+       
 
         private DataTable FetchDataFromDB()
         {
@@ -259,11 +261,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.AssetPropertyNumber = Convert.ToInt32(selectedRow.Cells["assetPropertyNumber"].Value);
 
                     AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler, currentUser);
+
+                    assetViewerInformationPanel.Size = viewedAssetPanelHandler.Size;
+
                     viewedAssetPanelHandler.Controls.Add(assetViewerInformationPanel);
                     viewedAssetPanelHandler.BringToFront();
                     viewedAssetPanelHandler.Visible = true;
                 }
             }
+
+        }
+
+        private void RecordsHomePanel_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -82,8 +82,8 @@ namespace LGU_SV_Asset_Management_Sytem
             assetCategoryRepositoryControl = new AssetCategoryRepositoryControl();
 
             //Side
-            Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
-            Utilities.SetControlsVisibilityState(sideLabels, false);
+            //Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
+           // Utilities.SetControlsVisibilityState(sideLabels, false);
 
             //Worker
             worker = new Worker(this);
@@ -213,6 +213,17 @@ namespace LGU_SV_Asset_Management_Sytem
             //Set
             labelOffice.Text = currentUserOffice;
             DashboardLoad();
+
+            // Check the session before updating the UI
+            if (CheckSession())
+            {
+                buttonProfile.Visible = true;
+                buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
+                hamburgerToggle = true;
+            }
+
+            //Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
+            //Utilities.SetControlsVisibilityState(sideLabels, true);
         }
 
         private void DashboardLoad()
@@ -352,6 +363,11 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
             Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
+
+
+            panelAssetRecordsHandler.Controls.Clear();
+            panelControl.Size = panelAssetRecordsHandler.Size;
+
             Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
             buttonSearch.Enabled = true;
             textBoxSearchFilter.Enabled = true;
@@ -669,8 +685,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonHamburger_Click(object sender, EventArgs e)
         {
             ResetAssetViewedPanel();
-            Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
-
+            
+            /*
             if (CheckSession())
             {
                 if (hamburgerToggle != true)
@@ -679,13 +695,7 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonHamburger.BackColor = Color.FromArgb(68, 113, 68);
                     Utilities.SetControlsVisibilityState(sideLabels, true);
 
-                    // Check the session before updating the UI
-                    if (CheckSession())
-                    {
-                        buttonProfile.Visible = true;
-                        buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
-                        hamburgerToggle = true;
-                    }
+                    
                 }
                 else
                 {
@@ -701,8 +711,8 @@ namespace LGU_SV_Asset_Management_Sytem
                     Utilities.SetControlsVisibilityState(sideLabels, false);
                 }
             }
+            */
 
-            
         }
 
 
@@ -1233,7 +1243,13 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
-  
+        private void panelAssetRecordsHandler_Resize(object sender, EventArgs e)
+        {
+            //LoadAssets();
+        }
+
+
+     
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

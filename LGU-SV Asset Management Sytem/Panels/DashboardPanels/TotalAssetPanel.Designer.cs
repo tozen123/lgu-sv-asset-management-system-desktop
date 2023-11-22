@@ -30,7 +30,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.labelCountAsset = new System.Windows.Forms.Label();
+            this.labelCountAsset = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -46,19 +46,25 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
             // 
             // labelCountAsset
             // 
-            this.labelCountAsset.AutoSize = true;
-            this.labelCountAsset.Font = new System.Drawing.Font("Poppins", 54F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountAsset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCountAsset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.labelCountAsset.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelCountAsset.Font = new System.Drawing.Font("Poppins", 54F, System.Drawing.FontStyle.Bold);
             this.labelCountAsset.ForeColor = System.Drawing.Color.White;
-            this.labelCountAsset.Location = new System.Drawing.Point(366, 114);
+            this.labelCountAsset.Location = new System.Drawing.Point(377, 136);
             this.labelCountAsset.Name = "labelCountAsset";
-            this.labelCountAsset.Size = new System.Drawing.Size(148, 127);
-            this.labelCountAsset.TabIndex = 1;
+            this.labelCountAsset.ReadOnly = true;
+            this.labelCountAsset.Size = new System.Drawing.Size(180, 108);
+            this.labelCountAsset.TabIndex = 21;
+            this.labelCountAsset.TabStop = false;
             this.labelCountAsset.Text = "00";
+            this.labelCountAsset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TotalAssetPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.Controls.Add(this.labelCountAsset);
             this.Controls.Add(this.label1);
@@ -72,6 +78,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelCountAsset;
+        private System.Windows.Forms.TextBox labelCountAsset;
     }
 }

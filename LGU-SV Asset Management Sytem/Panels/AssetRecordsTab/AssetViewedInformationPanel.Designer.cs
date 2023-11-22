@@ -86,6 +86,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // buttonUpdateInfo
             // 
+            this.buttonUpdateInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonUpdateInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonUpdateInfo.FlatAppearance.BorderSize = 0;
             this.buttonUpdateInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -101,6 +102,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // buttonArchive
             // 
+            this.buttonArchive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonArchive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonArchive.FlatAppearance.BorderSize = 0;
             this.buttonArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,6 +118,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // buttonDelete
             // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -131,6 +134,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.pictureBox1.Location = new System.Drawing.Point(-14, 63);
             this.pictureBox1.Name = "pictureBox1";
@@ -478,11 +483,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
-            this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
+            this.panelLogsHandler.Size = new System.Drawing.Size(98, 698);
             this.panelLogsHandler.TabIndex = 41;
             // 
             // menuButton1
             // 
+            this.menuButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.menuButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.menuButton1.FlatAppearance.BorderSize = 0;
             this.menuButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -691,7 +697,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Button buttonPrintAction;
         private System.Windows.Forms.TextBox textBoxSupplier;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panelLogsHandler;
         private System.Windows.Forms.RichTextBox richTextBoxPurpose;
         private System.Windows.Forms.RichTextBox richTextBoxDescription;
         private System.Windows.Forms.TextBox textBoxPropertyName;
@@ -700,5 +705,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label labelAssetIdWithName;
         private RoundedButton buttonBack;
+        private System.Windows.Forms.Panel panelLogsHandler;
     }
 }
