@@ -220,7 +220,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.linkLabelSignUpButton.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelSignUpButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(69)))));
             this.linkLabelSignUpButton.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(69)))));
-            this.linkLabelSignUpButton.Location = new System.Drawing.Point(682, 621);
+            this.linkLabelSignUpButton.Location = new System.Drawing.Point(703, 621);
             this.linkLabelSignUpButton.Name = "linkLabelSignUpButton";
             this.linkLabelSignUpButton.Size = new System.Drawing.Size(72, 26);
             this.linkLabelSignUpButton.TabIndex = 15;
@@ -1116,11 +1116,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.buttonBackToLoginForm);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
-            this.Controls.Add(this.LoginPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";

@@ -483,7 +483,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
-            this.panelLogsHandler.Size = new System.Drawing.Size(98, 698);
+            this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
             this.panelLogsHandler.TabIndex = 41;
             // 
             // menuButton1
