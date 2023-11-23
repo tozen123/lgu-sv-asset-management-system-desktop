@@ -21,8 +21,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private enum RegistrationType
         {
             None,
-            Employee,
-            Supervisor,
+            Coordinator,
+            Administrator,
             Viewer
         }
 
@@ -92,8 +92,8 @@ namespace LGU_SV_Asset_Management_Sytem
             string inputPassword = textBoxPassword.Text;
 
             string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
-                "AND (EXISTS (SELECT 1 FROM AssetSupervisor WHERE userID = @UserId) " +
-                "OR EXISTS (SELECT 1 FROM AssetEmployee WHERE userID = @UserId) " +
+                "AND (EXISTS (SELECT 1 FROM AssetAdministrator WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetCoordinator WHERE userID = @UserId) " +
                 "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@UserId", inputEmail);
@@ -130,16 +130,16 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonManagerRole_Click(object sender, EventArgs e)
         {
-            registrationType = RegistrationType.Supervisor;
-            labelID.Text = RegistrationType.Supervisor + " ID: ";
+            registrationType = RegistrationType.Administrator;
+            labelID.Text = RegistrationType.Administrator + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
         }
 
         private void buttonOperatorRole_Click(object sender, EventArgs e)
         {
-            registrationType = RegistrationType.Employee;
-            labelID.Text = RegistrationType.Employee + " ID: ";
+            registrationType = RegistrationType.Coordinator;
+            labelID.Text = RegistrationType.Coordinator + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
         }
@@ -190,8 +190,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 labelErrorHandler.Visible = false;
 
                 string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
-                "AND (EXISTS (SELECT 1 FROM AssetSupervisor WHERE userID = @UserId) " +
-                "OR EXISTS (SELECT 1 FROM AssetEmployee WHERE userID = @UserId) " +
+                "AND (EXISTS (SELECT 1 FROM AssetAdministrator WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetCoordinator WHERE userID = @UserId) " +
                 "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@UserId", id);
@@ -230,13 +230,13 @@ namespace LGU_SV_Asset_Management_Sytem
 
                     switch (registrationType)
                     {
-                        case RegistrationType.Supervisor:
+                        case RegistrationType.Administrator:
                             isValidRegistrationType = codeTag == "03";
                             break;
                         case RegistrationType.Viewer:
                             isValidRegistrationType = codeTag == "01";
                             break;
-                        case RegistrationType.Employee:
+                        case RegistrationType.Coordinator:
                             isValidRegistrationType = codeTag == "02";
                             break;
                     }
@@ -343,15 +343,15 @@ namespace LGU_SV_Asset_Management_Sytem
 
             switch (registrationType)
             {
-                case RegistrationType.Supervisor:
-                    query = "INSERT INTO AssetSupervisor (userId, assetSupervisorFName, assetSupervisorMName, assetSupervisorLName, assetSupervisorPhoneNumber, " +
-                        "assetSupervisorEmail, assetSupervisorAddress, assetSupervisorOffice) " +
+                case RegistrationType.Administrator:
+                    query = "INSERT INTO AssetAdministrator (userId, FName, MName, LName, PhoneNumber, " +
+                        "Email, Address, Office) " +
                             "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
-                case RegistrationType.Employee:
-                    query = "INSERT INTO AssetEmployee (userId, assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, assetEmployeePhoneNum, " +
-                        "assetEmployeeEmail, assetEmployeeAddress, assetEmployeeOffice) " +
+                case RegistrationType.Coordinator:
+                    query = "INSERT INTO AssetCoordinator (userId, FName, MName, LName, PhoneNumber, " +
+                        "Email, Address, Office) " +
                             "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
@@ -468,7 +468,19 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonSlogin_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("03-2", "1646");
+            mainForm.SetSessionHandler("03-1", "2730");
+            mainForm.FormClosed += (s, args) => this.Close();
+            mainForm.Show();
+
+            databaseConnection.CloseConnection();
+
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.SetSessionHandler("02-2", "557");
             mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 

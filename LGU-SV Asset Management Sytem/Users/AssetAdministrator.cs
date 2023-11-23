@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class AssetSupervisor : User
+    class AssetAdministrator : User
     {
         private int assetSupervisorId;
 

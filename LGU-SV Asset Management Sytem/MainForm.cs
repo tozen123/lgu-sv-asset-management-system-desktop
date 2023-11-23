@@ -39,7 +39,7 @@ namespace LGU_SV_Asset_Management_Sytem
         Controllers.MainFormSupplierController supplierController;
         Controllers.MainFormAssetCategoriesController assetCategoriesController;
 
-        AssetEmployee.AssetEmployeeRepositoryControl assetOperatorRepositoryControl = new AssetEmployee.AssetEmployeeRepositoryControl();
+        AssetCoordinator.AssetCoordinatorRepositoryControl assetOperatorRepositoryControl = new AssetCoordinator.AssetCoordinatorRepositoryControl();
 
         //Objects Controllers
         AssetCategoryRepositoryControl assetCategoryRepositoryControl;
@@ -110,11 +110,11 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonTransaction.Visible = false;
 
                     break;
-                case "Asset Employee":
+                case "Asset Coordinator":
                     buttonOthers.Visible = false;
                     buttonAssetRecordsNewAsset.Visible = false;
                     break;
-                case "Asset Supervisor":
+                case "Asset Administrator":
                     buttonAssetRecordsNewAsset.Visible = true;
                     break;
             }
@@ -153,6 +153,28 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 tab.Text = "";
             }
+            switch (currentSessionUserType)
+            {
+                case "Asset Viewer":
+                    buttonAssetCategoryAdd.Enabled = false;
+                    buttonAssetCategoryUpdate.Enabled = false;
+                    buttonSupplierAdd.Enabled = false;
+                    buttonSupplierUpdate.Enabled = false;
+                    break;
+                case "Asset Employee":
+                    buttonAssetCategoryAdd.Enabled = false;
+                    buttonAssetCategoryUpdate.Enabled = false;
+                    buttonSupplierAdd.Enabled = false;
+                    buttonSupplierUpdate.Enabled = false;
+                    break;
+                case "Asset Supervisor":
+                    buttonAssetCategoryAdd.Enabled = true;
+                    buttonAssetCategoryUpdate.Enabled = true;
+                    buttonSupplierAdd.Enabled = true;
+                    buttonSupplierUpdate.Enabled = true;
+                    break;
+            }
+           
         }
 
         private void SetUser()
@@ -166,16 +188,16 @@ namespace LGU_SV_Asset_Management_Sytem
             switch (currentSessionUserType)
             {
                 case "Asset Viewer":
-                    query = "SELECT assetViewerId,assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
+                    query = "SELECT assetViewerId, assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
                     currentUser.SetAccessLevel(User.AccessLevel.Viewer);
                     break;
                 case "Asset Employee":
-                    query = "SELECT assetEmployeeId, assetEmployeeOffice FROM AssetEmployee WHERE userID = @UserId";
-                    currentUser.SetAccessLevel(User.AccessLevel.Employee);
+                    query = "SELECT Id, Office FROM AssetCoordinator WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Coordinator);
                     break;
                 case "Asset Supervisor":
-                    query = "SELECT assetSupervisorId, assetSupervisorOffice FROM AssetSupervisor WHERE userID = @UserId";
-                    currentUser.SetAccessLevel(User.AccessLevel.Supervisor);
+                    query = "SELECT Id, Office FROM AssetAdministrator WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Administrator);
                     break;
             }
 
@@ -193,13 +215,11 @@ namespace LGU_SV_Asset_Management_Sytem
                     switch (col.ColumnName)
                     {
                         case "assetViewerId":
-                        case "assetEmployeeId":
-                        case "assetSupervisorId":
+                        case "Id":
                             RoleBasedID = row[col].ToString();
                             break;
                         case "assetViewerOffice":
-                        case "assetEmployeeOffice":
-                        case "assetSupervisorOffice":
+                        case "Office":
                             currentUserOffice = row[col].ToString();
                             break;
                     }
@@ -260,17 +280,17 @@ namespace LGU_SV_Asset_Management_Sytem
                             "assetViewerAddress, assetViewerOffice " +
                             "FROM AssetViewer WHERE userID = @UserId";
                     break;
-                case "Asset Employee":
-                            query = "SELECT assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, " +
-                            "assetEmployeePhoneNum, assetEmployeeEmail, " +
-                            "assetEmployeeAddress, assetEmployeeOffice " +
-                            "FROM AssetEmployee WHERE userID = @UserId";
+                case "Asset Coordinator":
+                            query = "SELECT FName, MName, LName, " +
+                            "PhoneNumber, Email, " +
+                            "Address, Office " +
+                            "FROM AssetCoordinator WHERE userID = @UserId";
                     break;
-                case "Asset Supervisor":
-                            query = "SELECT assetSupervisorFName, assetSupervisorMName, assetSupervisorLName, " +
-                            "assetSupervisorPhoneNumber, assetSupervisorEmail, " +
-                            "assetSupervisorAddress, assetSupervisorOffice " +
-                            "FROM AssetSupervisor WHERE userID = @UserId";
+                case "Asset Administrator":
+                            query = "SELECT FName, MName, LName, " +
+                            "PhoneNumber, Email, " +
+                            "Address, Office " +
+                            "FROM AssetAdministrator WHERE userID = @UserId";
                     break;
             }
            
@@ -405,6 +425,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
             if (dataGridViewSupplier.Columns["DeleteButtonColumn"] == null)
             {
+                if(currentSessionUserType != "Asset Administrator")
+                {
+                    return;
+                }
                 // Create a new DataGridViewButtonColumn
                 var deleteButtonColumn = new DataGridViewButtonColumn();
                 deleteButtonColumn.HeaderText = "Actions";
@@ -459,7 +483,7 @@ namespace LGU_SV_Asset_Management_Sytem
             profileTabControls.Add(buttonProfileSave);
             profileTabControls.Add(buttonProfileCancel);
             
-            profileTabControls.Add(textBoxProfileName);
+            
             profileTabControls.Add(textBoxProfilePhoneNumber);
             profileTabControls.Add(textBoxProfileEmail);
             profileTabControls.Add(textBoxProfilePassword);
@@ -555,30 +579,30 @@ namespace LGU_SV_Asset_Management_Sytem
                             "WHERE userId = @UserId";
 
                         break;
-                    case "Asset Employee":
+                    case "Asset Coordinator":
                         query =
-                            "UPDATE AssetEmployee" +
+                            "UPDATE AssetCoordinator" +
                             " SET " +
-                            "assetEmployeeFName = @firstName, " +
-                            "assetEmployeeMName = @middleName, " +
-                            "assetEmployeeLName = @lastName, " +
-                            "assetEmployeePhoneNum = @phoneNumber, " +
-                            "assetEmployeeEmail = @email, " +
-                            "assetEmployeeAddress = @address, " +
-                            "assetEmployeeOffice = @office " +
+                            "FName = @firstName, " +
+                            "MName = @middleName, " +
+                            "LName = @lastName, " +
+                            "PhoneNumber = @phoneNumber, " +
+                            "Email = @email, " +
+                            "Address = @address, " +
+                            "Office = @office " +
                             "WHERE userId = @UserId";
                         break;
-                    case "Asset Supervisor":
+                    case "Asset Administrator":
                         query =
-                             "UPDATE AssetSupervisor" +
+                             "UPDATE AssetAdministrator" +
                              " SET " +
-                             "assetSupervisorFName = @firstName, " +
-                             "assetSupervisorMName = @middleName, " +
-                             "assetSupervisorLName = @lastName, " +
-                             "assetSupervisorPhoneNum = @phoneNumber, " +
-                             "assetSupervisorEmail = @email, " +
-                             "assetSupervisorAddress = @address, " +
-                             "assetSupervisorOffice = @office " +
+                             "FName = @firstName, " +
+                             "MName = @middleName, " +
+                             "LName = @lastName, " +
+                             "PhoneNumber = @phoneNumber, " +
+                             "Email = @email, " +
+                             "Address = @address, " +
+                             "Office = @office " +
                              "WHERE userId = @UserId";
                         break;
 
@@ -795,26 +819,26 @@ namespace LGU_SV_Asset_Management_Sytem
                 switch (column.ColumnName)
                 {
                    
-                    case "assetEmployeeFName":
-                        col.HeaderText = "Employee First Name";
+                    case "FName":
+                        col.HeaderText = "Coordinator First Name";
                         break;
-                    case "assetEmployeeMName":
-                        col.HeaderText = "Employee Middle Name";
+                    case "MName":
+                        col.HeaderText = "Coordinator Middle Name";
                         break;
-                    case "assetEmployeeLName":
-                        col.HeaderText = "Employee Last Name Name";
+                    case "LName":
+                        col.HeaderText = "Coordinator Last Name Name";
                         break;
-                    case "assetEmployeePhoneNum":
-                        col.HeaderText = "Employee Phone Number";
+                    case "PhoneNumber":
+                        col.HeaderText = "Coordinator Phone Number";
                         break;
-                    case "assetEmployeeEmail":
-                        col.HeaderText = "Employee Email";
+                    case "Email":
+                        col.HeaderText = "Coordinator Email";
                         break;
-                    case "assetEmployeeAddress":
-                        col.HeaderText = "Employee Address";
+                    case "Address":
+                        col.HeaderText = "Coordinator Address";
                         break;
-                    case "assetEmployeeOffice":
-                        col.HeaderText = "Employee Office";
+                    case "Office":
+                        col.HeaderText = "Coordinator Office";
                         break;
                
                     default:
@@ -861,6 +885,10 @@ namespace LGU_SV_Asset_Management_Sytem
             dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
             if (dataGridViewAssetCategories.Columns["DeleteButtonColumn"] == null)
             {
+                if (currentSessionUserType != "Asset Administrator")
+                {
+                    return;
+                }
                 // Create a new DataGridViewButtonColumn
                 var deleteButtonColumn = new DataGridViewButtonColumn();
                 deleteButtonColumn.HeaderText = "Actions";
@@ -1168,8 +1196,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridViewOtherOperator.Rows[e.RowIndex];
-                string operator_id = row.Cells["assetEmployeeId"].Value.ToString();
-                string name = row.Cells["assetEmployeeFName"].Value.ToString()  + row.Cells["assetEmployeeLName"].Value.ToString();
+                string operator_id = row.Cells["Id"].Value.ToString();
+                string name = row.Cells["FName"].Value.ToString()  + row.Cells["LName"].Value.ToString();
                 
                 Console.WriteLine("Heyyyyy: " + operator_id);
 
@@ -1187,12 +1215,12 @@ namespace LGU_SV_Asset_Management_Sytem
                     Utilities.SetControlsVisibilityState(fieldcontrols, false);
                 }
 
-                textBoxOperatorFirstName.Text = row.Cells["assetEmployeeFName"].Value.ToString();
-                textBoxOperatorLastName.Text = row.Cells["assetEmployeeLName"].Value.ToString();
-                textBoxOperatorMiddleName.Text = row.Cells["assetEmployeeMName"].Value.ToString();
-                textBoxOperatorPhoneNumber.Text = row.Cells["assetEmployeePhoneNum"].Value.ToString();
-                richTextBoxOperatorAdress.Text = row.Cells["assetEmployeeAddress"].Value.ToString();
-                textBoxOperatorOffice.Text = row.Cells["assetEmployeeOffice"].Value.ToString();
+                textBoxOperatorFirstName.Text = row.Cells["FName"].Value.ToString();
+                textBoxOperatorLastName.Text = row.Cells["LName"].Value.ToString();
+                textBoxOperatorMiddleName.Text = row.Cells["MName"].Value.ToString();
+                textBoxOperatorPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString();
+                richTextBoxOperatorAdress.Text = row.Cells["Address"].Value.ToString();
+                textBoxOperatorOffice.Text = row.Cells["Office"].Value.ToString();
             }
         }
         private void OtherOperatorReset()

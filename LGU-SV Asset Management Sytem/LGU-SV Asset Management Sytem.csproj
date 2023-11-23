@@ -168,8 +168,8 @@
     <Compile Include="Panels\TransferPanel\AssetTransferLogPanel.Designer.cs">
       <DependentUpon>AssetTransferLogPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users\AssetSupervisor.cs" />
-    <Compile Include="Users\AssetEmployee.cs" />
+    <Compile Include="Users\AssetAdministrator.cs" />
+    <Compile Include="Users\AssetCoordinator.cs" />
     <Compile Include="Users\AssetViewer.cs" />
     <Compile Include="Controllers\MainFormSupplierController.cs" />
     <Compile Include="DatabaseConnection.cs" />

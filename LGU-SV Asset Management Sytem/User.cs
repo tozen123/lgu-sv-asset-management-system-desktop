@@ -26,8 +26,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public enum AccessLevel
         {
-            Employee,
-            Supervisor,
+            Coordinator,
+            Administrator,
             Viewer
         }
 
@@ -56,11 +56,11 @@ namespace LGU_SV_Asset_Management_Sytem
                 case AccessLevel.Viewer:
                     return "Asset Viewer";
 
-                case AccessLevel.Supervisor:
-                    return "Asset Supervisor";
+                case AccessLevel.Administrator:
+                    return "Asset Administrator";
  
-                case AccessLevel.Employee:
-                    return "Asset Employee";
+                case AccessLevel.Coordinator:
+                    return "Asset Coordinator";
                 default:
                     return "NULL_DATA_USER";
             }

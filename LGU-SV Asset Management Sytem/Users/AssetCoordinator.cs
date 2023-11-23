@@ -7,7 +7,7 @@ using System.Data;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class AssetEmployee : User
+    class AssetCoordinator : User
     {
         private int assetEmployeeId;
 
@@ -73,11 +73,11 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetEmployeeOffice = value; }
         }
 
-        public class AssetEmployeeRepositoryControl
+        public class AssetCoordinatorRepositoryControl
         {
             private DatabaseConnection databaseConnection;
 
-            public AssetEmployeeRepositoryControl()
+            public AssetCoordinatorRepositoryControl()
             {
                 databaseConnection = new DatabaseConnection();
             }
@@ -86,11 +86,11 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 try
                 {
-                    string query = "SELECT assetEmployeeId, assetEmployeeFName, assetEmployeeMName, " +
-                        "assetEmployeeLName, assetEmployeePhoneNum, " +
-                        "assetEmployeeEmail, assetEmployeeAddress, " +
-                        "assetEmployeeOffice " +
-                        "FROM AssetEmployee";
+                    string query = "SELECT Id, FName, MName, " +
+                        "LName, PhoneNumber, " +
+                        "Email, Address, " +
+                        "Office " +
+                        "FROM AssetCoordinator";
 
 
                     Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -107,13 +107,13 @@ namespace LGU_SV_Asset_Management_Sytem
                 }
             }
 
-            public (bool Success, string ErrorMessage) AddToDatabase(AssetEmployee assetEmployee)
+            public (bool Success, string ErrorMessage) AddToDatabase(AssetCoordinator assetEmployee)
             {
                 try
                 {
-                    string query = "INSERT INTO AssetEmployee " +
-                        "(assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, assetEmployeePhoneNum, " +
-                        "assetEmployeeEmail, assetEmployeeAddress, assetEmployeeOffice) " +
+                    string query = "INSERT INTO AssetCoordinator " +
+                        "(FName, MName, LName, PhoneNumber, " +
+                        "Email, Address, Office) " +
                         "VALUES " +
                         "(@assetEmployeeFName, @assetEmployeeMName, @assetEmployeeLName, @assetEmployeePhoneNum, " +
                         "@assetEmployeeEmail, @assetEmployeeAddress, @assetEmployeeOffice)";
