@@ -191,11 +191,11 @@ namespace LGU_SV_Asset_Management_Sytem
                     query = "SELECT assetViewerId, assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
                     currentUser.SetAccessLevel(User.AccessLevel.Viewer);
                     break;
-                case "Asset Employee":
+                case "Asset Coordinator":
                     query = "SELECT Id, Office FROM AssetCoordinator WHERE userID = @UserId";
                     currentUser.SetAccessLevel(User.AccessLevel.Coordinator);
                     break;
-                case "Asset Supervisor":
+                case "Asset Administrator":
                     query = "SELECT Id, Office FROM AssetAdministrator WHERE userID = @UserId";
                     currentUser.SetAccessLevel(User.AccessLevel.Administrator);
                     break;

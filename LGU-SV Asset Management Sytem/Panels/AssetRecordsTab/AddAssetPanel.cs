@@ -75,18 +75,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void PopulateComboBoxes()
         {
+            /*
             comboBoxAvailability.Items.Add("USED");
             comboBoxAvailability.Items.Add("AVAILABLE");
-
-            comboBoxCondition.Items.Add("WORKING");
-            comboBoxCondition.Items.Add("INOPERABLE");
+            */
+            comboBoxCondition.Items.Add("SERVICEABLE");
+            comboBoxCondition.Items.Add("NON-SERVICEABLE");
 
 
             comboBoxUnit.Items.Add("SET");
             comboBoxUnit.Items.Add("SINGLE");
 
 
-            string query = "SELECT  assetEmployeeId, assetEmployeeFName, assetEmployeeMName, assetEmployeeLName FROM AssetEmployee";
+            string query = "SELECT  Id, FName, MName, LName FROM AssetCoordinator";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
@@ -289,7 +290,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 ComboBox ComboBox_Category = tabPage.Controls.Find("comboBoxCategory", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Unit = tabPage.Controls.Find("comboBoxUnit", true).FirstOrDefault() as ComboBox;
         
-                ComboBox ComboBox_Availability = tabPage.Controls.Find("comboBoxAvailability", true).FirstOrDefault() as ComboBox;
+                //ComboBox ComboBox_Availability = tabPage.Controls.Find("comboBoxAvailability", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Condition = tabPage.Controls.Find("comboBoxCondition", true).FirstOrDefault() as ComboBox;
 
                 ComboBox ComboBox_Employee = tabPage.Controls.Find("comboBoxEmployee", true).FirstOrDefault() as ComboBox;
@@ -373,7 +374,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     
                     asset.AssetName = TextBox_AssetName.Text;
                     asset.AssetCondition = ComboBox_Condition.SelectedItem?.ToString();
-                    asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
+                    //asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
                     asset.AssetLocation = supervisor_location;
                     asset.IsArchive = false;
                     asset.AssetPurchaseAmount = Convert.ToDecimal(TextBox_PurchaseAmount.Text);
@@ -390,11 +391,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     asset.AssetPropertyNumber = Convert.ToInt32(textBox_pnumber.Text); 
 
                     // LifeSpan
-
+                /*
                 if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
                     {
                         asset.AssetLifeSpan = lifespan;
                     }
+                */
                 //End Region
 
 
@@ -479,11 +481,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     foreach (Asset asset in assetToAdd)
                     {
                         
-                        string query = "INSERT INTO Assets (assetSupervisorID, currentCustodianAssetEmployeeID, supplierID, assetCategoryID, assetName," +
-                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetAcknowledgeDate, assetPurchaseAmount," +
-                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan, assetPurpose, assetDescription, assetPropertyNumber) VALUES " +
-                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
-                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan, @purpose, @description, @propertynumber)";
+                        string query = "INSERT INTO Assets (assetAdminID, currentCustodianAssetCoordID, supplierID, assetCategoryID, assetName," +
+                        " assetCondition, assetLocation, assetIsArchive, assetAcknowledgeDate, assetPurchaseAmount," +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetPurpose, assetDescription, assetPropertyNumber) VALUES " +
+                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition,  @location, @isarchive," +
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @purpose, @description, @propertynumber)";
 
                         Dictionary<string, object> parameters = new Dictionary<string, object>()
                         {
@@ -493,7 +495,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                             { "@categoryId", asset.AssetCategoryId },
                             { "@name",  asset.AssetName },
                             { "@condition", asset.AssetCondition },
-                            { "@availability", asset.AssetAvailability },
+                           // { "@availability", asset.AssetAvailability },
                             { "@location", asset.AssetLocation },
                             { "@isarchive", asset.IsArchive },
                             { "@purchasedate", asset.AssetPurchaseDate },
@@ -503,7 +505,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                             { "@image", asset.AssetImage},
                             { "@ismissing", asset.IsMissing},
                             { "@ismaintainable", asset.IsMaintainable},
-                            { "@lifeSpan", asset.AssetLifeSpan},
+                            //{ "@lifeSpan", asset.AssetLifeSpan},
                             { "@purpose", asset.AssetPurpose},
                             { "@description", asset.AssetDescription},
                             { "@propertynumber", asset.AssetPropertyNumber}

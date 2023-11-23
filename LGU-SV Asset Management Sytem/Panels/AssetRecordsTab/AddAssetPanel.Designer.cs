@@ -31,13 +31,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             this.buttonAddMoreAsset = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.labelAssetCount = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.richTextBoxDesc = new System.Windows.Forms.RichTextBox();
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.labelAssetCount = new System.Windows.Forms.Label();
             this.groupBoxImage = new System.Windows.Forms.GroupBox();
             this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.buttonUploadAssetImage = new System.Windows.Forms.Button();
@@ -46,15 +47,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label11 = new System.Windows.Forms.Label();
             this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.checkBoxIsMaintanable = new System.Windows.Forms.CheckBox();
-            this.textBoxLifespan = new System.Windows.Forms.TextBox();
             this.textBoxPurchaseAmount = new System.Windows.Forms.TextBox();
             this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxCondition = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxAvailability = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxUnit = new System.Windows.Forms.ComboBox();
             this.dateTimePickerPurchase = new System.Windows.Forms.DateTimePicker();
@@ -66,12 +63,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label1 = new System.Windows.Forms.Label();
             this.tabAddingAsset = new System.Windows.Forms.TabControl();
             this.buttonSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             this.tabAddingAsset.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddMoreAsset
@@ -100,15 +96,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.comboBoxSupplier);
             this.tabPage1.Controls.Add(this.checkBoxIsMaintanable);
-            this.tabPage1.Controls.Add(this.textBoxLifespan);
             this.tabPage1.Controls.Add(this.textBoxPurchaseAmount);
             this.tabPage1.Controls.Add(this.textBoxQuantity);
             this.tabPage1.Controls.Add(this.textBoxName);
-            this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.comboBoxCondition);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.comboBoxAvailability);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.comboBoxUnit);
             this.tabPage1.Controls.Add(this.dateTimePickerPurchase);
@@ -125,6 +117,27 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Asset 1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // labelAssetCount
+            // 
+            this.labelAssetCount.AutoSize = true;
+            this.labelAssetCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.labelAssetCount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAssetCount.ForeColor = System.Drawing.Color.White;
+            this.labelAssetCount.Location = new System.Drawing.Point(39, 3);
+            this.labelAssetCount.Name = "labelAssetCount";
+            this.labelAssetCount.Size = new System.Drawing.Size(15, 22);
+            this.labelAssetCount.TabIndex = 54;
+            this.labelAssetCount.Text = "1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1150, 30);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
             // 
             // textBoxPNumber
             // 
@@ -181,18 +194,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label4.Size = new System.Drawing.Size(69, 23);
             this.label4.TabIndex = 55;
             this.label4.Text = "Purpose:";
-            // 
-            // labelAssetCount
-            // 
-            this.labelAssetCount.AutoSize = true;
-            this.labelAssetCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.labelAssetCount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAssetCount.ForeColor = System.Drawing.Color.White;
-            this.labelAssetCount.Location = new System.Drawing.Point(39, 3);
-            this.labelAssetCount.Name = "labelAssetCount";
-            this.labelAssetCount.Size = new System.Drawing.Size(15, 22);
-            this.labelAssetCount.TabIndex = 54;
-            this.labelAssetCount.Text = "1";
             // 
             // groupBoxImage
             // 
@@ -272,14 +273,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.checkBoxIsMaintanable.Text = "Is Asset Maintanable?";
             this.checkBoxIsMaintanable.UseVisualStyleBackColor = true;
             // 
-            // textBoxLifespan
-            // 
-            this.textBoxLifespan.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLifespan.Location = new System.Drawing.Point(189, 284);
-            this.textBoxLifespan.Name = "textBoxLifespan";
-            this.textBoxLifespan.Size = new System.Drawing.Size(278, 30);
-            this.textBoxLifespan.TabIndex = 47;
-            // 
             // textBoxPurchaseAmount
             // 
             this.textBoxPurchaseAmount.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,16 +297,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxName.Size = new System.Drawing.Size(278, 30);
             this.textBoxName.TabIndex = 29;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 289);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 23);
-            this.label10.TabIndex = 46;
-            this.label10.Text = "LifeSpan";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -332,25 +315,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.comboBoxCondition.Name = "comboBoxCondition";
             this.comboBoxCondition.Size = new System.Drawing.Size(278, 34);
             this.comboBoxCondition.TabIndex = 44;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 380);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 23);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Availability:";
-            // 
-            // comboBoxAvailability
-            // 
-            this.comboBoxAvailability.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAvailability.FormattingEnabled = true;
-            this.comboBoxAvailability.Location = new System.Drawing.Point(189, 377);
-            this.comboBoxAvailability.Name = "comboBoxAvailability";
-            this.comboBoxAvailability.Size = new System.Drawing.Size(278, 34);
-            this.comboBoxAvailability.TabIndex = 42;
             // 
             // label7
             // 
@@ -468,15 +432,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1150, 30);
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
-            // 
             // AddAssetPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,10 +443,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Size = new System.Drawing.Size(1129, 591);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             this.tabAddingAsset.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,15 +463,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBoxSupplier;
         private System.Windows.Forms.CheckBox checkBoxIsMaintanable;
-        private System.Windows.Forms.TextBox textBoxLifespan;
         private System.Windows.Forms.TextBox textBoxPurchaseAmount;
         private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxCondition;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBoxAvailability;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxUnit;
         private System.Windows.Forms.DateTimePicker dateTimePickerPurchase;

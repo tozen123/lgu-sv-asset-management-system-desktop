@@ -75,6 +75,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             textBoxPAmount.Text = asset.AssetPurchaseAmount.ToString();
             textBoxPDate.Text = asset.AssetPurchaseDate.ToString();
 
+            /*
             if (asset.AssetLastMaintenanceID.ToString() == "0")
             {
                 textBoxLMaintenance.Text = "N/A";
@@ -83,11 +84,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             {
                 textBoxLMaintenance.Text = asset.AssetLastMaintenanceID.ToString();
             }
-
+            */
             textBoxUnit.Text = asset.AssetUnit;
             textBoxCondition.Text = asset.AssetCondition;
-            textBoxAvailability.Text = asset.AssetAvailability;
-            textBoxLifeSpan.Text = asset.AssetLifeSpan.ToString();
+            //textBoxAvailability.Text = asset.AssetAvailability;
+            //textBoxLifeSpan.Text = asset.AssetLifeSpan.ToString();
             
 
 

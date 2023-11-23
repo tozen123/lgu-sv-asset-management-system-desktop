@@ -9,7 +9,7 @@ namespace LGU_SV_Asset_Management_Sytem
     public class Asset : AssetBehaviour
     {
         // Integers
-        private int assetId, assetSupervisorId, currentEmployeeId, supplierId, assetCategoryId, assetLastMaintenanceID;
+        private int assetId, assetSupervisorId, currentEmployeeId, supplierId, assetCategoryId;
           
         // Property for assetId
         public int AssetId
@@ -46,19 +46,6 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetCategoryId = value; }
         }
 
-        // Property for assetLastMaintenanceID
-        public int AssetLastMaintenanceID
-        {
-            get { return assetLastMaintenanceID; }
-            set { assetLastMaintenanceID = value; }
-        }
-
-        private string assetAvailability;
-        public string AssetAvailability 
-        {
-            get { return assetAvailability; }
-            set { assetAvailability = value; }
-        }
 
         private string assetName, assetLocation, QrCode;
         private byte[] assetQrCodeImage;
@@ -177,12 +164,7 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetUnit = value; }
         }
 
-        private int assetLifeSpan;
-        public int AssetLifeSpan
-        {
-            get { return assetLifeSpan; }
-            set { assetLifeSpan = value; }
-        }
+  
 
 
         //Oms
