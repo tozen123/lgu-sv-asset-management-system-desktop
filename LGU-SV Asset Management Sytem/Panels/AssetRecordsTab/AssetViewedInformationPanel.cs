@@ -191,7 +191,22 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void buttonUpdateInfo_Click(object sender, EventArgs e)
         {
+            using (AssetInfoUpdater updater = new AssetInfoUpdater(asset))
+            {
+                updater.ShowDialog();
 
+                if(updater.GetResult() == DialogResult.OK)
+                {
+                    _panelHandler.Controls.Clear();
+                    rcpanel.InitializeRecords();
+                    _panelHandler.SendToBack();
+                }
+                else if(updater.GetResult() == DialogResult.Cancel)
+                {
+
+                }
+
+            }
         }
 
         private void buttonArchive_Click(object sender, EventArgs e)
@@ -292,5 +307,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
 
         }
+
+      
     }
 }

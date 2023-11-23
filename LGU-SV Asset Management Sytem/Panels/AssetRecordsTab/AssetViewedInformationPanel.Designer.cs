@@ -39,40 +39,40 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxAssetQrImage = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxId = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxLocation = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxPAmount = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxPDate = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxUnit = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.buttonSavePng = new System.Windows.Forms.Button();
             this.buttonPrintAction = new System.Windows.Forms.Button();
             this.panelLogsHandler = new System.Windows.Forms.Panel();
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
-            this.textBoxPropertyName = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
-            this.textBoxCondition = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBoxAssetCategory = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxSupplier = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBoxEmployee = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.buttonBack = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxQuantity = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxPAmount = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxPDate = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxUnit = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxEmployee = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxSupplier = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxAssetCategory = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxCondition = new System.Windows.Forms.TextBox();
+            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxPropertyName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
@@ -173,146 +173,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.pictureBoxAssetQrImage.TabIndex = 10;
             this.pictureBoxAssetQrImage.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(319, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 23);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "ID:";
-            // 
-            // textBoxId
-            // 
-            this.textBoxId.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxId.Location = new System.Drawing.Point(452, 103);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.ReadOnly = true;
-            this.textBoxId.Size = new System.Drawing.Size(260, 25);
-            this.textBoxId.TabIndex = 12;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxName.Location = new System.Drawing.Point(452, 149);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(260, 25);
-            this.textBoxName.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(319, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 23);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Asset Name:";
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxQuantity.Location = new System.Drawing.Point(452, 195);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.ReadOnly = true;
-            this.textBoxQuantity.Size = new System.Drawing.Size(260, 25);
-            this.textBoxQuantity.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(319, 195);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 23);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Quantity:";
-            // 
-            // textBoxLocation
-            // 
-            this.textBoxLocation.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxLocation.Location = new System.Drawing.Point(452, 245);
-            this.textBoxLocation.Name = "textBoxLocation";
-            this.textBoxLocation.ReadOnly = true;
-            this.textBoxLocation.Size = new System.Drawing.Size(260, 25);
-            this.textBoxLocation.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(319, 245);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 23);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Location:";
-            // 
-            // textBoxPAmount
-            // 
-            this.textBoxPAmount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxPAmount.Location = new System.Drawing.Point(452, 297);
-            this.textBoxPAmount.Name = "textBoxPAmount";
-            this.textBoxPAmount.ReadOnly = true;
-            this.textBoxPAmount.Size = new System.Drawing.Size(260, 25);
-            this.textBoxPAmount.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(319, 297);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 23);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Purchase Amount:";
-            // 
-            // textBoxPDate
-            // 
-            this.textBoxPDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxPDate.Location = new System.Drawing.Point(452, 352);
-            this.textBoxPDate.Name = "textBoxPDate";
-            this.textBoxPDate.ReadOnly = true;
-            this.textBoxPDate.Size = new System.Drawing.Size(260, 25);
-            this.textBoxPDate.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(319, 352);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 23);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Purchase Date:";
-            // 
-            // textBoxUnit
-            // 
-            this.textBoxUnit.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxUnit.Location = new System.Drawing.Point(869, 99);
-            this.textBoxUnit.Name = "textBoxUnit";
-            this.textBoxUnit.ReadOnly = true;
-            this.textBoxUnit.Size = new System.Drawing.Size(260, 25);
-            this.textBoxUnit.TabIndex = 26;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(736, 101);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 23);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Unit:";
-            // 
             // buttonSavePng
             // 
             this.buttonSavePng.Location = new System.Drawing.Point(14, 664);
@@ -335,9 +195,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // panelLogsHandler
             // 
-            this.panelLogsHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelLogsHandler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
             this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
@@ -353,148 +211,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.labelAssetIdWithName.Size = new System.Drawing.Size(226, 42);
             this.labelAssetIdWithName.TabIndex = 56;
             this.labelAssetIdWithName.Text = "ASSET_ID_NAME";
-            // 
-            // textBoxPropertyName
-            // 
-            this.textBoxPropertyName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPropertyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxPropertyName.Location = new System.Drawing.Point(869, 350);
-            this.textBoxPropertyName.Name = "textBoxPropertyName";
-            this.textBoxPropertyName.ReadOnly = true;
-            this.textBoxPropertyName.Size = new System.Drawing.Size(260, 25);
-            this.textBoxPropertyName.TabIndex = 68;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(736, 350);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 23);
-            this.label17.TabIndex = 67;
-            this.label17.Text = "Property Number:";
-            // 
-            // richTextBoxDescription
-            // 
-            this.richTextBoxDescription.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxDescription.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxDescription.Location = new System.Drawing.Point(869, 403);
-            this.richTextBoxDescription.Name = "richTextBoxDescription";
-            this.richTextBoxDescription.ReadOnly = true;
-            this.richTextBoxDescription.Size = new System.Drawing.Size(260, 153);
-            this.richTextBoxDescription.TabIndex = 69;
-            this.richTextBoxDescription.Text = "";
-            // 
-            // textBoxCondition
-            // 
-            this.textBoxCondition.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCondition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxCondition.Location = new System.Drawing.Point(869, 147);
-            this.textBoxCondition.Name = "textBoxCondition";
-            this.textBoxCondition.ReadOnly = true;
-            this.textBoxCondition.Size = new System.Drawing.Size(260, 25);
-            this.textBoxCondition.TabIndex = 59;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(736, 147);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 23);
-            this.label12.TabIndex = 58;
-            this.label12.Text = "Condition:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(736, 403);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 23);
-            this.label19.TabIndex = 66;
-            this.label19.Text = "Description";
-            // 
-            // textBoxAssetCategory
-            // 
-            this.textBoxAssetCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAssetCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxAssetCategory.Location = new System.Drawing.Point(869, 193);
-            this.textBoxAssetCategory.Name = "textBoxAssetCategory";
-            this.textBoxAssetCategory.ReadOnly = true;
-            this.textBoxAssetCategory.Size = new System.Drawing.Size(260, 25);
-            this.textBoxAssetCategory.TabIndex = 61;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(736, 193);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 23);
-            this.label13.TabIndex = 60;
-            this.label13.Text = "Category:";
-            // 
-            // textBoxSupplier
-            // 
-            this.textBoxSupplier.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxSupplier.Location = new System.Drawing.Point(869, 295);
-            this.textBoxSupplier.Name = "textBoxSupplier";
-            this.textBoxSupplier.ReadOnly = true;
-            this.textBoxSupplier.Size = new System.Drawing.Size(260, 25);
-            this.textBoxSupplier.TabIndex = 65;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(736, 295);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 23);
-            this.label16.TabIndex = 64;
-            this.label16.Text = "Supplier:";
-            // 
-            // textBoxEmployee
-            // 
-            this.textBoxEmployee.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxEmployee.Location = new System.Drawing.Point(869, 243);
-            this.textBoxEmployee.Name = "textBoxEmployee";
-            this.textBoxEmployee.ReadOnly = true;
-            this.textBoxEmployee.Size = new System.Drawing.Size(260, 25);
-            this.textBoxEmployee.TabIndex = 63;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(736, 243);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 23);
-            this.label15.TabIndex = 62;
-            this.label15.Text = "Employee:";
-            // 
-            // richTextBoxPurpose
-            // 
-            this.richTextBoxPurpose.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPurpose.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxPurpose.Location = new System.Drawing.Point(452, 408);
-            this.richTextBoxPurpose.Name = "richTextBoxPurpose";
-            this.richTextBoxPurpose.ReadOnly = true;
-            this.richTextBoxPurpose.Size = new System.Drawing.Size(260, 159);
-            this.richTextBoxPurpose.TabIndex = 71;
-            this.richTextBoxPurpose.Text = "";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(319, 408);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 23);
-            this.label18.TabIndex = 70;
-            this.label18.Text = "Purpose:";
             // 
             // buttonBack
             // 
@@ -532,6 +248,288 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.menuButton1.Text = "menuButton1";
             this.menuButton1.UseVisualStyleBackColor = false;
             this.menuButton1.Click += new System.EventHandler(this.menuButton1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(319, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 23);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "ID:";
+            // 
+            // textBoxId
+            // 
+            this.textBoxId.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxId.Location = new System.Drawing.Point(452, 103);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.ReadOnly = true;
+            this.textBoxId.Size = new System.Drawing.Size(260, 25);
+            this.textBoxId.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(319, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 23);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Asset Name:";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxName.Location = new System.Drawing.Point(452, 149);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.ReadOnly = true;
+            this.textBoxName.Size = new System.Drawing.Size(260, 25);
+            this.textBoxName.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(319, 195);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 23);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Quantity:";
+            // 
+            // textBoxQuantity
+            // 
+            this.textBoxQuantity.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxQuantity.Location = new System.Drawing.Point(452, 195);
+            this.textBoxQuantity.Name = "textBoxQuantity";
+            this.textBoxQuantity.ReadOnly = true;
+            this.textBoxQuantity.Size = new System.Drawing.Size(260, 25);
+            this.textBoxQuantity.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(319, 245);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 23);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Location:";
+            // 
+            // textBoxLocation
+            // 
+            this.textBoxLocation.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxLocation.Location = new System.Drawing.Point(452, 245);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.ReadOnly = true;
+            this.textBoxLocation.Size = new System.Drawing.Size(260, 25);
+            this.textBoxLocation.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(319, 297);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 23);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Purchase Amount:";
+            // 
+            // textBoxPAmount
+            // 
+            this.textBoxPAmount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxPAmount.Location = new System.Drawing.Point(452, 297);
+            this.textBoxPAmount.Name = "textBoxPAmount";
+            this.textBoxPAmount.ReadOnly = true;
+            this.textBoxPAmount.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPAmount.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(319, 352);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 23);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Purchase Date:";
+            // 
+            // textBoxPDate
+            // 
+            this.textBoxPDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxPDate.Location = new System.Drawing.Point(452, 352);
+            this.textBoxPDate.Name = "textBoxPDate";
+            this.textBoxPDate.ReadOnly = true;
+            this.textBoxPDate.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPDate.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(319, 408);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 23);
+            this.label18.TabIndex = 70;
+            this.label18.Text = "Purpose:";
+            // 
+            // richTextBoxPurpose
+            // 
+            this.richTextBoxPurpose.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxPurpose.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxPurpose.Location = new System.Drawing.Point(452, 408);
+            this.richTextBoxPurpose.Name = "richTextBoxPurpose";
+            this.richTextBoxPurpose.ReadOnly = true;
+            this.richTextBoxPurpose.Size = new System.Drawing.Size(260, 159);
+            this.richTextBoxPurpose.TabIndex = 71;
+            this.richTextBoxPurpose.Text = "";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(736, 101);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 23);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Unit:";
+            // 
+            // textBoxUnit
+            // 
+            this.textBoxUnit.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxUnit.Location = new System.Drawing.Point(869, 99);
+            this.textBoxUnit.Name = "textBoxUnit";
+            this.textBoxUnit.ReadOnly = true;
+            this.textBoxUnit.Size = new System.Drawing.Size(260, 25);
+            this.textBoxUnit.TabIndex = 26;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(736, 243);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(76, 23);
+            this.label15.TabIndex = 62;
+            this.label15.Text = "Employee:";
+            // 
+            // textBoxEmployee
+            // 
+            this.textBoxEmployee.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxEmployee.Location = new System.Drawing.Point(869, 243);
+            this.textBoxEmployee.Name = "textBoxEmployee";
+            this.textBoxEmployee.ReadOnly = true;
+            this.textBoxEmployee.Size = new System.Drawing.Size(260, 25);
+            this.textBoxEmployee.TabIndex = 63;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(736, 295);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 23);
+            this.label16.TabIndex = 64;
+            this.label16.Text = "Supplier:";
+            // 
+            // textBoxSupplier
+            // 
+            this.textBoxSupplier.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxSupplier.Location = new System.Drawing.Point(869, 295);
+            this.textBoxSupplier.Name = "textBoxSupplier";
+            this.textBoxSupplier.ReadOnly = true;
+            this.textBoxSupplier.Size = new System.Drawing.Size(260, 25);
+            this.textBoxSupplier.TabIndex = 65;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(736, 193);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 23);
+            this.label13.TabIndex = 60;
+            this.label13.Text = "Category:";
+            // 
+            // textBoxAssetCategory
+            // 
+            this.textBoxAssetCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAssetCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxAssetCategory.Location = new System.Drawing.Point(869, 193);
+            this.textBoxAssetCategory.Name = "textBoxAssetCategory";
+            this.textBoxAssetCategory.ReadOnly = true;
+            this.textBoxAssetCategory.Size = new System.Drawing.Size(260, 25);
+            this.textBoxAssetCategory.TabIndex = 61;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(736, 403);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 23);
+            this.label19.TabIndex = 66;
+            this.label19.Text = "Description";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(736, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 23);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "Condition:";
+            // 
+            // textBoxCondition
+            // 
+            this.textBoxCondition.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCondition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxCondition.Location = new System.Drawing.Point(869, 147);
+            this.textBoxCondition.Name = "textBoxCondition";
+            this.textBoxCondition.ReadOnly = true;
+            this.textBoxCondition.Size = new System.Drawing.Size(260, 25);
+            this.textBoxCondition.TabIndex = 59;
+            // 
+            // richTextBoxDescription
+            // 
+            this.richTextBoxDescription.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxDescription.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxDescription.Location = new System.Drawing.Point(869, 403);
+            this.richTextBoxDescription.Name = "richTextBoxDescription";
+            this.richTextBoxDescription.ReadOnly = true;
+            this.richTextBoxDescription.Size = new System.Drawing.Size(260, 153);
+            this.richTextBoxDescription.TabIndex = 69;
+            this.richTextBoxDescription.Text = "";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(736, 350);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(123, 23);
+            this.label17.TabIndex = 67;
+            this.label17.Text = "Property Number:";
+            // 
+            // textBoxPropertyName
+            // 
+            this.textBoxPropertyName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPropertyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBoxPropertyName.Location = new System.Drawing.Point(869, 350);
+            this.textBoxPropertyName.Name = "textBoxPropertyName";
+            this.textBoxPropertyName.ReadOnly = true;
+            this.textBoxPropertyName.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPropertyName.TabIndex = 68;
             // 
             // AssetViewedInformationPanel
             // 
@@ -599,38 +597,38 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxAssetQrImage;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxId;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxQuantity;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxLocation;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxPAmount;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxPDate;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxUnit;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonSavePng;
         private System.Windows.Forms.Button buttonPrintAction;
         private System.Windows.Forms.Label labelAssetIdWithName;
         private RoundedButton buttonBack;
         private System.Windows.Forms.Panel panelLogsHandler;
-        private System.Windows.Forms.TextBox textBoxPropertyName;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.RichTextBox richTextBoxDescription;
-        private System.Windows.Forms.TextBox textBoxCondition;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxAssetCategory;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBoxSupplier;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBoxEmployee;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RichTextBox richTextBoxPurpose;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxQuantity;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxLocation;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxPAmount;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxPDate;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.RichTextBox richTextBoxPurpose;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxUnit;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxEmployee;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxSupplier;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxAssetCategory;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxCondition;
+        private System.Windows.Forms.RichTextBox richTextBoxDescription;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxPropertyName;
     }
 }

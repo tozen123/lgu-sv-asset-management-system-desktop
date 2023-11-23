@@ -38,14 +38,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private DataTable FetchDataFromDB()
         {
             string query = "SELECT A.assetId, " +
-                   "       A.assetName, A.assetCondition, " +
+                   "       A.assetPropertyNumber, A.assetName, " +
                    "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
                    "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
                    "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
                    "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
                    "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
-                   "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
+                   "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
                    "FROM Assets A " +
                    "LEFT JOIN AssetAdministrator AAdmin ON AAdmin.Id = AAdmin.Id " +
                    "LEFT JOIN AssetCoordinator ACoor ON ACoor.Id = ACoor.Id " +
@@ -99,6 +99,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     case "assetId":
                         col.HeaderText = "Asset ID";
+                        col.Visible = false;
                         break;
                     case "assetName":
                         col.HeaderText = "Asset Name";

@@ -146,12 +146,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             newControl.Name = control.Name;
             newControl.Size = control.Size;
             newControl.Location = control.Location;
+            newControl.Font = control.Font;
+
 
             // Conditional for handling controls
             if (control is Label)
             {
                
                 ((Label)newControl).Text = ((Label)control).Text;
+                ((Label)newControl).BackColor = ((Label)control).BackColor;
+                ((Label)newControl).ForeColor = ((Label)control).ForeColor;
                 if (control.Name == "labelAssetCount")
                 {
                     ((Label)newControl).Text = (assetToAdd.Count + 1).ToString();
@@ -193,6 +197,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             else if (control is TextBox)
             {
                 ((TextBox)newControl).Text = ((TextBox)control).Text;
+                ((TextBox)newControl).BackColor = ((TextBox)control).BackColor;
                 ((TextBox)newControl).Text = "";
             }
             else if (control is ComboBox)
@@ -206,6 +211,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     clonedComboBox.Items.Add(item);
                 }
+            } if (control is PictureBox)
+            {
+                ((PictureBox)newControl).BackColor = ((PictureBox)control).BackColor;
             }
 
             return newControl;
@@ -501,7 +509,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                             { "@purchasedate", asset.AssetPurchaseDate },
                             { "@purchaseamount", asset.AssetPurchaseAmount },
                             { "@quantity", asset.AssetQuantity },
-                            { "@unit", asset.AssetQuantity },
+                            { "@unit", asset.AssetUnit },
                             { "@image", asset.AssetImage},
                             { "@ismissing", asset.IsMissing},
                             { "@ismaintainable", asset.IsMaintainable},
@@ -638,6 +646,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             prompt.Show();
         }
 
-      
+        private void comboBoxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

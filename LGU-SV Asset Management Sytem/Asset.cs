@@ -216,7 +216,47 @@ namespace LGU_SV_Asset_Management_Sytem
                 databaseConnection = new DatabaseConnection();
             }
 
-        
+            public (bool Success, string ErrorMessage) UpdateToDatabase(Asset _asset)
+            {
+                try
+                {
+                    string query = "UPDATE Assets " +
+                        "SET " +
+                        "assetName = @assetName, " +
+                        "assetQuantity = @assetQuantity, " +
+                        "assetPurchaseAmount = @AssetPAmount, " +
+                        "assetPurpose = @assetPurpose, " +
+                        "assetDescription = @assetDesc, " +
+                        "supplierID = @assetSupId, " +
+                        "assetPropertyNumber = @assetPNumber, " +
+                        "assetCondition = @assetCondition " +
+                        "WHERE " +
+                        "assetId = @assetId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@assetName", _asset.AssetName},
+                        {"@assetQuantity", _asset.AssetQuantity},
+                        {"@AssetPAmount", _asset.AssetPurchaseAmount},
+                        {"@assetPurpose", _asset.AssetPurpose},
+                        {"@assetDesc", _asset.AssetDescription},
+                        {"@assetSupId", _asset.SupplierId},
+                        {"@assetPNumber", _asset.AssetPropertyNumber},
+                        {"@assetCondition", _asset.AssetCondition},
+                        {"@assetId", _asset.AssetId}
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+            }
 
             public (bool Success, string ErrorMessage) DeleteToDatabase(Asset asset)
             {

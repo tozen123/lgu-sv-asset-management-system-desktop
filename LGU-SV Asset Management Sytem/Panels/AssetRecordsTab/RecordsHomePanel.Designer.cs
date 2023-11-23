@@ -66,7 +66,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
             this.dataGridViewAssetRecords.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1120, 664);
+            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1123, 664);
             this.dataGridViewAssetRecords.TabIndex = 0;
             this.dataGridViewAssetRecords.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAssetRecords_CellMouseClick);
             // 
