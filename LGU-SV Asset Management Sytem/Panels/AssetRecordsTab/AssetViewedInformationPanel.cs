@@ -280,11 +280,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void SwitchLogPanel(Control panelToSwitch)
         {
+
             panelLogsHandler.Controls.Add(panelToSwitch);
             panelLogsHandler.BringToFront();
             panelLogsHandler.Visible = true;
+
+            panelToSwitch.Size = panelLogsHandler.Size;
         }
 
-      
+        private void menuButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

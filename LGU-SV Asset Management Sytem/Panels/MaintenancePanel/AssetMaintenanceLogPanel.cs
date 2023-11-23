@@ -41,18 +41,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 
         private void SetAccessLevel()
         {
-            switch (currentUser.GetStringAccessLevel())
-            {
-                case "Asset Viewer":
-                    buttonNewLog.Enabled = false;
-                    break;
-                case "Asset Employee":
-                    buttonSchedule.Enabled = false;
-                    break;
-                case "Asset Supervisor":
-                    buttonNewLog.Enabled = false;
-                    break;
-            }
+
         }
 
         public void InitializeRecords()
@@ -174,5 +163,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 
         }
 
+      
     }
 }

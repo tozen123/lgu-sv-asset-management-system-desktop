@@ -1310,6 +1310,62 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (panelAssetRecordsHandler.Controls.Count > 0)
+            {
+                // Assuming RecordsHomePanel is the actual name of your user control
+                Panels.AssetRecordsTab.RecordsHomePanel recordsHomePanel = (Panels.AssetRecordsTab.RecordsHomePanel)panelAssetRecordsHandler.Controls[0];
+
+                // Access the DataGridView using the property
+                DataGridView dgv1 = recordsHomePanel.DataGridViewAssetRecords;
+                // Get the search keyword from the TextBox
+                string searchKeyword = textBoxSearchFilter.Text.Trim();
+
+                // Check if the search keyword is not empty
+                if (!string.IsNullOrEmpty(searchKeyword))
+                {
+                    // Loop through each row in the DataGridView
+                    foreach (DataGridViewRow row in dgv1.Rows)
+                    {
+                        // Check the value in the specific column (replace "ColumnName" with the actual column name)
+                        string cellValue = row.Cells["assetName"].Value.ToString();
+
+                        // Perform case-insensitive search
+                        if (cellValue.IndexOf(searchKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            // If the search keyword is found, highlight the row or take any other action
+                            row.Selected = true;
+                            break; // If you want to highlight only the first match, you can break out of the loop
+                        }
+                    }
+                }
+                else
+                {
+                    // If the search keyword is empty, clear the selection
+                    dgv1.ClearSelection();
+                }
+            }
+
+          
+            
+        }
+
+        private void textBoxSearchFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxSearchFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)

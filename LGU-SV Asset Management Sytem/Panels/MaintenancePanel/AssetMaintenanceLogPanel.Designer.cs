@@ -29,8 +29,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNewLog = new System.Windows.Forms.Button();
             this.buttonSchedule = new System.Windows.Forms.Button();
@@ -56,12 +56,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // buttonNewLog
             // 
+            this.buttonNewLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonNewLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonNewLog.FlatAppearance.BorderSize = 0;
             this.buttonNewLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewLog.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
             this.buttonNewLog.ForeColor = System.Drawing.Color.White;
-            this.buttonNewLog.Location = new System.Drawing.Point(577, 23);
+            this.buttonNewLog.Location = new System.Drawing.Point(632, 23);
             this.buttonNewLog.Name = "buttonNewLog";
             this.buttonNewLog.Size = new System.Drawing.Size(123, 30);
             this.buttonNewLog.TabIndex = 5;
@@ -71,41 +72,46 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // buttonSchedule
             // 
+            this.buttonSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonSchedule.FlatAppearance.BorderSize = 0;
             this.buttonSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSchedule.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
             this.buttonSchedule.ForeColor = System.Drawing.Color.White;
-            this.buttonSchedule.Location = new System.Drawing.Point(706, 23);
+            this.buttonSchedule.Location = new System.Drawing.Point(493, 22);
             this.buttonSchedule.Name = "buttonSchedule";
             this.buttonSchedule.Size = new System.Drawing.Size(123, 30);
             this.buttonSchedule.TabIndex = 6;
             this.buttonSchedule.Text = "Schedule";
             this.buttonSchedule.UseVisualStyleBackColor = false;
+            this.buttonSchedule.Visible = false;
             this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
             // 
             // dataGridViewMaintenanceLogs
             // 
             this.dataGridViewMaintenanceLogs.AllowUserToAddRows = false;
             this.dataGridViewMaintenanceLogs.AllowUserToDeleteRows = false;
+            this.dataGridViewMaintenanceLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewMaintenanceLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewMaintenanceLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMaintenanceLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewMaintenanceLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMaintenanceLogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMaintenanceLogs.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewMaintenanceLogs.Location = new System.Drawing.Point(5, 82);
             this.dataGridViewMaintenanceLogs.Name = "dataGridViewMaintenanceLogs";
             this.dataGridViewMaintenanceLogs.ReadOnly = true;
@@ -114,6 +120,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.pictureBox1.Location = new System.Drawing.Point(-14, 63);
             this.pictureBox1.Name = "pictureBox1";
@@ -123,23 +131,28 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(835, 33);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(761, 23);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 20);
+            this.textBox1.Size = new System.Drawing.Size(355, 30);
             this.textBox1.TabIndex = 8;
+     
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1122, 31);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(1122, 23);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 23);
+            this.button3.Size = new System.Drawing.Size(38, 31);
             this.button3.TabIndex = 9;
             this.button3.Text = "SRCH";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // panelLogMiniHandler
             // 
-            this.panelLogMiniHandler.Location = new System.Drawing.Point(577, 67);
+            this.panelLogMiniHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelLogMiniHandler.Location = new System.Drawing.Point(493, 63);
             this.panelLogMiniHandler.Name = "panelLogMiniHandler";
             this.panelLogMiniHandler.Size = new System.Drawing.Size(485, 500);
             this.panelLogMiniHandler.TabIndex = 10;

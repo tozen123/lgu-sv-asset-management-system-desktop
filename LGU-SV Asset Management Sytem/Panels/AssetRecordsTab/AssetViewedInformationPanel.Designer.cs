@@ -71,13 +71,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label15 = new System.Windows.Forms.Label();
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonBack = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
-            this.panelLogsHandler.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonUpdateInfo
@@ -340,7 +338,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.panelLogsHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelLogsHandler.Controls.Add(this.buttonRefresh);
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
             this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
@@ -499,21 +496,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label18.TabIndex = 70;
             this.label18.Text = "Purpose:";
             // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonRefresh.FlatAppearance.BorderSize = 0;
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRefresh.ForeColor = System.Drawing.Color.White;
-            this.buttonRefresh.Location = new System.Drawing.Point(452, 29);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(134, 28);
-            this.buttonRefresh.TabIndex = 72;
-            this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-
-            // 
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
@@ -549,6 +531,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.menuButton1.TabIndex = 6;
             this.menuButton1.Text = "menuButton1";
             this.menuButton1.UseVisualStyleBackColor = false;
+            this.menuButton1.Click += new System.EventHandler(this.menuButton1_Click);
             // 
             // AssetViewedInformationPanel
             // 
@@ -601,7 +584,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).EndInit();
-            this.panelLogsHandler.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,6 +632,5 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox richTextBoxPurpose;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button buttonRefresh;
     }
 }

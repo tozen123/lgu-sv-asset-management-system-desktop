@@ -30,16 +30,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
          
 
         }
-       
+        public DataGridView DataGridViewAssetRecords
+        {
+            get { return dataGridViewAssetRecords; }
+        }
 
         private DataTable FetchDataFromDB()
         {
             string query = "SELECT A.assetId, " +
+                   "       A.assetName, A.assetCondition, " +
                    "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
                    "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
                    "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
                    "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
-                   "       A.assetName, A.assetCondition, " +
                    "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
                    "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
@@ -77,6 +80,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
             return resultTable;
         }
+        
 
         public void InitializeRecords()
         {
@@ -96,6 +100,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     case "assetId":
                         col.HeaderText = "Asset ID";
                         break;
+                    case "assetName":
+                        col.HeaderText = "Asset Name";
+                        break;
                     case "AAdminFullName":
                         col.HeaderText = "Administrator Name";
                         break;
@@ -109,9 +116,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     case "Asset Category":
                         col.HeaderText = "Asset Category";
                         break;
-                    case "assetName":
-                        col.HeaderText = "Asset Name";
-                        break;
+                    
                     case "assetCondition":
                         col.HeaderText = "Asset Condition";
                         break;
@@ -208,7 +213,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 viewButtonColumn.Text = "View";
                 viewButtonColumn.Name = "ViewAsset";
                 viewButtonColumn.UseColumnTextForButtonValue = true;
-                viewButtonColumn.Width = 65;
+                viewButtonColumn.Width = 85;
 
                 dataGridViewAssetRecords.Columns.Insert(0, viewButtonColumn);
 
