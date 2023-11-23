@@ -1278,8 +1278,37 @@ namespace LGU_SV_Asset_Management_Sytem
             //LoadAssets();
         }
 
+        private void panelTabControl_Resize(object sender, EventArgs e)
+        {
 
-     
+        }
+
+        private void tabAssetRecords_Resize(object sender, EventArgs e)
+        {
+           
+            if(panelViewedAssetHandler.Controls.Count == 1)
+            {
+                return;
+            }
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                LoadAssets();
+             
+            }
+            else if (this.WindowState == FormWindowState.Normal)
+            {
+
+                LoadAssets();
+             
+            }
+        }
+
+        private void panelViewedAssetHandler_Resize(object sender, EventArgs e)
+        {
+           
+
+        }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

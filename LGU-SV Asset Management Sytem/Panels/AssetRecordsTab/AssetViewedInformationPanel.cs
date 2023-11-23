@@ -25,6 +25,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         public AssetViewedInformationPanel(Asset _asset, RecordsHomePanel _rcpanel, Control panelHandler, User _currentUser)
         {
             InitializeComponent();
+
             _panelHandler = panelHandler;
             asset = _asset;
             rcpanel = _rcpanel;
@@ -36,8 +37,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
             assetRepositoryControl = new AssetRepositoryControl();
             SetAccessLevel();
+        
         }
-
+      
+            
+            
         // Only Employee can create new MaintenanceLogs
 
         private void SetAccessLevel()
@@ -281,73 +285,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             panelLogsHandler.Visible = true;
         }
 
-    
-
-        private void textBoxUnit_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxAvailability_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxCondition_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxAssetCategory_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxLifeSpan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void textBoxEmployee_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxSupplier_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelLogsHandler_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
 }

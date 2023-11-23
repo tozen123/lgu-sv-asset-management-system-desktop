@@ -57,8 +57,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonPrintAction = new System.Windows.Forms.Button();
             this.panelLogsHandler = new System.Windows.Forms.Panel();
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
-            this.buttonBack = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.textBoxPropertyName = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
@@ -73,9 +71,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label15 = new System.Windows.Forms.Label();
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonBack = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.menuButton1 = new LGU_SV_Asset_Management_Sytem.MenuButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
+            this.panelLogsHandler.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonUpdateInfo
@@ -302,7 +304,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxUnit.ReadOnly = true;
             this.textBoxUnit.Size = new System.Drawing.Size(260, 25);
             this.textBoxUnit.TabIndex = 26;
-            this.textBoxUnit.TextChanged += new System.EventHandler(this.textBoxUnit_TextChanged);
             // 
             // label10
             // 
@@ -339,11 +340,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.panelLogsHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelLogsHandler.Controls.Add(this.buttonRefresh);
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
             this.panelLogsHandler.Size = new System.Drawing.Size(1167, 698);
             this.panelLogsHandler.TabIndex = 41;
-            this.panelLogsHandler.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogsHandler_Paint);
             // 
             // labelAssetIdWithName
             // 
@@ -355,42 +356,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.labelAssetIdWithName.Size = new System.Drawing.Size(226, 42);
             this.labelAssetIdWithName.TabIndex = 56;
             this.labelAssetIdWithName.Text = "ASSET_ID_NAME";
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.buttonBack.BorderRadius = 15;
-            this.buttonBack.BorderSize = 0;
-            this.buttonBack.FlatAppearance.BorderSize = 0;
-            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBack.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonBack;
-            this.buttonBack.Location = new System.Drawing.Point(14, 8);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonBack.Size = new System.Drawing.Size(54, 49);
-            this.buttonBack.TabIndex = 57;
-            this.buttonBack.TextColor = System.Drawing.Color.White;
-            this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
-            // menuButton1
-            // 
-            this.menuButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.menuButton1.FlatAppearance.BorderSize = 0;
-            this.menuButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButton1.ForeColor = System.Drawing.Color.White;
-            this.menuButton1.Location = new System.Drawing.Point(1021, 29);
-            this.menuButton1.Name = "menuButton1";
-            this.menuButton1.Size = new System.Drawing.Size(134, 28);
-            this.menuButton1.TabIndex = 6;
-            this.menuButton1.Text = "menuButton1";
-            this.menuButton1.UseVisualStyleBackColor = false;
             // 
             // textBoxPropertyName
             // 
@@ -534,6 +499,57 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label18.TabIndex = 70;
             this.label18.Text = "Purpose:";
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonRefresh.FlatAppearance.BorderSize = 0;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefresh.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh.ForeColor = System.Drawing.Color.White;
+            this.buttonRefresh.Location = new System.Drawing.Point(452, 29);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(134, 28);
+            this.buttonRefresh.TabIndex = 72;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBack.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonBack.BorderRadius = 15;
+            this.buttonBack.BorderSize = 0;
+            this.buttonBack.FlatAppearance.BorderSize = 0;
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
+            this.buttonBack.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonBack;
+            this.buttonBack.Location = new System.Drawing.Point(14, 8);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonBack.Size = new System.Drawing.Size(54, 49);
+            this.buttonBack.TabIndex = 57;
+            this.buttonBack.TextColor = System.Drawing.Color.White;
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // menuButton1
+            // 
+            this.menuButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.menuButton1.FlatAppearance.BorderSize = 0;
+            this.menuButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton1.ForeColor = System.Drawing.Color.White;
+            this.menuButton1.Location = new System.Drawing.Point(1021, 29);
+            this.menuButton1.Name = "menuButton1";
+            this.menuButton1.Size = new System.Drawing.Size(134, 28);
+            this.menuButton1.TabIndex = 6;
+            this.menuButton1.Text = "menuButton1";
+            this.menuButton1.UseVisualStyleBackColor = false;
+            // 
             // AssetViewedInformationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,6 +601,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).EndInit();
+            this.panelLogsHandler.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,5 +650,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox richTextBoxPurpose;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
