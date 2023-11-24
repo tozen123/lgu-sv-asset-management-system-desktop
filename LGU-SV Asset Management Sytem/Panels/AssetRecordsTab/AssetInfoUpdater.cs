@@ -48,11 +48,27 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
 
             //Fix
-            if (comboBoxSupplier.Items.Contains(asset.SupplierId))
+            if (comboBoxSupplier.Items.Count > 0)
             {
-                comboBoxSupplier.SelectedItem = asset.SupplierId;
+                if (comboBoxSupplier.Items.Count > 0)
+                {
+                    int selectedSupplierId = asset.SupplierId; 
+
+                    for (int i = 0; i < comboBoxSupplier.Items.Count; i++)
+                    {
+                        string currentItem = comboBoxSupplier.Items[i].ToString();
+                        string supplierId = currentItem.Split('|')[1].Trim();
+
+                        if (supplierId.Equals(selectedSupplierId.ToString()))
+                        {
+                            comboBoxSupplier.SelectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+
             }
-            
+
         }
 
         private void roundedButtonCancel_Click(object sender, EventArgs e)

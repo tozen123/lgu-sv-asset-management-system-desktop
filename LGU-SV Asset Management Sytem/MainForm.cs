@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LGU_SV_Asset_Management_Sytem.Asset;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -397,7 +398,12 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabArchiveRecords;
-                
+
+
+          
+
+            worker.RunArchiveRecordsComponent(currentUserOffice, currentSessionUserType);
+
         }
 
 
@@ -1356,6 +1362,88 @@ namespace LGU_SV_Asset_Management_Sytem
                 e.SuppressKeyPress = true;
             }
         }
+
+        private void dataGridViewArchiveRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewArchiveRecords.Rows[e.RowIndex];
+
+                if (e.ColumnIndex == dataGridViewArchiveRecords.Columns["UnArchiveAssetColumn"].Index)
+                {
+                    Asset selectedAsset = new Asset();
+
+                    selectedAsset.AssetId = Convert.ToInt32(selectedRow.Cells["assetId"].Value);
+
+                    selectedAsset.AssetSupervisorId = Convert.ToInt32(selectedRow.Cells["AAdminFullName"].Value.ToString().Split(';')[1].Trim());
+                    selectedAsset.CurrentEmployeeId = Convert.ToInt32(selectedRow.Cells["currentCustodianCoordinatorFullName"].Value.ToString().Split(';')[1].Trim());
+
+                    selectedAsset.SupplierId = Convert.ToInt32(selectedRow.Cells["Supplier"].Value.ToString().Split(';')[1].Trim());
+                    selectedAsset.AssetCategoryId = Convert.ToInt32(selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[1].Trim());
+
+                    selectedAsset.SupplierName = selectedRow.Cells["Supplier"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.EmployeeName = selectedRow.Cells["currentCustodianCoordinatorFullName"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.AssetCategoryName = selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[0].Trim();
+
+                    /*
+                 string assetLastMaintenanceValue = selectedRow.Cells["assetLastMaintenance"].Value.ToString();
+                 if (assetLastMaintenanceValue != "")
+                 {
+                     selectedAsset.AssetLastMaintenanceID = Convert.ToInt32(assetLastMaintenanceValue);
+                 }
+
+                 selectedAsset.AssetAvailability = selectedRow.Cells["assetAvailability"].Value.ToString();
+
+                 */
+                    selectedAsset.AssetName = selectedRow.Cells["assetName"].Value.ToString();
+                    selectedAsset.AssetLocation = selectedRow.Cells["assetLocation"].Value.ToString();
+
+                    selectedAsset.QRCode = selectedRow.Cells["assetQrStrDefinition"].Value.ToString();
+
+                    selectedAsset.AssetQRCodeImage = (byte[])selectedRow.Cells["assetQrCodeImage"].Value;
+                    selectedAsset.AssetImage = (byte[])selectedRow.Cells["assetImage"].Value;
+
+                    selectedAsset.AssetCondition = selectedRow.Cells["assetCondition"].Value.ToString();
+
+                    selectedAsset.IsArchive = Convert.ToBoolean(selectedRow.Cells["assetIsArchive"].Value);
+                    selectedAsset.IsMissing = Convert.ToBoolean(selectedRow.Cells["assetIsMissing"].Value);
+                    selectedAsset.IsMaintainable = Convert.ToBoolean(selectedRow.Cells["assetIsMaintainable"].Value);
+
+                    selectedAsset.AssetPurchaseAmount = Convert.ToDecimal(selectedRow.Cells["assetPurchaseAmount"].Value);
+                    selectedAsset.AssetPurchaseDate = Convert.ToDateTime(selectedRow.Cells["assetAcknowledgeDate"].Value);
+                    //selectedAsset.AssetMaintenanceLogsID = selectedRow.Cells["assetMaintenanceLogsID"].Value.ToString();
+                    selectedAsset.AssetQuantity = Convert.ToInt32(selectedRow.Cells["assetQuantity"].Value);
+                    selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();
+                    /*
+                    selectedAsset.AssetLifeSpan = Convert.ToInt32(selectedRow.Cells["assetLifeSpan"].Value);
+                    */
+                    //added
+                    selectedAsset.AssetPurpose = selectedRow.Cells["assetPurpose"].Value.ToString();
+                    selectedAsset.AssetDescription = selectedRow.Cells["assetDescription"].Value.ToString();
+                    selectedAsset.AssetPropertyNumber = Convert.ToInt32(selectedRow.Cells["assetPropertyNumber"].Value);
+
+                    AssetRepositoryControl assetRepositoryControl = new AssetRepositoryControl();
+                    Asset archivedAsset = new Asset();
+                    archivedAsset = selectedAsset;
+                    archivedAsset.IsArchive = false;
+
+                    var result = assetRepositoryControl.SetArchiveState(archivedAsset);
+
+                    if (result.Success)
+                    {
+
+                        worker.RunArchiveRecordsComponent(currentUserOffice, currentSessionUserType);
+
+                        MessagePrompt($"Asset has been successfully unarchived");
+                    }
+                    else
+                    {
+                        MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                    }
+                }
+            }
+        }
+
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

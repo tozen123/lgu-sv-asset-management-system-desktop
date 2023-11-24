@@ -219,7 +219,26 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                 if (confirmationPrompt.ShowDialog() == DialogResult.OK)
                 {
-                    MessagePrompt("Part not fully implemented. :(");
+                    Asset archivedAsset = new Asset();
+                    archivedAsset = asset;
+                    archivedAsset.IsArchive = true;
+
+                    var result = assetRepositoryControl.SetArchiveState(archivedAsset);
+
+                    if (result.Success)
+                    {
+
+
+                        _panelHandler.Controls.Clear();
+                        rcpanel.InitializeRecords();
+                        _panelHandler.SendToBack();
+
+                        MessagePrompt($"Asset has been successfully moved to archive");
+                    }
+                    else
+                    {
+                        MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                    }
                 }
             }
         }

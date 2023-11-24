@@ -280,6 +280,39 @@ namespace LGU_SV_Asset_Management_Sytem
                     return (false, ex.Message);
                 }
             }
+
+            public (bool Success, string ErrorMessage) SetArchiveState(Asset asset)
+            {
+                try
+                {
+                    string query = "UPDATE Assets SET assetIsArchive = @state WHERE assetId = @id";
+
+                    int value;
+                    if (asset.isArchive == true)
+                    {
+                        value = 1;
+                    } 
+                    else
+                    {
+                        value = 0;
+                    }
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", asset.AssetId},
+                        {"@state",  value}
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+            }
         }
 
     }
