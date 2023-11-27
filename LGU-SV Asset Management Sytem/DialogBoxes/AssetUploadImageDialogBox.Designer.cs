@@ -40,66 +40,82 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             // 
             // buttonBrowseImage
             // 
-            this.buttonBrowseImage.Location = new System.Drawing.Point(12, 362);
+            this.buttonBrowseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonBrowseImage.FlatAppearance.BorderSize = 0;
+            this.buttonBrowseImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBrowseImage.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBrowseImage.ForeColor = System.Drawing.Color.White;
+            this.buttonBrowseImage.Location = new System.Drawing.Point(12, 398);
             this.buttonBrowseImage.Name = "buttonBrowseImage";
             this.buttonBrowseImage.Size = new System.Drawing.Size(407, 34);
             this.buttonBrowseImage.TabIndex = 0;
             this.buttonBrowseImage.Text = "Browse Image";
-            this.buttonBrowseImage.UseVisualStyleBackColor = true;
+            this.buttonBrowseImage.UseVisualStyleBackColor = false;
             this.buttonBrowseImage.Click += new System.EventHandler(this.buttonBrowseImage_Click);
             // 
             // labelDirectoryString
             // 
             this.labelDirectoryString.AutoSize = true;
-            this.labelDirectoryString.Location = new System.Drawing.Point(12, 346);
+            this.labelDirectoryString.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDirectoryString.Location = new System.Drawing.Point(14, 376);
             this.labelDirectoryString.Name = "labelDirectoryString";
-            this.labelDirectoryString.Size = new System.Drawing.Size(117, 13);
+            this.labelDirectoryString.Size = new System.Drawing.Size(15, 19);
             this.labelDirectoryString.TabIndex = 1;
-            this.labelDirectoryString.Text = "DIRECTORY_STRING";
+            this.labelDirectoryString.Text = "-";
             // 
             // pictureBoxImage
             // 
             this.pictureBoxImage.ErrorImage = null;
-            this.pictureBoxImage.Location = new System.Drawing.Point(12, 42);
+            this.pictureBoxImage.Location = new System.Drawing.Point(12, 49);
             this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(407, 301);
+            this.pictureBoxImage.Size = new System.Drawing.Size(407, 324);
             this.pictureBoxImage.TabIndex = 2;
             this.pictureBoxImage.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.Size = new System.Drawing.Size(177, 28);
             this.label1.TabIndex = 3;
             this.label1.Text = "Asset Image Upload";
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(364, 12);
+            this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonClose.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonClose;
+            this.buttonClose.Location = new System.Drawing.Point(375, 5);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(55, 27);
+            this.buttonClose.Size = new System.Drawing.Size(44, 38);
             this.buttonClose.TabIndex = 4;
-            this.buttonClose.Text = "X";
-            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // buttonFinish
             // 
-            this.buttonFinish.Location = new System.Drawing.Point(12, 402);
+            this.buttonFinish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonFinish.FlatAppearance.BorderSize = 0;
+            this.buttonFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFinish.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFinish.ForeColor = System.Drawing.Color.White;
+            this.buttonFinish.Location = new System.Drawing.Point(12, 442);
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.Size = new System.Drawing.Size(407, 58);
             this.buttonFinish.TabIndex = 5;
             this.buttonFinish.Text = "Finish";
-            this.buttonFinish.UseVisualStyleBackColor = true;
+            this.buttonFinish.UseVisualStyleBackColor = false;
             this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
             // 
             // AssetUploadImageDialogBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 472);
+            this.ClientSize = new System.Drawing.Size(431, 512);
             this.ControlBox = false;
             this.Controls.Add(this.buttonFinish);
             this.Controls.Add(this.buttonClose);

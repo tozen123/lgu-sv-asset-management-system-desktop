@@ -219,6 +219,28 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
         }
-      
+        public void PerformArchiveRecordSearch()
+        {
+            string searchKeyword = mainform.textBoxArchiveRecordsSearch.Text.Trim();
+
+            DataTable dataTable = (DataTable)mainform.dataGridViewArchiveRecords.DataSource;
+
+
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                if (!string.IsNullOrEmpty(searchKeyword))
+                {
+                    string filterExpression = $"assetName LIKE '%{searchKeyword}%'";
+
+
+                    dataTable.DefaultView.RowFilter = filterExpression;
+                }
+                else
+                {
+
+                    dataTable.DefaultView.RowFilter = string.Empty;
+                }
+            }
+        }
     }
 }

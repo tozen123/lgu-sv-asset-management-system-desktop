@@ -81,6 +81,16 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void labelConfirmationMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
     

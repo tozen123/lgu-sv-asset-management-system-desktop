@@ -53,12 +53,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     buttonArchive.Enabled = false;
                     buttonUpdateInfo.Enabled = false;
                     break;
-                case "Asset Employee":
+                case "Asset Coordinator":
                     buttonDelete.Enabled = false;
                     buttonArchive.Enabled = false;
                     buttonUpdateInfo.Enabled = false;
                     break;
-                case "Asset Supervisor":
+                case "Asset Administrator":
                     
                     break;
             }

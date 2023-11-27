@@ -29,15 +29,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNewLog = new System.Windows.Forms.Button();
             this.buttonSchedule = new System.Windows.Forms.Button();
             this.dataGridViewMaintenanceLogs = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.textBoxMLogSearch = new System.Windows.Forms.TextBox();
+            this.buttonMLogPerfSearch = new System.Windows.Forms.Button();
             this.panelLogMiniHandler = new System.Windows.Forms.Panel();
             this.labelAssetIdWithName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaintenanceLogs)).BeginInit();
@@ -78,7 +78,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.buttonSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSchedule.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
             this.buttonSchedule.ForeColor = System.Drawing.Color.White;
-            this.buttonSchedule.Location = new System.Drawing.Point(493, 22);
+            this.buttonSchedule.Location = new System.Drawing.Point(493, 24);
             this.buttonSchedule.Name = "buttonSchedule";
             this.buttonSchedule.Size = new System.Drawing.Size(123, 30);
             this.buttonSchedule.TabIndex = 6;
@@ -95,28 +95,29 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewMaintenanceLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewMaintenanceLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMaintenanceLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewMaintenanceLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMaintenanceLogs.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMaintenanceLogs.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewMaintenanceLogs.Location = new System.Drawing.Point(5, 82);
             this.dataGridViewMaintenanceLogs.Name = "dataGridViewMaintenanceLogs";
             this.dataGridViewMaintenanceLogs.ReadOnly = true;
             this.dataGridViewMaintenanceLogs.Size = new System.Drawing.Size(1155, 611);
             this.dataGridViewMaintenanceLogs.TabIndex = 7;
+            this.dataGridViewMaintenanceLogs.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMaintenanceLogs_CellMouseClick);
             // 
             // pictureBox1
             // 
@@ -129,25 +130,29 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // textBoxMLogSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(761, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(355, 30);
-            this.textBox1.TabIndex = 8;
-     
+            this.textBoxMLogSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMLogSearch.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMLogSearch.Location = new System.Drawing.Point(761, 23);
+            this.textBoxMLogSearch.Name = "textBoxMLogSearch";
+            this.textBoxMLogSearch.Size = new System.Drawing.Size(355, 30);
+            this.textBoxMLogSearch.TabIndex = 8;
+            this.textBoxMLogSearch.TextChanged += new System.EventHandler(this.textBoxMLogSearch_TextChanged);
             // 
-            // button3
+            // buttonMLogPerfSearch
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1122, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(38, 31);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "SRCH";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonMLogPerfSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMLogPerfSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonMLogPerfSearch.FlatAppearance.BorderSize = 0;
+            this.buttonMLogPerfSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMLogPerfSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.buttonMLogPerfSearch.Location = new System.Drawing.Point(1122, 23);
+            this.buttonMLogPerfSearch.Name = "buttonMLogPerfSearch";
+            this.buttonMLogPerfSearch.Size = new System.Drawing.Size(38, 31);
+            this.buttonMLogPerfSearch.TabIndex = 9;
+            this.buttonMLogPerfSearch.UseVisualStyleBackColor = false;
+            this.buttonMLogPerfSearch.Click += new System.EventHandler(this.buttonMLogPerfSearch_Click);
             // 
             // panelLogMiniHandler
             // 
@@ -172,8 +177,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonMLogPerfSearch);
+            this.Controls.Add(this.textBoxMLogSearch);
             this.Controls.Add(this.dataGridViewMaintenanceLogs);
             this.Controls.Add(this.buttonSchedule);
             this.Controls.Add(this.buttonNewLog);
@@ -197,8 +202,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         private System.Windows.Forms.Button buttonNewLog;
         private System.Windows.Forms.Button buttonSchedule;
         private System.Windows.Forms.DataGridView dataGridViewMaintenanceLogs;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBoxMLogSearch;
+        private System.Windows.Forms.Button buttonMLogPerfSearch;
         private System.Windows.Forms.Panel panelLogMiniHandler;
         private System.Windows.Forms.Label labelAssetIdWithName;
     }

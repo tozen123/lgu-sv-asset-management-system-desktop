@@ -553,7 +553,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             DialogBoxes.AlertDialogBox alertDialogBox = new DialogBoxes.AlertDialogBox();
             alertDialogBox.SetDialog("CONFIRM CANCEL", "ANY CHANGES DONE IN THE PROFILE WILL BE DISCARDED.");
-
+            alertDialogBox.ShowDialog();
             buttonEditProfile.Enabled = true;
             buttonEditProfile.Visible = true;
             buttonProfileSave.Visible = false;
@@ -1444,6 +1444,17 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
+        private void textBoxArchiveRecordsSearch_TextChanged(object sender, EventArgs e)
+        {
+            worker.PerformArchiveRecordSearch();
+        }
+        
+        private void roundedButtonSearchArchiveRecords_Click(object sender, EventArgs e)
+        {
+            worker.PerformArchiveRecordSearch();
+
+
+        }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -1453,5 +1464,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 Application.Exit();
             }
         }
+
+
+
     }
 }

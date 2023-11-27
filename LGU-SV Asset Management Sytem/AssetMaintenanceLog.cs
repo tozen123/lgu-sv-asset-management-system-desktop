@@ -118,9 +118,28 @@ namespace LGU_SV_Asset_Management_Sytem
 
             }
 
-            public void DeleteLog()
+            public (bool Success, string ErrorMessage) DeleteToDatabase(AssetMaintenanceLog _assetMaintenanceLog)
             {
+                try
+                {
+                    string query = "DELETE FROM MaintenanceLog WHERE maintenanceLogId = @mId";
 
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@mId", _assetMaintenanceLog.MaintenanceLogId}
+
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
             }
 
             public void UpdateLog()

@@ -34,6 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
             this.buttonTransaction = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -105,18 +108,20 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
+            this.roundedButtonSearchArchiveRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.textBoxArchiveRecordsSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewArchiveRecords = new System.Windows.Forms.DataGridView();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
-            this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.buttonAssetRecordsNewAsset = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonAssetRecordsViewRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonSearch = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.textBoxSearchFilter = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelViewedAssetHandler = new System.Windows.Forms.Panel();
+            this.buttonSearch = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxProfileAddress = new System.Windows.Forms.RichTextBox();
@@ -1184,6 +1189,8 @@
             // 
             // tabArchiveRecords
             // 
+            this.tabArchiveRecords.Controls.Add(this.roundedButtonSearchArchiveRecords);
+            this.tabArchiveRecords.Controls.Add(this.textBoxArchiveRecordsSearch);
             this.tabArchiveRecords.Controls.Add(this.dataGridViewArchiveRecords);
             this.tabArchiveRecords.Controls.Add(this.pictureBox4);
             this.tabArchiveRecords.Controls.Add(this.label4);
@@ -1195,6 +1202,40 @@
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
             // 
+            // roundedButtonSearchArchiveRecords
+            // 
+            this.roundedButtonSearchArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonSearchArchiveRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonSearchArchiveRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonSearchArchiveRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButtonSearchArchiveRecords.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonSearchArchiveRecords.BorderRadius = 0;
+            this.roundedButtonSearchArchiveRecords.BorderSize = 0;
+            this.roundedButtonSearchArchiveRecords.Enabled = false;
+            this.roundedButtonSearchArchiveRecords.FlatAppearance.BorderSize = 0;
+            this.roundedButtonSearchArchiveRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonSearchArchiveRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonSearchArchiveRecords.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonSearchArchiveRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.roundedButtonSearchArchiveRecords.Location = new System.Drawing.Point(1150, 34);
+            this.roundedButtonSearchArchiveRecords.Name = "roundedButtonSearchArchiveRecords";
+            this.roundedButtonSearchArchiveRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonSearchArchiveRecords.Size = new System.Drawing.Size(36, 31);
+            this.roundedButtonSearchArchiveRecords.TabIndex = 39;
+            this.roundedButtonSearchArchiveRecords.TextColor = System.Drawing.Color.White;
+            this.roundedButtonSearchArchiveRecords.UseVisualStyleBackColor = false;
+            this.roundedButtonSearchArchiveRecords.Click += new System.EventHandler(this.roundedButtonSearchArchiveRecords_Click);
+            // 
+            // textBoxArchiveRecordsSearch
+            // 
+            this.textBoxArchiveRecordsSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxArchiveRecordsSearch.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxArchiveRecordsSearch.Location = new System.Drawing.Point(852, 34);
+            this.textBoxArchiveRecordsSearch.Name = "textBoxArchiveRecordsSearch";
+            this.textBoxArchiveRecordsSearch.Size = new System.Drawing.Size(292, 31);
+            this.textBoxArchiveRecordsSearch.TabIndex = 38;
+            this.textBoxArchiveRecordsSearch.TextChanged += new System.EventHandler(this.textBoxArchiveRecordsSearch_TextChanged);
+            // 
             // dataGridViewArchiveRecords
             // 
             this.dataGridViewArchiveRecords.AllowUserToAddRows = false;
@@ -1202,10 +1243,34 @@
             this.dataGridViewArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewArchiveRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewArchiveRecords.Location = new System.Drawing.Point(29, 88);
             this.dataGridViewArchiveRecords.Name = "dataGridViewArchiveRecords";
             this.dataGridViewArchiveRecords.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Poppins", 11.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewArchiveRecords.Size = new System.Drawing.Size(1159, 669);
             this.dataGridViewArchiveRecords.TabIndex = 7;
             this.dataGridViewArchiveRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArchiveRecords_CellContentClick);
@@ -1234,14 +1299,14 @@
             // 
             // tabAssetRecords
             // 
-            this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsNewAsset);
             this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
-            this.tabAssetRecords.Controls.Add(this.buttonSearch);
+            this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.textBoxSearchFilter);
             this.tabAssetRecords.Controls.Add(this.pictureBox2);
             this.tabAssetRecords.Controls.Add(this.label2);
             this.tabAssetRecords.Controls.Add(this.panelViewedAssetHandler);
+            this.tabAssetRecords.Controls.Add(this.buttonSearch);
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
             this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
@@ -1250,19 +1315,6 @@
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
             this.tabAssetRecords.Resize += new System.EventHandler(this.tabAssetRecords_Resize);
-            // 
-            // panelAssetRecordsHandler
-            // 
-            this.panelAssetRecordsHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAssetRecordsHandler.AutoScroll = true;
-            this.panelAssetRecordsHandler.AutoSize = true;
-            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(31, 87);
-            this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
-            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1172, 670);
-            this.panelAssetRecordsHandler.TabIndex = 40;
-            this.panelAssetRecordsHandler.Resize += new System.EventHandler(this.panelAssetRecordsHandler_Resize);
             // 
             // buttonAssetRecordsNewAsset
             // 
@@ -1277,11 +1329,11 @@
             this.buttonAssetRecordsNewAsset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAssetRecordsNewAsset.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAssetRecordsNewAsset.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(727, 27);
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(546, 27);
             this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
             this.buttonAssetRecordsNewAsset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(137, 31);
-            this.buttonAssetRecordsNewAsset.TabIndex = 39;
+            this.buttonAssetRecordsNewAsset.TabIndex = 42;
             this.buttonAssetRecordsNewAsset.Text = "+ ASSET";
             this.buttonAssetRecordsNewAsset.TextColor = System.Drawing.Color.White;
             this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = false;
@@ -1301,39 +1353,28 @@
             this.buttonAssetRecordsViewRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAssetRecordsViewRecords.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAssetRecordsViewRecords.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(546, 27);
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(689, 27);
             this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
             this.buttonAssetRecordsViewRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(175, 31);
-            this.buttonAssetRecordsViewRecords.TabIndex = 38;
+            this.buttonAssetRecordsViewRecords.TabIndex = 41;
             this.buttonAssetRecordsViewRecords.Text = "Load Records";
             this.buttonAssetRecordsViewRecords.TextColor = System.Drawing.Color.White;
             this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = false;
             this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
             // 
-            // buttonSearch
+            // panelAssetRecordsHandler
             // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonSearch.BorderColor = System.Drawing.Color.White;
-            this.buttonSearch.BorderRadius = 0;
-            this.buttonSearch.BorderSize = 0;
-            this.buttonSearch.Enabled = false;
-            this.buttonSearch.FlatAppearance.BorderSize = 0;
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
-            this.buttonSearch.Location = new System.Drawing.Point(1168, 27);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSearch.Size = new System.Drawing.Size(36, 31);
-            this.buttonSearch.TabIndex = 37;
-            this.buttonSearch.TextColor = System.Drawing.Color.White;
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.panelAssetRecordsHandler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAssetRecordsHandler.AutoScroll = true;
+            this.panelAssetRecordsHandler.AutoSize = true;
+            this.panelAssetRecordsHandler.Location = new System.Drawing.Point(31, 87);
+            this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
+            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1172, 670);
+            this.panelAssetRecordsHandler.TabIndex = 40;
+            this.panelAssetRecordsHandler.Resize += new System.EventHandler(this.panelAssetRecordsHandler_Resize);
             // 
             // textBoxSearchFilter
             // 
@@ -1380,6 +1421,30 @@
             this.panelViewedAssetHandler.Visible = false;
             this.panelViewedAssetHandler.Resize += new System.EventHandler(this.panelViewedAssetHandler_Resize);
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSearch.BorderColor = System.Drawing.Color.White;
+            this.buttonSearch.BorderRadius = 0;
+            this.buttonSearch.BorderSize = 0;
+            this.buttonSearch.Enabled = false;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.buttonSearch.Location = new System.Drawing.Point(1168, 27);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.Size = new System.Drawing.Size(36, 31);
+            this.buttonSearch.TabIndex = 37;
+            this.buttonSearch.TextColor = System.Drawing.Color.White;
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
             // tabProfile
             // 
             this.tabProfile.Controls.Add(this.label16);
@@ -1400,11 +1465,11 @@
             this.tabProfile.Controls.Add(this.label10);
             this.tabProfile.Controls.Add(this.label9);
             this.tabProfile.Controls.Add(this.label3);
-            this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
             this.tabProfile.Controls.Add(this.buttonEditProfile);
             this.tabProfile.Controls.Add(this.buttonProfileCancel);
             this.tabProfile.Controls.Add(this.buttonProfileSave);
             this.tabProfile.Controls.Add(this.buttonProfileUploadImage);
+            this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
@@ -1972,8 +2037,6 @@
         private RoundedButton buttonTransaction;
         public RoundedButton buttonSearch;
         public System.Windows.Forms.TextBox textBoxSearchFilter;
-        private RoundedButton buttonAssetRecordsNewAsset;
-        private RoundedButton buttonAssetRecordsViewRecords;
         private System.Windows.Forms.RichTextBox textBoxProfileAddress;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelOffice;
@@ -2014,5 +2077,9 @@
         private System.Windows.Forms.Panel panelOperatorHandler;
         private RoundedButton roundedButton3;
         public System.Windows.Forms.DataGridView dataGridViewArchiveRecords;
+        public RoundedButton roundedButtonSearchArchiveRecords;
+        public System.Windows.Forms.TextBox textBoxArchiveRecordsSearch;
+        private RoundedButton buttonAssetRecordsNewAsset;
+        private RoundedButton buttonAssetRecordsViewRecords;
     }
 }

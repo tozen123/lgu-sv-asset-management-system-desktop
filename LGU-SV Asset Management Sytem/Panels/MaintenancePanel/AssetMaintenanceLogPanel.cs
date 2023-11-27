@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LGU_SV_Asset_Management_Sytem.AssetMaintenanceLog;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 {
@@ -16,6 +17,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
         Asset asset;
         User currentUser;
 
+        AssetMaintenanceLogRepositoryControl assetMaintenanceLogRepositoryControl = new AssetMaintenanceLogRepositoryControl();
         private DatabaseConnection databaseConnection;
 
         public AssetMaintenanceLogPanel(Panel _panelHandler, Asset _asset, User _currentUser)
@@ -94,6 +96,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
                 dataGridViewMaintenanceLogs.Columns.Add(col);
             }
 
+            if (dataGridViewMaintenanceLogs.Columns["DeleteButtonColumn"] == null)
+            {
+            
+                // Create a new DataGridViewButtonColumn
+                var deleteButtonColumn = new DataGridViewButtonColumn();
+                deleteButtonColumn.HeaderText = "Actions";
+                deleteButtonColumn.Text = "Delete";
+                deleteButtonColumn.Name = "DeleteButtonColumn";
+                deleteButtonColumn.UseColumnTextForButtonValue = true;
+
+                // Add the button column to the DataGridView
+                dataGridViewMaintenanceLogs.Columns.Add(deleteButtonColumn);
+
+                // Adjust the button column's display index to make it the last column
+                deleteButtonColumn.DisplayIndex = dataGridViewMaintenanceLogs.Columns.Count - 1;
+            }
+
             dataGridViewMaintenanceLogs.DataSource = FetchDataFromDB();
            
 
@@ -163,6 +182,106 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
 
         }
 
-      
+        string assetId;
+        private void dataGridViewMaintenanceLogs_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewMaintenanceLogs.Rows[e.RowIndex];
+                AssetMaintenanceLog selectedLog = new AssetMaintenanceLog();
+
+                selectedLog.MaintenanceLogId = row.Cells[0].Value.ToString();
+                selectedLog.AssetId = Convert.ToInt32(row.Cells[1].Value.ToString());
+                selectedLog.AssetEmployeeId = row.Cells[2].Value.ToString();
+
+
+                if (row.Cells[3].Value != null && DateTime.TryParse(row.Cells[3].Value.ToString(), out DateTime maintenanceDate))
+                {
+                    selectedLog.MaintenanceDate = maintenanceDate;
+                }
+                else
+                {
+                    selectedLog.MaintenanceDate = DateTime.MinValue; 
+                }
+
+                selectedLog.MaintenanceDescription = row.Cells[4].Value.ToString();
+                selectedLog.MaintenanceStatus = row.Cells[5].Value.ToString();
+                selectedLog.MaintenanceCost = Convert.ToDecimal(row.Cells[6].Value.ToString());
+                selectedLog.MaintenanceCategory = row.Cells[7].Value.ToString();
+           
+
+                if (e.ColumnIndex == dataGridViewMaintenanceLogs.Columns["DeleteButtonColumn"].Index)
+                {
+                    assetId = row.Cells["maintenanceLogId"].Value.ToString();
+                    Console.WriteLine("Action Delete for " + assetId);
+
+                    if (!string.IsNullOrEmpty(assetId))
+                    {
+                        var result = assetMaintenanceLogRepositoryControl.DeleteToDatabase(selectedLog);
+
+                        if (result.Success)
+                        {
+
+                            MessagePrompt($"Log has been successfully deleted");
+                            InitializeRecords();
+                        }
+                        else
+                        {
+                            MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void MessagePrompt(string message)
+        {
+            DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+            prompt.SetMessage(message);
+            prompt.Show();
+        }
+
+        private void textBoxMLogSearch_TextChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void buttonMLogPerfSearch_Click(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void PerformSearch()
+        {
+            string searchKeyword = textBoxMLogSearch.Text.Trim();
+
+            DataTable dataTable = (DataTable)dataGridViewMaintenanceLogs.DataSource;
+
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                if (!string.IsNullOrEmpty(searchKeyword))
+                {
+                  
+                    if (int.TryParse(searchKeyword, out _))
+                    {
+                     
+                        string filterExpression = $"assetId = {searchKeyword}";
+                        dataTable.DefaultView.RowFilter = filterExpression;
+                    }
+                    else
+                    {
+
+                        MessagePrompt("Please enter a valid number for the search.");
+                    }
+                }
+                else
+                {
+                    
+                    dataTable.DefaultView.RowFilter = string.Empty;
+                }
+            }
+        }
+
     }
 }
