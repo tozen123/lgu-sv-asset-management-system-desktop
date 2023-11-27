@@ -60,6 +60,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             InitialiazeTabControl(panelTabControl);
             InitialiazeTabControl(otherTabControl);
+            InitialiazeTabControl(tabControlTransaction);
 
             databaseConnection = new DatabaseConnection();
 
@@ -1455,6 +1456,23 @@ namespace LGU_SV_Asset_Management_Sytem
 
 
         }
+
+        private void roundedButtonRent_Click(object sender, EventArgs e)
+        {
+            tabControlTransaction.SelectedTab = tabPageRent;
+        }
+
+        private void roundedButtonTrasnfer_Click(object sender, EventArgs e)
+        {
+            tabControlTransaction.SelectedTab = tabPageTransfer;
+        }
+
+        private void roundedButtonReqBorrow_Click(object sender, EventArgs e)
+        {
+            tabControlTransaction.SelectedTab = tabPageRequestAndBorrow;
+        }
+
+    
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
