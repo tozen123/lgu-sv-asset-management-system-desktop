@@ -224,6 +224,7 @@
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Worker.cs" />
+    <Compile Include="Worker1.cs" />
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </EmbeddedResource>

@@ -50,6 +50,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Worker
         Worker worker;
+        Worker1 worker1;
 
         public MainForm()
         {
@@ -89,6 +90,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Worker
             worker = new Worker(this);
+            worker1 = new Worker1(this);
 
             
 
@@ -513,6 +515,8 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabTransaction;
+
+            LoadTranscationPanel();
         }
         private void SetListControlStateTo(List<Control> controls, bool state)
         {
@@ -1472,7 +1476,8 @@ namespace LGU_SV_Asset_Management_Sytem
             tabControlTransaction.SelectedTab = tabPageRequestAndBorrow;
         }
 
-    
+
+
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -1483,7 +1488,34 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
+        
+        private void LoadTranscationPanel()
+        {
+            worker1.LoadRentPanel();
+           
+        }
+
+        private void roundedButtonTransactionRentAssetFilterCLear_Click(object sender, EventArgs e)
+        {
+            worker1.AssetSearchFilterClear();
+        }
+
+        private void dataGridViewTransactionRentAsset_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransactionRentAsset.Rows[e.RowIndex];
+                
+                worker1.DataGridViewCellMouseClick(Convert.ToInt32(selectedRow.Cells[2].Value.ToString()));
+                Console.WriteLine(selectedRow.Cells[2].Value.ToString());
+            }
+            
+        }
 
 
+        private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)
+        {
+            worker1.CategoryListApplyFilter();
+        }
     }
 }

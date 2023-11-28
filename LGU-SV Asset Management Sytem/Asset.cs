@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -311,6 +312,80 @@ namespace LGU_SV_Asset_Management_Sytem
                 catch (Exception ex)
                 {
                     return (false, ex.Message);
+                }
+            }
+
+            public (Asset retrievedAsset, bool Success, string ErrorMessage) RetrieveAsset(int assetId)
+            {
+           
+                try
+                {
+                    Asset retrievedAsset = new Asset();
+
+                    string query = $@"
+                                    SELECT
+                                        assetId,
+                                        assetAdminID,
+                                        assetName,
+                                        currentCustodianAssetCoordID,
+                                        supplierID,
+                                        assetCategoryID,
+                                        assetCondition,
+                                        assetQrCodeImage,
+                                        assetQrStrDefinition,
+                                        assetLocation,
+                                        assetIsArchive,
+                                        assetAcknowledgeDate,
+                                        assetPurchaseAmount,
+                                        assetQuantity,
+                                        assetUnit,
+                                        assetImage,
+                                        assetIsMaintainable,
+                                        assetIsMissing,
+                                        assetPurpose,
+                                        assetDescription,
+                                        assetPropertyNumber
+                                    FROM Assets WHERE assetId = {assetId}";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>();
+
+                    DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+
+                    if (resultTable.Rows.Count > 0)
+                    { 
+                        DataRow row = resultTable.Rows[0];
+
+                        retrievedAsset.AssetId = Convert.ToInt32(row["assetId"]);
+                        retrievedAsset.AssetSupervisorId = Convert.ToInt32(row["assetAdminID"]);
+                        retrievedAsset.AssetName = Convert.ToString(row["assetName"]);
+                        retrievedAsset.CurrentEmployeeId = Convert.ToInt32(row["currentCustodianAssetCoordID"]);
+                        retrievedAsset.SupplierId = Convert.ToInt32(row["supplierID"]); 
+                        retrievedAsset.AssetCategoryId = Convert.ToInt32(row["assetCategoryID"]);
+                        retrievedAsset.AssetCondition = Convert.ToString(row["assetCondition"]);
+                        retrievedAsset.AssetQRCodeImage = (byte[])row["assetQrCodeImage"];
+                        retrievedAsset.QRCode = Convert.ToString(row["assetQrStrDefinition"]);
+                        retrievedAsset.AssetLocation = Convert.ToString(row["assetLocation"]);
+                        retrievedAsset.IsArchive = Convert.ToBoolean(row["assetIsArchive"]);
+                        retrievedAsset.AssetPurchaseDate = Convert.ToDateTime(row["assetAcknowledgeDate"]);
+                        retrievedAsset.AssetPurchaseAmount = Convert.ToDecimal(row["assetPurchaseAmount"]);
+                        retrievedAsset.AssetQuantity = Convert.ToInt32(row["assetQuantity"]);
+                        retrievedAsset.AssetUnit = Convert.ToString(row["assetUnit"]);
+                        retrievedAsset.AssetImage = (byte[])row["assetImage"];
+                        retrievedAsset.IsMaintainable = Convert.ToBoolean(row["assetIsMaintainable"]);
+                        retrievedAsset.IsMissing = Convert.ToBoolean(row["assetIsMissing"]);
+                        retrievedAsset.AssetPurpose = Convert.ToString(row["assetPurpose"]);
+                        retrievedAsset.AssetDescription = Convert.ToString(row["assetDescription"]);
+                        retrievedAsset.AssetPropertyNumber = Convert.ToInt32(row["assetPropertyNumber"]);
+                    }
+
+                    databaseConnection.CloseConnection();
+
+                    return (retrievedAsset, true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (null, false, ex.Message);
                 }
             }
         }
