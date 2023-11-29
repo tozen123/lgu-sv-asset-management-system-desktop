@@ -168,6 +168,12 @@
     <Compile Include="Panels\OperatorHandledAssetPanel.Designer.cs">
       <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\RentLogPanel\AssetRentLogPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\AssetRentLogPanel.Designer.cs">
+      <DependentUpon>AssetRentLogPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\SupplierSuppliedAssetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\OperatorHandledAssetPanel.resx">
       <DependentUpon>OperatorHandledAssetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\RentLogPanel\AssetRentLogPanel.resx">
+      <DependentUpon>AssetRentLogPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SupplierSuppliedAssetPanel.resx">
       <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>

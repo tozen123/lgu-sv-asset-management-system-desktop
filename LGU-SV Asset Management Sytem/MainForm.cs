@@ -23,8 +23,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Session
         User currentUser = new User();
-        string currentSessionUserType;
-        string currentUserOffice;
+        public string currentSessionUserType;
+        public string currentUserOffice;
 
         //Color
         Color clickColor = Color.FromArgb(48, 77, 46);

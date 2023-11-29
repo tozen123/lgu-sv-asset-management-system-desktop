@@ -34,8 +34,16 @@ namespace LGU_SV_Asset_Management_Sytem
             ComboBoxRetriever(mainform.comboBoxTransactionRentCat, "SELECT assetCategoryId, assetCategoryName FROM AssetCategory");
 
             // ListBox
-            DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, "SELECT assetName, assetPropertyNumber, assetId FROM Assets");
-
+            //DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0");
+            // ListBox
+            if (mainform.currentSessionUserType.Equals("Asset Administrator"))
+            {
+                DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0");
+            }
+            else if (mainform.currentSessionUserType.Equals("Asset Coordinator"))
+            {
+                DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, $"SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetLocation = '{mainform.currentUserOffice}'");
+            }
         }
 
         public void DataGridViewRetriever(DataGridView dataGridView, string query)
@@ -77,6 +85,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public void ComboBoxRetriever(ComboBox combobox, string query)
         {
+            combobox.Items.Clear();
+
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);

@@ -36,7 +36,15 @@ namespace LGU_SV_Asset_Management_Sytem
             ComboBoxRetriever(mainform.comboBoxTransactionTransferAssetCategory, "SELECT assetCategoryId, assetCategoryName FROM AssetCategory");
 
             // ListBox
-            DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, "SELECT assetName, assetPropertyNumber, assetId FROM Assets");
+            if(mainform.currentSessionUserType.Equals("Asset Administrator"))
+            {
+                DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0");
+            }
+            else if(mainform.currentSessionUserType.Equals("Asset Coordinator"))
+            {
+                DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, $"SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetLocation = {mainform.currentUserOffice}");
+            }
+
 
 
             //
@@ -266,14 +274,16 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
-        public void InitiateTransferAsset()
+        public async void InitiateTransferAsset()
         {
             if(transactionSelectedAssetId != 0)
             {
+                //Asset Change
+                Asset assetToModify = assetRepositoryControl.RetrieveAsset(transactionSelectedAssetId).retrievedAsset;
 
                 // Log Creation
-                string query = "INSERT INTO TransferLog (assetId, assetAdminTransfererId, assetCoordReceiverId, date, supportingDocumentImage) " +
-                    "VALUES (@selectedAssetId, @adminId, @coordRId, @date, @docImage)";
+                string query = "INSERT INTO TransferLog (assetId, assetAdminTransfererId, assetCoordReceiverId, date, previousOffice, supportingDocumentImage) " +
+                    "VALUES (@selectedAssetId, @adminId, @coordRId, @date, @prev, @docImage)";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>()
                 {
@@ -281,6 +291,7 @@ namespace LGU_SV_Asset_Management_Sytem
                     {"@adminId",  mainform.RoleBasedID},
                     {"@coordRId",  coordinatorId},
                     {"@date",  mainform.dateTimePickerTransactionTransferDate.Value},
+                    {"@prev", assetToModify.AssetLocation},
                     {"@docImage",  Utilities.ConvertImageToBytes(mainform.pictureBoxTransactionTransferDocumentImage.Image)}
                 };
 
@@ -289,9 +300,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 databaseConnection.CloseConnection();
 
 
+                await Task.Delay(2000); 
 
-                //Asset Change
-                Asset assetToModify = assetRepositoryControl.RetrieveAsset(transactionSelectedAssetId).retrievedAsset;
 
 
                 assetToModify.AssetLocation = $"{assetCoordinatorRepositoryControl.GetCoordinatorOffice(coordinatorId).office}";
@@ -306,6 +316,9 @@ namespace LGU_SV_Asset_Management_Sytem
                                    $"\ndocImage: {Utilities.ConvertImageToBytes(mainform.pictureBoxTransactionTransferDocumentImage.Image)}" +
                                    $"\nassetCoordinatorRepositoryControl.GetCoordinatorOffice(coordinatorId).office: {assetCoordinatorRepositoryControl.GetCoordinatorOffice(coordinatorId).office}" +
                                    $"");
+
+                databaseConnection.CloseConnection();
+
                 ClearAll();
 
             }

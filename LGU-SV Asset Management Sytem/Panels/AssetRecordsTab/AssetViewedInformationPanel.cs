@@ -305,6 +305,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         SwitchLogPanel(transferLogPanel);
 
                         break;
+                    case "Rents":
+                        RentLogPanel.AssetRentLogPanel assetRentLogPanel = new RentLogPanel.AssetRentLogPanel(panelLogsHandler, asset, currentUser);
+                        SwitchLogPanel(assetRentLogPanel);
+                        break;
                     case "Borrowed And Returns":
                         BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(borrowedAndReturnsLogPanel);
