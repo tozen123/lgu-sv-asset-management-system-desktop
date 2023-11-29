@@ -140,6 +140,83 @@ namespace LGU_SV_Asset_Management_Sytem
                     return (false, ex.Message);
                 }
             }
+
+            public (string name, bool Success, string ErrorMessage) GetCoordinatorName(int id)
+            {
+                try
+                {
+                    string query = "SELECT FName, MName, LName FROM AssetCoordinator WHERE Id = @id";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", id }
+                    };
+
+                    DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+                    if (resultTable.Rows.Count > 0)
+                    {
+                        DataRow row = resultTable.Rows[0];
+
+                       
+                        string fname = row["FName"].ToString();
+                        string mname = row["MName"].ToString();
+                        string lname = row["LName"].ToString();
+
+                        string resultName = $"{fname} {mname} {lname}";
+
+                        databaseConnection.CloseConnection();
+
+                        return (resultName, true, null);
+                    }
+                    else
+                    {
+                        
+                        return ("", false, "No matching record found.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return ("", false, ex.Message);
+                }
+            }
+
+            public (string office, bool Success, string ErrorMessage) GetCoordinatorOffice(int id)
+            {
+                try
+                {
+                    string query = "SELECT Office FROM AssetCoordinator WHERE Id = @id";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", id }
+                    };
+
+                    DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+                    if (resultTable.Rows.Count > 0)
+                    {
+                        DataRow row = resultTable.Rows[0];
+
+
+                        string office = row["Office"].ToString();
+               
+
+                        string resultName = $"{office}";
+
+                        databaseConnection.CloseConnection();
+
+                        return (resultName, true, null);
+                    }
+                    else
+                    {
+
+                        return ("", false, "No matching record found.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return ("", false, ex.Message);
+                }
+            }
         }
     }
 }

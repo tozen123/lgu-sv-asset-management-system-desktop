@@ -197,8 +197,8 @@ namespace LGU_SV_Asset_Management_Sytem
                            "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
                            "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
                            "FROM Assets A " +
-                           "LEFT JOIN AssetAdministrator AAdmin ON AAdmin.Id = AAdmin.Id " +
-                           "LEFT JOIN AssetCoordinator ACoor ON ACoor.Id = ACoor.Id " +
+                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                            "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
                            "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit;

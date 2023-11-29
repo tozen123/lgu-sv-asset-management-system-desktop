@@ -74,6 +74,12 @@
     <Compile Include="DialogBoxes\OptionDialogBox.Designer.cs">
       <DependentUpon>OptionDialogBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\TransactionConfirmationPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\TransactionConfirmationPrompt.Designer.cs">
+      <DependentUpon>TransactionConfirmationPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Other Tools\MenuButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -225,6 +231,7 @@
     <Compile Include="Utilities.cs" />
     <Compile Include="Worker.cs" />
     <Compile Include="Worker1.cs" />
+    <Compile Include="Worker2.cs" />
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\OptionDialogBox.resx">
       <DependentUpon>OptionDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\TransactionConfirmationPrompt.resx">
+      <DependentUpon>TransactionConfirmationPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\UploadImageDialogBox.resx">
       <DependentUpon>UploadImageDialogBox.cs</DependentUpon>
@@ -366,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buttonBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

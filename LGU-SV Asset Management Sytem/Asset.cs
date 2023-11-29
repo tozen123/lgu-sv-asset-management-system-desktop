@@ -258,7 +258,35 @@ namespace LGU_SV_Asset_Management_Sytem
                     return (false, ex.Message);
                 }
             }
+            public (bool Success, string ErrorMessage) UpdateOfficeAndLocationToDatabase(Asset _asset)
+            {
+                try
+                {
+                    string query = "UPDATE Assets " +
+                        "SET " +
+                        "assetLocation = @assetLocation, " +
+                        "currentCustodianAssetCoordID = @currentCustodianAssetCoordID " +
+                        "WHERE " +
+                        "assetId = @assetId";
 
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@assetId", _asset.AssetId},
+                        {"@assetLocation", _asset.AssetLocation},
+                        {"@currentCustodianAssetCoordID", _asset.CurrentEmployeeId}
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+            }
             public (bool Success, string ErrorMessage) DeleteToDatabase(Asset asset)
             {
                 try

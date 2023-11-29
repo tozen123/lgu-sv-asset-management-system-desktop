@@ -122,13 +122,16 @@ namespace LGU_SV_Asset_Management_Sytem
             mainform.textBoxTransactionRentAssetDescription.Text = string.Empty;
             mainform.textBoxTransactionRentAssetPurpose.Text = string.Empty;
 
-            mainform.PictureBoxTransactionRentAssetImage.Image = null;
+            mainform.PictureBoxTransactionRentAssetImage.Image = LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+
+            transactionSelectedAssetId = 0; 
+
         }
 
-        
+        int transactionSelectedAssetId; 
         public void DataGridViewCellMouseClick(int assetId)
         {
-
+            transactionSelectedAssetId = assetId;
             var result = assetRepositoryControl.RetrieveAsset(assetId);
             if (result.Success)
             {
@@ -142,7 +145,19 @@ namespace LGU_SV_Asset_Management_Sytem
                 mainform.PictureBoxTransactionRentAssetImage.Image = Utilities.ConvertByteArrayToImage(selectedAsset.AssetImage);
             }   
         }
-
+        public Asset AssetInProcess()
+        {
+            if (transactionSelectedAssetId != 0)
+            {
+                var result = assetRepositoryControl.RetrieveAsset(transactionSelectedAssetId);
+                return result.retrievedAsset;
+            }
+            else
+            {
+                return null;
+            }
+                
+        }
         private string RetrieveCoordinatorName(int id)
         {
 
@@ -164,6 +179,88 @@ namespace LGU_SV_Asset_Management_Sytem
             databaseConnection.CloseConnection();
 
             return result;
+        }
+
+
+        public void InitiateImageUploader()
+        {
+            using (DialogBoxes.UploadImageDialogBox uploadImageDialogBox = new DialogBoxes.UploadImageDialogBox())
+            {
+                if (uploadImageDialogBox.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] _imagedata = uploadImageDialogBox.imageByte;
+                    if (_imagedata != null)
+                    {
+                        mainform.pictureBoxValidIDImage.Image = Utilities.ConvertByteArrayToImage(_imagedata);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+       
+        public void InitiateAssetTransfer()
+        {
+            if(transactionSelectedAssetId != 0)
+            {
+                string fname = mainform.textBoxTransactionRenteeFName.Text;
+                string mname = mainform.textBoxTransactionRenteeMName.Text;
+                string lname = mainform.textBoxTransactionRenteeLName.Text;
+                string addr = mainform.richTextBoxTransactionRenteeAddr.Text;
+
+                DateTime bdate = mainform.dateTimeTransactionRenteeBDate.Value;
+                string cnumber = mainform.textBoxTransactionRenteeContactNumber.Text;
+                string lnumber = mainform.textBoxTransactionRenteeLicenseID.Text;
+                Image validimage = mainform.pictureBoxValidIDImage.Image;
+
+
+                if (string.IsNullOrEmpty(fname))
+                {
+                    return;
+                }
+
+
+                string query = "INSERT INTO RentLog (assetId, renteeFirstName, renteeMidName, renteeLastName, renteeAddress, " +
+                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage ) VALUES " +
+                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage )";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>()
+                {
+                    {"@selectedAssetId", transactionSelectedAssetId},
+                    {"@fname", fname},
+                    {"@mname", mname},
+                    {"@lname", lname},
+                    {"@addr", addr},
+                    {"@bdate", bdate},
+                    {"@cnumber", cnumber},
+                    {"@lnumber", lnumber},
+                    {"@validimage", Utilities.ConvertImageToBytes(validimage)}
+
+                };
+
+                databaseConnection.ReadFromDatabase(query, parameters);
+                databaseConnection.CloseConnection();
+            }
+
+            mainform.pictureBoxValidIDImage.Image = LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            mainform.dateTimeTransactionRenteeBDate.Value = DateTime.Now;
+
+            Control[] c = { 
+                mainform.textBoxTransactionRenteeFName, 
+                mainform.textBoxTransactionRenteeMName, 
+                mainform.textBoxTransactionRenteeLName,
+                mainform.richTextBoxTransactionRenteeAddr,
+                mainform.textBoxTransactionRenteeContactNumber,
+                mainform.textBoxTransactionRenteeLicenseID
+            };
+            Utilities.ClearTextFieldsHandler(c);
+
+            AssetSearchFilterClear();
+
+            //Reset
+            transactionSelectedAssetId = 0;
         }
     }
  
