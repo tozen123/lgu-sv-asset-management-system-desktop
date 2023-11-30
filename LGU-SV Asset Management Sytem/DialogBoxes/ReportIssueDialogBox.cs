@@ -26,6 +26,9 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
 
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
             _name = name;
           
         }

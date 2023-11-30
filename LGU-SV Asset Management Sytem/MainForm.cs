@@ -1343,7 +1343,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 {
                     if (!string.IsNullOrEmpty(searchKeyword))
                     {
-                        string filterExpression = $"assetName LIKE '%{searchKeyword}%'";
+                        string filterExpression = $"assetName LIKE '%{searchKeyword}%' OR assetPropertyNumber LIKE '%{searchKeyword}%'";
 
 
                         dataTable.DefaultView.RowFilter = filterExpression;

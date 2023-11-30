@@ -174,7 +174,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                         break;
 
-                    case "ssetIsMissing":
+                    case "assetIsMissing":
                         col.HeaderText = "";
                         col.Visible = false;
                         break;

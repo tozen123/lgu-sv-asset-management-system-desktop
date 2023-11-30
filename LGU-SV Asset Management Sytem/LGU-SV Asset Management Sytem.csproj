@@ -57,6 +57,12 @@
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetCategory.cs" />
     <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="DialogBoxes\AddAssetBasedOnExistingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\AddAssetBasedOnExistingDialog.Designer.cs">
+      <DependentUpon>AddAssetBasedOnExistingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\AssetUploadImageDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="Other Tools\RoundedPanel\RoundedPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\AddExistingAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\AddExistingAssetPanel.Designer.cs">
+      <DependentUpon>AddExistingAssetPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\AssetRecordsTab\AddAssetPanel.cs">
       <SubType>UserControl</SubType>
@@ -259,6 +271,9 @@
     <Compile Include="Worker2.cs" />
     <Compile Include="Worker3.cs" />
     <Compile Include="Worker4.cs" />
+    <EmbeddedResource Include="DialogBoxes\AddAssetBasedOnExistingDialog.resx">
+      <DependentUpon>AddAssetBasedOnExistingDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Other Tools\RoundedButton.resx">
       <DependentUpon>RoundedButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AssetRecordsTab\AddExistingAssetPanel.resx">
+      <DependentUpon>AddExistingAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\AssetRecordsTab\AddAssetPanel.resx">
       <DependentUpon>AddAssetPanel.cs</DependentUpon>
@@ -427,6 +445,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\new_tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonPrev.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

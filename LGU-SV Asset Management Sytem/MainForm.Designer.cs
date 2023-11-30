@@ -161,16 +161,16 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBoxArchiveRecordsSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewArchiveRecords = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.textBoxSearchFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelViewedAssetHandler = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxProfileAddress = new System.Windows.Forms.RichTextBox();
@@ -192,6 +192,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
             this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chartAssetByCategories = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelOffice = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -205,9 +207,9 @@
             this.buttonAssetRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonDashboard = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonOthers = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.menuButtonSortByYear = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.roundedPanelTotalAsset = new LGU_SV_Asset_Management_Sytem.Other_Tools.RoundedPanel.RoundedPanel();
             this.roundedPanelCategoryCount = new LGU_SV_Asset_Management_Sytem.Other_Tools.RoundedPanel.RoundedPanel();
+            this.menuButtonSortByYear = new LGU_SV_Asset_Management_Sytem.MenuButton();
             this.buttonEditProfile = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileCancel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -232,8 +234,6 @@
             this.roundedButtonTransactionTransferSearchName = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonTransactinTransfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonTrasnfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.chartAssetByCategories = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBoxSide.SuspendLayout();
             this.tabTransaction.SuspendLayout();
             this.tabControlTransaction.SuspendLayout();
@@ -269,17 +269,17 @@
             this.tabGenReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabArchiveRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).BeginInit();
             this.tabAssetRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
             this.tabDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelTabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSide
@@ -1784,11 +1784,11 @@
             // 
             // tabArchiveRecords
             // 
+            this.tabArchiveRecords.Controls.Add(this.pictureBox4);
             this.tabArchiveRecords.Controls.Add(this.roundedButtonSearchArchiveRecords);
             this.tabArchiveRecords.Controls.Add(this.textBoxArchiveRecordsSearch);
             this.tabArchiveRecords.Controls.Add(this.dataGridViewArchiveRecords);
             this.tabArchiveRecords.Controls.Add(this.label4);
-            this.tabArchiveRecords.Controls.Add(this.pictureBox4);
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
@@ -1796,6 +1796,17 @@
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox4.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1159, 10);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
             // 
             // textBoxArchiveRecordsSearch
             // 
@@ -1814,6 +1825,7 @@
             this.dataGridViewArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewArchiveRecords.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1857,26 +1869,15 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Archive Records";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox4.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1159, 10);
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            // 
             // tabAssetRecords
             // 
-            this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsNewAsset);
-            this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
+            this.tabAssetRecords.Controls.Add(this.pictureBox2);
             this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.textBoxSearchFilter);
             this.tabAssetRecords.Controls.Add(this.label2);
             this.tabAssetRecords.Controls.Add(this.panelViewedAssetHandler);
-            this.tabAssetRecords.Controls.Add(this.pictureBox2);
+            this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsNewAsset);
+            this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
             this.tabAssetRecords.Controls.Add(this.buttonSearch);
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
@@ -1886,6 +1887,17 @@
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
             this.tabAssetRecords.Resize += new System.EventHandler(this.tabAssetRecords_Resize);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox2.Location = new System.Drawing.Point(31, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1175, 10);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // panelAssetRecordsHandler
             // 
@@ -1933,17 +1945,6 @@
             this.panelViewedAssetHandler.TabIndex = 6;
             this.panelViewedAssetHandler.Visible = false;
             this.panelViewedAssetHandler.Resize += new System.EventHandler(this.panelViewedAssetHandler_Resize);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 71);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1175, 10);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
             // 
             // tabProfile
             // 
@@ -2204,6 +2205,7 @@
             // 
             // tabDashboard
             // 
+            this.tabDashboard.BackColor = System.Drawing.SystemColors.Control;
             this.tabDashboard.Controls.Add(this.label7);
             this.tabDashboard.Controls.Add(this.chartAssetByCategories);
             this.tabDashboard.Controls.Add(this.roundedPanelTotalAsset);
@@ -2218,7 +2220,38 @@
             this.tabDashboard.Size = new System.Drawing.Size(1210, 763);
             this.tabDashboard.TabIndex = 1;
             this.tabDashboard.Text = "tabPage2";
-            this.tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label7.Location = new System.Drawing.Point(26, 418);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 26);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Asset By Condition";
+            // 
+            // chartAssetByCategories
+            // 
+            this.chartAssetByCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartAssetByCategories.BackColor = System.Drawing.SystemColors.Control;
+            chartArea1.Name = "ChartArea1";
+            this.chartAssetByCategories.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAssetByCategories.Legends.Add(legend1);
+            this.chartAssetByCategories.Location = new System.Drawing.Point(28, 456);
+            this.chartAssetByCategories.Name = "chartAssetByCategories";
+            this.chartAssetByCategories.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartAssetByCategories.Series.Add(series1);
+            this.chartAssetByCategories.Size = new System.Drawing.Size(526, 290);
+            this.chartAssetByCategories.TabIndex = 48;
+            this.chartAssetByCategories.Text = "chart1";
             // 
             // labelOffice
             // 
@@ -2518,22 +2551,6 @@
             this.buttonOthers.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
             this.buttonOthers.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
             // 
-            // menuButtonSortByYear
-            // 
-            this.menuButtonSortByYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuButtonSortByYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.menuButtonSortByYear.FlatAppearance.BorderSize = 0;
-            this.menuButtonSortByYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButtonSortByYear.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButtonSortByYear.ForeColor = System.Drawing.Color.White;
-            this.menuButtonSortByYear.Location = new System.Drawing.Point(932, 104);
-            this.menuButtonSortByYear.Name = "menuButtonSortByYear";
-            this.menuButtonSortByYear.Size = new System.Drawing.Size(265, 30);
-            this.menuButtonSortByYear.TabIndex = 47;
-            this.menuButtonSortByYear.Text = "Sort By Acknowledge Year";
-            this.menuButtonSortByYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuButtonSortByYear.UseVisualStyleBackColor = false;
-            // 
             // roundedPanelTotalAsset
             // 
             this.roundedPanelTotalAsset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2563,6 +2580,22 @@
             this.roundedPanelCategoryCount.Size = new System.Drawing.Size(634, 601);
             this.roundedPanelCategoryCount.TabIndex = 42;
             this.roundedPanelCategoryCount.UnderlinedStyle = false;
+            // 
+            // menuButtonSortByYear
+            // 
+            this.menuButtonSortByYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuButtonSortByYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.menuButtonSortByYear.FlatAppearance.BorderSize = 0;
+            this.menuButtonSortByYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButtonSortByYear.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButtonSortByYear.ForeColor = System.Drawing.Color.White;
+            this.menuButtonSortByYear.Location = new System.Drawing.Point(932, 104);
+            this.menuButtonSortByYear.Name = "menuButtonSortByYear";
+            this.menuButtonSortByYear.Size = new System.Drawing.Size(265, 30);
+            this.menuButtonSortByYear.TabIndex = 47;
+            this.menuButtonSortByYear.Text = "Sort By Acknowledge Year";
+            this.menuButtonSortByYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuButtonSortByYear.UseVisualStyleBackColor = false;
             // 
             // buttonEditProfile
             // 
@@ -3116,37 +3149,6 @@
             this.roundedButtonTrasnfer.UseVisualStyleBackColor = false;
             this.roundedButtonTrasnfer.Click += new System.EventHandler(this.roundedButtonTrasnfer_Click);
             // 
-            // chartAssetByCategories
-            // 
-            this.chartAssetByCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chartAssetByCategories.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartAssetByCategories.Legends.Add(legend1);
-            this.chartAssetByCategories.Location = new System.Drawing.Point(28, 456);
-            this.chartAssetByCategories.Name = "chartAssetByCategories";
-            this.chartAssetByCategories.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartAssetByCategories.Series.Add(series1);
-            this.chartAssetByCategories.Size = new System.Drawing.Size(526, 290);
-            this.chartAssetByCategories.TabIndex = 48;
-            this.chartAssetByCategories.Text = "chart1";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label7.Location = new System.Drawing.Point(26, 418);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 26);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "Asset By Condition";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3214,8 +3216,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabArchiveRecords.ResumeLayout(false);
             this.tabArchiveRecords.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).EndInit();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -3225,9 +3227,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
             this.tabDashboard.ResumeLayout(false);
             this.tabDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelTabControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).EndInit();
             this.ResumeLayout(false);
 
         }

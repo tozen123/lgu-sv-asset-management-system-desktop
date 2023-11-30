@@ -29,14 +29,10 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         private void buttonAddExistingAsset_Click(object sender, EventArgs e)
         {
             this.Close();
-
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing, supervisor_id, supervisor_location, panelHandler, mainForm);
-            panelControl.Size = panelHandler.Size;
-
-            Utilities.PanelChanger(panelHandler, panelControl);
-
-            mainForm.buttonSearch.Enabled = false;
-            mainForm.textBoxSearchFilter.Enabled = false;
+            using(AddAssetBasedOnExistingDialog existingDialog = new AddAssetBasedOnExistingDialog(panelHandler, supervisor_id, supervisor_location, mainForm))
+            {
+                existingDialog.ShowDialog();
+            }
         }
 
         private void buttonNewAsset_Click(object sender, EventArgs e)

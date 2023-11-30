@@ -16,7 +16,7 @@ using ZXing.Rendering;
 namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 {
 
-    public partial class AddAssetPanel : UserControl
+    public partial class AddExistingAssetPanel : UserControl
     {
         List<Asset> assetToAdd = new List<Asset>();
 
@@ -28,6 +28,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         string supervisor_location;
         Control pHandler;
         MainForm mainForm;
+
+        Asset asset;
         public enum AssetType
         {
             New,
@@ -36,7 +38,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         public AssetType assetType;
 
-        public AddAssetPanel(AssetType _assetType, string id, string location, Control _panelHandler, MainForm _mf)
+        public AddExistingAssetPanel(AssetType _assetType, string id, string location, Control _panelHandler, MainForm _mf, Asset _basisAsset)
         {
             InitializeComponent();
             supervisor_id = id;
@@ -47,6 +49,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             assetType = _assetType;
             databaseConnection = new DatabaseConnection();
 
+            asset = _basisAsset;
             Init();
 
             Asset newAsset = new Asset();
@@ -71,14 +74,37 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             pictureBoxList.Add(pictureBoxAssetImage);
 
             PopulateComboBoxes();
+
+            //Setup Existing Information
+            comboBoxCondition.SelectedItem = asset.AssetCondition;
+
+            foreach (string item in comboBoxCategory.Items)
+            {
+                if(asset.AssetCategoryId == Convert.ToInt32(item.ToString().Split('|')[1]))
+                {
+                    comboBoxCategory.SelectedItem = item;
+                }
+            }
+
+            richTextBoxPurpose.Text = asset.AssetPurpose;
+            richTextBoxDesc.Text = asset.AssetDescription;
+
+            foreach (string item in comboBoxSupplier.Items)
+            {
+                if (asset.SupplierId == Convert.ToInt32(item.ToString().Split('|')[1]))
+                {
+                    comboBoxSupplier.SelectedItem = item;
+                }
+            }
+
+            pictureBoxAssetImage.Image = Utilities.ConvertByteArrayToImage(asset.AssetImage);
+
+            checkBoxIsMaintanable.Checked = asset.IsMaintainable;
         }
 
         private void PopulateComboBoxes()
         {
-            /*
-            comboBoxAvailability.Items.Add("USED");
-            comboBoxAvailability.Items.Add("AVAILABLE");
-            */
+
             comboBoxCondition.Items.Add("SERVICEABLE");
             comboBoxCondition.Items.Add("NON-SERVICEABLE");
 
@@ -314,17 +340,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 PictureBox PictureBox_assetImage = tabPage.Controls.Find("pictureBoxAssetImage", true).FirstOrDefault() as PictureBox;
 
 
-
                 //New Attrib
-
                 RichTextBox richTextBox_Purpose = tabPage.Controls.Find("richTextBoxPurpose", true).FirstOrDefault() as RichTextBox;
                 RichTextBox richTextBox_description = tabPage.Controls.Find("richTextBoxDesc", true).FirstOrDefault() as RichTextBox;
                 TextBox textBox_pnumber = tabPage.Controls.Find("textBoxPNumber", true).FirstOrDefault() as TextBox;
 
 
-
-
-                // QR Generator
+                //Validation
                 if (string.IsNullOrEmpty(TextBox_AssetName.Text))
                 {
                     MessagePrompt("Empty Field: Asset Name cannot be empty.");
@@ -336,7 +358,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     MessagePrompt("Empty Field: Quantity cannot be empty.");
                     return;
                 }
-                else if (!int.TryParse(textBoxQuantity.Text, out _))
+                else if(!int.TryParse(textBoxQuantity.Text, out _))
                 {
                     MessagePrompt("Invalid Input: Please enter a valid integer for the quantity.");
                     textBoxQuantity.Text = string.Empty;
@@ -403,12 +425,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     return;
                 }
 
-                if (pictureBoxAssetImage.Image == LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image)
+                if(pictureBoxAssetImage.Image == LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image)
                 {
                     MessagePrompt("Empty Field: Please upload an image for the asset");
                     return;
                 }
-
 
                 // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
 
@@ -464,84 +485,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     asset.AssetDescription = richTextBox_description.Text;
 
                     asset.AssetPropertyNumber = Convert.ToInt32(textBox_pnumber.Text); 
-
-                    // LifeSpan
-                /*
-                if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
-                    {
-                        asset.AssetLifeSpan = lifespan;
-                    }
-                */
-                //End Region
-
-
-                /*
-                 * 
-                 * Important Notes to Remember:
-                 * Maintenance are generated after null in the first creation of asset
-                 * 
-                 */
-
-
-                /*
-                // PRE-UPLOAD LOGIC
-                string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
-                    " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
-                    " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
-                    " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
-                    " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
-
-                Dictionary<string, object> parameters = new Dictionary<string, object>()
-                {
-                    { "@supervisorId",  asset.AssetSupervisorId },
-                    { "@employeeId", asset.CurrentEmployeeId },
-                    { "@supplierId",  asset.SupplierId },
-                    { "@categoryId", asset.AssetCategoryId },
-                    { "@name",  asset.AssetName },
-                    { "@condition", asset.AssetCondition },
-                    { "@availability", asset.AssetAvailability },
-                    { "@location", asset.AssetLocation },
-                    { "@isarchive", asset.IsArchive },
-                    { "@purchasedate", asset.AssetPurchaseDate },
-                    { "@purchaseamount", asset.AssetPurchaseAmount },
-                    { "@quantity", asset.AssetQuantity },
-                    { "@unit", asset.AssetQuantity },
-                    { "@image", asset.AssetImage},
-                    { "@ismissing", asset.IsMissing},
-                    { "@ismaintainable", asset.IsMaintainable},
-                    { "@lifeSpan", asset.AssetLifeSpan}
-
-                };
-                int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
-
-                Console.WriteLine("Data Uploaded");
-
-                // POST-UPLOAD LOGIC
-                string QRDefinition = $"assetId:{qr_asset_gen_id};assetName:{asset.AssetName}";
-
-                string query1 = "UPDATE Assets SET assetQrCodeImage = @generatedQrImageByte, assetQrStrDefinition = @qrDefinition WHERE " +
-                    "assetId = @assetId";
-                Dictionary<string, object> parameters1 = new Dictionary<string, object>()
-                {
-                    { "@generatedQrImageByte", GenerateAssetQRImageByte(QRDefinition)},
-                    { "@qrDefinition", QRDefinition},
-                    { "@assetId", qr_asset_gen_id}
-                };
-
-                databaseConnection.UploadToDatabase(query1, parameters1);
-
-                databaseConnection.CloseConnection();
-
-                //pictureBox1.Image = bitmap;
-
-                //Generate Maintanence Logs ID based on the maintainable
-                //Transfer History
-                //Borrowed and Return History
-
-                //QrShow Confirm Final
-
-
-                */
 
 
             }
@@ -678,33 +621,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             return Utilities.ConvertImageToBytes(bitmap);
         }
 
-        private bool IsNullOrEmpty(Control control)
-        {
-            
-            if (control == null)
-            {
-                return true;
-            }
-
-            if (control is TextBox textBox && string.IsNullOrEmpty(textBox.Text))
-            {
-                return true;
-            }
-            else if (control is ComboBox comboBox && (comboBox.SelectedItem == null || comboBox.SelectedItem.ToString() == ""))
-            {
-                return true;
-            }
-            else if (control is DateTimePicker dateTimePicker && dateTimePicker.Value == DateTimePicker.MinimumDateTime)
-            {
-                return true;
-            }
-            else if (control is CheckBox checkBox && !checkBox.Checked)
-            {
-                return true;
-            }
-
-            return false;
-        }
+     
 
         private void MessagePrompt(string message)
         {
