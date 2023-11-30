@@ -78,6 +78,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewRentLogPanel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRentLogPanel.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,6 +101,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
             this.dataGridViewRentLogPanel.ReadOnly = true;
             this.dataGridViewRentLogPanel.Size = new System.Drawing.Size(1156, 610);
             this.dataGridViewRentLogPanel.TabIndex = 14;
+            this.dataGridViewRentLogPanel.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRentLogPanel_CellMouseClick);
             // 
             // AssetRentLogPanel
             // 

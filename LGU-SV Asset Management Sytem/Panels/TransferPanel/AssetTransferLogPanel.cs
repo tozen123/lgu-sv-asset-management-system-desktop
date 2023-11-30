@@ -83,13 +83,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
                 dataGridViewTransferLogs.Columns.Add(col);
             }
 
-            if (dataGridViewTransferLogs.Columns["View Document"] == null)
+            if (dataGridViewTransferLogs.Columns["ViewDocument"] == null)
             {
 
                
                 var viewButtonColumn = new DataGridViewButtonColumn();
                 viewButtonColumn.HeaderText = "Actions";
-                viewButtonColumn.Text = "View Document";
+                viewButtonColumn.Text = "ViewDocument";
                 viewButtonColumn.Name = "ViewDocumentColumn";
                 viewButtonColumn.UseColumnTextForButtonValue = true;
 
@@ -152,6 +152,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
             panelHandlerParent.Controls.Clear();
             panelHandlerParent.SendToBack();
             panelHandlerParent.Visible = false;
+        }
+
+        private void dataGridViewTransferLogs_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransferLogs.Rows[e.RowIndex];
+
+                if (e.ColumnIndex == dataGridViewTransferLogs.Columns["ViewDocumentColumn"].Index)
+                {
+                    byte[] i = (byte[])selectedRow.Cells["supportingDocumentImage"].Value;
+                    DialogBoxes.DialogImageViewer dialogImageViewer = new DialogBoxes.DialogImageViewer();
+                    dialogImageViewer.SetImage(Utilities.ConvertByteArrayToImage(i));
+                    dialogImageViewer.ShowDialog();
+                }
+            }
+
         }
     }
 }

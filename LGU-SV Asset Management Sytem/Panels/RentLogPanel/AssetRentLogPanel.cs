@@ -66,6 +66,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
                     case "assetId":
                         col.Visible = false;
                         break;
+                    case "rentInitiatedDate":
+                        col.HeaderText = "Rent Start Date";
+                        break;
+                    case "rentReturnDate":
+                        col.HeaderText = "Rent Returned Date";
+                        col.DefaultCellStyle.NullValue = "Not Returned";
+                        break;
                     default:
                         col.HeaderText = column.ColumnName;
                         break;
@@ -109,8 +116,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
                                 rl.assetId,
                                 CONCAT(rl.renteeFirstName, ' ', rl.renteeMidName, ' ', rl.renteeLastName) AS renteeFullName,
                                 rl.renteeAddress,
-                                rl.renteeContactNumber
-                                
+                                rl.renteeContactNumber, 
+                                rl.rentInitiatedDate, 
+                                rl.rentReturnDate
                             FROM
                                 RentLog rl
                             JOIN
@@ -118,9 +126,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
                             WHERE
                                 rl.assetId = @selectedAssetId
                         ";
-
-
-
 
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
@@ -145,6 +150,25 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
             panelHandlerParent.Controls.Clear();
             panelHandlerParent.SendToBack();
             panelHandlerParent.Visible = false;
+        }
+
+        private void dataGridViewRentLogPanel_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewRentLogPanel.Rows[e.RowIndex];
+
+                if (e.ColumnIndex == dataGridViewRentLogPanel.Columns["TrackRentColumn"].Index)
+                {
+                    RentTrackerForm form = new RentTrackerForm();
+                    form.SetRentID(Convert.ToInt32(selectedRow.Cells["rentId"].Value));
+                    form.SetAssetID(Convert.ToInt32(selectedRow.Cells["assetId"].Value));
+                    form.Initialize();
+                    form.ShowDialog();
+
+                }
+            }
+
         }
     }
 }

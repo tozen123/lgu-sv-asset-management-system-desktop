@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
             this.tabTransaction = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
@@ -64,6 +67,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.comboBoxTransactionRentCat = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerTransactionRentStart = new System.Windows.Forms.DateTimePicker();
+            this.label53 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label40 = new System.Windows.Forms.Label();
             this.textBoxTransactionRenteeLicenseID = new System.Windows.Forms.TextBox();
@@ -109,7 +114,7 @@
             this.tabPageRequestAndBorrow = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.tabSettings = new System.Windows.Forms.TabPage();
+            this.tabMissing = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.richTextBoxAboutHeader = new System.Windows.Forms.RichTextBox();
@@ -198,6 +203,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTabControl = new System.Windows.Forms.TabControl();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.textBoxMissingRecords = new System.Windows.Forms.TextBox();
+            this.dataGridViewMissingAssetRecords = new System.Windows.Forms.DataGridView();
+            this.roundedButtonMissingRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonLogout = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonAbout = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonTransaction = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -223,6 +232,7 @@
             this.roundedButtonAboutPolicy = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonReportAnIssue = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonUserManual = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonMissingRecordsSearch = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonRent = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonTransactionRentAssetFilterCLear = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -255,7 +265,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferReceiver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.tabSettings.SuspendLayout();
+            this.tabMissing.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tabOthers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -280,6 +290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMissingAssetRecords)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSide
@@ -287,6 +299,7 @@
             this.groupBoxSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(225)))));
+            this.groupBoxSide.Controls.Add(this.roundedButtonMissingRecords);
             this.groupBoxSide.Controls.Add(this.buttonLogout);
             this.groupBoxSide.Controls.Add(this.buttonAbout);
             this.groupBoxSide.Controls.Add(this.buttonTransaction);
@@ -382,7 +395,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(29, 51);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1071, 323);
+            this.groupBox2.Size = new System.Drawing.Size(1071, 275);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Asset Information";
@@ -393,10 +406,10 @@
             this.dataGridViewTransactionRentAsset.AllowUserToDeleteRows = false;
             this.dataGridViewTransactionRentAsset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTransactionRentAsset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTransactionRentAsset.Location = new System.Drawing.Point(15, 141);
+            this.dataGridViewTransactionRentAsset.Location = new System.Drawing.Point(15, 130);
             this.dataGridViewTransactionRentAsset.Name = "dataGridViewTransactionRentAsset";
             this.dataGridViewTransactionRentAsset.ReadOnly = true;
-            this.dataGridViewTransactionRentAsset.Size = new System.Drawing.Size(339, 162);
+            this.dataGridViewTransactionRentAsset.Size = new System.Drawing.Size(339, 137);
             this.dataGridViewTransactionRentAsset.TabIndex = 35;
             this.dataGridViewTransactionRentAsset.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewTransactionRentAsset_CellMouseClick);
             // 
@@ -415,9 +428,9 @@
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.textBoxTransactionRentAssetName);
             this.groupBox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(372, 30);
+            this.groupBox3.Location = new System.Drawing.Point(372, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(680, 273);
+            this.groupBox3.Size = new System.Drawing.Size(680, 248);
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Details";
@@ -429,7 +442,7 @@
             this.PictureBoxTransactionRentAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
             this.PictureBoxTransactionRentAssetImage.Location = new System.Drawing.Point(432, 66);
             this.PictureBoxTransactionRentAssetImage.Name = "PictureBoxTransactionRentAssetImage";
-            this.PictureBoxTransactionRentAssetImage.Size = new System.Drawing.Size(242, 198);
+            this.PictureBoxTransactionRentAssetImage.Size = new System.Drawing.Size(242, 176);
             this.PictureBoxTransactionRentAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxTransactionRentAssetImage.TabIndex = 45;
             this.PictureBoxTransactionRentAssetImage.TabStop = false;
@@ -452,7 +465,7 @@
             this.textBoxTransactionRentAssetPurpose.Location = new System.Drawing.Point(254, 189);
             this.textBoxTransactionRentAssetPurpose.Name = "textBoxTransactionRentAssetPurpose";
             this.textBoxTransactionRentAssetPurpose.ReadOnly = true;
-            this.textBoxTransactionRentAssetPurpose.Size = new System.Drawing.Size(171, 75);
+            this.textBoxTransactionRentAssetPurpose.Size = new System.Drawing.Size(171, 53);
             this.textBoxTransactionRentAssetPurpose.TabIndex = 43;
             this.textBoxTransactionRentAssetPurpose.Text = "";
             // 
@@ -473,7 +486,7 @@
             this.textBoxTransactionRentAssetDescription.Location = new System.Drawing.Point(254, 111);
             this.textBoxTransactionRentAssetDescription.Name = "textBoxTransactionRentAssetDescription";
             this.textBoxTransactionRentAssetDescription.ReadOnly = true;
-            this.textBoxTransactionRentAssetDescription.Size = new System.Drawing.Size(171, 75);
+            this.textBoxTransactionRentAssetDescription.Size = new System.Drawing.Size(171, 72);
             this.textBoxTransactionRentAssetDescription.TabIndex = 41;
             this.textBoxTransactionRentAssetDescription.Text = "";
             // 
@@ -533,7 +546,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(20, 66);
+            this.label30.Location = new System.Drawing.Point(20, 55);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(68, 22);
             this.label30.TabIndex = 3;
@@ -543,7 +556,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(11, 38);
+            this.label29.Location = new System.Drawing.Point(11, 27);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(67, 22);
             this.label29.TabIndex = 2;
@@ -553,7 +566,7 @@
             // 
             this.comboBoxTransactionRentCat.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTransactionRentCat.FormattingEnabled = true;
-            this.comboBoxTransactionRentCat.Location = new System.Drawing.Point(91, 63);
+            this.comboBoxTransactionRentCat.Location = new System.Drawing.Point(91, 52);
             this.comboBoxTransactionRentCat.Name = "comboBoxTransactionRentCat";
             this.comboBoxTransactionRentCat.Size = new System.Drawing.Size(263, 30);
             this.comboBoxTransactionRentCat.TabIndex = 1;
@@ -563,6 +576,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dateTimePickerTransactionRentStart);
+            this.groupBox1.Controls.Add(this.label53);
             this.groupBox1.Controls.Add(this.groupBox8);
             this.groupBox1.Controls.Add(this.label42);
             this.groupBox1.Controls.Add(this.textBoxTransactionRenteeContactNumber);
@@ -577,12 +592,35 @@
             this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.textBoxTransactionRenteeFName);
             this.groupBox1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(29, 380);
+            this.groupBox1.Location = new System.Drawing.Point(29, 332);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1071, 220);
+            this.groupBox1.Size = new System.Drawing.Size(1071, 272);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rentee Information";
+            // 
+            // dateTimePickerTransactionRentStart
+            // 
+            this.dateTimePickerTransactionRentStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerTransactionRentStart.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTransactionRentStart.Location = new System.Drawing.Point(147, 208);
+            this.dateTimePickerTransactionRentStart.Name = "dateTimePickerTransactionRentStart";
+            this.dateTimePickerTransactionRentStart.Size = new System.Drawing.Size(475, 25);
+            this.dateTimePickerTransactionRentStart.TabIndex = 61;
+            // 
+            // label53
+            // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(57, 211);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(69, 22);
+            this.label53.TabIndex = 60;
+            this.label53.Text = "Rent Start:";
             // 
             // groupBox8
             // 
@@ -596,7 +634,7 @@
             this.groupBox8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(644, 101);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(392, 113);
+            this.groupBox8.Size = new System.Drawing.Size(392, 165);
             this.groupBox8.TabIndex = 59;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Rentee VALID ID ";
@@ -633,7 +671,7 @@
             this.pictureBoxValidIDImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
             this.pictureBoxValidIDImage.Location = new System.Drawing.Point(6, 49);
             this.pictureBoxValidIDImage.Name = "pictureBoxValidIDImage";
-            this.pictureBoxValidIDImage.Size = new System.Drawing.Size(379, 22);
+            this.pictureBoxValidIDImage.Size = new System.Drawing.Size(379, 74);
             this.pictureBoxValidIDImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxValidIDImage.TabIndex = 0;
             this.pictureBoxValidIDImage.TabStop = false;
@@ -691,7 +729,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.richTextBoxTransactionRenteeAddr.Location = new System.Drawing.Point(147, 101);
             this.richTextBoxTransactionRenteeAddr.Name = "richTextBoxTransactionRenteeAddr";
-            this.richTextBoxTransactionRenteeAddr.Size = new System.Drawing.Size(475, 113);
+            this.richTextBoxTransactionRenteeAddr.Size = new System.Drawing.Size(475, 91);
             this.richTextBoxTransactionRenteeAddr.TabIndex = 47;
             this.richTextBoxTransactionRenteeAddr.Text = "";
             // 
@@ -1130,16 +1168,20 @@
             this.pictureBox7.TabIndex = 10;
             this.pictureBox7.TabStop = false;
             // 
-            // tabSettings
+            // tabMissing
             // 
-            this.tabSettings.Controls.Add(this.label8);
-            this.tabSettings.Location = new System.Drawing.Point(4, 22);
-            this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(1210, 763);
-            this.tabSettings.TabIndex = 7;
-            this.tabSettings.Text = "tabPage8";
-            this.tabSettings.UseVisualStyleBackColor = true;
+            this.tabMissing.Controls.Add(this.dataGridViewMissingAssetRecords);
+            this.tabMissing.Controls.Add(this.roundedButtonMissingRecordsSearch);
+            this.tabMissing.Controls.Add(this.textBoxMissingRecords);
+            this.tabMissing.Controls.Add(this.pictureBox8);
+            this.tabMissing.Controls.Add(this.label8);
+            this.tabMissing.Location = new System.Drawing.Point(4, 22);
+            this.tabMissing.Name = "tabMissing";
+            this.tabMissing.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMissing.Size = new System.Drawing.Size(1210, 763);
+            this.tabMissing.TabIndex = 7;
+            this.tabMissing.Text = "tabPage8";
+            this.tabMissing.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -1148,9 +1190,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.label8.Location = new System.Drawing.Point(20, 15);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 62);
+            this.label8.Size = new System.Drawing.Size(430, 62);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Settings";
+            this.label8.Text = "Missing Asset Records";
             // 
             // tabAbout
             // 
@@ -1369,23 +1411,23 @@
             this.dataGridViewOtherOperator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOtherOperator.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOtherOperator.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOtherOperator.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewOtherOperator.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewOtherOperator.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewOtherOperator.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewOtherOperator.Name = "dataGridViewOtherOperator";
             this.dataGridViewOtherOperator.ReadOnly = true;
@@ -1537,23 +1579,23 @@
             this.dataGridViewSupplier.AllowUserToDeleteRows = false;
             this.dataGridViewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSupplier.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSupplier.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewSupplier.Location = new System.Drawing.Point(7, 7);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.ReadOnly = true;
@@ -1667,23 +1709,23 @@
             this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
             this.dataGridViewAssetCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAssetCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAssetCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAssetCategories.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAssetCategories.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
             this.dataGridViewAssetCategories.ReadOnly = true;
@@ -1785,10 +1827,10 @@
             // tabArchiveRecords
             // 
             this.tabArchiveRecords.Controls.Add(this.pictureBox4);
-            this.tabArchiveRecords.Controls.Add(this.roundedButtonSearchArchiveRecords);
             this.tabArchiveRecords.Controls.Add(this.textBoxArchiveRecordsSearch);
             this.tabArchiveRecords.Controls.Add(this.dataGridViewArchiveRecords);
             this.tabArchiveRecords.Controls.Add(this.label4);
+            this.tabArchiveRecords.Controls.Add(this.roundedButtonSearchArchiveRecords);
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
@@ -1826,34 +1868,34 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewArchiveRecords.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewArchiveRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewArchiveRecords.Location = new System.Drawing.Point(29, 88);
             this.dataGridViewArchiveRecords.Name = "dataGridViewArchiveRecords";
             this.dataGridViewArchiveRecords.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Poppins", 11.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Poppins", 11.25F);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewArchiveRecords.Size = new System.Drawing.Size(1159, 669);
             this.dataGridViewArchiveRecords.TabIndex = 7;
             this.dataGridViewArchiveRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArchiveRecords_CellContentClick);
@@ -2238,17 +2280,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetByCategories.BackColor = System.Drawing.SystemColors.Control;
-            chartArea1.Name = "ChartArea1";
-            this.chartAssetByCategories.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartAssetByCategories.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartAssetByCategories.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartAssetByCategories.Legends.Add(legend2);
             this.chartAssetByCategories.Location = new System.Drawing.Point(28, 456);
             this.chartAssetByCategories.Name = "chartAssetByCategories";
             this.chartAssetByCategories.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartAssetByCategories.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartAssetByCategories.Series.Add(series2);
             this.chartAssetByCategories.Size = new System.Drawing.Size(526, 290);
             this.chartAssetByCategories.TabIndex = 48;
             this.chartAssetByCategories.Text = "chart1";
@@ -2298,7 +2340,7 @@
             this.panelTabControl.Controls.Add(this.tabGenReport);
             this.panelTabControl.Controls.Add(this.tabOthers);
             this.panelTabControl.Controls.Add(this.tabAbout);
-            this.panelTabControl.Controls.Add(this.tabSettings);
+            this.panelTabControl.Controls.Add(this.tabMissing);
             this.panelTabControl.Controls.Add(this.tabTransaction);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.panelTabControl.Location = new System.Drawing.Point(203, 6);
@@ -2308,6 +2350,93 @@
             this.panelTabControl.Size = new System.Drawing.Size(1218, 789);
             this.panelTabControl.TabIndex = 0;
             this.panelTabControl.Resize += new System.EventHandler(this.panelTabControl_Resize);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox8.Location = new System.Drawing.Point(31, 67);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(1159, 10);
+            this.pictureBox8.TabIndex = 7;
+            this.pictureBox8.TabStop = false;
+            // 
+            // textBoxMissingRecords
+            // 
+            this.textBoxMissingRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMissingRecords.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMissingRecords.Location = new System.Drawing.Point(857, 30);
+            this.textBoxMissingRecords.Name = "textBoxMissingRecords";
+            this.textBoxMissingRecords.Size = new System.Drawing.Size(292, 31);
+            this.textBoxMissingRecords.TabIndex = 40;
+            this.textBoxMissingRecords.TextChanged += new System.EventHandler(this.textBoxMissingRecords_TextChanged);
+            // 
+            // dataGridViewMissingAssetRecords
+            // 
+            this.dataGridViewMissingAssetRecords.AllowUserToAddRows = false;
+            this.dataGridViewMissingAssetRecords.AllowUserToDeleteRows = false;
+            this.dataGridViewMissingAssetRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewMissingAssetRecords.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMissingAssetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewMissingAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMissingAssetRecords.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewMissingAssetRecords.Location = new System.Drawing.Point(31, 88);
+            this.dataGridViewMissingAssetRecords.Name = "dataGridViewMissingAssetRecords";
+            this.dataGridViewMissingAssetRecords.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Poppins", 11.25F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMissingAssetRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewMissingAssetRecords.Size = new System.Drawing.Size(1159, 669);
+            this.dataGridViewMissingAssetRecords.TabIndex = 42;
+            // 
+            // roundedButtonMissingRecords
+            // 
+            this.roundedButtonMissingRecords.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButtonMissingRecords.BackgroundColor = System.Drawing.Color.Transparent;
+            this.roundedButtonMissingRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.roundedButtonMissingRecords.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonMissingRecords.BorderRadius = 0;
+            this.roundedButtonMissingRecords.BorderSize = 0;
+            this.roundedButtonMissingRecords.FlatAppearance.BorderSize = 0;
+            this.roundedButtonMissingRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonMissingRecords.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonMissingRecords.ForeColor = System.Drawing.Color.Black;
+            this.roundedButtonMissingRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonMissingAsset;
+            this.roundedButtonMissingRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.roundedButtonMissingRecords.Location = new System.Drawing.Point(13, 342);
+            this.roundedButtonMissingRecords.Name = "roundedButtonMissingRecords";
+            this.roundedButtonMissingRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonMissingRecords.Size = new System.Drawing.Size(186, 46);
+            this.roundedButtonMissingRecords.TabIndex = 39;
+            this.roundedButtonMissingRecords.Text = "MISSING RECORDS     ";
+            this.roundedButtonMissingRecords.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.roundedButtonMissingRecords.TextColor = System.Drawing.Color.Black;
+            this.roundedButtonMissingRecords.UseVisualStyleBackColor = false;
+            this.roundedButtonMissingRecords.Click += new System.EventHandler(this.roundedButtonMissingRecords_Click);
+            this.roundedButtonMissingRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.roundedButtonMissingRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
             // 
             // buttonLogout
             // 
@@ -2379,7 +2508,7 @@
             this.buttonTransaction.ForeColor = System.Drawing.Color.Black;
             this.buttonTransaction.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonTransaction;
             this.buttonTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTransaction.Location = new System.Drawing.Point(15, 416);
+            this.buttonTransaction.Location = new System.Drawing.Point(13, 479);
             this.buttonTransaction.Name = "buttonTransaction";
             this.buttonTransaction.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonTransaction.Size = new System.Drawing.Size(185, 46);
@@ -2430,7 +2559,7 @@
             this.buttonGenerateReports.ForeColor = System.Drawing.Color.Black;
             this.buttonGenerateReports.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonGenerateReports;
             this.buttonGenerateReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGenerateReports.Location = new System.Drawing.Point(15, 342);
+            this.buttonGenerateReports.Location = new System.Drawing.Point(13, 405);
             this.buttonGenerateReports.Name = "buttonGenerateReports";
             this.buttonGenerateReports.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonGenerateReports.Size = new System.Drawing.Size(185, 46);
@@ -2538,7 +2667,7 @@
             this.buttonOthers.ForeColor = System.Drawing.Color.Black;
             this.buttonOthers.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonMisc;
             this.buttonOthers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonOthers.Location = new System.Drawing.Point(15, 493);
+            this.buttonOthers.Location = new System.Drawing.Point(13, 556);
             this.buttonOthers.Name = "buttonOthers";
             this.buttonOthers.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonOthers.Size = new System.Drawing.Size(183, 46);
@@ -2904,6 +3033,30 @@
             this.roundedButtonUserManual.UseVisualStyleBackColor = false;
             this.roundedButtonUserManual.Click += new System.EventHandler(this.roundedButtonUserManual_Click);
             // 
+            // roundedButtonMissingRecordsSearch
+            // 
+            this.roundedButtonMissingRecordsSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonMissingRecordsSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonMissingRecordsSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonMissingRecordsSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButtonMissingRecordsSearch.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonMissingRecordsSearch.BorderRadius = 0;
+            this.roundedButtonMissingRecordsSearch.BorderSize = 0;
+            this.roundedButtonMissingRecordsSearch.Enabled = false;
+            this.roundedButtonMissingRecordsSearch.FlatAppearance.BorderSize = 0;
+            this.roundedButtonMissingRecordsSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonMissingRecordsSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonMissingRecordsSearch.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonMissingRecordsSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.roundedButtonMissingRecordsSearch.Location = new System.Drawing.Point(1155, 30);
+            this.roundedButtonMissingRecordsSearch.Name = "roundedButtonMissingRecordsSearch";
+            this.roundedButtonMissingRecordsSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonMissingRecordsSearch.Size = new System.Drawing.Size(36, 31);
+            this.roundedButtonMissingRecordsSearch.TabIndex = 41;
+            this.roundedButtonMissingRecordsSearch.TextColor = System.Drawing.Color.White;
+            this.roundedButtonMissingRecordsSearch.UseVisualStyleBackColor = false;
+            this.roundedButtonMissingRecordsSearch.Click += new System.EventHandler(this.roundedButtonMissingRecordsSearch_Click);
+            // 
             // roundedButtonRent
             // 
             this.roundedButtonRent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2961,7 +3114,7 @@
             this.roundedButtonTransactionRentAssetFilterCLear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonTransactionRentAssetFilterCLear.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonTransactionRentAssetFilterCLear.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRentAssetFilterCLear.Location = new System.Drawing.Point(147, 99);
+            this.roundedButtonTransactionRentAssetFilterCLear.Location = new System.Drawing.Point(147, 88);
             this.roundedButtonTransactionRentAssetFilterCLear.Name = "roundedButtonTransactionRentAssetFilterCLear";
             this.roundedButtonTransactionRentAssetFilterCLear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.roundedButtonTransactionRentAssetFilterCLear.Size = new System.Drawing.Size(101, 33);
@@ -2982,7 +3135,7 @@
             this.roundedButtonTransactionRentCatApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonTransactionRentCatApply.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonTransactionRentCatApply.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRentCatApply.Location = new System.Drawing.Point(253, 99);
+            this.roundedButtonTransactionRentCatApply.Location = new System.Drawing.Point(253, 88);
             this.roundedButtonTransactionRentCatApply.Name = "roundedButtonTransactionRentCatApply";
             this.roundedButtonTransactionRentCatApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.roundedButtonTransactionRentCatApply.Size = new System.Drawing.Size(101, 33);
@@ -3005,7 +3158,7 @@
             this.roundedButtonTransactionRenteeDocUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonTransactionRenteeDocUpload.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonTransactionRenteeDocUpload.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRenteeDocUpload.Location = new System.Drawing.Point(7, 77);
+            this.roundedButtonTransactionRenteeDocUpload.Location = new System.Drawing.Point(7, 129);
             this.roundedButtonTransactionRenteeDocUpload.Name = "roundedButtonTransactionRenteeDocUpload";
             this.roundedButtonTransactionRenteeDocUpload.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.roundedButtonTransactionRenteeDocUpload.Size = new System.Drawing.Size(378, 30);
@@ -3195,8 +3348,8 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferReceiver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.tabSettings.ResumeLayout(false);
-            this.tabSettings.PerformLayout();
+            this.tabMissing.ResumeLayout(false);
+            this.tabMissing.PerformLayout();
             this.tabAbout.ResumeLayout(false);
             this.tabOthers.ResumeLayout(false);
             this.tabOthers.PerformLayout();
@@ -3230,6 +3383,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelTabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMissingAssetRecords)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3238,7 +3393,7 @@
         private System.Windows.Forms.GroupBox groupBoxSide;
         private System.Windows.Forms.TabPage tabTransaction;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TabPage tabSettings;
+        private System.Windows.Forms.TabPage tabMissing;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabAbout;
         private System.Windows.Forms.TabPage tabOthers;
@@ -3428,5 +3583,12 @@
         public System.Windows.Forms.TabControl panelTabControl;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.DataVisualization.Charting.Chart chartAssetByCategories;
+        public System.Windows.Forms.DateTimePicker dateTimePickerTransactionRentStart;
+        private System.Windows.Forms.Label label53;
+        private RoundedButton roundedButtonMissingRecords;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        public RoundedButton roundedButtonMissingRecordsSearch;
+        public System.Windows.Forms.TextBox textBoxMissingRecords;
+        public System.Windows.Forms.DataGridView dataGridViewMissingAssetRecords;
     }
 }

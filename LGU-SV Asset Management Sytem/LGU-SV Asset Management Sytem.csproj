@@ -75,6 +75,12 @@
     <Compile Include="DialogBoxes\ConfirmationPrompt.Designer.cs">
       <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\DialogImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\DialogImageViewer.Designer.cs">
+      <DependentUpon>DialogImageViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\LogOutConfirmationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,18 @@
     <Compile Include="Panels\RentLogPanel\AssetRentLogPanel.Designer.cs">
       <DependentUpon>AssetRentLogPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\RentLogPanel\RentInfoHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentInfoHolder.Designer.cs">
+      <DependentUpon>RentInfoHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentTrackerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentTrackerForm.Designer.cs">
+      <DependentUpon>RentTrackerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\SupplierSuppliedAssetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,6 +289,7 @@
     <Compile Include="Worker2.cs" />
     <Compile Include="Worker3.cs" />
     <Compile Include="Worker4.cs" />
+    <Compile Include="Worker5.cs" />
     <EmbeddedResource Include="DialogBoxes\AddAssetBasedOnExistingDialog.resx">
       <DependentUpon>AddAssetBasedOnExistingDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\ConfirmationPrompt.resx">
       <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\DialogImageViewer.resx">
+      <DependentUpon>DialogImageViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>
@@ -360,6 +382,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\RentLogPanel\AssetRentLogPanel.resx">
       <DependentUpon>AssetRentLogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\RentLogPanel\RentInfoHolder.resx">
+      <DependentUpon>RentInfoHolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\RentLogPanel\RentTrackerForm.resx">
+      <DependentUpon>RentTrackerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SupplierSuppliedAssetPanel.resx">
       <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>
@@ -451,6 +479,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buttonPrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonMissingAsset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -57,6 +57,7 @@ namespace LGU_SV_Asset_Management_Sytem
         Worker2 worker2;
         Worker3 worker3;
         Worker4 worker4;
+        Worker5 worker5;
 
         public MainForm()
         {
@@ -100,6 +101,7 @@ namespace LGU_SV_Asset_Management_Sytem
             worker2 = new Worker2(this);
             worker3 = new Worker3(this);
             worker4 = new Worker4(this);
+            worker5 = new Worker5(this);
 
 
 
@@ -1679,6 +1681,25 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
             rpt.ShowTOS();
+        }
+
+        private void roundedButtonMissingRecords_Click(object sender, EventArgs e)
+        {
+            ResetAssetViewedPanel();
+            worker5.LoadMissingRecords();
+
+            panelTabControl.SelectedTab = tabMissing;
+            
+        }
+
+        private void roundedButtonMissingRecordsSearch_Click(object sender, EventArgs e)
+        {
+            worker5.Search();
+        }
+
+        private void textBoxMissingRecords_TextChanged(object sender, EventArgs e)
+        {
+            worker5.Search();
         }
 
         private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)
