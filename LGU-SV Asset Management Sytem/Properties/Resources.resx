@@ -133,6 +133,12 @@
   <data name="buttonMisc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonMisc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ButtonLogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonLogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empty_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +154,9 @@
   <data name="buttonHamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonHamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buttonAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonAbout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +166,7 @@
   <data name="buttonTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="empty_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empty_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new_tab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_tab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

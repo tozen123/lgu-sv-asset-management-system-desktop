@@ -68,11 +68,23 @@
     <Compile Include="DialogBoxes\ConfirmationPrompt.Designer.cs">
       <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\LogOutConfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\LogOutConfirmationDialog.Designer.cs">
+      <DependentUpon>LogOutConfirmationDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\OptionDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DialogBoxes\OptionDialogBox.Designer.cs">
       <DependentUpon>OptionDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\ReportIssueDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\ReportIssueDialogBox.Designer.cs">
+      <DependentUpon>ReportIssueDialogBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogBoxes\TransactionConfirmationPrompt.cs">
       <SubType>Form</SubType>
@@ -82,6 +94,12 @@
     </Compile>
     <Compile Include="Other Tools\MenuButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other Tools\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other Tools\ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Other Tools\RoundedButton.cs">
       <SubType>Component</SubType>
@@ -238,6 +256,7 @@
     <Compile Include="Worker.cs" />
     <Compile Include="Worker1.cs" />
     <Compile Include="Worker2.cs" />
+    <Compile Include="Worker3.cs" />
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,11 +269,17 @@
     <EmbeddedResource Include="DialogBoxes\InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\LogOutConfirmationDialog.resx">
+      <DependentUpon>LogOutConfirmationDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\MessagePromptDialogBox.resx">
       <DependentUpon>MessagePromptDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\OptionDialogBox.resx">
       <DependentUpon>OptionDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\ReportIssueDialogBox.resx">
+      <DependentUpon>ReportIssueDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\TransactionConfirmationPrompt.resx">
       <DependentUpon>TransactionConfirmationPrompt.cs</DependentUpon>
@@ -267,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Other Tools\MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other Tools\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Other Tools\RoundedButton.resx">
       <DependentUpon>RoundedButton.cs</DependentUpon>
@@ -388,6 +416,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\empty_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonAbout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonLogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_tab.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

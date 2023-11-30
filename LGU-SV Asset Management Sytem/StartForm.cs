@@ -436,20 +436,7 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
 
-        private void linkLabelTOR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
-
-            informationForm.ShowDialog();
-        }
-
-        private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
-
-            informationForm.ShowDialog();
-        }
-
+        
         private void buttonMasterExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -487,6 +474,20 @@ namespace LGU_SV_Asset_Management_Sytem
             databaseConnection.CloseConnection();
 
             this.Hide();
+        }
+
+        private void linkLabel1Policy_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
+
+            informationForm.ShowPolicy();
+        }
+
+        private void linkLabelTOR_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
+
+            informationForm.ShowTOS();
         }
     }
 }

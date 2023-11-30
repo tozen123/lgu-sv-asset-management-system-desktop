@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+
 using static LGU_SV_Asset_Management_Sytem.Asset;
 
 namespace LGU_SV_Asset_Management_Sytem
@@ -52,6 +55,7 @@ namespace LGU_SV_Asset_Management_Sytem
         Worker worker;
         Worker1 worker1;
         Worker2 worker2;
+        Worker3 worker3;
 
         public MainForm()
         {
@@ -93,6 +97,7 @@ namespace LGU_SV_Asset_Management_Sytem
             worker = new Worker(this);
             worker1 = new Worker1(this);
             worker2 = new Worker2(this);
+            worker3 = new Worker3(this);
 
             
 
@@ -706,15 +711,24 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            sessionHandler.OnCurrentSessionEnd();
-            currentSessionUserType = "";
-            
+            using(DialogBoxes.LogOutConfirmationDialog logOut = new DialogBoxes.LogOutConfirmationDialog())
+            {
+                logOut.ShowDialog();
 
-            StartForm startForm = new StartForm();
-            startForm.FormClosed += (s, args) => this.Close();
-            startForm.Show();
+                if(logOut.GetResult() == DialogResult.OK)
+                {
+                    sessionHandler.OnCurrentSessionEnd();
+                    currentSessionUserType = "";
 
-            this.Hide();
+
+                    StartForm startForm = new StartForm();
+                    startForm.FormClosed += (s, args) => this.Close();
+                    startForm.Show();
+
+                    this.Hide();
+                }
+            }
+           
         }
 
 
@@ -1627,6 +1641,54 @@ namespace LGU_SV_Asset_Management_Sytem
                 worker2.DataGridViewReceiverCellMouseClick(Convert.ToInt32(selectedRow.Cells[0].Value.ToString()));
                 
             }
+        }
+
+        private void roundedButtonReportAnIssue_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.ReportIssueDialogBox rpt = new DialogBoxes.ReportIssueDialogBox(sessionHandler.GetUserName(databaseConnection));
+            rpt.ShowDialog();
+        }
+
+        private void roundedButtonUserManual_Click(object sender, EventArgs e)
+        {
+            string projectFolderPath = GetProjectFolderPath();
+            string resourcesFolderPath = Path.Combine(projectFolderPath, "Documents");
+                
+            
+            string pdfFilePath = Path.Combine(resourcesFolderPath, "User Manual.pdf");
+            Console.WriteLine("fpath: " + pdfFilePath);
+            OpenPdfWithDefaultViewer(pdfFilePath);
+        }
+
+        static void OpenPdfWithDefaultViewer(string filePath)
+        {
+            try
+            {
+                // Use the default PDF viewer associated with the system
+                Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error opening PDF: {ex.Message}");
+            }
+        }
+
+        static string GetProjectFolderPath()
+        {
+            // Get the base directory of the current application domain
+            return AppDomain.CurrentDomain.BaseDirectory;
+        }
+
+        private void roundedButtonAboutPolicy_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
+            rpt.ShowPolicy();
+        }
+
+        private void roundedButtonAboutTOS_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
+            rpt.ShowTOS();
         }
 
         private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)

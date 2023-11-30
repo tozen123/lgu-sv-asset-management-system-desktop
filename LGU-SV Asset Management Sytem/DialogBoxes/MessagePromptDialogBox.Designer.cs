@@ -37,12 +37,17 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             // 
             // buttonContinue
             // 
+            this.buttonContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonContinue.FlatAppearance.BorderSize = 0;
+            this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonContinue.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonContinue.ForeColor = System.Drawing.Color.White;
             this.buttonContinue.Location = new System.Drawing.Point(265, 155);
             this.buttonContinue.Name = "buttonContinue";
             this.buttonContinue.Size = new System.Drawing.Size(189, 34);
             this.buttonContinue.TabIndex = 1;
-            this.buttonContinue.Text = "Continue";
-            this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Text = "CONTINUE";
+            this.buttonContinue.UseVisualStyleBackColor = false;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
             // pictureBoxBorderTop
