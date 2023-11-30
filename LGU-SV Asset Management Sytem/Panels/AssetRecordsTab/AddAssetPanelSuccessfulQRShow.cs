@@ -137,7 +137,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void buttonContinue_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

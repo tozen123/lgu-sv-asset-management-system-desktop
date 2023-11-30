@@ -15,37 +15,60 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private DatabaseConnection databaseConnection;
         string userLocation;
         Control viewedAssetPanelHandler;
-        public RecordsHomePanel(string _userLocation, Control _viewedAssetPanelHandler)
+
+        User currentUser;
+        public RecordsHomePanel(string _userLocation, Control _viewedAssetPanelHandler, User _currentUser)
         {
             databaseConnection = new DatabaseConnection();
             viewedAssetPanelHandler = _viewedAssetPanelHandler;
+            currentUser = _currentUser;
 
             InitializeComponent();
             userLocation = _userLocation;
             InitializeRecords();
-           
+
+         
+
+        }
+        public DataGridView DataGridViewAssetRecords
+        {
+            get { return dataGridViewAssetRecords; }
         }
 
-
-        private DataTable FetchDataFromDB()
+        private DataTable FetchDataFromDB(int bit)
         {
             string query = "SELECT A.assetId, " +
-                   "       CONCAT(ASupervisor.assetSupervisorFName, ' ', ASupervisor.assetSupervisorMName, ' ', ASupervisor.assetSupervisorLName, '; ', ASupervisor.assetSupervisorID) AS assetSupervisorFullName, " +
-                   "       CONCAT(AEmployee.AssetEmployeeFName, ' ', AEmployee.AssetEmployeeMName, ' ', AEmployee.AssetEmployeeLName, '; ', AEmployee.assetEmployeeID) AS currentAssetEmployeeFullName, " +
-                   "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
-                   "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
-                   "       A.assetName, A.assetCondition, A.assetAvailability, " +
-                   "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetPurchaseDate, A.assetPurchaseAmount, " +
-                   "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetLastMaintenance, A.assetIsMaintainable," +
-                   "       A.assetIsMissing, A.assetLifeSpan " +
-                   "FROM Assets A " +
-                   "LEFT JOIN AssetSupervisor ASupervisor ON A.assetSupervisorID = ASupervisor.assetSupervisorID " +
-                   "LEFT JOIN AssetEmployee AEmployee ON A.currentAssetEmployeeID = AEmployee.assetEmployeeID " +
-                   "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
-                   "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                   "WHERE A.assetLocation = @uLocation";
-
-
+                           "       A.assetPropertyNumber, A.assetName, " +
+                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
+                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
+                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
+                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
+                           "FROM Assets A " +
+                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
+                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit;
+            /*
+            string query = "SELECT A.assetId, " +
+                    "       CONCAT(ASupervisor.assetSupervisorFName, ' ', ASupervisor.assetSupervisorMName, ' ', ASupervisor.assetSupervisorLName, '; ', ASupervisor.assetSupervisorID) AS assetSupervisorFullName, " +
+                    "       CONCAT(AEmployee.AssetEmployeeFName, ' ', AEmployee.AssetEmployeeMName, ' ', AEmployee.AssetEmployeeLName, '; ', AEmployee.assetEmployeeID) AS currentAssetEmployeeFullName, " +
+                    "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                    "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                    "       A.assetName, A.assetCondition, A.assetAvailability, " +
+                    "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetLastMaintenance, A.assetIsMaintainable," +
+                    "       A.assetIsMissing, A.assetLifeSpan, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
+                    "FROM Assets A " +
+                    "LEFT JOIN AssetSupervisor ASupervisor ON A.assetSupervisorID = ASupervisor.assetSupervisorID " +
+                    "LEFT JOIN AssetEmployee AEmployee ON A.currentCustodianAssetEmployeeID = AEmployee.assetEmployeeID " +
+                    "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                    "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                    "WHERE A.assetLocation = @uLocation";
+            */
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
                 {"@uLocation", userLocation}
@@ -57,10 +80,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
             return resultTable;
         }
+        
 
         public void InitializeRecords()
         {
-            DataTable dataTable = FetchDataFromDB();
+            dataGridViewAssetRecords.DataSource = null;
+
+            DataTable dataTable = FetchDataFromDB(0);
 
             dataGridViewAssetRecords.AutoGenerateColumns = false;
 
@@ -75,34 +101,44 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     case "assetId":
                         col.HeaderText = "Asset ID";
-                        break;
-                    case "assetSupervisorFullName":
-                        col.HeaderText = "Supervisor Name";
-                        break;
-                    case "currentAssetEmployeeFullName":
-                        col.HeaderText = "Current Employee Name";
-                        break;
-                    case "Supplier":
-                        col.HeaderText = "Supplier Name";
-                        break;
-                    case "Asset Category":
-                        col.HeaderText = "Asset Category";
+                        col.Visible = false;
                         break;
                     case "assetName":
                         col.HeaderText = "Asset Name";
                         break;
+                    case "AAdminFullName":
+                        col.HeaderText = "Administrator Name";
+                        break;
+                    case "currentCustodianCoordinatorFullName":
+                        col.HeaderText = "Current Custodian Name";
+                        break;
+                    case "Supplier":
+                        col.HeaderText = "Supplier Name";
+                       
+                        break;
+                    case "Asset Category":
+                        col.HeaderText = "Asset Category";
+                        break;
+                    
                     case "assetCondition":
                         col.HeaderText = "Asset Condition";
-                        break; 
+                        break;
+                    /*
                     case "assetLastMaintenance":
                         col.HeaderText = "Asset Last Maintenance";
                         col.DefaultCellStyle.NullValue = "N/A";
                         break;
+                    */
+
+                    /*
                     case "assetAvailability":
                         col.HeaderText = "Asset Availability";
                         break;
+                    */
+
                     case "assetQrCodeImage":
                         col.HeaderText = "QR Code Image";
+                        col.Visible = false;
                         break;
                     case "assetQrStrDefinition":
                         col.HeaderText = "";
@@ -112,8 +148,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     case "assetLocation":
                         col.HeaderText = "Asset Location";
                         break;
-                    case "assetPurchaseDate":
-                        col.HeaderText = "Purchase Date";
+                    case "assetAcknowledgeDate":
+                        col.HeaderText = "Acknowledge Date";
                         break;
                     case "assetPurchaseAmount":
                         col.HeaderText = "Purchase Amount";
@@ -124,10 +160,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     case "assetUnit":
                         col.HeaderText = "Asset Unit";
                         break; 
+
+                    
                     case "assetImage":
                         col.HeaderText = "Asset Image";
-                        break; 
 
+                        col.Visible = false;
+                        break; 
+                    
                     case "assetIsArchive":
                         col.HeaderText = "";
                         col.Visible = false;
@@ -142,21 +182,32 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     case "assetIsMaintainable":
                         col.HeaderText = "Is Maintainable";
                         break;
+                        /*
                     case "assetLifeSpan":
                         col.HeaderText = "Asset Life Span (Years)";
+                        break;
+                        */
+                    case "assetPurpose":
+                        col.HeaderText = "Asset Purpose";
+                        break;
+                    case "assetDescription":
+                        col.HeaderText = "Asset Description";
+                        break;
+                    case "assetPropertyNumber":
+                        col.HeaderText = "Asset PropertyNumber";
                         break;
                     default:
                         col.HeaderText = column.ColumnName;
                         break;
                 }
 
-                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 24;
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 90;
 
                 dataGridViewAssetRecords.Columns.Add(col);
             }
 
 
-            dataGridViewAssetRecords.DataSource = FetchDataFromDB();
+            dataGridViewAssetRecords.DataSource = FetchDataFromDB(0);
 
             if (dataGridViewAssetRecords.Columns["ViewAsset"] == null)
             {
@@ -165,30 +216,28 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 viewButtonColumn.Text = "View";
                 viewButtonColumn.Name = "ViewAsset";
                 viewButtonColumn.UseColumnTextForButtonValue = true;
-                viewButtonColumn.Width = 50;
+                viewButtonColumn.Width = 85;
+
                 dataGridViewAssetRecords.Columns.Insert(0, viewButtonColumn);
 
 
                 viewButtonColumn.DisplayIndex = 0;
             }
 
+            dataGridViewAssetRecords.CellFormatting += Records_CellFormatting;
 
-            AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
+            Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
 
 
         }
-        private void AutoResizeColumnsBasedOnHeaders(DataGridView dataGridView)
+
+        private void Records_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            foreach (DataGridViewColumn column in dataGridView.Columns)
+          
+            if (e.ColumnIndex == dataGridViewAssetRecords.Columns["ViewAsset"].Index)
             {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            }
-
-            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.ColumnHeader);
-
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                
+                e.CellStyle.BackColor = Color.FromArgb(48, 77, 46);
             }
         }
 
@@ -204,23 +253,26 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                     selectedAsset.AssetId = Convert.ToInt32(selectedRow.Cells["assetId"].Value);
 
-                    selectedAsset.AssetSupervisorId = Convert.ToInt32(selectedRow.Cells["assetSupervisorFullName"].Value.ToString().Split(';')[1].Trim());
-                    selectedAsset.CurrentEmployeeId = Convert.ToInt32(selectedRow.Cells["currentAssetEmployeeFullName"].Value.ToString().Split(';')[1].Trim());
+                    selectedAsset.AssetSupervisorId = Convert.ToInt32(selectedRow.Cells["AAdminFullName"].Value.ToString().Split(';')[1].Trim());
+                    selectedAsset.CurrentEmployeeId = Convert.ToInt32(selectedRow.Cells["currentCustodianCoordinatorFullName"].Value.ToString().Split(';')[1].Trim());
+
                     selectedAsset.SupplierId = Convert.ToInt32(selectedRow.Cells["Supplier"].Value.ToString().Split(';')[1].Trim());
                     selectedAsset.AssetCategoryId = Convert.ToInt32(selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[1].Trim());
 
                     selectedAsset.SupplierName = selectedRow.Cells["Supplier"].Value.ToString().Split(';')[0].Trim();
-                    selectedAsset.EmployeeName = selectedRow.Cells["currentAssetEmployeeFullName"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.EmployeeName = selectedRow.Cells["currentCustodianCoordinatorFullName"].Value.ToString().Split(';')[0].Trim();
                     selectedAsset.AssetCategoryName =selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[0].Trim();
 
+                    /*
+                 string assetLastMaintenanceValue = selectedRow.Cells["assetLastMaintenance"].Value.ToString();
+                 if (assetLastMaintenanceValue != "")
+                 {
+                     selectedAsset.AssetLastMaintenanceID = Convert.ToInt32(assetLastMaintenanceValue);
+                 }
 
-                    string assetLastMaintenanceValue = selectedRow.Cells["assetLastMaintenance"].Value.ToString();
-                    if (assetLastMaintenanceValue != "")
-                    {
-                        selectedAsset.AssetLastMaintenanceID = Convert.ToInt32(assetLastMaintenanceValue);
-                    }
-                    
-                    selectedAsset.AssetAvailability = selectedRow.Cells["assetAvailability"].Value.ToString();
+                 selectedAsset.AssetAvailability = selectedRow.Cells["assetAvailability"].Value.ToString();
+
+                 */
                     selectedAsset.AssetName = selectedRow.Cells["assetName"].Value.ToString();
                     selectedAsset.AssetLocation = selectedRow.Cells["assetLocation"].Value.ToString();
 
@@ -236,18 +288,32 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     selectedAsset.IsMaintainable = Convert.ToBoolean(selectedRow.Cells["assetIsMaintainable"].Value);
 
                     selectedAsset.AssetPurchaseAmount = Convert.ToDecimal(selectedRow.Cells["assetPurchaseAmount"].Value);
-                    selectedAsset.AssetPurchaseDate = Convert.ToDateTime(selectedRow.Cells["assetPurchaseDate"].Value);
+                    selectedAsset.AssetPurchaseDate = Convert.ToDateTime(selectedRow.Cells["assetAcknowledgeDate"].Value);
                     //selectedAsset.AssetMaintenanceLogsID = selectedRow.Cells["assetMaintenanceLogsID"].Value.ToString();
                     selectedAsset.AssetQuantity = Convert.ToInt32(selectedRow.Cells["assetQuantity"].Value);
                     selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();
+                    /*
                     selectedAsset.AssetLifeSpan = Convert.ToInt32(selectedRow.Cells["assetLifeSpan"].Value);
+                    */
+                    //added
+                    selectedAsset.AssetPurpose = selectedRow.Cells["assetPurpose"].Value.ToString();
+                    selectedAsset.AssetDescription = selectedRow.Cells["assetDescription"].Value.ToString();
+                    selectedAsset.AssetPropertyNumber = Convert.ToInt32(selectedRow.Cells["assetPropertyNumber"].Value);
 
-                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler);
+                    AssetViewedInformationPanel assetViewerInformationPanel = new AssetViewedInformationPanel(selectedAsset, this, viewedAssetPanelHandler, currentUser);
+
+                    assetViewerInformationPanel.Size = viewedAssetPanelHandler.Size;
+
                     viewedAssetPanelHandler.Controls.Add(assetViewerInformationPanel);
                     viewedAssetPanelHandler.BringToFront();
                     viewedAssetPanelHandler.Visible = true;
                 }
             }
+
+        }
+
+        private void RecordsHomePanel_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -22,6 +22,12 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         public void SetDialog(string title, string message)
         {
             this.Text = title;
+
+            labelMessage.ReadOnly = false;
+            labelMessage.Clear();
+            labelMessage.SelectionAlignment = HorizontalAlignment.Center;
+            labelMessage.AppendText(message);
+            labelMessage.ReadOnly = true;
             labelMessage.Text = message;
         }
         public DialogResult GetResult()

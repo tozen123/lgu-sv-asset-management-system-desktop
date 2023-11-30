@@ -21,8 +21,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private enum RegistrationType
         {
             None,
-            Employee,
-            Supervisor,
+            Coordinator,
+            Administrator,
             Viewer
         }
 
@@ -31,6 +31,8 @@ namespace LGU_SV_Asset_Management_Sytem
         public StartForm()
         {
             InitializeComponent();
+
+
             this.StartPosition = FormStartPosition.CenterScreen;
             databaseConnection = new DatabaseConnection();
 
@@ -90,8 +92,8 @@ namespace LGU_SV_Asset_Management_Sytem
             string inputPassword = textBoxPassword.Text;
 
             string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
-                "AND (EXISTS (SELECT 1 FROM AssetSupervisor WHERE userID = @UserId) " +
-                "OR EXISTS (SELECT 1 FROM AssetEmployee WHERE userID = @UserId) " +
+                "AND (EXISTS (SELECT 1 FROM AssetAdministrator WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetCoordinator WHERE userID = @UserId) " +
                 "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@UserId", inputEmail);
@@ -105,6 +107,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 Label_ErrorHandler_Login.Visible = false;
                 MainForm mainForm = new MainForm();
                 mainForm.SetSessionHandler(inputEmail, inputPassword);
+                mainForm.FormClosed += (s, args) => this.Close();
                 mainForm.Show();
 
                 databaseConnection.CloseConnection();
@@ -127,16 +130,16 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonManagerRole_Click(object sender, EventArgs e)
         {
-            registrationType = RegistrationType.Supervisor;
-            labelID.Text = RegistrationType.Supervisor + " ID";
+            registrationType = RegistrationType.Administrator;
+            labelID.Text = RegistrationType.Administrator + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
         }
 
         private void buttonOperatorRole_Click(object sender, EventArgs e)
         {
-            registrationType = RegistrationType.Employee;
-            labelID.Text = RegistrationType.Employee + " ID";
+            registrationType = RegistrationType.Coordinator;
+            labelID.Text = RegistrationType.Coordinator + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
         }
@@ -144,7 +147,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonViewerRole_Click(object sender, EventArgs e)
         {
             registrationType = RegistrationType.Viewer;
-            labelID.Text = RegistrationType.Viewer + " ID";
+            labelID.Text = RegistrationType.Viewer + " ID: ";
 
             ActivatePanel(RegistrationStartPanel2);
 
@@ -152,7 +155,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonBackToLoginForm_Click(object sender, EventArgs e)
         {
-            textBoxAccSetupAddress.Text = "";
+            textBoxAccSetupAddress1.Text = "";
             textBoxAccSetupEmail.Text = "";
             textBoxAccSetupFirstName.Text = "";
             textBoxAccSetupLastName.Text = "";
@@ -187,8 +190,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 labelErrorHandler.Visible = false;
 
                 string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
-                "AND (EXISTS (SELECT 1 FROM AssetSupervisor WHERE userID = @UserId) " +
-                "OR EXISTS (SELECT 1 FROM AssetEmployee WHERE userID = @UserId) " +
+                "AND (EXISTS (SELECT 1 FROM AssetAdministrator WHERE userID = @UserId) " +
+                "OR EXISTS (SELECT 1 FROM AssetCoordinator WHERE userID = @UserId) " +
                 "OR EXISTS (SELECT 1 FROM AssetViewer WHERE userID = @UserId))";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@UserId", id);
@@ -227,13 +230,13 @@ namespace LGU_SV_Asset_Management_Sytem
 
                     switch (registrationType)
                     {
-                        case RegistrationType.Supervisor:
+                        case RegistrationType.Administrator:
                             isValidRegistrationType = codeTag == "03";
                             break;
                         case RegistrationType.Viewer:
                             isValidRegistrationType = codeTag == "01";
                             break;
-                        case RegistrationType.Employee:
+                        case RegistrationType.Coordinator:
                             isValidRegistrationType = codeTag == "02";
                             break;
                     }
@@ -303,7 +306,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 return;
             }
 
-            string address = textBoxAccSetupAddress.Text;
+            string address = textBoxAccSetupAddress1.Text;
 
             if (string.IsNullOrEmpty(address))
             {
@@ -340,15 +343,15 @@ namespace LGU_SV_Asset_Management_Sytem
 
             switch (registrationType)
             {
-                case RegistrationType.Supervisor:
-                    query = "INSERT INTO AssetSupervisor (userId, assetSupervisorFName, assetSupervisorMName, assetSupervisorLName, assetSupervisorPhoneNumber, " +
-                        "assetSupervisorEmail, assetSupervisorAddress, assetSupervisorOffice) " +
+                case RegistrationType.Administrator:
+                    query = "INSERT INTO AssetAdministrator (userId, FName, MName, LName, PhoneNumber, " +
+                        "Email, Address, Office) " +
                             "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
-                case RegistrationType.Employee:
-                    query = "INSERT INTO AssetEmployee (userId, assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, assetEmployeePhoneNum, " +
-                        "assetEmployeeEmail, assetEmployeeAddress, assetEmployeeOffice) " +
+                case RegistrationType.Coordinator:
+                    query = "INSERT INTO AssetCoordinator (userId, FName, MName, LName, PhoneNumber, " +
+                        "Email, Address, Office) " +
                             "VALUES (@userId, @firstName, @middleName, @lastName, @phoneNumber, @email, @address, @office)";
                     break;
 
@@ -403,7 +406,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+           
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -433,29 +436,39 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
 
-        private void linkLabelTOR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
-
-            informationForm.Show();
-        }
-
-        private void linkLabel1Policy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
-
-            informationForm.Show();
-        }
-
+        
         private void buttonMasterExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+      
+        private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // If the form is closed by the user, exit the application
+                Application.Exit();
+            }
+        }
+
+        private void buttonSlogin_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.SetSessionHandler("03-1", "2730");
+            mainForm.FormClosed += (s, args) => this.Close();
+            mainForm.Show();
+
+            databaseConnection.CloseConnection();
+
+            this.Hide();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("01-1", "703");
+            mainForm.SetSessionHandler("02-2", "557");
+            mainForm.FormClosed += (s, args) => this.Close();
             mainForm.Show();
 
             databaseConnection.CloseConnection();
@@ -463,49 +476,18 @@ namespace LGU_SV_Asset_Management_Sytem
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void linkLabel1Policy_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("02-6", "1040");
-            mainForm.Show();
+            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
-            databaseConnection.CloseConnection();
-
-            this.Hide();
+            informationForm.ShowPolicy();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void linkLabelTOR_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("03-2", "3974");
-            mainForm.Show();
+            DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
-            databaseConnection.CloseConnection();
-
-            this.Hide();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("03-9", "fire");
-            mainForm.Show();
-
-            databaseConnection.CloseConnection();
-
-            this.Hide();
-            
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = new MainForm();
-            mainForm.SetSessionHandler("02-8", "jane");
-            mainForm.Show();
-
-            databaseConnection.CloseConnection();
-
-            this.Hide();
+            informationForm.ShowTOS();
         }
     }
 }

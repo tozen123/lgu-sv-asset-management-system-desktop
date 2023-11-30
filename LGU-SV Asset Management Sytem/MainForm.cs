@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+
+using static LGU_SV_Asset_Management_Sytem.Asset;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -21,11 +25,12 @@ namespace LGU_SV_Asset_Management_Sytem
         List<Control> profileTabControls = new List<Control>();
 
         //Session
-        string currentSessionUserType;
-        string currentUserOffice;
+        User currentUser = new User();
+        public string currentSessionUserType;
+        public string currentUserOffice;
 
         //Color
-        Color clickColor = Color.FromArgb(76, 245, 154);
+        Color clickColor = Color.FromArgb(48, 77, 46);
 
         //447145
         Color mainColor1 = Color.FromArgb(68, 113, 69);
@@ -38,26 +43,30 @@ namespace LGU_SV_Asset_Management_Sytem
         Controllers.MainFormSupplierController supplierController;
         Controllers.MainFormAssetCategoriesController assetCategoriesController;
 
-        AssetEmployee.AssetEmployeeRepositoryControl assetOperatorRepositoryControl = new AssetEmployee.AssetEmployeeRepositoryControl();
+        AssetCoordinator.AssetCoordinatorRepositoryControl assetOperatorRepositoryControl = new AssetCoordinator.AssetCoordinatorRepositoryControl();
 
         //Objects Controllers
         AssetCategoryRepositoryControl assetCategoryRepositoryControl;
 
         //User-Role-Id
-        private string RoleBasedID;
+        public string RoleBasedID;
 
         //Worker
         Worker worker;
+        Worker1 worker1;
+        Worker2 worker2;
+        Worker3 worker3;
 
         public MainForm()
         {
- 
+            
             InitializeComponent();
             
             this.StartPosition = FormStartPosition.CenterScreen;
 
             InitialiazeTabControl(panelTabControl);
             InitialiazeTabControl(otherTabControl);
+            InitialiazeTabControl(tabControlTransaction);
 
             databaseConnection = new DatabaseConnection();
 
@@ -70,7 +79,7 @@ namespace LGU_SV_Asset_Management_Sytem
             dataGridViewAssetCategories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewOtherOperator.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            panelTotalAsset.BackColor = mainColor1;
+ 
 
             //Controllers
             supplierController = new Controllers.MainFormSupplierController(databaseConnection);
@@ -81,11 +90,18 @@ namespace LGU_SV_Asset_Management_Sytem
             assetCategoryRepositoryControl = new AssetCategoryRepositoryControl();
 
             //Side
-            Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
-            Utilities.SetControlsVisibilityState(sideLabels, false);
+            //Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
+           // Utilities.SetControlsVisibilityState(sideLabels, false);
 
             //Worker
             worker = new Worker(this);
+            worker1 = new Worker1(this);
+            worker2 = new Worker2(this);
+            worker3 = new Worker3(this);
+
+            
+
+
         }
 
         // Initialize Controls
@@ -105,14 +121,15 @@ namespace LGU_SV_Asset_Management_Sytem
                     buttonTransaction.Visible = false;
 
                     break;
-                case "Asset Employee":
+                case "Asset Coordinator":
                     buttonOthers.Visible = false;
                     buttonAssetRecordsNewAsset.Visible = false;
                     break;
-                case "Asset Supervisor":
-
+                case "Asset Administrator":
+                    buttonAssetRecordsNewAsset.Visible = true;
                     break;
             }
+
         }
 
         private void SetData()
@@ -123,6 +140,8 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxProfileDept.Items.Add("MEO-Municipal Engineering Office");
             comboBoxProfileDept.Items.Add("MBO-Municipal Budget Office");
             comboBoxProfileDept.Items.Add("Accounting Office");
+
+            
         }
         // Start
         public void SetSessionHandler(string user_id, string password)
@@ -140,11 +159,33 @@ namespace LGU_SV_Asset_Management_Sytem
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.ItemSize = new Size(0, 1);
             tabControl.SizeMode = TabSizeMode.Fixed;
-
+        
             foreach (TabPage tab in tabControl.TabPages)
             {
                 tab.Text = "";
             }
+            switch (currentSessionUserType)
+            {
+                case "Asset Viewer":
+                    buttonAssetCategoryAdd.Enabled = false;
+                    buttonAssetCategoryUpdate.Enabled = false;
+                    buttonSupplierAdd.Enabled = false;
+                    buttonSupplierUpdate.Enabled = false;
+                    break;
+                case "Asset Employee":
+                    buttonAssetCategoryAdd.Enabled = false;
+                    buttonAssetCategoryUpdate.Enabled = false;
+                    buttonSupplierAdd.Enabled = false;
+                    buttonSupplierUpdate.Enabled = false;
+                    break;
+                case "Asset Supervisor":
+                    buttonAssetCategoryAdd.Enabled = true;
+                    buttonAssetCategoryUpdate.Enabled = true;
+                    buttonSupplierAdd.Enabled = true;
+                    buttonSupplierUpdate.Enabled = true;
+                    break;
+            }
+           
         }
 
         private void SetUser()
@@ -158,13 +199,16 @@ namespace LGU_SV_Asset_Management_Sytem
             switch (currentSessionUserType)
             {
                 case "Asset Viewer":
-                    query = "SELECT assetViewerId,assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
+                    query = "SELECT assetViewerId, assetViewerOffice FROM AssetViewer WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Viewer);
                     break;
-                case "Asset Employee":
-                    query = "SELECT assetEmployeeId, assetEmployeeOffice FROM AssetEmployee WHERE userID = @UserId";
+                case "Asset Coordinator":
+                    query = "SELECT Id, Office FROM AssetCoordinator WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Coordinator);
                     break;
-                case "Asset Supervisor":
-                    query = "SELECT assetSupervisorId, assetSupervisorOffice FROM AssetSupervisor WHERE userID = @UserId";
+                case "Asset Administrator":
+                    query = "SELECT Id, Office FROM AssetAdministrator WHERE userID = @UserId";
+                    currentUser.SetAccessLevel(User.AccessLevel.Administrator);
                     break;
             }
 
@@ -182,21 +226,57 @@ namespace LGU_SV_Asset_Management_Sytem
                     switch (col.ColumnName)
                     {
                         case "assetViewerId":
-                        case "assetEmployeeId":
-                        case "assetSupervisorId":
+                        case "Id":
                             RoleBasedID = row[col].ToString();
                             break;
                         case "assetViewerOffice":
-                        case "assetEmployeeOffice":
-                        case "assetSupervisorOffice":
+                        case "Office":
                             currentUserOffice = row[col].ToString();
                             break;
                     }
                 }
             }
-            
+
+            // Set User
+
+            currentUser.UserRoleBasedID = RoleBasedID;
+
+            //Set
+            labelOffice.Text = currentUserOffice;
+            DashboardLoad();
+
+            // Check the session before updating the UI
+            if (CheckSession())
+            {
+                buttonProfile.Visible = true;
+                buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
+                hamburgerToggle = true;
+            }
+
+            //Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
+            //Utilities.SetControlsVisibilityState(sideLabels, true);
         }
 
+        private void DashboardLoad()
+        {
+            Panels.DashboardPanels.TotalAssetPanel totalAssetPanel = new Panels.DashboardPanels.TotalAssetPanel(currentUserOffice);
+            roundedPanelTotalAsset.Controls.Add(totalAssetPanel);
+
+            Panels.DashboardPanels.AssetByCategoryPanel assetByCategoryPanel = new Panels.DashboardPanels.AssetByCategoryPanel(currentUserOffice);
+            roundedPanelCategoryCount.Controls.Add(assetByCategoryPanel);
+
+            menuButtonSortByYear.Menu = new ContextMenuStrip();
+            menuButtonSortByYear.Menu.Items.Add("2023", null);
+            menuButtonSortByYear.Menu.Items.Add("2022", null);
+            menuButtonSortByYear.Menu.Items.Add("2021", null);
+            menuButtonSortByYear.Menu.Items.Add("2020", null);
+            menuButtonSortByYear.Menu.Items.Add("2019", null);
+            menuButtonSortByYear.Menu.Items.Add("2018", null);
+            menuButtonSortByYear.Menu.Items.Add("2017", null);
+            menuButtonSortByYear.Menu.Items.Add("2016", null);
+            menuButtonSortByYear.Menu.Items.Add("2015", null);
+
+        }
         private void ProfileTabPanel()
         {
 
@@ -211,17 +291,17 @@ namespace LGU_SV_Asset_Management_Sytem
                             "assetViewerAddress, assetViewerOffice " +
                             "FROM AssetViewer WHERE userID = @UserId";
                     break;
-                case "Asset Employee":
-                            query = "SELECT assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, " +
-                            "assetEmployeePhoneNum, assetEmployeeEmail, " +
-                            "assetEmployeeAddress, assetEmployeeOffice " +
-                            "FROM AssetEmployee WHERE userID = @UserId";
+                case "Asset Coordinator":
+                            query = "SELECT FName, MName, LName, " +
+                            "PhoneNumber, Email, " +
+                            "Address, Office " +
+                            "FROM AssetCoordinator WHERE userID = @UserId";
                     break;
-                case "Asset Supervisor":
-                            query = "SELECT assetSupervisorFName, assetSupervisorMName, assetSupervisorLName, " +
-                            "assetSupervisorPhoneNumber, assetSupervisorEmail, " +
-                            "assetSupervisorAddress, assetSupervisorOffice " +
-                            "FROM AssetSupervisor WHERE userID = @UserId";
+                case "Asset Administrator":
+                            query = "SELECT FName, MName, LName, " +
+                            "PhoneNumber, Email, " +
+                            "Address, Office " +
+                            "FROM AssetAdministrator WHERE userID = @UserId";
                     break;
             }
            
@@ -287,7 +367,7 @@ namespace LGU_SV_Asset_Management_Sytem
  
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
-
+            DashboardLoad();
             panelTabControl.SelectedTab = tabDashboard;
             ResetAssetViewedPanel();
         }
@@ -296,23 +376,44 @@ namespace LGU_SV_Asset_Management_Sytem
             panelViewedAssetHandler.Controls.Clear();
             panelViewedAssetHandler.SendToBack();
 
+            panelAssetRecordsHandler.Controls.Clear();
+            panelAssetRecordsHandler.SendToBack();
+            buttonSearch.Enabled = false;
+
         }
         private void buttonAssetRecords_Click(object sender, EventArgs e)
         {
             panelTabControl.SelectedTab = tabAssetRecords;
 
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
-            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+           
             ResetAssetViewedPanel();
 
+            LoadAssets();
+        }
+        public void LoadAssets()
+        {
 
+            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler, currentUser);
+
+
+            panelAssetRecordsHandler.Controls.Clear();
+            panelControl.Size = panelAssetRecordsHandler.Size;
+
+            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+            buttonSearch.Enabled = true;
+            textBoxSearchFilter.Enabled = true;
         }
 
         private void buttonArchiveRecords_Click(object sender, EventArgs e)
         {
             ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabArchiveRecords;
-                
+
+
+          
+
+            worker.RunArchiveRecordsComponent(currentUserOffice, currentSessionUserType);
+
         }
 
 
@@ -340,6 +441,10 @@ namespace LGU_SV_Asset_Management_Sytem
 
             if (dataGridViewSupplier.Columns["DeleteButtonColumn"] == null)
             {
+                if(currentSessionUserType != "Asset Administrator")
+                {
+                    return;
+                }
                 // Create a new DataGridViewButtonColumn
                 var deleteButtonColumn = new DataGridViewButtonColumn();
                 deleteButtonColumn.HeaderText = "Actions";
@@ -394,7 +499,7 @@ namespace LGU_SV_Asset_Management_Sytem
             profileTabControls.Add(buttonProfileSave);
             profileTabControls.Add(buttonProfileCancel);
             
-            profileTabControls.Add(textBoxProfileName);
+            
             profileTabControls.Add(textBoxProfilePhoneNumber);
             profileTabControls.Add(textBoxProfileEmail);
             profileTabControls.Add(textBoxProfilePassword);
@@ -417,6 +522,8 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             ResetAssetViewedPanel();
             panelTabControl.SelectedTab = tabTransaction;
+
+            LoadTranscationPanel();
         }
         private void SetListControlStateTo(List<Control> controls, bool state)
         {
@@ -458,7 +565,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             DialogBoxes.AlertDialogBox alertDialogBox = new DialogBoxes.AlertDialogBox();
             alertDialogBox.SetDialog("CONFIRM CANCEL", "ANY CHANGES DONE IN THE PROFILE WILL BE DISCARDED.");
-
+            alertDialogBox.ShowDialog();
             buttonEditProfile.Enabled = true;
             buttonEditProfile.Visible = true;
             buttonProfileSave.Visible = false;
@@ -490,30 +597,30 @@ namespace LGU_SV_Asset_Management_Sytem
                             "WHERE userId = @UserId";
 
                         break;
-                    case "Asset Employee":
+                    case "Asset Coordinator":
                         query =
-                            "UPDATE AssetEmployee" +
+                            "UPDATE AssetCoordinator" +
                             " SET " +
-                            "assetEmployeeFName = @firstName, " +
-                            "assetEmployeeMName = @middleName, " +
-                            "assetEmployeeLName = @lastName, " +
-                            "assetEmployeePhoneNum = @phoneNumber, " +
-                            "assetEmployeeEmail = @email, " +
-                            "assetEmployeeAddress = @address, " +
-                            "assetEmployeeOffice = @office " +
+                            "FName = @firstName, " +
+                            "MName = @middleName, " +
+                            "LName = @lastName, " +
+                            "PhoneNumber = @phoneNumber, " +
+                            "Email = @email, " +
+                            "Address = @address, " +
+                            "Office = @office " +
                             "WHERE userId = @UserId";
                         break;
-                    case "Asset Supervisor":
+                    case "Asset Administrator":
                         query =
-                             "UPDATE AssetSupervisor" +
+                             "UPDATE AssetAdministrator" +
                              " SET " +
-                             "assetSupervisorFName = @firstName, " +
-                             "assetSupervisorMName = @middleName, " +
-                             "assetSupervisorLName = @lastName, " +
-                             "assetSupervisorPhoneNum = @phoneNumber, " +
-                             "assetSupervisorEmail = @email, " +
-                             "assetSupervisorAddress = @address, " +
-                             "assetSupervisorOffice = @office " +
+                             "FName = @firstName, " +
+                             "MName = @middleName, " +
+                             "LName = @lastName, " +
+                             "PhoneNumber = @phoneNumber, " +
+                             "Email = @email, " +
+                             "Address = @address, " +
+                             "Office = @office " +
                              "WHERE userId = @UserId";
                         break;
 
@@ -604,12 +711,24 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            sessionHandler.OnCurrentSessionEnd();
-            currentSessionUserType = "";
-            this.Close();
+            using(DialogBoxes.LogOutConfirmationDialog logOut = new DialogBoxes.LogOutConfirmationDialog())
+            {
+                logOut.ShowDialog();
 
-            StartForm startForm = new StartForm();
-            startForm.Show();
+                if(logOut.GetResult() == DialogResult.OK)
+                {
+                    sessionHandler.OnCurrentSessionEnd();
+                    currentSessionUserType = "";
+
+
+                    StartForm startForm = new StartForm();
+                    startForm.FormClosed += (s, args) => this.Close();
+                    startForm.Show();
+
+                    this.Hide();
+                }
+            }
+           
         }
 
 
@@ -617,46 +736,40 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonHamburger_Click(object sender, EventArgs e)
         {
             ResetAssetViewedPanel();
-            Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
-
+            
+            /*
             if (CheckSession())
             {
                 if (hamburgerToggle != true)
                 {
-                    groupBoxSide.Size = new Size(140, 737);
-                    buttonHamburger.BackColor = Color.Silver;
-
+                    groupBoxSide.Size = new Size(200, 820);
+                    buttonHamburger.BackColor = Color.FromArgb(68, 113, 68);
                     Utilities.SetControlsVisibilityState(sideLabels, true);
 
-                    // Check the session before updating the UI
-                    if (CheckSession())
-                    {
-                        buttonProfile.Visible = true;
-                        buttonProfile.Text = $"{sessionHandler.GetUserName(databaseConnection)}\n{currentSessionUserType}";
-                        hamburgerToggle = true;
-                    }
+                    
                 }
                 else
                 {
                     buttonProfile.Visible = false;
-                    groupBoxSide.Size = new Size(80, 737);
+                    groupBoxSide.Size = new Size(70, 820);
 
                     hamburgerToggle = false;
 
-                    buttonHamburger.BackColor = clickColor;
+                    buttonHamburger.BackColor = Color.FromArgb(225, 232, 225);
 
-                    buttonProfile.BackColor = Color.Silver;
+                    buttonProfile.BackColor = Color.FromArgb(128, 200, 128);
 
                     Utilities.SetControlsVisibilityState(sideLabels, false);
                 }
             }
+            */
 
-            
         }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            panelBoxTop.BackColor = Color.FromArgb(45, 77, 46);
+          
         }
 
    
@@ -721,7 +834,49 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void FetchOperatorDataSource()
         {
-            dataGridViewOtherOperator.DataSource = assetOperatorRepositoryControl.GetAllOperators().resultTable;
+            dataGridViewOtherOperator.DataSource = null;
+
+            DataTable dataTable = assetOperatorRepositoryControl.GetAllOperators().resultTable;
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+                   
+                    case "FName":
+                        col.HeaderText = "Coordinator First Name";
+                        break;
+                    case "MName":
+                        col.HeaderText = "Coordinator Middle Name";
+                        break;
+                    case "LName":
+                        col.HeaderText = "Coordinator Last Name Name";
+                        break;
+                    case "PhoneNumber":
+                        col.HeaderText = "Coordinator Phone Number";
+                        break;
+                    case "Email":
+                        col.HeaderText = "Coordinator Email";
+                        break;
+                    case "Address":
+                        col.HeaderText = "Coordinator Address";
+                        break;
+                    case "Office":
+                        col.HeaderText = "Coordinator Office";
+                        break;
+               
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewOtherOperator.Font).Width + 90;
+
+                dataGridViewOtherOperator.Columns.Add(col);
+            }
 
             if (dataGridViewOtherOperator.Columns["ViewButtonColumn"] == null)
             {
@@ -738,6 +893,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 // Adjust the button column's display index to make it the last column
                 viewButtonColumn.DisplayIndex = dataGridViewOtherOperator.Columns.Count - 1;
             }
+
+            dataGridViewOtherOperator.DataSource = assetOperatorRepositoryControl.GetAllOperators().resultTable;
         }
         private void buttonOperators_Click(object sender, EventArgs e)
         {
@@ -745,7 +902,7 @@ namespace LGU_SV_Asset_Management_Sytem
             labelTitleHandler.Text = "Employees";
             otherTabControl.SelectedTab = tabOperator;
 
-            SupplierReset();
+            OtherOperatorReset();
 
             FetchOperatorDataSource();
         }
@@ -755,6 +912,10 @@ namespace LGU_SV_Asset_Management_Sytem
             dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
             if (dataGridViewAssetCategories.Columns["DeleteButtonColumn"] == null)
             {
+                if (currentSessionUserType != "Asset Administrator")
+                {
+                    return;
+                }
                 // Create a new DataGridViewButtonColumn
                 var deleteButtonColumn = new DataGridViewButtonColumn();
                 deleteButtonColumn.HeaderText = "Actions";
@@ -1062,8 +1223,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridViewOtherOperator.Rows[e.RowIndex];
-                string operator_id = row.Cells["assetEmployeeId"].Value.ToString();
-                string name = row.Cells["assetEmployeeFName"].Value.ToString()  + row.Cells["assetEmployeeLName"].Value.ToString();
+                string operator_id = row.Cells["Id"].Value.ToString();
+                string name = row.Cells["FName"].Value.ToString()  + row.Cells["LName"].Value.ToString();
                 
                 Console.WriteLine("Heyyyyy: " + operator_id);
 
@@ -1081,12 +1242,12 @@ namespace LGU_SV_Asset_Management_Sytem
                     Utilities.SetControlsVisibilityState(fieldcontrols, false);
                 }
 
-                textBoxOperatorFirstName.Text = row.Cells["assetEmployeeFName"].Value.ToString();
-                textBoxOperatorLastName.Text = row.Cells["assetEmployeeLName"].Value.ToString();
-                textBoxOperatorMiddleName.Text = row.Cells["assetEmployeeMName"].Value.ToString();
-                textBoxOperatorPhoneNumber.Text = row.Cells["assetEmployeePhoneNum"].Value.ToString();
-                richTextBoxOperatorAdress.Text = row.Cells["assetEmployeeAddress"].Value.ToString();
-                textBoxOperatorOffice.Text = row.Cells["assetEmployeeOffice"].Value.ToString();
+                textBoxOperatorFirstName.Text = row.Cells["FName"].Value.ToString();
+                textBoxOperatorLastName.Text = row.Cells["LName"].Value.ToString();
+                textBoxOperatorMiddleName.Text = row.Cells["MName"].Value.ToString();
+                textBoxOperatorPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString();
+                richTextBoxOperatorAdress.Text = row.Cells["Address"].Value.ToString();
+                textBoxOperatorOffice.Text = row.Cells["Office"].Value.ToString();
             }
         }
         private void OtherOperatorReset()
@@ -1100,15 +1261,15 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonAssetRecordsNewAsset_Click(object sender, EventArgs e)
         {
-            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice);
+            DialogBoxes.OptionDialogBox optionDialogBox = new DialogBoxes.OptionDialogBox(panelAssetRecordsHandler, RoleBasedID, currentUserOffice, this);
             Console.WriteLine(RoleBasedID);
             optionDialogBox.ShowDialog();
+            
         }
 
         private void buttonAssetRecordsViewRecords_Click(object sender, EventArgs e)
         {
-            Control panelControl = new Panels.AssetRecordsTab.RecordsHomePanel(currentUserOffice, panelViewedAssetHandler);
-            Utilities.PanelChanger(panelAssetRecordsHandler, panelControl);
+            LoadAssets();
         }
 
         
@@ -1117,6 +1278,422 @@ namespace LGU_SV_Asset_Management_Sytem
             OtherOperatorReset();
         }
 
+        private void ButtonMouseHover(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(68, 113, 68);
+                
+            }
+        }
+        private void ButtonMouseEnd(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(225, 232, 225);
 
+            }
+        }
+
+        private void Set(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelAssetRecordsHandler_Resize(object sender, EventArgs e)
+        {
+            //LoadAssets();
+        }
+
+        private void panelTabControl_Resize(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabAssetRecords_Resize(object sender, EventArgs e)
+        {
+           
+            if(panelViewedAssetHandler.Controls.Count == 1)
+            {
+                return;
+            }
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                LoadAssets();
+             
+            }
+            else if (this.WindowState == FormWindowState.Normal)
+            {
+
+                LoadAssets();
+             
+            }
+        }
+
+        private void panelViewedAssetHandler_Resize(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (panelAssetRecordsHandler.Controls.Count > 0)
+            {
+                Panels.AssetRecordsTab.RecordsHomePanel recordsHomePanel = (Panels.AssetRecordsTab.RecordsHomePanel)panelAssetRecordsHandler.Controls[0];
+                DataGridView dgv1 = recordsHomePanel.DataGridViewAssetRecords;
+
+                string searchKeyword = textBoxSearchFilter.Text.Trim();
+
+                DataTable dataTable = (DataTable)dgv1.DataSource;
+
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    if (!string.IsNullOrEmpty(searchKeyword))
+                    {
+                        string filterExpression = $"assetName LIKE '%{searchKeyword}%'";
+
+
+                        dataTable.DefaultView.RowFilter = filterExpression;
+                    }
+                    else
+                    {
+
+                        dataTable.DefaultView.RowFilter = string.Empty;
+                    }
+                }
+            }
+        }
+
+
+
+        private void textBoxSearchFilter_TextChanged(object sender, EventArgs e)
+        {
+            buttonSearch.PerformClick();
+        }
+
+        private void textBoxSearchFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void dataGridViewArchiveRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewArchiveRecords.Rows[e.RowIndex];
+
+                if (e.ColumnIndex == dataGridViewArchiveRecords.Columns["UnArchiveAssetColumn"].Index)
+                {
+                    Asset selectedAsset = new Asset();
+
+                    selectedAsset.AssetId = Convert.ToInt32(selectedRow.Cells["assetId"].Value);
+
+                    selectedAsset.AssetSupervisorId = Convert.ToInt32(selectedRow.Cells["AAdminFullName"].Value.ToString().Split(';')[1].Trim());
+                    selectedAsset.CurrentEmployeeId = Convert.ToInt32(selectedRow.Cells["currentCustodianCoordinatorFullName"].Value.ToString().Split(';')[1].Trim());
+
+                    selectedAsset.SupplierId = Convert.ToInt32(selectedRow.Cells["Supplier"].Value.ToString().Split(';')[1].Trim());
+                    selectedAsset.AssetCategoryId = Convert.ToInt32(selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[1].Trim());
+
+                    selectedAsset.SupplierName = selectedRow.Cells["Supplier"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.EmployeeName = selectedRow.Cells["currentCustodianCoordinatorFullName"].Value.ToString().Split(';')[0].Trim();
+                    selectedAsset.AssetCategoryName = selectedRow.Cells["AssetCategory"].Value.ToString().Split(';')[0].Trim();
+
+                    /*
+                 string assetLastMaintenanceValue = selectedRow.Cells["assetLastMaintenance"].Value.ToString();
+                 if (assetLastMaintenanceValue != "")
+                 {
+                     selectedAsset.AssetLastMaintenanceID = Convert.ToInt32(assetLastMaintenanceValue);
+                 }
+
+                 selectedAsset.AssetAvailability = selectedRow.Cells["assetAvailability"].Value.ToString();
+
+                 */
+                    selectedAsset.AssetName = selectedRow.Cells["assetName"].Value.ToString();
+                    selectedAsset.AssetLocation = selectedRow.Cells["assetLocation"].Value.ToString();
+
+                    selectedAsset.QRCode = selectedRow.Cells["assetQrStrDefinition"].Value.ToString();
+
+                    selectedAsset.AssetQRCodeImage = (byte[])selectedRow.Cells["assetQrCodeImage"].Value;
+                    selectedAsset.AssetImage = (byte[])selectedRow.Cells["assetImage"].Value;
+
+                    selectedAsset.AssetCondition = selectedRow.Cells["assetCondition"].Value.ToString();
+
+                    selectedAsset.IsArchive = Convert.ToBoolean(selectedRow.Cells["assetIsArchive"].Value);
+                    selectedAsset.IsMissing = Convert.ToBoolean(selectedRow.Cells["assetIsMissing"].Value);
+                    selectedAsset.IsMaintainable = Convert.ToBoolean(selectedRow.Cells["assetIsMaintainable"].Value);
+
+                    selectedAsset.AssetPurchaseAmount = Convert.ToDecimal(selectedRow.Cells["assetPurchaseAmount"].Value);
+                    selectedAsset.AssetPurchaseDate = Convert.ToDateTime(selectedRow.Cells["assetAcknowledgeDate"].Value);
+                    //selectedAsset.AssetMaintenanceLogsID = selectedRow.Cells["assetMaintenanceLogsID"].Value.ToString();
+                    selectedAsset.AssetQuantity = Convert.ToInt32(selectedRow.Cells["assetQuantity"].Value);
+                    selectedAsset.AssetUnit = selectedRow.Cells["assetUnit"].Value.ToString();
+                    /*
+                    selectedAsset.AssetLifeSpan = Convert.ToInt32(selectedRow.Cells["assetLifeSpan"].Value);
+                    */
+                    //added
+                    selectedAsset.AssetPurpose = selectedRow.Cells["assetPurpose"].Value.ToString();
+                    selectedAsset.AssetDescription = selectedRow.Cells["assetDescription"].Value.ToString();
+                    selectedAsset.AssetPropertyNumber = Convert.ToInt32(selectedRow.Cells["assetPropertyNumber"].Value);
+
+                    AssetRepositoryControl assetRepositoryControl = new AssetRepositoryControl();
+                    Asset archivedAsset = new Asset();
+                    archivedAsset = selectedAsset;
+                    archivedAsset.IsArchive = false;
+
+                    var result = assetRepositoryControl.SetArchiveState(archivedAsset);
+
+                    if (result.Success)
+                    {
+
+                        worker.RunArchiveRecordsComponent(currentUserOffice, currentSessionUserType);
+
+                        MessagePrompt($"Asset has been successfully unarchived");
+                    }
+                    else
+                    {
+                        MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                    }
+                }
+            }
+        }
+
+        private void textBoxArchiveRecordsSearch_TextChanged(object sender, EventArgs e)
+        {
+            worker.PerformArchiveRecordSearch();
+        }
+        
+        private void roundedButtonSearchArchiveRecords_Click(object sender, EventArgs e)
+        {
+            worker.PerformArchiveRecordSearch();
+
+
+        }
+
+        private void roundedButtonRent_Click(object sender, EventArgs e)
+        {
+            tabControlTransaction.SelectedTab = tabPageRent;
+        }
+
+        private void roundedButtonTrasnfer_Click(object sender, EventArgs e)
+        {
+            tabControlTransaction.SelectedTab = tabPageTransfer;
+
+            worker2.LoadTransactionPanel();
+        }
+
+        private void roundedButtonReqBorrow_Click(object sender, EventArgs e)
+        {
+            tabControlTransaction.SelectedTab = tabPageRequestAndBorrow;
+        }
+
+
+
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // If the form is closed by the user, exit the application
+                Application.Exit();
+            }
+        }
+
+        
+        private void LoadTranscationPanel()
+        {
+            worker1.LoadRentPanel();
+           
+        }
+
+        private void roundedButtonTransactionRentAssetFilterCLear_Click(object sender, EventArgs e)
+        {
+            worker1.AssetSearchFilterClear();
+        }
+
+       
+        private void dataGridViewTransactionRentAsset_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransactionRentAsset.Rows[e.RowIndex];
+                
+                worker1.DataGridViewCellMouseClick(Convert.ToInt32(selectedRow.Cells[2].Value.ToString()));
+                Console.WriteLine(selectedRow.Cells[2].Value.ToString());
+            }
+            
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
+            {
+                Asset confirmedAsset = worker1.AssetInProcess();
+
+                if (confirmedAsset == null)
+                {
+                    return;
+                }
+
+                prompt.listBox1.Items.Add("");
+                prompt.SetConfirmationTitle("\t Asset Rent Confirmation");
+
+                prompt.listBox1.Items.Add("\t Asset Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Asset Name: {confirmedAsset.AssetName}");
+                prompt.listBox1.Items.Add($"\t Asset Property Number: {confirmedAsset.AssetPropertyNumber}");
+                var result = assetOperatorRepositoryControl.GetCoordinatorName(confirmedAsset.CurrentEmployeeId);
+                prompt.listBox1.Items.Add($"\t Asset Current Custodian/Coordinator: {result.name}");
+                prompt.listBox1.Items.Add($"\t Asset Purpose: {confirmedAsset.AssetPurpose}");
+                prompt.listBox1.Items.Add($"\t Asset Description: {confirmedAsset.AssetDescription}");
+
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add("\t Rentee Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Rentee Name: {textBoxTransactionRenteeFName.Text} {textBoxTransactionRenteeMName.Text} {textBoxTransactionRenteeLName.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee Birthdate: {dateTimeTransactionRenteeBDate.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee Contact Number: {textBoxTransactionRenteeContactNumber.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee Address: {richTextBoxTransactionRenteeAddr.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee License ID: {textBoxTransactionRenteeLicenseID.Text}");
+
+                if (prompt.ShowDialog() == DialogResult.OK)
+                {
+                    worker1.InitiateAssetTransfer();
+                    MessagePrompt("Transaction completed.");
+                }
+
+            }
+
+            
+        }
+
+        private void roundedButtonTransactionRenteeDocUpload_Click(object sender, EventArgs e)
+        {
+            worker1.InitiateImageUploader();
+        }
+
+        private void roundedButtonTransactionTransferAssetCatApply_Click(object sender, EventArgs e)
+        {
+            worker2.CategoryListApplyFilter();
+        }
+
+        private void roundedButtonTransactionTransferAssetCatClear_Click(object sender, EventArgs e)
+        {
+            worker2.AssetSearchFilterClear();
+        }
+
+        
+
+        private void dataGridViewTransactionTransferAssetList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransactionTransferAssetList.Rows[e.RowIndex];
+
+                worker2.DataGridViewCellMouseClick(Convert.ToInt32(selectedRow.Cells[2].Value.ToString()));
+                Console.WriteLine(selectedRow.Cells[2].Value.ToString());
+            }
+        }
+
+        private void roundedButtonTransactionTransferUploadDocument_Click(object sender, EventArgs e)
+        {
+            worker2.InitiateImageUploader();
+        }
+
+        private void roundedButtonTransactionTransferSearchName_Click(object sender, EventArgs e)
+        {
+            worker2.FilterListCoordinators();
+        }
+
+        private void roundedButtonTransactinTransfer_Click(object sender, EventArgs e)
+        {
+            using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
+            {
+                
+                if(prompt.ShowDialog() == DialogResult.OK)
+                {
+                    worker2.InitiateTransferAsset();
+                    MessagePrompt("Transaction completed.");
+                }
+
+            }
+        }
+
+        private void textBoxTransactionTransferName_TextChanged(object sender, EventArgs e)
+        {
+            worker2.FilterListCoordinators();
+        }
+
+        private void dataGridViewTransactionTransferReceiver_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransactionTransferReceiver.Rows[e.RowIndex];
+
+                worker2.DataGridViewReceiverCellMouseClick(Convert.ToInt32(selectedRow.Cells[0].Value.ToString()));
+                
+            }
+        }
+
+        private void roundedButtonReportAnIssue_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.ReportIssueDialogBox rpt = new DialogBoxes.ReportIssueDialogBox(sessionHandler.GetUserName(databaseConnection));
+            rpt.ShowDialog();
+        }
+
+        private void roundedButtonUserManual_Click(object sender, EventArgs e)
+        {
+            string projectFolderPath = GetProjectFolderPath();
+            string resourcesFolderPath = Path.Combine(projectFolderPath, "Documents");
+                
+            
+            string pdfFilePath = Path.Combine(resourcesFolderPath, "User Manual.pdf");
+            Console.WriteLine("fpath: " + pdfFilePath);
+            OpenPdfWithDefaultViewer(pdfFilePath);
+        }
+
+        static void OpenPdfWithDefaultViewer(string filePath)
+        {
+            try
+            {
+                // Use the default PDF viewer associated with the system
+                Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error opening PDF: {ex.Message}");
+            }
+        }
+
+        static string GetProjectFolderPath()
+        {
+            // Get the base directory of the current application domain
+            return AppDomain.CurrentDomain.BaseDirectory;
+        }
+
+        private void roundedButtonAboutPolicy_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
+            rpt.ShowPolicy();
+        }
+
+        private void roundedButtonAboutTOS_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
+            rpt.ShowTOS();
+        }
+
+        private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)
+        {
+            worker1.CategoryListApplyFilter();
+        }
     }
 }

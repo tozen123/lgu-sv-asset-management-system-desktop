@@ -15,12 +15,12 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         Control panelHandler;
         string supervisor_id;
         string supervisor_location;
-        public OptionDialogBox(Control _panelHandler, string _supervisor_id, string loc)
+        MainForm mainForm;
+        public OptionDialogBox(Control _panelHandler, string _supervisor_id, string loc, MainForm _mainForm)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            pictureBox1.BackColor = Color.FromArgb(45, 77, 46);
-
+            mainForm = _mainForm;
             supervisor_id = _supervisor_id;
             supervisor_location = loc;
             panelHandler = _panelHandler;
@@ -30,16 +30,32 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         {
             this.Close();
 
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing, supervisor_id, supervisor_location);
+            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.Existing, supervisor_id, supervisor_location, panelHandler, mainForm);
+            panelControl.Size = panelHandler.Size;
+
             Utilities.PanelChanger(panelHandler, panelControl);
+
+            mainForm.buttonSearch.Enabled = false;
+            mainForm.textBoxSearchFilter.Enabled = false;
         }
 
         private void buttonNewAsset_Click(object sender, EventArgs e)
         {
             this.Close();
 
-            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.New, supervisor_id, supervisor_location);
+            Control panelControl = new Panels.AssetRecordsTab.AddAssetPanel(Panels.AssetRecordsTab.AddAssetPanel.AssetType.New, supervisor_id, supervisor_location, panelHandler, mainForm);
+            panelControl.Size = panelHandler.Size;
+
             Utilities.PanelChanger(panelHandler, panelControl);
+
+            mainForm.buttonSearch.Enabled = false;
+            mainForm.textBoxSearchFilter.Enabled = false;
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            mainForm.LoadAssets();
         }
     }
 }

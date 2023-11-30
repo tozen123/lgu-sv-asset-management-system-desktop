@@ -26,7 +26,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         string supervisor_id;
         string supervisor_location;
-
+        Control pHandler;
+        MainForm mainForm;
         public enum AssetType
         {
             New,
@@ -35,11 +36,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         public AssetType assetType;
 
-        public AddAssetPanel(AssetType _assetType, string id, string location)
+        public AddAssetPanel(AssetType _assetType, string id, string location, Control _panelHandler, MainForm _mf)
         {
             InitializeComponent();
             supervisor_id = id;
             supervisor_location = location;
+            mainForm = _mf;
+            pHandler = _panelHandler;
 
             assetType = _assetType;
             databaseConnection = new DatabaseConnection();
@@ -72,18 +75,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void PopulateComboBoxes()
         {
+            /*
             comboBoxAvailability.Items.Add("USED");
             comboBoxAvailability.Items.Add("AVAILABLE");
-
-            comboBoxCondition.Items.Add("WORKING");
-            comboBoxCondition.Items.Add("INOPERABLE");
+            */
+            comboBoxCondition.Items.Add("SERVICEABLE");
+            comboBoxCondition.Items.Add("NON-SERVICEABLE");
 
 
             comboBoxUnit.Items.Add("SET");
             comboBoxUnit.Items.Add("SINGLE");
 
 
-            string query = "SELECT  assetEmployeeId, assetEmployeeFName, assetEmployeeMName, assetEmployeeLName FROM AssetEmployee";
+            string query = "SELECT  Id, FName, MName, LName FROM AssetCoordinator";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
@@ -142,12 +146,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             newControl.Name = control.Name;
             newControl.Size = control.Size;
             newControl.Location = control.Location;
+            newControl.Font = control.Font;
+
 
             // Conditional for handling controls
             if (control is Label)
             {
                
                 ((Label)newControl).Text = ((Label)control).Text;
+                ((Label)newControl).BackColor = ((Label)control).BackColor;
+                ((Label)newControl).ForeColor = ((Label)control).ForeColor;
                 if (control.Name == "labelAssetCount")
                 {
                     ((Label)newControl).Text = (assetToAdd.Count + 1).ToString();
@@ -189,6 +197,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             else if (control is TextBox)
             {
                 ((TextBox)newControl).Text = ((TextBox)control).Text;
+                ((TextBox)newControl).BackColor = ((TextBox)control).BackColor;
                 ((TextBox)newControl).Text = "";
             }
             else if (control is ComboBox)
@@ -202,6 +211,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     clonedComboBox.Items.Add(item);
                 }
+            } if (control is PictureBox)
+            {
+                ((PictureBox)newControl).BackColor = ((PictureBox)control).BackColor;
             }
 
             return newControl;
@@ -286,7 +298,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 ComboBox ComboBox_Category = tabPage.Controls.Find("comboBoxCategory", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Unit = tabPage.Controls.Find("comboBoxUnit", true).FirstOrDefault() as ComboBox;
         
-                ComboBox ComboBox_Availability = tabPage.Controls.Find("comboBoxAvailability", true).FirstOrDefault() as ComboBox;
+                //ComboBox ComboBox_Availability = tabPage.Controls.Find("comboBoxAvailability", true).FirstOrDefault() as ComboBox;
                 ComboBox ComboBox_Condition = tabPage.Controls.Find("comboBoxCondition", true).FirstOrDefault() as ComboBox;
 
                 ComboBox ComboBox_Employee = tabPage.Controls.Find("comboBoxEmployee", true).FirstOrDefault() as ComboBox;
@@ -300,6 +312,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                 // Image
                 PictureBox PictureBox_assetImage = tabPage.Controls.Find("pictureBoxAssetImage", true).FirstOrDefault() as PictureBox;
+
+
+
+                //New Attrib
+
+                RichTextBox richTextBox_Purpose = tabPage.Controls.Find("richTextBoxPurpose", true).FirstOrDefault() as RichTextBox;
+                RichTextBox richTextBox_description = tabPage.Controls.Find("richTextBoxDesc", true).FirstOrDefault() as RichTextBox;
+                TextBox textBox_pnumber = tabPage.Controls.Find("textBoxPNumber", true).FirstOrDefault() as TextBox;
+
+
+
 
                 // QR Generator
 
@@ -318,19 +341,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 */
 
 
-                
-                
-                    // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
-
-                    // Note for programmers who will read this section:
-                    // The following code might not represent the best implementation.
-                    // The code and logic could result in error on database inputs,
-                    // causing to major errors and evenn potential crashes due to a lack of validation.
-                    // This code was developed for a fast implementation to meet the deadline. :(
 
 
-                    // Supervisor
-                    if (int.TryParse(supervisor_id, out int parsedSupervisorId))
+                // Region (First Reading [Need 2nd Reading for finalizing asset attributes])
+
+                // Note for programmers who will read this section:
+                // The following code might not represent the best implementation.
+                // The code and logic could result in error on database inputs,
+                // causing to major errors and evenn potential crashes due to a lack of validation.
+                // This code was developed for a fast implementation to meet the deadline. :(
+
+
+                // Supervisor
+                if (int.TryParse(supervisor_id, out int parsedSupervisorId))
                     {
                         asset.AssetSupervisorId = parsedSupervisorId;
                     }
@@ -359,7 +382,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     
                     asset.AssetName = TextBox_AssetName.Text;
                     asset.AssetCondition = ComboBox_Condition.SelectedItem?.ToString();
-                    asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
+                    //asset.AssetAvailability = ComboBox_Availability.SelectedItem?.ToString();
                     asset.AssetLocation = supervisor_location;
                     asset.IsArchive = false;
                     asset.AssetPurchaseAmount = Convert.ToDecimal(TextBox_PurchaseAmount.Text);
@@ -369,14 +392,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     asset.AssetPurchaseDate = DateTimePicker_purchaseDate.Value;
                     asset.IsMaintainable = CheckBox_isMaintainable.Checked;
                     asset.IsMissing = false;
-                    
+
+                    asset.AssetPurpose = richTextBox_Purpose.Text;
+                    asset.AssetDescription = richTextBox_description.Text;
+
+                    asset.AssetPropertyNumber = Convert.ToInt32(textBox_pnumber.Text); 
 
                     // LifeSpan
-
-                    if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
+                /*
+                if (int.TryParse(TextBox_LifeSpan.Text, out int lifespan))
                     {
                         asset.AssetLifeSpan = lifespan;
                     }
+                */
                 //End Region
 
 
@@ -460,11 +488,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     foreach (Asset asset in assetToAdd)
                     {
-                        string query = "INSERT INTO Assets (assetSupervisorID, currentAssetEmployeeID, supplierID, assetCategoryID, assetName," +
-                        " assetCondition, assetAvailability, assetLocation, assetIsArchive, assetPurchaseDate, assetPurchaseAmount," +
-                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetLifeSpan) VALUES " +
-                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition, @availability,  @location, @isarchive," +
-                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @lifeSpan)";
+                        
+                        string query = "INSERT INTO Assets (assetAdminID, currentCustodianAssetCoordID, supplierID, assetCategoryID, assetName," +
+                        " assetCondition, assetLocation, assetIsArchive, assetAcknowledgeDate, assetPurchaseAmount," +
+                        " assetQuantity, assetUnit, assetImage, assetIsMissing, assetIsMaintainable, assetPurpose, assetDescription, assetPropertyNumber) VALUES " +
+                        " (@supervisorId, @employeeId, @supplierId, @categoryId, @name, @condition,  @location, @isarchive," +
+                        " @purchasedate, @purchaseamount, @quantity, @unit, @image, @ismissing, @ismaintainable, @purpose, @description, @propertynumber)";
 
                         Dictionary<string, object> parameters = new Dictionary<string, object>()
                         {
@@ -474,17 +503,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                             { "@categoryId", asset.AssetCategoryId },
                             { "@name",  asset.AssetName },
                             { "@condition", asset.AssetCondition },
-                            { "@availability", asset.AssetAvailability },
+                           // { "@availability", asset.AssetAvailability },
                             { "@location", asset.AssetLocation },
                             { "@isarchive", asset.IsArchive },
                             { "@purchasedate", asset.AssetPurchaseDate },
                             { "@purchaseamount", asset.AssetPurchaseAmount },
                             { "@quantity", asset.AssetQuantity },
-                            { "@unit", asset.AssetQuantity },
+                            { "@unit", asset.AssetUnit },
                             { "@image", asset.AssetImage},
                             { "@ismissing", asset.IsMissing},
                             { "@ismaintainable", asset.IsMaintainable},
-                            { "@lifeSpan", asset.AssetLifeSpan}
+                            //{ "@lifeSpan", asset.AssetLifeSpan},
+                            { "@purpose", asset.AssetPurpose},
+                            { "@description", asset.AssetDescription},
+                            { "@propertynumber", asset.AssetPropertyNumber}
 
                         };
                         int qr_asset_gen_id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
@@ -510,8 +542,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         databaseConnection.UploadToDatabase(query1, parameters1);
 
                         databaseConnection.CloseConnection();
-
+                        
                     }
+
+
                     // Success Panel
                     SuccessPanel(assetToAdd);
 
@@ -523,31 +557,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 }
             }
 
-            foreach (Asset asset in assetToAdd)
-            {
-                Console.WriteLine("------------------------------------------");
-                Console.WriteLine($"Asset Supervisor ID: {asset.AssetSupervisorId}");
-                Console.WriteLine($"Current Employee ID: {asset.CurrentEmployeeId}");
-                Console.WriteLine($"Supplier ID: {asset.SupplierId}");
-                Console.WriteLine($"Asset Category ID: {asset.AssetCategoryId}");
-                Console.WriteLine($"Asset Last Maintenance ID: {asset.AssetLastMaintenanceID}");
-                Console.WriteLine($"Asset Name: {asset.AssetName}");
-                Console.WriteLine($"Asset Location: {asset.AssetLocation}");
-                Console.WriteLine($"QR Code: {asset.QRCode}");
-                Console.WriteLine($"QR Code Image: ");
-                Console.WriteLine($"Asset Image: {asset.AssetImage}");
-                Console.WriteLine($"Asset Availability: {asset.AssetAvailability}");
-                Console.WriteLine($"Asset Condition: {asset.AssetCondition}");
-                Console.WriteLine($"Is Archive: {asset.IsArchive}");
-                Console.WriteLine($"Is Missing: {asset.IsMissing}");
-                Console.WriteLine($"Asset Purchase Amount: {asset.AssetPurchaseAmount}");
-                Console.WriteLine($"Asset Purchase Date: {asset.AssetPurchaseDate}");
-                Console.WriteLine($"Asset Maintenance Logs ID: {asset.AssetMaintenanceLogsID}");
-                Console.WriteLine($"Asset Quantity: {asset.AssetQuantity}");
-                Console.WriteLine($"Asset Unit: {asset.AssetUnit}");
-                Console.WriteLine($"Is Maintainable: {asset.IsMaintainable}");
-                Console.WriteLine("------------------------------------------");
-            }
+            
         }
 
         private void SuccessPanel(List<Asset> assetSuccessfulList)
@@ -558,6 +568,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 if (addAssetPanelSuccessfulQRShow.GetResult() == DialogResult.OK)
                 {
 
+                    pHandler.Controls.Clear();
+                    pHandler.SendToBack();
+                    pHandler.Visible = false;
+
+                    mainForm.LoadAssets();
                 }
             }
         }
@@ -631,6 +646,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             prompt.Show();
         }
 
-      
+        private void comboBoxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

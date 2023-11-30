@@ -30,35 +30,25 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         private void InitializeComponent()
         {
             this.buttonContinue = new System.Windows.Forms.Button();
-            this.labelMessage = new System.Windows.Forms.Label();
             this.pictureBoxBorderTop = new System.Windows.Forms.PictureBox();
+            this.labelMessage = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorderTop)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonContinue
             // 
-            this.buttonContinue.Location = new System.Drawing.Point(262, 155);
+            this.buttonContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonContinue.FlatAppearance.BorderSize = 0;
+            this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonContinue.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonContinue.ForeColor = System.Drawing.Color.White;
+            this.buttonContinue.Location = new System.Drawing.Point(265, 155);
             this.buttonContinue.Name = "buttonContinue";
             this.buttonContinue.Size = new System.Drawing.Size(189, 34);
             this.buttonContinue.TabIndex = 1;
-            this.buttonContinue.Text = "Continue";
-            this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Text = "CONTINUE";
+            this.buttonContinue.UseVisualStyleBackColor = false;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
-            // 
-            // labelMessage
-            // 
-            this.labelMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMessage.AutoSize = true;
-            this.labelMessage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMessage.Location = new System.Drawing.Point(95, 70);
-            this.labelMessage.Name = "labelMessage";
-            this.labelMessage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelMessage.Size = new System.Drawing.Size(46, 23);
-            this.labelMessage.TabIndex = 2;
-            this.labelMessage.Text = "label1";
-            this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBoxBorderTop
             // 
@@ -69,27 +59,37 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.pictureBoxBorderTop.TabIndex = 3;
             this.pictureBoxBorderTop.TabStop = false;
             // 
+            // labelMessage
+            // 
+            this.labelMessage.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelMessage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessage.Location = new System.Drawing.Point(29, 32);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(660, 117);
+            this.labelMessage.TabIndex = 4;
+            this.labelMessage.Text = "";
+            // 
             // MessagePromptDialogBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 201);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBoxBorderTop);
             this.Controls.Add(this.labelMessage);
+            this.Controls.Add(this.pictureBoxBorderTop);
             this.Controls.Add(this.buttonContinue);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MessagePromptDialogBox";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorderTop)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button buttonContinue;
-        private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.PictureBox pictureBoxBorderTop;
+        private System.Windows.Forms.RichTextBox labelMessage;
     }
 }

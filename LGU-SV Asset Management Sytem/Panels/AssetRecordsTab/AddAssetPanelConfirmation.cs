@@ -51,7 +51,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             labelAssetCategory.Text = FetchAssetCategoryName(list[indexLoad].AssetCategoryId.ToString());
 
 
-            labelAssetAvailability.Text = list[indexLoad].AssetAvailability.ToString();
+            //labelAssetAvailability.Text = list[indexLoad].AssetAvailability.ToString();
             labelAssetCondition.Text = list[indexLoad].AssetCondition.ToString();
             labelAssetLocation.Text = list[indexLoad].AssetLocation.ToString();
 
@@ -64,6 +64,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             labelAssetPurchaseAmount.Text = list[indexLoad].AssetPurchaseAmount.ToString();
             labelAssetPurchaseDate.Text = list[indexLoad].AssetPurchaseDate.ToString();
 
+            //New Fetch
+            labelPNumber.Text = list[indexLoad].AssetPropertyNumber.ToString();
+
             if (list[indexLoad].IsMaintainable)
             {
                 labelMaintainable.Text = "YES";
@@ -74,7 +77,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             }
             
 
-            labelLifeSpan.Text = list[indexLoad].AssetLifeSpan.ToString();
+           // labelLifeSpan.Text = list[indexLoad].AssetLifeSpan.ToString();
         }
         private string FetchAssetCategoryName(string _id)
         {
@@ -101,7 +104,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private string FetchAssetEmployeeName(string _id)
         {
-            string query = "SELECT assetEmployeeFName, assetEmployeeMName, assetEmployeeLName FROM AssetEmployee WHERE assetEmployeeId = @id";
+            string query = "SELECT FName, MName, LName FROM AssetCoordinator WHERE Id = @id";
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
                 {"@id", _id}

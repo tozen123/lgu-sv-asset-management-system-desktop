@@ -20,19 +20,50 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         AssetRepositoryControl assetRepositoryControl;
 
-       
+        User currentUser;
 
-        public AssetViewedInformationPanel(Asset _asset, RecordsHomePanel _rcpanel, Control panelHandler)
+        public AssetViewedInformationPanel(Asset _asset, RecordsHomePanel _rcpanel, Control panelHandler, User _currentUser)
         {
             InitializeComponent();
+
             _panelHandler = panelHandler;
             asset = _asset;
             rcpanel = _rcpanel;
+
+            currentUser = _currentUser;
+
             InitializeAssetInformation();
             SetMenuButton();
 
             assetRepositoryControl = new AssetRepositoryControl();
+            SetAccessLevel();
+        
         }
+      
+            
+            
+        // Only Employee can create new MaintenanceLogs
+
+        private void SetAccessLevel()
+        {
+            switch (currentUser.GetStringAccessLevel())
+            {
+                case "Asset Viewer":
+                    buttonDelete.Enabled = false;
+                    buttonArchive.Enabled = false;
+                    buttonUpdateInfo.Enabled = false;
+                    break;
+                case "Asset Coordinator":
+                    buttonDelete.Enabled = false;
+                    buttonArchive.Enabled = false;
+                    buttonUpdateInfo.Enabled = false;
+                    break;
+                case "Asset Administrator":
+                    
+                    break;
+            }
+        }
+
         private void InitializeAssetInformation()
         {
             labelAssetIdWithName.Text = "Asset Records: " + asset.AssetId + "-" + asset.AssetName;
@@ -48,6 +79,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             textBoxPAmount.Text = asset.AssetPurchaseAmount.ToString();
             textBoxPDate.Text = asset.AssetPurchaseDate.ToString();
 
+            /*
             if (asset.AssetLastMaintenanceID.ToString() == "0")
             {
                 textBoxLMaintenance.Text = "N/A";
@@ -56,11 +88,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             {
                 textBoxLMaintenance.Text = asset.AssetLastMaintenanceID.ToString();
             }
-
+            */
             textBoxUnit.Text = asset.AssetUnit;
             textBoxCondition.Text = asset.AssetCondition;
-            textBoxAvailability.Text = asset.AssetAvailability;
-            textBoxLifeSpan.Text = asset.AssetLifeSpan.ToString();
+            //textBoxAvailability.Text = asset.AssetAvailability;
+            //textBoxLifeSpan.Text = asset.AssetLifeSpan.ToString();
             
 
 
@@ -70,6 +102,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             textBoxAssetCategory.Text = asset.AssetCategoryName;
             textBoxSupplier.Text = asset.SupplierName;
 
+            //New
+
+            richTextBoxDescription.Text = asset.AssetDescription;
+            richTextBoxPurpose.Text = asset.AssetPurpose;
+
+            textBoxPropertyName.Text = asset.AssetPropertyNumber.ToString();
 
         }
 
@@ -85,7 +123,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             menuButton1.Menu = new ContextMenuStrip();
             menuButton1.Menu.Items.Add("Maintenances", null, MenuItem_Click);
             menuButton1.Menu.Items.Add("Transfers", null, MenuItem_Click);
-            menuButton1.Menu.Items.Add("Borrowed And Returns", null, MenuItem_Click);
+            menuButton1.Menu.Items.Add("Rents", null, MenuItem_Click);
+            //menuButton1.Menu.Items.Add("Borrowed And Returns", null, MenuItem_Click);
         
         }
 
@@ -153,7 +192,22 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void buttonUpdateInfo_Click(object sender, EventArgs e)
         {
+            using (AssetInfoUpdater updater = new AssetInfoUpdater(asset))
+            {
+                updater.ShowDialog();
 
+                if(updater.GetResult() == DialogResult.OK)
+                {
+                    _panelHandler.Controls.Clear();
+                    rcpanel.InitializeRecords();
+                    _panelHandler.SendToBack();
+                }
+                else if(updater.GetResult() == DialogResult.Cancel)
+                {
+
+                }
+
+            }
         }
 
         private void buttonArchive_Click(object sender, EventArgs e)
@@ -166,7 +220,26 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                 if (confirmationPrompt.ShowDialog() == DialogResult.OK)
                 {
-                    MessagePrompt("Part not fully implemented. :(");
+                    Asset archivedAsset = new Asset();
+                    archivedAsset = asset;
+                    archivedAsset.IsArchive = true;
+
+                    var result = assetRepositoryControl.SetArchiveState(archivedAsset);
+
+                    if (result.Success)
+                    {
+
+
+                        _panelHandler.Controls.Clear();
+                        rcpanel.InitializeRecords();
+                        _panelHandler.SendToBack();
+
+                        MessagePrompt($"Asset has been successfully moved to archive");
+                    }
+                    else
+                    {
+                        MessagePrompt($"{ErrorList.Error5()[0] + " | " + ErrorList.Error5()[1]}{result.ErrorMessage}");
+                    }
                 }
             }
         }
@@ -186,10 +259,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     if (result.Success)
                     {
 
-                        MessagePrompt($"Asset has been successfully deleted");
+                       
                         _panelHandler.Controls.Clear();
                         rcpanel.InitializeRecords();
                         _panelHandler.SendToBack();
+
+                        MessagePrompt($"Asset has been successfully deleted");
                     }
                     else
                     {
@@ -221,17 +296,21 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 switch (itemName)
                 {
                     case "Maintenances":
-                        MaintenancePanel.AssetMaintenanceLogPanel maintenanceLogPanel = new MaintenancePanel.AssetMaintenanceLogPanel(panelLogsHandler, asset);
+                        MaintenancePanel.AssetMaintenanceLogPanel maintenanceLogPanel = new MaintenancePanel.AssetMaintenanceLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(maintenanceLogPanel);
 
                         break;
                     case "Transfers":
-                        TransferPanel.AssetTransferLogPanel transferLogPanel = new TransferPanel.AssetTransferLogPanel(panelLogsHandler, asset);
+                        TransferPanel.AssetTransferLogPanel transferLogPanel = new TransferPanel.AssetTransferLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(transferLogPanel);
 
                         break;
+                    case "Rents":
+                        RentLogPanel.AssetRentLogPanel assetRentLogPanel = new RentLogPanel.AssetRentLogPanel(panelLogsHandler, asset, currentUser);
+                        SwitchLogPanel(assetRentLogPanel);
+                        break;
                     case "Borrowed And Returns":
-                        BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset);
+                        BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(borrowedAndReturnsLogPanel);
                         break;
                 }
@@ -240,10 +319,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void SwitchLogPanel(Control panelToSwitch)
         {
+
             panelLogsHandler.Controls.Add(panelToSwitch);
             panelLogsHandler.BringToFront();
             panelLogsHandler.Visible = true;
+
+            panelToSwitch.Size = panelLogsHandler.Size;
         }
 
+        private void menuButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }

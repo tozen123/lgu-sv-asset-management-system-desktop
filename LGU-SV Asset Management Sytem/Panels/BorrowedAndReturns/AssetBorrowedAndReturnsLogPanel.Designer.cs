@@ -43,6 +43,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.BorrowedAndReturns
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Text = "<";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // labelAssetIdWithName
             // 

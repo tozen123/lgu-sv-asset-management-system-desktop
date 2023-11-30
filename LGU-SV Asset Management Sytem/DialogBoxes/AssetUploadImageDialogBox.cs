@@ -27,6 +27,8 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
 
         private void buttonBrowseImage_Click(object sender, EventArgs e)
         {
+            
+
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG Files (*.jpg; *.jpeg)|*.jpg;*.jpeg", Multiselect = false })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)

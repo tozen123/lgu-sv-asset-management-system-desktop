@@ -59,5 +59,20 @@ namespace LGU_SV_Asset_Management_Sytem
             panelControl.BringToFront();
             panelControl.Visible = true;
         }
+
+        public static void AutoResizeColumnsBasedOnHeaders(DataGridView dataGridView)
+        {
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            }
+
+            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.ColumnHeader);
+
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
+        }
     }
 }

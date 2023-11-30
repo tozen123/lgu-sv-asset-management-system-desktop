@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 namespace LGU_SV_Asset_Management_Sytem
 {
   
-    class User
+    public class User
     {
         private DatabaseConnection databaseConnection;
+
+        private string userRoleBasedID;
+
+        public string UserRoleBasedID
+        {
+            get { return userRoleBasedID; }
+            set { userRoleBasedID = value; }
+        }
 
         public User()
         {
@@ -18,8 +26,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public enum AccessLevel
         {
-            Employee,
-            Supervisor,
+            Coordinator,
+            Administrator,
             Viewer
         }
 
@@ -41,6 +49,23 @@ namespace LGU_SV_Asset_Management_Sytem
             return Role;
         }
 
+        public virtual string GetStringAccessLevel()
+        {
+            switch (Role)
+            {
+                case AccessLevel.Viewer:
+                    return "Asset Viewer";
+
+                case AccessLevel.Administrator:
+                    return "Asset Administrator";
+ 
+                case AccessLevel.Coordinator:
+                    return "Asset Coordinator";
+                default:
+                    return "NULL_DATA_USER";
+            }
+            
+        }
         public void UploadToDatabase(string query, Dictionary<string, object> parameters)
         {
             databaseConnection.UploadToDatabase(query, parameters);

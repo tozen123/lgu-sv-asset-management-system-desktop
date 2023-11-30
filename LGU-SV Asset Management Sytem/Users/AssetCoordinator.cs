@@ -7,7 +7,7 @@ using System.Data;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    class AssetEmployee : User
+    class AssetCoordinator : User
     {
         private int assetEmployeeId;
 
@@ -73,11 +73,11 @@ namespace LGU_SV_Asset_Management_Sytem
             set { assetEmployeeOffice = value; }
         }
 
-        public class AssetEmployeeRepositoryControl
+        public class AssetCoordinatorRepositoryControl
         {
             private DatabaseConnection databaseConnection;
 
-            public AssetEmployeeRepositoryControl()
+            public AssetCoordinatorRepositoryControl()
             {
                 databaseConnection = new DatabaseConnection();
             }
@@ -86,11 +86,11 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 try
                 {
-                    string query = "SELECT assetEmployeeId, assetEmployeeFName, assetEmployeeMName, " +
-                        "assetEmployeeLName, assetEmployeePhoneNum, " +
-                        "assetEmployeeEmail, assetEmployeeAddress, " +
-                        "assetEmployeeOffice " +
-                        "FROM AssetEmployee";
+                    string query = "SELECT Id, FName, MName, " +
+                        "LName, PhoneNumber, " +
+                        "Email, Address, " +
+                        "Office " +
+                        "FROM AssetCoordinator";
 
 
                     Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -107,13 +107,13 @@ namespace LGU_SV_Asset_Management_Sytem
                 }
             }
 
-            public (bool Success, string ErrorMessage) AddToDatabase(AssetEmployee assetEmployee)
+            public (bool Success, string ErrorMessage) AddToDatabase(AssetCoordinator assetEmployee)
             {
                 try
                 {
-                    string query = "INSERT INTO AssetEmployee " +
-                        "(assetEmployeeFName, assetEmployeeMName, assetEmployeeLName, assetEmployeePhoneNum, " +
-                        "assetEmployeeEmail, assetEmployeeAddress, assetEmployeeOffice) " +
+                    string query = "INSERT INTO AssetCoordinator " +
+                        "(FName, MName, LName, PhoneNumber, " +
+                        "Email, Address, Office) " +
                         "VALUES " +
                         "(@assetEmployeeFName, @assetEmployeeMName, @assetEmployeeLName, @assetEmployeePhoneNum, " +
                         "@assetEmployeeEmail, @assetEmployeeAddress, @assetEmployeeOffice)";
@@ -138,6 +138,83 @@ namespace LGU_SV_Asset_Management_Sytem
                 catch (Exception ex)
                 {
                     return (false, ex.Message);
+                }
+            }
+
+            public (string name, bool Success, string ErrorMessage) GetCoordinatorName(int id)
+            {
+                try
+                {
+                    string query = "SELECT FName, MName, LName FROM AssetCoordinator WHERE Id = @id";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", id }
+                    };
+
+                    DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+                    if (resultTable.Rows.Count > 0)
+                    {
+                        DataRow row = resultTable.Rows[0];
+
+                       
+                        string fname = row["FName"].ToString();
+                        string mname = row["MName"].ToString();
+                        string lname = row["LName"].ToString();
+
+                        string resultName = $"{fname} {mname} {lname}";
+
+                        databaseConnection.CloseConnection();
+
+                        return (resultName, true, null);
+                    }
+                    else
+                    {
+                        
+                        return ("", false, "No matching record found.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return ("", false, ex.Message);
+                }
+            }
+
+            public (string office, bool Success, string ErrorMessage) GetCoordinatorOffice(int id)
+            {
+                try
+                {
+                    string query = "SELECT Office FROM AssetCoordinator WHERE Id = @id";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@id", id }
+                    };
+
+                    DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+                    if (resultTable.Rows.Count > 0)
+                    {
+                        DataRow row = resultTable.Rows[0];
+
+
+                        string office = row["Office"].ToString();
+               
+
+                        string resultName = $"{office}";
+
+                        databaseConnection.CloseConnection();
+
+                        return (resultName, true, null);
+                    }
+                    else
+                    {
+
+                        return ("", false, "No matching record found.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return ("", false, ex.Message);
                 }
             }
         }

@@ -1,6 +1,8 @@
 # lgu-sv-asset-management-system-desktop
 LGU San Vicente Asset Management System Desktop
 
+FELINE VERSION
+  - Implemented changes based on the conducted user training
 
 # Overview
 

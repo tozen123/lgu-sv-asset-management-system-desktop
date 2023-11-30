@@ -47,9 +47,9 @@ namespace LGU_SV_Asset_Management_Sytem
                 case "01":
                         return "Asset Viewer";
                 case "02":
-                        return "Asset Employee";
+                        return "Asset Coordinator";
                 case "03":
-                        return "Asset Supervisor";
+                        return "Asset Administrator";
                 default:
                     return "Null";
 
@@ -64,11 +64,11 @@ namespace LGU_SV_Asset_Management_Sytem
                 case "Asset Viewer":
                     query = "SELECT assetViewerFName, assetViewerLName FROM AssetViewer WHERE userId = @userId";
                     break;
-                case "Asset Employee":
-                    query = "SELECT assetEmployeeFName, assetEmployeeLName FROM AssetEmployee WHERE userId = @userId";
+                case "Asset Coordinator":
+                    query = "SELECT FName, LName FROM AssetCoordinator WHERE userId = @userId";
                     break;
-                case "Asset Supervisor":
-                    query = "SELECT assetSupervisorFname, assetSupervisorLName FROM AssetSupervisor WHERE userId = @userId";
+                case "Asset Administrator":
+                    query = "SELECT FName, LName FROM AssetAdministrator WHERE userId = @userId";
                     break;
                 default:
                     return "Null";
