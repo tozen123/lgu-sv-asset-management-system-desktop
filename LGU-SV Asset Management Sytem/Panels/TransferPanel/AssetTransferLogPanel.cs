@@ -86,17 +86,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
             if (dataGridViewTransferLogs.Columns["View Document"] == null)
             {
 
-                // Create a new DataGridViewButtonColumn
+               
                 var viewButtonColumn = new DataGridViewButtonColumn();
                 viewButtonColumn.HeaderText = "Actions";
                 viewButtonColumn.Text = "View Document";
                 viewButtonColumn.Name = "ViewDocumentColumn";
                 viewButtonColumn.UseColumnTextForButtonValue = true;
 
-                // Add the button column to the DataGridView
+               
                 dataGridViewTransferLogs.Columns.Add(viewButtonColumn);
 
-                // Adjust the button column's display index to make it the last column
+            
                 viewButtonColumn.DisplayIndex = dataGridViewTransferLogs.Columns.Count - 1;
             }
 
