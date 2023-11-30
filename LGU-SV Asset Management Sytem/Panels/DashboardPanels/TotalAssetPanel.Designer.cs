@@ -51,7 +51,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
             this.labelCountAsset.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.labelCountAsset.Font = new System.Drawing.Font("Poppins", 54F, System.Drawing.FontStyle.Bold);
             this.labelCountAsset.ForeColor = System.Drawing.Color.White;
-            this.labelCountAsset.Location = new System.Drawing.Point(377, 136);
+            this.labelCountAsset.Location = new System.Drawing.Point(828, 136);
             this.labelCountAsset.Name = "labelCountAsset";
             this.labelCountAsset.ReadOnly = true;
             this.labelCountAsset.Size = new System.Drawing.Size(180, 108);
@@ -69,7 +69,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
             this.Controls.Add(this.labelCountAsset);
             this.Controls.Add(this.label1);
             this.Name = "TotalAssetPanel";
-            this.Size = new System.Drawing.Size(571, 256);
+            this.Size = new System.Drawing.Size(1022, 256);
             this.ResumeLayout(false);
             this.PerformLayout();
 

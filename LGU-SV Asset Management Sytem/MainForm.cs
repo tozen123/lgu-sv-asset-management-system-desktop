@@ -56,6 +56,7 @@ namespace LGU_SV_Asset_Management_Sytem
         Worker1 worker1;
         Worker2 worker2;
         Worker3 worker3;
+        Worker4 worker4;
 
         public MainForm()
         {
@@ -98,8 +99,9 @@ namespace LGU_SV_Asset_Management_Sytem
             worker1 = new Worker1(this);
             worker2 = new Worker2(this);
             worker3 = new Worker3(this);
+            worker4 = new Worker4(this);
 
-            
+
 
 
         }
@@ -243,7 +245,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Set
             labelOffice.Text = currentUserOffice;
-            DashboardLoad();
+        
 
             // Check the session before updating the UI
             if (CheckSession())
@@ -253,30 +255,14 @@ namespace LGU_SV_Asset_Management_Sytem
                 hamburgerToggle = true;
             }
 
+            worker4.DashboardLoad();
+            
             //Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
             //Utilities.SetControlsVisibilityState(sideLabels, true);
         }
 
-        private void DashboardLoad()
-        {
-            Panels.DashboardPanels.TotalAssetPanel totalAssetPanel = new Panels.DashboardPanels.TotalAssetPanel(currentUserOffice);
-            roundedPanelTotalAsset.Controls.Add(totalAssetPanel);
+       
 
-            Panels.DashboardPanels.AssetByCategoryPanel assetByCategoryPanel = new Panels.DashboardPanels.AssetByCategoryPanel(currentUserOffice);
-            roundedPanelCategoryCount.Controls.Add(assetByCategoryPanel);
-
-            menuButtonSortByYear.Menu = new ContextMenuStrip();
-            menuButtonSortByYear.Menu.Items.Add("2023", null);
-            menuButtonSortByYear.Menu.Items.Add("2022", null);
-            menuButtonSortByYear.Menu.Items.Add("2021", null);
-            menuButtonSortByYear.Menu.Items.Add("2020", null);
-            menuButtonSortByYear.Menu.Items.Add("2019", null);
-            menuButtonSortByYear.Menu.Items.Add("2018", null);
-            menuButtonSortByYear.Menu.Items.Add("2017", null);
-            menuButtonSortByYear.Menu.Items.Add("2016", null);
-            menuButtonSortByYear.Menu.Items.Add("2015", null);
-
-        }
         private void ProfileTabPanel()
         {
 
@@ -367,7 +353,7 @@ namespace LGU_SV_Asset_Management_Sytem
  
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
-            DashboardLoad();
+            worker4.DashboardLoad();
             panelTabControl.SelectedTab = tabDashboard;
             ResetAssetViewedPanel();
         }
@@ -769,7 +755,9 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-          
+            worker4.ResizePanels("All");
+            Console.WriteLine("roundedPanelTotalAsset: " + roundedPanelTotalAsset.Size);
+            Console.WriteLine("roundedPanelCategoryCount: " + roundedPanelCategoryCount.Size);
         }
 
    
@@ -1321,6 +1309,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (this.WindowState == FormWindowState.Maximized)
             {
                 LoadAssets();
+
+
              
             }
             else if (this.WindowState == FormWindowState.Normal)

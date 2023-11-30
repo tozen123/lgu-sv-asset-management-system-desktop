@@ -14,11 +14,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
     {
         private DatabaseConnection databaseConnection;
         string office;
-        public AssetByCategoryPanel(string _office)
+        string targetYear;
+        public AssetByCategoryPanel(string _office, string _year)
         {
             InitializeComponent();
             databaseConnection = new DatabaseConnection();
-
+            targetYear = _year;
             office = _office;
             CategoryAssetCount();
         }
@@ -30,16 +31,31 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
 
         private void CategoryAssetCount()
         {
-            string query = "SELECT AC.assetCategoryName, COUNT(A.assetId) AS AssetCount " +
-               "FROM [LGU_AMS_DB].[dbo].[AssetCategory] AC " +
-               "LEFT JOIN [LGU_AMS_DB].[dbo].[Assets] A ON AC.assetCategoryId = A.assetCategoryID " +
-               "WHERE A.assetLocation = @loc " +
-               "GROUP BY AC.assetCategoryId, AC.assetCategoryName " +
-               "ORDER BY AC.assetCategoryId";
+            string query;
+
+            if (targetYear == "All")
+            {
+                query = "SELECT AC.assetCategoryName, COUNT(A.assetId) AS AssetCount " +
+                       "FROM [LGU_AMS_DB].[dbo].[AssetCategory] AC " +
+                       "LEFT JOIN [LGU_AMS_DB].[dbo].[Assets] A ON AC.assetCategoryId = A.assetCategoryID " +
+                       "WHERE A.assetLocation = @loc " +
+                       "GROUP BY AC.assetCategoryId, AC.assetCategoryName " +
+                       "ORDER BY AC.assetCategoryId";
+            }
+            else
+            {
+                query = "SELECT AC.assetCategoryName, COUNT(A.assetId) AS AssetCount " +
+                       "FROM [LGU_AMS_DB].[dbo].[AssetCategory] AC " +
+                       "LEFT JOIN [LGU_AMS_DB].[dbo].[Assets] A ON AC.assetCategoryId = A.assetCategoryID " +
+                       "WHERE A.assetLocation = @loc AND YEAR(assetAcknowledgeDate) = @year " +
+                       "GROUP BY AC.assetCategoryId, AC.assetCategoryName " +
+                       "ORDER BY AC.assetCategoryId";
+            }
 
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
-                {"@loc", office}
+                {"@loc", office},
+                {"@year", targetYear}
             };
 
 

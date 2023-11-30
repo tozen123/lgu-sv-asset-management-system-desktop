@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-    // This class is test 
+  
 
     // Worker class for Main Form
     

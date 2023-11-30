@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
             this.tabTransaction = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
@@ -47,6 +50,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTransactionRentAsset = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.PictureBoxTransactionRentAssetImage = new System.Windows.Forms.PictureBox();
             this.label35 = new System.Windows.Forms.Label();
             this.textBoxTransactionRentAssetPurpose = new System.Windows.Forms.RichTextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -63,6 +67,7 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label40 = new System.Windows.Forms.Label();
             this.textBoxTransactionRenteeLicenseID = new System.Windows.Forms.TextBox();
+            this.pictureBoxValidIDImage = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
             this.textBoxTransactionRenteeContactNumber = new System.Windows.Forms.TextBox();
             this.dateTimeTransactionRenteeBDate = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +84,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTransactionTransferAssetList = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pictureBoxTransactionTransferAssetImage = new System.Windows.Forms.PictureBox();
             this.label44 = new System.Windows.Forms.Label();
             this.richTextBoxrichTextBoxTransactionTransferAssetDescription = new System.Windows.Forms.RichTextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -94,6 +100,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dateTimePickerTransactionTransferDate = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
+            this.pictureBoxTransactionTransferDocumentImage = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTransactionTransferReceiver = new System.Windows.Forms.DataGridView();
             this.label51 = new System.Windows.Forms.Label();
@@ -101,11 +108,13 @@
             this.label43 = new System.Windows.Forms.Label();
             this.tabPageRequestAndBorrow = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.richTextBoxAboutHeader = new System.Windows.Forms.RichTextBox();
             this.tabOthers = new System.Windows.Forms.TabPage();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.otherTabControl = new System.Windows.Forms.TabControl();
             this.tabOperator = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
@@ -149,16 +158,19 @@
             this.labelTitleHandler = new System.Windows.Forms.Label();
             this.buttonAssetCategories = new System.Windows.Forms.Button();
             this.tabGenReport = new System.Windows.Forms.TabPage();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
             this.textBoxArchiveRecordsSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewArchiveRecords = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
             this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.textBoxSearchFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelViewedAssetHandler = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxProfileAddress = new System.Windows.Forms.RichTextBox();
@@ -177,22 +189,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.labelOffice = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelTabControl = new System.Windows.Forms.TabControl();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxTransactionRentAssetImage = new System.Windows.Forms.PictureBox();
-            this.pictureBoxValidIDImage = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTransactionTransferAssetImage = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTransactionTransferDocumentImage = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.labelOffice = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelTabControl = new System.Windows.Forms.TabControl();
             this.buttonLogout = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonAbout = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonTransaction = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -229,6 +232,8 @@
             this.roundedButtonTransactionTransferSearchName = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonTransactinTransfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonTrasnfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.chartAssetByCategories = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBoxSide.SuspendLayout();
             this.tabTransaction.SuspendLayout();
             this.tabControlTransaction.SuspendLayout();
@@ -236,18 +241,24 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRentAsset)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValidIDImage)).BeginInit();
             this.tabPageTransfer.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferAssetList)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferAssetImage)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferDocumentImage)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferReceiver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tabOthers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.otherTabControl.SuspendLayout();
             this.tabOperator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOtherOperator)).BeginInit();
@@ -256,24 +267,19 @@
             this.tabAssetCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.tabGenReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabArchiveRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabAssetRecords.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabProfile.SuspendLayout();
-            this.tabDashboard.SuspendLayout();
-            this.panelTabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValidIDImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferAssetImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferDocumentImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.tabDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSide
@@ -415,6 +421,18 @@
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Details";
+            // 
+            // PictureBoxTransactionRentAssetImage
+            // 
+            this.PictureBoxTransactionRentAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureBoxTransactionRentAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PictureBoxTransactionRentAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.PictureBoxTransactionRentAssetImage.Location = new System.Drawing.Point(432, 66);
+            this.PictureBoxTransactionRentAssetImage.Name = "PictureBoxTransactionRentAssetImage";
+            this.PictureBoxTransactionRentAssetImage.Size = new System.Drawing.Size(242, 198);
+            this.PictureBoxTransactionRentAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxTransactionRentAssetImage.TabIndex = 45;
+            this.PictureBoxTransactionRentAssetImage.TabStop = false;
             // 
             // label35
             // 
@@ -606,6 +624,19 @@
             this.textBoxTransactionRenteeLicenseID.Name = "textBoxTransactionRenteeLicenseID";
             this.textBoxTransactionRenteeLicenseID.Size = new System.Drawing.Size(220, 27);
             this.textBoxTransactionRenteeLicenseID.TabIndex = 56;
+            // 
+            // pictureBoxValidIDImage
+            // 
+            this.pictureBoxValidIDImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxValidIDImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBoxValidIDImage.Location = new System.Drawing.Point(6, 49);
+            this.pictureBoxValidIDImage.Name = "pictureBoxValidIDImage";
+            this.pictureBoxValidIDImage.Size = new System.Drawing.Size(379, 22);
+            this.pictureBoxValidIDImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxValidIDImage.TabIndex = 0;
+            this.pictureBoxValidIDImage.TabStop = false;
             // 
             // label42
             // 
@@ -816,6 +847,18 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Details";
             // 
+            // pictureBoxTransactionTransferAssetImage
+            // 
+            this.pictureBoxTransactionTransferAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxTransactionTransferAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxTransactionTransferAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBoxTransactionTransferAssetImage.Location = new System.Drawing.Point(432, 66);
+            this.pictureBoxTransactionTransferAssetImage.Name = "pictureBoxTransactionTransferAssetImage";
+            this.pictureBoxTransactionTransferAssetImage.Size = new System.Drawing.Size(242, 198);
+            this.pictureBoxTransactionTransferAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTransactionTransferAssetImage.TabIndex = 45;
+            this.pictureBoxTransactionTransferAssetImage.TabStop = false;
+            // 
             // label44
             // 
             this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -976,6 +1019,18 @@
             this.label52.TabIndex = 46;
             this.label52.Text = "Transfer Date:";
             // 
+            // pictureBoxTransactionTransferDocumentImage
+            // 
+            this.pictureBoxTransactionTransferDocumentImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxTransactionTransferDocumentImage.Location = new System.Drawing.Point(145, 64);
+            this.pictureBoxTransactionTransferDocumentImage.Name = "pictureBoxTransactionTransferDocumentImage";
+            this.pictureBoxTransactionTransferDocumentImage.Size = new System.Drawing.Size(172, 106);
+            this.pictureBoxTransactionTransferDocumentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTransactionTransferDocumentImage.TabIndex = 38;
+            this.pictureBoxTransactionTransferDocumentImage.TabStop = false;
+            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1064,6 +1119,17 @@
             this.label27.Text = "Transfer Asset and Borrow Asset \r\nRequest Panels Appears Here";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox7.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox7.TabIndex = 10;
+            this.pictureBox7.TabStop = false;
+            // 
             // tabSettings
             // 
             this.tabSettings.Controls.Add(this.label8);
@@ -1132,6 +1198,17 @@
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox6.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(1130, 10);
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
             // 
             // otherTabControl
             // 
@@ -1292,23 +1369,23 @@
             this.dataGridViewOtherOperator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOtherOperator.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOtherOperator.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOtherOperator.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewOtherOperator.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewOtherOperator.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewOtherOperator.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewOtherOperator.Name = "dataGridViewOtherOperator";
             this.dataGridViewOtherOperator.ReadOnly = true;
@@ -1460,23 +1537,23 @@
             this.dataGridViewSupplier.AllowUserToDeleteRows = false;
             this.dataGridViewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSupplier.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSupplier.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewSupplier.Location = new System.Drawing.Point(7, 7);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.ReadOnly = true;
@@ -1590,23 +1667,23 @@
             this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
             this.dataGridViewAssetCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAssetCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAssetCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAssetCategories.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAssetCategories.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
             this.dataGridViewAssetCategories.ReadOnly = true;
@@ -1685,6 +1762,15 @@
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox5.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1728,34 +1814,34 @@
             this.dataGridViewArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewArchiveRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewArchiveRecords.Location = new System.Drawing.Point(29, 88);
             this.dataGridViewArchiveRecords.Name = "dataGridViewArchiveRecords";
             this.dataGridViewArchiveRecords.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Poppins", 11.25F);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Poppins", 11.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewArchiveRecords.Size = new System.Drawing.Size(1159, 669);
             this.dataGridViewArchiveRecords.TabIndex = 7;
             this.dataGridViewArchiveRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArchiveRecords_CellContentClick);
@@ -1770,6 +1856,17 @@
             this.label4.Size = new System.Drawing.Size(321, 62);
             this.label4.TabIndex = 2;
             this.label4.Text = "Archive Records";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox4.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1159, 10);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
             // 
             // tabAssetRecords
             // 
@@ -1836,6 +1933,17 @@
             this.panelViewedAssetHandler.TabIndex = 6;
             this.panelViewedAssetHandler.Visible = false;
             this.panelViewedAssetHandler.Resize += new System.EventHandler(this.panelViewedAssetHandler_Resize);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox2.Location = new System.Drawing.Point(31, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1175, 10);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // tabProfile
             // 
@@ -2073,12 +2181,35 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Account Profile";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox1.Location = new System.Drawing.Point(28, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxProfileImage
+            // 
+            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
+            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(31, 132);
+            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
+            this.pictureBoxProfileImage.TabIndex = 2;
+            this.pictureBoxProfileImage.TabStop = false;
+            // 
             // tabDashboard
             // 
-            this.tabDashboard.Controls.Add(this.menuButtonSortByYear);
-            this.tabDashboard.Controls.Add(this.labelOffice);
+            this.tabDashboard.Controls.Add(this.label7);
+            this.tabDashboard.Controls.Add(this.chartAssetByCategories);
             this.tabDashboard.Controls.Add(this.roundedPanelTotalAsset);
             this.tabDashboard.Controls.Add(this.roundedPanelCategoryCount);
+            this.tabDashboard.Controls.Add(this.menuButtonSortByYear);
+            this.tabDashboard.Controls.Add(this.labelOffice);
             this.tabDashboard.Controls.Add(this.pictureBox3);
             this.tabDashboard.Controls.Add(this.label1);
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
@@ -2099,6 +2230,17 @@
             this.labelOffice.Size = new System.Drawing.Size(143, 34);
             this.labelOffice.TabIndex = 46;
             this.labelOffice.Text = "OFFICE_DATA";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox3.Location = new System.Drawing.Point(28, 77);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1169, 10);
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
@@ -2133,140 +2275,6 @@
             this.panelTabControl.Size = new System.Drawing.Size(1218, 789);
             this.panelTabControl.TabIndex = 0;
             this.panelTabControl.Resize += new System.EventHandler(this.panelTabControl_Resize);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox3.Location = new System.Drawing.Point(28, 77);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1169, 10);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxProfileImage
-            // 
-            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
-            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
-            this.pictureBoxProfileImage.Location = new System.Drawing.Point(31, 132);
-            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
-            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
-            this.pictureBoxProfileImage.TabIndex = 2;
-            this.pictureBoxProfileImage.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 71);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1175, 10);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox4.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1159, 10);
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox5.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox6.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1130, 10);
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
-            // PictureBoxTransactionRentAssetImage
-            // 
-            this.PictureBoxTransactionRentAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureBoxTransactionRentAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBoxTransactionRentAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.PictureBoxTransactionRentAssetImage.Location = new System.Drawing.Point(432, 66);
-            this.PictureBoxTransactionRentAssetImage.Name = "PictureBoxTransactionRentAssetImage";
-            this.PictureBoxTransactionRentAssetImage.Size = new System.Drawing.Size(242, 198);
-            this.PictureBoxTransactionRentAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBoxTransactionRentAssetImage.TabIndex = 45;
-            this.PictureBoxTransactionRentAssetImage.TabStop = false;
-            // 
-            // pictureBoxValidIDImage
-            // 
-            this.pictureBoxValidIDImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxValidIDImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
-            this.pictureBoxValidIDImage.Location = new System.Drawing.Point(6, 49);
-            this.pictureBoxValidIDImage.Name = "pictureBoxValidIDImage";
-            this.pictureBoxValidIDImage.Size = new System.Drawing.Size(379, 22);
-            this.pictureBoxValidIDImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxValidIDImage.TabIndex = 0;
-            this.pictureBoxValidIDImage.TabStop = false;
-            // 
-            // pictureBoxTransactionTransferAssetImage
-            // 
-            this.pictureBoxTransactionTransferAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxTransactionTransferAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxTransactionTransferAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
-            this.pictureBoxTransactionTransferAssetImage.Location = new System.Drawing.Point(432, 66);
-            this.pictureBoxTransactionTransferAssetImage.Name = "pictureBoxTransactionTransferAssetImage";
-            this.pictureBoxTransactionTransferAssetImage.Size = new System.Drawing.Size(242, 198);
-            this.pictureBoxTransactionTransferAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxTransactionTransferAssetImage.TabIndex = 45;
-            this.pictureBoxTransactionTransferAssetImage.TabStop = false;
-            // 
-            // pictureBoxTransactionTransferDocumentImage
-            // 
-            this.pictureBoxTransactionTransferDocumentImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxTransactionTransferDocumentImage.Location = new System.Drawing.Point(145, 64);
-            this.pictureBoxTransactionTransferDocumentImage.Name = "pictureBoxTransactionTransferDocumentImage";
-            this.pictureBoxTransactionTransferDocumentImage.Size = new System.Drawing.Size(172, 106);
-            this.pictureBoxTransactionTransferDocumentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxTransactionTransferDocumentImage.TabIndex = 38;
-            this.pictureBoxTransactionTransferDocumentImage.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox7.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox7.TabIndex = 10;
-            this.pictureBox7.TabStop = false;
             // 
             // buttonLogout
             // 
@@ -2516,11 +2524,11 @@
             this.menuButtonSortByYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.menuButtonSortByYear.FlatAppearance.BorderSize = 0;
             this.menuButtonSortByYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButtonSortByYear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButtonSortByYear.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuButtonSortByYear.ForeColor = System.Drawing.Color.White;
-            this.menuButtonSortByYear.Location = new System.Drawing.Point(1007, 104);
+            this.menuButtonSortByYear.Location = new System.Drawing.Point(932, 104);
             this.menuButtonSortByYear.Name = "menuButtonSortByYear";
-            this.menuButtonSortByYear.Size = new System.Drawing.Size(190, 30);
+            this.menuButtonSortByYear.Size = new System.Drawing.Size(265, 30);
             this.menuButtonSortByYear.TabIndex = 47;
             this.menuButtonSortByYear.Text = "Sort By Acknowledge Year";
             this.menuButtonSortByYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3108,6 +3116,37 @@
             this.roundedButtonTrasnfer.UseVisualStyleBackColor = false;
             this.roundedButtonTrasnfer.Click += new System.EventHandler(this.roundedButtonTrasnfer_Click);
             // 
+            // chartAssetByCategories
+            // 
+            this.chartAssetByCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chartAssetByCategories.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAssetByCategories.Legends.Add(legend1);
+            this.chartAssetByCategories.Location = new System.Drawing.Point(28, 456);
+            this.chartAssetByCategories.Name = "chartAssetByCategories";
+            this.chartAssetByCategories.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartAssetByCategories.Series.Add(series1);
+            this.chartAssetByCategories.Size = new System.Drawing.Size(526, 290);
+            this.chartAssetByCategories.TabIndex = 48;
+            this.chartAssetByCategories.Text = "chart1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label7.Location = new System.Drawing.Point(26, 418);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 26);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Asset By Condition";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3133,10 +3172,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRentAsset)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValidIDImage)).EndInit();
             this.tabPageTransfer.ResumeLayout(false);
             this.tabPageTransfer.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -3144,16 +3185,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferAssetList)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferAssetImage)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferDocumentImage)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferReceiver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
             this.tabOthers.ResumeLayout(false);
             this.tabOthers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.otherTabControl.ResumeLayout(false);
             this.tabOperator.ResumeLayout(false);
             this.tabOperator.PerformLayout();
@@ -3166,28 +3211,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).EndInit();
             this.tabGenReport.ResumeLayout(false);
             this.tabGenReport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabArchiveRecords.ResumeLayout(false);
             this.tabArchiveRecords.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
-            this.tabDashboard.ResumeLayout(false);
-            this.tabDashboard.PerformLayout();
-            this.panelTabControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValidIDImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferAssetImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferDocumentImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.tabDashboard.ResumeLayout(false);
+            this.tabDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelTabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCategories)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3244,7 +3284,6 @@
         private System.Windows.Forms.PictureBox pictureBoxProfileImage;
         private System.Windows.Forms.TabPage tabDashboard;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl panelTabControl;
         private RoundedButton buttonDashboard;
         private RoundedButton buttonAssetRecords;
         private RoundedButton buttonArchiveRecords;
@@ -3266,12 +3305,9 @@
         private System.Windows.Forms.RichTextBox textBoxProfileAddress;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelOffice;
-        private Other_Tools.RoundedPanel.RoundedPanel roundedPanelTotalAsset;
-        private Other_Tools.RoundedPanel.RoundedPanel roundedPanelCategoryCount;
         private System.Windows.Forms.PictureBox pictureBox7;
         private RoundedButton roundedButtonTrasnfer;
         private System.Windows.Forms.Label label27;
-        private MenuButton menuButtonSortByYear;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBoxOperatorMiddleName;
         private System.Windows.Forms.TextBox textBoxOperatorFirstName;
@@ -3384,5 +3420,11 @@
         private RoundedButton roundedButtonAboutTOS;
         private RoundedButton roundedButtonAboutPolicy;
         private RoundedButton roundedButtonReportAnIssue;
+        public Other_Tools.RoundedPanel.RoundedPanel roundedPanelTotalAsset;
+        public Other_Tools.RoundedPanel.RoundedPanel roundedPanelCategoryCount;
+        public MenuButton menuButtonSortByYear;
+        public System.Windows.Forms.TabControl panelTabControl;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chartAssetByCategories;
     }
 }
