@@ -8,38 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
+namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
 {
-    public partial class AssetTransferLogPanel : UserControl
+    public partial class AssetRentLogPanel : UserControl
     {
         Panel panelHandlerParent;
         Asset asset;
         User currentUser;
-
         private DatabaseConnection databaseConnection;
-        public AssetTransferLogPanel(Panel _panelHandler, Asset _asset, User _currentUser)
+        public AssetRentLogPanel(Panel _panelHandler, Asset _asset, User _currentUser)
         {
             InitializeComponent();
             asset = _asset;
             panelHandlerParent = _panelHandler;
             currentUser = _currentUser;
             Console.WriteLine("AssetTransferLogPanel: " + currentUser.GetStringAccessLevel());
-
             databaseConnection = new DatabaseConnection();
 
             SetData();
-
+            LoadData();
         }
 
-        private void SetData()
+        private void LoadData()
         {
-            labelAssetIdWithName.Text = "Transfer Logs: " + asset.AssetId + "-" + asset.AssetName;
+            dataGridViewRentLogPanel.DataSource = null;
+            dataGridViewRentLogPanel.Columns.Clear();
 
-            dataGridViewTransferLogs.DataSource = null;
-            dataGridViewTransferLogs.Columns.Clear();
 
             DataTable dataTable = FetchDataFromDB();
-            dataGridViewTransferLogs.AutoGenerateColumns = false;
+            dataGridViewRentLogPanel.AutoGenerateColumns = false;
             foreach (DataColumn column in dataTable.Columns)
             {
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
@@ -48,8 +45,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
 
                 switch (column.ColumnName)
                 {
-                    case "Id":
-                        col.HeaderText = "Transfer Log ID";
+                    case "rentId":
+                        col.HeaderText = "Rent Log ID";
                         break;
                     case "assetName":
                         col.HeaderText = "Asset Name";
@@ -57,21 +54,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
                     case "assetPropertyNumber":
                         col.HeaderText = "Asset Property Number";
                         break;
-                    case "assetAdminTransferer":
-                        col.HeaderText = "Name of the Administrator";
+                    case "renteeFullName":
+                        col.HeaderText = "Rentee Full Name";
                         break;
-                    case "assetCoordReceiver":
-                        col.HeaderText = "Received By Custodian/Coordinator Name:";
+                    case "renteeAddress":
+                        col.HeaderText = "Rentee Address";
                         break;
-                    case "date":
-                        col.HeaderText = "Transfer Date";
+                    case "renteeContactNumber":
+                        col.HeaderText = "Rentee Contact Number";
                         break;
-                    case "supportingDocumentImage":
-                        col.HeaderText = "Document Image";
+                    case "assetId":
                         col.Visible = false;
-                        break;
-                    case "previousOffice":
-                        col.HeaderText = "Previous Office";
                         break;
                     default:
                         col.HeaderText = column.ColumnName;
@@ -80,30 +73,28 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
 
                 //col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewMaintenanceLogs.Font).Width + 35;
 
-                dataGridViewTransferLogs.Columns.Add(col);
+                dataGridViewRentLogPanel.Columns.Add(col);
             }
 
-            if (dataGridViewTransferLogs.Columns["View Document"] == null)
+            if (dataGridViewRentLogPanel.Columns["Track Rent"] == null)
             {
 
-               
-                var viewButtonColumn = new DataGridViewButtonColumn();
-                viewButtonColumn.HeaderText = "Actions";
-                viewButtonColumn.Text = "View Document";
-                viewButtonColumn.Name = "ViewDocumentColumn";
-                viewButtonColumn.UseColumnTextForButtonValue = true;
+                // Create a new DataGridViewButtonColumn
+                var trackRentColumn = new DataGridViewButtonColumn();
+                trackRentColumn.HeaderText = "Actions";
+                trackRentColumn.Text = "Track Rent";
+                trackRentColumn.Name = "TrackRentColumn";
+                trackRentColumn.UseColumnTextForButtonValue = true;
 
-               
-                dataGridViewTransferLogs.Columns.Add(viewButtonColumn);
+                // Add the button column to the DataGridView
+                dataGridViewRentLogPanel.Columns.Add(trackRentColumn);
 
-            
-                viewButtonColumn.DisplayIndex = dataGridViewTransferLogs.Columns.Count - 1;
+                // Adjust the button column's display index to make it the last column
+                trackRentColumn.DisplayIndex = dataGridViewRentLogPanel.Columns.Count - 1;
             }
 
 
-            dataGridViewTransferLogs.DataSource = FetchDataFromDB();
-
-
+            dataGridViewRentLogPanel.DataSource = FetchDataFromDB();
         }
         private DataTable FetchDataFromDB()
         {
@@ -112,24 +103,22 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
 
             string query = @"
                             SELECT
-                                tl.Id,
+                                rl.rentId,
                                 a.assetName,
                                 a.assetPropertyNumber,
-                                aaTransferer.FName + ' ' + aaTransferer.MName + ' ' + aaTransferer.LName AS assetAdminTransferer,
-                                acReceiver.FName + ' ' + acReceiver.MName + ' ' + acReceiver.LName AS assetCoordReceiver,
-                                tl.date,
-                                tl.previousOffice,
-                                tl.supportingDocumentImage
+                                rl.assetId,
+                                CONCAT(rl.renteeFirstName, ' ', rl.renteeMidName, ' ', rl.renteeLastName) AS renteeFullName,
+                                rl.renteeAddress,
+                                rl.renteeContactNumber
+                                
                             FROM
-                                TransferLog tl
+                                RentLog rl
                             JOIN
-                                Assets a ON tl.assetId = a.assetId
-                            JOIN
-                                AssetAdministrator aaTransferer ON tl.assetAdminTransfererId = aaTransferer.Id
-                            JOIN
-                                AssetCoordinator acReceiver ON tl.assetCoordReceiverId = acReceiver.Id
+                                Assets a ON rl.assetId = a.assetId
                             WHERE
-                                tl.assetId = @selectedAssetId";
+                                rl.assetId = @selectedAssetId
+                        ";
+
 
 
 
@@ -145,6 +134,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.TransferPanel
             return resultTable;
         }
 
+        private void SetData()
+        {
+            labelAssetIdWithName.Text = "Rent Logs: " + asset.AssetId + "-" + asset.AssetName;
+        }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {

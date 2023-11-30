@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+
 using static LGU_SV_Asset_Management_Sytem.Asset;
 
 namespace LGU_SV_Asset_Management_Sytem
@@ -23,8 +26,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
         //Session
         User currentUser = new User();
-        string currentSessionUserType;
-        string currentUserOffice;
+        public string currentSessionUserType;
+        public string currentUserOffice;
 
         //Color
         Color clickColor = Color.FromArgb(48, 77, 46);
@@ -46,11 +49,13 @@ namespace LGU_SV_Asset_Management_Sytem
         AssetCategoryRepositoryControl assetCategoryRepositoryControl;
 
         //User-Role-Id
-        private string RoleBasedID;
+        public string RoleBasedID;
 
         //Worker
         Worker worker;
         Worker1 worker1;
+        Worker2 worker2;
+        Worker3 worker3;
 
         public MainForm()
         {
@@ -91,6 +96,8 @@ namespace LGU_SV_Asset_Management_Sytem
             //Worker
             worker = new Worker(this);
             worker1 = new Worker1(this);
+            worker2 = new Worker2(this);
+            worker3 = new Worker3(this);
 
             
 
@@ -704,15 +711,24 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            sessionHandler.OnCurrentSessionEnd();
-            currentSessionUserType = "";
-            
+            using(DialogBoxes.LogOutConfirmationDialog logOut = new DialogBoxes.LogOutConfirmationDialog())
+            {
+                logOut.ShowDialog();
 
-            StartForm startForm = new StartForm();
-            startForm.FormClosed += (s, args) => this.Close();
-            startForm.Show();
+                if(logOut.GetResult() == DialogResult.OK)
+                {
+                    sessionHandler.OnCurrentSessionEnd();
+                    currentSessionUserType = "";
 
-            this.Hide();
+
+                    StartForm startForm = new StartForm();
+                    startForm.FormClosed += (s, args) => this.Close();
+                    startForm.Show();
+
+                    this.Hide();
+                }
+            }
+           
         }
 
 
@@ -1469,6 +1485,8 @@ namespace LGU_SV_Asset_Management_Sytem
         private void roundedButtonTrasnfer_Click(object sender, EventArgs e)
         {
             tabControlTransaction.SelectedTab = tabPageTransfer;
+
+            worker2.LoadTransactionPanel();
         }
 
         private void roundedButtonReqBorrow_Click(object sender, EventArgs e)
@@ -1500,6 +1518,7 @@ namespace LGU_SV_Asset_Management_Sytem
             worker1.AssetSearchFilterClear();
         }
 
+       
         private void dataGridViewTransactionRentAsset_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -1512,6 +1531,165 @@ namespace LGU_SV_Asset_Management_Sytem
             
         }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
+            {
+                Asset confirmedAsset = worker1.AssetInProcess();
+
+                if (confirmedAsset == null)
+                {
+                    return;
+                }
+
+                prompt.listBox1.Items.Add("");
+                prompt.SetConfirmationTitle("\t Asset Rent Confirmation");
+
+                prompt.listBox1.Items.Add("\t Asset Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Asset Name: {confirmedAsset.AssetName}");
+                prompt.listBox1.Items.Add($"\t Asset Property Number: {confirmedAsset.AssetPropertyNumber}");
+                var result = assetOperatorRepositoryControl.GetCoordinatorName(confirmedAsset.CurrentEmployeeId);
+                prompt.listBox1.Items.Add($"\t Asset Current Custodian/Coordinator: {result.name}");
+                prompt.listBox1.Items.Add($"\t Asset Purpose: {confirmedAsset.AssetPurpose}");
+                prompt.listBox1.Items.Add($"\t Asset Description: {confirmedAsset.AssetDescription}");
+
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add("\t Rentee Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Rentee Name: {textBoxTransactionRenteeFName.Text} {textBoxTransactionRenteeMName.Text} {textBoxTransactionRenteeLName.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee Birthdate: {dateTimeTransactionRenteeBDate.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee Contact Number: {textBoxTransactionRenteeContactNumber.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee Address: {richTextBoxTransactionRenteeAddr.Text}");
+                prompt.listBox1.Items.Add($"\t Rentee License ID: {textBoxTransactionRenteeLicenseID.Text}");
+
+                if (prompt.ShowDialog() == DialogResult.OK)
+                {
+                    worker1.InitiateAssetTransfer();
+                    MessagePrompt("Transaction completed.");
+                }
+
+            }
+
+            
+        }
+
+        private void roundedButtonTransactionRenteeDocUpload_Click(object sender, EventArgs e)
+        {
+            worker1.InitiateImageUploader();
+        }
+
+        private void roundedButtonTransactionTransferAssetCatApply_Click(object sender, EventArgs e)
+        {
+            worker2.CategoryListApplyFilter();
+        }
+
+        private void roundedButtonTransactionTransferAssetCatClear_Click(object sender, EventArgs e)
+        {
+            worker2.AssetSearchFilterClear();
+        }
+
+        
+
+        private void dataGridViewTransactionTransferAssetList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransactionTransferAssetList.Rows[e.RowIndex];
+
+                worker2.DataGridViewCellMouseClick(Convert.ToInt32(selectedRow.Cells[2].Value.ToString()));
+                Console.WriteLine(selectedRow.Cells[2].Value.ToString());
+            }
+        }
+
+        private void roundedButtonTransactionTransferUploadDocument_Click(object sender, EventArgs e)
+        {
+            worker2.InitiateImageUploader();
+        }
+
+        private void roundedButtonTransactionTransferSearchName_Click(object sender, EventArgs e)
+        {
+            worker2.FilterListCoordinators();
+        }
+
+        private void roundedButtonTransactinTransfer_Click(object sender, EventArgs e)
+        {
+            using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
+            {
+                
+                if(prompt.ShowDialog() == DialogResult.OK)
+                {
+                    worker2.InitiateTransferAsset();
+                    MessagePrompt("Transaction completed.");
+                }
+
+            }
+        }
+
+        private void textBoxTransactionTransferName_TextChanged(object sender, EventArgs e)
+        {
+            worker2.FilterListCoordinators();
+        }
+
+        private void dataGridViewTransactionTransferReceiver_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewTransactionTransferReceiver.Rows[e.RowIndex];
+
+                worker2.DataGridViewReceiverCellMouseClick(Convert.ToInt32(selectedRow.Cells[0].Value.ToString()));
+                
+            }
+        }
+
+        private void roundedButtonReportAnIssue_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.ReportIssueDialogBox rpt = new DialogBoxes.ReportIssueDialogBox(sessionHandler.GetUserName(databaseConnection));
+            rpt.ShowDialog();
+        }
+
+        private void roundedButtonUserManual_Click(object sender, EventArgs e)
+        {
+            string projectFolderPath = GetProjectFolderPath();
+            string resourcesFolderPath = Path.Combine(projectFolderPath, "Documents");
+                
+            
+            string pdfFilePath = Path.Combine(resourcesFolderPath, "User Manual.pdf");
+            Console.WriteLine("fpath: " + pdfFilePath);
+            OpenPdfWithDefaultViewer(pdfFilePath);
+        }
+
+        static void OpenPdfWithDefaultViewer(string filePath)
+        {
+            try
+            {
+                // Use the default PDF viewer associated with the system
+                Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error opening PDF: {ex.Message}");
+            }
+        }
+
+        static string GetProjectFolderPath()
+        {
+            // Get the base directory of the current application domain
+            return AppDomain.CurrentDomain.BaseDirectory;
+        }
+
+        private void roundedButtonAboutPolicy_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
+            rpt.ShowPolicy();
+        }
+
+        private void roundedButtonAboutTOS_Click(object sender, EventArgs e)
+        {
+            DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
+            rpt.ShowTOS();
+        }
 
         private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)
         {

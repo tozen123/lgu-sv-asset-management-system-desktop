@@ -125,7 +125,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.Controls.Add(this.pictureBoxImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UploadImageDialogBox";
-            this.Text = "LGU-AMS: PROFILE UPLOAD IMAGE";
+            this.Text = "LGU-AMS:  IMAGE UPLOADER MODULE";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

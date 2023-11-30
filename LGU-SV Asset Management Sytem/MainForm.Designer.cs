@@ -28,40 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
-            this.buttonTransaction = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonProfile = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonGenerateReports = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonArchiveRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonAssetRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonDashboard = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonAbout = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonOthers = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.tabTransaction = new System.Windows.Forms.TabPage();
-            this.roundedButtonRent = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.roundedButtonTrasnfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.tabControlTransaction = new System.Windows.Forms.TabControl();
             this.tabPageRent = new System.Windows.Forms.TabPage();
             this.label28 = new System.Windows.Forms.Label();
-            this.buttonSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.roundedButtonTransactionRentAssetFilterCLear = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.dataGridViewTransactionRentAsset = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.PictureBoxTransactionRentAssetImage = new System.Windows.Forms.PictureBox();
             this.label35 = new System.Windows.Forms.Label();
             this.textBoxTransactionRentAssetPurpose = new System.Windows.Forms.RichTextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -71,64 +56,58 @@
             this.textBoxTransactionRentCurrentCoordinator = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.textBoxTransactionRentAssetName = new System.Windows.Forms.TextBox();
-            this.roundedButtonTransactionRentCatApply = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.comboBoxTransactionRentCat = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label41 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.textBoxTransactionRenteeLicenseID = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.textBoxTransactionRenteeContactNumber = new System.Windows.Forms.TextBox();
+            this.dateTimeTransactionRenteeBDate = new System.Windows.Forms.DateTimePicker();
+            this.label41 = new System.Windows.Forms.Label();
+            this.richTextBoxTransactionRenteeAddr = new System.Windows.Forms.RichTextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxTransactionRenteeLName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxTransactionRenteeMName = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxTransactionRenteeFName = new System.Windows.Forms.TextBox();
             this.tabPageTransfer = new System.Windows.Forms.TabPage();
-            this.roundedButton3 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.roundedButton4 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewTransactionTransferAssetList = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription = new System.Windows.Forms.RichTextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxTransactionTransferAssetDescription = new System.Windows.Forms.RichTextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxTransactionTransferAssetCustodian = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.roundedButton2 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.textBoxTransactionTransferAssetName = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.comboBoxTransactionTransferAssetCategory = new System.Windows.Forms.ComboBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerTransactionTransferDate = new System.Windows.Forms.DateTimePicker();
+            this.label52 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.roundedButton5 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.dataGridViewTransactionTransferReceiver = new System.Windows.Forms.DataGridView();
             this.label51 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxTransactionTransferName = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.tabPageRequestAndBorrow = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.tabAbout = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
+            this.richTextBoxAboutHeader = new System.Windows.Forms.RichTextBox();
             this.tabOthers = new System.Windows.Forms.TabPage();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.otherTabControl = new System.Windows.Forms.TabControl();
             this.tabOperator = new System.Windows.Forms.TabPage();
-            this.rbuttonOperatorClearFields = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.label23 = new System.Windows.Forms.Label();
             this.textBoxOperatorMiddleName = new System.Windows.Forms.TextBox();
             this.textBoxOperatorFirstName = new System.Windows.Forms.TextBox();
@@ -170,27 +149,19 @@
             this.labelTitleHandler = new System.Windows.Forms.Label();
             this.buttonAssetCategories = new System.Windows.Forms.Button();
             this.tabGenReport = new System.Windows.Forms.TabPage();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabArchiveRecords = new System.Windows.Forms.TabPage();
-            this.roundedButtonSearchArchiveRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.textBoxArchiveRecordsSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewArchiveRecords = new System.Windows.Forms.DataGridView();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabAssetRecords = new System.Windows.Forms.TabPage();
-            this.buttonAssetRecordsNewAsset = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.buttonAssetRecordsViewRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.panelAssetRecordsHandler = new System.Windows.Forms.Panel();
             this.textBoxSearchFilter = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelViewedAssetHandler = new System.Windows.Forms.Panel();
-            this.buttonSearch = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxProfileAddress = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxProfileDept = new System.Windows.Forms.ComboBox();
             this.checkBoxButtonProfileShowPassword = new System.Windows.Forms.CheckBox();
             this.textBoxProfilePosition = new System.Windows.Forms.TextBox();
@@ -206,40 +177,77 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.labelOffice = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelTabControl = new System.Windows.Forms.TabControl();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxTransactionRentAssetImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxValidIDImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTransactionTransferAssetImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTransactionTransferDocumentImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.buttonLogout = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonAbout = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonTransaction = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonProfile = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonGenerateReports = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonArchiveRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonAssetRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonDashboard = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonOthers = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.menuButtonSortByYear = new LGU_SV_Asset_Management_Sytem.MenuButton();
+            this.roundedPanelTotalAsset = new LGU_SV_Asset_Management_Sytem.Other_Tools.RoundedPanel.RoundedPanel();
+            this.roundedPanelCategoryCount = new LGU_SV_Asset_Management_Sytem.Other_Tools.RoundedPanel.RoundedPanel();
             this.buttonEditProfile = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileCancel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.buttonProfileUploadImage = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
-            this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.menuButtonSortByYear = new LGU_SV_Asset_Management_Sytem.MenuButton();
-            this.labelOffice = new System.Windows.Forms.Label();
-            this.roundedPanelTotalAsset = new LGU_SV_Asset_Management_Sytem.Other_Tools.RoundedPanel.RoundedPanel();
-            this.roundedPanelCategoryCount = new LGU_SV_Asset_Management_Sytem.Other_Tools.RoundedPanel.RoundedPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelTabControl = new System.Windows.Forms.TabControl();
+            this.buttonAssetRecordsNewAsset = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonAssetRecordsViewRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonSearch = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonSearchArchiveRecords = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonOperatorClearFields = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonAboutTOS = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonAboutPolicy = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonReportAnIssue = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonUserManual = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonRent = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionRentAssetFilterCLear = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionRentCatApply = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionRenteeDocUpload = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionTransferAssetCatClear = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionTransferAssetCatApply = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionTransferUploadDocument = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactionTransferSearchName = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTransactinTransfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.roundedButtonTrasnfer = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.groupBoxSide.SuspendLayout();
             this.tabTransaction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabControlTransaction.SuspendLayout();
             this.tabPageRent.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRentAsset)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.tabPageTransfer.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferAssetList)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferReceiver)).BeginInit();
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tabOthers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.otherTabControl.SuspendLayout();
             this.tabOperator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOtherOperator)).BeginInit();
@@ -248,18 +256,24 @@
             this.tabAssetCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).BeginInit();
             this.tabGenReport.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabArchiveRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabAssetRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabProfile.SuspendLayout();
+            this.tabDashboard.SuspendLayout();
+            this.panelTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
-            this.tabDashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panelTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValidIDImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferAssetImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferDocumentImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSide
@@ -267,14 +281,14 @@
             this.groupBoxSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(225)))));
+            this.groupBoxSide.Controls.Add(this.buttonLogout);
+            this.groupBoxSide.Controls.Add(this.buttonAbout);
             this.groupBoxSide.Controls.Add(this.buttonTransaction);
             this.groupBoxSide.Controls.Add(this.buttonProfile);
             this.groupBoxSide.Controls.Add(this.buttonGenerateReports);
             this.groupBoxSide.Controls.Add(this.buttonArchiveRecords);
             this.groupBoxSide.Controls.Add(this.buttonAssetRecords);
             this.groupBoxSide.Controls.Add(this.buttonDashboard);
-            this.groupBoxSide.Controls.Add(this.buttonAbout);
-            this.groupBoxSide.Controls.Add(this.buttonLogout);
             this.groupBoxSide.Controls.Add(this.buttonOthers);
             this.groupBoxSide.Location = new System.Drawing.Point(-3, -9);
             this.groupBoxSide.Name = "groupBoxSide";
@@ -283,222 +297,14 @@
             this.groupBoxSide.TabStop = false;
             this.groupBoxSide.MouseHover += new System.EventHandler(this.Set);
             // 
-            // buttonTransaction
-            // 
-            this.buttonTransaction.BackColor = System.Drawing.Color.Transparent;
-            this.buttonTransaction.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonTransaction.BorderColor = System.Drawing.Color.White;
-            this.buttonTransaction.BorderRadius = 0;
-            this.buttonTransaction.BorderSize = 0;
-            this.buttonTransaction.FlatAppearance.BorderSize = 0;
-            this.buttonTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTransaction.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonTransaction.ForeColor = System.Drawing.Color.Black;
-            this.buttonTransaction.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonTransaction;
-            this.buttonTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTransaction.Location = new System.Drawing.Point(15, 416);
-            this.buttonTransaction.Name = "buttonTransaction";
-            this.buttonTransaction.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonTransaction.Size = new System.Drawing.Size(185, 46);
-            this.buttonTransaction.TabIndex = 36;
-            this.buttonTransaction.Text = "TRANSACTION              ";
-            this.buttonTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonTransaction.TextColor = System.Drawing.Color.Black;
-            this.buttonTransaction.UseVisualStyleBackColor = false;
-            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
-            this.buttonTransaction.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonTransaction.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonProfile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonProfile.BorderColor = System.Drawing.Color.White;
-            this.buttonProfile.BorderRadius = 0;
-            this.buttonProfile.BorderSize = 0;
-            this.buttonProfile.FlatAppearance.BorderSize = 0;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProfile.ForeColor = System.Drawing.Color.White;
-            this.buttonProfile.Location = new System.Drawing.Point(15, 37);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonProfile.Size = new System.Drawing.Size(185, 69);
-            this.buttonProfile.TabIndex = 34;
-            this.buttonProfile.Text = "UserData\r\nUserData[2]\r\n";
-            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProfile.TextColor = System.Drawing.Color.White;
-            this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Visible = false;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // buttonGenerateReports
-            // 
-            this.buttonGenerateReports.BackColor = System.Drawing.Color.Transparent;
-            this.buttonGenerateReports.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonGenerateReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonGenerateReports.BorderColor = System.Drawing.Color.White;
-            this.buttonGenerateReports.BorderRadius = 0;
-            this.buttonGenerateReports.BorderSize = 0;
-            this.buttonGenerateReports.FlatAppearance.BorderSize = 0;
-            this.buttonGenerateReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGenerateReports.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGenerateReports.ForeColor = System.Drawing.Color.Black;
-            this.buttonGenerateReports.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonGenerateReports;
-            this.buttonGenerateReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGenerateReports.Location = new System.Drawing.Point(15, 342);
-            this.buttonGenerateReports.Name = "buttonGenerateReports";
-            this.buttonGenerateReports.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonGenerateReports.Size = new System.Drawing.Size(185, 46);
-            this.buttonGenerateReports.TabIndex = 33;
-            this.buttonGenerateReports.Text = "GENERATE REPORTS ";
-            this.buttonGenerateReports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonGenerateReports.TextColor = System.Drawing.Color.Black;
-            this.buttonGenerateReports.UseVisualStyleBackColor = false;
-            this.buttonGenerateReports.Click += new System.EventHandler(this.buttonGenerateReports_Click);
-            this.buttonGenerateReports.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonGenerateReports.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonArchiveRecords
-            // 
-            this.buttonArchiveRecords.BackColor = System.Drawing.Color.Transparent;
-            this.buttonArchiveRecords.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonArchiveRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonArchiveRecords.BorderColor = System.Drawing.Color.White;
-            this.buttonArchiveRecords.BorderRadius = 0;
-            this.buttonArchiveRecords.BorderSize = 0;
-            this.buttonArchiveRecords.FlatAppearance.BorderSize = 0;
-            this.buttonArchiveRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonArchiveRecords.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonArchiveRecords.ForeColor = System.Drawing.Color.Black;
-            this.buttonArchiveRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonArchiveRecords;
-            this.buttonArchiveRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonArchiveRecords.Location = new System.Drawing.Point(13, 272);
-            this.buttonArchiveRecords.Name = "buttonArchiveRecords";
-            this.buttonArchiveRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonArchiveRecords.Size = new System.Drawing.Size(186, 46);
-            this.buttonArchiveRecords.TabIndex = 32;
-            this.buttonArchiveRecords.Text = "ARCHIVE RECORDS    ";
-            this.buttonArchiveRecords.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonArchiveRecords.TextColor = System.Drawing.Color.Black;
-            this.buttonArchiveRecords.UseVisualStyleBackColor = false;
-            this.buttonArchiveRecords.Click += new System.EventHandler(this.buttonArchiveRecords_Click);
-            this.buttonArchiveRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonArchiveRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonAssetRecords
-            // 
-            this.buttonAssetRecords.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAssetRecords.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonAssetRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAssetRecords.BorderColor = System.Drawing.Color.White;
-            this.buttonAssetRecords.BorderRadius = 0;
-            this.buttonAssetRecords.BorderSize = 0;
-            this.buttonAssetRecords.FlatAppearance.BorderSize = 0;
-            this.buttonAssetRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAssetRecords.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonAssetRecords.ForeColor = System.Drawing.Color.Black;
-            this.buttonAssetRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonAssetRecords;
-            this.buttonAssetRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAssetRecords.Location = new System.Drawing.Point(15, 197);
-            this.buttonAssetRecords.Name = "buttonAssetRecords";
-            this.buttonAssetRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecords.Size = new System.Drawing.Size(183, 50);
-            this.buttonAssetRecords.TabIndex = 31;
-            this.buttonAssetRecords.Text = "ASSET RECORDS          ";
-            this.buttonAssetRecords.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAssetRecords.TextColor = System.Drawing.Color.Black;
-            this.buttonAssetRecords.UseVisualStyleBackColor = false;
-            this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
-            this.buttonAssetRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonAssetRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonDashboard.BorderColor = System.Drawing.Color.White;
-            this.buttonDashboard.BorderRadius = 0;
-            this.buttonDashboard.BorderSize = 0;
-            this.buttonDashboard.FlatAppearance.BorderSize = 0;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonDashboard.ForeColor = System.Drawing.Color.Black;
-            this.buttonDashboard.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonDashboard;
-            this.buttonDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDashboard.Location = new System.Drawing.Point(15, 131);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonDashboard.Size = new System.Drawing.Size(184, 50);
-            this.buttonDashboard.TabIndex = 30;
-            this.buttonDashboard.Text = "DASHBOARD                    ";
-            this.buttonDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonDashboard.TextColor = System.Drawing.Color.Black;
-            this.buttonDashboard.UseVisualStyleBackColor = false;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            this.buttonDashboard.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonDashboard.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
-            // buttonAbout
-            // 
-            this.buttonAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAbout.Location = new System.Drawing.Point(15, 692);
-            this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(178, 49);
-            this.buttonAbout.TabIndex = 18;
-            this.buttonAbout.Text = "AB";
-            this.buttonAbout.UseVisualStyleBackColor = true;
-            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonLogout.Location = new System.Drawing.Point(15, 747);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(178, 53);
-            this.buttonLogout.TabIndex = 16;
-            this.buttonLogout.Text = "LGO";
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
-            // buttonOthers
-            // 
-            this.buttonOthers.BackColor = System.Drawing.Color.Transparent;
-            this.buttonOthers.BackgroundColor = System.Drawing.Color.Transparent;
-            this.buttonOthers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonOthers.BorderColor = System.Drawing.Color.White;
-            this.buttonOthers.BorderRadius = 0;
-            this.buttonOthers.BorderSize = 0;
-            this.buttonOthers.FlatAppearance.BorderSize = 0;
-            this.buttonOthers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOthers.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonOthers.ForeColor = System.Drawing.Color.Black;
-            this.buttonOthers.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonMisc;
-            this.buttonOthers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonOthers.Location = new System.Drawing.Point(15, 493);
-            this.buttonOthers.Name = "buttonOthers";
-            this.buttonOthers.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonOthers.Size = new System.Drawing.Size(183, 46);
-            this.buttonOthers.TabIndex = 35;
-            this.buttonOthers.Text = "MISCELLANEOUS        ";
-            this.buttonOthers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonOthers.TextColor = System.Drawing.Color.Black;
-            this.buttonOthers.UseVisualStyleBackColor = false;
-            this.buttonOthers.Click += new System.EventHandler(this.buttonOthers_Click);
-            this.buttonOthers.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
-            this.buttonOthers.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
-            // 
             // tabTransaction
             // 
             this.tabTransaction.Controls.Add(this.roundedButtonRent);
-            this.tabTransaction.Controls.Add(this.pictureBox7);
             this.tabTransaction.Controls.Add(this.label25);
-            this.tabTransaction.Controls.Add(this.roundedButtonTrasnfer);
             this.tabTransaction.Controls.Add(this.tabControlTransaction);
             this.tabTransaction.Controls.Add(this.label27);
+            this.tabTransaction.Controls.Add(this.pictureBox7);
+            this.tabTransaction.Controls.Add(this.roundedButtonTrasnfer);
             this.tabTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabTransaction.Name = "tabTransaction";
             this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
@@ -506,40 +312,6 @@
             this.tabTransaction.TabIndex = 8;
             this.tabTransaction.Text = "tabPage1";
             this.tabTransaction.UseVisualStyleBackColor = true;
-            // 
-            // roundedButtonRent
-            // 
-            this.roundedButtonRent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButtonRent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonRent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonRent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.roundedButtonRent.BorderColor = System.Drawing.Color.White;
-            this.roundedButtonRent.BorderRadius = 0;
-            this.roundedButtonRent.BorderSize = 0;
-            this.roundedButtonRent.FlatAppearance.BorderSize = 0;
-            this.roundedButtonRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonRent.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonRent.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonRent.Location = new System.Drawing.Point(890, 34);
-            this.roundedButtonRent.Name = "roundedButtonRent";
-            this.roundedButtonRent.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonRent.Size = new System.Drawing.Size(131, 31);
-            this.roundedButtonRent.TabIndex = 42;
-            this.roundedButtonRent.Text = "Rent";
-            this.roundedButtonRent.TextColor = System.Drawing.Color.White;
-            this.roundedButtonRent.UseVisualStyleBackColor = false;
-            this.roundedButtonRent.Click += new System.EventHandler(this.roundedButtonRent_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox7.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox7.TabIndex = 10;
-            this.pictureBox7.TabStop = false;
             // 
             // label25
             // 
@@ -552,29 +324,6 @@
             this.label25.TabIndex = 3;
             this.label25.Text = "Transaction";
             // 
-            // roundedButtonTrasnfer
-            // 
-            this.roundedButtonTrasnfer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButtonTrasnfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonTrasnfer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonTrasnfer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.roundedButtonTrasnfer.BorderColor = System.Drawing.Color.White;
-            this.roundedButtonTrasnfer.BorderRadius = 0;
-            this.roundedButtonTrasnfer.BorderSize = 0;
-            this.roundedButtonTrasnfer.FlatAppearance.BorderSize = 0;
-            this.roundedButtonTrasnfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonTrasnfer.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonTrasnfer.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonTrasnfer.Location = new System.Drawing.Point(1027, 34);
-            this.roundedButtonTrasnfer.Name = "roundedButtonTrasnfer";
-            this.roundedButtonTrasnfer.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonTrasnfer.Size = new System.Drawing.Size(131, 31);
-            this.roundedButtonTrasnfer.TabIndex = 39;
-            this.roundedButtonTrasnfer.Text = "Transfer";
-            this.roundedButtonTrasnfer.TextColor = System.Drawing.Color.White;
-            this.roundedButtonTrasnfer.UseVisualStyleBackColor = false;
-            this.roundedButtonTrasnfer.Click += new System.EventHandler(this.roundedButtonTrasnfer_Click);
-            // 
             // tabControlTransaction
             // 
             this.tabControlTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -583,7 +332,7 @@
             this.tabControlTransaction.Controls.Add(this.tabPageRent);
             this.tabControlTransaction.Controls.Add(this.tabPageTransfer);
             this.tabControlTransaction.Controls.Add(this.tabPageRequestAndBorrow);
-            this.tabControlTransaction.Location = new System.Drawing.Point(29, 71);
+            this.tabControlTransaction.Location = new System.Drawing.Point(29, 68);
             this.tabControlTransaction.Name = "tabControlTransaction";
             this.tabControlTransaction.SelectedIndex = 0;
             this.tabControlTransaction.Size = new System.Drawing.Size(1129, 686);
@@ -613,28 +362,6 @@
             this.label28.TabIndex = 32;
             this.label28.Text = "Asset Rent Form";
             // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.buttonSave.BorderRadius = 8;
-            this.buttonSave.BorderSize = 0;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(865, 606);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSave.Size = new System.Drawing.Size(235, 48);
-            this.buttonSave.TabIndex = 31;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.TextColor = System.Drawing.Color.White;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -654,27 +381,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Asset Information";
             // 
-            // roundedButtonTransactionRentAssetFilterCLear
-            // 
-            this.roundedButtonTransactionRentAssetFilterCLear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButtonTransactionRentAssetFilterCLear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButtonTransactionRentAssetFilterCLear.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButtonTransactionRentAssetFilterCLear.BorderRadius = 8;
-            this.roundedButtonTransactionRentAssetFilterCLear.BorderSize = 0;
-            this.roundedButtonTransactionRentAssetFilterCLear.FlatAppearance.BorderSize = 0;
-            this.roundedButtonTransactionRentAssetFilterCLear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonTransactionRentAssetFilterCLear.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonTransactionRentAssetFilterCLear.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRentAssetFilterCLear.Location = new System.Drawing.Point(147, 99);
-            this.roundedButtonTransactionRentAssetFilterCLear.Name = "roundedButtonTransactionRentAssetFilterCLear";
-            this.roundedButtonTransactionRentAssetFilterCLear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonTransactionRentAssetFilterCLear.Size = new System.Drawing.Size(101, 33);
-            this.roundedButtonTransactionRentAssetFilterCLear.TabIndex = 36;
-            this.roundedButtonTransactionRentAssetFilterCLear.Text = "Clear";
-            this.roundedButtonTransactionRentAssetFilterCLear.TextColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRentAssetFilterCLear.UseVisualStyleBackColor = false;
-            this.roundedButtonTransactionRentAssetFilterCLear.Click += new System.EventHandler(this.roundedButtonTransactionRentAssetFilterCLear_Click);
-            // 
             // dataGridViewTransactionRentAsset
             // 
             this.dataGridViewTransactionRentAsset.AllowUserToAddRows = false;
@@ -686,7 +392,6 @@
             this.dataGridViewTransactionRentAsset.ReadOnly = true;
             this.dataGridViewTransactionRentAsset.Size = new System.Drawing.Size(339, 162);
             this.dataGridViewTransactionRentAsset.TabIndex = 35;
-          
             this.dataGridViewTransactionRentAsset.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewTransactionRentAsset_CellMouseClick);
             // 
             // groupBox3
@@ -710,18 +415,6 @@
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Details";
-            // 
-            // PictureBoxTransactionRentAssetImage
-            // 
-            this.PictureBoxTransactionRentAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureBoxTransactionRentAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBoxTransactionRentAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.PictureBoxTransactionRentAssetImage.Location = new System.Drawing.Point(432, 66);
-            this.PictureBoxTransactionRentAssetImage.Name = "PictureBoxTransactionRentAssetImage";
-            this.PictureBoxTransactionRentAssetImage.Size = new System.Drawing.Size(242, 198);
-            this.PictureBoxTransactionRentAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBoxTransactionRentAssetImage.TabIndex = 45;
-            this.PictureBoxTransactionRentAssetImage.TabStop = false;
             // 
             // label35
             // 
@@ -818,27 +511,6 @@
             this.textBoxTransactionRentAssetName.Size = new System.Drawing.Size(171, 27);
             this.textBoxTransactionRentAssetName.TabIndex = 36;
             // 
-            // roundedButtonTransactionRentCatApply
-            // 
-            this.roundedButtonTransactionRentCatApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButtonTransactionRentCatApply.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButtonTransactionRentCatApply.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButtonTransactionRentCatApply.BorderRadius = 8;
-            this.roundedButtonTransactionRentCatApply.BorderSize = 0;
-            this.roundedButtonTransactionRentCatApply.FlatAppearance.BorderSize = 0;
-            this.roundedButtonTransactionRentCatApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonTransactionRentCatApply.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonTransactionRentCatApply.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRentCatApply.Location = new System.Drawing.Point(253, 99);
-            this.roundedButtonTransactionRentCatApply.Name = "roundedButtonTransactionRentCatApply";
-            this.roundedButtonTransactionRentCatApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonTransactionRentCatApply.Size = new System.Drawing.Size(101, 33);
-            this.roundedButtonTransactionRentCatApply.TabIndex = 33;
-            this.roundedButtonTransactionRentCatApply.Text = "Apply";
-            this.roundedButtonTransactionRentCatApply.TextColor = System.Drawing.Color.White;
-            this.roundedButtonTransactionRentCatApply.UseVisualStyleBackColor = false;
-            this.roundedButtonTransactionRentCatApply.Click += new System.EventHandler(this.roundedButtonTransactionRentCatApply_Click);
-            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -873,20 +545,19 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.groupBox8);
             this.groupBox1.Controls.Add(this.label42);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.textBoxTransactionRenteeContactNumber);
+            this.groupBox1.Controls.Add(this.dateTimeTransactionRenteeBDate);
             this.groupBox1.Controls.Add(this.label41);
-            this.groupBox1.Controls.Add(this.label40);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.richTextBox3);
+            this.groupBox1.Controls.Add(this.richTextBoxTransactionRenteeAddr);
             this.groupBox1.Controls.Add(this.label39);
             this.groupBox1.Controls.Add(this.label38);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBoxTransactionRenteeLName);
             this.groupBox1.Controls.Add(this.label37);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBoxTransactionRenteeMName);
             this.groupBox1.Controls.Add(this.label36);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBoxTransactionRenteeFName);
             this.groupBox1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(29, 380);
             this.groupBox1.Name = "groupBox1";
@@ -895,53 +566,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rentee Information";
             // 
-            // label42
+            // groupBox8
             // 
-            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(641, 115);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(111, 22);
-            this.label42.TabIndex = 58;
-            this.label42.Text = "Contact Number:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(808, 111);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(227, 27);
-            this.textBox7.TabIndex = 57;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(809, 77);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(227, 25);
-            this.dateTimePicker1.TabIndex = 56;
-            // 
-            // label41
-            // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(644, 77);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(66, 22);
-            this.label41.TabIndex = 55;
-            this.label41.Text = "Birthdate:";
+            this.groupBox8.Controls.Add(this.label40);
+            this.groupBox8.Controls.Add(this.textBoxTransactionRenteeLicenseID);
+            this.groupBox8.Controls.Add(this.roundedButtonTransactionRenteeDocUpload);
+            this.groupBox8.Controls.Add(this.pictureBoxValidIDImage);
+            this.groupBox8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(644, 101);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(392, 113);
+            this.groupBox8.TabIndex = 59;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Rentee VALID ID ";
             // 
             // label40
             // 
@@ -950,32 +590,79 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(641, 161);
+            this.label40.Location = new System.Drawing.Point(4, 24);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(156, 22);
-            this.label40.TabIndex = 53;
+            this.label40.TabIndex = 57;
             this.label40.Text = "License ID (If applicable):";
             // 
-            // textBox6
+            // textBoxTransactionRenteeLicenseID
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxTransactionRenteeLicenseID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(807, 158);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(227, 27);
-            this.textBox6.TabIndex = 52;
+            this.textBoxTransactionRenteeLicenseID.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionRenteeLicenseID.Location = new System.Drawing.Point(166, 20);
+            this.textBoxTransactionRenteeLicenseID.Name = "textBoxTransactionRenteeLicenseID";
+            this.textBoxTransactionRenteeLicenseID.Size = new System.Drawing.Size(220, 27);
+            this.textBoxTransactionRenteeLicenseID.TabIndex = 56;
             // 
-            // richTextBox3
+            // label42
             // 
-            this.richTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(393, 70);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(111, 22);
+            this.label42.TabIndex = 58;
+            this.label42.Text = "Contact Number:";
+            // 
+            // textBoxTransactionRenteeContactNumber
+            // 
+            this.textBoxTransactionRenteeContactNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTransactionRenteeContactNumber.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionRenteeContactNumber.Location = new System.Drawing.Point(510, 67);
+            this.textBoxTransactionRenteeContactNumber.Name = "textBoxTransactionRenteeContactNumber";
+            this.textBoxTransactionRenteeContactNumber.Size = new System.Drawing.Size(526, 27);
+            this.textBoxTransactionRenteeContactNumber.TabIndex = 57;
+            // 
+            // dateTimeTransactionRenteeBDate
+            // 
+            this.dateTimeTransactionRenteeBDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox3.Location = new System.Drawing.Point(147, 70);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(475, 115);
-            this.richTextBox3.TabIndex = 47;
-            this.richTextBox3.Text = "";
+            this.dateTimeTransactionRenteeBDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeTransactionRenteeBDate.Location = new System.Drawing.Point(147, 67);
+            this.dateTimeTransactionRenteeBDate.Name = "dateTimeTransactionRenteeBDate";
+            this.dateTimeTransactionRenteeBDate.Size = new System.Drawing.Size(227, 25);
+            this.dateTimeTransactionRenteeBDate.TabIndex = 56;
+            // 
+            // label41
+            // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(57, 70);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(66, 22);
+            this.label41.TabIndex = 55;
+            this.label41.Text = "Birthdate:";
+            // 
+            // richTextBoxTransactionRenteeAddr
+            // 
+            this.richTextBoxTransactionRenteeAddr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBoxTransactionRenteeAddr.Location = new System.Drawing.Point(147, 101);
+            this.richTextBoxTransactionRenteeAddr.Name = "richTextBoxTransactionRenteeAddr";
+            this.richTextBoxTransactionRenteeAddr.Size = new System.Drawing.Size(475, 113);
+            this.richTextBoxTransactionRenteeAddr.TabIndex = 47;
+            this.richTextBoxTransactionRenteeAddr.Text = "";
             // 
             // label39
             // 
@@ -984,7 +671,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(57, 70);
+            this.label39.Location = new System.Drawing.Point(57, 101);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(60, 22);
             this.label39.TabIndex = 46;
@@ -997,22 +684,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(719, 33);
+            this.label38.Location = new System.Drawing.Point(743, 34);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(74, 22);
             this.label38.TabIndex = 51;
             this.label38.Text = "Last Name:";
             // 
-            // textBox5
+            // textBoxTransactionRenteeLName
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxTransactionRenteeLName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(809, 29);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(227, 27);
-            this.textBox5.TabIndex = 50;
+            this.textBoxTransactionRenteeLName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionRenteeLName.Location = new System.Drawing.Point(823, 29);
+            this.textBoxTransactionRenteeLName.Name = "textBoxTransactionRenteeLName";
+            this.textBoxTransactionRenteeLName.Size = new System.Drawing.Size(213, 27);
+            this.textBoxTransactionRenteeLName.TabIndex = 50;
             // 
             // label37
             // 
@@ -1027,15 +714,15 @@
             this.label37.TabIndex = 49;
             this.label37.Text = "Middle Name:";
             // 
-            // textBox4
+            // textBoxTransactionRenteeMName
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxTransactionRenteeMName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(483, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 27);
-            this.textBox4.TabIndex = 48;
+            this.textBoxTransactionRenteeMName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionRenteeMName.Location = new System.Drawing.Point(510, 30);
+            this.textBoxTransactionRenteeMName.Name = "textBoxTransactionRenteeMName";
+            this.textBoxTransactionRenteeMName.Size = new System.Drawing.Size(227, 27);
+            this.textBoxTransactionRenteeMName.TabIndex = 48;
             // 
             // label36
             // 
@@ -1050,23 +737,23 @@
             this.label36.TabIndex = 47;
             this.label36.Text = "First Name:";
             // 
-            // textBox3
+            // textBoxTransactionRenteeFName
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxTransactionRenteeFName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(147, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 27);
-            this.textBox3.TabIndex = 46;
+            this.textBoxTransactionRenteeFName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionRenteeFName.Location = new System.Drawing.Point(147, 30);
+            this.textBoxTransactionRenteeFName.Name = "textBoxTransactionRenteeFName";
+            this.textBoxTransactionRenteeFName.Size = new System.Drawing.Size(227, 27);
+            this.textBoxTransactionRenteeFName.TabIndex = 46;
             // 
             // tabPageTransfer
             // 
-            this.tabPageTransfer.Controls.Add(this.roundedButton3);
-            this.tabPageTransfer.Controls.Add(this.groupBox7);
             this.tabPageTransfer.Controls.Add(this.groupBox5);
+            this.tabPageTransfer.Controls.Add(this.groupBox7);
             this.tabPageTransfer.Controls.Add(this.groupBox4);
             this.tabPageTransfer.Controls.Add(this.label43);
+            this.tabPageTransfer.Controls.Add(this.roundedButtonTransactinTransfer);
             this.tabPageTransfer.Location = new System.Drawing.Point(4, 22);
             this.tabPageTransfer.Name = "tabPageTransfer";
             this.tabPageTransfer.Padding = new System.Windows.Forms.Padding(3);
@@ -1075,107 +762,52 @@
             this.tabPageTransfer.Text = "tabPage2";
             this.tabPageTransfer.UseVisualStyleBackColor = true;
             // 
-            // roundedButton3
-            // 
-            this.roundedButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButton3.BorderRadius = 8;
-            this.roundedButton3.BorderSize = 0;
-            this.roundedButton3.FlatAppearance.BorderSize = 0;
-            this.roundedButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton3.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton3.ForeColor = System.Drawing.Color.White;
-            this.roundedButton3.Location = new System.Drawing.Point(865, 599);
-            this.roundedButton3.Name = "roundedButton3";
-            this.roundedButton3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton3.Size = new System.Drawing.Size(235, 48);
-            this.roundedButton3.TabIndex = 39;
-            this.roundedButton3.Text = "Transfer";
-            this.roundedButton3.TextColor = System.Drawing.Color.White;
-            this.roundedButton3.UseVisualStyleBackColor = false;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox7.Controls.Add(this.pictureBox10);
-            this.groupBox7.Controls.Add(this.roundedButton4);
-            this.groupBox7.Font = new System.Drawing.Font("Poppins", 12F);
-            this.groupBox7.Location = new System.Drawing.Point(29, 380);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(457, 213);
-            this.groupBox7.TabIndex = 35;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Document";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox10.Location = new System.Drawing.Point(145, 30);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(172, 140);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 38;
-            this.pictureBox10.TabStop = false;
-            // 
-            // roundedButton4
-            // 
-            this.roundedButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButton4.BorderRadius = 8;
-            this.roundedButton4.BorderSize = 0;
-            this.roundedButton4.FlatAppearance.BorderSize = 0;
-            this.roundedButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton4.ForeColor = System.Drawing.Color.White;
-            this.roundedButton4.Location = new System.Drawing.Point(15, 176);
-            this.roundedButton4.Name = "roundedButton4";
-            this.roundedButton4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton4.Size = new System.Drawing.Size(426, 31);
-            this.roundedButton4.TabIndex = 37;
-            this.roundedButton4.Text = "Upload Document";
-            this.roundedButton4.TextColor = System.Drawing.Color.White;
-            this.roundedButton4.UseVisualStyleBackColor = false;
-            // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.roundedButtonTransactionTransferAssetCatClear);
+            this.groupBox5.Controls.Add(this.dataGridViewTransactionTransferAssetList);
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.roundedButton2);
+            this.groupBox5.Controls.Add(this.roundedButtonTransactionTransferAssetCatApply);
             this.groupBox5.Controls.Add(this.label49);
             this.groupBox5.Controls.Add(this.label50);
-            this.groupBox5.Controls.Add(this.comboBox2);
-            this.groupBox5.Controls.Add(this.listBox2);
+            this.groupBox5.Controls.Add(this.comboBoxTransactionTransferAssetCategory);
             this.groupBox5.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(29, 51);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1071, 323);
-            this.groupBox5.TabIndex = 35;
+            this.groupBox5.TabIndex = 40;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Asset Information";
+            // 
+            // dataGridViewTransactionTransferAssetList
+            // 
+            this.dataGridViewTransactionTransferAssetList.AllowUserToAddRows = false;
+            this.dataGridViewTransactionTransferAssetList.AllowUserToDeleteRows = false;
+            this.dataGridViewTransactionTransferAssetList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTransactionTransferAssetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTransactionTransferAssetList.Location = new System.Drawing.Point(15, 141);
+            this.dataGridViewTransactionTransferAssetList.Name = "dataGridViewTransactionTransferAssetList";
+            this.dataGridViewTransactionTransferAssetList.ReadOnly = true;
+            this.dataGridViewTransactionTransferAssetList.Size = new System.Drawing.Size(339, 162);
+            this.dataGridViewTransactionTransferAssetList.TabIndex = 35;
+            this.dataGridViewTransactionTransferAssetList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewTransactionTransferAssetList_CellMouseClick);
             // 
             // groupBox6
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.Controls.Add(this.pictureBox9);
+            this.groupBox6.Controls.Add(this.pictureBoxTransactionTransferAssetImage);
             this.groupBox6.Controls.Add(this.label44);
-            this.groupBox6.Controls.Add(this.richTextBox4);
+            this.groupBox6.Controls.Add(this.richTextBoxrichTextBoxTransactionTransferAssetDescription);
             this.groupBox6.Controls.Add(this.label45);
-            this.groupBox6.Controls.Add(this.richTextBox5);
+            this.groupBox6.Controls.Add(this.richTextBoxTransactionTransferAssetDescription);
             this.groupBox6.Controls.Add(this.label46);
             this.groupBox6.Controls.Add(this.label47);
-            this.groupBox6.Controls.Add(this.textBox8);
+            this.groupBox6.Controls.Add(this.textBoxTransactionTransferAssetCustodian);
             this.groupBox6.Controls.Add(this.label48);
-            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Controls.Add(this.textBoxTransactionTransferAssetName);
             this.groupBox6.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(372, 30);
             this.groupBox6.Name = "groupBox6";
@@ -1183,18 +815,6 @@
             this.groupBox6.TabIndex = 34;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Details";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox9.Location = new System.Drawing.Point(432, 66);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(242, 198);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 45;
-            this.pictureBox9.TabStop = false;
             // 
             // label44
             // 
@@ -1207,15 +827,16 @@
             this.label44.TabIndex = 44;
             this.label44.Text = "Image:";
             // 
-            // richTextBox4
+            // richTextBoxrichTextBoxTransactionTransferAssetDescription
             // 
-            this.richTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox4.Location = new System.Drawing.Point(254, 189);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(171, 75);
-            this.richTextBox4.TabIndex = 43;
-            this.richTextBox4.Text = "";
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.Location = new System.Drawing.Point(254, 189);
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.Name = "richTextBoxrichTextBoxTransactionTransferAssetDescription";
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.ReadOnly = true;
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.Size = new System.Drawing.Size(171, 75);
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.TabIndex = 43;
+            this.richTextBoxrichTextBoxTransactionTransferAssetDescription.Text = "";
             // 
             // label45
             // 
@@ -1227,15 +848,16 @@
             this.label45.TabIndex = 42;
             this.label45.Text = "Purpose:";
             // 
-            // richTextBox5
+            // richTextBoxTransactionTransferAssetDescription
             // 
-            this.richTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.richTextBoxTransactionTransferAssetDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox5.Location = new System.Drawing.Point(254, 111);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(171, 75);
-            this.richTextBox5.TabIndex = 41;
-            this.richTextBox5.Text = "";
+            this.richTextBoxTransactionTransferAssetDescription.Location = new System.Drawing.Point(254, 111);
+            this.richTextBoxTransactionTransferAssetDescription.Name = "richTextBoxTransactionTransferAssetDescription";
+            this.richTextBoxTransactionTransferAssetDescription.ReadOnly = true;
+            this.richTextBoxTransactionTransferAssetDescription.Size = new System.Drawing.Size(171, 75);
+            this.richTextBoxTransactionTransferAssetDescription.TabIndex = 41;
+            this.richTextBoxTransactionTransferAssetDescription.Text = "";
             // 
             // label46
             // 
@@ -1257,15 +879,16 @@
             this.label47.TabIndex = 39;
             this.label47.Text = "Current Custodian/Coordinator:";
             // 
-            // textBox8
+            // textBoxTransactionTransferAssetCustodian
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxTransactionTransferAssetCustodian.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(254, 75);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(171, 27);
-            this.textBox8.TabIndex = 38;
+            this.textBoxTransactionTransferAssetCustodian.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionTransferAssetCustodian.Location = new System.Drawing.Point(254, 75);
+            this.textBoxTransactionTransferAssetCustodian.Name = "textBoxTransactionTransferAssetCustodian";
+            this.textBoxTransactionTransferAssetCustodian.ReadOnly = true;
+            this.textBoxTransactionTransferAssetCustodian.Size = new System.Drawing.Size(171, 27);
+            this.textBoxTransactionTransferAssetCustodian.TabIndex = 38;
             // 
             // label48
             // 
@@ -1277,35 +900,16 @@
             this.label48.TabIndex = 37;
             this.label48.Text = "Name:";
             // 
-            // textBox9
+            // textBoxTransactionTransferAssetName
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxTransactionTransferAssetName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(254, 36);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(171, 27);
-            this.textBox9.TabIndex = 36;
-            // 
-            // roundedButton2
-            // 
-            this.roundedButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButton2.BorderRadius = 8;
-            this.roundedButton2.BorderSize = 0;
-            this.roundedButton2.FlatAppearance.BorderSize = 0;
-            this.roundedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton2.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton2.ForeColor = System.Drawing.Color.White;
-            this.roundedButton2.Location = new System.Drawing.Point(253, 99);
-            this.roundedButton2.Name = "roundedButton2";
-            this.roundedButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton2.Size = new System.Drawing.Size(101, 33);
-            this.roundedButton2.TabIndex = 33;
-            this.roundedButton2.Text = "Apply";
-            this.roundedButton2.TextColor = System.Drawing.Color.White;
-            this.roundedButton2.UseVisualStyleBackColor = false;
+            this.textBoxTransactionTransferAssetName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionTransferAssetName.Location = new System.Drawing.Point(254, 36);
+            this.textBoxTransactionTransferAssetName.Name = "textBoxTransactionTransferAssetName";
+            this.textBoxTransactionTransferAssetName.ReadOnly = true;
+            this.textBoxTransactionTransferAssetName.Size = new System.Drawing.Size(171, 27);
+            this.textBoxTransactionTransferAssetName.TabIndex = 36;
             // 
             // label49
             // 
@@ -1327,34 +931,60 @@
             this.label50.TabIndex = 2;
             this.label50.Text = "Filter List";
             // 
-            // comboBox2
+            // comboBoxTransactionTransferAssetCategory
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(91, 63);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(263, 30);
-            this.comboBox2.TabIndex = 1;
+            this.comboBoxTransactionTransferAssetCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTransactionTransferAssetCategory.FormattingEnabled = true;
+            this.comboBoxTransactionTransferAssetCategory.Location = new System.Drawing.Point(91, 63);
+            this.comboBoxTransactionTransferAssetCategory.Name = "comboBoxTransactionTransferAssetCategory";
+            this.comboBoxTransactionTransferAssetCategory.Size = new System.Drawing.Size(263, 30);
+            this.comboBoxTransactionTransferAssetCategory.TabIndex = 1;
             // 
-            // listBox2
+            // groupBox7
             // 
-            this.listBox2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 23;
-            this.listBox2.Location = new System.Drawing.Point(15, 138);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(339, 165);
-            this.listBox2.TabIndex = 0;
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox7.Controls.Add(this.dateTimePickerTransactionTransferDate);
+            this.groupBox7.Controls.Add(this.label52);
+            this.groupBox7.Controls.Add(this.pictureBoxTransactionTransferDocumentImage);
+            this.groupBox7.Controls.Add(this.roundedButtonTransactionTransferUploadDocument);
+            this.groupBox7.Font = new System.Drawing.Font("Poppins", 12F);
+            this.groupBox7.Location = new System.Drawing.Point(29, 380);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(457, 213);
+            this.groupBox7.TabIndex = 35;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Document And Transfer Details";
+            // 
+            // dateTimePickerTransactionTransferDate
+            // 
+            this.dateTimePickerTransactionTransferDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerTransactionTransferDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTransactionTransferDate.Location = new System.Drawing.Point(107, 30);
+            this.dateTimePickerTransactionTransferDate.Name = "dateTimePickerTransactionTransferDate";
+            this.dateTimePickerTransactionTransferDate.Size = new System.Drawing.Size(334, 25);
+            this.dateTimePickerTransactionTransferDate.TabIndex = 47;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(11, 30);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(90, 22);
+            this.label52.TabIndex = 46;
+            this.label52.Text = "Transfer Date:";
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.roundedButton5);
-            this.groupBox4.Controls.Add(this.listBox3);
+            this.groupBox4.Controls.Add(this.dataGridViewTransactionTransferReceiver);
+            this.groupBox4.Controls.Add(this.roundedButtonTransactionTransferSearchName);
             this.groupBox4.Controls.Add(this.label51);
-            this.groupBox4.Controls.Add(this.textBox10);
+            this.groupBox4.Controls.Add(this.textBoxTransactionTransferName);
             this.groupBox4.Font = new System.Drawing.Font("Poppins", 12F);
             this.groupBox4.Location = new System.Drawing.Point(492, 380);
             this.groupBox4.Name = "groupBox4";
@@ -1363,40 +993,21 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Receiver Information";
             // 
-            // roundedButton5
+            // dataGridViewTransactionTransferReceiver
             // 
-            this.roundedButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.roundedButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButton5.BorderRadius = 8;
-            this.roundedButton5.BorderSize = 0;
-            this.roundedButton5.FlatAppearance.BorderSize = 0;
-            this.roundedButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton5.ForeColor = System.Drawing.Color.White;
-            this.roundedButton5.Location = new System.Drawing.Point(19, 170);
-            this.roundedButton5.Name = "roundedButton5";
-            this.roundedButton5.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton5.Size = new System.Drawing.Size(583, 31);
-            this.roundedButton5.TabIndex = 39;
-            this.roundedButton5.Text = "Search";
-            this.roundedButton5.TextColor = System.Drawing.Color.White;
-            this.roundedButton5.UseVisualStyleBackColor = false;
-            // 
-            // listBox3
-            // 
-            this.listBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewTransactionTransferReceiver.AllowUserToAddRows = false;
+            this.dataGridViewTransactionTransferReceiver.AllowUserToDeleteRows = false;
+            this.dataGridViewTransactionTransferReceiver.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 23;
-            this.listBox3.Location = new System.Drawing.Point(19, 37);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(583, 73);
-            this.listBox3.TabIndex = 35;
+            this.dataGridViewTransactionTransferReceiver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTransactionTransferReceiver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTransactionTransferReceiver.Location = new System.Drawing.Point(19, 30);
+            this.dataGridViewTransactionTransferReceiver.Name = "dataGridViewTransactionTransferReceiver";
+            this.dataGridViewTransactionTransferReceiver.ReadOnly = true;
+            this.dataGridViewTransactionTransferReceiver.Size = new System.Drawing.Size(570, 101);
+            this.dataGridViewTransactionTransferReceiver.TabIndex = 48;
+            this.dataGridViewTransactionTransferReceiver.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewTransactionTransferReceiver_CellMouseClick);
             // 
             // label51
             // 
@@ -1404,21 +1015,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(15, 142);
+            this.label51.Location = new System.Drawing.Point(15, 141);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(48, 22);
+            this.label51.Size = new System.Drawing.Size(92, 22);
             this.label51.TabIndex = 47;
-            this.label51.Text = "Name:";
+            this.label51.Text = "Name Search:";
             // 
-            // textBox10
+            // textBoxTransactionTransferName
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxTransactionTransferName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(69, 137);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(533, 27);
-            this.textBox10.TabIndex = 46;
+            this.textBoxTransactionTransferName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTransactionTransferName.Location = new System.Drawing.Point(113, 137);
+            this.textBoxTransactionTransferName.Name = "textBoxTransactionTransferName";
+            this.textBoxTransactionTransferName.Size = new System.Drawing.Size(476, 27);
+            this.textBoxTransactionTransferName.TabIndex = 46;
+            this.textBoxTransactionTransferName.TextChanged += new System.EventHandler(this.textBoxTransactionTransferName_TextChanged);
             // 
             // label43
             // 
@@ -1476,7 +1088,11 @@
             // 
             // tabAbout
             // 
-            this.tabAbout.Controls.Add(this.label7);
+            this.tabAbout.Controls.Add(this.roundedButtonAboutTOS);
+            this.tabAbout.Controls.Add(this.roundedButtonAboutPolicy);
+            this.tabAbout.Controls.Add(this.roundedButtonReportAnIssue);
+            this.tabAbout.Controls.Add(this.roundedButtonUserManual);
+            this.tabAbout.Controls.Add(this.richTextBoxAboutHeader);
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
             this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
@@ -1485,16 +1101,21 @@
             this.tabAbout.Text = "tabPage7";
             this.tabAbout.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // richTextBoxAboutHeader
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label7.Location = new System.Drawing.Point(20, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 62);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "About";
+            this.richTextBoxAboutHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxAboutHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.richTextBoxAboutHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxAboutHeader.Cursor = System.Windows.Forms.Cursors.No;
+            this.richTextBoxAboutHeader.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxAboutHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.richTextBoxAboutHeader.Location = new System.Drawing.Point(6, 94);
+            this.richTextBoxAboutHeader.Name = "richTextBoxAboutHeader";
+            this.richTextBoxAboutHeader.ReadOnly = true;
+            this.richTextBoxAboutHeader.Size = new System.Drawing.Size(1198, 157);
+            this.richTextBoxAboutHeader.TabIndex = 3;
+            this.richTextBoxAboutHeader.Text = "";
             // 
             // tabOthers
             // 
@@ -1511,17 +1132,6 @@
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox6.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1130, 10);
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
             // 
             // otherTabControl
             // 
@@ -1561,27 +1171,6 @@
             this.tabOperator.TabIndex = 1;
             this.tabOperator.Text = "tabOperator";
             this.tabOperator.UseVisualStyleBackColor = true;
-            // 
-            // rbuttonOperatorClearFields
-            // 
-            this.rbuttonOperatorClearFields.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonOperatorClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonOperatorClearFields.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonOperatorClearFields.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonOperatorClearFields.BorderRadius = 15;
-            this.rbuttonOperatorClearFields.BorderSize = 0;
-            this.rbuttonOperatorClearFields.FlatAppearance.BorderSize = 0;
-            this.rbuttonOperatorClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonOperatorClearFields.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonOperatorClearFields.ForeColor = System.Drawing.Color.White;
-            this.rbuttonOperatorClearFields.Location = new System.Drawing.Point(776, 441);
-            this.rbuttonOperatorClearFields.Name = "rbuttonOperatorClearFields";
-            this.rbuttonOperatorClearFields.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonOperatorClearFields.Size = new System.Drawing.Size(337, 43);
-            this.rbuttonOperatorClearFields.TabIndex = 29;
-            this.rbuttonOperatorClearFields.Text = "CLEAR ALL FIELDS";
-            this.rbuttonOperatorClearFields.TextColor = System.Drawing.Color.White;
-            this.rbuttonOperatorClearFields.UseVisualStyleBackColor = false;
             // 
             // label23
             // 
@@ -1703,23 +1292,23 @@
             this.dataGridViewOtherOperator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOtherOperator.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOtherOperator.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOtherOperator.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewOtherOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewOtherOperator.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewOtherOperator.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewOtherOperator.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewOtherOperator.Name = "dataGridViewOtherOperator";
             this.dataGridViewOtherOperator.ReadOnly = true;
@@ -1871,23 +1460,23 @@
             this.dataGridViewSupplier.AllowUserToDeleteRows = false;
             this.dataGridViewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSupplier.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSupplier.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewSupplier.Location = new System.Drawing.Point(7, 7);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.ReadOnly = true;
@@ -2001,23 +1590,23 @@
             this.dataGridViewAssetCategories.AllowUserToDeleteRows = false;
             this.dataGridViewAssetCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAssetCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAssetCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewAssetCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAssetCategories.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAssetCategories.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewAssetCategories.Location = new System.Drawing.Point(7, 9);
             this.dataGridViewAssetCategories.Name = "dataGridViewAssetCategories";
             this.dataGridViewAssetCategories.ReadOnly = true;
@@ -2053,7 +1642,7 @@
             this.buttonOperators.Name = "buttonOperators";
             this.buttonOperators.Size = new System.Drawing.Size(159, 29);
             this.buttonOperators.TabIndex = 4;
-            this.buttonOperators.Text = "EMPLOYEES";
+            this.buttonOperators.Text = "COORDINATORS";
             this.buttonOperators.UseVisualStyleBackColor = false;
             this.buttonOperators.Click += new System.EventHandler(this.buttonOperators_Click);
             // 
@@ -2096,15 +1685,6 @@
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox5.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -2121,8 +1701,8 @@
             this.tabArchiveRecords.Controls.Add(this.roundedButtonSearchArchiveRecords);
             this.tabArchiveRecords.Controls.Add(this.textBoxArchiveRecordsSearch);
             this.tabArchiveRecords.Controls.Add(this.dataGridViewArchiveRecords);
-            this.tabArchiveRecords.Controls.Add(this.pictureBox4);
             this.tabArchiveRecords.Controls.Add(this.label4);
+            this.tabArchiveRecords.Controls.Add(this.pictureBox4);
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
@@ -2130,30 +1710,6 @@
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
-            // 
-            // roundedButtonSearchArchiveRecords
-            // 
-            this.roundedButtonSearchArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButtonSearchArchiveRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonSearchArchiveRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonSearchArchiveRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.roundedButtonSearchArchiveRecords.BorderColor = System.Drawing.Color.White;
-            this.roundedButtonSearchArchiveRecords.BorderRadius = 0;
-            this.roundedButtonSearchArchiveRecords.BorderSize = 0;
-            this.roundedButtonSearchArchiveRecords.Enabled = false;
-            this.roundedButtonSearchArchiveRecords.FlatAppearance.BorderSize = 0;
-            this.roundedButtonSearchArchiveRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonSearchArchiveRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonSearchArchiveRecords.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonSearchArchiveRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
-            this.roundedButtonSearchArchiveRecords.Location = new System.Drawing.Point(1150, 34);
-            this.roundedButtonSearchArchiveRecords.Name = "roundedButtonSearchArchiveRecords";
-            this.roundedButtonSearchArchiveRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButtonSearchArchiveRecords.Size = new System.Drawing.Size(36, 31);
-            this.roundedButtonSearchArchiveRecords.TabIndex = 39;
-            this.roundedButtonSearchArchiveRecords.TextColor = System.Drawing.Color.White;
-            this.roundedButtonSearchArchiveRecords.UseVisualStyleBackColor = false;
-            this.roundedButtonSearchArchiveRecords.Click += new System.EventHandler(this.roundedButtonSearchArchiveRecords_Click);
             // 
             // textBoxArchiveRecordsSearch
             // 
@@ -2172,48 +1728,37 @@
             this.dataGridViewArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewArchiveRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewArchiveRecords.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewArchiveRecords.Location = new System.Drawing.Point(29, 88);
             this.dataGridViewArchiveRecords.Name = "dataGridViewArchiveRecords";
             this.dataGridViewArchiveRecords.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Poppins", 11.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Poppins", 11.25F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewArchiveRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridViewArchiveRecords.Size = new System.Drawing.Size(1159, 669);
             this.dataGridViewArchiveRecords.TabIndex = 7;
             this.dataGridViewArchiveRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArchiveRecords_CellContentClick);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox4.Location = new System.Drawing.Point(29, 71);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1159, 10);
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
             // 
             // label4
             // 
@@ -2232,9 +1777,9 @@
             this.tabAssetRecords.Controls.Add(this.buttonAssetRecordsViewRecords);
             this.tabAssetRecords.Controls.Add(this.panelAssetRecordsHandler);
             this.tabAssetRecords.Controls.Add(this.textBoxSearchFilter);
-            this.tabAssetRecords.Controls.Add(this.pictureBox2);
             this.tabAssetRecords.Controls.Add(this.label2);
             this.tabAssetRecords.Controls.Add(this.panelViewedAssetHandler);
+            this.tabAssetRecords.Controls.Add(this.pictureBox2);
             this.tabAssetRecords.Controls.Add(this.buttonSearch);
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
@@ -2244,53 +1789,6 @@
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
             this.tabAssetRecords.Resize += new System.EventHandler(this.tabAssetRecords_Resize);
-            // 
-            // buttonAssetRecordsNewAsset
-            // 
-            this.buttonAssetRecordsNewAsset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAssetRecordsNewAsset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecordsNewAsset.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecordsNewAsset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAssetRecordsNewAsset.BorderColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsNewAsset.BorderRadius = 0;
-            this.buttonAssetRecordsNewAsset.BorderSize = 0;
-            this.buttonAssetRecordsNewAsset.FlatAppearance.BorderSize = 0;
-            this.buttonAssetRecordsNewAsset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAssetRecordsNewAsset.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAssetRecordsNewAsset.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(546, 27);
-            this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
-            this.buttonAssetRecordsNewAsset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(137, 31);
-            this.buttonAssetRecordsNewAsset.TabIndex = 42;
-            this.buttonAssetRecordsNewAsset.Text = "+ ASSET";
-            this.buttonAssetRecordsNewAsset.TextColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = false;
-            this.buttonAssetRecordsNewAsset.Visible = false;
-            this.buttonAssetRecordsNewAsset.Click += new System.EventHandler(this.buttonAssetRecordsNewAsset_Click);
-            // 
-            // buttonAssetRecordsViewRecords
-            // 
-            this.buttonAssetRecordsViewRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAssetRecordsViewRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecordsViewRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecordsViewRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAssetRecordsViewRecords.BorderColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsViewRecords.BorderRadius = 0;
-            this.buttonAssetRecordsViewRecords.BorderSize = 0;
-            this.buttonAssetRecordsViewRecords.FlatAppearance.BorderSize = 0;
-            this.buttonAssetRecordsViewRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAssetRecordsViewRecords.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAssetRecordsViewRecords.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(689, 27);
-            this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
-            this.buttonAssetRecordsViewRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(175, 31);
-            this.buttonAssetRecordsViewRecords.TabIndex = 41;
-            this.buttonAssetRecordsViewRecords.Text = "Load Records";
-            this.buttonAssetRecordsViewRecords.TextColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = false;
-            this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
             // 
             // panelAssetRecordsHandler
             // 
@@ -2316,17 +1814,6 @@
             this.textBoxSearchFilter.TextChanged += new System.EventHandler(this.textBoxSearchFilter_TextChanged);
             this.textBoxSearchFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearchFilter_KeyDown);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 71);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1175, 10);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -2350,35 +1837,10 @@
             this.panelViewedAssetHandler.Visible = false;
             this.panelViewedAssetHandler.Resize += new System.EventHandler(this.panelViewedAssetHandler_Resize);
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonSearch.BorderColor = System.Drawing.Color.White;
-            this.buttonSearch.BorderRadius = 0;
-            this.buttonSearch.BorderSize = 0;
-            this.buttonSearch.Enabled = false;
-            this.buttonSearch.FlatAppearance.BorderSize = 0;
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
-            this.buttonSearch.Location = new System.Drawing.Point(1168, 27);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonSearch.Size = new System.Drawing.Size(36, 31);
-            this.buttonSearch.TabIndex = 37;
-            this.buttonSearch.TextColor = System.Drawing.Color.White;
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // tabProfile
             // 
             this.tabProfile.Controls.Add(this.label16);
             this.tabProfile.Controls.Add(this.textBoxProfileAddress);
-            this.tabProfile.Controls.Add(this.pictureBox1);
             this.tabProfile.Controls.Add(this.comboBoxProfileDept);
             this.tabProfile.Controls.Add(this.checkBoxButtonProfileShowPassword);
             this.tabProfile.Controls.Add(this.textBoxProfilePosition);
@@ -2394,11 +1856,12 @@
             this.tabProfile.Controls.Add(this.label10);
             this.tabProfile.Controls.Add(this.label9);
             this.tabProfile.Controls.Add(this.label3);
+            this.tabProfile.Controls.Add(this.pictureBox1);
+            this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
             this.tabProfile.Controls.Add(this.buttonEditProfile);
             this.tabProfile.Controls.Add(this.buttonProfileCancel);
             this.tabProfile.Controls.Add(this.buttonProfileSave);
             this.tabProfile.Controls.Add(this.buttonProfileUploadImage);
-            this.tabProfile.Controls.Add(this.pictureBoxProfileImage);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
@@ -2428,17 +1891,6 @@
             this.textBoxProfileAddress.Size = new System.Drawing.Size(378, 123);
             this.textBoxProfileAddress.TabIndex = 39;
             this.textBoxProfileAddress.Text = "";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1129, 10);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
             // 
             // comboBoxProfileDept
             // 
@@ -2621,6 +2073,489 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Account Profile";
             // 
+            // tabDashboard
+            // 
+            this.tabDashboard.Controls.Add(this.menuButtonSortByYear);
+            this.tabDashboard.Controls.Add(this.labelOffice);
+            this.tabDashboard.Controls.Add(this.roundedPanelTotalAsset);
+            this.tabDashboard.Controls.Add(this.roundedPanelCategoryCount);
+            this.tabDashboard.Controls.Add(this.pictureBox3);
+            this.tabDashboard.Controls.Add(this.label1);
+            this.tabDashboard.Location = new System.Drawing.Point(4, 22);
+            this.tabDashboard.Name = "tabDashboard";
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDashboard.Size = new System.Drawing.Size(1210, 763);
+            this.tabDashboard.TabIndex = 1;
+            this.tabDashboard.Text = "tabPage2";
+            this.tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // labelOffice
+            // 
+            this.labelOffice.AutoSize = true;
+            this.labelOffice.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOffice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.labelOffice.Location = new System.Drawing.Point(25, 104);
+            this.labelOffice.Name = "labelOffice";
+            this.labelOffice.Size = new System.Drawing.Size(143, 34);
+            this.labelOffice.TabIndex = 46;
+            this.labelOffice.Text = "OFFICE_DATA";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label1.Location = new System.Drawing.Point(20, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(229, 62);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dashboard";
+            // 
+            // panelTabControl
+            // 
+            this.panelTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTabControl.Controls.Add(this.tabDashboard);
+            this.panelTabControl.Controls.Add(this.tabProfile);
+            this.panelTabControl.Controls.Add(this.tabAssetRecords);
+            this.panelTabControl.Controls.Add(this.tabArchiveRecords);
+            this.panelTabControl.Controls.Add(this.tabGenReport);
+            this.panelTabControl.Controls.Add(this.tabOthers);
+            this.panelTabControl.Controls.Add(this.tabAbout);
+            this.panelTabControl.Controls.Add(this.tabSettings);
+            this.panelTabControl.Controls.Add(this.tabTransaction);
+            this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.panelTabControl.Location = new System.Drawing.Point(203, 6);
+            this.panelTabControl.Multiline = true;
+            this.panelTabControl.Name = "panelTabControl";
+            this.panelTabControl.SelectedIndex = 0;
+            this.panelTabControl.Size = new System.Drawing.Size(1218, 789);
+            this.panelTabControl.TabIndex = 0;
+            this.panelTabControl.Resize += new System.EventHandler(this.panelTabControl_Resize);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox3.Location = new System.Drawing.Point(28, 77);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1169, 10);
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox1.Location = new System.Drawing.Point(28, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxProfileImage
+            // 
+            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
+            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(31, 132);
+            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
+            this.pictureBoxProfileImage.TabIndex = 2;
+            this.pictureBoxProfileImage.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox2.Location = new System.Drawing.Point(31, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1175, 10);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox4.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1159, 10);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox5.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox6.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(1130, 10);
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
+            // PictureBoxTransactionRentAssetImage
+            // 
+            this.PictureBoxTransactionRentAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureBoxTransactionRentAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PictureBoxTransactionRentAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.PictureBoxTransactionRentAssetImage.Location = new System.Drawing.Point(432, 66);
+            this.PictureBoxTransactionRentAssetImage.Name = "PictureBoxTransactionRentAssetImage";
+            this.PictureBoxTransactionRentAssetImage.Size = new System.Drawing.Size(242, 198);
+            this.PictureBoxTransactionRentAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxTransactionRentAssetImage.TabIndex = 45;
+            this.PictureBoxTransactionRentAssetImage.TabStop = false;
+            // 
+            // pictureBoxValidIDImage
+            // 
+            this.pictureBoxValidIDImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxValidIDImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBoxValidIDImage.Location = new System.Drawing.Point(6, 49);
+            this.pictureBoxValidIDImage.Name = "pictureBoxValidIDImage";
+            this.pictureBoxValidIDImage.Size = new System.Drawing.Size(379, 22);
+            this.pictureBoxValidIDImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxValidIDImage.TabIndex = 0;
+            this.pictureBoxValidIDImage.TabStop = false;
+            // 
+            // pictureBoxTransactionTransferAssetImage
+            // 
+            this.pictureBoxTransactionTransferAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxTransactionTransferAssetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxTransactionTransferAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBoxTransactionTransferAssetImage.Location = new System.Drawing.Point(432, 66);
+            this.pictureBoxTransactionTransferAssetImage.Name = "pictureBoxTransactionTransferAssetImage";
+            this.pictureBoxTransactionTransferAssetImage.Size = new System.Drawing.Size(242, 198);
+            this.pictureBoxTransactionTransferAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTransactionTransferAssetImage.TabIndex = 45;
+            this.pictureBoxTransactionTransferAssetImage.TabStop = false;
+            // 
+            // pictureBoxTransactionTransferDocumentImage
+            // 
+            this.pictureBoxTransactionTransferDocumentImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxTransactionTransferDocumentImage.Location = new System.Drawing.Point(145, 64);
+            this.pictureBoxTransactionTransferDocumentImage.Name = "pictureBoxTransactionTransferDocumentImage";
+            this.pictureBoxTransactionTransferDocumentImage.Size = new System.Drawing.Size(172, 106);
+            this.pictureBoxTransactionTransferDocumentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTransactionTransferDocumentImage.TabIndex = 38;
+            this.pictureBoxTransactionTransferDocumentImage.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.pictureBox7.Location = new System.Drawing.Point(29, 71);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(1129, 10);
+            this.pictureBox7.TabIndex = 10;
+            this.pictureBox7.TabStop = false;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonLogout.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogout.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLogout.BorderColor = System.Drawing.Color.White;
+            this.buttonLogout.BorderRadius = 0;
+            this.buttonLogout.BorderSize = 0;
+            this.buttonLogout.FlatAppearance.BorderSize = 0;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonLogout.ForeColor = System.Drawing.Color.Black;
+            this.buttonLogout.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.ButtonLogOut;
+            this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLogout.Location = new System.Drawing.Point(17, 737);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonLogout.Size = new System.Drawing.Size(183, 46);
+            this.buttonLogout.TabIndex = 38;
+            this.buttonLogout.Text = "LOG OUT                            ";
+            this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLogout.TextColor = System.Drawing.Color.Black;
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.buttonLogout.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonLogout.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonAbout
+            // 
+            this.buttonAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonAbout.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAbout.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAbout.BorderColor = System.Drawing.Color.White;
+            this.buttonAbout.BorderRadius = 0;
+            this.buttonAbout.BorderSize = 0;
+            this.buttonAbout.FlatAppearance.BorderSize = 0;
+            this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAbout.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonAbout.ForeColor = System.Drawing.Color.Black;
+            this.buttonAbout.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonAbout;
+            this.buttonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAbout.Location = new System.Drawing.Point(13, 685);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAbout.Size = new System.Drawing.Size(183, 46);
+            this.buttonAbout.TabIndex = 37;
+            this.buttonAbout.Text = "ABOUT                                ";
+            this.buttonAbout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAbout.TextColor = System.Drawing.Color.Black;
+            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
+            this.buttonAbout.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonAbout.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonTransaction
+            // 
+            this.buttonTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTransaction.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonTransaction.BorderColor = System.Drawing.Color.White;
+            this.buttonTransaction.BorderRadius = 0;
+            this.buttonTransaction.BorderSize = 0;
+            this.buttonTransaction.FlatAppearance.BorderSize = 0;
+            this.buttonTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTransaction.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonTransaction.ForeColor = System.Drawing.Color.Black;
+            this.buttonTransaction.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonTransaction;
+            this.buttonTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTransaction.Location = new System.Drawing.Point(15, 416);
+            this.buttonTransaction.Name = "buttonTransaction";
+            this.buttonTransaction.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonTransaction.Size = new System.Drawing.Size(185, 46);
+            this.buttonTransaction.TabIndex = 36;
+            this.buttonTransaction.Text = "TRANSACTION              ";
+            this.buttonTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonTransaction.TextColor = System.Drawing.Color.Black;
+            this.buttonTransaction.UseVisualStyleBackColor = false;
+            this.buttonTransaction.Click += new System.EventHandler(this.buttonTransaction_Click);
+            this.buttonTransaction.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonTransaction.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonProfile.BorderColor = System.Drawing.Color.White;
+            this.buttonProfile.BorderRadius = 0;
+            this.buttonProfile.BorderSize = 0;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.ForeColor = System.Drawing.Color.White;
+            this.buttonProfile.Location = new System.Drawing.Point(15, 37);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonProfile.Size = new System.Drawing.Size(185, 69);
+            this.buttonProfile.TabIndex = 34;
+            this.buttonProfile.Text = "UserData\r\nUserData[2]\r\n";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.TextColor = System.Drawing.Color.White;
+            this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.Visible = false;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
+            // buttonGenerateReports
+            // 
+            this.buttonGenerateReports.BackColor = System.Drawing.Color.Transparent;
+            this.buttonGenerateReports.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonGenerateReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonGenerateReports.BorderColor = System.Drawing.Color.White;
+            this.buttonGenerateReports.BorderRadius = 0;
+            this.buttonGenerateReports.BorderSize = 0;
+            this.buttonGenerateReports.FlatAppearance.BorderSize = 0;
+            this.buttonGenerateReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGenerateReports.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGenerateReports.ForeColor = System.Drawing.Color.Black;
+            this.buttonGenerateReports.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonGenerateReports;
+            this.buttonGenerateReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGenerateReports.Location = new System.Drawing.Point(15, 342);
+            this.buttonGenerateReports.Name = "buttonGenerateReports";
+            this.buttonGenerateReports.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonGenerateReports.Size = new System.Drawing.Size(185, 46);
+            this.buttonGenerateReports.TabIndex = 33;
+            this.buttonGenerateReports.Text = "GENERATE REPORTS ";
+            this.buttonGenerateReports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonGenerateReports.TextColor = System.Drawing.Color.Black;
+            this.buttonGenerateReports.UseVisualStyleBackColor = false;
+            this.buttonGenerateReports.Click += new System.EventHandler(this.buttonGenerateReports_Click);
+            this.buttonGenerateReports.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonGenerateReports.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonArchiveRecords
+            // 
+            this.buttonArchiveRecords.BackColor = System.Drawing.Color.Transparent;
+            this.buttonArchiveRecords.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonArchiveRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonArchiveRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonArchiveRecords.BorderRadius = 0;
+            this.buttonArchiveRecords.BorderSize = 0;
+            this.buttonArchiveRecords.FlatAppearance.BorderSize = 0;
+            this.buttonArchiveRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonArchiveRecords.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonArchiveRecords.ForeColor = System.Drawing.Color.Black;
+            this.buttonArchiveRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonArchiveRecords;
+            this.buttonArchiveRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonArchiveRecords.Location = new System.Drawing.Point(13, 272);
+            this.buttonArchiveRecords.Name = "buttonArchiveRecords";
+            this.buttonArchiveRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonArchiveRecords.Size = new System.Drawing.Size(186, 46);
+            this.buttonArchiveRecords.TabIndex = 32;
+            this.buttonArchiveRecords.Text = "ARCHIVE RECORDS    ";
+            this.buttonArchiveRecords.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonArchiveRecords.TextColor = System.Drawing.Color.Black;
+            this.buttonArchiveRecords.UseVisualStyleBackColor = false;
+            this.buttonArchiveRecords.Click += new System.EventHandler(this.buttonArchiveRecords_Click);
+            this.buttonArchiveRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonArchiveRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonAssetRecords
+            // 
+            this.buttonAssetRecords.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAssetRecords.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonAssetRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecords.BorderRadius = 0;
+            this.buttonAssetRecords.BorderSize = 0;
+            this.buttonAssetRecords.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecords.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonAssetRecords.ForeColor = System.Drawing.Color.Black;
+            this.buttonAssetRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonAssetRecords;
+            this.buttonAssetRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAssetRecords.Location = new System.Drawing.Point(15, 197);
+            this.buttonAssetRecords.Name = "buttonAssetRecords";
+            this.buttonAssetRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecords.Size = new System.Drawing.Size(183, 50);
+            this.buttonAssetRecords.TabIndex = 31;
+            this.buttonAssetRecords.Text = "ASSET RECORDS          ";
+            this.buttonAssetRecords.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAssetRecords.TextColor = System.Drawing.Color.Black;
+            this.buttonAssetRecords.UseVisualStyleBackColor = false;
+            this.buttonAssetRecords.Click += new System.EventHandler(this.buttonAssetRecords_Click);
+            this.buttonAssetRecords.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonAssetRecords.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonDashboard
+            // 
+            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonDashboard.BorderColor = System.Drawing.Color.White;
+            this.buttonDashboard.BorderRadius = 0;
+            this.buttonDashboard.BorderSize = 0;
+            this.buttonDashboard.FlatAppearance.BorderSize = 0;
+            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDashboard.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDashboard.ForeColor = System.Drawing.Color.Black;
+            this.buttonDashboard.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonDashboard;
+            this.buttonDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDashboard.Location = new System.Drawing.Point(15, 131);
+            this.buttonDashboard.Name = "buttonDashboard";
+            this.buttonDashboard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonDashboard.Size = new System.Drawing.Size(184, 50);
+            this.buttonDashboard.TabIndex = 30;
+            this.buttonDashboard.Text = "DASHBOARD                    ";
+            this.buttonDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonDashboard.TextColor = System.Drawing.Color.Black;
+            this.buttonDashboard.UseVisualStyleBackColor = false;
+            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            this.buttonDashboard.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonDashboard.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // buttonOthers
+            // 
+            this.buttonOthers.BackColor = System.Drawing.Color.Transparent;
+            this.buttonOthers.BackgroundColor = System.Drawing.Color.Transparent;
+            this.buttonOthers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonOthers.BorderColor = System.Drawing.Color.White;
+            this.buttonOthers.BorderRadius = 0;
+            this.buttonOthers.BorderSize = 0;
+            this.buttonOthers.FlatAppearance.BorderSize = 0;
+            this.buttonOthers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOthers.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonOthers.ForeColor = System.Drawing.Color.Black;
+            this.buttonOthers.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonMisc;
+            this.buttonOthers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonOthers.Location = new System.Drawing.Point(15, 493);
+            this.buttonOthers.Name = "buttonOthers";
+            this.buttonOthers.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonOthers.Size = new System.Drawing.Size(183, 46);
+            this.buttonOthers.TabIndex = 35;
+            this.buttonOthers.Text = "MISCELLANEOUS        ";
+            this.buttonOthers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonOthers.TextColor = System.Drawing.Color.Black;
+            this.buttonOthers.UseVisualStyleBackColor = false;
+            this.buttonOthers.Click += new System.EventHandler(this.buttonOthers_Click);
+            this.buttonOthers.MouseEnter += new System.EventHandler(this.ButtonMouseHover);
+            this.buttonOthers.MouseLeave += new System.EventHandler(this.ButtonMouseEnd);
+            // 
+            // menuButtonSortByYear
+            // 
+            this.menuButtonSortByYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuButtonSortByYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.menuButtonSortByYear.FlatAppearance.BorderSize = 0;
+            this.menuButtonSortByYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuButtonSortByYear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButtonSortByYear.ForeColor = System.Drawing.Color.White;
+            this.menuButtonSortByYear.Location = new System.Drawing.Point(1007, 104);
+            this.menuButtonSortByYear.Name = "menuButtonSortByYear";
+            this.menuButtonSortByYear.Size = new System.Drawing.Size(190, 30);
+            this.menuButtonSortByYear.TabIndex = 47;
+            this.menuButtonSortByYear.Text = "Sort By Acknowledge Year";
+            this.menuButtonSortByYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuButtonSortByYear.UseVisualStyleBackColor = false;
+            // 
+            // roundedPanelTotalAsset
+            // 
+            this.roundedPanelTotalAsset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedPanelTotalAsset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedPanelTotalAsset.BorderColor = System.Drawing.Color.Transparent;
+            this.roundedPanelTotalAsset.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.roundedPanelTotalAsset.BorderRadius = 12;
+            this.roundedPanelTotalAsset.BorderSize = 2;
+            this.roundedPanelTotalAsset.Location = new System.Drawing.Point(28, 145);
+            this.roundedPanelTotalAsset.Name = "roundedPanelTotalAsset";
+            this.roundedPanelTotalAsset.Size = new System.Drawing.Size(529, 256);
+            this.roundedPanelTotalAsset.TabIndex = 43;
+            this.roundedPanelTotalAsset.UnderlinedStyle = false;
+            // 
+            // roundedPanelCategoryCount
+            // 
+            this.roundedPanelCategoryCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedPanelCategoryCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.roundedPanelCategoryCount.BorderColor = System.Drawing.Color.Transparent;
+            this.roundedPanelCategoryCount.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.roundedPanelCategoryCount.BorderRadius = 12;
+            this.roundedPanelCategoryCount.BorderSize = 2;
+            this.roundedPanelCategoryCount.Location = new System.Drawing.Point(563, 145);
+            this.roundedPanelCategoryCount.Name = "roundedPanelCategoryCount";
+            this.roundedPanelCategoryCount.Size = new System.Drawing.Size(634, 601);
+            this.roundedPanelCategoryCount.TabIndex = 42;
+            this.roundedPanelCategoryCount.UnderlinedStyle = false;
+            // 
             // buttonEditProfile
             // 
             this.buttonEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
@@ -2708,133 +2643,470 @@
             this.buttonProfileUploadImage.UseVisualStyleBackColor = false;
             this.buttonProfileUploadImage.Click += new System.EventHandler(this.buttonProfileUploadImage_Click);
             // 
-            // pictureBoxProfileImage
+            // buttonAssetRecordsNewAsset
             // 
-            this.pictureBoxProfileImage.BackgroundImage = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.EmptyProfile;
-            this.pictureBoxProfileImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfileImage.ErrorImage")));
-            this.pictureBoxProfileImage.Location = new System.Drawing.Point(31, 132);
-            this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
-            this.pictureBoxProfileImage.Size = new System.Drawing.Size(314, 327);
-            this.pictureBoxProfileImage.TabIndex = 2;
-            this.pictureBoxProfileImage.TabStop = false;
+            this.buttonAssetRecordsNewAsset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAssetRecordsNewAsset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsNewAsset.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsNewAsset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecordsNewAsset.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsNewAsset.BorderRadius = 0;
+            this.buttonAssetRecordsNewAsset.BorderSize = 0;
+            this.buttonAssetRecordsNewAsset.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecordsNewAsset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecordsNewAsset.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAssetRecordsNewAsset.ForeColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(546, 27);
+            this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
+            this.buttonAssetRecordsNewAsset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(137, 31);
+            this.buttonAssetRecordsNewAsset.TabIndex = 42;
+            this.buttonAssetRecordsNewAsset.Text = "+ ASSET";
+            this.buttonAssetRecordsNewAsset.TextColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsNewAsset.UseVisualStyleBackColor = false;
+            this.buttonAssetRecordsNewAsset.Visible = false;
+            this.buttonAssetRecordsNewAsset.Click += new System.EventHandler(this.buttonAssetRecordsNewAsset_Click);
             // 
-            // tabDashboard
+            // buttonAssetRecordsViewRecords
             // 
-            this.tabDashboard.Controls.Add(this.menuButtonSortByYear);
-            this.tabDashboard.Controls.Add(this.labelOffice);
-            this.tabDashboard.Controls.Add(this.roundedPanelTotalAsset);
-            this.tabDashboard.Controls.Add(this.roundedPanelCategoryCount);
-            this.tabDashboard.Controls.Add(this.pictureBox3);
-            this.tabDashboard.Controls.Add(this.label1);
-            this.tabDashboard.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(1210, 763);
-            this.tabDashboard.TabIndex = 1;
-            this.tabDashboard.Text = "tabPage2";
-            this.tabDashboard.UseVisualStyleBackColor = true;
+            this.buttonAssetRecordsViewRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAssetRecordsViewRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsViewRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsViewRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAssetRecordsViewRecords.BorderColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsViewRecords.BorderRadius = 0;
+            this.buttonAssetRecordsViewRecords.BorderSize = 0;
+            this.buttonAssetRecordsViewRecords.FlatAppearance.BorderSize = 0;
+            this.buttonAssetRecordsViewRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssetRecordsViewRecords.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAssetRecordsViewRecords.ForeColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(689, 27);
+            this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
+            this.buttonAssetRecordsViewRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(175, 31);
+            this.buttonAssetRecordsViewRecords.TabIndex = 41;
+            this.buttonAssetRecordsViewRecords.Text = "Load Records";
+            this.buttonAssetRecordsViewRecords.TextColor = System.Drawing.Color.White;
+            this.buttonAssetRecordsViewRecords.UseVisualStyleBackColor = false;
+            this.buttonAssetRecordsViewRecords.Click += new System.EventHandler(this.buttonAssetRecordsViewRecords_Click);
             // 
-            // menuButtonSortByYear
+            // buttonSearch
             // 
-            this.menuButtonSortByYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuButtonSortByYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.menuButtonSortByYear.FlatAppearance.BorderSize = 0;
-            this.menuButtonSortByYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButtonSortByYear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButtonSortByYear.ForeColor = System.Drawing.Color.White;
-            this.menuButtonSortByYear.Location = new System.Drawing.Point(1007, 104);
-            this.menuButtonSortByYear.Name = "menuButtonSortByYear";
-            this.menuButtonSortByYear.Size = new System.Drawing.Size(190, 30);
-            this.menuButtonSortByYear.TabIndex = 47;
-            this.menuButtonSortByYear.Text = "Sort By Acknowledge Year";
-            this.menuButtonSortByYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuButtonSortByYear.UseVisualStyleBackColor = false;
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSearch.BorderColor = System.Drawing.Color.White;
+            this.buttonSearch.BorderRadius = 0;
+            this.buttonSearch.BorderSize = 0;
+            this.buttonSearch.Enabled = false;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.buttonSearch.Location = new System.Drawing.Point(1168, 27);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSearch.Size = new System.Drawing.Size(36, 31);
+            this.buttonSearch.TabIndex = 37;
+            this.buttonSearch.TextColor = System.Drawing.Color.White;
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // labelOffice
+            // roundedButtonSearchArchiveRecords
             // 
-            this.labelOffice.AutoSize = true;
-            this.labelOffice.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOffice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.labelOffice.Location = new System.Drawing.Point(25, 104);
-            this.labelOffice.Name = "labelOffice";
-            this.labelOffice.Size = new System.Drawing.Size(143, 34);
-            this.labelOffice.TabIndex = 46;
-            this.labelOffice.Text = "OFFICE_DATA";
+            this.roundedButtonSearchArchiveRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonSearchArchiveRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonSearchArchiveRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonSearchArchiveRecords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButtonSearchArchiveRecords.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonSearchArchiveRecords.BorderRadius = 0;
+            this.roundedButtonSearchArchiveRecords.BorderSize = 0;
+            this.roundedButtonSearchArchiveRecords.Enabled = false;
+            this.roundedButtonSearchArchiveRecords.FlatAppearance.BorderSize = 0;
+            this.roundedButtonSearchArchiveRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonSearchArchiveRecords.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonSearchArchiveRecords.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonSearchArchiveRecords.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
+            this.roundedButtonSearchArchiveRecords.Location = new System.Drawing.Point(1150, 34);
+            this.roundedButtonSearchArchiveRecords.Name = "roundedButtonSearchArchiveRecords";
+            this.roundedButtonSearchArchiveRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonSearchArchiveRecords.Size = new System.Drawing.Size(36, 31);
+            this.roundedButtonSearchArchiveRecords.TabIndex = 39;
+            this.roundedButtonSearchArchiveRecords.TextColor = System.Drawing.Color.White;
+            this.roundedButtonSearchArchiveRecords.UseVisualStyleBackColor = false;
+            this.roundedButtonSearchArchiveRecords.Click += new System.EventHandler(this.roundedButtonSearchArchiveRecords_Click);
             // 
-            // roundedPanelTotalAsset
+            // rbuttonOperatorClearFields
             // 
-            this.roundedPanelTotalAsset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rbuttonOperatorClearFields.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonOperatorClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorClearFields.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorClearFields.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonOperatorClearFields.BorderRadius = 15;
+            this.rbuttonOperatorClearFields.BorderSize = 0;
+            this.rbuttonOperatorClearFields.FlatAppearance.BorderSize = 0;
+            this.rbuttonOperatorClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonOperatorClearFields.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonOperatorClearFields.ForeColor = System.Drawing.Color.White;
+            this.rbuttonOperatorClearFields.Location = new System.Drawing.Point(776, 441);
+            this.rbuttonOperatorClearFields.Name = "rbuttonOperatorClearFields";
+            this.rbuttonOperatorClearFields.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonOperatorClearFields.Size = new System.Drawing.Size(337, 43);
+            this.rbuttonOperatorClearFields.TabIndex = 29;
+            this.rbuttonOperatorClearFields.Text = "CLEAR ALL FIELDS";
+            this.rbuttonOperatorClearFields.TextColor = System.Drawing.Color.White;
+            this.rbuttonOperatorClearFields.UseVisualStyleBackColor = false;
+            // 
+            // roundedButtonAboutTOS
+            // 
+            this.roundedButtonAboutTOS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanelTotalAsset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedPanelTotalAsset.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedPanelTotalAsset.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.roundedPanelTotalAsset.BorderRadius = 12;
-            this.roundedPanelTotalAsset.BorderSize = 2;
-            this.roundedPanelTotalAsset.Location = new System.Drawing.Point(28, 145);
-            this.roundedPanelTotalAsset.Name = "roundedPanelTotalAsset";
-            this.roundedPanelTotalAsset.Size = new System.Drawing.Size(529, 256);
-            this.roundedPanelTotalAsset.TabIndex = 43;
-            this.roundedPanelTotalAsset.UnderlinedStyle = false;
+            this.roundedButtonAboutTOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonAboutTOS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonAboutTOS.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonAboutTOS.BorderRadius = 8;
+            this.roundedButtonAboutTOS.BorderSize = 0;
+            this.roundedButtonAboutTOS.FlatAppearance.BorderSize = 0;
+            this.roundedButtonAboutTOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonAboutTOS.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonAboutTOS.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonAboutTOS.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.new_tab;
+            this.roundedButtonAboutTOS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.roundedButtonAboutTOS.Location = new System.Drawing.Point(363, 552);
+            this.roundedButtonAboutTOS.Name = "roundedButtonAboutTOS";
+            this.roundedButtonAboutTOS.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonAboutTOS.Size = new System.Drawing.Size(485, 40);
+            this.roundedButtonAboutTOS.TabIndex = 7;
+            this.roundedButtonAboutTOS.Text = "Terms of Use";
+            this.roundedButtonAboutTOS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.roundedButtonAboutTOS.TextColor = System.Drawing.Color.White;
+            this.roundedButtonAboutTOS.UseVisualStyleBackColor = false;
+            this.roundedButtonAboutTOS.Click += new System.EventHandler(this.roundedButtonAboutTOS_Click);
             // 
-            // roundedPanelCategoryCount
+            // roundedButtonAboutPolicy
             // 
-            this.roundedPanelCategoryCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.roundedButtonAboutPolicy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanelCategoryCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.roundedPanelCategoryCount.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedPanelCategoryCount.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.roundedPanelCategoryCount.BorderRadius = 12;
-            this.roundedPanelCategoryCount.BorderSize = 2;
-            this.roundedPanelCategoryCount.Location = new System.Drawing.Point(563, 145);
-            this.roundedPanelCategoryCount.Name = "roundedPanelCategoryCount";
-            this.roundedPanelCategoryCount.Size = new System.Drawing.Size(634, 601);
-            this.roundedPanelCategoryCount.TabIndex = 42;
-            this.roundedPanelCategoryCount.UnderlinedStyle = false;
+            this.roundedButtonAboutPolicy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonAboutPolicy.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonAboutPolicy.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonAboutPolicy.BorderRadius = 8;
+            this.roundedButtonAboutPolicy.BorderSize = 0;
+            this.roundedButtonAboutPolicy.FlatAppearance.BorderSize = 0;
+            this.roundedButtonAboutPolicy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonAboutPolicy.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonAboutPolicy.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonAboutPolicy.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.new_tab;
+            this.roundedButtonAboutPolicy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.roundedButtonAboutPolicy.Location = new System.Drawing.Point(363, 493);
+            this.roundedButtonAboutPolicy.Name = "roundedButtonAboutPolicy";
+            this.roundedButtonAboutPolicy.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonAboutPolicy.Size = new System.Drawing.Size(485, 40);
+            this.roundedButtonAboutPolicy.TabIndex = 6;
+            this.roundedButtonAboutPolicy.Text = "Privacy Policy";
+            this.roundedButtonAboutPolicy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.roundedButtonAboutPolicy.TextColor = System.Drawing.Color.White;
+            this.roundedButtonAboutPolicy.UseVisualStyleBackColor = false;
+            this.roundedButtonAboutPolicy.Click += new System.EventHandler(this.roundedButtonAboutPolicy_Click);
             // 
-            // pictureBox3
+            // roundedButtonReportAnIssue
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.roundedButtonReportAnIssue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.pictureBox3.Location = new System.Drawing.Point(28, 77);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1169, 10);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
+            this.roundedButtonReportAnIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonReportAnIssue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonReportAnIssue.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonReportAnIssue.BorderRadius = 8;
+            this.roundedButtonReportAnIssue.BorderSize = 0;
+            this.roundedButtonReportAnIssue.FlatAppearance.BorderSize = 0;
+            this.roundedButtonReportAnIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonReportAnIssue.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonReportAnIssue.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonReportAnIssue.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.new_tab;
+            this.roundedButtonReportAnIssue.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.roundedButtonReportAnIssue.Location = new System.Drawing.Point(363, 434);
+            this.roundedButtonReportAnIssue.Name = "roundedButtonReportAnIssue";
+            this.roundedButtonReportAnIssue.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonReportAnIssue.Size = new System.Drawing.Size(485, 40);
+            this.roundedButtonReportAnIssue.TabIndex = 5;
+            this.roundedButtonReportAnIssue.Text = "Report an Issue";
+            this.roundedButtonReportAnIssue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.roundedButtonReportAnIssue.TextColor = System.Drawing.Color.White;
+            this.roundedButtonReportAnIssue.UseVisualStyleBackColor = false;
+            this.roundedButtonReportAnIssue.Click += new System.EventHandler(this.roundedButtonReportAnIssue_Click);
             // 
-            // label1
+            // roundedButtonUserManual
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(20, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 62);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Dashboard";
-            // 
-            // panelTabControl
-            // 
-            this.panelTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.roundedButtonUserManual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTabControl.Controls.Add(this.tabDashboard);
-            this.panelTabControl.Controls.Add(this.tabProfile);
-            this.panelTabControl.Controls.Add(this.tabAssetRecords);
-            this.panelTabControl.Controls.Add(this.tabArchiveRecords);
-            this.panelTabControl.Controls.Add(this.tabGenReport);
-            this.panelTabControl.Controls.Add(this.tabOthers);
-            this.panelTabControl.Controls.Add(this.tabAbout);
-            this.panelTabControl.Controls.Add(this.tabSettings);
-            this.panelTabControl.Controls.Add(this.tabTransaction);
-            this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(203, 6);
-            this.panelTabControl.Multiline = true;
-            this.panelTabControl.Name = "panelTabControl";
-            this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1218, 789);
-            this.panelTabControl.TabIndex = 0;
-            this.panelTabControl.Resize += new System.EventHandler(this.panelTabControl_Resize);
+            this.roundedButtonUserManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonUserManual.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonUserManual.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonUserManual.BorderRadius = 8;
+            this.roundedButtonUserManual.BorderSize = 0;
+            this.roundedButtonUserManual.FlatAppearance.BorderSize = 0;
+            this.roundedButtonUserManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonUserManual.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonUserManual.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonUserManual.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.new_tab;
+            this.roundedButtonUserManual.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.roundedButtonUserManual.Location = new System.Drawing.Point(363, 379);
+            this.roundedButtonUserManual.Name = "roundedButtonUserManual";
+            this.roundedButtonUserManual.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonUserManual.Size = new System.Drawing.Size(485, 40);
+            this.roundedButtonUserManual.TabIndex = 4;
+            this.roundedButtonUserManual.Text = "User Manual";
+            this.roundedButtonUserManual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.roundedButtonUserManual.TextColor = System.Drawing.Color.White;
+            this.roundedButtonUserManual.UseVisualStyleBackColor = false;
+            this.roundedButtonUserManual.Click += new System.EventHandler(this.roundedButtonUserManual_Click);
+            // 
+            // roundedButtonRent
+            // 
+            this.roundedButtonRent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonRent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonRent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonRent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButtonRent.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonRent.BorderRadius = 0;
+            this.roundedButtonRent.BorderSize = 0;
+            this.roundedButtonRent.FlatAppearance.BorderSize = 0;
+            this.roundedButtonRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonRent.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonRent.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonRent.Location = new System.Drawing.Point(890, 34);
+            this.roundedButtonRent.Name = "roundedButtonRent";
+            this.roundedButtonRent.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonRent.Size = new System.Drawing.Size(131, 31);
+            this.roundedButtonRent.TabIndex = 42;
+            this.roundedButtonRent.Text = "Rent";
+            this.roundedButtonRent.TextColor = System.Drawing.Color.White;
+            this.roundedButtonRent.UseVisualStyleBackColor = false;
+            this.roundedButtonRent.Click += new System.EventHandler(this.roundedButtonRent_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonSave.BorderRadius = 8;
+            this.buttonSave.BorderSize = 0;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(865, 606);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonSave.Size = new System.Drawing.Size(235, 48);
+            this.buttonSave.TabIndex = 31;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.TextColor = System.Drawing.Color.White;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // roundedButtonTransactionRentAssetFilterCLear
+            // 
+            this.roundedButtonTransactionRentAssetFilterCLear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionRentAssetFilterCLear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionRentAssetFilterCLear.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionRentAssetFilterCLear.BorderRadius = 8;
+            this.roundedButtonTransactionRentAssetFilterCLear.BorderSize = 0;
+            this.roundedButtonTransactionRentAssetFilterCLear.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionRentAssetFilterCLear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionRentAssetFilterCLear.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionRentAssetFilterCLear.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionRentAssetFilterCLear.Location = new System.Drawing.Point(147, 99);
+            this.roundedButtonTransactionRentAssetFilterCLear.Name = "roundedButtonTransactionRentAssetFilterCLear";
+            this.roundedButtonTransactionRentAssetFilterCLear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionRentAssetFilterCLear.Size = new System.Drawing.Size(101, 33);
+            this.roundedButtonTransactionRentAssetFilterCLear.TabIndex = 36;
+            this.roundedButtonTransactionRentAssetFilterCLear.Text = "Clear";
+            this.roundedButtonTransactionRentAssetFilterCLear.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionRentAssetFilterCLear.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionRentAssetFilterCLear.Click += new System.EventHandler(this.roundedButtonTransactionRentAssetFilterCLear_Click);
+            // 
+            // roundedButtonTransactionRentCatApply
+            // 
+            this.roundedButtonTransactionRentCatApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionRentCatApply.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionRentCatApply.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionRentCatApply.BorderRadius = 8;
+            this.roundedButtonTransactionRentCatApply.BorderSize = 0;
+            this.roundedButtonTransactionRentCatApply.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionRentCatApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionRentCatApply.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionRentCatApply.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionRentCatApply.Location = new System.Drawing.Point(253, 99);
+            this.roundedButtonTransactionRentCatApply.Name = "roundedButtonTransactionRentCatApply";
+            this.roundedButtonTransactionRentCatApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionRentCatApply.Size = new System.Drawing.Size(101, 33);
+            this.roundedButtonTransactionRentCatApply.TabIndex = 33;
+            this.roundedButtonTransactionRentCatApply.Text = "Apply";
+            this.roundedButtonTransactionRentCatApply.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionRentCatApply.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionRentCatApply.Click += new System.EventHandler(this.roundedButtonTransactionRentCatApply_Click);
+            // 
+            // roundedButtonTransactionRenteeDocUpload
+            // 
+            this.roundedButtonTransactionRenteeDocUpload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonTransactionRenteeDocUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionRenteeDocUpload.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionRenteeDocUpload.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionRenteeDocUpload.BorderRadius = 8;
+            this.roundedButtonTransactionRenteeDocUpload.BorderSize = 0;
+            this.roundedButtonTransactionRenteeDocUpload.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionRenteeDocUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionRenteeDocUpload.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionRenteeDocUpload.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionRenteeDocUpload.Location = new System.Drawing.Point(7, 77);
+            this.roundedButtonTransactionRenteeDocUpload.Name = "roundedButtonTransactionRenteeDocUpload";
+            this.roundedButtonTransactionRenteeDocUpload.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionRenteeDocUpload.Size = new System.Drawing.Size(378, 30);
+            this.roundedButtonTransactionRenteeDocUpload.TabIndex = 32;
+            this.roundedButtonTransactionRenteeDocUpload.Text = "Upload Document";
+            this.roundedButtonTransactionRenteeDocUpload.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionRenteeDocUpload.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionRenteeDocUpload.Click += new System.EventHandler(this.roundedButtonTransactionRenteeDocUpload_Click);
+            // 
+            // roundedButtonTransactionTransferAssetCatClear
+            // 
+            this.roundedButtonTransactionTransferAssetCatClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferAssetCatClear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferAssetCatClear.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionTransferAssetCatClear.BorderRadius = 8;
+            this.roundedButtonTransactionTransferAssetCatClear.BorderSize = 0;
+            this.roundedButtonTransactionTransferAssetCatClear.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionTransferAssetCatClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionTransferAssetCatClear.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionTransferAssetCatClear.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferAssetCatClear.Location = new System.Drawing.Point(147, 99);
+            this.roundedButtonTransactionTransferAssetCatClear.Name = "roundedButtonTransactionTransferAssetCatClear";
+            this.roundedButtonTransactionTransferAssetCatClear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionTransferAssetCatClear.Size = new System.Drawing.Size(101, 33);
+            this.roundedButtonTransactionTransferAssetCatClear.TabIndex = 36;
+            this.roundedButtonTransactionTransferAssetCatClear.Text = "Clear";
+            this.roundedButtonTransactionTransferAssetCatClear.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferAssetCatClear.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionTransferAssetCatClear.Click += new System.EventHandler(this.roundedButtonTransactionTransferAssetCatClear_Click);
+            // 
+            // roundedButtonTransactionTransferAssetCatApply
+            // 
+            this.roundedButtonTransactionTransferAssetCatApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferAssetCatApply.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferAssetCatApply.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionTransferAssetCatApply.BorderRadius = 8;
+            this.roundedButtonTransactionTransferAssetCatApply.BorderSize = 0;
+            this.roundedButtonTransactionTransferAssetCatApply.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionTransferAssetCatApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionTransferAssetCatApply.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionTransferAssetCatApply.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferAssetCatApply.Location = new System.Drawing.Point(253, 99);
+            this.roundedButtonTransactionTransferAssetCatApply.Name = "roundedButtonTransactionTransferAssetCatApply";
+            this.roundedButtonTransactionTransferAssetCatApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionTransferAssetCatApply.Size = new System.Drawing.Size(101, 33);
+            this.roundedButtonTransactionTransferAssetCatApply.TabIndex = 33;
+            this.roundedButtonTransactionTransferAssetCatApply.Text = "Apply";
+            this.roundedButtonTransactionTransferAssetCatApply.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferAssetCatApply.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionTransferAssetCatApply.Click += new System.EventHandler(this.roundedButtonTransactionTransferAssetCatApply_Click);
+            // 
+            // roundedButtonTransactionTransferUploadDocument
+            // 
+            this.roundedButtonTransactionTransferUploadDocument.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonTransactionTransferUploadDocument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferUploadDocument.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferUploadDocument.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionTransferUploadDocument.BorderRadius = 8;
+            this.roundedButtonTransactionTransferUploadDocument.BorderSize = 0;
+            this.roundedButtonTransactionTransferUploadDocument.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionTransferUploadDocument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionTransferUploadDocument.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionTransferUploadDocument.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferUploadDocument.Location = new System.Drawing.Point(15, 176);
+            this.roundedButtonTransactionTransferUploadDocument.Name = "roundedButtonTransactionTransferUploadDocument";
+            this.roundedButtonTransactionTransferUploadDocument.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionTransferUploadDocument.Size = new System.Drawing.Size(426, 31);
+            this.roundedButtonTransactionTransferUploadDocument.TabIndex = 37;
+            this.roundedButtonTransactionTransferUploadDocument.Text = "Upload Document";
+            this.roundedButtonTransactionTransferUploadDocument.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferUploadDocument.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionTransferUploadDocument.Click += new System.EventHandler(this.roundedButtonTransactionTransferUploadDocument_Click);
+            // 
+            // roundedButtonTransactionTransferSearchName
+            // 
+            this.roundedButtonTransactionTransferSearchName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonTransactionTransferSearchName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferSearchName.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactionTransferSearchName.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactionTransferSearchName.BorderRadius = 8;
+            this.roundedButtonTransactionTransferSearchName.BorderSize = 0;
+            this.roundedButtonTransactionTransferSearchName.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactionTransferSearchName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactionTransferSearchName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactionTransferSearchName.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferSearchName.Location = new System.Drawing.Point(19, 170);
+            this.roundedButtonTransactionTransferSearchName.Name = "roundedButtonTransactionTransferSearchName";
+            this.roundedButtonTransactionTransferSearchName.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactionTransferSearchName.Size = new System.Drawing.Size(570, 31);
+            this.roundedButtonTransactionTransferSearchName.TabIndex = 39;
+            this.roundedButtonTransactionTransferSearchName.Text = "Search";
+            this.roundedButtonTransactionTransferSearchName.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactionTransferSearchName.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactionTransferSearchName.Click += new System.EventHandler(this.roundedButtonTransactionTransferSearchName_Click);
+            // 
+            // roundedButtonTransactinTransfer
+            // 
+            this.roundedButtonTransactinTransfer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonTransactinTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactinTransfer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.roundedButtonTransactinTransfer.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButtonTransactinTransfer.BorderRadius = 8;
+            this.roundedButtonTransactinTransfer.BorderSize = 0;
+            this.roundedButtonTransactinTransfer.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTransactinTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTransactinTransfer.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTransactinTransfer.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTransactinTransfer.Location = new System.Drawing.Point(865, 599);
+            this.roundedButtonTransactinTransfer.Name = "roundedButtonTransactinTransfer";
+            this.roundedButtonTransactinTransfer.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTransactinTransfer.Size = new System.Drawing.Size(235, 48);
+            this.roundedButtonTransactinTransfer.TabIndex = 39;
+            this.roundedButtonTransactinTransfer.Text = "Transfer";
+            this.roundedButtonTransactinTransfer.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTransactinTransfer.UseVisualStyleBackColor = false;
+            this.roundedButtonTransactinTransfer.Click += new System.EventHandler(this.roundedButtonTransactinTransfer_Click);
+            // 
+            // roundedButtonTrasnfer
+            // 
+            this.roundedButtonTrasnfer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonTrasnfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTrasnfer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTrasnfer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.roundedButtonTrasnfer.BorderColor = System.Drawing.Color.White;
+            this.roundedButtonTrasnfer.BorderRadius = 0;
+            this.roundedButtonTrasnfer.BorderSize = 0;
+            this.roundedButtonTrasnfer.FlatAppearance.BorderSize = 0;
+            this.roundedButtonTrasnfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonTrasnfer.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonTrasnfer.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonTrasnfer.Location = new System.Drawing.Point(1027, 34);
+            this.roundedButtonTrasnfer.Name = "roundedButtonTrasnfer";
+            this.roundedButtonTrasnfer.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButtonTrasnfer.Size = new System.Drawing.Size(131, 31);
+            this.roundedButtonTrasnfer.TabIndex = 39;
+            this.roundedButtonTrasnfer.Text = "Transfer";
+            this.roundedButtonTrasnfer.TextColor = System.Drawing.Color.White;
+            this.roundedButtonTrasnfer.UseVisualStyleBackColor = false;
+            this.roundedButtonTrasnfer.Click += new System.EventHandler(this.roundedButtonTrasnfer_Click);
             // 
             // MainForm
             // 
@@ -2853,7 +3125,6 @@
             this.groupBoxSide.ResumeLayout(false);
             this.tabTransaction.ResumeLayout(false);
             this.tabTransaction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabControlTransaction.ResumeLayout(false);
             this.tabPageRent.ResumeLayout(false);
             this.tabPageRent.PerformLayout();
@@ -2862,27 +3133,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRentAsset)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.tabPageTransfer.ResumeLayout(false);
             this.tabPageTransfer.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferAssetList)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionTransferReceiver)).EndInit();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
-            this.tabAbout.PerformLayout();
             this.tabOthers.ResumeLayout(false);
             this.tabOthers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.otherTabControl.ResumeLayout(false);
             this.tabOperator.ResumeLayout(false);
             this.tabOperator.PerformLayout();
@@ -2895,35 +3166,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetCategories)).EndInit();
             this.tabGenReport.ResumeLayout(false);
             this.tabGenReport.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabArchiveRecords.ResumeLayout(false);
             this.tabArchiveRecords.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchiveRecords)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabAssetRecords.ResumeLayout(false);
             this.tabAssetRecords.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
             this.tabDashboard.ResumeLayout(false);
             this.tabDashboard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelTabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTransactionRentAssetImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValidIDImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferAssetImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTransactionTransferDocumentImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBoxSide;
-        private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.TabPage tabTransaction;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabAbout;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabOthers;
         private System.Windows.Forms.TabControl otherTabControl;
         private System.Windows.Forms.TabPage tabOperator;
@@ -2997,7 +3272,6 @@
         private RoundedButton roundedButtonTrasnfer;
         private System.Windows.Forms.Label label27;
         private MenuButton menuButtonSortByYear;
-        private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBoxOperatorMiddleName;
         private System.Windows.Forms.TextBox textBoxOperatorFirstName;
@@ -3052,50 +3326,63 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.RichTextBox richTextBox5;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox9;
-        private RoundedButton roundedButton2;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ListBox listBox2;
-        private RoundedButton roundedButton4;
+        private RoundedButton roundedButtonTransactionTransferUploadDocument;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.ListBox listBox3;
-        private RoundedButton roundedButton5;
-        private RoundedButton roundedButton3;
+        private RoundedButton roundedButtonTransactinTransfer;
         public System.Windows.Forms.ComboBox comboBoxTransactionRentCat;
         public System.Windows.Forms.TextBox textBoxTransactionRentAssetName;
         public System.Windows.Forms.TextBox textBoxTransactionRentCurrentCoordinator;
         public System.Windows.Forms.RichTextBox textBoxTransactionRentAssetDescription;
         public System.Windows.Forms.RichTextBox textBoxTransactionRentAssetPurpose;
         public System.Windows.Forms.PictureBox PictureBoxTransactionRentAssetImage;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.RichTextBox richTextBox3;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.DateTimePicker dateTimePicker1;
-        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox textBoxTransactionRenteeFName;
+        public System.Windows.Forms.TextBox textBoxTransactionRenteeLName;
+        public System.Windows.Forms.TextBox textBoxTransactionRenteeMName;
+        public System.Windows.Forms.RichTextBox richTextBoxTransactionRenteeAddr;
+        public System.Windows.Forms.DateTimePicker dateTimeTransactionRenteeBDate;
+        public System.Windows.Forms.TextBox textBoxTransactionRenteeContactNumber;
         public System.Windows.Forms.DataGridView dataGridViewTransactionRentAsset;
         private RoundedButton roundedButtonTransactionRentAssetFilterCLear;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private RoundedButton roundedButtonTransactionRenteeDocUpload;
+        private System.Windows.Forms.Label label40;
+        public System.Windows.Forms.TextBox textBoxTransactionRenteeLicenseID;
+        public System.Windows.Forms.PictureBox pictureBoxValidIDImage;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private RoundedButton roundedButtonTransactionTransferAssetCatClear;
+        public System.Windows.Forms.DataGridView dataGridViewTransactionTransferAssetList;
+        private System.Windows.Forms.GroupBox groupBox6;
+        public System.Windows.Forms.PictureBox pictureBoxTransactionTransferAssetImage;
+        private System.Windows.Forms.Label label44;
+        public System.Windows.Forms.RichTextBox richTextBoxrichTextBoxTransactionTransferAssetDescription;
+        private System.Windows.Forms.Label label45;
+        public System.Windows.Forms.RichTextBox richTextBoxTransactionTransferAssetDescription;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        public System.Windows.Forms.TextBox textBoxTransactionTransferAssetCustodian;
+        private System.Windows.Forms.Label label48;
+        public System.Windows.Forms.TextBox textBoxTransactionTransferAssetName;
+        private RoundedButton roundedButtonTransactionTransferAssetCatApply;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        public System.Windows.Forms.ComboBox comboBoxTransactionTransferAssetCategory;
+        public System.Windows.Forms.DataGridView dataGridViewTransactionTransferReceiver;
+        public System.Windows.Forms.PictureBox pictureBoxTransactionTransferDocumentImage;
+        public System.Windows.Forms.TextBox textBoxTransactionTransferName;
+        public RoundedButton roundedButtonTransactionTransferSearchName;
+        private System.Windows.Forms.Label label52;
+        public System.Windows.Forms.DateTimePicker dateTimePickerTransactionTransferDate;
+        private RoundedButton buttonAbout;
+        private RoundedButton buttonLogout;
+        public System.Windows.Forms.RichTextBox richTextBoxAboutHeader;
+        private RoundedButton roundedButtonUserManual;
+        private RoundedButton roundedButtonAboutTOS;
+        private RoundedButton roundedButtonAboutPolicy;
+        private RoundedButton roundedButtonReportAnIssue;
     }
 }

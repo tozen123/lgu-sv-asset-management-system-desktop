@@ -19,6 +19,11 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             pictureBoxBorderTop.BackColor = Color.FromArgb(45, 77, 46);
             labelMessage.SelectionAlignment = HorizontalAlignment.Center;
         }
+        public DialogResult GetResult()
+        {
+            return this.DialogResult;
+        }
+
         public void SetMessage(string message)
         {
             labelMessage.ReadOnly = false;
@@ -31,6 +36,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         private void buttonContinue_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

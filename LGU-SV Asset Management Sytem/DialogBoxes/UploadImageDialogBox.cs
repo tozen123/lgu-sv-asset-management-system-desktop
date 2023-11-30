@@ -13,6 +13,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
     public partial class UploadImageDialogBox : Form
     {
         public byte[] imageByte { get; set; }
+        public string path;
         Image prevImage;
         public UploadImageDialogBox()
         {
@@ -36,6 +37,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
                     pictureBoxImage.Image = Image.FromFile(ofd.FileName);
                     pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
                     labelDirectoryString.Text = ofd.FileName;
+                    path = ofd.FileName;
                 }
             }
         }

@@ -29,106 +29,76 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationForm));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.richTextBoxHeader = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxDetails = new System.Windows.Forms.RichTextBox();
+            this.buttonClose = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // richTextBoxHeader
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(575, 643);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.richTextBoxHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxHeader.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxHeader.Location = new System.Drawing.Point(32, 21);
+            this.richTextBoxHeader.Name = "richTextBoxHeader";
+            this.richTextBoxHeader.Size = new System.Drawing.Size(537, 96);
+            this.richTextBoxHeader.TabIndex = 17;
+            this.richTextBoxHeader.Text = "";
             // 
-            // button1
+            // richTextBoxDetails
             // 
-            this.button1.Location = new System.Drawing.Point(256, 661);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.richTextBoxDetails.BackColor = System.Drawing.Color.White;
+            this.richTextBoxDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxDetails.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxDetails.Location = new System.Drawing.Point(32, 147);
+            this.richTextBoxDetails.Name = "richTextBoxDetails";
+            this.richTextBoxDetails.ReadOnly = true;
+            this.richTextBoxDetails.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxDetails.Size = new System.Drawing.Size(537, 577);
+            this.richTextBoxDetails.TabIndex = 18;
+            this.richTextBoxDetails.Text = "";
             // 
-            // label1
+            // buttonClose
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(215, 0, 215, 0);
-            this.label1.Size = new System.Drawing.Size(566, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Terms of Use for LGU - SV \r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(215, 0, 215, 0);
-            this.label2.Size = new System.Drawing.Size(565, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Asset Management System";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 36);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(215, 0, 215, 0);
-            this.label3.Size = new System.Drawing.Size(566, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Last Update: October 2023";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 109);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 60, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(150, 0, 150, 0);
-            this.label4.Size = new System.Drawing.Size(568, 65);
-            this.label4.TabIndex = 3;
-            this.label4.Text = resources.GetString("label4.Text");
+            this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClose.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BorderRadius = 8;
+            this.buttonClose.BorderSize = 0;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.ForeColor = System.Drawing.Color.White;
+            this.buttonClose.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonClose;
+            this.buttonClose.Location = new System.Drawing.Point(546, 12);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonClose.Size = new System.Drawing.Size(40, 39);
+            this.buttonClose.TabIndex = 16;
+            this.buttonClose.TextColor = System.Drawing.Color.White;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // InformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 705);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(598, 736);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.richTextBoxDetails);
+            this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.richTextBoxHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "InformationForm";
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private RoundedButton buttonClose;
+        private System.Windows.Forms.RichTextBox richTextBoxHeader;
+        private System.Windows.Forms.RichTextBox richTextBoxDetails;
     }
 }

@@ -123,6 +123,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             menuButton1.Menu = new ContextMenuStrip();
             menuButton1.Menu.Items.Add("Maintenances", null, MenuItem_Click);
             menuButton1.Menu.Items.Add("Transfers", null, MenuItem_Click);
+            menuButton1.Menu.Items.Add("Rents", null, MenuItem_Click);
             //menuButton1.Menu.Items.Add("Borrowed And Returns", null, MenuItem_Click);
         
         }
@@ -303,6 +304,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         TransferPanel.AssetTransferLogPanel transferLogPanel = new TransferPanel.AssetTransferLogPanel(panelLogsHandler, asset, currentUser);
                         SwitchLogPanel(transferLogPanel);
 
+                        break;
+                    case "Rents":
+                        RentLogPanel.AssetRentLogPanel assetRentLogPanel = new RentLogPanel.AssetRentLogPanel(panelLogsHandler, asset, currentUser);
+                        SwitchLogPanel(assetRentLogPanel);
                         break;
                     case "Borrowed And Returns":
                         BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel borrowedAndReturnsLogPanel = new BorrowedAndReturns.AssetBorrowedAndReturnsLogPanel(panelLogsHandler, asset, currentUser);
