@@ -61,6 +61,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.checkBox2014 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.groupBox2.SuspendLayout();
             this.panelFilterHandler.SuspendLayout();
             this.panelMainReport.SuspendLayout();
@@ -180,6 +181,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMainReport.BackColor = System.Drawing.Color.White;
+            this.panelMainReport.Controls.Add(this.vScrollBar1);
             this.panelMainReport.Controls.Add(this.label3);
             this.panelMainReport.Controls.Add(this.label2);
             this.panelMainReport.Location = new System.Drawing.Point(14, 81);
@@ -499,6 +501,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.label3.TabIndex = 1;
             this.label3.Text = "123";
             // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(1155, 5);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 80);
+            this.vScrollBar1.TabIndex = 2;
+            // 
             // MainGenerateReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,5 +568,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private System.Windows.Forms.CheckBox checkBox2015;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }
