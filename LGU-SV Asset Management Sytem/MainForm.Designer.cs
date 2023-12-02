@@ -61,7 +61,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources1 = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 
             this.groupBoxSide = new System.Windows.Forms.GroupBox();
             this.menu_line = new System.Windows.Forms.PictureBox();
@@ -2722,21 +2722,7 @@
             this.chartAssetByCategories.Series.Add(series6);
             this.chartAssetByCategories.Size = new System.Drawing.Size(570, 357);
 
-            chartArea1.Name = "ChartArea1";
-            this.chartAssetByCategories.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartAssetByCategories.Legends.Add(legend1);
-            this.chartAssetByCategories.Location = new System.Drawing.Point(28, 456);
-            this.chartAssetByCategories.Name = "chartAssetByCategories";
-            this.chartAssetByCategories.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartAssetByCategories.Series.Add(series1);
-            this.chartAssetByCategories.Size = new System.Drawing.Size(526, 290);
-
-            this.chartAssetByCategories.TabIndex = 48;
-            this.chartAssetByCategories.Text = "chart1";
+           
             // 
             // labelOffice
             // 
