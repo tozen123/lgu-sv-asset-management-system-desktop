@@ -76,6 +76,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
+            this.panelLogsHandler.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonUpdateInfo
@@ -195,6 +196,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // panelLogsHandler
             // 
+            this.panelLogsHandler.Controls.Add(this.label8);
+            this.panelLogsHandler.Controls.Add(this.label15);
             this.panelLogsHandler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
@@ -263,10 +266,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxId.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxId.Location = new System.Drawing.Point(452, 103);
+            this.textBoxId.Location = new System.Drawing.Point(460, 103);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.ReadOnly = true;
-            this.textBoxId.Size = new System.Drawing.Size(260, 25);
+            this.textBoxId.Size = new System.Drawing.Size(252, 25);
             this.textBoxId.TabIndex = 12;
             // 
             // label4
@@ -283,10 +286,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxName.Location = new System.Drawing.Point(452, 149);
+            this.textBoxName.Location = new System.Drawing.Point(460, 149);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(260, 25);
+            this.textBoxName.Size = new System.Drawing.Size(252, 25);
             this.textBoxName.TabIndex = 14;
             // 
             // label5
@@ -303,10 +306,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxQuantity.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxQuantity.Location = new System.Drawing.Point(452, 195);
+            this.textBoxQuantity.Location = new System.Drawing.Point(460, 195);
             this.textBoxQuantity.Name = "textBoxQuantity";
             this.textBoxQuantity.ReadOnly = true;
-            this.textBoxQuantity.Size = new System.Drawing.Size(260, 25);
+            this.textBoxQuantity.Size = new System.Drawing.Size(252, 25);
             this.textBoxQuantity.TabIndex = 16;
             // 
             // label6
@@ -323,10 +326,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxLocation.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxLocation.Location = new System.Drawing.Point(452, 245);
+            this.textBoxLocation.Location = new System.Drawing.Point(460, 245);
             this.textBoxLocation.Name = "textBoxLocation";
             this.textBoxLocation.ReadOnly = true;
-            this.textBoxLocation.Size = new System.Drawing.Size(260, 25);
+            this.textBoxLocation.Size = new System.Drawing.Size(252, 25);
             this.textBoxLocation.TabIndex = 18;
             // 
             // label7
@@ -343,10 +346,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxPAmount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxPAmount.Location = new System.Drawing.Point(452, 297);
+            this.textBoxPAmount.Location = new System.Drawing.Point(460, 297);
             this.textBoxPAmount.Name = "textBoxPAmount";
             this.textBoxPAmount.ReadOnly = true;
-            this.textBoxPAmount.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPAmount.Size = new System.Drawing.Size(252, 25);
             this.textBoxPAmount.TabIndex = 20;
             // 
             // label8
@@ -355,18 +358,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(319, 352);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 23);
+            this.label8.Size = new System.Drawing.Size(135, 23);
             this.label8.TabIndex = 21;
-            this.label8.Text = "Purchase Date:";
+            this.label8.Text = "Acknowledge Date:";
             // 
             // textBoxPDate
             // 
             this.textBoxPDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxPDate.Location = new System.Drawing.Point(452, 352);
+            this.textBoxPDate.Location = new System.Drawing.Point(460, 352);
             this.textBoxPDate.Name = "textBoxPDate";
             this.textBoxPDate.ReadOnly = true;
-            this.textBoxPDate.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPDate.Size = new System.Drawing.Size(252, 25);
             this.textBoxPDate.TabIndex = 22;
             // 
             // label18
@@ -383,10 +386,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.richTextBoxPurpose.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxPurpose.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxPurpose.Location = new System.Drawing.Point(452, 408);
+            this.richTextBoxPurpose.Location = new System.Drawing.Point(460, 408);
             this.richTextBoxPurpose.Name = "richTextBoxPurpose";
             this.richTextBoxPurpose.ReadOnly = true;
-            this.richTextBoxPurpose.Size = new System.Drawing.Size(260, 159);
+            this.richTextBoxPurpose.Size = new System.Drawing.Size(252, 159);
             this.richTextBoxPurpose.TabIndex = 71;
             this.richTextBoxPurpose.Text = "";
             // 
@@ -404,30 +407,30 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxUnit.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxUnit.Location = new System.Drawing.Point(869, 99);
+            this.textBoxUnit.Location = new System.Drawing.Point(877, 99);
             this.textBoxUnit.Name = "textBoxUnit";
             this.textBoxUnit.ReadOnly = true;
-            this.textBoxUnit.Size = new System.Drawing.Size(260, 25);
+            this.textBoxUnit.Size = new System.Drawing.Size(252, 25);
             this.textBoxUnit.TabIndex = 26;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(736, 243);
+            this.label15.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(736, 248);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 23);
+            this.label15.Size = new System.Drawing.Size(137, 19);
             this.label15.TabIndex = 62;
-            this.label15.Text = "Employee:";
+            this.label15.Text = "Coordinator/Custodian:";
             // 
             // textBoxEmployee
             // 
             this.textBoxEmployee.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxEmployee.Location = new System.Drawing.Point(869, 243);
+            this.textBoxEmployee.Location = new System.Drawing.Point(877, 243);
             this.textBoxEmployee.Name = "textBoxEmployee";
             this.textBoxEmployee.ReadOnly = true;
-            this.textBoxEmployee.Size = new System.Drawing.Size(260, 25);
+            this.textBoxEmployee.Size = new System.Drawing.Size(252, 25);
             this.textBoxEmployee.TabIndex = 63;
             // 
             // label16
@@ -444,10 +447,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxSupplier.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxSupplier.Location = new System.Drawing.Point(869, 295);
+            this.textBoxSupplier.Location = new System.Drawing.Point(877, 295);
             this.textBoxSupplier.Name = "textBoxSupplier";
             this.textBoxSupplier.ReadOnly = true;
-            this.textBoxSupplier.Size = new System.Drawing.Size(260, 25);
+            this.textBoxSupplier.Size = new System.Drawing.Size(252, 25);
             this.textBoxSupplier.TabIndex = 65;
             // 
             // label13
@@ -464,10 +467,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxAssetCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAssetCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxAssetCategory.Location = new System.Drawing.Point(869, 193);
+            this.textBoxAssetCategory.Location = new System.Drawing.Point(877, 193);
             this.textBoxAssetCategory.Name = "textBoxAssetCategory";
             this.textBoxAssetCategory.ReadOnly = true;
-            this.textBoxAssetCategory.Size = new System.Drawing.Size(260, 25);
+            this.textBoxAssetCategory.Size = new System.Drawing.Size(252, 25);
             this.textBoxAssetCategory.TabIndex = 61;
             // 
             // label19
@@ -494,20 +497,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxCondition.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCondition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxCondition.Location = new System.Drawing.Point(869, 147);
+            this.textBoxCondition.Location = new System.Drawing.Point(877, 147);
             this.textBoxCondition.Name = "textBoxCondition";
             this.textBoxCondition.ReadOnly = true;
-            this.textBoxCondition.Size = new System.Drawing.Size(260, 25);
+            this.textBoxCondition.Size = new System.Drawing.Size(252, 25);
             this.textBoxCondition.TabIndex = 59;
             // 
             // richTextBoxDescription
             // 
             this.richTextBoxDescription.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxDescription.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxDescription.Location = new System.Drawing.Point(869, 403);
+            this.richTextBoxDescription.Location = new System.Drawing.Point(877, 403);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.ReadOnly = true;
-            this.richTextBoxDescription.Size = new System.Drawing.Size(260, 153);
+            this.richTextBoxDescription.Size = new System.Drawing.Size(252, 153);
             this.richTextBoxDescription.TabIndex = 69;
             this.richTextBoxDescription.Text = "";
             // 
@@ -525,10 +528,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.textBoxPropertyName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPropertyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBoxPropertyName.Location = new System.Drawing.Point(869, 350);
+            this.textBoxPropertyName.Location = new System.Drawing.Point(877, 350);
             this.textBoxPropertyName.Name = "textBoxPropertyName";
             this.textBoxPropertyName.ReadOnly = true;
-            this.textBoxPropertyName.Size = new System.Drawing.Size(260, 25);
+            this.textBoxPropertyName.Size = new System.Drawing.Size(252, 25);
             this.textBoxPropertyName.TabIndex = 68;
             // 
             // AssetViewedInformationPanel
@@ -548,7 +551,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.textBoxSupplier);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBoxEmployee);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelAssetIdWithName);
             this.Controls.Add(this.buttonPrintAction);
@@ -556,7 +558,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Controls.Add(this.textBoxUnit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxPDate);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxPAmount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxLocation);
@@ -582,6 +583,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).EndInit();
+            this.panelLogsHandler.ResumeLayout(false);
+            this.panelLogsHandler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

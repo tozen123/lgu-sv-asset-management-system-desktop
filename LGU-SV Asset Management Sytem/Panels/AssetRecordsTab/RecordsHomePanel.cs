@@ -101,13 +101,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     case "assetId":
                         col.HeaderText = "Asset ID";
-                        col.Visible = false;
                         break;
                     case "assetName":
                         col.HeaderText = "Asset Name";
                         break;
                     case "AAdminFullName":
                         col.HeaderText = "Administrator Name";
+                        col.Visible = false;
                         break;
                     case "currentCustodianCoordinatorFullName":
                         col.HeaderText = "Current Custodian Name";
@@ -189,9 +189,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         */
                     case "assetPurpose":
                         col.HeaderText = "Asset Purpose";
+                        col.Visible = false;
                         break;
                     case "assetDescription":
                         col.HeaderText = "Asset Description";
+                        col.Visible = false;
                         break;
                     case "assetPropertyNumber":
                         col.HeaderText = "Asset PropertyNumber";
