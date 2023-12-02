@@ -409,6 +409,11 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             panelTabControl.SelectedTab = tabGenReport;
             ResetAssetViewedPanel();
+
+            Panels.GenerateReports.MainGenerateReports mainGenerateReports = new Panels.GenerateReports.MainGenerateReports();
+            mainGenerateReports.Size = panelGenerateReports.Size;
+            panelGenerateReports.Controls.Add(mainGenerateReports);
+
         }
 
 

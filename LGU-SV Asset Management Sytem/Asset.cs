@@ -230,7 +230,8 @@ namespace LGU_SV_Asset_Management_Sytem
                         "assetDescription = @assetDesc, " +
                         "supplierID = @assetSupId, " +
                         "assetPropertyNumber = @assetPNumber, " +
-                        "assetCondition = @assetCondition " +
+                        "assetCondition = @assetCondition, " +
+                        "assetImage = @assetImage " +
                         "WHERE " +
                         "assetId = @assetId";
 
@@ -244,7 +245,8 @@ namespace LGU_SV_Asset_Management_Sytem
                         {"@assetSupId", _asset.SupplierId},
                         {"@assetPNumber", _asset.AssetPropertyNumber},
                         {"@assetCondition", _asset.AssetCondition},
-                        {"@assetId", _asset.AssetId}
+                        {"@assetId", _asset.AssetId},
+                        {"@assetImage", _asset.AssetImage}
                     };
 
                     databaseConnection.ReadFromDatabase(query, parameters);

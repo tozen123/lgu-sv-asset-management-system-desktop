@@ -181,6 +181,12 @@
     <Compile Include="Panels\DashboardPanels\TotalAssetPanel.Designer.cs">
       <DependentUpon>TotalAssetPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\GenerateReports\MainGenerateReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\GenerateReports\MainGenerateReports.Designer.cs">
+      <DependentUpon>MainGenerateReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\MaintenancePanel\AddAssetSchedulePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     <EmbeddedResource Include="Panels\DashboardPanels\TotalAssetPanel.resx">
       <DependentUpon>TotalAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\GenerateReports\MainGenerateReports.resx">
+      <DependentUpon>MainGenerateReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\MaintenancePanel\AddAssetSchedulePanel.resx">
       <DependentUpon>AddAssetSchedulePanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -482,6 +491,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buttonMissingAsset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

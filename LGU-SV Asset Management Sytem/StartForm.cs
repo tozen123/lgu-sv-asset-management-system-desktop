@@ -133,6 +133,9 @@ namespace LGU_SV_Asset_Management_Sytem
             registrationType = RegistrationType.Administrator;
             labelID.Text = RegistrationType.Administrator + " ID: ";
 
+            comboBoxAccSetupDepartment.SelectedItem = comboBoxAccSetupDepartment.Items[0];
+            comboBoxAccSetupDepartment.Enabled = false;
+
             ActivatePanel(RegistrationStartPanel2);
         }
 
@@ -488,6 +491,11 @@ namespace LGU_SV_Asset_Management_Sytem
             DialogBoxes.InformationForm informationForm = new DialogBoxes.InformationForm();
 
             informationForm.ShowTOS();
+        }
+
+        private void comboBoxAccSetupDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
