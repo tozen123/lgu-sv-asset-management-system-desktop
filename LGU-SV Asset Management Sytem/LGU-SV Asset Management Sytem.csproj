@@ -493,10 +493,56 @@
     <None Include="Resources\buttonMissingAsset.png" />
   </ItemGroup>
   <ItemGroup>
+
+    <None Include="Resources\ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghost1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\403406814_361357139880600_3803312319221779032_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghost11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghost12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\403408866_657696459867952_7881221917621429155_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archive1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+
     <None Include="Resources\filter_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print.png" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
