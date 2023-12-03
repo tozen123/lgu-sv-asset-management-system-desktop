@@ -75,7 +75,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
             this.dataGridViewCat.MultiSelect = false;
             this.dataGridViewCat.Name = "dataGridViewCat";
             this.dataGridViewCat.ReadOnly = true;
-            this.dataGridViewCat.Size = new System.Drawing.Size(520, 533);
+            this.dataGridViewCat.Size = new System.Drawing.Size(602, 768);
             this.dataGridViewCat.TabIndex = 1;
             // 
             // AssetByCategoryPanel
@@ -85,7 +85,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.DashboardPanels
             this.Controls.Add(this.dataGridViewCat);
             this.Controls.Add(this.label1);
             this.Name = "AssetByCategoryPanel";
-            this.Size = new System.Drawing.Size(552, 601);
+            this.Size = new System.Drawing.Size(634, 836);
             this.Load += new System.EventHandler(this.AssetByCategoryPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCat)).EndInit();
             this.ResumeLayout(false);

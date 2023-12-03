@@ -827,6 +827,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.comboBoxAccSetupDepartment.Name = "comboBoxAccSetupDepartment";
             this.comboBoxAccSetupDepartment.Size = new System.Drawing.Size(386, 42);
             this.comboBoxAccSetupDepartment.TabIndex = 6;
+            this.comboBoxAccSetupDepartment.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccSetupDepartment_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -1132,11 +1133,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.buttonBackToLoginForm);
-            this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.RegistrationStartPanel);
+            this.Controls.Add(this.RegistrationAccountSetup2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";

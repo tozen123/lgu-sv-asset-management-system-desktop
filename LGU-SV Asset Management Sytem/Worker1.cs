@@ -38,11 +38,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // ListBox
             if (mainform.currentSessionUserType.Equals("Asset Administrator"))
             {
-                DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0");
+                DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetIsMissing = 0");
             }
             else if (mainform.currentSessionUserType.Equals("Asset Coordinator"))
             {
-                DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, $"SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetLocation = '{mainform.currentUserOffice}'");
+                DataGridViewRetriever(mainform.dataGridViewTransactionRentAsset, $"SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetLocation = '{mainform.currentUserOffice}' AND assetIsMissing = 0");
             }
         }
 
@@ -233,8 +233,8 @@ namespace LGU_SV_Asset_Management_Sytem
 
 
                 string query = "INSERT INTO RentLog (assetId, renteeFirstName, renteeMidName, renteeLastName, renteeAddress, " +
-                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage ) VALUES " +
-                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage )";
+                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage, rentInitiatedDate, rentStatus ) VALUES " +
+                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage, @iniDate, @status )";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>()
                 {
@@ -246,12 +246,17 @@ namespace LGU_SV_Asset_Management_Sytem
                     {"@bdate", bdate},
                     {"@cnumber", cnumber},
                     {"@lnumber", lnumber},
-                    {"@validimage", Utilities.ConvertImageToBytes(validimage)}
+                    {"@validimage", Utilities.ConvertImageToBytes(validimage)},
+                    {"@iniDate", mainform.dateTimePickerTransactionRentStart.Value},
+                    {"@status", "Not Returned"}
 
                 };
 
-                databaseConnection.ReadFromDatabase(query, parameters);
+                int id = databaseConnection.UploadToDatabaseAndGetId(query, parameters);
                 databaseConnection.CloseConnection();
+
+             
+
             }
 
             mainform.pictureBoxValidIDImage.Image = LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;

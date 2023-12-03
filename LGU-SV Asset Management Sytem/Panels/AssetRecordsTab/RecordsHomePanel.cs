@@ -51,7 +51,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                            "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                            "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit;
+                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit + " AND A.assetIsMissing = 0 ";
             /*
             string query = "SELECT A.assetId, " +
                     "       CONCAT(ASupervisor.assetSupervisorFName, ' ', ASupervisor.assetSupervisorMName, ' ', ASupervisor.assetSupervisorLName, '; ', ASupervisor.assetSupervisorID) AS assetSupervisorFullName, " +
@@ -101,13 +101,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 {
                     case "assetId":
                         col.HeaderText = "Asset ID";
-                        col.Visible = false;
                         break;
                     case "assetName":
                         col.HeaderText = "Asset Name";
                         break;
                     case "AAdminFullName":
                         col.HeaderText = "Administrator Name";
+                        col.Visible = false;
                         break;
                     case "currentCustodianCoordinatorFullName":
                         col.HeaderText = "Current Custodian Name";
@@ -174,7 +174,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
                         break;
 
-                    case "ssetIsMissing":
+                    case "assetIsMissing":
                         col.HeaderText = "";
                         col.Visible = false;
                         break;
@@ -189,9 +189,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                         */
                     case "assetPurpose":
                         col.HeaderText = "Asset Purpose";
+                        col.Visible = false;
                         break;
                     case "assetDescription":
                         col.HeaderText = "Asset Description";
+                        col.Visible = false;
                         break;
                     case "assetPropertyNumber":
                         col.HeaderText = "Asset PropertyNumber";

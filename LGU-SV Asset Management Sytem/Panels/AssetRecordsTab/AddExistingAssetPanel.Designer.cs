@@ -1,7 +1,7 @@
 ﻿
 namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 {
-    partial class AddAssetPanel
+    partial class AddExistingAssetPanel
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,7 +32,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonAddMoreAsset = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelAssetCount = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBoxImage = new System.Windows.Forms.GroupBox();
-            this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.buttonUploadAssetImage = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
@@ -62,12 +60,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabAddingAsset = new System.Windows.Forms.TabControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.buttonSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             this.tabAddingAsset.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddMoreAsset
@@ -136,17 +136,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.labelAssetCount.TabIndex = 54;
             this.labelAssetCount.Text = "1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1109, 30);
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
-            // 
             // textBoxPNumber
             // 
             this.textBoxPNumber.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,7 +148,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 391);
+            this.label14.Location = new System.Drawing.Point(12, 396);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(131, 23);
             this.label14.TabIndex = 59;
@@ -169,7 +158,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(473, 289);
+            this.label13.Location = new System.Drawing.Point(473, 284);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 23);
             this.label13.TabIndex = 58;
@@ -177,6 +166,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // richTextBoxDesc
             // 
+            this.richTextBoxDesc.Enabled = false;
             this.richTextBoxDesc.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxDesc.Location = new System.Drawing.Point(610, 284);
             this.richTextBoxDesc.Name = "richTextBoxDesc";
@@ -186,10 +176,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // richTextBoxPurpose
             // 
+            this.richTextBoxPurpose.Enabled = false;
             this.richTextBoxPurpose.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPurpose.Location = new System.Drawing.Point(610, 95);
+            this.richTextBoxPurpose.Location = new System.Drawing.Point(610, 114);
             this.richTextBoxPurpose.Name = "richTextBoxPurpose";
-            this.richTextBoxPurpose.Size = new System.Drawing.Size(188, 172);
+            this.richTextBoxPurpose.Size = new System.Drawing.Size(188, 153);
             this.richTextBoxPurpose.TabIndex = 56;
             this.richTextBoxPurpose.Text = "";
             // 
@@ -197,7 +188,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(473, 100);
+            this.label4.Location = new System.Drawing.Point(473, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 23);
             this.label4.TabIndex = 55;
@@ -216,19 +207,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.groupBoxImage.TabStop = false;
             this.groupBoxImage.Text = "Asset Image";
             // 
-            // pictureBoxAssetImage
-            // 
-            this.pictureBoxAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBoxAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
-            this.pictureBoxAssetImage.Location = new System.Drawing.Point(6, 19);
-            this.pictureBoxAssetImage.Name = "pictureBoxAssetImage";
-            this.pictureBoxAssetImage.Size = new System.Drawing.Size(268, 243);
-            this.pictureBoxAssetImage.TabIndex = 1;
-            this.pictureBoxAssetImage.TabStop = false;
-            // 
             // buttonUploadAssetImage
             // 
             this.buttonUploadAssetImage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonUploadAssetImage.Enabled = false;
             this.buttonUploadAssetImage.Location = new System.Drawing.Point(3, 271);
             this.buttonUploadAssetImage.Name = "buttonUploadAssetImage";
             this.buttonUploadAssetImage.Size = new System.Drawing.Size(274, 23);
@@ -241,17 +223,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 341);
+            this.label12.Location = new System.Drawing.Point(12, 343);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(156, 23);
+            this.label12.Size = new System.Drawing.Size(172, 23);
             this.label12.TabIndex = 52;
-            this.label12.Text = "Employee/Custodian:";
+            this.label12.Text = "Coordinator/Custodian:";
             // 
             // comboBoxEmployee
             // 
             this.comboBoxEmployee.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxEmployee.FormattingEnabled = true;
-            this.comboBoxEmployee.Location = new System.Drawing.Point(189, 336);
+            this.comboBoxEmployee.Location = new System.Drawing.Point(189, 338);
             this.comboBoxEmployee.Name = "comboBoxEmployee";
             this.comboBoxEmployee.Size = new System.Drawing.Size(278, 34);
             this.comboBoxEmployee.TabIndex = 51;
@@ -262,7 +244,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(809, 54);
+            this.label11.Location = new System.Drawing.Point(806, 49);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 23);
             this.label11.TabIndex = 50;
@@ -272,9 +254,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.comboBoxSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSupplier.Enabled = false;
             this.comboBoxSupplier.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSupplier.FormattingEnabled = true;
-            this.comboBoxSupplier.Location = new System.Drawing.Point(886, 45);
+            this.comboBoxSupplier.Location = new System.Drawing.Point(880, 49);
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(207, 34);
             this.comboBoxSupplier.TabIndex = 49;
@@ -285,6 +268,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.checkBoxIsMaintanable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxIsMaintanable.AutoSize = true;
+            this.checkBoxIsMaintanable.Enabled = false;
             this.checkBoxIsMaintanable.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxIsMaintanable.Location = new System.Drawing.Point(813, 110);
             this.checkBoxIsMaintanable.Name = "checkBoxIsMaintanable";
@@ -329,6 +313,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // comboBoxCondition
             // 
+            this.comboBoxCondition.Enabled = false;
             this.comboBoxCondition.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCondition.FormattingEnabled = true;
             this.comboBoxCondition.Location = new System.Drawing.Point(189, 284);
@@ -340,7 +325,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(473, 54);
+            this.label7.Location = new System.Drawing.Point(473, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 23);
             this.label7.TabIndex = 41;
@@ -350,7 +335,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             this.comboBoxUnit.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxUnit.FormattingEnabled = true;
-            this.comboBoxUnit.Location = new System.Drawing.Point(610, 44);
+            this.comboBoxUnit.Location = new System.Drawing.Point(610, 49);
             this.comboBoxUnit.Name = "comboBoxUnit";
             this.comboBoxUnit.Size = new System.Drawing.Size(188, 34);
             this.comboBoxUnit.TabIndex = 40;
@@ -395,6 +380,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.Enabled = false;
             this.comboBoxCategory.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(189, 141);
@@ -434,6 +420,27 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.tabAddingAsset.Size = new System.Drawing.Size(1113, 503);
             this.tabAddingAsset.TabIndex = 29;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1109, 30);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxAssetImage
+            // 
+            this.pictureBoxAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBoxAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBoxAssetImage.Location = new System.Drawing.Point(6, 19);
+            this.pictureBoxAssetImage.Name = "pictureBoxAssetImage";
+            this.pictureBoxAssetImage.Size = new System.Drawing.Size(268, 243);
+            this.pictureBoxAssetImage.TabIndex = 1;
+            this.pictureBoxAssetImage.TabStop = false;
+            // 
             // buttonSave
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -456,21 +463,21 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // AddAssetPanel
+            // AddExistingAssetPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonAddMoreAsset);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tabAddingAsset);
-            this.Name = "AddAssetPanel";
+            this.Name = "AddExistingAssetPanel";
             this.Size = new System.Drawing.Size(1129, 591);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             this.tabAddingAsset.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             this.ResumeLayout(false);
 
         }

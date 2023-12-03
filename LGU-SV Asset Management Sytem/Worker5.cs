@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,32 +8,61 @@ using System.Windows.Forms;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
-  
-
-    // Worker class for Main Form
-    
-    public class Worker
+    public class Worker5
     {
-
         private MainForm mainform;
-
         private DatabaseConnection databaseConnection;
-
-        public Worker(MainForm form)
+        public Worker5(MainForm form)
         {
             this.mainform = form;
             databaseConnection = new DatabaseConnection();
 
-
+           
         }
 
-        public void RunArchiveRecordsComponent(string user_location, string user_type)
+        public void LoadMissingRecords()
         {
-            mainform.dataGridViewArchiveRecords.Columns.Clear();
+            MissingRecordsDGV();
+        }
+        private DataTable FetchDataFromDB()
+        {
+            string query = "SELECT A.assetId, " +
+                           "       A.assetPropertyNumber, A.assetName, " +
+                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
+                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
+                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
+                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
+                           "FROM Assets A " +
+                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
+                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = 0 AND A.assetIsMissing = 1 ";
 
-            DataTable dataTable = FetchDataFromDB(1, user_location);
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                {"@uLocation", mainform.currentUserOffice}
+            };
+            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
-            mainform.dataGridViewArchiveRecords.AutoGenerateColumns = false;
+            databaseConnection.CloseConnection();
+
+            return resultTable;
+        }
+
+            
+        public void MissingRecordsDGV()
+        {
+            mainform.dataGridViewMissingAssetRecords.DataSource = null;
+
+            DataTable dataTable = FetchDataFromDB();
+
+            mainform.dataGridViewMissingAssetRecords.AutoGenerateColumns = false;
+
+
             foreach (DataColumn column in dataTable.Columns)
             {
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
@@ -68,18 +95,6 @@ namespace LGU_SV_Asset_Management_Sytem
                     case "assetCondition":
                         col.HeaderText = "Asset Condition";
                         break;
-                    /*
-                    case "assetLastMaintenance":
-                        col.HeaderText = "Asset Last Maintenance";
-                        col.DefaultCellStyle.NullValue = "N/A";
-                        break;
-                    */
-
-                    /*
-                    case "assetAvailability":
-                        col.HeaderText = "Asset Availability";
-                        break;
-                    */
 
                     case "assetQrCodeImage":
                         col.HeaderText = "QR Code Image";
@@ -119,7 +134,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
                         break;
 
-                    case "ssetIsMissing":
+                    case "assetIsMissing":
                         col.HeaderText = "";
                         col.Visible = false;
                         break;
@@ -146,84 +161,19 @@ namespace LGU_SV_Asset_Management_Sytem
                         break;
                 }
 
-                col.Width = TextRenderer.MeasureText(column.ColumnName, mainform.dataGridViewArchiveRecords.Font).Width + 90;
+                col.Width = TextRenderer.MeasureText(column.ColumnName, mainform.dataGridViewMissingAssetRecords.Font).Width + 90;
 
-                mainform.dataGridViewArchiveRecords.Columns.Add(col);
+                mainform.dataGridViewMissingAssetRecords.Columns.Add(col);
+
+                mainform.dataGridViewMissingAssetRecords.DataSource = FetchDataFromDB();
             }
-
-            mainform.dataGridViewArchiveRecords.DataSource = null; 
-            mainform.dataGridViewArchiveRecords.Rows.Clear();
-
-            mainform.dataGridViewArchiveRecords.DataSource = FetchDataFromDB(1, user_location);
-
-            if (mainform.dataGridViewArchiveRecords.Columns["UnArchiveAsset"] == null)
-            {
-                if (user_type != "Asset Administrator")
-                {
-                    return;
-                }
-
-                // Create a new DataGridViewButtonColumn
-                var unArchiveAssetColumn = new DataGridViewButtonColumn();
-                unArchiveAssetColumn.HeaderText = "Actions";
-                unArchiveAssetColumn.Text = "UNARCHIVE";
-                unArchiveAssetColumn.Name = "UnArchiveAssetColumn";
-                unArchiveAssetColumn.UseColumnTextForButtonValue = true;
-
-
-
-
-                mainform.dataGridViewArchiveRecords.Columns.Insert(0, unArchiveAssetColumn);
-
-
-                unArchiveAssetColumn.DisplayIndex = 0;
-
-
-            }
-
-            Utilities.AutoResizeColumnsBasedOnHeaders(mainform.dataGridViewArchiveRecords);
-
         }
 
-        private DataTable FetchDataFromDB(int bit, string userLocation)
+        public void Search()
         {
-            string query = "SELECT A.assetId, " +
-                           "       A.assetPropertyNumber, A.assetName, " +
-                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
-                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
-                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
-                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
-                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
-                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
-                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
-                           "FROM Assets A " +
-                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
-                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
-                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
-                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit;
- 
-            Dictionary<string, object> parameters = new Dictionary<string, object>()
-            {
-                {"@uLocation", userLocation}
-            };
+            string searchKeyword = mainform.textBoxMissingRecords.Text.Trim();
 
-            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
-
-            databaseConnection.CloseConnection();
-
-            return resultTable;
-        }
-
-        public void ProcessUnarchiveAsset()
-        {
-
-        }
-        public void PerformArchiveRecordSearch()
-        {
-            string searchKeyword = mainform.textBoxArchiveRecordsSearch.Text.Trim();
-
-            DataTable dataTable = (DataTable)mainform.dataGridViewArchiveRecords.DataSource;
+            DataTable dataTable = (DataTable)mainform.dataGridViewMissingAssetRecords.DataSource;
 
 
             if (dataTable != null && dataTable.Rows.Count > 0)

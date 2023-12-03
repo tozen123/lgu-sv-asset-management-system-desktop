@@ -56,6 +56,8 @@ namespace LGU_SV_Asset_Management_Sytem
         Worker1 worker1;
         Worker2 worker2;
         Worker3 worker3;
+        Worker4 worker4;
+        Worker5 worker5;
 
         public MainForm()
         {
@@ -98,8 +100,10 @@ namespace LGU_SV_Asset_Management_Sytem
             worker1 = new Worker1(this);
             worker2 = new Worker2(this);
             worker3 = new Worker3(this);
+            worker4 = new Worker4(this);
+            worker5 = new Worker5(this);
 
-            
+
 
 
         }
@@ -139,7 +143,7 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxProfileDept.Items.Add("MCR-Municipal Civil Registrar");
             comboBoxProfileDept.Items.Add("MEO-Municipal Engineering Office");
             comboBoxProfileDept.Items.Add("MBO-Municipal Budget Office");
-            comboBoxProfileDept.Items.Add("Accounting Office");
+            comboBoxProfileDept.Items.Add("AO-Accounting Office");
 
             
         }
@@ -243,7 +247,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
             //Set
             labelOffice.Text = currentUserOffice;
-            DashboardLoad();
+        
 
             // Check the session before updating the UI
             if (CheckSession())
@@ -253,30 +257,14 @@ namespace LGU_SV_Asset_Management_Sytem
                 hamburgerToggle = true;
             }
 
+            worker4.DashboardLoad();
+            
             //Control[] sideLabels = { labelSideBarArchRec, labelSideBarAssetRe, labelSideBarGenRep, labelSideBarMisc, labelSideBarTransc, labelSideDashboard };
             //Utilities.SetControlsVisibilityState(sideLabels, true);
         }
 
-        private void DashboardLoad()
-        {
-            Panels.DashboardPanels.TotalAssetPanel totalAssetPanel = new Panels.DashboardPanels.TotalAssetPanel(currentUserOffice);
-            roundedPanelTotalAsset.Controls.Add(totalAssetPanel);
+       
 
-            Panels.DashboardPanels.AssetByCategoryPanel assetByCategoryPanel = new Panels.DashboardPanels.AssetByCategoryPanel(currentUserOffice);
-            roundedPanelCategoryCount.Controls.Add(assetByCategoryPanel);
-
-            menuButtonSortByYear.Menu = new ContextMenuStrip();
-            menuButtonSortByYear.Menu.Items.Add("2023", null);
-            menuButtonSortByYear.Menu.Items.Add("2022", null);
-            menuButtonSortByYear.Menu.Items.Add("2021", null);
-            menuButtonSortByYear.Menu.Items.Add("2020", null);
-            menuButtonSortByYear.Menu.Items.Add("2019", null);
-            menuButtonSortByYear.Menu.Items.Add("2018", null);
-            menuButtonSortByYear.Menu.Items.Add("2017", null);
-            menuButtonSortByYear.Menu.Items.Add("2016", null);
-            menuButtonSortByYear.Menu.Items.Add("2015", null);
-
-        }
         private void ProfileTabPanel()
         {
 
@@ -367,7 +355,7 @@ namespace LGU_SV_Asset_Management_Sytem
  
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
-            DashboardLoad();
+            worker4.DashboardLoad();
             panelTabControl.SelectedTab = tabDashboard;
             ResetAssetViewedPanel();
         }
@@ -421,6 +409,11 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             panelTabControl.SelectedTab = tabGenReport;
             ResetAssetViewedPanel();
+
+            Panels.GenerateReports.MainGenerateReports mainGenerateReports = new Panels.GenerateReports.MainGenerateReports();
+            mainGenerateReports.Size = panelGenerateReports.Size;
+            panelGenerateReports.Controls.Add(mainGenerateReports);
+
         }
 
 
@@ -769,7 +762,9 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-          
+            worker4.ResizePanels("All");
+            Console.WriteLine("roundedPanelTotalAsset: " + roundedPanelTotalAsset.Size);
+            Console.WriteLine("roundedPanelCategoryCount: " + roundedPanelCategoryCount.Size);
         }
 
    
@@ -1321,6 +1316,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (this.WindowState == FormWindowState.Maximized)
             {
                 LoadAssets();
+
+
              
             }
             else if (this.WindowState == FormWindowState.Normal)
@@ -1353,7 +1350,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 {
                     if (!string.IsNullOrEmpty(searchKeyword))
                     {
-                        string filterExpression = $"assetName LIKE '%{searchKeyword}%'";
+                        string filterExpression = $"assetName LIKE '%{searchKeyword}%' OR assetPropertyNumber LIKE '%{searchKeyword}%'";
 
 
                         dataTable.DefaultView.RowFilter = filterExpression;
@@ -1689,6 +1686,30 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.InformationForm rpt = new DialogBoxes.InformationForm();
             rpt.ShowTOS();
+        }
+
+        private void roundedButtonMissingRecords_Click(object sender, EventArgs e)
+        {
+            ResetAssetViewedPanel();
+            worker5.LoadMissingRecords();
+
+            panelTabControl.SelectedTab = tabMissing;
+            
+        }
+
+        private void roundedButtonMissingRecordsSearch_Click(object sender, EventArgs e)
+        {
+            worker5.Search();
+        }
+
+        private void textBoxMissingRecords_TextChanged(object sender, EventArgs e)
+        {
+            worker5.Search();
+        }
+
+        private void chartAssetByCategories_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)

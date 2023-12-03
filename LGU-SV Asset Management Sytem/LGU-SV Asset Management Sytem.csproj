@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,12 @@
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetCategory.cs" />
     <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
+    <Compile Include="DialogBoxes\AddAssetBasedOnExistingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\AddAssetBasedOnExistingDialog.Designer.cs">
+      <DependentUpon>AddAssetBasedOnExistingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\AssetUploadImageDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +74,12 @@
     </Compile>
     <Compile Include="DialogBoxes\ConfirmationPrompt.Designer.cs">
       <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\DialogImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\DialogImageViewer.Designer.cs">
+      <DependentUpon>DialogImageViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogBoxes\LogOutConfirmationDialog.cs">
       <SubType>Form</SubType>
@@ -107,6 +120,12 @@
     </Compile>
     <Compile Include="Other Tools\RoundedPanel\RoundedPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\AddExistingAssetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\AssetRecordsTab\AddExistingAssetPanel.Designer.cs">
+      <DependentUpon>AddExistingAssetPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\AssetRecordsTab\AddAssetPanel.cs">
       <SubType>UserControl</SubType>
@@ -162,6 +181,12 @@
     <Compile Include="Panels\DashboardPanels\TotalAssetPanel.Designer.cs">
       <DependentUpon>TotalAssetPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\GenerateReports\MainGenerateReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\GenerateReports\MainGenerateReports.Designer.cs">
+      <DependentUpon>MainGenerateReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\MaintenancePanel\AddAssetSchedulePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,6 +216,18 @@
     </Compile>
     <Compile Include="Panels\RentLogPanel\AssetRentLogPanel.Designer.cs">
       <DependentUpon>AssetRentLogPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentInfoHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentInfoHolder.Designer.cs">
+      <DependentUpon>RentInfoHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentTrackerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\RentLogPanel\RentTrackerForm.Designer.cs">
+      <DependentUpon>RentTrackerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\SupplierSuppliedAssetPanel.cs">
       <SubType>UserControl</SubType>
@@ -257,6 +294,11 @@
     <Compile Include="Worker1.cs" />
     <Compile Include="Worker2.cs" />
     <Compile Include="Worker3.cs" />
+    <Compile Include="Worker4.cs" />
+    <Compile Include="Worker5.cs" />
+    <EmbeddedResource Include="DialogBoxes\AddAssetBasedOnExistingDialog.resx">
+      <DependentUpon>AddAssetBasedOnExistingDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\AlertDialogBox.resx">
       <DependentUpon>AlertDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\ConfirmationPrompt.resx">
       <DependentUpon>ConfirmationPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\DialogImageViewer.resx">
+      <DependentUpon>DialogImageViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogBoxes\InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>
@@ -299,6 +344,9 @@
     <EmbeddedResource Include="Other Tools\RoundedButton.resx">
       <DependentUpon>RoundedButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AssetRecordsTab\AddExistingAssetPanel.resx">
+      <DependentUpon>AddExistingAssetPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\AssetRecordsTab\AddAssetPanel.resx">
       <DependentUpon>AddAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +374,9 @@
     <EmbeddedResource Include="Panels\DashboardPanels\TotalAssetPanel.resx">
       <DependentUpon>TotalAssetPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\GenerateReports\MainGenerateReports.resx">
+      <DependentUpon>MainGenerateReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\MaintenancePanel\AddAssetSchedulePanel.resx">
       <DependentUpon>AddAssetSchedulePanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\RentLogPanel\AssetRentLogPanel.resx">
       <DependentUpon>AssetRentLogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\RentLogPanel\RentInfoHolder.resx">
+      <DependentUpon>RentInfoHolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\RentLogPanel\RentTrackerForm.resx">
+      <DependentUpon>RentTrackerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\SupplierSuppliedAssetPanel.resx">
       <DependentUpon>SupplierSuppliedAssetPanel.cs</DependentUpon>
@@ -425,6 +482,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\new_tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonPrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonMissingAsset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

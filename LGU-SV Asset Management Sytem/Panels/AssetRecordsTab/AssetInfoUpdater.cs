@@ -126,6 +126,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             updatedAsset.AssetPurpose = richTextBoxPurpose.Text;
 
             updatedAsset.AssetCondition = comboBoxCondition.SelectedItem.ToString();
+            updatedAsset.AssetImage = Utilities.ConvertImageToBytes(pictureBox1.Image);
 
             if (int.TryParse(comboBoxSupplier.SelectedItem.ToString().Split(' ')[2], out int supId))
             {
@@ -173,5 +174,29 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             prompt.ShowDialog();
         }
 
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            UploadImage(pictureBox1);
+        }
+
+        private void UploadImage(PictureBox pictureBox)
+        {
+            using (DialogBoxes.AssetUploadImageDialogBox uploadImageDialogBox = new DialogBoxes.AssetUploadImageDialogBox())
+            {
+                if (uploadImageDialogBox.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] _imagedata = uploadImageDialogBox.imageByte;
+                    if (_imagedata != null)
+                    {
+                        pictureBox.Image = Utilities.ConvertByteArrayToImage(_imagedata);
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
     }
 }

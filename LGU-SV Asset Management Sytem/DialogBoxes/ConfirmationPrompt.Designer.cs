@@ -30,9 +30,11 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.labelConfirmationMessage = new System.Windows.Forms.Label();
             this.textBoxEmployee = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxAssetCategory = new System.Windows.Forms.TextBox();
@@ -53,11 +55,9 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelConfirmationMessage = new System.Windows.Forms.Label();
             this.labelConfirmationTitle = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,17 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.groupBox1.Size = new System.Drawing.Size(501, 628);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonClose.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonClose;
+            this.buttonClose.Location = new System.Drawing.Point(452, 0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(49, 45);
+            this.buttonClose.TabIndex = 6;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click_1);
             // 
             // groupBox2
             // 
@@ -126,6 +137,17 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.label16.Size = new System.Drawing.Size(66, 23);
             this.label16.TabIndex = 53;
             this.label16.Text = "Supplier:";
+            // 
+            // labelConfirmationMessage
+            // 
+            this.labelConfirmationMessage.AutoSize = true;
+            this.labelConfirmationMessage.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirmationMessage.Location = new System.Drawing.Point(6, 0);
+            this.labelConfirmationMessage.Name = "labelConfirmationMessage";
+            this.labelConfirmationMessage.Size = new System.Drawing.Size(149, 19);
+            this.labelConfirmationMessage.TabIndex = 10;
+            this.labelConfirmationMessage.Text = "CONFIRMATION_MESSAGE";
+            this.labelConfirmationMessage.Click += new System.EventHandler(this.labelConfirmationMessage_Click);
             // 
             // textBoxEmployee
             // 
@@ -317,17 +339,6 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.label3.TabIndex = 25;
             this.label3.Text = "ID:";
             // 
-            // labelConfirmationMessage
-            // 
-            this.labelConfirmationMessage.AutoSize = true;
-            this.labelConfirmationMessage.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConfirmationMessage.Location = new System.Drawing.Point(6, 0);
-            this.labelConfirmationMessage.Name = "labelConfirmationMessage";
-            this.labelConfirmationMessage.Size = new System.Drawing.Size(149, 19);
-            this.labelConfirmationMessage.TabIndex = 10;
-            this.labelConfirmationMessage.Text = "CONFIRMATION_MESSAGE";
-            this.labelConfirmationMessage.Click += new System.EventHandler(this.labelConfirmationMessage_Click);
-            // 
             // labelConfirmationTitle
             // 
             this.labelConfirmationTitle.AutoSize = true;
@@ -369,17 +380,6 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.buttonConfirm.UseVisualStyleBackColor = false;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click_1);
             // 
-            // buttonClose
-            // 
-            this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonClose.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonClose;
-            this.buttonClose.Location = new System.Drawing.Point(452, 0);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(49, 45);
-            this.buttonClose.TabIndex = 6;
-            this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click_1);
-            // 
             // ConfirmationPrompt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +390,7 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConfirmationPrompt";
             this.Text = "ConfirmationPrompt";
+            this.Load += new System.EventHandler(this.ConfirmationPrompt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

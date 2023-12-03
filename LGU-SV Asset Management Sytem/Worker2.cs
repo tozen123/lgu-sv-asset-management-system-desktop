@@ -38,11 +38,11 @@ namespace LGU_SV_Asset_Management_Sytem
             // ListBox
             if(mainform.currentSessionUserType.Equals("Asset Administrator"))
             {
-                DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0");
+                DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, "SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetIsMissing = 0");
             }
             else if(mainform.currentSessionUserType.Equals("Asset Coordinator"))
             {
-                DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, $"SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetLocation = {mainform.currentUserOffice}");
+                DataGridViewRetriever(mainform.dataGridViewTransactionTransferAssetList, $"SELECT assetName, assetPropertyNumber, assetId FROM Assets WHERE assetIsArchive = 0 AND assetLocation = {mainform.currentUserOffice} AND assetIsMissing = 0");
             }
 
 
