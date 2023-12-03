@@ -143,7 +143,7 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxProfileDept.Items.Add("MCR-Municipal Civil Registrar");
             comboBoxProfileDept.Items.Add("MEO-Municipal Engineering Office");
             comboBoxProfileDept.Items.Add("MBO-Municipal Budget Office");
-            comboBoxProfileDept.Items.Add("Accounting Office");
+            comboBoxProfileDept.Items.Add("AO-Accounting Office");
 
             
         }
@@ -1705,6 +1705,11 @@ namespace LGU_SV_Asset_Management_Sytem
         private void textBoxMissingRecords_TextChanged(object sender, EventArgs e)
         {
             worker5.Search();
+        }
+
+        private void chartAssetByCategories_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)

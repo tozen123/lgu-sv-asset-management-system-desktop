@@ -53,7 +53,7 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxAccSetupDepartment.Items.Add("MCR-Municipal Civil Registrar");
             comboBoxAccSetupDepartment.Items.Add("MEO-Municipal Engineering Office");
             comboBoxAccSetupDepartment.Items.Add("MBO-Municipal Budget Office");
-            comboBoxAccSetupDepartment.Items.Add("Accounting Office");
+            comboBoxAccSetupDepartment.Items.Add("AO-Accounting Office");
         }
 
         private void ActivatePanel(Panel panelToActivate)
