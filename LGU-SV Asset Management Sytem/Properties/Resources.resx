@@ -124,6 +124,12 @@
   <data name="ghost" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ghost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini_transac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_transac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonPrev" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonPrev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +138,15 @@
   </data>
   <data name="archive1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archive1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="403406814_361357139880600_3803312319221779032_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\403406814_361357139880600_3803312319221779032_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini_about1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_about1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini_ar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_ar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,20 +157,23 @@
   <data name="buttonArchiveRecords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonArchiveRecords.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="403406814_361357139880600_3803312319221779032_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\403406814_361357139880600_3803312319221779032_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mini_arch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_arch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonMissingAsset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonMissingAsset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="archive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\archive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mini_transac1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_transac1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="403408866_657696459867952_7881221917621429155_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\403408866_657696459867952_7881221917621429155_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="archive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini_misc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_misc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +199,9 @@
   <data name="empty_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empty_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mini_dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,8 +217,20 @@
   <data name="misc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\misc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mini_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini_about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="try_dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\try_dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="403408866_657696459867952_7881221917621429155_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\403408866_657696459867952_7881221917621429155_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonMisc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonMisc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,14 +238,23 @@
   <data name="buttonEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mini_report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonHamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonHamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="report" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mini_ar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_ar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonSearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini_ghost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_ghost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AppLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AppLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,7 +262,7 @@
   <data name="transac" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mini_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini_log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

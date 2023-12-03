@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LGU-SV Asset Management Sytem", "LGU-SV Asset Management Sytem\LGU-SV Asset Management Sytem.csproj", "{473376E0-9D58-4AD9-AEB2-BBBD8C2EC5EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4CCD81A0-CDAA-47FF-A22D-5E11EFB14410}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

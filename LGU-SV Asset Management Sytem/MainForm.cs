@@ -359,6 +359,7 @@ namespace LGU_SV_Asset_Management_Sytem
             panelTabControl.SelectedTab = tabDashboard;
             ResetAssetViewedPanel();
         }
+
         private void ResetAssetViewedPanel()
         {
             panelViewedAssetHandler.Controls.Clear();
@@ -1700,6 +1701,11 @@ namespace LGU_SV_Asset_Management_Sytem
         private void textBoxMissingRecords_TextChanged(object sender, EventArgs e)
         {
             worker5.Search();
+        }
+
+        private void menuButtonSortByYear_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void roundedButtonTransactionRentCatApply_Click(object sender, EventArgs e)

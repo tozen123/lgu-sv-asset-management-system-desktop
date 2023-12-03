@@ -408,6 +408,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LGU_SV_Asset_Management_Sytem.Objects.Entities.Supplier.datasource" />
     <None Include="Properties\Settings.settings">
@@ -527,6 +530,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\try_dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_arch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_ar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_transac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_ar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_transac1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_about1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_log.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
