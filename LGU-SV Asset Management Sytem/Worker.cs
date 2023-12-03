@@ -225,6 +225,14 @@ namespace LGU_SV_Asset_Management_Sytem
 
             DataTable dataTable = (DataTable)mainform.dataGridViewArchiveRecords.DataSource;
 
+            if (!mainform.IsValidInput(searchKeyword))
+            {
+                return;
+            }
+            else
+            {
+                dataTable.DefaultView.RowFilter = string.Empty;
+            }
 
             if (dataTable != null && dataTable.Rows.Count > 0)
             {

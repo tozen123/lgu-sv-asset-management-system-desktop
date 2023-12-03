@@ -370,7 +370,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     MessagePrompt("Empty Field: Please select a value from the category.");
                     return;
                 }
-
+                if (ComboBox_Condition.SelectedItem == null)
+                {
+                    MessagePrompt("Empty Field: Please select a value from the condition.");
+                    return;
+                }
                 if (string.IsNullOrEmpty(textBoxPurchaseAmount.Text))
                 {
                     MessagePrompt("Empty Field: Price cannot be empty.");

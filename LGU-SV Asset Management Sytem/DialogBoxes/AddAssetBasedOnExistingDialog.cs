@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static LGU_SV_Asset_Management_Sytem.Asset;
@@ -198,7 +199,13 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
 
 
         }
+        public bool IsValidInput(string input)
+        {
 
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+
+            return regex.IsMatch(input);
+        }
         private void textBoxSearchAsset_TextChanged(object sender, EventArgs e)
         {
            
@@ -206,7 +213,14 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             string searchKeyword = textBoxSearchAsset.Text.Trim();
 
             DataTable dataTable = (DataTable)dataGridViewAssetRecords.DataSource;
-
+            if (!IsValidInput(searchKeyword))
+            {
+                return;
+            }
+            else
+            {
+                dataTable.DefaultView.RowFilter = string.Empty;
+            }
 
             if (dataTable != null && dataTable.Rows.Count > 0)
             {

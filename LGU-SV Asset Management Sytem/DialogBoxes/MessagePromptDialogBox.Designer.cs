@@ -64,9 +64,9 @@ namespace LGU_SV_Asset_Management_Sytem.DialogBoxes
             this.labelMessage.BackColor = System.Drawing.SystemColors.Control;
             this.labelMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.labelMessage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMessage.Location = new System.Drawing.Point(29, 32);
+            this.labelMessage.Location = new System.Drawing.Point(29, 60);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(660, 117);
+            this.labelMessage.Size = new System.Drawing.Size(660, 79);
             this.labelMessage.TabIndex = 4;
             this.labelMessage.Text = "";
             // 

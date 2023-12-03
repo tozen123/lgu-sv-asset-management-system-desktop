@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 
 using static LGU_SV_Asset_Management_Sytem.Asset;
+using System.Text.RegularExpressions;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -128,9 +129,11 @@ namespace LGU_SV_Asset_Management_Sytem
                 case "Asset Coordinator":
                     buttonOthers.Visible = false;
                     buttonAssetRecordsNewAsset.Visible = false;
+                    comboBoxProfileDept.Enabled = false;
                     break;
                 case "Asset Administrator":
                     buttonAssetRecordsNewAsset.Visible = true;
+                    comboBoxProfileDept.Enabled = false;
                     break;
             }
 
@@ -462,6 +465,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (CheckSession())
             {
                 panelTabControl.SelectedTab = tabProfile;
+
+
                 ProfileTabPanel();
 
                 buttonProfile.BackColor = clickColor;
@@ -496,7 +501,7 @@ namespace LGU_SV_Asset_Management_Sytem
             profileTabControls.Add(textBoxProfilePhoneNumber);
             profileTabControls.Add(textBoxProfileEmail);
             profileTabControls.Add(textBoxProfilePassword);
-            profileTabControls.Add(comboBoxProfileDept);
+           
             profileTabControls.Add(textBoxProfileAddress);
             profileTabControls.Add(buttonProfileUploadImage);
 
@@ -566,7 +571,11 @@ namespace LGU_SV_Asset_Management_Sytem
             buttonProfileUploadImage.Visible = false;
             ProfileTabPanel();
         }
-        
+        private bool ValidatePhoneNumber(string phoneNumber)
+        {
+
+            return phoneNumber.StartsWith("09") && phoneNumber.Length == 11 && phoneNumber.All(char.IsDigit);
+        }
         private void buttonProfileSave_Click(object sender, EventArgs e)
         {
             if (CheckSession())
@@ -618,6 +627,25 @@ namespace LGU_SV_Asset_Management_Sytem
                         break;
 
                 }
+                string[] name = textBoxProfileName.Text.Split(' ');
+                if(name.Length != 3)
+                {
+                    MessagePrompt("Please enter a valid name, seperated by ' ' or spaces and should be two spaces only accomodating first, middle and last name.");
+                    return;
+                }
+                string phonenum = textBoxProfilePhoneNumber.Text;
+
+                if (string.IsNullOrEmpty(phonenum))
+                {  
+                    MessagePrompt("Please enter a valid phone number.");
+                    return;
+                }
+                if (!ValidatePhoneNumber(phonenum))
+                {
+                    MessagePrompt("Invalid phone number. Please enter a valid 11-digit number starting with '09'.");
+                    return;
+                }
+
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
@@ -1331,7 +1359,13 @@ namespace LGU_SV_Asset_Management_Sytem
            
 
         }
+        public bool IsValidInput(string input)
+        {
+           
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
 
+            return regex.IsMatch(input);
+        }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             if (panelAssetRecordsHandler.Controls.Count > 0)
@@ -1343,6 +1377,14 @@ namespace LGU_SV_Asset_Management_Sytem
 
                 DataTable dataTable = (DataTable)dgv1.DataSource;
 
+                if (!IsValidInput(searchKeyword))
+                {
+                    return;
+                } 
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Empty;
+                }
 
                 if (dataTable != null && dataTable.Rows.Count > 0)
                 {
