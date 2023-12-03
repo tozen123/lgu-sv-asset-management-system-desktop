@@ -873,6 +873,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 dataGridViewOtherOperator.Columns.Add(col);
             }
 
+            
             if (dataGridViewOtherOperator.Columns["ViewButtonColumn"] == null)
             {
                 // Create a new DataGridViewButtonColumn
@@ -894,7 +895,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonOperators_Click(object sender, EventArgs e)
         {
             
-            labelTitleHandler.Text = "Employees";
+            labelTitleHandler.Text = "Coordinators/Custodian";
             otherTabControl.SelectedTab = tabOperator;
 
             OtherOperatorReset();
@@ -1001,7 +1002,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 textBoxSupplierPhoneNumber.Text = row.Cells[2].Value.ToString();
                 textBoxSupplierAddress.Text = row.Cells[3].Value.ToString();
 
-                Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
+                Control[] buttoncontrols = { buttonSupplierUpdate };
                 Utilities.SetButtonsState(buttoncontrols, true);
 
                 currentlySelectedSupplierId = currentSelectedSupplier;
@@ -1097,7 +1098,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void SupplierReset()
         {
-            Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
+            Control[] buttoncontrols = { buttonSupplierUpdate };
             Utilities.SetButtonsState(buttoncontrols, false);
 
             Control[] fieldcontrols = { textBoxSupplierName, textBoxSupplierPhoneNumber, textBoxSupplierAddress };
@@ -1158,11 +1159,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
-        private void buttonAssetCategoryUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
+   
 
         private void buttonAssetCategoryClearFields_Click(object sender, EventArgs e)
         {
@@ -1229,6 +1226,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 if (e.ColumnIndex == dataGridViewOtherOperator.Columns["ViewButtonColumn"].Index)
                 {
                     Control panelControl = new Panels.OperatorHandledAssetPanel(panelOperatorHandler, operator_id, name, fieldcontrols);
+                    panelControl.Size = panelOperatorHandler.Size;
                     panelOperatorHandler.Controls.Add(panelControl);
                     panelOperatorHandler.BringToFront();
                     panelOperatorHandler.Visible = true;
