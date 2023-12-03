@@ -573,5 +573,11 @@
   <ItemGroup>
     <None Include="Resources\mini_log.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

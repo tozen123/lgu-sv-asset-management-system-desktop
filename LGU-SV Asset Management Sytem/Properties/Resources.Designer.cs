@@ -93,6 +93,16 @@ namespace LGU_SV_Asset_Management_Sytem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about_button {
+            get {
+                object obj = ResourceManager.GetObject("about_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AppLogo2 {
             get {
                 object obj = ResourceManager.GetObject("AppLogo2", resourceCulture);
@@ -316,6 +326,16 @@ namespace LGU_SV_Asset_Management_Sytem.Properties {
         internal static System.Drawing.Bitmap EmptyProfile {
             get {
                 object obj = ResourceManager.GetObject("EmptyProfile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap external {
+            get {
+                object obj = ResourceManager.GetObject("external", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
