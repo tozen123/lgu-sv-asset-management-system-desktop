@@ -29,15 +29,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelFilterHandler = new System.Windows.Forms.Panel();
+            this.buttonClearFilter = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.checkBoxMissing = new System.Windows.Forms.CheckBox();
+            this.checkBoxNotMissing = new System.Windows.Forms.CheckBox();
             this.buttonApply = new System.Windows.Forms.Button();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,7 +62,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.checkBox2023 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAO = new System.Windows.Forms.CheckBox();
             this.checkBoxMBO = new System.Windows.Forms.CheckBox();
             this.checkBoxMEO = new System.Windows.Forms.CheckBox();
@@ -65,48 +69,58 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.checkBoxMHO = new System.Windows.Forms.CheckBox();
             this.checkBoxGSO = new System.Windows.Forms.CheckBox();
             this.panelMainReport = new System.Windows.Forms.Panel();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.checkBoxNotMissing = new System.Windows.Forms.CheckBox();
-            this.checkBoxMissing = new System.Windows.Forms.CheckBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.datagridviewEmptyLabel = new System.Windows.Forms.Label();
             this.dataGridViewAssetRecords = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.chartAssetMissing = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBoxPurhcaseAmountTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chartAssetByCondition = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.chartEmptyRecordLabelMissing = new System.Windows.Forms.Label();
+            this.chartAssetMissing = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotalCountOfAssets = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chartEmptyRecordLabelCondition = new System.Windows.Forms.Label();
+            this.chartAssetByCondition = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.roundedButtonSaveAsPanel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonFilter = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonPrintPanel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFilterHandler.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBoxCategory.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelMainReport.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAssetMissing)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCondition)).BeginInit();
-            this.groupBox5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFilterHandler
             // 
             this.panelFilterHandler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelFilterHandler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panelFilterHandler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
+            this.panelFilterHandler.Controls.Add(this.pictureBox3);
+            this.panelFilterHandler.Controls.Add(this.pictureBox2);
+            this.panelFilterHandler.Controls.Add(this.pictureBox1);
+            this.panelFilterHandler.Controls.Add(this.buttonClearFilter);
             this.panelFilterHandler.Controls.Add(this.label3);
             this.panelFilterHandler.Controls.Add(this.groupBox9);
             this.panelFilterHandler.Controls.Add(this.buttonApply);
@@ -117,8 +131,71 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelFilterHandler.Controls.Add(this.groupBox1);
             this.panelFilterHandler.Location = new System.Drawing.Point(755, 81);
             this.panelFilterHandler.Name = "panelFilterHandler";
-            this.panelFilterHandler.Size = new System.Drawing.Size(511, 838);
+            this.panelFilterHandler.Size = new System.Drawing.Size(511, 751);
             this.panelFilterHandler.TabIndex = 1;
+            // 
+            // buttonClearFilter
+            // 
+            this.buttonClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonClearFilter.FlatAppearance.BorderSize = 0;
+            this.buttonClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClearFilter.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearFilter.ForeColor = System.Drawing.Color.White;
+            this.buttonClearFilter.Location = new System.Drawing.Point(244, 14);
+            this.buttonClearFilter.Name = "buttonClearFilter";
+            this.buttonClearFilter.Size = new System.Drawing.Size(88, 25);
+            this.buttonClearFilter.TabIndex = 52;
+            this.buttonClearFilter.Text = "CLEAR";
+            this.buttonClearFilter.UseVisualStyleBackColor = false;
+            this.buttonClearFilter.Click += new System.EventHandler(this.buttonClearFilter_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(405, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "if no options are checked, the filter group is set automatically to all as an def" +
+    "ault value";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
+            this.groupBox9.Controls.Add(this.checkBoxMissing);
+            this.groupBox9.Controls.Add(this.checkBoxNotMissing);
+            this.groupBox9.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(21, 330);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(471, 62);
+            this.groupBox9.TabIndex = 50;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Ghost/Missing";
+            // 
+            // checkBoxMissing
+            // 
+            this.checkBoxMissing.AutoSize = true;
+            this.checkBoxMissing.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMissing.Location = new System.Drawing.Point(255, 26);
+            this.checkBoxMissing.Name = "checkBoxMissing";
+            this.checkBoxMissing.Size = new System.Drawing.Size(73, 26);
+            this.checkBoxMissing.TabIndex = 8;
+            this.checkBoxMissing.Text = "Missing";
+            this.checkBoxMissing.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxNotMissing
+            // 
+            this.checkBoxNotMissing.AutoSize = true;
+            this.checkBoxNotMissing.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNotMissing.Location = new System.Drawing.Point(126, 26);
+            this.checkBoxNotMissing.Name = "checkBoxNotMissing";
+            this.checkBoxNotMissing.Size = new System.Drawing.Size(96, 26);
+            this.checkBoxNotMissing.TabIndex = 7;
+            this.checkBoxNotMissing.Text = "Not Missing";
+            this.checkBoxNotMissing.UseVisualStyleBackColor = true;
             // 
             // buttonApply
             // 
@@ -139,12 +216,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
             this.groupBoxCategory.Controls.Add(this.flowLayoutPanel1);
             this.groupBoxCategory.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCategory.Location = new System.Drawing.Point(20, 398);
             this.groupBoxCategory.Name = "groupBoxCategory";
-            this.groupBoxCategory.Size = new System.Drawing.Size(471, 432);
+            this.groupBoxCategory.Size = new System.Drawing.Size(471, 345);
             this.groupBoxCategory.TabIndex = 50;
             this.groupBoxCategory.TabStop = false;
             this.groupBoxCategory.Text = "Category";
@@ -157,14 +234,14 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 26);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(431, 395);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(431, 308);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
             this.groupBox4.Controls.Add(this.checkBoxServiceable);
             this.groupBox4.Controls.Add(this.checkBoxNonServiceable);
             this.groupBox4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,7 +278,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
             this.groupBox3.Controls.Add(this.checkBox2014);
             this.groupBox3.Controls.Add(this.checkBox2015);
             this.groupBox3.Controls.Add(this.checkBox2016);
@@ -344,7 +421,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
             this.groupBox1.Controls.Add(this.checkBoxAO);
             this.groupBox1.Controls.Add(this.checkBoxMBO);
             this.groupBox1.Controls.Add(this.checkBoxMEO);
@@ -358,17 +435,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Office";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(405, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "if no options are checked, the filter group is set automatically to all as an def" +
-    "ault value";
             // 
             // checkBoxAO
             // 
@@ -455,47 +521,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelMainReport.TabIndex = 2;
             this.panelMainReport.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMainReport_Paint);
             // 
-            // groupBox9
-            // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.groupBox9.Controls.Add(this.checkBoxMissing);
-            this.groupBox9.Controls.Add(this.checkBoxNotMissing);
-            this.groupBox9.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(21, 330);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(471, 62);
-            this.groupBox9.TabIndex = 50;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Ghost/Missing";
-            // 
-            // checkBoxNotMissing
-            // 
-            this.checkBoxNotMissing.AutoSize = true;
-            this.checkBoxNotMissing.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxNotMissing.Location = new System.Drawing.Point(126, 26);
-            this.checkBoxNotMissing.Name = "checkBoxNotMissing";
-            this.checkBoxNotMissing.Size = new System.Drawing.Size(96, 26);
-            this.checkBoxNotMissing.TabIndex = 7;
-            this.checkBoxNotMissing.Text = "Not Missing";
-            this.checkBoxNotMissing.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxMissing
-            // 
-            this.checkBoxMissing.AutoSize = true;
-            this.checkBoxMissing.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMissing.Location = new System.Drawing.Point(255, 26);
-            this.checkBoxMissing.Name = "checkBoxMissing";
-            this.checkBoxMissing.Size = new System.Drawing.Size(73, 26);
-            this.checkBoxMissing.TabIndex = 8;
-            this.checkBoxMissing.Text = "Missing";
-            this.checkBoxMissing.UseVisualStyleBackColor = true;
-            // 
             // groupBox10
             // 
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox10.Controls.Add(this.datagridviewEmptyLabel);
             this.groupBox10.Controls.Add(this.dataGridViewAssetRecords);
             this.groupBox10.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold);
             this.groupBox10.Location = new System.Drawing.Point(6, 535);
@@ -505,6 +535,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "RECORDS";
             // 
+            // datagridviewEmptyLabel
+            // 
+            this.datagridviewEmptyLabel.AutoSize = true;
+            this.datagridviewEmptyLabel.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datagridviewEmptyLabel.Location = new System.Drawing.Point(67, 168);
+            this.datagridviewEmptyLabel.Name = "datagridviewEmptyLabel";
+            this.datagridviewEmptyLabel.Size = new System.Drawing.Size(178, 37);
+            this.datagridviewEmptyLabel.TabIndex = 56;
+            this.datagridviewEmptyLabel.Text = "Empty Records";
+            this.datagridviewEmptyLabel.Visible = false;
+            // 
             // dataGridViewAssetRecords
             // 
             this.dataGridViewAssetRecords.AllowUserToAddRows = false;
@@ -513,76 +554,29 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewAssetRecords.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAssetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAssetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAssetRecords.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAssetRecords.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewAssetRecords.Location = new System.Drawing.Point(23, 35);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
             this.dataGridViewAssetRecords.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1198, 350);
             this.dataGridViewAssetRecords.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.roundedButtonSaveAsPanel);
-            this.groupBox2.Controls.Add(this.roundedButtonFilter);
-            this.groupBox2.Controls.Add(this.roundedButtonPrintPanel);
-            this.groupBox2.Location = new System.Drawing.Point(935, 16);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(331, 59);
-            this.groupBox2.TabIndex = 53;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Report Settings";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.chartAssetMissing);
-            this.groupBox8.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(618, 141);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(624, 385);
-            this.groupBox8.TabIndex = 57;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "ASSETS BY GHOST/MISSING";
-            // 
-            // chartAssetMissing
-            // 
-            this.chartAssetMissing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chartAssetMissing.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chartAssetMissing.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartAssetMissing.Legends.Add(legend1);
-            this.chartAssetMissing.Location = new System.Drawing.Point(15, 40);
-            this.chartAssetMissing.Name = "chartAssetMissing";
-            this.chartAssetMissing.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartAssetMissing.Series.Add(series1);
-            this.chartAssetMissing.Size = new System.Drawing.Size(589, 320);
-            this.chartAssetMissing.TabIndex = 50;
-            this.chartAssetMissing.Text = "chart1";
             // 
             // groupBox7
             // 
@@ -617,37 +611,53 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.label5.TabIndex = 0;
             this.label5.Text = "TOTAL PURCHASE AMOUNT ";
             // 
-            // groupBox6
+            // groupBox8
             // 
-            this.groupBox6.Controls.Add(this.chartAssetByCondition);
-            this.groupBox6.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(2, 141);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(612, 385);
-            this.groupBox6.TabIndex = 56;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "ASSETS BY CONDITION";
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Controls.Add(this.chartEmptyRecordLabelMissing);
+            this.groupBox8.Controls.Add(this.chartAssetMissing);
+            this.groupBox8.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(618, 141);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(624, 385);
+            this.groupBox8.TabIndex = 57;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "ASSETS BY GHOST/MISSING";
             // 
-            // chartAssetByCondition
+            // chartEmptyRecordLabelMissing
             // 
-            this.chartAssetByCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.chartEmptyRecordLabelMissing.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartEmptyRecordLabelMissing.AutoSize = true;
+            this.chartEmptyRecordLabelMissing.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartEmptyRecordLabelMissing.Location = new System.Drawing.Point(76, 50);
+            this.chartEmptyRecordLabelMissing.Name = "chartEmptyRecordLabelMissing";
+            this.chartEmptyRecordLabelMissing.Size = new System.Drawing.Size(178, 37);
+            this.chartEmptyRecordLabelMissing.TabIndex = 55;
+            this.chartEmptyRecordLabelMissing.Text = "Empty Records";
+            this.chartEmptyRecordLabelMissing.Visible = false;
+            // 
+            // chartAssetMissing
+            // 
+            this.chartAssetMissing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.chartAssetByCondition.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chartAssetByCondition.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartAssetByCondition.Legends.Add(legend2);
-            this.chartAssetByCondition.Location = new System.Drawing.Point(15, 40);
-            this.chartAssetByCondition.Name = "chartAssetByCondition";
-            this.chartAssetByCondition.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartAssetByCondition.Series.Add(series2);
-            this.chartAssetByCondition.Size = new System.Drawing.Size(577, 320);
-            this.chartAssetByCondition.TabIndex = 50;
-            this.chartAssetByCondition.Text = "chart1";
+            this.chartAssetMissing.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartAssetMissing.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartAssetMissing.Legends.Add(legend3);
+            this.chartAssetMissing.Location = new System.Drawing.Point(15, 40);
+            this.chartAssetMissing.Name = "chartAssetMissing";
+            this.chartAssetMissing.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartAssetMissing.Series.Add(series3);
+            this.chartAssetMissing.Size = new System.Drawing.Size(589, 320);
+            this.chartAssetMissing.TabIndex = 50;
+            this.chartAssetMissing.Text = "chart1";
             // 
             // groupBox5
             // 
@@ -678,6 +688,64 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.labelTotalCountOfAssets.Size = new System.Drawing.Size(81, 62);
             this.labelTotalCountOfAssets.TabIndex = 1;
             this.labelTotalCountOfAssets.Text = "123";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.chartEmptyRecordLabelCondition);
+            this.groupBox6.Controls.Add(this.chartAssetByCondition);
+            this.groupBox6.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(2, 141);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(612, 385);
+            this.groupBox6.TabIndex = 56;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "ASSETS BY CONDITION";
+            // 
+            // chartEmptyRecordLabelCondition
+            // 
+            this.chartEmptyRecordLabelCondition.AutoSize = true;
+            this.chartEmptyRecordLabelCondition.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartEmptyRecordLabelCondition.Location = new System.Drawing.Point(71, 53);
+            this.chartEmptyRecordLabelCondition.Name = "chartEmptyRecordLabelCondition";
+            this.chartEmptyRecordLabelCondition.Size = new System.Drawing.Size(178, 37);
+            this.chartEmptyRecordLabelCondition.TabIndex = 54;
+            this.chartEmptyRecordLabelCondition.Text = "Empty Records";
+            this.chartEmptyRecordLabelCondition.Visible = false;
+            // 
+            // chartAssetByCondition
+            // 
+            this.chartAssetByCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartAssetByCondition.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea4.Name = "ChartArea1";
+            this.chartAssetByCondition.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartAssetByCondition.Legends.Add(legend4);
+            this.chartAssetByCondition.Location = new System.Drawing.Point(15, 40);
+            this.chartAssetByCondition.Name = "chartAssetByCondition";
+            this.chartAssetByCondition.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartAssetByCondition.Series.Add(series4);
+            this.chartAssetByCondition.Size = new System.Drawing.Size(577, 320);
+            this.chartAssetByCondition.TabIndex = 50;
+            this.chartAssetByCondition.Text = "chart1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.roundedButtonSaveAsPanel);
+            this.groupBox2.Controls.Add(this.roundedButtonFilter);
+            this.groupBox2.Controls.Add(this.roundedButtonPrintPanel);
+            this.groupBox2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(935, 16);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(331, 59);
+            this.groupBox2.TabIndex = 53;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "REPORT SETTINGS";
             // 
             // roundedButtonSaveAsPanel
             // 
@@ -755,6 +823,39 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.roundedButtonPrintPanel.UseVisualStyleBackColor = false;
             this.roundedButtonPrintPanel.Click += new System.EventHandler(this.roundedButtonPrintPanel_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(10, 752);
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.pictureBox2.Location = new System.Drawing.Point(501, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 752);
+            this.pictureBox2.TabIndex = 54;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 742);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(511, 10);
+            this.pictureBox3.TabIndex = 55;
+            this.pictureBox3.TabStop = false;
+            // 
             // MainGenerateReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +867,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.Size = new System.Drawing.Size(1281, 1033);
             this.panelFilterHandler.ResumeLayout(false);
             this.panelFilterHandler.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBoxCategory.ResumeLayout(false);
             this.groupBoxCategory.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -775,19 +878,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelMainReport.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartAssetMissing)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCondition)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssetMissing)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCondition)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -841,5 +948,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTotalCountOfAssets;
+        private System.Windows.Forms.Label chartEmptyRecordLabelCondition;
+        private System.Windows.Forms.Label chartEmptyRecordLabelMissing;
+        private System.Windows.Forms.Label datagridviewEmptyLabel;
+        private System.Windows.Forms.Button buttonClearFilter;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

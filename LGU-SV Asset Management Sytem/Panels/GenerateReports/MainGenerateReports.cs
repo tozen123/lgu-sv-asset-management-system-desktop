@@ -23,7 +23,20 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         List<string> FILTER_SETTINGS_SELECTED_YEAR = new List<string>();
         List<string> FILTER_SETTINGS_SELECTED_CONDITION = new List<string>();
         List<bool> FILTER_SETTINGS_SELECTED_MISSING = new List<bool>();
-        
+        List<string> FILTER_SETTINGS_SELECTED_CATEGORIES = new List<string>();
+
+
+        List<CheckBox> FILTER_DYNAMIC_CATEGORIES = new List<CheckBox>();
+
+
+
+        List<CheckBox> FILTER_OFFICES_CHECKBOXES = new List<CheckBox>();
+        List<CheckBox> FILTER_YEAR_CHECKBOXES = new List<CheckBox>();
+        List<CheckBox> FILTER_CONDITIONS_CHECKBOXES = new List<CheckBox>();
+        List<CheckBox> FILTER_GHOSTMISSING_CHECKBOXES = new List<CheckBox>();
+
+
+
         public MainGenerateReports()
         {
             InitializeComponent();
@@ -32,7 +45,22 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
            
 
             panelFilterHandler.Visible = false;
+
+
+
             
+            FILTER_OFFICES_CHECKBOXES.AddRange(new[] { checkBoxGSO, checkBoxMHO, checkBoxMCR, checkBoxMEO, checkBoxMBO, checkBoxAO });
+            FILTER_YEAR_CHECKBOXES.AddRange(new[] { checkBox2023, checkBox2022, checkBox2021, checkBox2020, checkBox2019, checkBox2018,
+                                                    checkBox2017, checkBox2016, checkBox2015, checkBox2014 });
+
+            FILTER_CONDITIONS_CHECKBOXES.AddRange(new[] { checkBoxNonServiceable, checkBoxServiceable });
+            FILTER_GHOSTMISSING_CHECKBOXES.AddRange(new[] { checkBoxMissing, checkBoxNotMissing });
+
+            HersheyTheDogOfCheckerMethod(FILTER_OFFICES_CHECKBOXES, true);
+            HersheyTheDogOfCheckerMethod(FILTER_YEAR_CHECKBOXES, true);
+            HersheyTheDogOfCheckerMethod(FILTER_CONDITIONS_CHECKBOXES, true);
+            HersheyTheDogOfCheckerMethod(FILTER_GHOSTMISSING_CHECKBOXES, true);
+            HersheyTheDogOfCheckerMethod(FILTER_DYNAMIC_CATEGORIES, true);
 
             GetTotalAsset();
             GetAssetCondition();
@@ -40,9 +68,43 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             GetAssetMissing();
             GetAssets();
         }
-       
+
+        private void buttonClearFilter_Click(object sender, EventArgs e)
+        {
+            HersheyTheDogOfCheckerMethod(FILTER_OFFICES_CHECKBOXES, false);
+            HersheyTheDogOfCheckerMethod(FILTER_YEAR_CHECKBOXES, false);
+            HersheyTheDogOfCheckerMethod(FILTER_CONDITIONS_CHECKBOXES, false);
+            HersheyTheDogOfCheckerMethod(FILTER_GHOSTMISSING_CHECKBOXES, false);
+            HersheyTheDogOfCheckerMethod(FILTER_DYNAMIC_CATEGORIES, false);
+
+
+        }
+
+        private void HersheyTheDogOfCheckerMethod(List<CheckBox> checkBoxes, bool state)
+        {
+            foreach (CheckBox checkBox in checkBoxes)
+            {
+                checkBox.Checked = state;
+            }
+        }
+
+        private void JohnLloydPileTheSetToDefaultMethod(List<CheckBox> checkBoxes)
+        {
+            if (!AndrePaCheckNgaKungMayAlamPa(checkBoxes))
+            {
+                HersheyTheDogOfCheckerMethod(checkBoxes, true);
+            }
+        }
+
+        private bool AndrePaCheckNgaKungMayAlamPa(List<CheckBox> checkBoxes)
+        {
+            return checkBoxes.Any(checkBox => checkBox.Checked);
+        }
+
         public void PopulateCategoryComboBox()
         {
+            FILTER_DYNAMIC_CATEGORIES.Clear();
+
             string query = "SELECT CONCAT(assetCategoryId, '-', assetCategoryName) AS cat FROM AssetCategory"; ;
 
 
@@ -66,12 +128,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             {
                 CheckBox checkBox = new CheckBox();
 
-                checkBox.Name = categories[i].Split('-')[1].Trim();
+                checkBox.Name = categories[i].Split('-')[0].Trim();
+               
                 checkBox.Text = categories[i].Split('-')[1].Trim();
                 checkBox.Font = new System.Drawing.Font("Poppins", 8, System.Drawing.FontStyle.Regular);
 
                 Console.WriteLine($"Added CheckBox with Name: {checkBox.Text}");
                 flowLayoutPanel1.Controls.Add(checkBox);
+
+                FILTER_DYNAMIC_CATEGORIES.Add(checkBox);
             }
 
         }
@@ -205,6 +270,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 query += hasWhereClause ? " AND " : " WHERE ";
                 query += " assetIsMissing IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_MISSING.Select(m => "@" + m)) + ")";
             }
+            if (FILTER_SETTINGS_SELECTED_CATEGORIES.Count > 0)
+            {
+                query += hasWhereClause ? " AND " : " WHERE ";
+                query += " A.assetCategoryID IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_CATEGORIES.Select(y => "@" + y)) + ")";
+            }
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             for (int i = 0; i < FILTER_SETTINGS_SELECTED_LOCATIONS.Count; i++)
@@ -222,7 +292,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             {
                 parameters.Add("@" + FILTER_SETTINGS_SELECTED_MISSING[i], FILTER_SETTINGS_SELECTED_MISSING[i]);
             }
-
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_CATEGORIES.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_CATEGORIES[i], FILTER_SETTINGS_SELECTED_CATEGORIES[i]);
+            }
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
             string count = "";
             foreach (DataRow row in resultTable.Rows)
@@ -288,6 +361,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 query += hasWhereClause ? " AND " : " WHERE ";
                 query += " assetIsMissing IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_MISSING.Select(m => "@" + m)) + ")";
             }
+            if (FILTER_SETTINGS_SELECTED_CATEGORIES.Count > 0)
+            {
+                query += hasWhereClause ? " AND " : " WHERE ";
+                query += " A.assetCategoryID IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_CATEGORIES.Select(y => "@" + y)) + ")";
+            }
             query += " GROUP BY A.assetCondition";
 
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -308,15 +386,27 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             {
                 parameters.Add("@" + FILTER_SETTINGS_SELECTED_MISSING[i], FILTER_SETTINGS_SELECTED_MISSING[i]);
             }
-
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_CATEGORIES.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_CATEGORIES[i], FILTER_SETTINGS_SELECTED_CATEGORIES[i]);
+            }
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
-            chartAssetByCondition.Series["Assets"].Points.Clear(); 
+            chartAssetByCondition.Series["Assets"].Points.Clear();
 
+            if (resultTable.Rows.Count == 0)
+            {
+                chartEmptyRecordLabelCondition.Visible = true;
+            }
+            else
+            {
+                chartEmptyRecordLabelCondition.Visible = false;
+            }
             foreach (DataRow row in resultTable.Rows)
             {
                 string condition = row["assetCondition"].ToString();
                 int count = Convert.ToInt32(row["Count"]);
+                
 
                 chartAssetByCondition.Series["Assets"].Points.AddXY(condition, count);
             }
@@ -373,6 +463,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 query += hasWhereClause ? " AND " : " WHERE ";
                 query += " assetIsMissing IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_MISSING.Select(m => "@" + m)) + ")";
             }
+            if (FILTER_SETTINGS_SELECTED_CATEGORIES.Count > 0)
+            {
+                query += hasWhereClause ? " AND " : " WHERE ";
+                query += " A.assetCategoryID IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_CATEGORIES.Select(y => "@" + y)) + ")";
+            }
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             for (int i = 0; i < FILTER_SETTINGS_SELECTED_LOCATIONS.Count; i++)
@@ -392,7 +487,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 parameters.Add("@" + FILTER_SETTINGS_SELECTED_MISSING[i], FILTER_SETTINGS_SELECTED_MISSING[i]);
             }
 
-
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_CATEGORIES.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_CATEGORIES[i], FILTER_SETTINGS_SELECTED_CATEGORIES[i]);
+            }
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
             if(resultTable.Rows.Count > 0)
@@ -441,6 +539,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 query += " assetIsMissing IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_MISSING.Select(m => "@" + m)) + ")";
             }
 
+            if (FILTER_SETTINGS_SELECTED_CATEGORIES.Count > 0)
+            {
+                query += hasWhereClause ? " AND " : " WHERE ";
+                query += " A.assetCategoryID IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_CATEGORIES.Select(y => "@" + y)) + ")";
+            }
+
             query += " GROUP BY A.assetIsMissing";
 
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -461,17 +565,30 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 parameters.Add("@" + FILTER_SETTINGS_SELECTED_MISSING[i], FILTER_SETTINGS_SELECTED_MISSING[i]);
             }
 
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_CATEGORIES.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_CATEGORIES[i], FILTER_SETTINGS_SELECTED_CATEGORIES[i]);
+            }
+
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
             chartAssetMissing.Series["Assets"].Points.Clear();
 
+            if(resultTable.Rows.Count == 0)
+            {
+                chartEmptyRecordLabelMissing.Visible = true;  
+            }
+            else
+            {
+                chartEmptyRecordLabelMissing.Visible = false;
+            }
             foreach (DataRow row in resultTable.Rows)
             {
                 bool isMissing = Convert.ToBoolean(row["assetIsMissing"]);
                 int count = Convert.ToInt32(row["Count"]);
-
+                Console.WriteLine("missing: "+count);
                 string label = isMissing ? "Missing" : "Not Missing";
-
+               
                 chartAssetMissing.Series["Assets"].Points.AddXY(label, count);
             }
 
@@ -568,6 +685,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 
                     case "assetIsMaintainable":
                         col.HeaderText = "Is Maintainable";
+                        col.Visible = false;
                         break;
               
                     case "assetPurpose":
@@ -586,7 +704,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                         break;
                 }
 
-                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 90;
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width ;
 
                 dataGridViewAssetRecords.Columns.Add(col);
             }
@@ -615,26 +733,91 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                            "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
                            "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
-                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID";
-           
+                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID "+
+                           "WHERE 1 = 1";
+            if (FILTER_SETTINGS_SELECTED_LOCATIONS.Count > 0)
+            {
+                query += " AND A.assetLocation IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_LOCATIONS.Select(_ => "@" + (_.Contains('-') ? _.Split('-')[0] : _))) + ")";
+            }
+
+            if (FILTER_SETTINGS_SELECTED_YEAR.Count > 0)
+            {
+                query += " AND YEAR(A.assetAcknowledgeDate) IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_YEAR.Select(y => "@" + y)) + ")";
+            }
+
+            if (FILTER_SETTINGS_SELECTED_CONDITION.Count == 2)
+            {
+                query += " AND A.assetCondition IN ('NON-SERVICEABLE', 'SERVICEABLE')";
+            }
+            else if (FILTER_SETTINGS_SELECTED_CONDITION.Count == 1)
+            {
+                if (FILTER_SETTINGS_SELECTED_CONDITION[0].Equals("NON-SERVICEABLE"))
+                {
+                    query += " AND A.assetCondition IN ('NON-SERVICEABLE')";
+                }
+                else
+                {
+                    query += " AND A.assetCondition IN ('SERVICEABLE')";
+                }
+            }
+
+            if (FILTER_SETTINGS_SELECTED_MISSING.Count > 0)
+            {
+                query += " AND A.assetIsMissing IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_MISSING.Select(m => "@" + m)) + ")";
+            }
+
+            if (FILTER_SETTINGS_SELECTED_CATEGORIES.Count > 0)
+            {
+                query += " AND A.assetCategoryID IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_CATEGORIES.Select(y => "@" + y)) + ")";
+            }
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
                
             };
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_LOCATIONS.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_LOCATIONS[i].Split('-')[0], FILTER_SETTINGS_SELECTED_LOCATIONS[i]);
+            }
+
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_YEAR.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_YEAR[i], FILTER_SETTINGS_SELECTED_YEAR[i]);
+            }
+
+
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_MISSING.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_MISSING[i], FILTER_SETTINGS_SELECTED_MISSING[i]);
+            }
+
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_CATEGORIES.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_CATEGORIES[i], FILTER_SETTINGS_SELECTED_CATEGORIES[i]);
+            }
+            
 
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+            if(resultTable.Rows.Count == 0)
+            {
+                datagridviewEmptyLabel.Visible = true;
+            }
+            else
+            {
+                datagridviewEmptyLabel.Visible = false;
+            }
 
             databaseConnection.CloseConnection();
 
             return resultTable;
         }
-
         private void buttonApply_Click(object sender, EventArgs e)
         {
             FILTER_SETTINGS_SELECTED_LOCATIONS.Clear();
             FILTER_SETTINGS_SELECTED_YEAR.Clear();
             FILTER_SETTINGS_SELECTED_CONDITION.Clear();
             FILTER_SETTINGS_SELECTED_MISSING.Clear();
+            FILTER_SETTINGS_SELECTED_CATEGORIES.Clear();
+            textBoxPurhcaseAmountTotal.Text = "0";
 
             if (checkBoxGSO.Checked) 
             {
@@ -718,6 +901,24 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             {
                 FILTER_SETTINGS_SELECTED_MISSING.Add(true);
             }
+
+            foreach (CheckBox checkBox in FILTER_DYNAMIC_CATEGORIES)
+            {
+                if (checkBox.Checked)
+                {
+                    FILTER_SETTINGS_SELECTED_CATEGORIES.Add(checkBox.Name);
+                    Console.WriteLine("CHECKED: " + checkBox.Name);
+                }
+                
+            }
+
+
+            JohnLloydPileTheSetToDefaultMethod(FILTER_OFFICES_CHECKBOXES);
+            JohnLloydPileTheSetToDefaultMethod(FILTER_YEAR_CHECKBOXES);
+            JohnLloydPileTheSetToDefaultMethod(FILTER_CONDITIONS_CHECKBOXES);
+            JohnLloydPileTheSetToDefaultMethod(FILTER_GHOSTMISSING_CHECKBOXES);
+            JohnLloydPileTheSetToDefaultMethod(FILTER_DYNAMIC_CATEGORIES);
+
             GetTotalAsset();
             GetAssetCondition();
             GetTotalPurchaseAmount();
@@ -729,5 +930,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         {
 
         }
+
+        
     }
 }
