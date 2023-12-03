@@ -55,13 +55,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxPAmount = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.textBoxPDate = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxUnit = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.textBoxEmployee = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
@@ -73,10 +71,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxPropertyName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).BeginInit();
-            this.panelLogsHandler.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonUpdateInfo
@@ -196,8 +195,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             // 
             // panelLogsHandler
             // 
-            this.panelLogsHandler.Controls.Add(this.label8);
-            this.panelLogsHandler.Controls.Add(this.label15);
             this.panelLogsHandler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogsHandler.Location = new System.Drawing.Point(0, 0);
             this.panelLogsHandler.Name = "panelLogsHandler";
@@ -352,16 +349,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxPAmount.Size = new System.Drawing.Size(252, 25);
             this.textBoxPAmount.TabIndex = 20;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(319, 352);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 23);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Acknowledge Date:";
-            // 
             // textBoxPDate
             // 
             this.textBoxPDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -412,16 +399,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxUnit.ReadOnly = true;
             this.textBoxUnit.Size = new System.Drawing.Size(252, 25);
             this.textBoxUnit.TabIndex = 26;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(736, 248);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(137, 19);
-            this.label15.TabIndex = 62;
-            this.label15.Text = "Coordinator/Custodian:";
             // 
             // textBoxEmployee
             // 
@@ -534,10 +511,32 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxPropertyName.Size = new System.Drawing.Size(252, 25);
             this.textBoxPropertyName.TabIndex = 68;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(319, 350);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(135, 23);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Acknowledge Date:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(736, 246);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(137, 19);
+            this.label15.TabIndex = 73;
+            this.label15.Text = "Coordinator/Custodian:";
+            // 
             // AssetViewedInformationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.richTextBoxPurpose);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBoxPropertyName);
@@ -583,8 +582,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetQrImage)).EndInit();
-            this.panelLogsHandler.ResumeLayout(false);
-            this.panelLogsHandler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,13 +612,11 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.TextBox textBoxLocation;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPAmount;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxPDate;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.RichTextBox richTextBoxPurpose;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxUnit;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBoxEmployee;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxSupplier;
@@ -633,5 +628,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.RichTextBox richTextBoxDescription;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxPropertyName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label15;
     }
 }
