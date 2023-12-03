@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -9,10 +10,10 @@ namespace LGU_SV_Asset_Management_Sytem
     {
         private SqlConnection connection;
         private string connectionString = "Data Source=TOZEN\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
-
         public DatabaseConnection()
         {
             connection = new SqlConnection(connectionString);
+           
         }
 
         public void OpenConnection()
