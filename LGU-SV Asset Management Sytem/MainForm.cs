@@ -1567,15 +1567,71 @@ namespace LGU_SV_Asset_Management_Sytem
             }
             
         }
-
+      
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            string fname = textBoxTransactionRenteeFName.Text;
+            string mname = textBoxTransactionRenteeMName.Text;
+            string lname = textBoxTransactionRenteeLName.Text;
+            string addr = richTextBoxTransactionRenteeAddr.Text;
+
+            DateTime bdate = dateTimeTransactionRenteeBDate.Value;
+            string cnumber = textBoxTransactionRenteeContactNumber.Text;
+            string lnumber = textBoxTransactionRenteeLicenseID.Text;
+            Image validimage = pictureBoxValidIDImage.Image;
+
+            if (string.IsNullOrEmpty(textBoxRentFee.Text))
+            {
+                MessagePrompt("Please enter a valid input in rent. Put 0 if not applicable");
+                return;
+            }
+
+            decimal val = Convert.ToDecimal(textBoxRentFee.Text);
+
+            if (string.IsNullOrEmpty(fname))
+            {
+                MessagePrompt("Please input first name");
+                return;
+            }
+            if (string.IsNullOrEmpty(mname))
+            {
+                MessagePrompt("Please input middle name");
+                return;
+            }
+            if (string.IsNullOrEmpty(lname))
+            {
+                MessagePrompt("Please input last name");
+                return;
+            }
+            if (string.IsNullOrEmpty(addr))
+            {
+                MessagePrompt("Please input address");
+                return;
+            }
+            if (string.IsNullOrEmpty(cnumber))
+            {
+                MessagePrompt("Please input contact number");
+                return;
+            }
+            if (!ValidatePhoneNumber(cnumber))
+            {
+                MessagePrompt("Invalid phone number. Please enter a valid 11-digit number starting with '09'.");
+                return;
+            }
+
+            if (!decimal.TryParse(textBoxRentFee.Text, out val))
+            {
+                MessagePrompt("Please enter a valid input in rent. Put 0 if not applicable");
+                return;
+            }
+            
             using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
             {
                 Asset confirmedAsset = worker1.AssetInProcess();
 
                 if (confirmedAsset == null)
                 {
+                    MessagePrompt("Please select an asset to rent");
                     return;
                 }
 
@@ -1599,6 +1655,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 prompt.listBox1.Items.Add($"\t Rentee Contact Number: {textBoxTransactionRenteeContactNumber.Text}");
                 prompt.listBox1.Items.Add($"\t Rentee Address: {richTextBoxTransactionRenteeAddr.Text}");
                 prompt.listBox1.Items.Add($"\t Rentee License ID: {textBoxTransactionRenteeLicenseID.Text}");
+
+
 
                 if (prompt.ShowDialog() == DialogResult.OK)
                 {
@@ -1626,14 +1684,14 @@ namespace LGU_SV_Asset_Management_Sytem
             worker2.AssetSearchFilterClear();
         }
 
-        
 
+        int transactionSelectedAssetId = -1;
         private void dataGridViewTransactionTransferAssetList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridViewTransactionTransferAssetList.Rows[e.RowIndex];
-
+                transactionSelectedAssetId = Convert.ToInt32(selectedRow.Cells[2].Value.ToString());
                 worker2.DataGridViewCellMouseClick(Convert.ToInt32(selectedRow.Cells[2].Value.ToString()));
                 Console.WriteLine(selectedRow.Cells[2].Value.ToString());
             }
@@ -1648,13 +1706,48 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             worker2.FilterListCoordinators();
         }
-
+        int receiverId = -1;
         private void roundedButtonTransactinTransfer_Click(object sender, EventArgs e)
         {
+            if (receiverId == -1)
+            {
+                MessagePrompt("Please select receiver");
+                return;
+            }
+
+            if(transactionSelectedAssetId == -1)
+            {
+                MessagePrompt("Please select an asset to transfer");
+                return;
+            }
+
+            if(pictureBoxTransactionTransferDocumentImage.Image == null)
+            {
+                MessagePrompt("Please upload an document");
+                return;
+            }
             using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
             {
+
                 
-                if(prompt.ShowDialog() == DialogResult.OK)
+                prompt.listBox1.Items.Add("");
+                prompt.SetConfirmationTitle("Asset Transfer Confirmation");
+
+                prompt.listBox1.Items.Add("\t Asset Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Asset Name: {textBoxTransactionTransferAssetName.Text}");
+                prompt.listBox1.Items.Add($"\t Asset Current Custodian/Coordinator: {textBoxTransactionTransferAssetCustodian.Text}");
+                prompt.listBox1.Items.Add($"\t Asset Purpose: {richTextBoxTransactionTransferAssetDescription.Text}");
+                prompt.listBox1.Items.Add($"\t Asset Description: {richTextBoxrichTextBoxTransactionTransferAssetDescription.Text}");
+
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add("\t Receiver Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Receiver Name: {worker2.RetrieveCoordinatorName(receiverId)}");
+                
+               
+
+                if (prompt.ShowDialog() == DialogResult.OK)
                 {
                     worker2.InitiateTransferAsset();
                     MessagePrompt("Transaction completed.");
@@ -1674,7 +1767,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridViewTransactionTransferReceiver.Rows[e.RowIndex];
-
+                receiverId = Convert.ToInt32(selectedRow.Cells[0].Value.ToString());
                 worker2.DataGridViewReceiverCellMouseClick(Convert.ToInt32(selectedRow.Cells[0].Value.ToString()));
                 
             }

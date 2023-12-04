@@ -138,7 +138,7 @@ namespace LGU_SV_Asset_Management_Sytem
             }
 
         }
-        int transactionSelectedAssetId;
+        public int transactionSelectedAssetId;
 
         public void AssetSearchFilterClear()
         {
@@ -201,14 +201,14 @@ namespace LGU_SV_Asset_Management_Sytem
             }
         }
 
-        int coordinatorId;
+        public int coordinatorId;
         public void DataGridViewReceiverCellMouseClick(int id)
         {
             coordinatorId = id;
         }
 
 
-        private string RetrieveCoordinatorName(int id)
+        public string RetrieveCoordinatorName(int id)
         {
 
             string query = $"SELECT FName, MName, LName FROM AssetCoordinator WHERE Id = {id}";
