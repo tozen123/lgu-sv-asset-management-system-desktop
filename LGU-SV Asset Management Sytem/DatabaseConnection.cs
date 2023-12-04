@@ -9,7 +9,8 @@ namespace LGU_SV_Asset_Management_Sytem
     class DatabaseConnection : IDisposable
     {
         private SqlConnection connection;
-        private string connectionString = "Data Source=TOZEN\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
+        private string connectionString = "Data Source=LAPTOP-9VI55AMC\\SQL2019;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
+        private string connectionStringClientMode = "server = 192.168.1.21,51429 ,Network Library=TOZEN\\SQLEXPRESS ;Initial Catalog=LGU_AMS_DB; User ID=sa ;Password=password";
         public DatabaseConnection()
         {
             connection = new SqlConnection(connectionString);
