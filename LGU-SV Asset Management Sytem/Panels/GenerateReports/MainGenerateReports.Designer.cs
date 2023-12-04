@@ -29,15 +29,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelFilterHandler = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonClearFilter = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -88,10 +91,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.roundedButtonSaveAsPanel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonFilter = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonPrintPanel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFilterHandler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBoxCategory.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -107,9 +110,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCondition)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFilterHandler
@@ -133,6 +133,39 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelFilterHandler.Name = "panelFilterHandler";
             this.panelFilterHandler.Size = new System.Drawing.Size(511, 751);
             this.panelFilterHandler.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 742);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(511, 10);
+            this.pictureBox3.TabIndex = 55;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.pictureBox2.Location = new System.Drawing.Point(501, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 752);
+            this.pictureBox2.TabIndex = 54;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(10, 752);
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonClearFilter
             // 
@@ -504,20 +537,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             // panelMainReport
             // 
-            this.panelMainReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMainReport.AutoScroll = true;
             this.panelMainReport.AutoSize = true;
             this.panelMainReport.BackColor = System.Drawing.Color.White;
+            this.panelMainReport.Controls.Add(this.groupBox2);
             this.panelMainReport.Controls.Add(this.groupBox10);
             this.panelMainReport.Controls.Add(this.groupBox7);
             this.panelMainReport.Controls.Add(this.groupBox8);
             this.panelMainReport.Controls.Add(this.groupBox5);
             this.panelMainReport.Controls.Add(this.groupBox6);
-            this.panelMainReport.Location = new System.Drawing.Point(15, 81);
+            this.panelMainReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainReport.Location = new System.Drawing.Point(0, 0);
             this.panelMainReport.Name = "panelMainReport";
-            this.panelMainReport.Size = new System.Drawing.Size(1251, 944);
+            this.panelMainReport.Size = new System.Drawing.Size(1281, 1033);
             this.panelMainReport.TabIndex = 2;
             this.panelMainReport.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMainReport_Paint);
             // 
@@ -525,12 +557,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox10.AutoSize = true;
             this.groupBox10.Controls.Add(this.datagridviewEmptyLabel);
             this.groupBox10.Controls.Add(this.dataGridViewAssetRecords);
             this.groupBox10.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox10.Location = new System.Drawing.Point(6, 535);
+            this.groupBox10.Location = new System.Drawing.Point(3, 644);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1242, 406);
+            this.groupBox10.Size = new System.Drawing.Size(1255, 404);
             this.groupBox10.TabIndex = 58;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "RECORDS";
@@ -554,28 +587,27 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewAssetRecords.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAssetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAssetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAssetRecords.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAssetRecords.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewAssetRecords.Location = new System.Drawing.Point(23, 35);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
-            this.dataGridViewAssetRecords.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1198, 350);
+            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1211, 348);
             this.dataGridViewAssetRecords.TabIndex = 1;
             // 
             // groupBox7
@@ -584,9 +616,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.textBoxPurhcaseAmountTotal);
             this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Location = new System.Drawing.Point(358, 32);
+            this.groupBox7.Location = new System.Drawing.Point(361, 148);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(884, 103);
+            this.groupBox7.Size = new System.Drawing.Size(897, 103);
             this.groupBox7.TabIndex = 55;
             this.groupBox7.TabStop = false;
             // 
@@ -598,7 +630,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.textBoxPurhcaseAmountTotal.Location = new System.Drawing.Point(371, 35);
             this.textBoxPurhcaseAmountTotal.Name = "textBoxPurhcaseAmountTotal";
             this.textBoxPurhcaseAmountTotal.ReadOnly = true;
-            this.textBoxPurhcaseAmountTotal.Size = new System.Drawing.Size(494, 60);
+            this.textBoxPurhcaseAmountTotal.Size = new System.Drawing.Size(507, 60);
             this.textBoxPurhcaseAmountTotal.TabIndex = 1;
             // 
             // label5
@@ -618,9 +650,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox8.Controls.Add(this.chartEmptyRecordLabelMissing);
             this.groupBox8.Controls.Add(this.chartAssetMissing);
             this.groupBox8.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(618, 141);
+            this.groupBox8.Location = new System.Drawing.Point(621, 257);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(624, 385);
+            this.groupBox8.Size = new System.Drawing.Size(637, 385);
             this.groupBox8.TabIndex = 57;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "ASSETS BY GHOST/MISSING";
@@ -644,18 +676,18 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetMissing.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.chartAssetMissing.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartAssetMissing.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartAssetMissing.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAssetMissing.Legends.Add(legend1);
             this.chartAssetMissing.Location = new System.Drawing.Point(15, 40);
             this.chartAssetMissing.Name = "chartAssetMissing";
             this.chartAssetMissing.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartAssetMissing.Series.Add(series3);
-            this.chartAssetMissing.Size = new System.Drawing.Size(589, 320);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartAssetMissing.Series.Add(series1);
+            this.chartAssetMissing.Size = new System.Drawing.Size(602, 320);
             this.chartAssetMissing.TabIndex = 50;
             this.chartAssetMissing.Text = "chart1";
             // 
@@ -663,7 +695,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.labelTotalCountOfAssets);
-            this.groupBox5.Location = new System.Drawing.Point(6, 32);
+            this.groupBox5.Location = new System.Drawing.Point(9, 148);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(337, 103);
             this.groupBox5.TabIndex = 54;
@@ -694,7 +726,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6.Controls.Add(this.chartEmptyRecordLabelCondition);
             this.groupBox6.Controls.Add(this.chartAssetByCondition);
             this.groupBox6.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(2, 141);
+            this.groupBox6.Location = new System.Drawing.Point(5, 257);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(612, 385);
             this.groupBox6.TabIndex = 56;
@@ -718,17 +750,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetByCondition.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.chartAssetByCondition.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartAssetByCondition.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartAssetByCondition.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartAssetByCondition.Legends.Add(legend2);
             this.chartAssetByCondition.Location = new System.Drawing.Point(15, 40);
             this.chartAssetByCondition.Name = "chartAssetByCondition";
             this.chartAssetByCondition.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartAssetByCondition.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartAssetByCondition.Series.Add(series2);
             this.chartAssetByCondition.Size = new System.Drawing.Size(577, 320);
             this.chartAssetByCondition.TabIndex = 50;
             this.chartAssetByCondition.Text = "chart1";
@@ -740,7 +772,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox2.Controls.Add(this.roundedButtonFilter);
             this.groupBox2.Controls.Add(this.roundedButtonPrintPanel);
             this.groupBox2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(935, 16);
+            this.groupBox2.Location = new System.Drawing.Point(918, 62);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(331, 59);
             this.groupBox2.TabIndex = 53;
@@ -823,50 +855,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.roundedButtonPrintPanel.UseVisualStyleBackColor = false;
             this.roundedButtonPrintPanel.Click += new System.EventHandler(this.roundedButtonPrintPanel_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(10, 752);
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.pictureBox2.Location = new System.Drawing.Point(501, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 752);
-            this.pictureBox2.TabIndex = 54;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 742);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(511, 10);
-            this.pictureBox3.TabIndex = 55;
-            this.pictureBox3.TabStop = false;
-            // 
             // MainGenerateReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panelMainReport);
             this.Controls.Add(this.panelFilterHandler);
             this.Name = "MainGenerateReports";
             this.Size = new System.Drawing.Size(1281, 1033);
             this.panelFilterHandler.ResumeLayout(false);
             this.panelFilterHandler.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBoxCategory.ResumeLayout(false);
@@ -878,6 +879,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelMainReport.ResumeLayout(false);
+            this.panelMainReport.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).EndInit();
@@ -892,9 +894,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAssetByCondition)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
