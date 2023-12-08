@@ -45,7 +45,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             richTextBoxDesc.Text = asset.AssetDescription;
             richTextBoxPurpose.Text = asset.AssetPurpose;
             comboBoxCondition.SelectedItem = asset.AssetCondition;
-
+            pictureBox1.Image = Utilities.ConvertByteArrayToImage(asset.AssetImage);
 
             //Fix
             if (comboBoxSupplier.Items.Count > 0)
@@ -126,7 +126,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             updatedAsset.AssetPurpose = richTextBoxPurpose.Text;
 
             updatedAsset.AssetCondition = comboBoxCondition.SelectedItem.ToString();
-            updatedAsset.AssetImage = Utilities.ConvertImageToBytes(pictureBox1.Image);
+
+            if(pictureBox1.Image != LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image)
+            {
+                updatedAsset.AssetImage = Utilities.ConvertImageToBytes(pictureBox1.Image);
+            }
+            
 
             if (int.TryParse(comboBoxSupplier.SelectedItem.ToString().Split(' ')[2], out int supId))
             {
