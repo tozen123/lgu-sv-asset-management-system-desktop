@@ -221,6 +221,16 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 try
                 {
+                    int archivedValue = 0;
+
+                    if(_asset.assetCondition == "NON-SERVICEABLE")
+                    {
+                        archivedValue = 1;
+                    } else if (_asset.assetCondition == "SERVICEABLE")
+                    {
+                        archivedValue = 0;
+                    }
+
                     string query = "UPDATE Assets " +
                         "SET " +
                         "assetName = @assetName, " +
@@ -231,7 +241,8 @@ namespace LGU_SV_Asset_Management_Sytem
                         "supplierID = @assetSupId, " +
                         "assetPropertyNumber = @assetPNumber, " +
                         "assetCondition = @assetCondition, " +
-                        "assetImage = @assetImage " +
+                        "assetImage = @assetImage, " +
+                        $"assetIsArchive = {archivedValue} " +
                         "WHERE " +
                         "assetId = @assetId";
 
@@ -316,17 +327,22 @@ namespace LGU_SV_Asset_Management_Sytem
             {
                 try
                 {
-                    string query = "UPDATE Assets SET assetIsArchive = @state WHERE assetId = @id";
-
-                    int value;
+                    int value = 0;
+                    string cond = "";
                     if (asset.isArchive == true)
                     {
                         value = 1;
-                    } 
-                    else
+                        cond = "NON-SERVICEABLE";
+                    }
+                    else if (asset.isArchive == false)
                     {
                         value = 0;
+                        cond = "SERVICEABLE";
                     }
+
+                    string query = $"UPDATE Assets SET assetIsArchive = @state, assetCondition = '{cond}' WHERE assetId = @id";
+
+                    
                     Dictionary<string, object> parameters = new Dictionary<string, object>()
                     {
                         {"@id", asset.AssetId},

@@ -82,6 +82,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             comboBoxCondition.Items.Add("SERVICEABLE");
             comboBoxCondition.Items.Add("NON-SERVICEABLE");
 
+            // ----------------
+            // ----------------
+            // ----------------
+            //  Automatically Sets the condition to serviceable
+            comboBoxCondition.SelectedItem = comboBoxCondition.Items[0];
+            comboBoxCondition.Enabled = false;
+            // ----------------
+            // ----------------
+            // ----------------
 
             comboBoxUnit.Items.Add("SET");
             comboBoxUnit.Items.Add("SINGLE");

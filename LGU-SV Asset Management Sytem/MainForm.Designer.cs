@@ -621,7 +621,7 @@
             this.tabTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabTransaction.Name = "tabTransaction";
             this.tabTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTransaction.Size = new System.Drawing.Size(1150, 763);
+            this.tabTransaction.Size = new System.Drawing.Size(1124, 763);
             this.tabTransaction.TabIndex = 8;
             this.tabTransaction.Text = "tabPage1";
             this.tabTransaction.UseVisualStyleBackColor = true;
@@ -868,7 +868,7 @@
             this.label32.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(21, 79);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(201, 22);
+            this.label32.Size = new System.Drawing.Size(200, 22);
             this.label32.TabIndex = 39;
             this.label32.Text = "Current Custodian/Coordinator:";
             // 
@@ -991,7 +991,7 @@
             this.label54.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(20, 238);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(151, 22);
+            this.label54.Size = new System.Drawing.Size(148, 22);
             this.label54.TabIndex = 63;
             this.label54.Text = "Rent Fee (If applicable):";
             // 
@@ -1020,7 +1020,7 @@
             this.label53.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.Location = new System.Drawing.Point(20, 204);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(70, 22);
+            this.label53.Size = new System.Drawing.Size(69, 22);
             this.label53.TabIndex = 60;
             this.label53.Text = "Rent Start:";
             // 
@@ -1050,7 +1050,7 @@
             this.label40.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.Location = new System.Drawing.Point(4, 24);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(159, 22);
+            this.label40.Size = new System.Drawing.Size(156, 22);
             this.label40.TabIndex = 57;
             this.label40.Text = "License ID (If applicable):";
             // 
@@ -1110,7 +1110,7 @@
             this.label42.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(393, 70);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(112, 22);
+            this.label42.Size = new System.Drawing.Size(111, 22);
             this.label42.TabIndex = 58;
             this.label42.Text = "Contact Number:";
             // 
@@ -1180,7 +1180,7 @@
             this.label38.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(743, 34);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(75, 22);
+            this.label38.Size = new System.Drawing.Size(74, 22);
             this.label38.TabIndex = 51;
             this.label38.Text = "Last Name:";
             // 
@@ -1204,7 +1204,7 @@
             this.label37.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(393, 34);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(91, 22);
+            this.label37.Size = new System.Drawing.Size(90, 22);
             this.label37.TabIndex = 49;
             this.label37.Text = "Middle Name:";
             // 
@@ -1227,7 +1227,7 @@
             this.label36.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(20, 35);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(75, 22);
+            this.label36.Size = new System.Drawing.Size(74, 22);
             this.label36.TabIndex = 47;
             this.label36.Text = "First Name:";
             // 
@@ -1403,7 +1403,7 @@
             this.label47.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(21, 79);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(201, 22);
+            this.label47.Size = new System.Drawing.Size(200, 22);
             this.label47.TabIndex = 39;
             this.label47.Text = "Current Custodian/Coordinator:";
             // 
@@ -1521,7 +1521,7 @@
             this.label52.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.Location = new System.Drawing.Point(11, 30);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(91, 22);
+            this.label52.Size = new System.Drawing.Size(90, 22);
             this.label52.TabIndex = 46;
             this.label52.Text = "Transfer Date:";
             // 
@@ -1625,7 +1625,7 @@
             this.label51.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(15, 141);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(93, 22);
+            this.label51.Size = new System.Drawing.Size(92, 22);
             this.label51.TabIndex = 47;
             this.label51.Text = "Name Search:";
             // 
@@ -1739,7 +1739,7 @@
             this.tabMissing.Location = new System.Drawing.Point(4, 22);
             this.tabMissing.Name = "tabMissing";
             this.tabMissing.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMissing.Size = new System.Drawing.Size(1150, 763);
+            this.tabMissing.Size = new System.Drawing.Size(1124, 763);
             this.tabMissing.TabIndex = 7;
             this.tabMissing.Text = "tabPage8";
             this.tabMissing.UseVisualStyleBackColor = true;
@@ -1850,7 +1850,7 @@
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
             this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAbout.Size = new System.Drawing.Size(1150, 763);
+            this.tabAbout.Size = new System.Drawing.Size(1124, 763);
             this.tabAbout.TabIndex = 6;
             this.tabAbout.Text = "tabPage7";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -1986,7 +1986,7 @@
             this.tabOthers.Location = new System.Drawing.Point(4, 22);
             this.tabOthers.Name = "tabOthers";
             this.tabOthers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOthers.Size = new System.Drawing.Size(1150, 763);
+            this.tabOthers.Size = new System.Drawing.Size(1124, 763);
             this.tabOthers.TabIndex = 5;
             this.tabOthers.Text = "tabPage6";
             this.tabOthers.UseVisualStyleBackColor = true;
@@ -2068,7 +2068,7 @@
             this.label23.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(347, 476);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(102, 22);
+            this.label23.Size = new System.Drawing.Size(101, 22);
             this.label23.TabIndex = 24;
             this.label23.Text = "Phone Number:";
             // 
@@ -2114,7 +2114,7 @@
             this.label22.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(15, 517);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 22);
+            this.label22.Size = new System.Drawing.Size(74, 22);
             this.label22.TabIndex = 22;
             this.label22.Text = "Last Name:";
             // 
@@ -2161,7 +2161,7 @@
             this.label21.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(15, 476);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 22);
+            this.label21.Size = new System.Drawing.Size(90, 22);
             this.label21.TabIndex = 20;
             this.label21.Text = "Middle Name:";
             // 
@@ -2171,7 +2171,7 @@
             this.label20.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(15, 441);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(75, 22);
+            this.label20.Size = new System.Drawing.Size(74, 22);
             this.label20.TabIndex = 18;
             this.label20.Text = "First Name:";
             // 
@@ -2324,7 +2324,7 @@
             this.label17.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(568, 390);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(112, 22);
+            this.label17.Size = new System.Drawing.Size(111, 22);
             this.label17.TabIndex = 18;
             this.label17.Text = "Supplier Address:";
             // 
@@ -2342,7 +2342,7 @@
             this.label6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(34, 429);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 22);
+            this.label6.Size = new System.Drawing.Size(101, 22);
             this.label6.TabIndex = 17;
             this.label6.Text = "Phone Number:";
             // 
@@ -2631,7 +2631,7 @@
             this.tabGenReport.Location = new System.Drawing.Point(4, 22);
             this.tabGenReport.Name = "tabGenReport";
             this.tabGenReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenReport.Size = new System.Drawing.Size(1150, 763);
+            this.tabGenReport.Size = new System.Drawing.Size(1124, 763);
             this.tabGenReport.TabIndex = 4;
             this.tabGenReport.Text = "tabPage5";
             this.tabGenReport.UseVisualStyleBackColor = true;
@@ -2679,7 +2679,7 @@
             this.tabArchiveRecords.Location = new System.Drawing.Point(4, 22);
             this.tabArchiveRecords.Name = "tabArchiveRecords";
             this.tabArchiveRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArchiveRecords.Size = new System.Drawing.Size(1150, 763);
+            this.tabArchiveRecords.Size = new System.Drawing.Size(1124, 763);
             this.tabArchiveRecords.TabIndex = 3;
             this.tabArchiveRecords.Text = "tabPage4";
             this.tabArchiveRecords.UseVisualStyleBackColor = true;
@@ -2794,7 +2794,7 @@
             this.tabAssetRecords.Location = new System.Drawing.Point(4, 22);
             this.tabAssetRecords.Name = "tabAssetRecords";
             this.tabAssetRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssetRecords.Size = new System.Drawing.Size(1150, 763);
+            this.tabAssetRecords.Size = new System.Drawing.Size(1141, 763);
             this.tabAssetRecords.TabIndex = 2;
             this.tabAssetRecords.Text = "tabPage3";
             this.tabAssetRecords.UseVisualStyleBackColor = true;
@@ -2807,7 +2807,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.pictureBox2.Location = new System.Drawing.Point(42, 71);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1084, 5);
+            this.pictureBox2.Size = new System.Drawing.Size(1075, 5);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
@@ -2820,7 +2820,7 @@
             this.panelAssetRecordsHandler.AutoSize = true;
             this.panelAssetRecordsHandler.Location = new System.Drawing.Point(42, 87);
             this.panelAssetRecordsHandler.Name = "panelAssetRecordsHandler";
-            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1081, 670);
+            this.panelAssetRecordsHandler.Size = new System.Drawing.Size(1072, 670);
             this.panelAssetRecordsHandler.TabIndex = 40;
             this.panelAssetRecordsHandler.Resize += new System.EventHandler(this.panelAssetRecordsHandler_Resize);
             // 
@@ -2828,7 +2828,7 @@
             // 
             this.textBoxSearchFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearchFilter.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchFilter.Location = new System.Drawing.Point(811, 27);
+            this.textBoxSearchFilter.Location = new System.Drawing.Point(802, 27);
             this.textBoxSearchFilter.Name = "textBoxSearchFilter";
             this.textBoxSearchFilter.Size = new System.Drawing.Size(266, 31);
             this.textBoxSearchFilter.TabIndex = 10;
@@ -2859,7 +2859,7 @@
             this.buttonAssetRecordsNewAsset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAssetRecordsNewAsset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAssetRecordsNewAsset.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(522, 27);
+            this.buttonAssetRecordsNewAsset.Location = new System.Drawing.Point(513, 27);
             this.buttonAssetRecordsNewAsset.Name = "buttonAssetRecordsNewAsset";
             this.buttonAssetRecordsNewAsset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonAssetRecordsNewAsset.Size = new System.Drawing.Size(115, 31);
@@ -2883,7 +2883,7 @@
             this.buttonAssetRecordsViewRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAssetRecordsViewRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAssetRecordsViewRecords.ForeColor = System.Drawing.Color.White;
-            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(650, 27);
+            this.buttonAssetRecordsViewRecords.Location = new System.Drawing.Point(641, 27);
             this.buttonAssetRecordsViewRecords.Name = "buttonAssetRecordsViewRecords";
             this.buttonAssetRecordsViewRecords.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonAssetRecordsViewRecords.Size = new System.Drawing.Size(136, 31);
@@ -2908,7 +2908,7 @@
             this.buttonSearch.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
             this.buttonSearch.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.buttonSearch;
-            this.buttonSearch.Location = new System.Drawing.Point(1088, 27);
+            this.buttonSearch.Location = new System.Drawing.Point(1079, 27);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
             this.buttonSearch.Size = new System.Drawing.Size(38, 31);
@@ -2924,7 +2924,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelViewedAssetHandler.Location = new System.Drawing.Point(4, 6);
             this.panelViewedAssetHandler.Name = "panelViewedAssetHandler";
-            this.panelViewedAssetHandler.Size = new System.Drawing.Size(1142, 756);
+            this.panelViewedAssetHandler.Size = new System.Drawing.Size(1133, 756);
             this.panelViewedAssetHandler.TabIndex = 6;
             this.panelViewedAssetHandler.Visible = false;
             this.panelViewedAssetHandler.Resize += new System.EventHandler(this.panelViewedAssetHandler_Resize);
@@ -2957,7 +2957,7 @@
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1150, 763);
+            this.tabProfile.Size = new System.Drawing.Size(1124, 763);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "tabPage1";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -2968,7 +2968,7 @@
             this.label16.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(74, 104);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(120, 28);
+            this.label16.Size = new System.Drawing.Size(119, 28);
             this.label16.TabIndex = 40;
             this.label16.Text = "Profile Picture";
             // 
@@ -3138,7 +3138,7 @@
             this.label10.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(450, 182);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 28);
+            this.label10.Size = new System.Drawing.Size(132, 28);
             this.label10.TabIndex = 6;
             this.label10.Text = "Phone Number:";
             // 
@@ -3287,7 +3287,7 @@
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
             this.tabDashboard.Name = "tabDashboard";
             this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(1150, 763);
+            this.tabDashboard.Size = new System.Drawing.Size(1124, 763);
             this.tabDashboard.TabIndex = 1;
             this.tabDashboard.Text = "tabPage2";
             // 
@@ -3418,11 +3418,11 @@
             this.panelTabControl.Controls.Add(this.tabDashboard);
             this.panelTabControl.Controls.Add(this.tabProfile);
             this.panelTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.panelTabControl.Location = new System.Drawing.Point(263, 6);
+            this.panelTabControl.Location = new System.Drawing.Point(272, 6);
             this.panelTabControl.Multiline = true;
             this.panelTabControl.Name = "panelTabControl";
             this.panelTabControl.SelectedIndex = 0;
-            this.panelTabControl.Size = new System.Drawing.Size(1158, 789);
+            this.panelTabControl.Size = new System.Drawing.Size(1149, 789);
             this.panelTabControl.TabIndex = 0;
             this.panelTabControl.Resize += new System.EventHandler(this.panelTabControl_Resize);
             // 

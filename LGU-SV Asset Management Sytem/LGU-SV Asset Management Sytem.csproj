@@ -57,6 +57,7 @@
     <Compile Include="Asset.cs" />
     <Compile Include="AssetBehaviour.cs" />
     <Compile Include="AssetCategory.cs" />
+    <Compile Include="AssetLoader.cs" />
     <Compile Include="Controllers\MainFormAssetCategoriesController.cs" />
     <Compile Include="DialogBoxes\AddAssetBasedOnExistingDialog.cs">
       <SubType>Form</SubType>
