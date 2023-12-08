@@ -566,5 +566,15 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistrationAccountSetup1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

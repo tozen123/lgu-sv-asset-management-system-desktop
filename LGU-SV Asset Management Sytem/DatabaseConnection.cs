@@ -10,7 +10,7 @@ namespace LGU_SV_Asset_Management_Sytem
     {
         private SqlConnection connection;
         private string connectionString = "Data Source=Eileen\\SQL2019;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
-        private string connectionStringClientMode = "server = 192.168.1.21,51429 ,Network Library=Eileen\\SQL2019 ;Initial Catalog=LGU_AMS_DB; User ID=sa ;Password=password";
+        private string connectionStringClientMode = "server = 192.168.1.21,51429 ,Network Library=KIRBYANND\\SQLEXPRESS ;Initial Catalog=LGU_AMS_DB; User ID=sa ;Password=password";
         public DatabaseConnection()
         {
             connection = new SqlConnection(connectionString);
