@@ -106,7 +106,11 @@ namespace LGU_SV_Asset_Management_Sytem
 
 
 
+            buttonDashboard.PerformClick();
 
+
+            //Set default value at rent
+            textBoxRentFee.Text = "0";
         }
 
         // Initialize Controls
@@ -1014,7 +1018,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
             prompt.SetMessage(message);
-            prompt.Show();
+            prompt.ShowDialog();
         }
 
         string currentSelectedSupplier;
@@ -1841,6 +1845,11 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         private void chartAssetByCategories_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxRentFee_TextChanged(object sender, EventArgs e)
         {
 
         }

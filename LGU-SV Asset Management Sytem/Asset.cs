@@ -434,6 +434,36 @@ namespace LGU_SV_Asset_Management_Sytem
                     return (null, false, ex.Message);
                 }
             }
+
+            public (bool Success, string ErrorMessage) UpdateQuantity(Asset _asset)
+            {
+                try
+                {
+
+                    string query = "UPDATE Assets " +
+                        "SET " +
+                        "assetQuantity = @assetQuantity " +
+                        "WHERE " +
+                        "assetId = @assetId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        {"@assetQuantity", _asset.AssetQuantity},
+                        {"@assetId", _asset.AssetId}
+                    };
+
+                    databaseConnection.ReadFromDatabase(query, parameters);
+
+                    databaseConnection.CloseConnection();
+
+                    return (true, null);
+                }
+                catch (Exception ex)
+                {
+                    return (false, ex.Message);
+                }
+            }
+
         }
 
     }
