@@ -230,8 +230,8 @@ namespace LGU_SV_Asset_Management_Sytem
              
 
                 string query = "INSERT INTO RentLog (assetId, renteeFirstName, renteeMidName, renteeLastName, renteeAddress, " +
-                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage, rentInitiatedDate, rentStatus, rentFee ) VALUES " +
-                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage, @iniDate, @status, @fee )";
+                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage, rentInitiatedDate, rentStatus, rentFee, rentOriginQuantity ) VALUES " +
+                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage, @iniDate, @status, @fee, @orig )";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>()
                 {
@@ -246,7 +246,8 @@ namespace LGU_SV_Asset_Management_Sytem
                     {"@validimage", Utilities.ConvertImageToBytes(validimage)},
                     {"@iniDate", mainform.dateTimePickerTransactionRentStart.Value},
                     {"@status", "Not Returned"},
-                    {"@fee", val}
+                    {"@fee", val},
+                    {"@orig", AssetInProcess().AssetQuantity}
 
                 };
 

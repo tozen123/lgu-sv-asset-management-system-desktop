@@ -29,12 +29,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelFilterHandler = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -89,6 +89,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chartEmptyRecordLabelCondition = new System.Windows.Forms.Label();
             this.chartAssetByCondition = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.richTextBoxHeader = new System.Windows.Forms.RichTextBox();
             this.panelFilterHandler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -538,6 +539,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelMainReport.AutoScroll = true;
             this.panelMainReport.AutoSize = true;
             this.panelMainReport.BackColor = System.Drawing.Color.White;
+            this.panelMainReport.Controls.Add(this.richTextBoxHeader);
             this.panelMainReport.Controls.Add(this.groupBox2);
             this.panelMainReport.Controls.Add(this.groupBox10);
             this.panelMainReport.Controls.Add(this.groupBox7);
@@ -649,9 +651,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox10.Controls.Add(this.datagridviewEmptyLabel);
             this.groupBox10.Controls.Add(this.dataGridViewAssetRecords);
             this.groupBox10.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox10.Location = new System.Drawing.Point(3, 644);
+            this.groupBox10.Location = new System.Drawing.Point(3, 746);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1255, 404);
+            this.groupBox10.Size = new System.Drawing.Size(1255, 478);
             this.groupBox10.TabIndex = 58;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "RECORDS";
@@ -679,7 +681,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.dataGridViewAssetRecords.Location = new System.Drawing.Point(23, 35);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
-            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1211, 348);
+            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1211, 422);
             this.dataGridViewAssetRecords.TabIndex = 1;
             // 
             // groupBox7
@@ -688,7 +690,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.textBoxPurhcaseAmountTotal);
             this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Location = new System.Drawing.Point(361, 148);
+            this.groupBox7.Location = new System.Drawing.Point(362, 245);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(897, 103);
             this.groupBox7.TabIndex = 55;
@@ -722,7 +724,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox8.Controls.Add(this.chartEmptyRecordLabelMissing);
             this.groupBox8.Controls.Add(this.chartAssetMissing);
             this.groupBox8.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(621, 257);
+            this.groupBox8.Location = new System.Drawing.Point(622, 354);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(637, 385);
             this.groupBox8.TabIndex = 57;
@@ -748,17 +750,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetMissing.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.chartAssetMissing.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartAssetMissing.Legends.Add(legend3);
+            chartArea5.Name = "ChartArea1";
+            this.chartAssetMissing.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartAssetMissing.Legends.Add(legend5);
             this.chartAssetMissing.Location = new System.Drawing.Point(15, 40);
             this.chartAssetMissing.Name = "chartAssetMissing";
             this.chartAssetMissing.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartAssetMissing.Series.Add(series3);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartAssetMissing.Series.Add(series5);
             this.chartAssetMissing.Size = new System.Drawing.Size(602, 320);
             this.chartAssetMissing.TabIndex = 50;
             this.chartAssetMissing.Text = "chart1";
@@ -767,7 +769,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.labelTotalCountOfAssets);
-            this.groupBox5.Location = new System.Drawing.Point(9, 148);
+            this.groupBox5.Location = new System.Drawing.Point(10, 245);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(337, 103);
             this.groupBox5.TabIndex = 54;
@@ -798,7 +800,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6.Controls.Add(this.chartEmptyRecordLabelCondition);
             this.groupBox6.Controls.Add(this.chartAssetByCondition);
             this.groupBox6.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(5, 257);
+            this.groupBox6.Location = new System.Drawing.Point(6, 354);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(612, 385);
             this.groupBox6.TabIndex = 56;
@@ -822,27 +824,38 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetByCondition.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.chartAssetByCondition.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartAssetByCondition.Legends.Add(legend4);
+            chartArea6.Name = "ChartArea1";
+            this.chartAssetByCondition.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartAssetByCondition.Legends.Add(legend6);
             this.chartAssetByCondition.Location = new System.Drawing.Point(15, 40);
             this.chartAssetByCondition.Name = "chartAssetByCondition";
             this.chartAssetByCondition.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartAssetByCondition.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartAssetByCondition.Series.Add(series6);
             this.chartAssetByCondition.Size = new System.Drawing.Size(577, 320);
             this.chartAssetByCondition.TabIndex = 50;
             this.chartAssetByCondition.Text = "chart1";
+            // 
+            // richTextBoxHeader
+            // 
+            this.richTextBoxHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxHeader.Location = new System.Drawing.Point(10, 127);
+            this.richTextBoxHeader.Name = "richTextBoxHeader";
+            this.richTextBoxHeader.ReadOnly = true;
+            this.richTextBoxHeader.Size = new System.Drawing.Size(1248, 108);
+            this.richTextBoxHeader.TabIndex = 59;
+            this.richTextBoxHeader.Text = "";
+            this.richTextBoxHeader.TextChanged += new System.EventHandler(this.richTextBoxHeader_TextChanged);
             // 
             // MainGenerateReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelFilterHandler);
             this.Controls.Add(this.panelMainReport);
+            this.Controls.Add(this.panelFilterHandler);
             this.Name = "MainGenerateReports";
             this.Size = new System.Drawing.Size(1281, 1033);
             this.panelFilterHandler.ResumeLayout(false);
@@ -936,5 +949,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RichTextBox richTextBoxHeader;
     }
 }

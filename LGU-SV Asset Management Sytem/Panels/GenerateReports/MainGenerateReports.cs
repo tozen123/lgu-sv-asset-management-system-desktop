@@ -67,6 +67,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             GetTotalPurchaseAmount();
             GetAssetMissing();
             GetAssets();
+
+
+            richTextBoxHeader.ReadOnly = false;
+            richTextBoxHeader.Clear();
+            richTextBoxHeader.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBoxHeader.AppendText(
+                "LGU - San Vicente " +
+                "\nAsset Management System");
+            richTextBoxHeader.ReadOnly = true;
         }
 
         private void buttonClearFilter_Click(object sender, EventArgs e)
@@ -931,6 +940,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 
         }
 
-        
+        private void richTextBoxHeader_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
