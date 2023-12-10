@@ -70,6 +70,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.checkBoxMHO = new System.Windows.Forms.CheckBox();
             this.checkBoxGSO = new System.Windows.Forms.CheckBox();
             this.panelMainReport = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.richTextBoxHeader = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.roundedButtonSaveAsPanel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.roundedButtonFilter = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -89,7 +91,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chartEmptyRecordLabelCondition = new System.Windows.Forms.Label();
             this.chartAssetByCondition = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.richTextBoxHeader = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelposition = new System.Windows.Forms.Label();
             this.panelFilterHandler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -100,6 +105,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelMainReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).BeginInit();
@@ -539,6 +545,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelMainReport.AutoScroll = true;
             this.panelMainReport.AutoSize = true;
             this.panelMainReport.BackColor = System.Drawing.Color.White;
+            this.panelMainReport.Controls.Add(this.pictureBox4);
             this.panelMainReport.Controls.Add(this.richTextBoxHeader);
             this.panelMainReport.Controls.Add(this.groupBox2);
             this.panelMainReport.Controls.Add(this.groupBox10);
@@ -552,6 +559,28 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelMainReport.Size = new System.Drawing.Size(1281, 1033);
             this.panelMainReport.TabIndex = 2;
             this.panelMainReport.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMainReport_Paint);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.LGU_SV_Logo;
+            this.pictureBox4.Location = new System.Drawing.Point(139, 92);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(94, 111);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 60;
+            this.pictureBox4.TabStop = false;
+            // 
+            // richTextBoxHeader
+            // 
+            this.richTextBoxHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxHeader.Location = new System.Drawing.Point(127, 127);
+            this.richTextBoxHeader.Name = "richTextBoxHeader";
+            this.richTextBoxHeader.ReadOnly = true;
+            this.richTextBoxHeader.Size = new System.Drawing.Size(1131, 108);
+            this.richTextBoxHeader.TabIndex = 59;
+            this.richTextBoxHeader.Text = "";
+            this.richTextBoxHeader.TextChanged += new System.EventHandler(this.richTextBoxHeader_TextChanged);
             // 
             // groupBox2
             // 
@@ -648,12 +677,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.AutoSize = true;
+            this.groupBox10.Controls.Add(this.labelposition);
+            this.groupBox10.Controls.Add(this.labelName);
+            this.groupBox10.Controls.Add(this.textBox2);
+            this.groupBox10.Controls.Add(this.textBox1);
             this.groupBox10.Controls.Add(this.datagridviewEmptyLabel);
             this.groupBox10.Controls.Add(this.dataGridViewAssetRecords);
             this.groupBox10.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox10.Location = new System.Drawing.Point(3, 746);
+            this.groupBox10.Location = new System.Drawing.Point(3, 754);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1255, 478);
+            this.groupBox10.Size = new System.Drawing.Size(1256, 764);
             this.groupBox10.TabIndex = 58;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "RECORDS";
@@ -681,7 +714,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.dataGridViewAssetRecords.Location = new System.Drawing.Point(23, 35);
             this.dataGridViewAssetRecords.Name = "dataGridViewAssetRecords";
             this.dataGridViewAssetRecords.ReadOnly = true;
-            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1211, 422);
+            this.dataGridViewAssetRecords.Size = new System.Drawing.Size(1213, 514);
             this.dataGridViewAssetRecords.TabIndex = 1;
             // 
             // groupBox7
@@ -839,16 +872,45 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.chartAssetByCondition.TabIndex = 50;
             this.chartAssetByCondition.Text = "chart1";
             // 
-            // richTextBoxHeader
+            // textBox1
             // 
-            this.richTextBoxHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxHeader.Location = new System.Drawing.Point(10, 127);
-            this.richTextBoxHeader.Name = "richTextBoxHeader";
-            this.richTextBoxHeader.ReadOnly = true;
-            this.richTextBoxHeader.Size = new System.Drawing.Size(1248, 108);
-            this.richTextBoxHeader.TabIndex = 59;
-            this.richTextBoxHeader.Text = "";
-            this.richTextBoxHeader.TextChanged += new System.EventHandler(this.richTextBoxHeader_TextChanged);
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(23, 616);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(371, 23);
+            this.textBox1.TabIndex = 57;
+            this.textBox1.Text = "-";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(23, 683);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(371, 23);
+            this.textBox2.TabIndex = 58;
+            this.textBox2.Text = "-";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(19, 594);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(42, 19);
+            this.labelName.TabIndex = 59;
+            this.labelName.Text = "Name";
+            // 
+            // labelposition
+            // 
+            this.labelposition.AutoSize = true;
+            this.labelposition.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelposition.Location = new System.Drawing.Point(19, 661);
+            this.labelposition.Name = "labelposition";
+            this.labelposition.Size = new System.Drawing.Size(52, 19);
+            this.labelposition.TabIndex = 60;
+            this.labelposition.Text = "Position";
             // 
             // MainGenerateReports
             // 
@@ -875,6 +937,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox1.PerformLayout();
             this.panelMainReport.ResumeLayout(false);
             this.panelMainReport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -950,5 +1013,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RichTextBox richTextBoxHeader;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelposition;
     }
 }

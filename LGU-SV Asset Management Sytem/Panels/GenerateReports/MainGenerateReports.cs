@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 {   
   
@@ -73,8 +77,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             richTextBoxHeader.Clear();
             richTextBoxHeader.SelectionAlignment = HorizontalAlignment.Center;
             richTextBoxHeader.AppendText(
-                "LGU - San Vicente " +
-                "\nAsset Management System");
+                "Republic of the Philippines" +
+                "\nProvince of Camarines Norte" +
+                "\nMUNICIPALITY OF SAN VICENTE");
             richTextBoxHeader.ReadOnly = true;
         }
 
@@ -167,48 +172,55 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 panelFilterHandler.SendToBack();
             }
         }
-
+        
         private void roundedButtonSaveAsPanel_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = new Bitmap(panelMainReport.Width, panelMainReport.Height);
-            panelMainReport.DrawToBitmap(bitmap, new Rectangle(0, 0, panelMainReport.Width, panelMainReport.Height));
-
-
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            try
             {
-                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp";
-                saveFileDialog.Title = "Save As Image";
-                saveFileDialog.ShowDialog();
-
-            
-                if (saveFileDialog.FileName != "")
-                {
-                    
-                    string fileExtension = Path.GetExtension(saveFileDialog.FileName);
-
               
-                    switch (fileExtension.ToLower())
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+
+                    saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*";
+                    saveFileDialog.DefaultExt = "pdf";
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        case ".png":
-                            bitmap.Save(saveFileDialog.FileName, ImageFormat.Png);
-                            break;
-                        case ".jpg":
-                            bitmap.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
-                            break;
-                        case ".bmp":
-                            bitmap.Save(saveFileDialog.FileName, ImageFormat.Bmp);
-                            break;
-                        default:
-                         
-                            break;
+                        groupBox2.Visible = false;
+
+                        string outputPath = saveFileDialog.FileName;
+
+                        using (var stream = new FileStream(outputPath, FileMode.Create))
+                        {
+                            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 20f, 20f, 20f, 20f);
+                            PdfWriter pw = PdfWriter.GetInstance(doc, stream);
+
+                            doc.Open();
+
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(new Bitmap(panelMainReport.Width, panelMainReport.Height), System.Drawing.Imaging.ImageFormat.Jpeg);
+                            img.Alignment = Element.ALIGN_CENTER;
+
+                            doc.Add(img);
+
+                            doc.Close();
+                        }
+
+                        groupBox2.Visible = true;
+                        MessagePrompt($"Exported as PDF successfully to {outputPath}");
                     }
                 }
             }
-
-
-            bitmap.Dispose();
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
         }
-
+        private void MessagePrompt(string message)
+        {
+            DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+            prompt.SetMessage(message);
+            prompt.ShowDialog();
+        }
         private void roundedButtonPrintPanel_Click(object sender, EventArgs e)
         {
             PrintDocument printDocument1 = new PrintDocument();
@@ -225,7 +237,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Bitmap bitmap = new Bitmap(panelMainReport.Width, panelMainReport.Height);
-            panelMainReport.DrawToBitmap(bitmap, new Rectangle(0, 0, panelMainReport.Width, panelMainReport.Height));
+            panelMainReport.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, panelMainReport.Width, panelMainReport.Height));
             e.Graphics.DrawImage(bitmap, e.PageBounds);
         }
 
