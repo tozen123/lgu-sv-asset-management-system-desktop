@@ -29,12 +29,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelFilterHandler = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -70,6 +70,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.checkBoxMHO = new System.Windows.Forms.CheckBox();
             this.checkBoxGSO = new System.Windows.Forms.CheckBox();
             this.panelMainReport = new System.Windows.Forms.Panel();
+            this.labelposition = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.textBoxP = new System.Windows.Forms.TextBox();
+            this.textBoxN = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.richTextBoxHeader = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -91,10 +95,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chartEmptyRecordLabelCondition = new System.Windows.Forms.Label();
             this.chartAssetByCondition = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.labelposition = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.textBoxP = new System.Windows.Forms.TextBox();
-            this.textBoxN = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelFilterHandler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -564,6 +565,44 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelMainReport.TabIndex = 2;
             this.panelMainReport.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMainReport_Paint);
             // 
+            // labelposition
+            // 
+            this.labelposition.AutoSize = true;
+            this.labelposition.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelposition.Location = new System.Drawing.Point(411, 25);
+            this.labelposition.Name = "labelposition";
+            this.labelposition.Size = new System.Drawing.Size(52, 19);
+            this.labelposition.TabIndex = 64;
+            this.labelposition.Text = "Position";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(25, 25);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(42, 19);
+            this.labelName.TabIndex = 63;
+            this.labelName.Text = "Name";
+            // 
+            // textBoxP
+            // 
+            this.textBoxP.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxP.Location = new System.Drawing.Point(415, 47);
+            this.textBoxP.Name = "textBoxP";
+            this.textBoxP.Size = new System.Drawing.Size(371, 30);
+            this.textBoxP.TabIndex = 62;
+            this.textBoxP.Text = "-";
+            // 
+            // textBoxN
+            // 
+            this.textBoxN.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxN.Location = new System.Drawing.Point(29, 47);
+            this.textBoxN.Name = "textBoxN";
+            this.textBoxN.Size = new System.Drawing.Size(371, 30);
+            this.textBoxN.TabIndex = 61;
+            this.textBoxN.Text = "-";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.LGU_SV_Logo;
@@ -721,6 +760,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.textBoxPurhcaseAmountTotal);
             this.groupBox7.Controls.Add(this.label5);
             this.groupBox7.Location = new System.Drawing.Point(474, 269);
@@ -734,19 +774,19 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.textBoxPurhcaseAmountTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPurhcaseAmountTotal.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxPurhcaseAmountTotal.Location = new System.Drawing.Point(371, 35);
+            this.textBoxPurhcaseAmountTotal.Location = new System.Drawing.Point(358, 35);
             this.textBoxPurhcaseAmountTotal.Name = "textBoxPurhcaseAmountTotal";
             this.textBoxPurhcaseAmountTotal.ReadOnly = true;
-            this.textBoxPurhcaseAmountTotal.Size = new System.Drawing.Size(323, 60);
+            this.textBoxPurhcaseAmountTotal.Size = new System.Drawing.Size(336, 60);
             this.textBoxPurhcaseAmountTotal.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(347, 42);
+            this.label5.Size = new System.Drawing.Size(301, 37);
             this.label5.TabIndex = 0;
             this.label5.Text = "TOTAL PURCHASE AMOUNT ";
             // 
@@ -783,17 +823,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetMissing.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.chartAssetMissing.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartAssetMissing.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartAssetMissing.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAssetMissing.Legends.Add(legend1);
             this.chartAssetMissing.Location = new System.Drawing.Point(15, 40);
             this.chartAssetMissing.Name = "chartAssetMissing";
             this.chartAssetMissing.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartAssetMissing.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartAssetMissing.Series.Add(series1);
             this.chartAssetMissing.Size = new System.Drawing.Size(530, 320);
             this.chartAssetMissing.TabIndex = 50;
             this.chartAssetMissing.Text = "chart1";
@@ -857,58 +897,30 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartAssetByCondition.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.chartAssetByCondition.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartAssetByCondition.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartAssetByCondition.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartAssetByCondition.Legends.Add(legend2);
             this.chartAssetByCondition.Location = new System.Drawing.Point(15, 40);
             this.chartAssetByCondition.Name = "chartAssetByCondition";
             this.chartAssetByCondition.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartAssetByCondition.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartAssetByCondition.Series.Add(series2);
             this.chartAssetByCondition.Size = new System.Drawing.Size(467, 320);
             this.chartAssetByCondition.TabIndex = 50;
             this.chartAssetByCondition.Text = "chart1";
             // 
-            // labelposition
+            // label4
             // 
-            this.labelposition.AutoSize = true;
-            this.labelposition.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelposition.Location = new System.Drawing.Point(411, 25);
-            this.labelposition.Name = "labelposition";
-            this.labelposition.Size = new System.Drawing.Size(52, 19);
-            this.labelposition.TabIndex = 64;
-            this.labelposition.Text = "Position";
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(25, 25);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(42, 19);
-            this.labelName.TabIndex = 63;
-            this.labelName.Text = "Name";
-            // 
-            // textBoxP
-            // 
-            this.textBoxP.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxP.Location = new System.Drawing.Point(415, 47);
-            this.textBoxP.Name = "textBoxP";
-            this.textBoxP.Size = new System.Drawing.Size(371, 30);
-            this.textBoxP.TabIndex = 62;
-            this.textBoxP.Text = "-";
-            // 
-            // textBoxN
-            // 
-            this.textBoxN.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxN.Location = new System.Drawing.Point(29, 47);
-            this.textBoxN.Name = "textBoxN";
-            this.textBoxN.Size = new System.Drawing.Size(371, 30);
-            this.textBoxN.TabIndex = 61;
-            this.textBoxN.Text = "-";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(315, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 42);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "₱";
             // 
             // MainGenerateReports
             // 
@@ -1016,5 +1028,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxP;
         private System.Windows.Forms.TextBox textBoxN;
+        private System.Windows.Forms.Label label4;
     }
 }

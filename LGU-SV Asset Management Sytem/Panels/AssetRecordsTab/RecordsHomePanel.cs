@@ -51,23 +51,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                            "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                            "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit + " AND A.assetIsMissing = 0 AND assetCondition = 'SERVICEABLE'";
+                           "WHERE A.assetLocation = @uLocation ";
             /*
             string query = "SELECT A.assetId, " +
-                    "       CONCAT(ASupervisor.assetSupervisorFName, ' ', ASupervisor.assetSupervisorMName, ' ', ASupervisor.assetSupervisorLName, '; ', ASupervisor.assetSupervisorID) AS assetSupervisorFullName, " +
-                    "       CONCAT(AEmployee.AssetEmployeeFName, ' ', AEmployee.AssetEmployeeMName, ' ', AEmployee.AssetEmployeeLName, '; ', AEmployee.assetEmployeeID) AS currentAssetEmployeeFullName, " +
-                    "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
-                    "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
-                    "       A.assetName, A.assetCondition, A.assetAvailability, " +
-                    "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
-                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetLastMaintenance, A.assetIsMaintainable," +
-                    "       A.assetIsMissing, A.assetLifeSpan, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
-                    "FROM Assets A " +
-                    "LEFT JOIN AssetSupervisor ASupervisor ON A.assetSupervisorID = ASupervisor.assetSupervisorID " +
-                    "LEFT JOIN AssetEmployee AEmployee ON A.currentCustodianAssetEmployeeID = AEmployee.assetEmployeeID " +
-                    "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
-                    "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                    "WHERE A.assetLocation = @uLocation";
+                           "       A.assetPropertyNumber, A.assetName, " +
+                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
+                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
+                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
+                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
+                           "FROM Assets A " +
+                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
+                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                           "WHERE A.assetLocation = @uLocation ";
             */
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {

@@ -239,7 +239,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                                 table.AddCell(asset.AssetPropertyNumber.ToString());
                                 table.AddCell(asset.AssetCondition);
                                 table.AddCell(asset.AssetPurchaseDate.ToString());
-                                table.AddCell(asset.AssetPurchaseAmount.ToString());
+                                PdfPCell pesoCell = new PdfPCell(new Phrase("₱ " + asset.AssetPurchaseAmount.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12)));
+                                table.AddCell(pesoCell);
                             }
 
                             doc.Add(table);

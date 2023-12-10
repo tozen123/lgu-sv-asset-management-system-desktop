@@ -171,7 +171,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels
             dataGridViewAssetRecords.DataSource = FetchDataFromDB(0);
 
 
-         
+            labelTotal.Text = dataTable.Rows.Count.ToString();
 
         }
 
