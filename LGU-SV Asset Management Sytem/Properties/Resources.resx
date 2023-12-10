@@ -124,9 +124,6 @@
   <data name="buttonClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonMissingAsset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonMissingAsset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="buttonDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,14 +142,20 @@
   <data name="buttonEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buttonBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonAssetRecords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonAssetRecords.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonPrev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonPrev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonArchiveRecords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonArchiveRecords.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,28 +166,28 @@
   <data name="buttonAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonAbout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonPrev" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonPrev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonMissingAsset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonMissingAsset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="filter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filter_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new_tab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_tab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="filter_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="buttonGenerateReports" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonGenerateReports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AppLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AppLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LGU-SV Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LGU-SV Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

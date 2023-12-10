@@ -51,8 +51,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
             Asset newAsset = new Asset();
             assetToAdd.Add(newAsset);
-
-          
+            pictureBoxAssetImage.Image = LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            pictureBoxAssetImage.Image.Tag = "empty_image";
         }
         private void Init()
         {
@@ -82,6 +82,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             comboBoxCondition.Items.Add("SERVICEABLE");
             comboBoxCondition.Items.Add("NON-SERVICEABLE");
 
+            // ----------------
+            // ----------------
+            // ----------------
+            //  Automatically Sets the condition to serviceable
+            comboBoxCondition.SelectedItem = comboBoxCondition.Items[0];
+            comboBoxCondition.Enabled = false;
+            // ----------------
+            // ----------------
+            // ----------------
 
             comboBoxUnit.Items.Add("SET");
             comboBoxUnit.Items.Add("SINGLE");
@@ -361,6 +370,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     return;
                 }
 
+                if (comboBoxCondition.SelectedItem == null)
+                {
+                    MessagePrompt("Empty Field: Please select a value from the conditions.");
+                    return;
+                }
+
                 if (ComboBox_Employee.SelectedItem == null)
                 {
                     MessagePrompt("Empty Field: Please select a value from the coordinators.");
@@ -403,7 +418,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     return;
                 }
 
-                if (pictureBoxAssetImage.Image == LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image)
+                
+                if(pictureBoxAssetImage.Image == null)
                 {
                     MessagePrompt("Empty Field: Please upload an image for the asset");
                     return;

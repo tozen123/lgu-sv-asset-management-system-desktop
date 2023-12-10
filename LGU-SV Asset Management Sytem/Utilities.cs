@@ -19,7 +19,14 @@ namespace LGU_SV_Asset_Management_Sytem
                 return ms.ToArray();
             }
         }
-
+        public static byte[] ConvertBitmapToByteArray(Bitmap bitmap)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                return stream.ToArray();
+            }
+        }
         public static Image ConvertByteArrayToImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))

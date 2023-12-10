@@ -379,9 +379,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.Size = new System.Drawing.Size(74, 23);
             this.label5.TabIndex = 36;
-            this.label5.Text = "Price:";
+            this.label5.Text = "Price: (₱)";
             // 
             // label3
             // 
@@ -490,8 +490,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.TextBox textBoxPurchaseAmount;
         private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBoxCondition;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxUnit;
         private System.Windows.Forms.DateTimePicker dateTimePickerPurchase;
@@ -511,5 +509,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.RichTextBox richTextBoxPurpose;
         private RoundedButton buttonSave;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBoxCondition;
     }
 }

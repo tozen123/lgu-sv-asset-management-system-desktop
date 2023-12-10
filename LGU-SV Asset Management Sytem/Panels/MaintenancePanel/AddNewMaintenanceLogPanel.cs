@@ -84,6 +84,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.MaintenancePanel
                 MessagePrompt("Please select a Maintenance Status.");
                 return; 
             }
+
+            string t = richTextBoxDescription.Text;
+            if (t.Equals(""))
+            {
+                richTextBoxDescription.Text = "N/A";
+            }
             assetMaintenanceLog.MaintenanceStatus = comboBoxStatus.SelectedItem.ToString();
 
             assetMaintenanceLog.MaintenanceDescription = richTextBoxDescription.Text;

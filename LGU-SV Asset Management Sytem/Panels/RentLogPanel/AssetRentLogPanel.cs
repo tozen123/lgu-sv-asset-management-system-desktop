@@ -71,7 +71,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
                         break;
                     case "rentReturnDate":
                         col.HeaderText = "Rent Returned Date";
-                        col.DefaultCellStyle.NullValue = "Not Returned";
+                        col.DefaultCellStyle.NullValue = "-";
+                        break;
+                    case "rentStatus":
+                        col.HeaderText = "Rent Status";
+                        col.DefaultCellStyle.NullValue = "-";
+                        break;
+                    case "rentFee":
+                        col.HeaderText = "Rent Fee";
+                        col.DefaultCellStyle.NullValue = "0";
                         break;
                     default:
                         col.HeaderText = column.ColumnName;
@@ -118,7 +126,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.RentLogPanel
                                 rl.renteeAddress,
                                 rl.renteeContactNumber, 
                                 rl.rentInitiatedDate, 
-                                rl.rentReturnDate
+                                rl.rentReturnDate,
+                                rl.rentFee,
+                                rl.rentStatus
+                                
                             FROM
                                 RentLog rl
                             JOIN

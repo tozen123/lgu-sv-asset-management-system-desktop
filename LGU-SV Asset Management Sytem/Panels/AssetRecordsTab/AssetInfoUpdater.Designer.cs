@@ -34,6 +34,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.roundedButtonCancel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.labelAssetID_Name = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.roundedButton1 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.textBoxPNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.roundedButton1 = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +142,40 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBox1.Location = new System.Drawing.Point(218, 362);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
+            // 
+            // roundedButton1
+            // 
+            this.roundedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButton1.BorderRadius = 0;
+            this.roundedButton1.BorderSize = 0;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.Location = new System.Drawing.Point(22, 327);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.roundedButton1.Size = new System.Drawing.Size(562, 29);
+            this.roundedButton1.TabIndex = 5;
+            this.roundedButton1.Text = "Browse File";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            // 
             // textBoxPNumber
             // 
             this.textBoxPNumber.Font = new System.Drawing.Font("Poppins", 9.75F);
@@ -220,9 +254,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label5.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.label5.Location = new System.Drawing.Point(18, 121);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 23);
+            this.label5.Size = new System.Drawing.Size(70, 23);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Price:";
+            this.label5.Text = "Price: (₱)";
             // 
             // label7
             // 
@@ -320,40 +354,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label9.Size = new System.Drawing.Size(211, 26);
             this.label9.TabIndex = 4;
             this.label9.Text = "Asset Information Update |";
-            // 
-            // roundedButton1
-            // 
-            this.roundedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButton1.BorderRadius = 0;
-            this.roundedButton1.BorderSize = 0;
-            this.roundedButton1.FlatAppearance.BorderSize = 0;
-            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.Location = new System.Drawing.Point(22, 327);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.roundedButton1.Size = new System.Drawing.Size(562, 29);
-            this.roundedButton1.TabIndex = 5;
-            this.roundedButton1.Text = "Browse File";
-            this.roundedButton1.TextColor = System.Drawing.Color.White;
-            this.roundedButton1.UseVisualStyleBackColor = false;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
-            this.pictureBox1.Location = new System.Drawing.Point(218, 362);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 67;
-            this.pictureBox1.TabStop = false;
             // 
             // AssetInfoUpdater
             // 

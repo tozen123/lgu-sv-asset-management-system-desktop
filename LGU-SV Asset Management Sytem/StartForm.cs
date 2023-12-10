@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -85,11 +86,25 @@ namespace LGU_SV_Asset_Management_Sytem
                 }
             }
         }
-
+        private void MessagePrompt(string message)
+        {
+            DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
+            prompt.SetMessage(message);
+            prompt.Show();
+        }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string inputEmail = textBoxEmail.Text;
             string inputPassword = textBoxPassword.Text;
+
+            if(inputEmail.Equals("OR 1=1"))
+            {
+                MessagePrompt("An attempt for SQL Injection detected. Please don't. This system is protected by those attacks");
+            }
+            if (inputEmail.Equals("OR 1=1"))
+            {
+                MessagePrompt("An attempt for SQL Injection detected. Please don't. This system is protected by those attacks");
+            }
 
             string query = "SELECT COUNT(*) FROM Users WHERE userID = @UserId AND userPassword = @Password " +
                 "AND (EXISTS (SELECT 1 FROM AssetAdministrator WHERE userID = @UserId) " +
@@ -267,6 +282,11 @@ namespace LGU_SV_Asset_Management_Sytem
             labelErrorHandler.Visible = true;
             labelErrorHandler.Text = message;
         }
+        private bool ValidatePhoneNumber(string phoneNumber)
+        {
+           
+            return phoneNumber.StartsWith("09") && phoneNumber.Length == 11 && phoneNumber.All(char.IsDigit);
+        }
         private void buttonAccountSetup_Click(object sender, EventArgs e)
         {
             string firstname = textBoxAccSetupFirstName.Text;
@@ -274,6 +294,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (string.IsNullOrEmpty(firstname))
             {
                 labelAccountSetupErrorHandler.Text = "Please enter your first name";
+                MessagePrompt("Please enter your first name");
                 return;
             }
 
@@ -282,6 +303,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (string.IsNullOrEmpty(middlename))
             {
                 labelAccountSetupErrorHandler.Text = "Please enter your middle name";
+                MessagePrompt("Please enter your middle name");
                 return;
             }
 
@@ -290,6 +312,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (string.IsNullOrEmpty(lastname))
             {
                 labelAccountSetupErrorHandler.Text = "Please enter your last name";
+                MessagePrompt("Please enter your last name");
                 return;
             }
 
@@ -298,6 +321,12 @@ namespace LGU_SV_Asset_Management_Sytem
             if (string.IsNullOrEmpty(phonenum))
             {
                 labelAccountSetupErrorHandler.Text = "Please enter a valid phone number.";
+                MessagePrompt("Please enter a valid phone number.");
+                return;
+            }
+            if (!ValidatePhoneNumber(phonenum))
+            {
+                MessagePrompt("Invalid phone number. Please enter a valid 11-digit number starting with '09'.");
                 return;
             }
 
@@ -306,6 +335,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (string.IsNullOrEmpty(department))
             {
                 labelAccountSetupErrorHandler.Text = "Please enter your department";
+                MessagePrompt("Please enter your department");
                 return;
             }
 
@@ -313,18 +343,27 @@ namespace LGU_SV_Asset_Management_Sytem
 
             if (string.IsNullOrEmpty(address))
             {
+                MessagePrompt("Please enter your address");
                 labelAccountSetupErrorHandler.Text = "Please enter your address";
                 return;
             }
 
             string email = textBoxAccSetupEmail.Text;
-
+            string emailPattern = @"^\S+@\S+\.\S+$";
             if (string.IsNullOrEmpty(email))
             {
+                MessagePrompt("Please enter your email");
                 labelAccountSetupErrorHandler.Text = "Please enter your email";
                 return;
             }
 
+            if (!Regex.IsMatch(email, emailPattern))
+            {
+                MessagePrompt("Invalid email format");
+                labelAccountSetupErrorHandler.Text = "Invalid email format";
+                return;
+            }
+            
             labelErrorHandler.Visible = false;
 
             string id = textBoxRegistrationID.Text;
@@ -494,6 +533,46 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         private void comboBoxAccSetupDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelErrorHandler_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistrationAccountSetup1_Paint(object sender, PaintEventArgs e)
         {
 
         }

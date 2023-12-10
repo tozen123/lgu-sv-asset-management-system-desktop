@@ -225,16 +225,13 @@ namespace LGU_SV_Asset_Management_Sytem
                 string lnumber = mainform.textBoxTransactionRenteeLicenseID.Text;
                 Image validimage = mainform.pictureBoxValidIDImage.Image;
 
+                decimal val = Convert.ToDecimal(mainform.textBoxRentFee.Text);
 
-                if (string.IsNullOrEmpty(fname))
-                {
-                    return;
-                }
-
+             
 
                 string query = "INSERT INTO RentLog (assetId, renteeFirstName, renteeMidName, renteeLastName, renteeAddress, " +
-                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage, rentInitiatedDate, rentStatus ) VALUES " +
-                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage, @iniDate, @status )";
+                    "renteeBirthdate, renteeContactNumber, renteeLicenseNumber, renteeValidIDImage, rentInitiatedDate, rentStatus, rentFee, rentOriginQuantity ) VALUES " +
+                    "(@selectedAssetId, @fname, @mname, @lname, @addr, @bdate, @cnumber, @lnumber, @validimage, @iniDate, @status, @fee, @orig )";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>()
                 {
@@ -248,7 +245,9 @@ namespace LGU_SV_Asset_Management_Sytem
                     {"@lnumber", lnumber},
                     {"@validimage", Utilities.ConvertImageToBytes(validimage)},
                     {"@iniDate", mainform.dateTimePickerTransactionRentStart.Value},
-                    {"@status", "Not Returned"}
+                    {"@status", "Not Returned"},
+                    {"@fee", val},
+                    {"@orig", AssetInProcess().AssetQuantity}
 
                 };
 

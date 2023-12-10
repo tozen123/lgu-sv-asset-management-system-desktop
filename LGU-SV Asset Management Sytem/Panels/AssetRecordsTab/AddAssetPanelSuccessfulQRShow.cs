@@ -35,7 +35,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             labelAssetName.Text = list[indexLoad].AssetName;
             labelAssetID.Text = list[indexLoad].AssetId.ToString();
-            pictureBoxQR.Image = Utilities.ConvertByteArrayToImage(list[indexLoad].AssetQRCodeImage);
+            //pictureBoxQR.Image = Utilities.ConvertByteArrayToImage(list[indexLoad].AssetQRCodeImage);
 
         }
 
@@ -52,7 +52,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                SavePictureBoxAsPNG(pictureBoxQR, saveFileDialog.FileName);
+                //SavePictureBoxAsPNG(pictureBoxQR, saveFileDialog.FileName);
             }
         }
 
@@ -124,10 +124,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             
-            Image imageToPrint = pictureBoxQR.Image;
+            //Image imageToPrint = pictureBoxQR.Image;
 
        
-            e.Graphics.DrawImage(imageToPrint, new Rectangle(0, 0, e.PageBounds.Width, e.PageBounds.Height));
+           // e.Graphics.DrawImage(imageToPrint, new Rectangle(0, 0, e.PageBounds.Width, e.PageBounds.Height));
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

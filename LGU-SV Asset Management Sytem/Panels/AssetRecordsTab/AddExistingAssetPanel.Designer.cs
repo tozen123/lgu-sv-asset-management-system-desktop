@@ -32,6 +32,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonAddMoreAsset = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelAssetCount = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.richTextBoxPurpose = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBoxImage = new System.Windows.Forms.GroupBox();
+            this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.buttonUploadAssetImage = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
@@ -60,14 +62,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabAddingAsset = new System.Windows.Forms.TabControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAssetImage = new System.Windows.Forms.PictureBox();
             this.buttonSave = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.tabPage1.SuspendLayout();
-            this.groupBoxImage.SuspendLayout();
-            this.tabAddingAsset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).BeginInit();
+            this.tabAddingAsset.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAddMoreAsset
@@ -135,6 +135,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.labelAssetCount.Size = new System.Drawing.Size(15, 22);
             this.labelAssetCount.TabIndex = 54;
             this.labelAssetCount.Text = "1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1109, 30);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
             // 
             // textBoxPNumber
             // 
@@ -206,6 +217,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.groupBoxImage.TabIndex = 53;
             this.groupBoxImage.TabStop = false;
             this.groupBoxImage.Text = "Asset Image";
+            // 
+            // pictureBoxAssetImage
+            // 
+            this.pictureBoxAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBoxAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
+            this.pictureBoxAssetImage.Location = new System.Drawing.Point(6, 19);
+            this.pictureBoxAssetImage.Name = "pictureBoxAssetImage";
+            this.pictureBoxAssetImage.Size = new System.Drawing.Size(268, 243);
+            this.pictureBoxAssetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAssetImage.TabIndex = 1;
+            this.pictureBoxAssetImage.TabStop = false;
             // 
             // buttonUploadAssetImage
             // 
@@ -364,9 +386,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.Size = new System.Drawing.Size(74, 23);
             this.label5.TabIndex = 36;
-            this.label5.Text = "Price:";
+            this.label5.Text = "Price: (₱)";
             // 
             // label3
             // 
@@ -420,27 +442,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.tabAddingAsset.Size = new System.Drawing.Size(1113, 503);
             this.tabAddingAsset.TabIndex = 29;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1109, 30);
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxAssetImage
-            // 
-            this.pictureBoxAssetImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBoxAssetImage.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.empty_image;
-            this.pictureBoxAssetImage.Location = new System.Drawing.Point(6, 19);
-            this.pictureBoxAssetImage.Name = "pictureBoxAssetImage";
-            this.pictureBoxAssetImage.Size = new System.Drawing.Size(268, 243);
-            this.pictureBoxAssetImage.TabIndex = 1;
-            this.pictureBoxAssetImage.TabStop = false;
-            // 
             // buttonSave
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -474,10 +475,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.Size = new System.Drawing.Size(1129, 591);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBoxImage.ResumeLayout(false);
-            this.tabAddingAsset.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAssetImage)).EndInit();
+            this.tabAddingAsset.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

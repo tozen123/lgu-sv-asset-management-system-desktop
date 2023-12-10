@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 
 using static LGU_SV_Asset_Management_Sytem.Asset;
+using System.Text.RegularExpressions;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -105,7 +106,11 @@ namespace LGU_SV_Asset_Management_Sytem
 
 
 
+            buttonDashboard.PerformClick();
 
+
+            //Set default value at rent
+            textBoxRentFee.Text = "0";
         }
 
         // Initialize Controls
@@ -128,9 +133,11 @@ namespace LGU_SV_Asset_Management_Sytem
                 case "Asset Coordinator":
                     buttonOthers.Visible = false;
                     buttonAssetRecordsNewAsset.Visible = false;
+                    comboBoxProfileDept.Enabled = false;
                     break;
                 case "Asset Administrator":
                     buttonAssetRecordsNewAsset.Visible = true;
+                    comboBoxProfileDept.Enabled = false;
                     break;
             }
 
@@ -430,8 +437,45 @@ namespace LGU_SV_Asset_Management_Sytem
         }
         private void FetchSupplierDataSource()
         {
-            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+            //dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
 
+            dataGridViewSupplier.DataSource = null;
+
+            DataTable dataTable = supplierController.GetAllSupplier();
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+
+                    case "supplierId":
+                        col.HeaderText = "ID";
+                        break;
+                    case "supplierName":
+                        col.HeaderText = "Name";
+                        break;
+                    case "supplierPhoneNum":
+                        col.HeaderText = "Phone Number";
+                        break;
+                    case "supplierAddress":
+                        col.HeaderText = "Address";
+                        break;
+                   
+
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewSupplier.Font).Width + 90;
+
+                dataGridViewSupplier.Columns.Add(col);
+            }
+            
             if (dataGridViewSupplier.Columns["DeleteButtonColumn"] == null)
             {
                 if(currentSessionUserType != "Asset Administrator")
@@ -451,6 +495,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 // Adjust the button column's display index to make it the last column
                 deleteButtonColumn.DisplayIndex = dataGridViewSupplier.Columns.Count - 1;
             }
+            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
         }
         private void SetActiveTab()
         {
@@ -462,6 +507,8 @@ namespace LGU_SV_Asset_Management_Sytem
             if (CheckSession())
             {
                 panelTabControl.SelectedTab = tabProfile;
+
+
                 ProfileTabPanel();
 
                 buttonProfile.BackColor = clickColor;
@@ -494,9 +541,10 @@ namespace LGU_SV_Asset_Management_Sytem
             
             
             profileTabControls.Add(textBoxProfilePhoneNumber);
+            profileTabControls.Add(textBoxProfileName);
             profileTabControls.Add(textBoxProfileEmail);
             profileTabControls.Add(textBoxProfilePassword);
-            profileTabControls.Add(comboBoxProfileDept);
+           
             profileTabControls.Add(textBoxProfileAddress);
             profileTabControls.Add(buttonProfileUploadImage);
 
@@ -566,7 +614,11 @@ namespace LGU_SV_Asset_Management_Sytem
             buttonProfileUploadImage.Visible = false;
             ProfileTabPanel();
         }
-        
+        private bool ValidatePhoneNumber(string phoneNumber)
+        {
+
+            return phoneNumber.StartsWith("09") && phoneNumber.Length == 11 && phoneNumber.All(char.IsDigit);
+        }
         private void buttonProfileSave_Click(object sender, EventArgs e)
         {
             if (CheckSession())
@@ -618,6 +670,25 @@ namespace LGU_SV_Asset_Management_Sytem
                         break;
 
                 }
+                string[] name = textBoxProfileName.Text.Split(' ');
+                if(name.Length != 3)
+                {
+                    MessagePrompt("Please enter a valid name, seperated by ' ' or spaces and should be two spaces only accomodating first, middle and last name.");
+                    return;
+                }
+                string phonenum = textBoxProfilePhoneNumber.Text;
+
+                if (string.IsNullOrEmpty(phonenum))
+                {  
+                    MessagePrompt("Please enter a valid phone number.");
+                    return;
+                }
+                if (!ValidatePhoneNumber(phonenum))
+                {
+                    MessagePrompt("Invalid phone number. Please enter a valid 11-digit number starting with '09'.");
+                    return;
+                }
+
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
@@ -873,6 +944,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 dataGridViewOtherOperator.Columns.Add(col);
             }
 
+            
             if (dataGridViewOtherOperator.Columns["ViewButtonColumn"] == null)
             {
                 // Create a new DataGridViewButtonColumn
@@ -894,7 +966,7 @@ namespace LGU_SV_Asset_Management_Sytem
         private void buttonOperators_Click(object sender, EventArgs e)
         {
             
-            labelTitleHandler.Text = "Employees";
+            labelTitleHandler.Text = "Coordinators/Custodian";
             otherTabControl.SelectedTab = tabOperator;
 
             OtherOperatorReset();
@@ -904,7 +976,43 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void FetchAssetCategories()
         {
-            dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
+            dataGridViewAssetCategories.DataSource = null;
+
+            
+            DataTable dataTable = assetCategoriesController.GetAllAssetCategories();
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+
+                    case "assetCategoryId":
+                        col.HeaderText = "ID";
+                        break;
+                    case "assetCategoryName":
+                        col.HeaderText = "Name";
+                        break;
+                    case "assetCategoryDescription":
+                        col.HeaderText = "Description";
+                        break;
+                   
+
+
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetCategories.Font).Width + 90;
+
+                dataGridViewAssetCategories.Columns.Add(col);
+            }
+
+
             if (dataGridViewAssetCategories.Columns["DeleteButtonColumn"] == null)
             {
                 if (currentSessionUserType != "Asset Administrator")
@@ -924,6 +1032,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 // Adjust the button column's display index to make it the last column
                 deleteButtonColumn.DisplayIndex = dataGridViewAssetCategories.Columns.Count - 1;
             }
+            dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
         }
         private void buttonAssetCategories_Click(object sender, EventArgs e)
         {
@@ -985,7 +1094,7 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
             prompt.SetMessage(message);
-            prompt.Show();
+            prompt.ShowDialog();
         }
 
         string currentSelectedSupplier;
@@ -1001,7 +1110,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 textBoxSupplierPhoneNumber.Text = row.Cells[2].Value.ToString();
                 textBoxSupplierAddress.Text = row.Cells[3].Value.ToString();
 
-                Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
+                Control[] buttoncontrols = { buttonSupplierUpdate };
                 Utilities.SetButtonsState(buttoncontrols, true);
 
                 currentlySelectedSupplierId = currentSelectedSupplier;
@@ -1097,7 +1206,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void SupplierReset()
         {
-            Control[] buttoncontrols = { buttonSupplierViewSuppliedAssets, buttonSupplierUpdate };
+            Control[] buttoncontrols = { buttonSupplierUpdate };
             Utilities.SetButtonsState(buttoncontrols, false);
 
             Control[] fieldcontrols = { textBoxSupplierName, textBoxSupplierPhoneNumber, textBoxSupplierAddress };
@@ -1158,11 +1267,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         }
 
-        private void buttonAssetCategoryUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
+   
 
         private void buttonAssetCategoryClearFields_Click(object sender, EventArgs e)
         {
@@ -1229,6 +1334,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 if (e.ColumnIndex == dataGridViewOtherOperator.Columns["ViewButtonColumn"].Index)
                 {
                     Control panelControl = new Panels.OperatorHandledAssetPanel(panelOperatorHandler, operator_id, name, fieldcontrols);
+                    panelControl.Size = panelOperatorHandler.Size;
                     panelOperatorHandler.Controls.Add(panelControl);
                     panelOperatorHandler.BringToFront();
                     panelOperatorHandler.Visible = true;
@@ -1333,7 +1439,13 @@ namespace LGU_SV_Asset_Management_Sytem
            
 
         }
+        public bool IsValidInput(string input)
+        {
+           
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
 
+            return regex.IsMatch(input);
+        }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             if (panelAssetRecordsHandler.Controls.Count > 0)
@@ -1345,6 +1457,14 @@ namespace LGU_SV_Asset_Management_Sytem
 
                 DataTable dataTable = (DataTable)dgv1.DataSource;
 
+                if (!IsValidInput(searchKeyword))
+                {
+                    return;
+                } 
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Empty;
+                }
 
                 if (dataTable != null && dataTable.Rows.Count > 0)
                 {
@@ -1527,15 +1647,71 @@ namespace LGU_SV_Asset_Management_Sytem
             }
             
         }
-
+      
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            string fname = textBoxTransactionRenteeFName.Text;
+            string mname = textBoxTransactionRenteeMName.Text;
+            string lname = textBoxTransactionRenteeLName.Text;
+            string addr = richTextBoxTransactionRenteeAddr.Text;
+
+            DateTime bdate = dateTimeTransactionRenteeBDate.Value;
+            string cnumber = textBoxTransactionRenteeContactNumber.Text;
+            string lnumber = textBoxTransactionRenteeLicenseID.Text;
+            Image validimage = pictureBoxValidIDImage.Image;
+
+            if (string.IsNullOrEmpty(textBoxRentFee.Text))
+            {
+                MessagePrompt("Please enter a valid input in rent. Put 0 if not applicable");
+                return;
+            }
+
+            decimal val = Convert.ToDecimal(textBoxRentFee.Text);
+
+            if (string.IsNullOrEmpty(fname))
+            {
+                MessagePrompt("Please input first name");
+                return;
+            }
+            if (string.IsNullOrEmpty(mname))
+            {
+                MessagePrompt("Please input middle name");
+                return;
+            }
+            if (string.IsNullOrEmpty(lname))
+            {
+                MessagePrompt("Please input last name");
+                return;
+            }
+            if (string.IsNullOrEmpty(addr))
+            {
+                MessagePrompt("Please input address");
+                return;
+            }
+            if (string.IsNullOrEmpty(cnumber))
+            {
+                MessagePrompt("Please input contact number");
+                return;
+            }
+            if (!ValidatePhoneNumber(cnumber))
+            {
+                MessagePrompt("Invalid phone number. Please enter a valid 11-digit number starting with '09'.");
+                return;
+            }
+
+            if (!decimal.TryParse(textBoxRentFee.Text, out val))
+            {
+                MessagePrompt("Please enter a valid input in rent. Put 0 if not applicable");
+                return;
+            }
+            
             using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
             {
                 Asset confirmedAsset = worker1.AssetInProcess();
 
                 if (confirmedAsset == null)
                 {
+                    MessagePrompt("Please select an asset to rent");
                     return;
                 }
 
@@ -1559,6 +1735,8 @@ namespace LGU_SV_Asset_Management_Sytem
                 prompt.listBox1.Items.Add($"\t Rentee Contact Number: {textBoxTransactionRenteeContactNumber.Text}");
                 prompt.listBox1.Items.Add($"\t Rentee Address: {richTextBoxTransactionRenteeAddr.Text}");
                 prompt.listBox1.Items.Add($"\t Rentee License ID: {textBoxTransactionRenteeLicenseID.Text}");
+
+
 
                 if (prompt.ShowDialog() == DialogResult.OK)
                 {
@@ -1586,14 +1764,14 @@ namespace LGU_SV_Asset_Management_Sytem
             worker2.AssetSearchFilterClear();
         }
 
-        
 
+        int transactionSelectedAssetId = -1;
         private void dataGridViewTransactionTransferAssetList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridViewTransactionTransferAssetList.Rows[e.RowIndex];
-
+                transactionSelectedAssetId = Convert.ToInt32(selectedRow.Cells[2].Value.ToString());
                 worker2.DataGridViewCellMouseClick(Convert.ToInt32(selectedRow.Cells[2].Value.ToString()));
                 Console.WriteLine(selectedRow.Cells[2].Value.ToString());
             }
@@ -1608,13 +1786,48 @@ namespace LGU_SV_Asset_Management_Sytem
         {
             worker2.FilterListCoordinators();
         }
-
+        int receiverId = -1;
         private void roundedButtonTransactinTransfer_Click(object sender, EventArgs e)
         {
+            if (receiverId == -1)
+            {
+                MessagePrompt("Please select receiver");
+                return;
+            }
+
+            if(transactionSelectedAssetId == -1)
+            {
+                MessagePrompt("Please select an asset to transfer");
+                return;
+            }
+
+            if(pictureBoxTransactionTransferDocumentImage.Image == null)
+            {
+                MessagePrompt("Please upload an document");
+                return;
+            }
             using (DialogBoxes.TransactionConfirmationPrompt prompt = new DialogBoxes.TransactionConfirmationPrompt())
             {
+
                 
-                if(prompt.ShowDialog() == DialogResult.OK)
+                prompt.listBox1.Items.Add("");
+                prompt.SetConfirmationTitle("Asset Transfer Confirmation");
+
+                prompt.listBox1.Items.Add("\t Asset Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Asset Name: {textBoxTransactionTransferAssetName.Text}");
+                prompt.listBox1.Items.Add($"\t Asset Current Custodian/Coordinator: {textBoxTransactionTransferAssetCustodian.Text}");
+                prompt.listBox1.Items.Add($"\t Asset Purpose: {richTextBoxTransactionTransferAssetDescription.Text}");
+                prompt.listBox1.Items.Add($"\t Asset Description: {richTextBoxrichTextBoxTransactionTransferAssetDescription.Text}");
+
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add("\t Receiver Information");
+                prompt.listBox1.Items.Add("");
+                prompt.listBox1.Items.Add($"\t Receiver Name: {worker2.RetrieveCoordinatorName(receiverId)}");
+                
+               
+
+                if (prompt.ShowDialog() == DialogResult.OK)
                 {
                     worker2.InitiateTransferAsset();
                     MessagePrompt("Transaction completed.");
@@ -1634,7 +1847,7 @@ namespace LGU_SV_Asset_Management_Sytem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridViewTransactionTransferReceiver.Rows[e.RowIndex];
-
+                receiverId = Convert.ToInt32(selectedRow.Cells[0].Value.ToString());
                 worker2.DataGridViewReceiverCellMouseClick(Convert.ToInt32(selectedRow.Cells[0].Value.ToString()));
                 
             }
@@ -1708,6 +1921,11 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         private void chartAssetByCategories_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxRentFee_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -51,23 +51,23 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                            "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                            "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit + " AND A.assetIsMissing = 0 ";
+                           "WHERE A.assetLocation = @uLocation ";
             /*
             string query = "SELECT A.assetId, " +
-                    "       CONCAT(ASupervisor.assetSupervisorFName, ' ', ASupervisor.assetSupervisorMName, ' ', ASupervisor.assetSupervisorLName, '; ', ASupervisor.assetSupervisorID) AS assetSupervisorFullName, " +
-                    "       CONCAT(AEmployee.AssetEmployeeFName, ' ', AEmployee.AssetEmployeeMName, ' ', AEmployee.AssetEmployeeLName, '; ', AEmployee.assetEmployeeID) AS currentAssetEmployeeFullName, " +
-                    "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
-                    "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
-                    "       A.assetName, A.assetCondition, A.assetAvailability, " +
-                    "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
-                    "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetLastMaintenance, A.assetIsMaintainable," +
-                    "       A.assetIsMissing, A.assetLifeSpan, A.assetPurpose, A.assetDescription, A.assetPropertyNumber " +
-                    "FROM Assets A " +
-                    "LEFT JOIN AssetSupervisor ASupervisor ON A.assetSupervisorID = ASupervisor.assetSupervisorID " +
-                    "LEFT JOIN AssetEmployee AEmployee ON A.currentCustodianAssetEmployeeID = AEmployee.assetEmployeeID " +
-                    "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
-                    "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                    "WHERE A.assetLocation = @uLocation";
+                           "       A.assetPropertyNumber, A.assetName, " +
+                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
+                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
+                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
+                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
+                           "FROM Assets A " +
+                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
+                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                           "WHERE A.assetLocation = @uLocation ";
             */
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
@@ -226,7 +226,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 viewButtonColumn.DisplayIndex = 0;
             }
 
-            dataGridViewAssetRecords.CellFormatting += Records_CellFormatting;
+           
 
             Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
 
@@ -316,6 +316,297 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private void RecordsHomePanel_Load(object sender, EventArgs e)
         {
+
+        }
+        private bool isToggled = false;
+        List<string> FILTER_SETTINGS_SELECTED_YEAR = new List<string>();
+        List<string> FILTER_SETTINGS_SELECTED_CONDITION = new List<string>();
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            isToggled = !isToggled;
+            if (isToggled)
+            {
+                panelFilterSet.Visible = true;
+            }
+            else
+            {
+                panelFilterSet.Visible = false;
+            }
+        }
+
+        private void buttonApply_Click(object sender, EventArgs e)
+        {
+            FILTER_SETTINGS_SELECTED_YEAR.Clear();
+            FILTER_SETTINGS_SELECTED_CONDITION.Clear();
+            if (checkBoxServiceable.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_CONDITION.Add("SERVICEABLE");
+            }
+            if (checkBoxNonServiceable.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_CONDITION.Add("NON-SERVICEABLE");
+            }
+            if (checkBox2023.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2023.Text);
+            }
+            if (checkBox2022.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2022.Text);
+            }
+            if (checkBox2021.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2021.Text);
+            }
+            if (checkBox2020.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2020.Text);
+            }
+            if (checkBox2019.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2019.Text);
+            }
+            if (checkBox2018.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2018.Text);
+            }
+            if (checkBox2017.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2017.Text);
+            }
+            if (checkBox2016.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2016.Text);
+            }
+            if (checkBox2015.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2015.Text);
+            }
+            if (checkBox2014.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2014.Text);
+            }
+
+
+            InitializeRecordsWithFilter();
+        }
+        private DataTable FetchDataFromDBWithFilter(int bit)
+        {
+
+            string query = "SELECT A.assetId, " +
+                           "       A.assetPropertyNumber, A.assetName, " +
+                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
+                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
+                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
+                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition " +
+                           "FROM Assets A " +
+                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
+                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit + " AND A.assetIsMissing = 0 AND assetCondition = 'SERVICEABLE'";
+           
+
+            if (FILTER_SETTINGS_SELECTED_YEAR.Count > 0)
+            {
+           
+                query += " AND YEAR(A.assetAcknowledgeDate) IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_YEAR.Select(y => "@" + y)) + ")";
+               
+            }
+
+
+            if (FILTER_SETTINGS_SELECTED_CONDITION.Count == 2)
+            {
+               
+                query += " AND assetCondition IN ('NON-SERVICEABLE', 'SERVICEABLE')";
+          
+
+            }
+            else if (FILTER_SETTINGS_SELECTED_CONDITION.Count == 1)
+            {
+                if (FILTER_SETTINGS_SELECTED_CONDITION[0].Equals("NON-SERVICEABLE"))
+                {
+                    
+                    query += " AND assetCondition IN ('NON-SERVICEABLE')";
+                  
+                }
+                else
+                {
+               
+                    query += " AND assetCondition IN ('SERVICEABLE')";
+                    
+
+                }
+
+            }
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                {"@uLocation", userLocation}
+            };
+
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_YEAR.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_YEAR[i], FILTER_SETTINGS_SELECTED_YEAR[i]);
+            }
+
+            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+            databaseConnection.CloseConnection();
+
+            return resultTable;
+        }
+        public void InitializeRecordsWithFilter ()
+        {
+            dataGridViewAssetRecords.DataSource = null;
+           
+            DataTable dataTable = FetchDataFromDBWithFilter(0);
+
+           
+
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+                    case "assetId":
+                        col.HeaderText = "Asset ID";
+                        break;
+                    case "assetName":
+                        col.HeaderText = "Asset Name";
+                        break;
+                    case "AAdminFullName":
+                        col.HeaderText = "Administrator Name";
+                        col.Visible = false;
+                        break;
+                    case "currentCustodianCoordinatorFullName":
+                        col.HeaderText = "Current Custodian Name";
+                        break;
+                    case "Supplier":
+                        col.HeaderText = "Supplier Name";
+
+                        break;
+                    case "Asset Category":
+                        col.HeaderText = "Asset Category";
+                        break;
+
+                    case "assetCondition":
+                        col.HeaderText = "Asset Condition";
+                        break;
+                    /*
+                    case "assetLastMaintenance":
+                        col.HeaderText = "Asset Last Maintenance";
+                        col.DefaultCellStyle.NullValue = "N/A";
+                        break;
+                    */
+
+                    /*
+                    case "assetAvailability":
+                        col.HeaderText = "Asset Availability";
+                        break;
+                    */
+
+                    case "assetQrCodeImage":
+                        col.HeaderText = "QR Code Image";
+                        col.Visible = false;
+                        break;
+                    case "assetQrStrDefinition":
+                        col.HeaderText = "";
+                        col.Visible = false;
+
+                        break;
+                    case "assetLocation":
+                        col.HeaderText = "Asset Location";
+                        break;
+                    case "assetAcknowledgeDate":
+                        col.HeaderText = "Acknowledge Date";
+                        break;
+                    case "assetPurchaseAmount":
+                        col.HeaderText = "Purchase Amount";
+                        break;
+                    case "assetQuantity":
+                        col.HeaderText = "Asset Quantity";
+                        break;
+                    case "assetUnit":
+                        col.HeaderText = "Asset Unit";
+                        break;
+
+
+                    case "assetImage":
+                        col.HeaderText = "Asset Image";
+
+                        col.Visible = false;
+                        break;
+
+                    case "assetIsArchive":
+                        col.HeaderText = "";
+                        col.Visible = false;
+
+                        break;
+
+                    case "assetIsMissing":
+                        col.HeaderText = "";
+                        col.Visible = false;
+                        break;
+
+                    case "assetIsMaintainable":
+                        col.HeaderText = "Is Maintainable";
+                        break;
+                    /*
+                case "assetLifeSpan":
+                    col.HeaderText = "Asset Life Span (Years)";
+                    break;
+                    */
+                    case "assetPurpose":
+                        col.HeaderText = "Asset Purpose";
+                        col.Visible = false;
+                        break;
+                    case "assetDescription":
+                        col.HeaderText = "Asset Description";
+                        col.Visible = false;
+                        break;
+                    case "assetPropertyNumber":
+                        col.HeaderText = "Asset PropertyNumber";
+                        break;
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetRecords.Font).Width + 90;
+                
+                dataGridViewAssetRecords.Columns.Add(col);
+            }
+
+
+            dataGridViewAssetRecords.DataSource = FetchDataFromDBWithFilter(0);
+            
+            if (dataGridViewAssetRecords.Columns["ViewAsset"] == null)
+            {
+                var viewButtonColumn = new DataGridViewButtonColumn();
+                viewButtonColumn.HeaderText = "Actions";
+                viewButtonColumn.Text = "View";
+                viewButtonColumn.Name = "ViewAsset";
+                viewButtonColumn.UseColumnTextForButtonValue = true;
+                viewButtonColumn.Width = 85;
+
+                dataGridViewAssetRecords.Columns.Insert(0, viewButtonColumn);
+
+
+                viewButtonColumn.DisplayIndex = 0;
+            }
+
+           
+
+            Utilities.AutoResizeColumnsBasedOnHeaders(dataGridViewAssetRecords);
+
 
         }
     }

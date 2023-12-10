@@ -201,7 +201,7 @@ namespace LGU_SV_Asset_Management_Sytem
                            "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                            "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit;
+                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit ;
  
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
@@ -225,6 +225,14 @@ namespace LGU_SV_Asset_Management_Sytem
 
             DataTable dataTable = (DataTable)mainform.dataGridViewArchiveRecords.DataSource;
 
+            if (!mainform.IsValidInput(searchKeyword))
+            {
+                return;
+            }
+            else
+            {
+                dataTable.DefaultView.RowFilter = string.Empty;
+            }
 
             if (dataTable != null && dataTable.Rows.Count > 0)
             {

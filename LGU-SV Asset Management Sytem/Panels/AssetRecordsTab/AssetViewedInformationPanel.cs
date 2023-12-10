@@ -259,12 +259,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                     if (result.Success)
                     {
 
-                       
+                        MessagePrompt($"Asset has been successfully deleted");
+
                         _panelHandler.Controls.Clear();
                         rcpanel.InitializeRecords();
                         _panelHandler.SendToBack();
 
-                        MessagePrompt($"Asset has been successfully deleted");
+                        
                     }
                     else
                     {
@@ -282,7 +283,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             DialogBoxes.MessagePromptDialogBox prompt = new DialogBoxes.MessagePromptDialogBox();
             prompt.SetMessage(message);
-            prompt.Show();
+            prompt.ShowDialog();
         }
 
         private void MenuItem_Click(object sender, EventArgs e)
