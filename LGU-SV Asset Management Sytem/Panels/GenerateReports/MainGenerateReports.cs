@@ -15,6 +15,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using static LGU_SV_Asset_Management_Sytem.Asset;
 
 namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 {   
@@ -22,6 +23,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
     public partial class MainGenerateReports : UserControl
     {
         private DatabaseConnection databaseConnection;
+
+        AssetRepositoryControl assetControl;
 
         List<string> FILTER_SETTINGS_SELECTED_LOCATIONS = new List<string>();
         List<string> FILTER_SETTINGS_SELECTED_YEAR = new List<string>();
@@ -39,12 +42,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         List<CheckBox> FILTER_CONDITIONS_CHECKBOXES = new List<CheckBox>();
         List<CheckBox> FILTER_GHOSTMISSING_CHECKBOXES = new List<CheckBox>();
 
-
+        List<Asset> listOfAsset = new List<Asset>();
 
         public MainGenerateReports()
         {
             InitializeComponent();
             databaseConnection = new DatabaseConnection();
+            assetControl = new AssetRepositoryControl();
             PopulateCategoryComboBox();
            
 
@@ -187,25 +191,76 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         groupBox2.Visible = false;
+                        groupBox10.Visible = false;
+                        textBoxN.Visible = false;
+                        textBoxP.Visible = false;
+                        labelName.Visible = false;
+                        labelposition.Visible = false;
 
                         string outputPath = saveFileDialog.FileName;
 
                         using (var stream = new FileStream(outputPath, FileMode.Create))
                         {
-                            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 20f, 20f, 20f, 20f);
+                            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 15f, 15f, 15f, 15f);
                             PdfWriter pw = PdfWriter.GetInstance(doc, stream);
 
                             doc.Open();
 
-                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(new Bitmap(panelMainReport.Width, panelMainReport.Height), System.Drawing.Imaging.ImageFormat.Jpeg);
+                            Bitmap bitmap = new Bitmap(panelMainReport.Width, panelMainReport.Height);
+
+                            panelMainReport.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, panelMainReport.Width, panelMainReport.Height));
+
+                            // Calculate the scaling factor to fit the image within the content area
+                            float scalingFactor = Math.Min((doc.PageSize.Width - doc.LeftMargin - doc.RightMargin) / bitmap.Width,
+                                                           (doc.PageSize.Height - doc.TopMargin - doc.BottomMargin) / bitmap.Height);
+
+                            // Scale the image
+                            bitmap = new Bitmap(bitmap, new Size((int)(bitmap.Width * scalingFactor), (int)(bitmap.Height * scalingFactor)));
+
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(bitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
                             img.Alignment = Element.ALIGN_CENTER;
+
 
                             doc.Add(img);
 
+                            doc.Add(new Paragraph("Assets"));
+
+                            PdfPTable table = new PdfPTable(5); 
+
+                            table.AddCell("Name");
+                            table.AddCell("Property Number");
+                            table.AddCell("Condition");
+                            table.AddCell("Acknowledge Date");
+                            table.AddCell("Purchase Amount");
+
+                            foreach (Asset asset in listOfAsset)
+                            {
+                                table.AddCell(asset.AssetName);
+                                table.AddCell(asset.AssetPropertyNumber.ToString());
+                                table.AddCell(asset.AssetCondition);
+                                table.AddCell(asset.AssetPurchaseDate.ToString());
+                                table.AddCell(asset.AssetPurchaseAmount.ToString());
+                            }
+
+                            doc.Add(table);
+
+                            doc.Add(new Paragraph($"\n"));
+                            doc.Add(new Paragraph($"\n"));
+                            doc.Add(new Paragraph($"\n"));
+                        
+                          
+
+                            doc.Add(new Paragraph($"{textBoxN.Text}"));
+                            doc.Add(new Paragraph($"{textBoxP.Text}"));
+
                             doc.Close();
                         }
-
                         groupBox2.Visible = true;
+                        groupBox10.Visible = true;
+                        textBoxN.Visible = true;
+                        textBoxP.Visible = true;
+                        labelName.Visible = true;
+                        labelposition.Visible = true;
                         MessagePrompt($"Exported as PDF successfully to {outputPath}");
                     }
                 }
@@ -626,6 +681,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 
             foreach (DataColumn column in dataTable.Columns)
             {
+                
+
+
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
                 col.DataPropertyName = column.ColumnName;
                 col.Name = column.ColumnName;
@@ -634,6 +692,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                 {
                     case "assetId":
                         col.HeaderText = "Asset ID";
+
                         break;
                     case "assetName":
                         col.HeaderText = "Asset Name";
@@ -825,6 +884,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             else
             {
                 datagridviewEmptyLabel.Visible = false;
+
+                foreach (DataRow row in resultTable.Rows)
+                {
+                    int assetId = Convert.ToInt32(row["assetId"]); 
+                    listOfAsset.Add(assetControl.RetrieveAsset(assetId).retrievedAsset);
+                }
             }
 
             databaseConnection.CloseConnection();
