@@ -273,6 +273,16 @@ namespace LGU_SV_Asset_Management_Sytem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LGU_SV_Logo {
+            get {
+                object obj = ResourceManager.GetObject("LGU-SV Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap new_tab {
             get {
                 object obj = ResourceManager.GetObject("new_tab", resourceCulture);

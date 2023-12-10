@@ -386,9 +386,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.Size = new System.Drawing.Size(74, 23);
             this.label5.TabIndex = 36;
-            this.label5.Text = "Price:";
+            this.label5.Text = "Price: (₱)";
             // 
             // label3
             // 

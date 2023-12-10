@@ -437,8 +437,45 @@ namespace LGU_SV_Asset_Management_Sytem
         }
         private void FetchSupplierDataSource()
         {
-            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
+            //dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
 
+            dataGridViewSupplier.DataSource = null;
+
+            DataTable dataTable = supplierController.GetAllSupplier();
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+
+                    case "supplierId":
+                        col.HeaderText = "ID";
+                        break;
+                    case "supplierName":
+                        col.HeaderText = "Name";
+                        break;
+                    case "supplierPhoneNum":
+                        col.HeaderText = "Phone Number";
+                        break;
+                    case "supplierAddress":
+                        col.HeaderText = "Address";
+                        break;
+                   
+
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewSupplier.Font).Width + 90;
+
+                dataGridViewSupplier.Columns.Add(col);
+            }
+            
             if (dataGridViewSupplier.Columns["DeleteButtonColumn"] == null)
             {
                 if(currentSessionUserType != "Asset Administrator")
@@ -458,6 +495,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 // Adjust the button column's display index to make it the last column
                 deleteButtonColumn.DisplayIndex = dataGridViewSupplier.Columns.Count - 1;
             }
+            dataGridViewSupplier.DataSource = supplierController.GetAllSupplier();
         }
         private void SetActiveTab()
         {
@@ -503,6 +541,7 @@ namespace LGU_SV_Asset_Management_Sytem
             
             
             profileTabControls.Add(textBoxProfilePhoneNumber);
+            profileTabControls.Add(textBoxProfileName);
             profileTabControls.Add(textBoxProfileEmail);
             profileTabControls.Add(textBoxProfilePassword);
            
@@ -937,7 +976,43 @@ namespace LGU_SV_Asset_Management_Sytem
 
         private void FetchAssetCategories()
         {
-            dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
+            dataGridViewAssetCategories.DataSource = null;
+
+            
+            DataTable dataTable = assetCategoriesController.GetAllAssetCategories();
+
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = column.ColumnName;
+                col.Name = column.ColumnName;
+                //col.HeaderText = column.ColumnName;
+                switch (column.ColumnName)
+                {
+
+                    case "assetCategoryId":
+                        col.HeaderText = "ID";
+                        break;
+                    case "assetCategoryName":
+                        col.HeaderText = "Name";
+                        break;
+                    case "assetCategoryDescription":
+                        col.HeaderText = "Description";
+                        break;
+                   
+
+
+                    default:
+                        col.HeaderText = column.ColumnName;
+                        break;
+                }
+
+                col.Width = TextRenderer.MeasureText(column.ColumnName, dataGridViewAssetCategories.Font).Width + 90;
+
+                dataGridViewAssetCategories.Columns.Add(col);
+            }
+
+
             if (dataGridViewAssetCategories.Columns["DeleteButtonColumn"] == null)
             {
                 if (currentSessionUserType != "Asset Administrator")
@@ -957,6 +1032,7 @@ namespace LGU_SV_Asset_Management_Sytem
                 // Adjust the button column's display index to make it the last column
                 deleteButtonColumn.DisplayIndex = dataGridViewAssetCategories.Columns.Count - 1;
             }
+            dataGridViewAssetCategories.DataSource = assetCategoriesController.GetAllAssetCategories();
         }
         private void buttonAssetCategories_Click(object sender, EventArgs e)
         {
