@@ -37,6 +37,17 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.buttonFilter = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.panelFilterSet = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAO = new System.Windows.Forms.CheckBox();
+            this.checkBoxMBO = new System.Windows.Forms.CheckBox();
+            this.checkBoxMEO = new System.Windows.Forms.CheckBox();
+            this.checkBoxMCR = new System.Windows.Forms.CheckBox();
+            this.checkBoxMHO = new System.Windows.Forms.CheckBox();
+            this.checkBoxGSO = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBoxServiceable = new System.Windows.Forms.CheckBox();
+            this.checkBoxNonServiceable = new System.Windows.Forms.CheckBox();
+            this.buttonApply = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox2014 = new System.Windows.Forms.CheckBox();
             this.checkBox2015 = new System.Windows.Forms.CheckBox();
@@ -48,16 +59,13 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.checkBox2021 = new System.Windows.Forms.CheckBox();
             this.checkBox2022 = new System.Windows.Forms.CheckBox();
             this.checkBox2023 = new System.Windows.Forms.CheckBox();
-            this.buttonApply = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBoxServiceable = new System.Windows.Forms.CheckBox();
-            this.checkBoxNonServiceable = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelFilterSet.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewAssetRecords
@@ -146,21 +154,159 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.panelFilterSet.Controls.Add(this.groupBox2);
             this.panelFilterSet.Location = new System.Drawing.Point(705, 59);
             this.panelFilterSet.Name = "panelFilterSet";
-            this.panelFilterSet.Size = new System.Drawing.Size(418, 365);
+            this.panelFilterSet.Size = new System.Drawing.Size(418, 550);
             this.panelFilterSet.TabIndex = 4;
             this.panelFilterSet.Visible = false;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.buttonApply);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(12, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 336);
+            this.groupBox2.Size = new System.Drawing.Size(393, 525);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.checkBoxAO);
+            this.groupBox5.Controls.Add(this.checkBoxMBO);
+            this.groupBox5.Controls.Add(this.checkBoxMEO);
+            this.groupBox5.Controls.Add(this.checkBoxMCR);
+            this.groupBox5.Controls.Add(this.checkBoxMHO);
+            this.groupBox5.Controls.Add(this.checkBoxGSO);
+            this.groupBox5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(43, 289);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(312, 189);
+            this.groupBox5.TabIndex = 54;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Office";
+            // 
+            // checkBoxAO
+            // 
+            this.checkBoxAO.AutoSize = true;
+            this.checkBoxAO.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAO.Location = new System.Drawing.Point(55, 154);
+            this.checkBoxAO.Name = "checkBoxAO";
+            this.checkBoxAO.Size = new System.Drawing.Size(159, 26);
+            this.checkBoxAO.TabIndex = 8;
+            this.checkBoxAO.Text = "AO-Accounting Office";
+            this.checkBoxAO.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMBO
+            // 
+            this.checkBoxMBO.AutoSize = true;
+            this.checkBoxMBO.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMBO.Location = new System.Drawing.Point(55, 129);
+            this.checkBoxMBO.Name = "checkBoxMBO";
+            this.checkBoxMBO.Size = new System.Drawing.Size(202, 26);
+            this.checkBoxMBO.TabIndex = 7;
+            this.checkBoxMBO.Text = "MBO-Municipal Budget Office";
+            this.checkBoxMBO.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMEO
+            // 
+            this.checkBoxMEO.AutoSize = true;
+            this.checkBoxMEO.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMEO.Location = new System.Drawing.Point(55, 102);
+            this.checkBoxMEO.Name = "checkBoxMEO";
+            this.checkBoxMEO.Size = new System.Drawing.Size(229, 26);
+            this.checkBoxMEO.TabIndex = 6;
+            this.checkBoxMEO.Text = "MEO-Municipal Engineering Office";
+            this.checkBoxMEO.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMCR
+            // 
+            this.checkBoxMCR.AutoSize = true;
+            this.checkBoxMCR.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMCR.Location = new System.Drawing.Point(55, 75);
+            this.checkBoxMCR.Name = "checkBoxMCR";
+            this.checkBoxMCR.Size = new System.Drawing.Size(202, 26);
+            this.checkBoxMCR.TabIndex = 5;
+            this.checkBoxMCR.Text = "MCR-Municipal Civil Registrar";
+            this.checkBoxMCR.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMHO
+            // 
+            this.checkBoxMHO.AutoSize = true;
+            this.checkBoxMHO.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMHO.Location = new System.Drawing.Point(55, 51);
+            this.checkBoxMHO.Name = "checkBoxMHO";
+            this.checkBoxMHO.Size = new System.Drawing.Size(199, 26);
+            this.checkBoxMHO.TabIndex = 4;
+            this.checkBoxMHO.Text = "MHO-Municipal Health Office";
+            this.checkBoxMHO.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGSO
+            // 
+            this.checkBoxGSO.AutoSize = true;
+            this.checkBoxGSO.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxGSO.Location = new System.Drawing.Point(55, 26);
+            this.checkBoxGSO.Name = "checkBoxGSO";
+            this.checkBoxGSO.Size = new System.Drawing.Size(195, 26);
+            this.checkBoxGSO.TabIndex = 3;
+            this.checkBoxGSO.Text = "GSO-General Services Office";
+            this.checkBoxGSO.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.Controls.Add(this.checkBoxServiceable);
+            this.groupBox4.Controls.Add(this.checkBoxNonServiceable);
+            this.groupBox4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(43, 196);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(312, 87);
+            this.groupBox4.TabIndex = 53;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Condition";
+            // 
+            // checkBoxServiceable
+            // 
+            this.checkBoxServiceable.AutoSize = true;
+            this.checkBoxServiceable.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxServiceable.Location = new System.Drawing.Point(32, 39);
+            this.checkBoxServiceable.Name = "checkBoxServiceable";
+            this.checkBoxServiceable.Size = new System.Drawing.Size(97, 26);
+            this.checkBoxServiceable.TabIndex = 7;
+            this.checkBoxServiceable.Text = "Serviceable";
+            this.checkBoxServiceable.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxNonServiceable
+            // 
+            this.checkBoxNonServiceable.AutoSize = true;
+            this.checkBoxNonServiceable.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNonServiceable.Location = new System.Drawing.Point(168, 39);
+            this.checkBoxNonServiceable.Name = "checkBoxNonServiceable";
+            this.checkBoxNonServiceable.Size = new System.Drawing.Size(128, 26);
+            this.checkBoxNonServiceable.TabIndex = 6;
+            this.checkBoxNonServiceable.Text = "Non-Serviceable";
+            this.checkBoxNonServiceable.UseVisualStyleBackColor = true;
+            // 
+            // buttonApply
+            // 
+            this.buttonApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonApply.FlatAppearance.BorderSize = 0;
+            this.buttonApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonApply.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonApply.ForeColor = System.Drawing.Color.White;
+            this.buttonApply.Location = new System.Drawing.Point(201, 484);
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.Size = new System.Drawing.Size(154, 30);
+            this.buttonApply.TabIndex = 52;
+            this.buttonApply.Text = "APPLY";
+            this.buttonApply.UseVisualStyleBackColor = false;
+            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // groupBox3
             // 
@@ -295,58 +441,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.checkBox2023.Text = "2023";
             this.checkBox2023.UseVisualStyleBackColor = true;
             // 
-            // buttonApply
-            // 
-            this.buttonApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonApply.FlatAppearance.BorderSize = 0;
-            this.buttonApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonApply.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonApply.ForeColor = System.Drawing.Color.White;
-            this.buttonApply.Location = new System.Drawing.Point(201, 300);
-            this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(154, 30);
-            this.buttonApply.TabIndex = 52;
-            this.buttonApply.Text = "APPLY";
-            this.buttonApply.UseVisualStyleBackColor = false;
-            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.checkBoxServiceable);
-            this.groupBox4.Controls.Add(this.checkBoxNonServiceable);
-            this.groupBox4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(43, 196);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(312, 87);
-            this.groupBox4.TabIndex = 53;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Condition";
-            // 
-            // checkBoxServiceable
-            // 
-            this.checkBoxServiceable.AutoSize = true;
-            this.checkBoxServiceable.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxServiceable.Location = new System.Drawing.Point(32, 39);
-            this.checkBoxServiceable.Name = "checkBoxServiceable";
-            this.checkBoxServiceable.Size = new System.Drawing.Size(97, 26);
-            this.checkBoxServiceable.TabIndex = 7;
-            this.checkBoxServiceable.Text = "Serviceable";
-            this.checkBoxServiceable.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxNonServiceable
-            // 
-            this.checkBoxNonServiceable.AutoSize = true;
-            this.checkBoxNonServiceable.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxNonServiceable.Location = new System.Drawing.Point(168, 39);
-            this.checkBoxNonServiceable.Name = "checkBoxNonServiceable";
-            this.checkBoxNonServiceable.Size = new System.Drawing.Size(128, 26);
-            this.checkBoxNonServiceable.TabIndex = 6;
-            this.checkBoxNonServiceable.Text = "Non-Serviceable";
-            this.checkBoxNonServiceable.UseVisualStyleBackColor = true;
-            // 
             // RecordsHomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,10 +456,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             this.groupBox1.ResumeLayout(false);
             this.panelFilterSet.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +490,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox checkBoxServiceable;
         private System.Windows.Forms.CheckBox checkBoxNonServiceable;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox checkBoxMCR;
+        private System.Windows.Forms.CheckBox checkBoxMHO;
+        private System.Windows.Forms.CheckBox checkBoxGSO;
+        private System.Windows.Forms.CheckBox checkBoxAO;
+        private System.Windows.Forms.CheckBox checkBoxMBO;
+        private System.Windows.Forms.CheckBox checkBoxMEO;
     }
 }

@@ -17,6 +17,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         Control viewedAssetPanelHandler;
 
         User currentUser;
+
+        List<string> FILTER_SETTINGS_SELECTED_LOCATIONS = new List<string>();
         public RecordsHomePanel(string _userLocation, Control _viewedAssetPanelHandler, User _currentUser)
         {
             databaseConnection = new DatabaseConnection();
@@ -37,6 +39,8 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
         private DataTable FetchDataFromDB(int bit)
         {
+            dataGridViewAssetRecords.DataSource = null;
+
             string query = "SELECT A.assetId, " +
                            "       A.assetPropertyNumber, A.assetName, " +
                            "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
@@ -338,6 +342,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
         {
             FILTER_SETTINGS_SELECTED_YEAR.Clear();
             FILTER_SETTINGS_SELECTED_CONDITION.Clear();
+            FILTER_SETTINGS_SELECTED_LOCATIONS.Clear();
             if (checkBoxServiceable.Checked)
             {
                 FILTER_SETTINGS_SELECTED_CONDITION.Add("SERVICEABLE");
@@ -387,6 +392,31 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                 FILTER_SETTINGS_SELECTED_YEAR.Add(checkBox2014.Text);
             }
 
+            if (checkBoxGSO.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_LOCATIONS.Add(checkBoxGSO.Text);
+            }
+            if (checkBoxMHO.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_LOCATIONS.Add(checkBoxMHO.Text);
+            }
+            if (checkBoxMCR.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_LOCATIONS.Add(checkBoxMCR.Text);
+            }
+            if (checkBoxMEO.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_LOCATIONS.Add(checkBoxMEO.Text);
+            }
+            if (checkBoxMBO.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_LOCATIONS.Add(checkBoxMBO.Text);
+            }
+            if (checkBoxAO.Checked)
+            {
+                FILTER_SETTINGS_SELECTED_LOCATIONS.Add(checkBoxAO.Text);
+            }
+
 
             InitializeRecordsWithFilter();
         }
@@ -407,8 +437,12 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
                            "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
                            "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
                            "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
-                           "WHERE A.assetLocation = @uLocation AND A.assetIsArchive = " + bit + " AND A.assetIsMissing = 0 AND assetCondition = 'SERVICEABLE'";
-           
+                           "WHERE A.assetIsArchive = " + bit + " AND A.assetIsMissing = 0 AND assetCondition = 'SERVICEABLE'";
+
+            if (FILTER_SETTINGS_SELECTED_LOCATIONS.Count > 0)
+            {
+                query += " AND A.assetLocation IN (" + string.Join(",", FILTER_SETTINGS_SELECTED_LOCATIONS.Select(_ => "@" + (_.Contains('-') ? _.Split('-')[0] : _))) + ")";
+            }
 
             if (FILTER_SETTINGS_SELECTED_YEAR.Count > 0)
             {
@@ -452,7 +486,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
             {
                 parameters.Add("@" + FILTER_SETTINGS_SELECTED_YEAR[i], FILTER_SETTINGS_SELECTED_YEAR[i]);
             }
-
+            for (int i = 0; i < FILTER_SETTINGS_SELECTED_LOCATIONS.Count; i++)
+            {
+                parameters.Add("@" + FILTER_SETTINGS_SELECTED_LOCATIONS[i].Split('-')[0], FILTER_SETTINGS_SELECTED_LOCATIONS[i]);
+            }
             DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
 
             databaseConnection.CloseConnection();
@@ -609,5 +646,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.AssetRecordsTab
 
 
         }
+
+        
     }
 }

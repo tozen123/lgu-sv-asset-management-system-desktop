@@ -74,7 +74,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxP = new System.Windows.Forms.TextBox();
             this.textBoxN = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.richTextBoxHeader = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.roundedButtonSaveAsPanel = new LGU_SV_Asset_Management_Sytem.RoundedButton();
@@ -84,6 +84,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.datagridviewEmptyLabel = new System.Windows.Forms.Label();
             this.dataGridViewAssetRecords = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxPurhcaseAmountTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -95,7 +96,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chartEmptyRecordLabelCondition = new System.Windows.Forms.Label();
             this.chartAssetByCondition = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelFilterHandler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,7 +106,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelMainReport.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssetRecords)).BeginInit();
@@ -550,7 +550,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.panelMainReport.Controls.Add(this.labelName);
             this.panelMainReport.Controls.Add(this.textBoxP);
             this.panelMainReport.Controls.Add(this.textBoxN);
-            this.panelMainReport.Controls.Add(this.pictureBox4);
+            this.panelMainReport.Controls.Add(this.pictureBoxLogo);
             this.panelMainReport.Controls.Add(this.richTextBoxHeader);
             this.panelMainReport.Controls.Add(this.groupBox2);
             this.panelMainReport.Controls.Add(this.groupBox10);
@@ -603,15 +603,15 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.textBoxN.TabIndex = 61;
             this.textBoxN.Text = "-";
             // 
-            // pictureBox4
+            // pictureBoxLogo
             // 
-            this.pictureBox4.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.LGU_SV_Logo;
-            this.pictureBox4.Location = new System.Drawing.Point(214, 116);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(94, 111);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 60;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxLogo.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.LGU_SV_Logo;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(214, 116);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(94, 111);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 60;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // richTextBoxHeader
             // 
@@ -769,6 +769,16 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox7.TabIndex = 55;
             this.groupBox7.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(315, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 42);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "₱";
+            // 
             // textBoxPurhcaseAmountTotal
             // 
             this.textBoxPurhcaseAmountTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -912,16 +922,6 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.chartAssetByCondition.TabIndex = 50;
             this.chartAssetByCondition.Text = "chart1";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(315, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 42);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "₱";
-            // 
             // MainGenerateReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -947,7 +947,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
             this.groupBox1.PerformLayout();
             this.panelMainReport.ResumeLayout(false);
             this.panelMainReport.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -1023,7 +1023,7 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RichTextBox richTextBoxHeader;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label labelposition;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxP;

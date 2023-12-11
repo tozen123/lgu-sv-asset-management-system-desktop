@@ -197,6 +197,9 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                         labelName.Visible = false;
                         labelposition.Visible = false;
 
+                        richTextBoxHeader.Visible = false;
+                        pictureBoxLogo.Visible = false;
+
                         string outputPath = saveFileDialog.FileName;
 
                         using (var stream = new FileStream(outputPath, FileMode.Create))
@@ -205,6 +208,37 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                             PdfWriter pw = PdfWriter.GetInstance(doc, stream);
 
                             doc.Open();
+
+                            doc.Add(new Paragraph("\n"));
+
+                            Bitmap bitmap1 = LGU_SV_Asset_Management_Sytem.Properties.Resources.LGU_SV_Logo;
+                            string tempImagePath = Path.GetTempFileName() + ".png";
+                            bitmap1.Save(tempImagePath, ImageFormat.Png);
+                            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(tempImagePath);
+
+                            image.ScaleAbsolute(80f, 80f);
+
+                            image.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
+
+                            doc.Add(image);
+
+                            Paragraph header_Republic = new Paragraph("Republic of the Philippines");
+                            header_Republic.Alignment = Element.ALIGN_CENTER;
+                            doc.Add(header_Republic);
+
+
+                            Paragraph header_Prov = new Paragraph("Province of Camarines Norte");
+                            header_Prov.Alignment = Element.ALIGN_CENTER;
+                            doc.Add(header_Prov);
+
+
+                            Paragraph header_MC = new Paragraph("MUNICIPALITY OF SAN VICENTE");
+                            header_MC.Alignment = Element.ALIGN_CENTER;
+                            doc.Add(header_MC);
+
+
+                            doc.Add(new Paragraph("\n"));
+
 
                             Bitmap bitmap = new Bitmap(panelMainReport.Width, panelMainReport.Height);
 
@@ -223,22 +257,32 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 
                             doc.Add(img);
 
-                            doc.Add(new Paragraph("Assets"));
+                            doc.Add(new Paragraph($"\n "));
 
-                            PdfPTable table = new PdfPTable(5); 
+
+                            Paragraph heading = new Paragraph("Assets Record Table");
+                            heading.Alignment = Element.ALIGN_CENTER;
+                            doc.Add(heading);
+                            doc.Add(new Paragraph($"\n"));
+
+                            PdfPTable table = new PdfPTable(6); 
 
                             table.AddCell("Name");
                             table.AddCell("Property Number");
                             table.AddCell("Condition");
                             table.AddCell("Acknowledge Date");
                             table.AddCell("Purchase Amount");
+                            table.AddCell("Location");
 
+                          
                             foreach (Asset asset in listOfAsset)
                             {
+                              
                                 table.AddCell(asset.AssetName);
                                 table.AddCell(asset.AssetPropertyNumber.ToString());
                                 table.AddCell(asset.AssetCondition);
                                 table.AddCell(asset.AssetPurchaseDate.ToString());
+                                table.AddCell(asset.AssetLocation.ToString());
                                 PdfPCell pesoCell = new PdfPCell(new Phrase("₱ " + asset.AssetPurchaseAmount.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12)));
                                 table.AddCell(pesoCell);
                             }
@@ -247,14 +291,113 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
 
                             doc.Add(new Paragraph($"\n"));
                             doc.Add(new Paragraph($"\n"));
+
+                            doc.Add(new Paragraph($"Total Asset: {labelTotalCountOfAssets.Text}"));
+                            doc.Add(new Paragraph($"Total Asset Purchase Amount: {textBoxPurhcaseAmountTotal.Text}"));
+
+
+                            //Missing Section
+
+                            string query = "SELECT A.assetId, " +
+                                           "       A.assetPropertyNumber, A.assetName, " +
+                                           "       CONCAT(AAdmin.FName, ' ', AAdmin.MName, ' ', AAdmin.LName, '; ', AAdmin.Id) AS AAdminFullName, " +
+                                           "       CONCAT(ACoor.FName, ' ', ACoor.MName, ' ', ACoor.LName, '; ', ACoor.Id) AS currentCustodianCoordinatorFullName, " +
+                                           "       CONCAT(Supplier.supplierName, '; ',  Supplier.supplierID) AS Supplier, " +
+                                           "       CONCAT(ACategory.assetCategoryName, '; ', ACategory.assetCategoryID) AS AssetCategory, " +
+                                           "       A.assetQrCodeImage, A.assetQrStrDefinition, A.assetLocation, A.assetAcknowledgeDate, A.assetPurchaseAmount, " +
+                                           "       A.assetQuantity, A.assetUnit, A.assetImage, A.assetIsArchive, A.assetIsMaintainable," +
+                                           "       A.assetIsMissing, A.assetPurpose, A.assetDescription, A.assetCondition, " +
+                                           "       (CASE WHEN RentLog.rentStatus = 'Missing' THEN RentLog.rentInitiatedDate END) AS MissingDate " +
+                                           "FROM Assets A " +
+                                           "LEFT JOIN AssetAdministrator AAdmin ON  A.assetAdminID = AAdmin.Id  " +
+                                           "LEFT JOIN AssetCoordinator ACoor ON A.currentCustodianAssetCoordID = ACoor.Id " +
+                                           "LEFT JOIN Supplier ON A.supplierID = Supplier.supplierID " +
+                                           "LEFT JOIN AssetCategory ACategory ON A.assetCategoryID = ACategory.assetCategoryID " +
+                                           "LEFT JOIN RentLog ON A.assetId = RentLog.assetId " +
+                                             "WHERE 1 = 1 AND (RentLog.assetId IS NULL OR RentLog.rentStatus = 'Missing')";
+
+                            Dictionary<string, object> parameters = new Dictionary<string, object>()
+                            {
+
+                            };
+
+                            DataTable resultTable = databaseConnection.ReadFromDatabase(query, parameters);
+
+                            if(resultTable.Rows.Count > 0)
+                            {
+                                doc.Add(new Paragraph($"\n"));
+                                doc.Add(new Paragraph($"\n"));
+
+                                doc.Add(new Paragraph($"Missing Assets Record Table "));
+
+                                doc.Add(new Paragraph($"\n"));
+
+
+                                PdfPTable tableMissing = new PdfPTable(6);
+
+                                tableMissing.AddCell("Name");
+                                tableMissing.AddCell("Property Number");
+                                tableMissing.AddCell("Condition");
+                                tableMissing.AddCell("Missing Date");
+                                tableMissing.AddCell("Purchase Amount");
+                                tableMissing.AddCell("Location");
+
+                                int count = 0;
+                                int total = 0;
+                                foreach (DataRow row in resultTable.Rows)
+                                {
+
+                                    string assetName = row["assetName"].ToString();
+                                    string propertyNumber = row["assetPropertyNumber"].ToString();
+                                    string condition = row["assetCondition"].ToString();
+                                    string missingDate = row["MissingDate"] is DBNull ? "NULL" : Convert.ToDateTime(row["MissingDate"]).ToString("yyyy-MM-dd");
+
+                                    string pAmount = row["assetPurchaseAmount"].ToString();
+                                    string Loca = row["assetLocation"].ToString();
+                                    if(missingDate != "NULL")
+                                    {
+                                        tableMissing.AddCell(assetName);
+                                        tableMissing.AddCell(propertyNumber);
+                                        tableMissing.AddCell(condition);
+                                        tableMissing.AddCell(missingDate);
+                                        tableMissing.AddCell(pAmount);
+                                        tableMissing.AddCell(Loca);
+                                        count++;
+                                        total = total + Convert.ToInt32(pAmount);
+                                    }
+
+                                    
+                                }
+                                doc.Add(tableMissing);
+                                doc.Add(new Paragraph($"\n"));
+                                doc.Add(new Paragraph($"\n"));
+
+                                doc.Add(new Paragraph($"Total Missing Asset: {count}"));
+                                doc.Add(new Paragraph($"Total Missing Asset Purchase Amount: {total}"));
+
+
+                                doc.Add(new Paragraph($"\n"));
+                                doc.Add(new Paragraph($"\n"));
+                            }
+
+
+
+                    
+
                             doc.Add(new Paragraph($"\n"));
-                        
-                          
+                            doc.Add(new Paragraph($"\n"));
+
+
+
+                            
+                            doc.Add(new Paragraph($"\n"));
+                            doc.Add(new Paragraph($"\n"));
 
                             doc.Add(new Paragraph($"{textBoxN.Text}"));
                             doc.Add(new Paragraph($"{textBoxP.Text}"));
 
                             doc.Close();
+                            File.Delete(tempImagePath);
                         }
                         groupBox2.Visible = true;
                         groupBox10.Visible = true;
@@ -262,6 +405,10 @@ namespace LGU_SV_Asset_Management_Sytem.Panels.GenerateReports
                         textBoxP.Visible = true;
                         labelName.Visible = true;
                         labelposition.Visible = true;
+
+                        richTextBoxHeader.Visible = true;
+                        pictureBoxLogo.Visible = true;
+
                         MessagePrompt($"Exported as PDF successfully to {outputPath}");
                     }
                 }
