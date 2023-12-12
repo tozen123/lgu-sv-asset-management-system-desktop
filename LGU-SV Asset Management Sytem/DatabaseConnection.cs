@@ -34,7 +34,7 @@ namespace LGU_SV_Asset_Management_Sytem
             catch (Exception ex)
             {
                
-                Console.WriteLine("Error reading the connection string: " + ex.Message);
+                Console.WriteLine("appDirectory: Error reading the connection string:  " + ex.Message);
                 return null;
             }
         }
