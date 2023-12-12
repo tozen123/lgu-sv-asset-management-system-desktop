@@ -10,13 +10,36 @@ namespace LGU_SV_Asset_Management_Sytem
     {
         private SqlConnection connection;
         private string connectionStringEileen = "Data Source=Eileen\\SQL2019;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
+        private string connectionStringKirby = "Data Source=KIRBYANND\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
         private string connectionStringTozen = "Data Source=TOZEN\\SQLEXPRESS;Initial Catalog=LGU_AMS_DB;Integrated Security=True;";
         private string connectionStringClientMode = "server = 192.168.1.21,51429 ,Network Library=KIRBYANND\\SQLEXPRESS ;Initial Catalog=LGU_AMS_DB; User ID=sa ;Password=password";
         public DatabaseConnection()
         {
-            connection = new SqlConnection(connectionStringTozen);
-           
+            string connectionString = ReadConnectionStringFromFile();
+            connection = new SqlConnection(connectionString);
         }
+        private string ReadConnectionStringFromFile()
+        {
+
+            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
+            string filePath = Path.Combine(appDirectory, "connectionString.txt");
+
+            try
+            {
+                
+                string connectionString = File.ReadAllText(filePath);
+                return connectionString;
+            }
+            catch (Exception ex)
+            {
+               
+                Console.WriteLine("Error reading the connection string: " + ex.Message);
+                return null;
+            }
+        }
+
+        
 
         public void OpenConnection()
         {

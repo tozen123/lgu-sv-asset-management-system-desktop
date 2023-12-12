@@ -576,5 +576,15 @@ namespace LGU_SV_Asset_Management_Sytem
         {
 
         }
+
+        private void RegistrationAccountSetup2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonConfigureDatabase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,16 +29,17 @@ namespace LGU_SV_Asset_Management_Sytem
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             System.Windows.Forms.LinkLabel linkLabelTOR;
             System.Windows.Forms.LinkLabel linkLabel1Policy;
             System.Windows.Forms.Label label17;
             System.Windows.Forms.TextBox textBox10;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.buttonConfigureDatabase = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonSlogin = new System.Windows.Forms.Button();
@@ -46,23 +47,17 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label16 = new System.Windows.Forms.Label();
             this.linkLabelSignUpButton = new System.Windows.Forms.LinkLabel();
             this.label20 = new System.Windows.Forms.Label();
-            this.buttonLogin = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.Label_ErrorHandler_Login = new System.Windows.Forms.Label();
             this.RegistrationStartPanel = new System.Windows.Forms.Panel();
-            this.buttonBackToLoginForm = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.rbuttonViewerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.rbuttonOperatorRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.rbuttonManagerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.RegistrationStartPanel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.rbuttonNextAccountSetup = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             this.labelErrorHandler = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
@@ -72,13 +67,13 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.RegistrationAccountSetup1 = new System.Windows.Forms.Panel();
-            this.rbuttonAccountSetup = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBoxAccSetupAddress1 = new System.Windows.Forms.RichTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBoxAccSetupLastName = new System.Windows.Forms.TextBox();
             this.textBoxAccSetupMiddleName = new System.Windows.Forms.TextBox();
-            this.labelAccountSetupErrorHandler = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxAccSetupEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -88,22 +83,28 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxAccSetupPhoneNum = new System.Windows.Forms.TextBox();
             this.textBoxAccSetupFirstName = new System.Windows.Forms.TextBox();
-            this.RegistrationAccountSetup2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.rbuttonRegister = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.rbuttonBrowseFiles = new LGU_SV_Asset_Management_Sytem.RoundedButton();
-            this.labelDirectoryString = new System.Windows.Forms.Label();
-            this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.labelAccountSetupErrorHandler = new System.Windows.Forms.Label();
+            this.RegistrationAccountSetup2 = new System.Windows.Forms.Panel();
+            this.labelDirectoryString = new System.Windows.Forms.Label();
+            this.pictureBoxRegistration2 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.buttonLogin = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.buttonBackToLoginForm = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonViewerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonOperatorRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonManagerRole = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonRegister = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonBrowseFiles = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonAccountSetup = new LGU_SV_Asset_Management_Sytem.RoundedButton();
+            this.rbuttonNextAccountSetup = new LGU_SV_Asset_Management_Sytem.RoundedButton();
             linkLabelTOR = new System.Windows.Forms.LinkLabel();
             linkLabel1Policy = new System.Windows.Forms.LinkLabel();
             label17 = new System.Windows.Forms.Label();
@@ -115,11 +116,71 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationStartPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.RegistrationAccountSetup1.SuspendLayout();
-            this.RegistrationAccountSetup2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.RegistrationAccountSetup2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
+            // 
+            // linkLabelTOR
+            // 
+            linkLabelTOR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            linkLabelTOR.AutoSize = true;
+            linkLabelTOR.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            linkLabelTOR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            linkLabelTOR.Location = new System.Drawing.Point(931, 681);
+            linkLabelTOR.Name = "linkLabelTOR";
+            linkLabelTOR.Size = new System.Drawing.Size(111, 23);
+            linkLabelTOR.TabIndex = 22;
+            linkLabelTOR.TabStop = true;
+            linkLabelTOR.Text = "Terms of Use ";
+            linkLabelTOR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            linkLabelTOR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTOR_LinkClicked_1);
+            // 
+            // linkLabel1Policy
+            // 
+            linkLabel1Policy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            linkLabel1Policy.AutoSize = true;
+            linkLabel1Policy.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            linkLabel1Policy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            linkLabel1Policy.Location = new System.Drawing.Point(1090, 682);
+            linkLabel1Policy.Name = "linkLabel1Policy";
+            linkLabel1Policy.Size = new System.Drawing.Size(113, 23);
+            linkLabel1Policy.TabIndex = 21;
+            linkLabel1Policy.TabStop = true;
+            linkLabel1Policy.Text = "Privacy Policy.";
+            linkLabel1Policy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked_1);
+            // 
+            // label17
+            // 
+            label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            label17.AutoSize = true;
+            label17.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label17.Location = new System.Drawing.Point(1048, 681);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(36, 23);
+            label17.TabIndex = 20;
+            label17.Text = "and";
+            label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox10
+            // 
+            textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            textBox10.BackColor = System.Drawing.Color.White;
+            textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBox10.Font = new System.Drawing.Font("Poppins Light", 9.5F);
+            textBox10.Location = new System.Drawing.Point(383, 681);
+            textBox10.Name = "textBox10";
+            textBox10.ReadOnly = true;
+            textBox10.Size = new System.Drawing.Size(549, 19);
+            textBox10.TabIndex = 33;
+            textBox10.TabStop = false;
+            textBox10.Text = "By clicking Register, you are agreeing to the LGU-SV Asset Management System’s ";
+            textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxEmail
             // 
@@ -170,6 +231,7 @@ namespace LGU_SV_Asset_Management_Sytem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginPanel.BackColor = System.Drawing.Color.White;
+            this.LoginPanel.Controls.Add(this.buttonConfigureDatabase);
             this.LoginPanel.Controls.Add(this.label4);
             this.LoginPanel.Controls.Add(this.button1);
             this.LoginPanel.Controls.Add(this.buttonSlogin);
@@ -188,6 +250,19 @@ namespace LGU_SV_Asset_Management_Sytem
             this.LoginPanel.Size = new System.Drawing.Size(1256, 807);
             this.LoginPanel.TabIndex = 8;
             this.LoginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginPanel_Paint);
+            // 
+            // buttonConfigureDatabase
+            // 
+            this.buttonConfigureDatabase.FlatAppearance.BorderSize = 0;
+            this.buttonConfigureDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfigureDatabase.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.config_db;
+            this.buttonConfigureDatabase.Location = new System.Drawing.Point(6, 6);
+            this.buttonConfigureDatabase.Name = "buttonConfigureDatabase";
+            this.buttonConfigureDatabase.Size = new System.Drawing.Size(61, 52);
+            this.buttonConfigureDatabase.TabIndex = 21;
+            this.buttonConfigureDatabase.UseVisualStyleBackColor = true;
+            this.buttonConfigureDatabase.Visible = false;
+            this.buttonConfigureDatabase.Click += new System.EventHandler(this.buttonConfigureDatabase_Click);
             // 
             // label4
             // 
@@ -212,6 +287,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.button1.TabIndex = 19;
             this.button1.Text = "DEBUG_COORDINATOR_LOGIN1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonSlogin
@@ -223,6 +299,7 @@ namespace LGU_SV_Asset_Management_Sytem
             this.buttonSlogin.TabIndex = 18;
             this.buttonSlogin.Text = "DEBUG_ADMIN_LOGIN1";
             this.buttonSlogin.UseVisualStyleBackColor = true;
+            this.buttonSlogin.Visible = false;
             this.buttonSlogin.Click += new System.EventHandler(this.buttonSlogin_Click);
             // 
             // pictureBox1
@@ -275,32 +352,9 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label20.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(832, 664);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(255, 36);
+            this.label20.Size = new System.Drawing.Size(252, 36);
             this.label20.TabIndex = 14;
             this.label20.Text = "Don’t have an account?";
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.buttonLogin.BorderRadius = 15;
-            this.buttonLogin.BorderSize = 0;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(688, 591);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.buttonLogin.Size = new System.Drawing.Size(5, 67);
-            this.buttonLogin.TabIndex = 8;
-            this.buttonLogin.Text = "LOGIN";
-            this.buttonLogin.TextColor = System.Drawing.Color.White;
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // Label_ErrorHandler_Login
             // 
@@ -331,28 +385,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationStartPanel.Name = "RegistrationStartPanel";
             this.RegistrationStartPanel.Size = new System.Drawing.Size(1250, 804);
             this.RegistrationStartPanel.TabIndex = 9;
-            // 
-            // buttonBackToLoginForm
-            // 
-            this.buttonBackToLoginForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonBackToLoginForm.BackColor = System.Drawing.Color.White;
-            this.buttonBackToLoginForm.BackgroundColor = System.Drawing.Color.White;
-            this.buttonBackToLoginForm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonBackToLoginForm.BorderRadius = 12;
-            this.buttonBackToLoginForm.BorderSize = 0;
-            this.buttonBackToLoginForm.FlatAppearance.BorderSize = 0;
-            this.buttonBackToLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBackToLoginForm.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBackToLoginForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonBackToLoginForm.Location = new System.Drawing.Point(859, 563);
-            this.buttonBackToLoginForm.Name = "buttonBackToLoginForm";
-            this.buttonBackToLoginForm.OnHoverButtonColor = System.Drawing.Color.Empty;
-            this.buttonBackToLoginForm.Size = new System.Drawing.Size(228, 48);
-            this.buttonBackToLoginForm.TabIndex = 28;
-            this.buttonBackToLoginForm.Text = "  BACK TO LOGIN";
-            this.buttonBackToLoginForm.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.buttonBackToLoginForm.UseVisualStyleBackColor = false;
-            this.buttonBackToLoginForm.Click += new System.EventHandler(this.buttonBackToLoginForm_Click);
             // 
             // label1
             // 
@@ -423,76 +455,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBox1.Text = "Welcome Onboard!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // rbuttonViewerRole
-            // 
-            this.rbuttonViewerRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonViewerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonViewerRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonViewerRole.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonViewerRole.BorderRadius = 15;
-            this.rbuttonViewerRole.BorderSize = 0;
-            this.rbuttonViewerRole.FlatAppearance.BorderSize = 0;
-            this.rbuttonViewerRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonViewerRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonViewerRole.ForeColor = System.Drawing.Color.White;
-            this.rbuttonViewerRole.Location = new System.Drawing.Point(460, 615);
-            this.rbuttonViewerRole.Name = "rbuttonViewerRole";
-            this.rbuttonViewerRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonViewerRole.Size = new System.Drawing.Size(326, 67);
-            this.rbuttonViewerRole.TabIndex = 14;
-            this.rbuttonViewerRole.Text = "VIEWER";
-            this.rbuttonViewerRole.TextColor = System.Drawing.Color.White;
-            this.rbuttonViewerRole.UseVisualStyleBackColor = false;
-            this.rbuttonViewerRole.Visible = false;
-            this.rbuttonViewerRole.Click += new System.EventHandler(this.buttonViewerRole_Click);
-            // 
-            // rbuttonOperatorRole
-            // 
-            this.rbuttonOperatorRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonOperatorRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonOperatorRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonOperatorRole.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonOperatorRole.BorderRadius = 15;
-            this.rbuttonOperatorRole.BorderSize = 0;
-            this.rbuttonOperatorRole.FlatAppearance.BorderSize = 0;
-            this.rbuttonOperatorRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonOperatorRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonOperatorRole.ForeColor = System.Drawing.Color.White;
-            this.rbuttonOperatorRole.Location = new System.Drawing.Point(623, 642);
-            this.rbuttonOperatorRole.Name = "rbuttonOperatorRole";
-            this.rbuttonOperatorRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonOperatorRole.Size = new System.Drawing.Size(64, 67);
-            this.rbuttonOperatorRole.TabIndex = 13;
-            this.rbuttonOperatorRole.Text = "COORDINATOR";
-            this.rbuttonOperatorRole.TextColor = System.Drawing.Color.White;
-            this.rbuttonOperatorRole.UseVisualStyleBackColor = false;
-            this.rbuttonOperatorRole.Click += new System.EventHandler(this.buttonOperatorRole_Click);
-            // 
-            // rbuttonManagerRole
-            // 
-            this.rbuttonManagerRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonManagerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonManagerRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonManagerRole.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonManagerRole.BorderRadius = 15;
-            this.rbuttonManagerRole.BorderSize = 0;
-            this.rbuttonManagerRole.FlatAppearance.BorderSize = 0;
-            this.rbuttonManagerRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonManagerRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonManagerRole.ForeColor = System.Drawing.Color.White;
-            this.rbuttonManagerRole.Location = new System.Drawing.Point(622, 554);
-            this.rbuttonManagerRole.Name = "rbuttonManagerRole";
-            this.rbuttonManagerRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonManagerRole.Size = new System.Drawing.Size(64, 67);
-            this.rbuttonManagerRole.TabIndex = 12;
-            this.rbuttonManagerRole.Text = "ADMINISTRATOR";
-            this.rbuttonManagerRole.TextColor = System.Drawing.Color.White;
-            this.rbuttonManagerRole.UseVisualStyleBackColor = false;
-            this.rbuttonManagerRole.Click += new System.EventHandler(this.buttonManagerRole_Click);
-            // 
             // RegistrationStartPanel2
             // 
             this.RegistrationStartPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -550,29 +512,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label15.Size = new System.Drawing.Size(787, 106);
             this.label15.TabIndex = 31;
             this.label15.Text = "LGU - San Vicente Asset ";
-            // 
-            // rbuttonNextAccountSetup
-            // 
-            this.rbuttonNextAccountSetup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonNextAccountSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonNextAccountSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonNextAccountSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonNextAccountSetup.BorderRadius = 15;
-            this.rbuttonNextAccountSetup.BorderSize = 0;
-            this.rbuttonNextAccountSetup.FlatAppearance.BorderSize = 0;
-            this.rbuttonNextAccountSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonNextAccountSetup.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonNextAccountSetup.ForeColor = System.Drawing.Color.White;
-            this.rbuttonNextAccountSetup.Location = new System.Drawing.Point(657, 763);
-            this.rbuttonNextAccountSetup.Name = "rbuttonNextAccountSetup";
-            this.rbuttonNextAccountSetup.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonNextAccountSetup.Size = new System.Drawing.Size(65, 62);
-            this.rbuttonNextAccountSetup.TabIndex = 18;
-            this.rbuttonNextAccountSetup.Text = "NEXT";
-            this.rbuttonNextAccountSetup.TextColor = System.Drawing.Color.White;
-            this.rbuttonNextAccountSetup.UseVisualStyleBackColor = false;
-            this.rbuttonNextAccountSetup.Click += new System.EventHandler(this.buttonNextAccountSetup_Click);
             // 
             // labelErrorHandler
             // 
@@ -692,7 +631,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.Controls.Add(this.label18);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupLastName);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupMiddleName);
-            this.RegistrationAccountSetup1.Controls.Add(this.labelAccountSetupErrorHandler);
             this.RegistrationAccountSetup1.Controls.Add(this.label11);
             this.RegistrationAccountSetup1.Controls.Add(this.textBoxAccSetupEmail);
             this.RegistrationAccountSetup1.Controls.Add(this.label10);
@@ -711,28 +649,38 @@ namespace LGU_SV_Asset_Management_Sytem
             this.RegistrationAccountSetup1.TabIndex = 10;
             this.RegistrationAccountSetup1.Paint += new System.Windows.Forms.PaintEventHandler(this.RegistrationAccountSetup1_Paint);
             // 
-            // rbuttonAccountSetup
+            // textBox5
             // 
-            this.rbuttonAccountSetup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonAccountSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonAccountSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonAccountSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonAccountSetup.BorderRadius = 15;
-            this.rbuttonAccountSetup.BorderSize = 0;
-            this.rbuttonAccountSetup.FlatAppearance.BorderSize = 0;
-            this.rbuttonAccountSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonAccountSetup.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonAccountSetup.ForeColor = System.Drawing.Color.White;
-            this.rbuttonAccountSetup.Location = new System.Drawing.Point(723, 823);
-            this.rbuttonAccountSetup.Name = "rbuttonAccountSetup";
-            this.rbuttonAccountSetup.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonAccountSetup.Size = new System.Drawing.Size(21, 57);
-            this.rbuttonAccountSetup.TabIndex = 23;
-            this.rbuttonAccountSetup.Text = "NEXT";
-            this.rbuttonAccountSetup.TextColor = System.Drawing.Color.White;
-            this.rbuttonAccountSetup.UseVisualStyleBackColor = false;
-            this.rbuttonAccountSetup.Click += new System.EventHandler(this.buttonAccountSetup_Click);
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Poppins Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(482, 366);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(387, 36);
+            this.textBox5.TabIndex = 32;
+            this.textBox5.TabStop = false;
+            this.textBox5.Text = "Let us know more about you.";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.textBox6.Location = new System.Drawing.Point(413, 295);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(519, 72);
+            this.textBox6.TabIndex = 31;
+            this.textBox6.TabStop = false;
+            this.textBox6.Text = "Welcome Onboard!";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxAccSetupAddress1
             // 
@@ -790,18 +738,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxAccSetupMiddleName.Name = "textBoxAccSetupMiddleName";
             this.textBoxAccSetupMiddleName.Size = new System.Drawing.Size(10, 30);
             this.textBoxAccSetupMiddleName.TabIndex = 16;
-            // 
-            // labelAccountSetupErrorHandler
-            // 
-            this.labelAccountSetupErrorHandler.AutoSize = true;
-            this.labelAccountSetupErrorHandler.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountSetupErrorHandler.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelAccountSetupErrorHandler.Location = new System.Drawing.Point(722, 804);
-            this.labelAccountSetupErrorHandler.Name = "labelAccountSetupErrorHandler";
-            this.labelAccountSetupErrorHandler.Size = new System.Drawing.Size(88, 23);
-            this.labelAccountSetupErrorHandler.TabIndex = 13;
-            this.labelAccountSetupErrorHandler.Text = "ERROR LABEL";
-            this.labelAccountSetupErrorHandler.Visible = false;
             // 
             // label11
             // 
@@ -903,209 +839,6 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBoxAccSetupFirstName.Size = new System.Drawing.Size(10, 30);
             this.textBoxAccSetupFirstName.TabIndex = 1;
             // 
-            // RegistrationAccountSetup2
-            // 
-            this.RegistrationAccountSetup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RegistrationAccountSetup2.Controls.Add(linkLabel1Policy);
-            this.RegistrationAccountSetup2.Controls.Add(label17);
-            this.RegistrationAccountSetup2.Controls.Add(this.rbuttonRegister);
-            this.RegistrationAccountSetup2.Controls.Add(linkLabelTOR);
-            this.RegistrationAccountSetup2.Controls.Add(this.rbuttonBrowseFiles);
-            this.RegistrationAccountSetup2.Controls.Add(textBox10);
-            this.RegistrationAccountSetup2.Controls.Add(this.labelDirectoryString);
-            this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
-            this.RegistrationAccountSetup2.Controls.Add(this.label14);
-            this.RegistrationAccountSetup2.Controls.Add(this.label8);
-            this.RegistrationAccountSetup2.Controls.Add(this.pictureBox5);
-            this.RegistrationAccountSetup2.Controls.Add(this.label12);
-            this.RegistrationAccountSetup2.Controls.Add(this.textBox7);
-            this.RegistrationAccountSetup2.Controls.Add(this.textBox8);
-            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(12, 12);
-            this.RegistrationAccountSetup2.Name = "RegistrationAccountSetup2";
-            this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1256, 807);
-            this.RegistrationAccountSetup2.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label8.Location = new System.Drawing.Point(606, 224);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(711, 106);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Management System";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
-            this.pictureBox5.Location = new System.Drawing.Point(455, 155);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(151, 150);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 26;
-            this.pictureBox5.TabStop = false;
-            // 
-            // linkLabelTOR
-            // 
-            linkLabelTOR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            linkLabelTOR.AutoSize = true;
-            linkLabelTOR.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            linkLabelTOR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            linkLabelTOR.Location = new System.Drawing.Point(1024, 594);
-            linkLabelTOR.Name = "linkLabelTOR";
-            linkLabelTOR.Size = new System.Drawing.Size(111, 23);
-            linkLabelTOR.TabIndex = 22;
-            linkLabelTOR.TabStop = true;
-            linkLabelTOR.Text = "Terms of Use ";
-            linkLabelTOR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            linkLabelTOR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTOR_LinkClicked_1);
-            // 
-            // linkLabel1Policy
-            // 
-            linkLabel1Policy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            linkLabel1Policy.AutoSize = true;
-            linkLabel1Policy.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            linkLabel1Policy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            linkLabel1Policy.Location = new System.Drawing.Point(1161, 593);
-            linkLabel1Policy.Name = "linkLabel1Policy";
-            linkLabel1Policy.Size = new System.Drawing.Size(113, 23);
-            linkLabel1Policy.TabIndex = 21;
-            linkLabel1Policy.TabStop = true;
-            linkLabel1Policy.Text = "Privacy Policy.";
-            linkLabel1Policy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            linkLabel1Policy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1Policy_LinkClicked_1);
-            // 
-            // label17
-            // 
-            label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            label17.AutoSize = true;
-            label17.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label17.Location = new System.Drawing.Point(1128, 594);
-            label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(36, 23);
-            label17.TabIndex = 20;
-            label17.Text = "and";
-            label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox10
-            // 
-            textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox10.BackColor = System.Drawing.Color.White;
-            textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox10.Font = new System.Drawing.Font("Poppins Light", 9.5F);
-            textBox10.Location = new System.Drawing.Point(486, 595);
-            textBox10.Name = "textBox10";
-            textBox10.ReadOnly = true;
-            textBox10.Size = new System.Drawing.Size(549, 19);
-            textBox10.TabIndex = 33;
-            textBox10.TabStop = false;
-            textBox10.Text = "By clicking Register, you are agreeing to the LGU-SV Asset Management System’s ";
-            textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Poppins", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.label12.Location = new System.Drawing.Point(606, 152);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(787, 106);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "LGU - San Vicente Asset ";
-            // 
-            // rbuttonRegister
-            // 
-            this.rbuttonRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbuttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonRegister.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonRegister.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonRegister.BorderRadius = 12;
-            this.rbuttonRegister.BorderSize = 0;
-            this.rbuttonRegister.FlatAppearance.BorderSize = 0;
-            this.rbuttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonRegister.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonRegister.ForeColor = System.Drawing.Color.White;
-            this.rbuttonRegister.Location = new System.Drawing.Point(602, 640);
-            this.rbuttonRegister.Name = "rbuttonRegister";
-            this.rbuttonRegister.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonRegister.Size = new System.Drawing.Size(129, 45);
-            this.rbuttonRegister.TabIndex = 27;
-            this.rbuttonRegister.Text = "REGISTER";
-            this.rbuttonRegister.TextColor = System.Drawing.Color.White;
-            this.rbuttonRegister.UseVisualStyleBackColor = false;
-            this.rbuttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
-            // 
-            // rbuttonBrowseFiles
-            // 
-            this.rbuttonBrowseFiles.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbuttonBrowseFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonBrowseFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
-            this.rbuttonBrowseFiles.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbuttonBrowseFiles.BorderRadius = 5;
-            this.rbuttonBrowseFiles.BorderSize = 0;
-            this.rbuttonBrowseFiles.FlatAppearance.BorderSize = 0;
-            this.rbuttonBrowseFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbuttonBrowseFiles.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbuttonBrowseFiles.ForeColor = System.Drawing.Color.White;
-            this.rbuttonBrowseFiles.Location = new System.Drawing.Point(743, 543);
-            this.rbuttonBrowseFiles.Name = "rbuttonBrowseFiles";
-            this.rbuttonBrowseFiles.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.rbuttonBrowseFiles.Size = new System.Drawing.Size(158, 33);
-            this.rbuttonBrowseFiles.TabIndex = 26;
-            this.rbuttonBrowseFiles.Text = "Browse Files";
-            this.rbuttonBrowseFiles.TextColor = System.Drawing.Color.White;
-            this.rbuttonBrowseFiles.UseVisualStyleBackColor = false;
-            this.rbuttonBrowseFiles.Click += new System.EventHandler(this.buttonBrowseFiles_Click);
-            // 
-            // labelDirectoryString
-            // 
-            this.labelDirectoryString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDirectoryString.AutoSize = true;
-            this.labelDirectoryString.Font = new System.Drawing.Font("Poppins Light", 9.75F);
-            this.labelDirectoryString.Location = new System.Drawing.Point(600, 519);
-            this.labelDirectoryString.Name = "labelDirectoryString";
-            this.labelDirectoryString.Size = new System.Drawing.Size(132, 23);
-            this.labelDirectoryString.TabIndex = 15;
-            this.labelDirectoryString.Text = "DIRECTORY_STRING";
-            // 
-            // pictureBoxRegistration2
-            // 
-            this.pictureBoxRegistration2.AllowDrop = true;
-            this.pictureBoxRegistration2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxRegistration2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pictureBoxRegistration2.Location = new System.Drawing.Point(603, 544);
-            this.pictureBoxRegistration2.Name = "pictureBoxRegistration2";
-            this.pictureBoxRegistration2.Size = new System.Drawing.Size(151, 31);
-            this.pictureBoxRegistration2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxRegistration2.TabIndex = 13;
-            this.pictureBoxRegistration2.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(596, 480);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(209, 28);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "User Profile (Optional)";
-            // 
             // label21
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1142,38 +875,118 @@ namespace LGU_SV_Asset_Management_Sytem
             this.label22.TabIndex = 28;
             this.label22.Text = "LGU - San Vicente Asset ";
             // 
-            // textBox5
+            // labelAccountSetupErrorHandler
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelAccountSetupErrorHandler.AutoSize = true;
+            this.labelAccountSetupErrorHandler.Font = new System.Drawing.Font("Poppins Light", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccountSetupErrorHandler.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelAccountSetupErrorHandler.Location = new System.Drawing.Point(605, 713);
+            this.labelAccountSetupErrorHandler.Name = "labelAccountSetupErrorHandler";
+            this.labelAccountSetupErrorHandler.Size = new System.Drawing.Size(88, 23);
+            this.labelAccountSetupErrorHandler.TabIndex = 13;
+            this.labelAccountSetupErrorHandler.Text = "ERROR LABEL";
+            this.labelAccountSetupErrorHandler.Visible = false;
+            // 
+            // RegistrationAccountSetup2
+            // 
+            this.RegistrationAccountSetup2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Poppins Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(482, 366);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(387, 36);
-            this.textBox5.TabIndex = 32;
-            this.textBox5.TabStop = false;
-            this.textBox5.Text = "Let us know more about you.";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.RegistrationAccountSetup2.Controls.Add(linkLabel1Policy);
+            this.RegistrationAccountSetup2.Controls.Add(label17);
+            this.RegistrationAccountSetup2.Controls.Add(this.rbuttonRegister);
+            this.RegistrationAccountSetup2.Controls.Add(linkLabelTOR);
+            this.RegistrationAccountSetup2.Controls.Add(this.rbuttonBrowseFiles);
+            this.RegistrationAccountSetup2.Controls.Add(textBox10);
+            this.RegistrationAccountSetup2.Controls.Add(this.labelDirectoryString);
+            this.RegistrationAccountSetup2.Controls.Add(this.pictureBoxRegistration2);
+            this.RegistrationAccountSetup2.Controls.Add(this.labelAccountSetupErrorHandler);
+            this.RegistrationAccountSetup2.Controls.Add(this.label14);
+            this.RegistrationAccountSetup2.Controls.Add(this.label8);
+            this.RegistrationAccountSetup2.Controls.Add(this.pictureBox5);
+            this.RegistrationAccountSetup2.Controls.Add(this.label12);
+            this.RegistrationAccountSetup2.Controls.Add(this.textBox7);
+            this.RegistrationAccountSetup2.Controls.Add(this.textBox8);
+            this.RegistrationAccountSetup2.Location = new System.Drawing.Point(12, 12);
+            this.RegistrationAccountSetup2.Name = "RegistrationAccountSetup2";
+            this.RegistrationAccountSetup2.Size = new System.Drawing.Size(1256, 807);
+            this.RegistrationAccountSetup2.TabIndex = 15;
+            this.RegistrationAccountSetup2.Paint += new System.Windows.Forms.PaintEventHandler(this.RegistrationAccountSetup2_Paint);
             // 
-            // textBox6
+            // labelDirectoryString
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelDirectoryString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
-            this.textBox6.Location = new System.Drawing.Point(413, 295);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(519, 72);
-            this.textBox6.TabIndex = 31;
-            this.textBox6.TabStop = false;
-            this.textBox6.Text = "Welcome Onboard!";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.labelDirectoryString.AutoSize = true;
+            this.labelDirectoryString.Font = new System.Drawing.Font("Poppins Light", 9.75F);
+            this.labelDirectoryString.Location = new System.Drawing.Point(600, 519);
+            this.labelDirectoryString.Name = "labelDirectoryString";
+            this.labelDirectoryString.Size = new System.Drawing.Size(132, 23);
+            this.labelDirectoryString.TabIndex = 15;
+            this.labelDirectoryString.Text = "DIRECTORY_STRING";
+            // 
+            // pictureBoxRegistration2
+            // 
+            this.pictureBoxRegistration2.AllowDrop = true;
+            this.pictureBoxRegistration2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxRegistration2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pictureBoxRegistration2.Location = new System.Drawing.Point(603, 544);
+            this.pictureBoxRegistration2.Name = "pictureBoxRegistration2";
+            this.pictureBoxRegistration2.Size = new System.Drawing.Size(151, 31);
+            this.pictureBoxRegistration2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxRegistration2.TabIndex = 13;
+            this.pictureBoxRegistration2.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(596, 480);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(209, 28);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "User Profile (Optional)";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Poppins", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label8.Location = new System.Drawing.Point(606, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(711, 106);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Management System";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::LGU_SV_Asset_Management_Sytem.Properties.Resources.AppLogo2;
+            this.pictureBox5.Location = new System.Drawing.Point(455, 155);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(151, 150);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 26;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Poppins", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.label12.Location = new System.Drawing.Point(606, 152);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(787, 106);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "LGU - San Vicente Asset ";
             // 
             // textBox7
             // 
@@ -1208,6 +1021,212 @@ namespace LGU_SV_Asset_Management_Sytem
             this.textBox8.Text = "Welcome Onboard!";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonLogin.BorderRadius = 15;
+            this.buttonLogin.BorderSize = 0;
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
+            this.buttonLogin.Location = new System.Drawing.Point(688, 591);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.buttonLogin.Size = new System.Drawing.Size(5, 67);
+            this.buttonLogin.TabIndex = 8;
+            this.buttonLogin.Text = "LOGIN";
+            this.buttonLogin.TextColor = System.Drawing.Color.White;
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // buttonBackToLoginForm
+            // 
+            this.buttonBackToLoginForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonBackToLoginForm.BackColor = System.Drawing.Color.White;
+            this.buttonBackToLoginForm.BackgroundColor = System.Drawing.Color.White;
+            this.buttonBackToLoginForm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBackToLoginForm.BorderRadius = 12;
+            this.buttonBackToLoginForm.BorderSize = 0;
+            this.buttonBackToLoginForm.FlatAppearance.BorderSize = 0;
+            this.buttonBackToLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackToLoginForm.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackToLoginForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBackToLoginForm.Location = new System.Drawing.Point(859, 563);
+            this.buttonBackToLoginForm.Name = "buttonBackToLoginForm";
+            this.buttonBackToLoginForm.OnHoverButtonColor = System.Drawing.Color.Empty;
+            this.buttonBackToLoginForm.Size = new System.Drawing.Size(228, 48);
+            this.buttonBackToLoginForm.TabIndex = 28;
+            this.buttonBackToLoginForm.Text = "  BACK TO LOGIN";
+            this.buttonBackToLoginForm.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.buttonBackToLoginForm.UseVisualStyleBackColor = false;
+            this.buttonBackToLoginForm.Click += new System.EventHandler(this.buttonBackToLoginForm_Click);
+            // 
+            // rbuttonViewerRole
+            // 
+            this.rbuttonViewerRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonViewerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonViewerRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonViewerRole.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonViewerRole.BorderRadius = 15;
+            this.rbuttonViewerRole.BorderSize = 0;
+            this.rbuttonViewerRole.FlatAppearance.BorderSize = 0;
+            this.rbuttonViewerRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonViewerRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonViewerRole.ForeColor = System.Drawing.Color.White;
+            this.rbuttonViewerRole.Location = new System.Drawing.Point(460, 615);
+            this.rbuttonViewerRole.Name = "rbuttonViewerRole";
+            this.rbuttonViewerRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonViewerRole.Size = new System.Drawing.Size(326, 67);
+            this.rbuttonViewerRole.TabIndex = 14;
+            this.rbuttonViewerRole.Text = "VIEWER";
+            this.rbuttonViewerRole.TextColor = System.Drawing.Color.White;
+            this.rbuttonViewerRole.UseVisualStyleBackColor = false;
+            this.rbuttonViewerRole.Visible = false;
+            this.rbuttonViewerRole.Click += new System.EventHandler(this.buttonViewerRole_Click);
+            // 
+            // rbuttonOperatorRole
+            // 
+            this.rbuttonOperatorRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonOperatorRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonOperatorRole.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonOperatorRole.BorderRadius = 15;
+            this.rbuttonOperatorRole.BorderSize = 0;
+            this.rbuttonOperatorRole.FlatAppearance.BorderSize = 0;
+            this.rbuttonOperatorRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonOperatorRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonOperatorRole.ForeColor = System.Drawing.Color.White;
+            this.rbuttonOperatorRole.Location = new System.Drawing.Point(623, 642);
+            this.rbuttonOperatorRole.Name = "rbuttonOperatorRole";
+            this.rbuttonOperatorRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonOperatorRole.Size = new System.Drawing.Size(64, 67);
+            this.rbuttonOperatorRole.TabIndex = 13;
+            this.rbuttonOperatorRole.Text = "COORDINATOR";
+            this.rbuttonOperatorRole.TextColor = System.Drawing.Color.White;
+            this.rbuttonOperatorRole.UseVisualStyleBackColor = false;
+            this.rbuttonOperatorRole.Click += new System.EventHandler(this.buttonOperatorRole_Click);
+            // 
+            // rbuttonManagerRole
+            // 
+            this.rbuttonManagerRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonManagerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonManagerRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonManagerRole.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonManagerRole.BorderRadius = 15;
+            this.rbuttonManagerRole.BorderSize = 0;
+            this.rbuttonManagerRole.FlatAppearance.BorderSize = 0;
+            this.rbuttonManagerRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonManagerRole.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonManagerRole.ForeColor = System.Drawing.Color.White;
+            this.rbuttonManagerRole.Location = new System.Drawing.Point(622, 554);
+            this.rbuttonManagerRole.Name = "rbuttonManagerRole";
+            this.rbuttonManagerRole.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonManagerRole.Size = new System.Drawing.Size(64, 67);
+            this.rbuttonManagerRole.TabIndex = 12;
+            this.rbuttonManagerRole.Text = "ADMINISTRATOR";
+            this.rbuttonManagerRole.TextColor = System.Drawing.Color.White;
+            this.rbuttonManagerRole.UseVisualStyleBackColor = false;
+            this.rbuttonManagerRole.Click += new System.EventHandler(this.buttonManagerRole_Click);
+            // 
+            // rbuttonRegister
+            // 
+            this.rbuttonRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonRegister.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonRegister.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonRegister.BorderRadius = 12;
+            this.rbuttonRegister.BorderSize = 0;
+            this.rbuttonRegister.FlatAppearance.BorderSize = 0;
+            this.rbuttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonRegister.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonRegister.ForeColor = System.Drawing.Color.White;
+            this.rbuttonRegister.Location = new System.Drawing.Point(604, 739);
+            this.rbuttonRegister.Name = "rbuttonRegister";
+            this.rbuttonRegister.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonRegister.Size = new System.Drawing.Size(129, 45);
+            this.rbuttonRegister.TabIndex = 27;
+            this.rbuttonRegister.Text = "REGISTER";
+            this.rbuttonRegister.TextColor = System.Drawing.Color.White;
+            this.rbuttonRegister.UseVisualStyleBackColor = false;
+            this.rbuttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
+            // rbuttonBrowseFiles
+            // 
+            this.rbuttonBrowseFiles.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.rbuttonBrowseFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonBrowseFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonBrowseFiles.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonBrowseFiles.BorderRadius = 5;
+            this.rbuttonBrowseFiles.BorderSize = 0;
+            this.rbuttonBrowseFiles.FlatAppearance.BorderSize = 0;
+            this.rbuttonBrowseFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonBrowseFiles.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonBrowseFiles.ForeColor = System.Drawing.Color.White;
+            this.rbuttonBrowseFiles.Location = new System.Drawing.Point(768, 542);
+            this.rbuttonBrowseFiles.Name = "rbuttonBrowseFiles";
+            this.rbuttonBrowseFiles.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonBrowseFiles.Size = new System.Drawing.Size(158, 33);
+            this.rbuttonBrowseFiles.TabIndex = 26;
+            this.rbuttonBrowseFiles.Text = "Browse Files";
+            this.rbuttonBrowseFiles.TextColor = System.Drawing.Color.White;
+            this.rbuttonBrowseFiles.UseVisualStyleBackColor = false;
+            this.rbuttonBrowseFiles.Click += new System.EventHandler(this.buttonBrowseFiles_Click);
+            // 
+            // rbuttonAccountSetup
+            // 
+            this.rbuttonAccountSetup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonAccountSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonAccountSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonAccountSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonAccountSetup.BorderRadius = 15;
+            this.rbuttonAccountSetup.BorderSize = 0;
+            this.rbuttonAccountSetup.FlatAppearance.BorderSize = 0;
+            this.rbuttonAccountSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonAccountSetup.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonAccountSetup.ForeColor = System.Drawing.Color.White;
+            this.rbuttonAccountSetup.Location = new System.Drawing.Point(723, 823);
+            this.rbuttonAccountSetup.Name = "rbuttonAccountSetup";
+            this.rbuttonAccountSetup.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonAccountSetup.Size = new System.Drawing.Size(21, 57);
+            this.rbuttonAccountSetup.TabIndex = 23;
+            this.rbuttonAccountSetup.Text = "NEXT";
+            this.rbuttonAccountSetup.TextColor = System.Drawing.Color.White;
+            this.rbuttonAccountSetup.UseVisualStyleBackColor = false;
+            this.rbuttonAccountSetup.Click += new System.EventHandler(this.buttonAccountSetup_Click);
+            // 
+            // rbuttonNextAccountSetup
+            // 
+            this.rbuttonNextAccountSetup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbuttonNextAccountSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonNextAccountSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(113)))), ((int)(((byte)(68)))));
+            this.rbuttonNextAccountSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbuttonNextAccountSetup.BorderRadius = 15;
+            this.rbuttonNextAccountSetup.BorderSize = 0;
+            this.rbuttonNextAccountSetup.FlatAppearance.BorderSize = 0;
+            this.rbuttonNextAccountSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbuttonNextAccountSetup.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbuttonNextAccountSetup.ForeColor = System.Drawing.Color.White;
+            this.rbuttonNextAccountSetup.Location = new System.Drawing.Point(657, 763);
+            this.rbuttonNextAccountSetup.Name = "rbuttonNextAccountSetup";
+            this.rbuttonNextAccountSetup.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(77)))), ((int)(((byte)(46)))));
+            this.rbuttonNextAccountSetup.Size = new System.Drawing.Size(65, 62);
+            this.rbuttonNextAccountSetup.TabIndex = 18;
+            this.rbuttonNextAccountSetup.Text = "NEXT";
+            this.rbuttonNextAccountSetup.TextColor = System.Drawing.Color.White;
+            this.rbuttonNextAccountSetup.UseVisualStyleBackColor = false;
+            this.rbuttonNextAccountSetup.Click += new System.EventHandler(this.buttonNextAccountSetup_Click);
+            // 
             // StartForm
             // 
             this.AllowDrop = true;
@@ -1215,11 +1234,11 @@ namespace LGU_SV_Asset_Management_Sytem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 848);
+            this.Controls.Add(this.LoginPanel);
+            this.Controls.Add(this.RegistrationStartPanel);
             this.Controls.Add(this.RegistrationAccountSetup2);
             this.Controls.Add(this.RegistrationAccountSetup1);
             this.Controls.Add(this.RegistrationStartPanel2);
-            this.Controls.Add(this.LoginPanel);
-            this.Controls.Add(this.RegistrationStartPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
@@ -1237,11 +1256,11 @@ namespace LGU_SV_Asset_Management_Sytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.RegistrationAccountSetup1.ResumeLayout(false);
             this.RegistrationAccountSetup1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.RegistrationAccountSetup2.ResumeLayout(false);
             this.RegistrationAccountSetup2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistration2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1317,5 +1336,6 @@ namespace LGU_SV_Asset_Management_Sytem
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button buttonConfigureDatabase;
     }
 }
