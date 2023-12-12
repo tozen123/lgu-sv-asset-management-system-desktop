@@ -55,6 +55,8 @@ namespace LGU_SV_Asset_Management_Sytem
             comboBoxAccSetupDepartment.Items.Add("MEO-Municipal Engineering Office");
             comboBoxAccSetupDepartment.Items.Add("MBO-Municipal Budget Office");
             comboBoxAccSetupDepartment.Items.Add("AO-Accounting Office");
+
+           
         }
 
         private void ActivatePanel(Panel panelToActivate)
@@ -583,6 +585,11 @@ namespace LGU_SV_Asset_Management_Sytem
         }
 
         private void buttonConfigureDatabase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDirectory_Click(object sender, EventArgs e)
         {
 
         }

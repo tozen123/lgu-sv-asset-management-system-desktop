@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.IO;
+using System.Threading;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace LGU_SV_Asset_Management_Sytem
 {
@@ -20,26 +28,34 @@ namespace LGU_SV_Asset_Management_Sytem
         }
         private string ReadConnectionStringFromFile()
         {
-
-            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
-            string filePath = Path.Combine(appDirectory, "connectionString.txt");
+            string documentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string lgAmsSystemFolder = Path.Combine(documentsFolder, "LGU-AMS-SYSTEM");
+            string filePath = Path.Combine(lgAmsSystemFolder, "connectionString.txt");
 
             try
             {
-                
+                // Check if the "LGU-AMS-SYSTEM" folder exists, and create it if not
+                if (!Directory.Exists(lgAmsSystemFolder))
+                {
+                    Directory.CreateDirectory(lgAmsSystemFolder);
+                    Console.WriteLine($"Created folder: {lgAmsSystemFolder}");
+
+
+                    MessageBox.Show("The system failed to find the \"LGU-AMS-SYSTEM\" at your document folders and the connectionString.txt. The system may not work properly.");
+                }
+
                 string connectionString = File.ReadAllText(filePath);
                 return connectionString;
             }
             catch (Exception ex)
             {
-               
-                Console.WriteLine("appDirectory: Error reading the connection string:  " + ex.Message);
+                Console.WriteLine($"Error reading the connection string: {ex.Message}");
                 return null;
             }
         }
 
-        
+
+
 
         public void OpenConnection()
         {
@@ -116,7 +132,7 @@ namespace LGU_SV_Asset_Management_Sytem
 
         public int UploadToDatabaseAndGetId(string query, Dictionary<string, object> parameters)
         {
-            int generatedId = -1; 
+            int generatedId = -1;
 
             OpenConnection();
 
@@ -129,7 +145,7 @@ namespace LGU_SV_Asset_Management_Sytem
                         command.Parameters.AddWithValue(parameter.Key, parameter.Value);
                     }
 
-                    
+
                     object result = command.ExecuteScalar();
 
                     if (result != DBNull.Value && result != null)
